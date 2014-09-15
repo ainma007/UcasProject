@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UcasProModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="UcasProModelStoreContainer">
+    <EntitySet Name="AmountsReceiveds" EntityType="UcasProModel.Store.AmountsReceiveds" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Attachments" EntityType="UcasProModel.Store.Attachments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contracts" EntityType="UcasProModel.Store.Contracts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employees" EntityType="UcasProModel.Store.Employees" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupsTbs" EntityType="UcasProModel.Store.GroupsTbs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PeremissionsTbs" EntityType="UcasProModel.Store.PeremissionsTbs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProjectActivities" EntityType="UcasProModel.Store.ProjectActivities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProjectControls" EntityType="UcasProModel.Store.ProjectControls" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProjectExpenses" EntityType="UcasProModel.Store.ProjectExpenses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProjectProfiles" EntityType="UcasProModel.Store.ProjectProfiles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProjectSubActivities" EntityType="UcasProModel.Store.ProjectSubActivities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Salaries" EntityType="UcasProModel.Store.Salaries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Suppliers" EntityType="UcasProModel.Store.Suppliers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="UcasProModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TheFinancerProjects" EntityType="UcasProModel.Store.TheFinancerProjects" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Thefinanciers" EntityType="UcasProModel.Store.Thefinanciers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UsersTbs" EntityType="UcasProModel.Store.UsersTbs" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_AmountsReceived_TheFinancerProjects" Association="UcasProModel.Store.FK_AmountsReceived_TheFinancerProjects">
+      <End Role="TheFinancerProjects" EntitySet="TheFinancerProjects" />
+      <End Role="AmountsReceived" EntitySet="AmountsReceiveds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Attachments_ProjectProfiles" Association="UcasProModel.Store.FK_Attachments_ProjectProfiles">
+      <End Role="ProjectProfiles" EntitySet="ProjectProfiles" />
+      <End Role="Attachments" EntitySet="Attachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contracts_Employees" Association="UcasProModel.Store.FK_Contracts_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Contracts" EntitySet="Contracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contracts_ProjectProfiles" Association="UcasProModel.Store.FK_Contracts_ProjectProfiles">
+      <End Role="ProjectProfiles" EntitySet="ProjectProfiles" />
+      <End Role="Contracts" EntitySet="Contracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Salaries_Contracts" Association="UcasProModel.Store.FK_Salaries_Contracts">
+      <End Role="Contracts" EntitySet="Contracts" />
+      <End Role="Salaries" EntitySet="Salaries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsersTb_Employees" Association="UcasProModel.Store.FK_UsersTb_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="UsersTb" EntitySet="UsersTbs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PeremissionsTb_GroupsTb" Association="UcasProModel.Store.FK_PeremissionsTb_GroupsTb">
+      <End Role="GroupsTb" EntitySet="GroupsTbs" />
+      <End Role="PeremissionsTb" EntitySet="PeremissionsTbs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsersTb_GroupsTb" Association="UcasProModel.Store.FK_UsersTb_GroupsTb">
+      <End Role="GroupsTb" EntitySet="GroupsTbs" />
+      <End Role="UsersTb" EntitySet="UsersTbs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectSubActivities_ProjectActivities" Association="UcasProModel.Store.FK_ProjectSubActivities_ProjectActivities">
+      <End Role="ProjectActivities" EntitySet="ProjectActivities" />
+      <End Role="ProjectSubActivities" EntitySet="ProjectSubActivities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectControl_ProjectProfiles" Association="UcasProModel.Store.FK_ProjectControl_ProjectProfiles">
+      <End Role="ProjectProfiles" EntitySet="ProjectProfiles" />
+      <End Role="ProjectControl" EntitySet="ProjectControls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectControl_UsersTb" Association="UcasProModel.Store.FK_ProjectControl_UsersTb">
+      <End Role="UsersTb" EntitySet="UsersTbs" />
+      <End Role="ProjectControl" EntitySet="ProjectControls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectExpenses_ProjectSubActivities" Association="UcasProModel.Store.FK_ProjectExpenses_ProjectSubActivities">
+      <End Role="ProjectSubActivities" EntitySet="ProjectSubActivities" />
+      <End Role="ProjectExpenses" EntitySet="ProjectExpenses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectExpenses_Suppliers" Association="UcasProModel.Store.FK_ProjectExpenses_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="ProjectExpenses" EntitySet="ProjectExpenses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TheFinancerProject_ProjectProfiles" Association="UcasProModel.Store.FK_TheFinancerProject_ProjectProfiles">
+      <End Role="ProjectProfiles" EntitySet="ProjectProfiles" />
+      <End Role="TheFinancerProjects" EntitySet="TheFinancerProjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TheFinancerProject_Thefinanciers" Association="UcasProModel.Store.FK_TheFinancerProject_Thefinanciers">
+      <End Role="Thefinanciers" EntitySet="Thefinanciers" />
+      <End Role="TheFinancerProjects" EntitySet="TheFinancerProjects" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AmountsReceiveds">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TheFinancerProjectsID" Type="int" Nullable="true" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="Cost" Type="float" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Attachments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AttachmentName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CreateDate" Type="datetime" Nullable="true" />
+    <Property Name="fileContent" Type="varbinary(max)" Nullable="true" />
+    <Property Name="ProjectProfile_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contracts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Employee_ID" Type="int" Nullable="false" />
+    <Property Name="StartDate" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="EndDate" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="SelaryAmount" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="Status" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="ProjectProfile_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EmployeejobNumber" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EmployeeGender" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EmployeeNationalNumber" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Mobilenumber" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="GroupsTbs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="PeremissionsTbs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupID" Type="int" Nullable="true" />
+    <Property Name="AddUser" Type="int" Nullable="true" />
+    <Property Name="UpDateUser" Type="int" Nullable="true" />
+    <Property Name="DeleteUser" Type="int" Nullable="true" />
+    <Property Name="AddProject" Type="int" Nullable="true" />
+    <Property Name="DisplayExpenses" Type="int" Nullable="true" />
+    <Property Name="CanPrint" Type="int" Nullable="true" />
+    <Property Name="AddEmployee" Type="int" Nullable="true" />
+    <Property Name="AddSuppliers" Type="int" Nullable="true" />
+    <Property Name="AddFinncers" Type="int" Nullable="true" />
+    <Property Name="EditEmployee" Type="int" Nullable="true" />
+    <Property Name="DeleteEmployee" Type="int" Nullable="true" />
+    <Property Name="EditFinncers" Type="int" Nullable="true" />
+    <Property Name="DeleteFinncers" Type="int" Nullable="true" />
+    <Property Name="EditSuppliers" Type="int" Nullable="true" />
+    <Property Name="DeleteSuppliers" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ProjectActivities">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ActivityName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="StartDate" Type="datetime" Nullable="true" />
+    <Property Name="EndDate" Type="datetime" Nullable="true" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Progress" Type="int" Nullable="true" />
+    <Property Name="TotalCost" Type="float" Nullable="true" />
+    <Property Name="ProjectProfile_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectControls">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="true" />
+    <Property Name="ProjectID" Type="int" Nullable="true" />
+    <Property Name="Status" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ProjectExpenses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpensesName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DateofProcess" Type="datetime" Nullable="true" />
+    <Property Name="BillNumber" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="RequiarAmount" Type="float" Nullable="true" />
+    <Property Name="CashingNumber" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ProjectSubActivity_ID" Type="int" Nullable="true" />
+    <Property Name="Supplier_ID" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ProjectProfiles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ProjectDescription" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="StartDate" Type="datetime" Nullable="true" />
+    <Property Name="EndDate" Type="datetime" Nullable="true" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="progress" Type="int" Nullable="true" />
+    <Property Name="TotalCost" Type="float" Nullable="true" />
+    <Property Name="Coin" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ProjectSubActivities">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubActivityName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Startdate" Type="datetime" Nullable="true" />
+    <Property Name="enddate" Type="datetime" Nullable="true" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Progress" Type="int" Nullable="true" />
+    <Property Name="TotalCost" Type="float" Nullable="true" />
+    <Property Name="ProjectActivity_ID" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Salaries">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContractID" Type="int" Nullable="true" />
+    <Property Name="Salary1" Type="float" Nullable="true" />
+    <Property Name="Dateofexchange" Type="datetime" Nullable="true" />
+    <Property Name="Formonth" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Suppliers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SuppliersNatural" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Fax" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Adderss" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" Nullable="true" />
+    <Property Name="definition" Type="varbinary(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="TheFinancerProjects">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectID" Type="int" Nullable="false" />
+    <Property Name="FinacerID" Type="int" Nullable="false" />
+    <Property Name="TotalCost" Type="float" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Thefinanciers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="agentName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Fax" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Adderss" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="UsersTbs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="GroupID" Type="int" Nullable="true" />
+    <Property Name="EmployeeID" Type="int" Nullable="true" />
+  </EntityType>
+  <Association Name="FK_AmountsReceived_TheFinancerProjects">
+    <End Role="TheFinancerProjects" Type="UcasProModel.Store.TheFinancerProjects" Multiplicity="0..1" />
+    <End Role="AmountsReceived" Type="UcasProModel.Store.AmountsReceiveds" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TheFinancerProjects">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AmountsReceived">
+        <PropertyRef Name="TheFinancerProjectsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Attachments_ProjectProfiles">
+    <End Role="ProjectProfiles" Type="UcasProModel.Store.ProjectProfiles" Multiplicity="1" />
+    <End Role="Attachments" Type="UcasProModel.Store.Attachments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectProfiles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Attachments">
+        <PropertyRef Name="ProjectProfile_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contracts_Employees">
+    <End Role="Employees" Type="UcasProModel.Store.Employees" Multiplicity="1" />
+    <End Role="Contracts" Type="UcasProModel.Store.Contracts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Contracts">
+        <PropertyRef Name="Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contracts_ProjectProfiles">
+    <End Role="ProjectProfiles" Type="UcasProModel.Store.ProjectProfiles" Multiplicity="1" />
+    <End Role="Contracts" Type="UcasProModel.Store.Contracts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectProfiles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Contracts">
+        <PropertyRef Name="ProjectProfile_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Salaries_Contracts">
+    <End Role="Contracts" Type="UcasProModel.Store.Contracts" Multiplicity="0..1" />
+    <End Role="Salaries" Type="UcasProModel.Store.Salaries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contracts">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Salaries">
+        <PropertyRef Name="ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsersTb_Employees">
+    <End Role="Employees" Type="UcasProModel.Store.Employees" Multiplicity="0..1" />
+    <End Role="UsersTb" Type="UcasProModel.Store.UsersTbs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UsersTb">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PeremissionsTb_GroupsTb">
+    <End Role="GroupsTb" Type="UcasProModel.Store.GroupsTbs" Multiplicity="0..1" />
+    <End Role="PeremissionsTb" Type="UcasProModel.Store.PeremissionsTbs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupsTb">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PeremissionsTb">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsersTb_GroupsTb">
+    <End Role="GroupsTb" Type="UcasProModel.Store.GroupsTbs" Multiplicity="0..1" />
+    <End Role="UsersTb" Type="UcasProModel.Store.UsersTbs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupsTb">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UsersTb">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectSubActivities_ProjectActivities">
+    <End Role="ProjectActivities" Type="UcasProModel.Store.ProjectActivities" Multiplicity="0..1" />
+    <End Role="ProjectSubActivities" Type="UcasProModel.Store.ProjectSubActivities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectActivities">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectSubActivities">
+        <PropertyRef Name="ProjectActivity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectControl_ProjectProfiles">
+    <End Role="ProjectProfiles" Type="UcasProModel.Store.ProjectProfiles" Multiplicity="0..1" />
+    <End Role="ProjectControl" Type="UcasProModel.Store.ProjectControls" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectProfiles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectControl">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectControl_UsersTb">
+    <End Role="UsersTb" Type="UcasProModel.Store.UsersTbs" Multiplicity="0..1" />
+    <End Role="ProjectControl" Type="UcasProModel.Store.ProjectControls" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersTb">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectControl">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectExpenses_ProjectSubActivities">
+    <End Role="ProjectSubActivities" Type="UcasProModel.Store.ProjectSubActivities" Multiplicity="0..1" />
+    <End Role="ProjectExpenses" Type="UcasProModel.Store.ProjectExpenses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectSubActivities">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectExpenses">
+        <PropertyRef Name="ProjectSubActivity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectExpenses_Suppliers">
+    <End Role="Suppliers" Type="UcasProModel.Store.Suppliers" Multiplicity="0..1" />
+    <End Role="ProjectExpenses" Type="UcasProModel.Store.ProjectExpenses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectExpenses">
+        <PropertyRef Name="Supplier_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TheFinancerProject_ProjectProfiles">
+    <End Role="ProjectProfiles" Type="UcasProModel.Store.ProjectProfiles" Multiplicity="1" />
+    <End Role="TheFinancerProjects" Type="UcasProModel.Store.TheFinancerProjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectProfiles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TheFinancerProjects">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TheFinancerProject_Thefinanciers">
+    <End Role="Thefinanciers" Type="UcasProModel.Store.Thefinanciers" Multiplicity="1" />
+    <End Role="TheFinancerProjects" Type="UcasProModel.Store.TheFinancerProjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Thefinanciers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TheFinancerProjects">
+        <PropertyRef Name="FinacerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
