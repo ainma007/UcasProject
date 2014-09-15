@@ -54,13 +54,22 @@
     <Compile Include="Attachment.cs">
       <DependentUpon>UcasPro.tt</DependentUpon>
     </Compile>
+    <Compile Include="CommandClass\ActivityCmd.cs" />
+    <Compile Include="CommandClass\AmountsReceivedsCmd.cs" />
+    <Compile Include="CommandClass\AttachmentsClass.cs" />
+    <Compile Include="CommandClass\ContractCmd.cs" />
+    <Compile Include="CommandClass\EmployeeCmd.cs" />
     <Compile Include="CommandClass\FinanciersCmd.cs" />
     <Compile Include="CommandClass\FinanciersProjectCmd.cs" />
     <Compile Include="CommandClass\GroupCmd.cs" />
     <Compile Include="CommandClass\PeremissionsCmd.cs" />
     <Compile Include="CommandClass\PeremissionsHolderClass.cs" />
     <Compile Include="CommandClass\ProjectControlCmd.cs" />
+    <Compile Include="CommandClass\ProjectExpensesCmd.cs" />
     <Compile Include="CommandClass\ProjectProfileCmd.cs" />
+    <Compile Include="CommandClass\SalariesCmd.cs" />
+    <Compile Include="CommandClass\SubActivityCmd.cs" />
+    <Compile Include="CommandClass\SuppliersCmd.cs" />
     <Compile Include="CommandClass\UsersCmd.cs" />
     <Compile Include="Contract.cs">
       <DependentUpon>UcasPro.tt</DependentUpon>

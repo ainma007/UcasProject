@@ -5,16 +5,17 @@ using System.Text;
 using System.Data.Entity;
 namespace Ucas.Data.CommandClass
 {
+    // Starting  { 15/09/2014 }
    public  class GroupCmd
     {
-        UcasProEntities db = new UcasProEntities();
+       static UcasProEntities db = new UcasProEntities();
 
-        public bool AddGroup(GroupsTb gtb)
+       public static bool AddGroup(GroupsTb gtb)
         { db = new UcasProEntities(); db.GroupsTbs.Add(gtb); db.SaveChanges(); return true; }
         public List<GroupsTb> GetAllGroups() { db = new UcasProEntities(); return db.GroupsTbs.ToList(); }
 
 
-        public bool DeleteGroup(int xid)
+        public static bool DeleteGroup(int xid)
         {
             try
             {
@@ -36,24 +37,23 @@ namespace Ucas.Data.CommandClass
             }
         }
 
-        public bool EditGroup(int xid, string gname, string descrip)
+        public static bool EditGroup(GroupsTb g)
         {
             try
             {
                 db = new UcasProEntities();
-                GroupsTb gtb = new GroupsTb();
-                gtb = db.GroupsTbs.Where(g => g.ID == xid).Single();
-                if (xid != 0)
-                {
-                    gtb.GroupName = gname;
-                    gtb.Description = descrip;
-                    db.SaveChanges();
-                    return true;
-                }
-                return false;
+                db.Configuration.LazyLoadingEnabled = false;
+                db.Configuration.ProxyCreationEnabled = false;
+                var q = db.GroupsTbs.Where(p => p.ID == g.ID).SingleOrDefault();
+                q.GroupName = g.GroupName;
+                q.Description = g.Description;
+                db.SaveChanges();
+                return true;
+
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+
 
                 return false;
             }

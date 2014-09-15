@@ -18,9 +18,18 @@ namespace UcasProWindowsForm
             InitializeComponent();
         }
         GroupCmd CMD = new GroupCmd();
+        
         private void Form1_Load(object sender, EventArgs e)
         {
-            groupsTbBindingSource.DataSource = CMD.GetAllGroups();
+          
+           }
+
+        private void aa()
+        {
+            
+          
+           
         }
     }
+    
 }

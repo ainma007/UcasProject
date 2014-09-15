@@ -7,10 +7,10 @@ namespace Ucas.Data.CommandClass
 {
      public  class FinanciersProjectCmd
     {
-         UcasProEntities db = new UcasProEntities();
+      static   UcasProEntities db = new UcasProEntities();
 
          #region " { Get Current Project's Financiers Only } "
-         public List<TheFinancerProject> GetAllFinanciersProject(int ProjId)
+      public static List<TheFinancerProject> GetAllFinanciersProject(int ProjId)
          {
              try
              {
@@ -32,7 +32,7 @@ namespace Ucas.Data.CommandClass
          }
     # endregion
 
-         public bool AddTheFinanciersProject(TheFinancerProject tb)
+      public static bool AddTheFinanciersProject(TheFinancerProject tb)
          {
              db = new UcasProEntities();
              db.TheFinancerProjects.Add(tb);
@@ -40,7 +40,7 @@ namespace Ucas.Data.CommandClass
              return true;
          }
 
-         public bool EditFinanciersProject(int xid, int pid, int fid, double cost)
+      public static bool EditFinanciersProject(int xid, int pid, int fid, double cost)
          {
              try
              {
@@ -62,7 +62,7 @@ namespace Ucas.Data.CommandClass
              }
          }
 
-         public bool DeleteFinanciersProject(int xid)
+      public static bool DeleteFinanciersProject(int xid)
          {
              try
              {

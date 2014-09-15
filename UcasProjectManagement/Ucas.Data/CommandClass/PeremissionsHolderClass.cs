@@ -5,34 +5,35 @@ using System.Text;
 
 namespace Ucas.Data.CommandClass
 {
-    public static   class PeremissionsHolderClass
+    public    class PeremissionsHolderClass
     {
-          public int GroupID;
-          public int AddUser ;
-          public int UpDateUser ;
-          public int DeleteUser;
+        public static int _GroupID;
 
-          public int AddProject ;
-          public int DisplayExpenses; 
-          public int CanPrint;
+      public static int xAddUser;
+      public static int xUpDateUser;
+      public static int xDeleteUser;
 
-          public int AddEmployee ;
-          public int DeleteEmployee ;
-          public int EditEmployee ;
+      public static int xAddProject;
+      public static int xDisplayExpenses;
+      public static int xCanPrint;
+
+      public static int xAddEmployee;
+      public static int xDeleteEmployee;
+      public static int xEditEmployee;
 
 
-          public int AddSuppliers ;
-          public int EditSuppliers ;
-          public int DeleteSuppliers;
+      public static int xAddSuppliers;
+      public static int xEditSuppliers;
+      public static int xDeleteSuppliers;
 
-          public int AddFinncers ;
-          public int EditFinncers ;
-          public int DeleteFinncers ;
+      public static int xAddFinncers;
+      public static int xEditFinncers;
+      public static int xDeleteFinncers;
 
-         // --- {Current User's  Data }
-          public int CurrentUserID;
-          public string CurrentUserName;
-          public string CurrentUserPass;
+    //   --- {Current User's  Data }
+      public static int xCurrentUserID;
+      public static string xCurrentUserName;
+         public static  string xCurrentUserPass ;
 
     }
 }

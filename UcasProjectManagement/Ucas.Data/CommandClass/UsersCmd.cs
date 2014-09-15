@@ -8,13 +8,13 @@ namespace Ucas.Data.CommandClass
 {
    public  class UsersCmd
     {
-       UcasProEntities db = new UcasProEntities();
-       public List<UsersTb> GetAllUsers()
+      static UcasProEntities db = new UcasProEntities();
+       public static List<UsersTb> GetAllUsers()
        {
            db = new UcasProEntities();
            return db.UsersTbs.ToList();
        }
-       public bool AddUser(UsersTb tb)
+       public static bool AddUser(UsersTb tb)
        {
            db = new UcasProEntities();
            db.UsersTbs.Add(tb);
@@ -22,23 +22,20 @@ namespace Ucas.Data.CommandClass
            return true;
        }
 
-       public bool EditUser(int xid,string nam ,string pass,int gid)
+       public static bool EditUser(UsersTb tb)
        {
            try
            {
                db = new UcasProEntities();
-               UsersTb tb = new UsersTb();
-               tb = db.UsersTbs.Where(u => u.ID == xid).Single();
-               if (tb.ID != 0)
-               {
-                   tb.UserName = nam;
-                   tb.Password = pass;
-                   tb.GroupID = gid;
-                   db.SaveChanges();
-                   return true;
+               var q = db.UsersTbs.Where(p => p.ID == tb.ID).SingleOrDefault();
+               q.UserName = tb.UserName;
+               q.Password = tb.Password;
+               q.GroupID = tb.GroupID;
+               db.SaveChanges();
+               return true;
                }
-               return false;
-           }
+              
+         
            catch (Exception)
            {
 
@@ -46,7 +43,7 @@ namespace Ucas.Data.CommandClass
            }
        }
 
-       public bool DeleteUser(int xid)
+       public static bool DeleteUser(int xid)
        {
            try
            {

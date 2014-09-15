@@ -7,13 +7,14 @@ namespace Ucas.Data.CommandClass
 {
     public class ProjectControlCmd
     {
-           UcasProEntities   db = new UcasProEntities();
-           public List<ProjectControl> GetAllProControls() {
+        static UcasProEntities db = new UcasProEntities();
+        public static List<ProjectControl> GetAllProControls()
+        {
                db = new UcasProEntities();
                return db.ProjectControls.ToList();
            
            }
-           public bool AddNewProControl(ProjectControl tb)
+        public static bool AddNewProControl(ProjectControl tb)
            {
                db = new UcasProEntities();
                db.ProjectControls.Add(tb);
@@ -21,20 +22,22 @@ namespace Ucas.Data.CommandClass
                return true;
            }
 
-           public bool EditProControl(int xid, int uid, int pid, string stats)
+        public static bool EditProControl(ProjectControl tb)
            {
                try
                {
-                   ProjectControl tb = new ProjectControl();
-                   db = new UcasProEntities();
-                   tb = db.ProjectControls.Where(pr => pr.ID == xid).Single();
-                   if (tb.ID  != 0)
-                   {
-                       tb.UserID = uid; tb.ProjectID = pid; tb.Status = stats;
-                       db.SaveChanges();
-                       return true;
-                   }
-                   return false;
+                   
+               db = new UcasProEntities();
+               db.Configuration.LazyLoadingEnabled = false;
+               db.Configuration.ProxyCreationEnabled = false;
+               var q = db.ProjectControls.Where(p => p.ID == tb.ID).SingleOrDefault();
+               q.UserID = tb.UserID;
+               q.ProjectID = tb.ProjectID;
+               q.Status = tb.Status;
+               db.SaveChanges();
+               return true;
+                      
+                                  
                }
                catch (Exception)
                {
@@ -43,13 +46,13 @@ namespace Ucas.Data.CommandClass
                }
            }
 
-           public bool EditProControl(int xid)
+        public static bool EditProControl(int xid)
            {
                try
                {
                    ProjectControl tb = new ProjectControl();
                    db = new UcasProEntities();
-                   tb = db.ProjectControls.Where(pr => pr.ID == xid).Single();
+                   tb = db.ProjectControls.Where(pr => pr.ID == xid).SingleOrDefault();
                    if (tb.ID != 0)
                    {
                        db.ProjectControls.Remove(tb);

@@ -7,9 +7,9 @@ namespace Ucas.Data.CommandClass
 {
     public  class ProjectProfileCmd
     {
-        UcasProEntities db = new UcasProEntities();
+      static  UcasProEntities db = new UcasProEntities();
 
-        public List<ProjectProfile> GetAllProjects()
+      public static List<ProjectProfile> GetAllProjects()
         {
             db = new UcasProEntities();
             var lst = (from p in db.ProjectProfiles
@@ -17,7 +17,7 @@ namespace Ucas.Data.CommandClass
                        select p).ToList();
             return lst;
         }
-        public bool AddNewProject(ProjectProfile tb)
+      public static bool AddNewProject(ProjectProfile tb)
         {
             db = new UcasProEntities();
             db.ProjectProfiles.Add(tb);
@@ -25,39 +25,35 @@ namespace Ucas.Data.CommandClass
             return true;
         }
 
-        public bool EditProjectProfile(int xid,string nam , string descp,
-            DateTime SDate,DateTime EDate,
-            string STUS , int prg, double cost ,string con)
+      public static bool EditProjectProfile(ProjectProfile ptb)
+         
         {
             try
             {
-             db = new UcasProEntities();
-             ProjectProfile tb = new ProjectProfile();
-             tb = db.ProjectProfiles.Where(prj => prj.ID == xid).Single();
-             if (tb.ID != 0)
-             {
-                 tb.ProjectName = nam;
-                 tb.ProjectDescription = descp;
-                 tb.StartDate = SDate;
-                 tb.EndDate = EDate;
-                 tb.Status = STUS;
-                 tb.progress = prg;
-                 tb.TotalCost = cost;
-                 tb.Coin = con;
-                 db.SaveChanges();
-                 return true;
-             }
-             return false;
+                db = new UcasProEntities();
+                db.Configuration.LazyLoadingEnabled = false;
+                db.Configuration.ProxyCreationEnabled = false;
+                var q = db.ProjectProfiles.Where(p => p.ID == ptb.ID).SingleOrDefault();
+                q.ProjectName = ptb.ProjectName;
+                q.ProjectDescription = ptb.ProjectDescription;
+                q.StartDate = ptb.StartDate;
+                q.EndDate = ptb.EndDate;
+                q.Status = ptb.Status;
+                q.progress = ptb.progress;
+                db.SaveChanges();
+                return true;
+
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+
 
                 return false;
             }
         }
 
 
-        public bool DeleteProjectProfile(int xid)
+      public static bool DeleteProjectProfile(int xid)
         {
             try
             {

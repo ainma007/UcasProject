@@ -9,52 +9,52 @@ namespace Ucas.Data.CommandClass
    public  class FinanciersCmd
     {
 
-       UcasProEntities db = new UcasProEntities();
+    static   UcasProEntities db = new UcasProEntities();
 
-       public List<Thefinancier> GetAllFinanciers()
+    public static List<Thefinancier> GetAllFinanciers()
        {
            db = new UcasProEntities();
            var Lst = (from f in db.Thefinanciers orderby f.Name ascending select f).ToList();
            return Lst;
        }
-       public bool AddFinancier(Thefinancier tb)
+    public static bool AddFinancier(Thefinancier finc)
        {
            db = new UcasProEntities();
-           db.Thefinanciers.Add(tb);
+           db.Thefinanciers.Add(finc);
            db.SaveChanges();
            return true;
        }
 
 
-       public bool EditFinancier(int xid, string nam, string agntnam, string phn, string fx, string eml, string adrs)
-       {
-           try
-           {
+    public static bool Editfinancier(Thefinancier finc)
+    {
+        try
+        {
             db = new UcasProEntities();
-            Thefinancier tb = new Thefinancier();
-            tb = db.Thefinanciers.Where(f => f.ID == xid).Single();
+            db.Configuration.LazyLoadingEnabled = false;
+            db.Configuration.ProxyCreationEnabled = false;
+            var q = db.Thefinanciers.Where(p => p.ID == finc.ID).SingleOrDefault();
+            q.Name = finc.Name;
+            q.agentName = finc.agentName;
+            q.PhoneNumber = finc.PhoneNumber;
+            q.Fax = finc.Fax;
+            q.Email = finc.Email;
+            q.Adderss = finc.Adderss;
 
-            if (tb.ID != 0)
-            {
-                tb.Name = nam;
-                tb.agentName = agntnam;
-                tb.PhoneNumber = phn;
-                tb.Fax = fx;
-                tb.Email = eml;
-                tb.Adderss = adrs;
-                db.SaveChanges();
-                return true;
-            }
+
+            db.SaveChanges();
+            return true;
+
+        }
+        catch (Exception ex)
+        {
+
+
             return false;
-           }
-           catch (Exception)
-           {
+        }
+    }
 
-               return false;
-           }
-       }
-
-       public bool DeleteFinancier(int xid)
+    public static bool DeleteFinancier(int xid)
        {
            try
            {
