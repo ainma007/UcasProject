@@ -54,7 +54,14 @@
     <Compile Include="Attachment.cs">
       <DependentUpon>UcasPro.tt</DependentUpon>
     </Compile>
+    <Compile Include="CommandClass\FinanciersCmd.cs" />
+    <Compile Include="CommandClass\FinanciersProjectCmd.cs" />
     <Compile Include="CommandClass\GroupCmd.cs" />
+    <Compile Include="CommandClass\PeremissionsCmd.cs" />
+    <Compile Include="CommandClass\PeremissionsHolderClass.cs" />
+    <Compile Include="CommandClass\ProjectControlCmd.cs" />
+    <Compile Include="CommandClass\ProjectProfileCmd.cs" />
+    <Compile Include="CommandClass\UsersCmd.cs" />
     <Compile Include="Contract.cs">
       <DependentUpon>UcasPro.tt</DependentUpon>
     </Compile>
@@ -117,9 +124,7 @@
       <DependentUpon>UcasPro.tt</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ServicesClass\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>

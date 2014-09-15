@@ -7,14 +7,59 @@ namespace Ucas.Data.CommandClass
 {
    public  class GroupCmd
     {
-       UcasProEntities Db = new UcasProEntities();
+        UcasProEntities db = new UcasProEntities();
 
-       public List<GroupsTb> GetAllGroups() {
-           Db = new UcasProEntities();
-           Db.Configuration.LazyLoadingEnabled = false;
-           Db.Configuration.ProxyCreationEnabled = false;
-           return Db.GroupsTbs.ToList(); 
-       
-       }
+        public bool AddGroup(GroupsTb gtb)
+        { db = new UcasProEntities(); db.GroupsTbs.Add(gtb); db.SaveChanges(); return true; }
+        public List<GroupsTb> GetAllGroups() { db = new UcasProEntities(); return db.GroupsTbs.ToList(); }
+
+
+        public bool DeleteGroup(int xid)
+        {
+            try
+            {
+                db = new UcasProEntities();
+                GroupsTb gtb = new GroupsTb();
+                gtb = db.GroupsTbs.Where(g => g.ID == xid).Single();
+                if (gtb.ID != 0)
+                {
+                    db.GroupsTbs.Remove(gtb);
+                    db.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
+        public bool EditGroup(int xid, string gname, string descrip)
+        {
+            try
+            {
+                db = new UcasProEntities();
+                GroupsTb gtb = new GroupsTb();
+                gtb = db.GroupsTbs.Where(g => g.ID == xid).Single();
+                if (xid != 0)
+                {
+                    gtb.GroupName = gname;
+                    gtb.Description = descrip;
+                    db.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+
+
+        }
     }
 }
