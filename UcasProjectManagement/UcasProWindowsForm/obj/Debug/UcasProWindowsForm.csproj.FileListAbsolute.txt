@@ -13,3 +13,19 @@ C:\Users\Heroo\Documents\Visual Studio 2013\Projects\UcasProjectManagement\UcasP
 C:\Users\Heroo\Documents\Visual Studio 2013\Projects\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.csproj.GenerateResource.Cache
 C:\Users\Heroo\Documents\Visual Studio 2013\Projects\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.exe
 C:\Users\Heroo\Documents\Visual Studio 2013\Projects\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.pdb
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\UcasProWindowsForm.exe.config
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.exe
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.pdb
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\UcasProWindowsForm.exe
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\UcasProWindowsForm.pdb
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\EntityFramework.dll
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\Ucas.Data.dll
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\Ucas.Data.pdb
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\EntityFramework.xml
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.csprojResolveAssemblyReference.cache
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Form1.resources
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ProjectProfileForm.FrmAddProject.resources
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Properties.Resources.resources
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.csproj.GenerateResource.Cache
