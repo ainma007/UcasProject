@@ -51,8 +51,10 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.WinControls, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.RichTextBox, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.Themes.Office2013Light, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.UI, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="TelerikCommon, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
   </ItemGroup>
@@ -63,18 +65,99 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ActivitiesForm\FrmAddActivities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ActivitiesForm\FrmAddActivities.Designer.cs">
+      <DependentUpon>FrmAddActivities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ActivitiesForm\FrmAddSubActivities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ActivitiesForm\FrmAddSubActivities.Designer.cs">
+      <DependentUpon>FrmAddSubActivities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm\FrmAddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm\FrmAddEmployee.Designer.cs">
+      <DependentUpon>FrmAddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm\FrmContractsAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm\FrmContractsAdd.Designer.cs">
+      <DependentUpon>FrmContractsAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExpensesForm\FrmAddExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExpensesForm\FrmAddExpenses.Designer.cs">
+      <DependentUpon>FrmAddExpenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExpensesForm\FrmAddSalaries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExpensesForm\FrmAddSalaries.Designer.cs">
+      <DependentUpon>FrmAddSalaries.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProjectProfileForm\FrmAddProject.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ProjectProfileForm\FrmAddProject.Designer.cs">
       <DependentUpon>FrmAddProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ProjectProfileForm\FrmTheFinancerProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProjectProfileForm\FrmTheFinancerProjects.Designer.cs">
+      <DependentUpon>FrmTheFinancerProjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\supplierForm\FrmAddsupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\supplierForm\FrmAddsupplier.Designer.cs">
+      <DependentUpon>FrmAddsupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\supplierForm\FrmAddThefinanciers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\supplierForm\FrmAddThefinanciers.Designer.cs">
+      <DependentUpon>FrmAddThefinanciers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActivitiesForm\FrmAddActivities.resx">
+      <DependentUpon>FrmAddActivities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActivitiesForm\FrmAddSubActivities.resx">
+      <DependentUpon>FrmAddSubActivities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForm\FrmAddEmployee.resx">
+      <DependentUpon>FrmAddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForm\FrmContractsAdd.resx">
+      <DependentUpon>FrmContractsAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExpensesForm\FrmAddExpenses.resx">
+      <DependentUpon>FrmAddExpenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExpensesForm\FrmAddSalaries.resx">
+      <DependentUpon>FrmAddSalaries.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProjectProfileForm\FrmAddProject.resx">
       <DependentUpon>FrmAddProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectProfileForm\FrmTheFinancerProjects.resx">
+      <DependentUpon>FrmTheFinancerProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\supplierForm\FrmAddsupplier.resx">
+      <DependentUpon>FrmAddsupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\supplierForm\FrmAddThefinanciers.resx">
+      <DependentUpon>FrmAddThefinanciers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -118,11 +201,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\ActivitiesForm\" />
-    <Folder Include="Forms\EmployeeForm\" />
-    <Folder Include="Forms\ExpensesForm\" />
     <Folder Include="Forms\MainForm\" />
-    <Folder Include="Forms\supplierForm\" />
     <Folder Include="Forms\UserSystemForm\" />
     <Folder Include="Report\" />
   </ItemGroup>
