@@ -101,6 +101,12 @@
     <Compile Include="Forms\ExpensesForm\FrmAddSalaries.Designer.cs">
       <DependentUpon>FrmAddSalaries.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ProjectProfileForm\FrmAddAmountsReceiveds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProjectProfileForm\FrmAddAmountsReceiveds.Designer.cs">
+      <DependentUpon>FrmAddAmountsReceiveds.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProjectProfileForm\FrmAddProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,30 @@
     <Compile Include="Forms\supplierForm\FrmAddThefinanciers.Designer.cs">
       <DependentUpon>FrmAddThefinanciers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\supplierForm\FrmManagementFinanciers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\supplierForm\FrmManagementFinanciers.Designer.cs">
+      <DependentUpon>FrmManagementFinanciers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\supplierForm\FrmManagementSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\supplierForm\FrmManagementSupplier.Designer.cs">
+      <DependentUpon>FrmManagementSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserSystemForm\FrmAddGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserSystemForm\FrmAddGroup.Designer.cs">
+      <DependentUpon>FrmAddGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserSystemForm\frmAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserSystemForm\frmAddUser.Designer.cs">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -147,6 +177,9 @@
     <EmbeddedResource Include="Forms\ExpensesForm\FrmAddSalaries.resx">
       <DependentUpon>FrmAddSalaries.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectProfileForm\FrmAddAmountsReceiveds.resx">
+      <DependentUpon>FrmAddAmountsReceiveds.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProjectProfileForm\FrmAddProject.resx">
       <DependentUpon>FrmAddProject.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +191,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\supplierForm\FrmAddThefinanciers.resx">
       <DependentUpon>FrmAddThefinanciers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\supplierForm\FrmManagementFinanciers.resx">
+      <DependentUpon>FrmManagementFinanciers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\supplierForm\FrmManagementSupplier.resx">
+      <DependentUpon>FrmManagementSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserSystemForm\FrmAddGroup.resx">
+      <DependentUpon>FrmAddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserSystemForm\frmAddUser.resx">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -202,7 +247,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\MainForm\" />
-    <Folder Include="Forms\UserSystemForm\" />
     <Folder Include="Report\" />
   </ItemGroup>
   <ItemGroup>

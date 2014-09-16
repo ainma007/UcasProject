@@ -92,6 +92,7 @@
             this.radGroupBox1.Size = new System.Drawing.Size(355, 351);
             this.radGroupBox1.TabIndex = 2;
             this.radGroupBox1.Text = "اضافة نشاط فرعي";
+            this.radGroupBox1.ThemeName = "Office2013Light";
             // 
             // radLabel7
             // 

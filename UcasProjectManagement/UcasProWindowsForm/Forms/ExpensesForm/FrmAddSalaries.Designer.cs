@@ -41,15 +41,15 @@
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.ExpensesNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
+            this.radMultiColumnComboBox2 = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.radDateTimePicker1 = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.EndDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
             this.EmployeejobNumberTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
-            this.EndDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.radDateTimePicker1 = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.radMultiColumnComboBox2 = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).BeginInit();
@@ -65,17 +65,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.ExpensesNameTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox2.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox2.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EndDateTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeejobNumberTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EndDateTimePicker)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox2.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox2.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -228,6 +228,77 @@
             this.radGroupBox1.Size = new System.Drawing.Size(362, 250);
             this.radGroupBox1.TabIndex = 3;
             this.radGroupBox1.Text = "اضافة راتب";
+            this.radGroupBox1.ThemeName = "Office2013Light";
+            // 
+            // radLabel4
+            // 
+            this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radLabel4.Location = new System.Drawing.Point(255, 141);
+            this.radLabel4.Name = "radLabel4";
+            this.radLabel4.Size = new System.Drawing.Size(74, 19);
+            this.radLabel4.TabIndex = 13;
+            this.radLabel4.Text = "تاريخ الاصدار:";
+            this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            this.radLabel4.ThemeName = "Office2013Light";
+            // 
+            // radMultiColumnComboBox2
+            // 
+            // 
+            // radMultiColumnComboBox2.NestedRadGridView
+            // 
+            this.radMultiColumnComboBox2.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.radMultiColumnComboBox2.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.radMultiColumnComboBox2.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.radMultiColumnComboBox2.EditorControl.Location = new System.Drawing.Point(0, 0);
+            // 
+            // 
+            // 
+            this.radMultiColumnComboBox2.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.radMultiColumnComboBox2.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.radMultiColumnComboBox2.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.radMultiColumnComboBox2.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.radMultiColumnComboBox2.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.radMultiColumnComboBox2.EditorControl.Name = "NestedRadGridView";
+            this.radMultiColumnComboBox2.EditorControl.ReadOnly = true;
+            this.radMultiColumnComboBox2.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.radMultiColumnComboBox2.EditorControl.ShowGroupPanel = false;
+            this.radMultiColumnComboBox2.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.radMultiColumnComboBox2.EditorControl.TabIndex = 0;
+            this.radMultiColumnComboBox2.Location = new System.Drawing.Point(56, 48);
+            this.radMultiColumnComboBox2.Name = "radMultiColumnComboBox2";
+            this.radMultiColumnComboBox2.Size = new System.Drawing.Size(193, 20);
+            this.radMultiColumnComboBox2.TabIndex = 15;
+            this.radMultiColumnComboBox2.TabStop = false;
+            this.radMultiColumnComboBox2.Text = "اختر الموظف";
+            this.radMultiColumnComboBox2.ThemeName = "Office2013Light";
+            // 
+            // radDateTimePicker1
+            // 
+            this.radDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radDateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.radDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.radDateTimePicker1.Location = new System.Drawing.Point(56, 139);
+            this.radDateTimePicker1.Name = "radDateTimePicker1";
+            this.radDateTimePicker1.Size = new System.Drawing.Size(193, 21);
+            this.radDateTimePicker1.TabIndex = 14;
+            this.radDateTimePicker1.TabStop = false;
+            this.radDateTimePicker1.Text = "15/09/2014";
+            this.radDateTimePicker1.ThemeName = "Office2013Light";
+            this.radDateTimePicker1.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
+            // 
+            // EndDateTimePicker
+            // 
+            this.EndDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.EndDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.EndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.EndDateTimePicker.Location = new System.Drawing.Point(56, 101);
+            this.EndDateTimePicker.Name = "EndDateTimePicker";
+            this.EndDateTimePicker.Size = new System.Drawing.Size(193, 21);
+            this.EndDateTimePicker.TabIndex = 13;
+            this.EndDateTimePicker.TabStop = false;
+            this.EndDateTimePicker.Text = "15/09/2014";
+            this.EndDateTimePicker.ThemeName = "Office2013Light";
+            this.EndDateTimePicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
             // 
             // radLabel9
             // 
@@ -280,76 +351,6 @@
             this.radLabel12.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel12.ThemeName = "Office2013Light";
             // 
-            // EndDateTimePicker
-            // 
-            this.EndDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EndDateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.EndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.EndDateTimePicker.Location = new System.Drawing.Point(56, 101);
-            this.EndDateTimePicker.Name = "EndDateTimePicker";
-            this.EndDateTimePicker.Size = new System.Drawing.Size(193, 21);
-            this.EndDateTimePicker.TabIndex = 13;
-            this.EndDateTimePicker.TabStop = false;
-            this.EndDateTimePicker.Text = "15/09/2014";
-            this.EndDateTimePicker.ThemeName = "Office2013Light";
-            this.EndDateTimePicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
-            // 
-            // radDateTimePicker1
-            // 
-            this.radDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radDateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.radDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.radDateTimePicker1.Location = new System.Drawing.Point(56, 139);
-            this.radDateTimePicker1.Name = "radDateTimePicker1";
-            this.radDateTimePicker1.Size = new System.Drawing.Size(193, 21);
-            this.radDateTimePicker1.TabIndex = 14;
-            this.radDateTimePicker1.TabStop = false;
-            this.radDateTimePicker1.Text = "15/09/2014";
-            this.radDateTimePicker1.ThemeName = "Office2013Light";
-            this.radDateTimePicker1.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
-            // 
-            // radMultiColumnComboBox2
-            // 
-            // 
-            // radMultiColumnComboBox2.NestedRadGridView
-            // 
-            this.radMultiColumnComboBox2.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.radMultiColumnComboBox2.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.radMultiColumnComboBox2.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radMultiColumnComboBox2.EditorControl.Location = new System.Drawing.Point(0, 0);
-            // 
-            // radMultiColumnComboBox2.NestedRadGridView
-            // 
-            this.radMultiColumnComboBox2.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.radMultiColumnComboBox2.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.radMultiColumnComboBox2.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.radMultiColumnComboBox2.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.radMultiColumnComboBox2.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.radMultiColumnComboBox2.EditorControl.Name = "NestedRadGridView";
-            this.radMultiColumnComboBox2.EditorControl.ReadOnly = true;
-            this.radMultiColumnComboBox2.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radMultiColumnComboBox2.EditorControl.ShowGroupPanel = false;
-            this.radMultiColumnComboBox2.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.radMultiColumnComboBox2.EditorControl.TabIndex = 0;
-            this.radMultiColumnComboBox2.Location = new System.Drawing.Point(56, 48);
-            this.radMultiColumnComboBox2.Name = "radMultiColumnComboBox2";
-            this.radMultiColumnComboBox2.Size = new System.Drawing.Size(193, 20);
-            this.radMultiColumnComboBox2.TabIndex = 15;
-            this.radMultiColumnComboBox2.TabStop = false;
-            this.radMultiColumnComboBox2.Text = "اختر الموظف";
-            this.radMultiColumnComboBox2.ThemeName = "Office2013Light";
-            // 
-            // radLabel4
-            // 
-            this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel4.Location = new System.Drawing.Point(255, 141);
-            this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(74, 19);
-            this.radLabel4.TabIndex = 13;
-            this.radLabel4.Text = "تاريخ الاصدار:";
-            this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel4.ThemeName = "Office2013Light";
-            // 
             // FrmAddSalaries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -380,17 +381,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox2.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox2.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EndDateTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeejobNumberTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EndDateTimePicker)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox2.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox2.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

@@ -84,6 +84,7 @@
             this.radGroupBox1.Size = new System.Drawing.Size(355, 316);
             this.radGroupBox1.TabIndex = 1;
             this.radGroupBox1.Text = "اضافة نشاط رئيسي";
+            this.radGroupBox1.ThemeName = "Office2013Light";
             // 
             // AddBtn
             // 

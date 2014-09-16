@@ -34,6 +34,9 @@
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
+            this.radDropDownList1 = new Telerik.WinControls.UI.RadDropDownList();
+            this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.TotalCostTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
@@ -46,11 +49,11 @@
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.ProjectNameTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.AddBtn = new Telerik.WinControls.UI.RadButton();
-            this.radDropDownList1 = new Telerik.WinControls.UI.RadDropDownList();
-            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalCostTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
@@ -63,9 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectNameTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +94,51 @@
             this.radGroupBox1.Size = new System.Drawing.Size(338, 340);
             this.radGroupBox1.TabIndex = 0;
             this.radGroupBox1.Text = "اضافة مشروع";
+            this.radGroupBox1.ThemeName = "Office2013Light";
             this.radGroupBox1.Click += new System.EventHandler(this.radGroupBox1_Click);
+            // 
+            // radLabel7
+            // 
+            this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radLabel7.Location = new System.Drawing.Point(231, 240);
+            this.radLabel7.Name = "radLabel7";
+            this.radLabel7.Size = new System.Drawing.Size(41, 19);
+            this.radLabel7.TabIndex = 12;
+            this.radLabel7.Text = "العملة:";
+            this.radLabel7.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            this.radLabel7.ThemeName = "Office2013Light";
+            // 
+            // radDropDownList1
+            // 
+            this.radDropDownList1.AllowShowFocusCues = false;
+            this.radDropDownList1.AutoCompleteDisplayMember = null;
+            this.radDropDownList1.AutoCompleteValueMember = null;
+            radListDataItem1.Text = "شيكل";
+            radListDataItem1.TextWrap = true;
+            radListDataItem2.Text = "دولار";
+            radListDataItem2.TextWrap = true;
+            radListDataItem3.Text = "دينار اردني";
+            radListDataItem3.TextWrap = true;
+            radListDataItem4.Text = "يورو";
+            radListDataItem4.TextWrap = true;
+            this.radDropDownList1.Items.Add(radListDataItem1);
+            this.radDropDownList1.Items.Add(radListDataItem2);
+            this.radDropDownList1.Items.Add(radListDataItem3);
+            this.radDropDownList1.Items.Add(radListDataItem4);
+            this.radDropDownList1.Location = new System.Drawing.Point(32, 240);
+            this.radDropDownList1.Name = "radDropDownList1";
+            this.radDropDownList1.Size = new System.Drawing.Size(193, 21);
+            this.radDropDownList1.TabIndex = 6;
+            this.radDropDownList1.ThemeName = "Office2013Light";
+            // 
+            // AddBtn
+            // 
+            this.AddBtn.Location = new System.Drawing.Point(203, 296);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(130, 38);
+            this.AddBtn.TabIndex = 7;
+            this.AddBtn.Text = "اضافة";
+            this.AddBtn.ThemeName = "Office2013Light";
             // 
             // radLabel6
             // 
@@ -228,49 +272,6 @@
             this.ProjectNameTextBox.TabIndex = 0;
             this.ProjectNameTextBox.ThemeName = "Office2013Light";
             // 
-            // AddBtn
-            // 
-            this.AddBtn.Location = new System.Drawing.Point(203, 296);
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(130, 38);
-            this.AddBtn.TabIndex = 7;
-            this.AddBtn.Text = "اضافة";
-            this.AddBtn.ThemeName = "Office2013Light";
-            // 
-            // radDropDownList1
-            // 
-            this.radDropDownList1.AllowShowFocusCues = false;
-            this.radDropDownList1.AutoCompleteDisplayMember = null;
-            this.radDropDownList1.AutoCompleteValueMember = null;
-            radListDataItem1.Text = "شيكل";
-            radListDataItem1.TextWrap = true;
-            radListDataItem2.Text = "دولار";
-            radListDataItem2.TextWrap = true;
-            radListDataItem3.Text = "دينار اردني";
-            radListDataItem3.TextWrap = true;
-            radListDataItem4.Text = "يورو";
-            radListDataItem4.TextWrap = true;
-            this.radDropDownList1.Items.Add(radListDataItem1);
-            this.radDropDownList1.Items.Add(radListDataItem2);
-            this.radDropDownList1.Items.Add(radListDataItem3);
-            this.radDropDownList1.Items.Add(radListDataItem4);
-            this.radDropDownList1.Location = new System.Drawing.Point(32, 240);
-            this.radDropDownList1.Name = "radDropDownList1";
-            this.radDropDownList1.Size = new System.Drawing.Size(193, 19);
-            this.radDropDownList1.TabIndex = 6;
-            this.radDropDownList1.ThemeName = "Office2013Light";
-            // 
-            // radLabel7
-            // 
-            this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel7.Location = new System.Drawing.Point(231, 240);
-            this.radLabel7.Name = "radLabel7";
-            this.radLabel7.Size = new System.Drawing.Size(41, 19);
-            this.radLabel7.TabIndex = 12;
-            this.radLabel7.Text = "العملة:";
-            this.radLabel7.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel7.ThemeName = "Office2013Light";
-            // 
             // FrmAddProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,6 +289,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalCostTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
@@ -300,9 +304,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectNameTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

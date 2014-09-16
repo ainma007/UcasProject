@@ -30,6 +30,7 @@
         {
             this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.EmployeeComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.SalaryTextBox = new Telerik.WinControls.UI.RadTextBox();
@@ -40,9 +41,11 @@
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.TimeLineTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.EmployeeComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryTextBox)).BeginInit();
@@ -53,9 +56,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeLineTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +80,38 @@
             this.radGroupBox1.Size = new System.Drawing.Size(372, 262);
             this.radGroupBox1.TabIndex = 1;
             this.radGroupBox1.Text = "اضافة عقد";
+            this.radGroupBox1.ThemeName = "Office2013Light";
+            // 
+            // EmployeeComboBox
+            // 
+            // 
+            // EmployeeComboBox.NestedRadGridView
+            // 
+            this.EmployeeComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.EmployeeComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.EmployeeComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.EmployeeComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
+            // 
+            // 
+            // 
+            this.EmployeeComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.EmployeeComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.EmployeeComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.EmployeeComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.EmployeeComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.EmployeeComboBox.EditorControl.Name = "NestedRadGridView";
+            this.EmployeeComboBox.EditorControl.ReadOnly = true;
+            this.EmployeeComboBox.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.EmployeeComboBox.EditorControl.ShowGroupPanel = false;
+            this.EmployeeComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.EmployeeComboBox.EditorControl.TabIndex = 0;
+            this.EmployeeComboBox.Location = new System.Drawing.Point(66, 44);
+            this.EmployeeComboBox.Name = "EmployeeComboBox";
+            this.EmployeeComboBox.Size = new System.Drawing.Size(193, 20);
+            this.EmployeeComboBox.TabIndex = 13;
+            this.EmployeeComboBox.TabStop = false;
+            this.EmployeeComboBox.Text = "اختر الموظف";
+            this.EmployeeComboBox.ThemeName = "Office2013Light";
             // 
             // AddBtn
             // 
@@ -192,37 +224,6 @@
             this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel1.ThemeName = "Office2013Light";
             // 
-            // EmployeeComboBox
-            // 
-            // 
-            // EmployeeComboBox.NestedRadGridView
-            // 
-            this.EmployeeComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.EmployeeComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.EmployeeComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.EmployeeComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
-            // 
-            // EmployeeComboBox.NestedRadGridView
-            // 
-            this.EmployeeComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.EmployeeComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.EmployeeComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.EmployeeComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.EmployeeComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.EmployeeComboBox.EditorControl.Name = "NestedRadGridView";
-            this.EmployeeComboBox.EditorControl.ReadOnly = true;
-            this.EmployeeComboBox.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.EmployeeComboBox.EditorControl.ShowGroupPanel = false;
-            this.EmployeeComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.EmployeeComboBox.EditorControl.TabIndex = 0;
-            this.EmployeeComboBox.Location = new System.Drawing.Point(66, 44);
-            this.EmployeeComboBox.Name = "EmployeeComboBox";
-            this.EmployeeComboBox.Size = new System.Drawing.Size(193, 20);
-            this.EmployeeComboBox.TabIndex = 13;
-            this.EmployeeComboBox.TabStop = false;
-            this.EmployeeComboBox.Text = "اختر الموظف";
-            this.EmployeeComboBox.ThemeName = "Office2013Light";
-            // 
             // FrmContractsAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,6 +241,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryTextBox)).EndInit();
@@ -250,9 +254,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeLineTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

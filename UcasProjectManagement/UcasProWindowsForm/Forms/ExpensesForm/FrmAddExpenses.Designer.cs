@@ -30,6 +30,9 @@
         {
             this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.BillTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
+            this.radMultiColumnComboBox1 = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.TotalCostTextBox = new Telerik.WinControls.UI.RadTextBox();
@@ -40,11 +43,13 @@
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.ExpensesNameTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.radMultiColumnComboBox1 = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
-            this.BillTextBox = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BillTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalCostTextBox)).BeginInit();
@@ -55,11 +60,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExpensesNameTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BillTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,6 +86,58 @@
             this.radGroupBox1.Size = new System.Drawing.Size(375, 282);
             this.radGroupBox1.TabIndex = 2;
             this.radGroupBox1.Text = "اضافة نشاط رئيسي";
+            this.radGroupBox1.ThemeName = "Office2013Light";
+            // 
+            // BillTextBox
+            // 
+            this.BillTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BillTextBox.Location = new System.Drawing.Point(59, 126);
+            this.BillTextBox.Name = "BillTextBox";
+            this.BillTextBox.Size = new System.Drawing.Size(193, 21);
+            this.BillTextBox.TabIndex = 1;
+            this.BillTextBox.ThemeName = "Office2013Light";
+            // 
+            // radLabel7
+            // 
+            this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radLabel7.Location = new System.Drawing.Point(265, 40);
+            this.radLabel7.Name = "radLabel7";
+            this.radLabel7.Size = new System.Drawing.Size(83, 19);
+            this.radLabel7.TabIndex = 2;
+            this.radLabel7.Text = "النشاط الفرعي:";
+            this.radLabel7.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            this.radLabel7.ThemeName = "Office2013Light";
+            // 
+            // radMultiColumnComboBox1
+            // 
+            // 
+            // radMultiColumnComboBox1.NestedRadGridView
+            // 
+            this.radMultiColumnComboBox1.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.radMultiColumnComboBox1.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.radMultiColumnComboBox1.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.radMultiColumnComboBox1.EditorControl.Location = new System.Drawing.Point(0, 0);
+            // 
+            // 
+            // 
+            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.radMultiColumnComboBox1.EditorControl.Name = "NestedRadGridView";
+            this.radMultiColumnComboBox1.EditorControl.ReadOnly = true;
+            this.radMultiColumnComboBox1.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.radMultiColumnComboBox1.EditorControl.ShowGroupPanel = false;
+            this.radMultiColumnComboBox1.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.radMultiColumnComboBox1.EditorControl.TabIndex = 0;
+            this.radMultiColumnComboBox1.Location = new System.Drawing.Point(59, 40);
+            this.radMultiColumnComboBox1.Name = "radMultiColumnComboBox1";
+            this.radMultiColumnComboBox1.Size = new System.Drawing.Size(193, 24);
+            this.radMultiColumnComboBox1.TabIndex = 10;
+            this.radMultiColumnComboBox1.TabStop = false;
+            this.radMultiColumnComboBox1.Text = "اختر النشاط المخصص";
+            this.radMultiColumnComboBox1.ThemeName = "Office2013Light";
             // 
             // AddBtn
             // 
@@ -192,57 +244,6 @@
             this.ExpensesNameTextBox.TabIndex = 0;
             this.ExpensesNameTextBox.ThemeName = "Office2013Light";
             // 
-            // radMultiColumnComboBox1
-            // 
-            // 
-            // radMultiColumnComboBox1.NestedRadGridView
-            // 
-            this.radMultiColumnComboBox1.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.radMultiColumnComboBox1.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.radMultiColumnComboBox1.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radMultiColumnComboBox1.EditorControl.Location = new System.Drawing.Point(0, 0);
-            // 
-            // radMultiColumnComboBox1.NestedRadGridView
-            // 
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.radMultiColumnComboBox1.EditorControl.Name = "NestedRadGridView";
-            this.radMultiColumnComboBox1.EditorControl.ReadOnly = true;
-            this.radMultiColumnComboBox1.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radMultiColumnComboBox1.EditorControl.ShowGroupPanel = false;
-            this.radMultiColumnComboBox1.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.radMultiColumnComboBox1.EditorControl.TabIndex = 0;
-            this.radMultiColumnComboBox1.Location = new System.Drawing.Point(59, 40);
-            this.radMultiColumnComboBox1.Name = "radMultiColumnComboBox1";
-            this.radMultiColumnComboBox1.Size = new System.Drawing.Size(193, 24);
-            this.radMultiColumnComboBox1.TabIndex = 10;
-            this.radMultiColumnComboBox1.TabStop = false;
-            this.radMultiColumnComboBox1.Text = "اختر النشاط المخصص";
-            this.radMultiColumnComboBox1.ThemeName = "Office2013Light";
-            // 
-            // radLabel7
-            // 
-            this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel7.Location = new System.Drawing.Point(265, 40);
-            this.radLabel7.Name = "radLabel7";
-            this.radLabel7.Size = new System.Drawing.Size(83, 19);
-            this.radLabel7.TabIndex = 2;
-            this.radLabel7.Text = "النشاط الفرعي:";
-            this.radLabel7.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel7.ThemeName = "Office2013Light";
-            // 
-            // BillTextBox
-            // 
-            this.BillTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BillTextBox.Location = new System.Drawing.Point(59, 126);
-            this.BillTextBox.Name = "BillTextBox";
-            this.BillTextBox.Size = new System.Drawing.Size(193, 21);
-            this.BillTextBox.TabIndex = 1;
-            this.BillTextBox.ThemeName = "Office2013Light";
-            // 
             // FrmAddExpenses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,6 +261,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BillTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalCostTextBox)).EndInit();
@@ -270,11 +276,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExpensesNameTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BillTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

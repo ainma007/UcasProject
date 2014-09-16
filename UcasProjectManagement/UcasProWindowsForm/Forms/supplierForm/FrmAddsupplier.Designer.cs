@@ -84,6 +84,7 @@
             this.radGroupBox1.Size = new System.Drawing.Size(376, 287);
             this.radGroupBox1.TabIndex = 3;
             this.radGroupBox1.Text = "اضافة مورد";
+            this.radGroupBox1.ThemeName = "Office2013Light";
             this.radGroupBox1.Click += new System.EventHandler(this.radGroupBox1_Click);
             // 
             // radLabel7
