@@ -36,13 +36,11 @@
             this.faxTextBox4 = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.EmailTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
-            this.MobilenumberTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.PhoneNumberTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.employeeNameTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.ThefinanciersNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -51,13 +49,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.faxTextBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmailTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MobilenumberTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneNumberTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeNameTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersNameTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,19 +66,17 @@
             this.radGroupBox1.Controls.Add(this.faxTextBox4);
             this.radGroupBox1.Controls.Add(this.radLabel5);
             this.radGroupBox1.Controls.Add(this.EmailTextBox);
-            this.radGroupBox1.Controls.Add(this.radLabel4);
-            this.radGroupBox1.Controls.Add(this.MobilenumberTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel3);
             this.radGroupBox1.Controls.Add(this.PhoneNumberTextBox);
             this.radGroupBox1.Controls.Add(this.AddBtn);
             this.radGroupBox1.Controls.Add(this.radLabel1);
-            this.radGroupBox1.Controls.Add(this.employeeNameTextBox);
+            this.radGroupBox1.Controls.Add(this.ThefinanciersNameTextBox);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGroupBox1.HeaderText = "اضافة ممول:";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
             this.radGroupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radGroupBox1.Size = new System.Drawing.Size(368, 301);
+            this.radGroupBox1.Size = new System.Drawing.Size(368, 266);
             this.radGroupBox1.TabIndex = 4;
             this.radGroupBox1.Text = "اضافة ممول:";
             this.radGroupBox1.ThemeName = "Office2013Light";
@@ -110,7 +104,7 @@
             // radLabel7
             // 
             this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel7.Location = new System.Drawing.Point(261, 156);
+            this.radLabel7.Location = new System.Drawing.Point(261, 129);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(67, 19);
             this.radLabel7.TabIndex = 18;
@@ -121,7 +115,7 @@
             // faxTextBox4
             // 
             this.faxTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.faxTextBox4.Location = new System.Drawing.Point(62, 156);
+            this.faxTextBox4.Location = new System.Drawing.Point(62, 129);
             this.faxTextBox4.Name = "faxTextBox4";
             this.faxTextBox4.Size = new System.Drawing.Size(193, 21);
             this.faxTextBox4.TabIndex = 17;
@@ -130,7 +124,7 @@
             // radLabel5
             // 
             this.radLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel5.Location = new System.Drawing.Point(261, 183);
+            this.radLabel5.Location = new System.Drawing.Point(261, 156);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(90, 19);
             this.radLabel5.TabIndex = 16;
@@ -141,31 +135,11 @@
             // EmailTextBox
             // 
             this.EmailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmailTextBox.Location = new System.Drawing.Point(62, 183);
+            this.EmailTextBox.Location = new System.Drawing.Point(62, 156);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(193, 21);
             this.EmailTextBox.TabIndex = 15;
             this.EmailTextBox.ThemeName = "Office2013Light";
-            // 
-            // radLabel4
-            // 
-            this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel4.Location = new System.Drawing.Point(261, 129);
-            this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(62, 19);
-            this.radLabel4.TabIndex = 14;
-            this.radLabel4.Text = "رقم الجوال:";
-            this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel4.ThemeName = "Office2013Light";
-            // 
-            // MobilenumberTextBox
-            // 
-            this.MobilenumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MobilenumberTextBox.Location = new System.Drawing.Point(62, 129);
-            this.MobilenumberTextBox.Name = "MobilenumberTextBox";
-            this.MobilenumberTextBox.Size = new System.Drawing.Size(193, 21);
-            this.MobilenumberTextBox.TabIndex = 13;
-            this.MobilenumberTextBox.ThemeName = "Office2013Light";
             // 
             // radLabel3
             // 
@@ -189,7 +163,7 @@
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(221, 238);
+            this.AddBtn.Location = new System.Drawing.Point(221, 206);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(130, 38);
             this.AddBtn.TabIndex = 7;
@@ -207,20 +181,20 @@
             this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel1.ThemeName = "Office2013Light";
             // 
-            // employeeNameTextBox
+            // ThefinanciersNameTextBox
             // 
-            this.employeeNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.employeeNameTextBox.Location = new System.Drawing.Point(62, 45);
-            this.employeeNameTextBox.Name = "employeeNameTextBox";
-            this.employeeNameTextBox.Size = new System.Drawing.Size(193, 21);
-            this.employeeNameTextBox.TabIndex = 0;
-            this.employeeNameTextBox.ThemeName = "Office2013Light";
+            this.ThefinanciersNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ThefinanciersNameTextBox.Location = new System.Drawing.Point(62, 45);
+            this.ThefinanciersNameTextBox.Name = "ThefinanciersNameTextBox";
+            this.ThefinanciersNameTextBox.Size = new System.Drawing.Size(193, 21);
+            this.ThefinanciersNameTextBox.TabIndex = 0;
+            this.ThefinanciersNameTextBox.ThemeName = "Office2013Light";
             // 
             // FrmAddThefinanciers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 301);
+            this.ClientSize = new System.Drawing.Size(368, 266);
             this.Controls.Add(this.radGroupBox1);
             this.Name = "FrmAddThefinanciers";
             // 
@@ -238,13 +212,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.faxTextBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmailTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MobilenumberTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneNumberTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeNameTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersNameTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -260,12 +232,10 @@
         private Telerik.WinControls.UI.RadTextBox faxTextBox4;
         private Telerik.WinControls.UI.RadLabel radLabel5;
         private Telerik.WinControls.UI.RadTextBox EmailTextBox;
-        private Telerik.WinControls.UI.RadLabel radLabel4;
-        private Telerik.WinControls.UI.RadTextBox MobilenumberTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadTextBox PhoneNumberTextBox;
         private Telerik.WinControls.UI.RadButton AddBtn;
         private Telerik.WinControls.UI.RadLabel radLabel1;
-        private Telerik.WinControls.UI.RadTextBox employeeNameTextBox;
+        private Telerik.WinControls.UI.RadTextBox ThefinanciersNameTextBox;
     }
 }

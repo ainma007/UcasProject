@@ -32,7 +32,7 @@
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.BillTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
-            this.radMultiColumnComboBox1 = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.SubActivtiesComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.TotalCostTextBox = new Telerik.WinControls.UI.RadTextBox();
@@ -47,9 +47,9 @@
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubActivtiesComboBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubActivtiesComboBox.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubActivtiesComboBox.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalCostTextBox)).BeginInit();
@@ -68,7 +68,7 @@
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox1.Controls.Add(this.BillTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel7);
-            this.radGroupBox1.Controls.Add(this.radMultiColumnComboBox1);
+            this.radGroupBox1.Controls.Add(this.SubActivtiesComboBox);
             this.radGroupBox1.Controls.Add(this.AddBtn);
             this.radGroupBox1.Controls.Add(this.radLabel6);
             this.radGroupBox1.Controls.Add(this.TotalCostTextBox);
@@ -108,36 +108,36 @@
             this.radLabel7.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel7.ThemeName = "Office2013Light";
             // 
-            // radMultiColumnComboBox1
+            // SubActivtiesComboBox
             // 
             // 
-            // radMultiColumnComboBox1.NestedRadGridView
+            // SubActivtiesComboBox.NestedRadGridView
             // 
-            this.radMultiColumnComboBox1.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.radMultiColumnComboBox1.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.radMultiColumnComboBox1.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radMultiColumnComboBox1.EditorControl.Location = new System.Drawing.Point(0, 0);
+            this.SubActivtiesComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.SubActivtiesComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.SubActivtiesComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.SubActivtiesComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
             // 
             // 
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.radMultiColumnComboBox1.EditorControl.Name = "NestedRadGridView";
-            this.radMultiColumnComboBox1.EditorControl.ReadOnly = true;
-            this.radMultiColumnComboBox1.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radMultiColumnComboBox1.EditorControl.ShowGroupPanel = false;
-            this.radMultiColumnComboBox1.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.radMultiColumnComboBox1.EditorControl.TabIndex = 0;
-            this.radMultiColumnComboBox1.Location = new System.Drawing.Point(59, 40);
-            this.radMultiColumnComboBox1.Name = "radMultiColumnComboBox1";
-            this.radMultiColumnComboBox1.Size = new System.Drawing.Size(193, 24);
-            this.radMultiColumnComboBox1.TabIndex = 10;
-            this.radMultiColumnComboBox1.TabStop = false;
-            this.radMultiColumnComboBox1.Text = "اختر النشاط المخصص";
-            this.radMultiColumnComboBox1.ThemeName = "Office2013Light";
+            this.SubActivtiesComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.SubActivtiesComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.SubActivtiesComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.SubActivtiesComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.SubActivtiesComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.SubActivtiesComboBox.EditorControl.Name = "NestedRadGridView";
+            this.SubActivtiesComboBox.EditorControl.ReadOnly = true;
+            this.SubActivtiesComboBox.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.SubActivtiesComboBox.EditorControl.ShowGroupPanel = false;
+            this.SubActivtiesComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.SubActivtiesComboBox.EditorControl.TabIndex = 0;
+            this.SubActivtiesComboBox.Location = new System.Drawing.Point(59, 40);
+            this.SubActivtiesComboBox.Name = "SubActivtiesComboBox";
+            this.SubActivtiesComboBox.Size = new System.Drawing.Size(193, 24);
+            this.SubActivtiesComboBox.TabIndex = 10;
+            this.SubActivtiesComboBox.TabStop = false;
+            this.SubActivtiesComboBox.Text = "اختر النشاط المخصص";
+            this.SubActivtiesComboBox.ThemeName = "Office2013Light";
             // 
             // AddBtn
             // 
@@ -263,9 +263,9 @@
             this.radGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubActivtiesComboBox.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubActivtiesComboBox.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubActivtiesComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalCostTextBox)).EndInit();
@@ -287,7 +287,7 @@
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         private Telerik.WinControls.UI.RadTextBox BillTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel7;
-        private Telerik.WinControls.UI.RadMultiColumnComboBox radMultiColumnComboBox1;
+        private Telerik.WinControls.UI.RadMultiColumnComboBox SubActivtiesComboBox;
         private Telerik.WinControls.UI.RadButton AddBtn;
         private Telerik.WinControls.UI.RadLabel radLabel6;
         private Telerik.WinControls.UI.RadTextBox TotalCostTextBox;

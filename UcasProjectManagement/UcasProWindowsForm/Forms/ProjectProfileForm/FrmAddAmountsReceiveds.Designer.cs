@@ -32,33 +32,33 @@
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
-            this.TotalCostTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.StartDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.CostTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.ReleaseDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.radMultiColumnComboBox1 = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.TheFinancerProjectsComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TotalCostTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StartDateTimePicker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReleaseDateTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TheFinancerProjectsComboBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TheFinancerProjectsComboBox.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TheFinancerProjectsComboBox.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox1.Controls.Add(this.radMultiColumnComboBox1);
+            this.radGroupBox1.Controls.Add(this.TheFinancerProjectsComboBox);
             this.radGroupBox1.Controls.Add(this.AddBtn);
             this.radGroupBox1.Controls.Add(this.radLabel6);
-            this.radGroupBox1.Controls.Add(this.TotalCostTextBox);
-            this.radGroupBox1.Controls.Add(this.StartDateTimePicker);
+            this.radGroupBox1.Controls.Add(this.CostTextBox);
+            this.radGroupBox1.Controls.Add(this.ReleaseDateTimePicker);
             this.radGroupBox1.Controls.Add(this.radLabel3);
             this.radGroupBox1.Controls.Add(this.radLabel1);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -90,28 +90,28 @@
             this.radLabel6.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel6.ThemeName = "Office2013Light";
             // 
-            // TotalCostTextBox
+            // CostTextBox
             // 
-            this.TotalCostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TotalCostTextBox.Location = new System.Drawing.Point(82, 99);
-            this.TotalCostTextBox.Name = "TotalCostTextBox";
-            this.TotalCostTextBox.Size = new System.Drawing.Size(193, 21);
-            this.TotalCostTextBox.TabIndex = 5;
-            this.TotalCostTextBox.ThemeName = "Office2013Light";
+            this.CostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CostTextBox.Location = new System.Drawing.Point(82, 99);
+            this.CostTextBox.Name = "CostTextBox";
+            this.CostTextBox.Size = new System.Drawing.Size(193, 21);
+            this.CostTextBox.TabIndex = 5;
+            this.CostTextBox.ThemeName = "Office2013Light";
             // 
-            // StartDateTimePicker
+            // ReleaseDateTimePicker
             // 
-            this.StartDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.StartDateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.StartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StartDateTimePicker.Location = new System.Drawing.Point(82, 72);
-            this.StartDateTimePicker.Name = "StartDateTimePicker";
-            this.StartDateTimePicker.Size = new System.Drawing.Size(193, 21);
-            this.StartDateTimePicker.TabIndex = 2;
-            this.StartDateTimePicker.TabStop = false;
-            this.StartDateTimePicker.Text = "15/09/2014";
-            this.StartDateTimePicker.ThemeName = "Office2013Light";
-            this.StartDateTimePicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
+            this.ReleaseDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ReleaseDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.ReleaseDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ReleaseDateTimePicker.Location = new System.Drawing.Point(82, 72);
+            this.ReleaseDateTimePicker.Name = "ReleaseDateTimePicker";
+            this.ReleaseDateTimePicker.Size = new System.Drawing.Size(193, 21);
+            this.ReleaseDateTimePicker.TabIndex = 2;
+            this.ReleaseDateTimePicker.TabStop = false;
+            this.ReleaseDateTimePicker.Text = "15/09/2014";
+            this.ReleaseDateTimePicker.ThemeName = "Office2013Light";
+            this.ReleaseDateTimePicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
             // 
             // radLabel3
             // 
@@ -135,36 +135,36 @@
             this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel1.ThemeName = "Office2013Light";
             // 
-            // radMultiColumnComboBox1
+            // TheFinancerProjectsComboBox
             // 
             // 
-            // radMultiColumnComboBox1.NestedRadGridView
+            // TheFinancerProjectsComboBox.NestedRadGridView
             // 
-            this.radMultiColumnComboBox1.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.radMultiColumnComboBox1.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.radMultiColumnComboBox1.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radMultiColumnComboBox1.EditorControl.Location = new System.Drawing.Point(0, 0);
+            this.TheFinancerProjectsComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.TheFinancerProjectsComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.TheFinancerProjectsComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.TheFinancerProjectsComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
             // 
             // 
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.radMultiColumnComboBox1.EditorControl.Name = "NestedRadGridView";
-            this.radMultiColumnComboBox1.EditorControl.ReadOnly = true;
-            this.radMultiColumnComboBox1.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radMultiColumnComboBox1.EditorControl.ShowGroupPanel = false;
-            this.radMultiColumnComboBox1.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.radMultiColumnComboBox1.EditorControl.TabIndex = 0;
-            this.radMultiColumnComboBox1.Location = new System.Drawing.Point(82, 43);
-            this.radMultiColumnComboBox1.Name = "radMultiColumnComboBox1";
-            this.radMultiColumnComboBox1.Size = new System.Drawing.Size(193, 20);
-            this.radMultiColumnComboBox1.TabIndex = 10;
-            this.radMultiColumnComboBox1.TabStop = false;
-            this.radMultiColumnComboBox1.Text = "اختر الممول";
-            this.radMultiColumnComboBox1.ThemeName = "Office2013Light";
+            this.TheFinancerProjectsComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.TheFinancerProjectsComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.TheFinancerProjectsComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.TheFinancerProjectsComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.TheFinancerProjectsComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.TheFinancerProjectsComboBox.EditorControl.Name = "NestedRadGridView";
+            this.TheFinancerProjectsComboBox.EditorControl.ReadOnly = true;
+            this.TheFinancerProjectsComboBox.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TheFinancerProjectsComboBox.EditorControl.ShowGroupPanel = false;
+            this.TheFinancerProjectsComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.TheFinancerProjectsComboBox.EditorControl.TabIndex = 0;
+            this.TheFinancerProjectsComboBox.Location = new System.Drawing.Point(82, 43);
+            this.TheFinancerProjectsComboBox.Name = "TheFinancerProjectsComboBox";
+            this.TheFinancerProjectsComboBox.Size = new System.Drawing.Size(193, 20);
+            this.TheFinancerProjectsComboBox.TabIndex = 10;
+            this.TheFinancerProjectsComboBox.TabStop = false;
+            this.TheFinancerProjectsComboBox.Text = "اختر الممول";
+            this.TheFinancerProjectsComboBox.ThemeName = "Office2013Light";
             // 
             // FrmAddAmountsReceiveds
             // 
@@ -185,13 +185,13 @@
             this.radGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TotalCostTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StartDateTimePicker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReleaseDateTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TheFinancerProjectsComboBox.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TheFinancerProjectsComboBox.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TheFinancerProjectsComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -203,10 +203,10 @@
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         private Telerik.WinControls.UI.RadButton AddBtn;
         private Telerik.WinControls.UI.RadLabel radLabel6;
-        private Telerik.WinControls.UI.RadTextBox TotalCostTextBox;
-        private Telerik.WinControls.UI.RadDateTimePicker StartDateTimePicker;
+        private Telerik.WinControls.UI.RadTextBox CostTextBox;
+        private Telerik.WinControls.UI.RadDateTimePicker ReleaseDateTimePicker;
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadLabel radLabel1;
-        private Telerik.WinControls.UI.RadMultiColumnComboBox radMultiColumnComboBox1;
+        private Telerik.WinControls.UI.RadMultiColumnComboBox TheFinancerProjectsComboBox;
     }
 }

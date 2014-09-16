@@ -33,16 +33,16 @@
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.CostTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.radMultiColumnComboBox1 = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.ThefinanciersComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersComboBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersComboBox.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersComboBox.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +51,7 @@
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox1.Controls.Add(this.radLabel2);
-            this.radGroupBox1.Controls.Add(this.radMultiColumnComboBox1);
+            this.radGroupBox1.Controls.Add(this.ThefinanciersComboBox);
             this.radGroupBox1.Controls.Add(this.AddBtn);
             this.radGroupBox1.Controls.Add(this.radLabel1);
             this.radGroupBox1.Controls.Add(this.CostTextBox);
@@ -93,36 +93,36 @@
             this.CostTextBox.TabIndex = 0;
             this.CostTextBox.ThemeName = "Office2013Light";
             // 
-            // radMultiColumnComboBox1
+            // ThefinanciersComboBox
             // 
             // 
-            // radMultiColumnComboBox1.NestedRadGridView
+            // ThefinanciersComboBox.NestedRadGridView
             // 
-            this.radMultiColumnComboBox1.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.radMultiColumnComboBox1.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.radMultiColumnComboBox1.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radMultiColumnComboBox1.EditorControl.Location = new System.Drawing.Point(0, 0);
+            this.ThefinanciersComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.ThefinanciersComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.ThefinanciersComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ThefinanciersComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // radMultiColumnComboBox1.NestedRadGridView
+            // ThefinanciersComboBox.NestedRadGridView
             // 
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.radMultiColumnComboBox1.EditorControl.Name = "NestedRadGridView";
-            this.radMultiColumnComboBox1.EditorControl.ReadOnly = true;
-            this.radMultiColumnComboBox1.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radMultiColumnComboBox1.EditorControl.ShowGroupPanel = false;
-            this.radMultiColumnComboBox1.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.radMultiColumnComboBox1.EditorControl.TabIndex = 0;
-            this.radMultiColumnComboBox1.Location = new System.Drawing.Point(39, 38);
-            this.radMultiColumnComboBox1.Name = "radMultiColumnComboBox1";
-            this.radMultiColumnComboBox1.Size = new System.Drawing.Size(221, 20);
-            this.radMultiColumnComboBox1.TabIndex = 8;
-            this.radMultiColumnComboBox1.TabStop = false;
-            this.radMultiColumnComboBox1.Text = "اختر الممول";
-            this.radMultiColumnComboBox1.ThemeName = "Office2013Light";
+            this.ThefinanciersComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.ThefinanciersComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.ThefinanciersComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.ThefinanciersComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.ThefinanciersComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.ThefinanciersComboBox.EditorControl.Name = "NestedRadGridView";
+            this.ThefinanciersComboBox.EditorControl.ReadOnly = true;
+            this.ThefinanciersComboBox.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ThefinanciersComboBox.EditorControl.ShowGroupPanel = false;
+            this.ThefinanciersComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.ThefinanciersComboBox.EditorControl.TabIndex = 0;
+            this.ThefinanciersComboBox.Location = new System.Drawing.Point(39, 38);
+            this.ThefinanciersComboBox.Name = "ThefinanciersComboBox";
+            this.ThefinanciersComboBox.Size = new System.Drawing.Size(221, 20);
+            this.ThefinanciersComboBox.TabIndex = 8;
+            this.ThefinanciersComboBox.TabStop = false;
+            this.ThefinanciersComboBox.Text = "اختر الممول";
+            this.ThefinanciersComboBox.ThemeName = "Office2013Light";
             // 
             // radLabel2
             // 
@@ -155,9 +155,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersComboBox.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersComboBox.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -169,7 +169,7 @@
         private Telerik.WinControls.Themes.Office2013LightTheme office2013LightTheme1;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         private Telerik.WinControls.UI.RadLabel radLabel2;
-        private Telerik.WinControls.UI.RadMultiColumnComboBox radMultiColumnComboBox1;
+        private Telerik.WinControls.UI.RadMultiColumnComboBox ThefinanciersComboBox;
         private Telerik.WinControls.UI.RadButton AddBtn;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadTextBox CostTextBox;

@@ -40,9 +40,9 @@
             this.PhoneNumberTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
-            this.EmployeejobNumberTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.SuppliersNaturalTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.employeeNameTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.NameTextBox = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
@@ -55,9 +55,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.PhoneNumberTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeejobNumberTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SuppliersNaturalTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeNameTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NameTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,9 +74,9 @@
             this.radGroupBox1.Controls.Add(this.PhoneNumberTextBox);
             this.radGroupBox1.Controls.Add(this.AddBtn);
             this.radGroupBox1.Controls.Add(this.radLabel6);
-            this.radGroupBox1.Controls.Add(this.EmployeejobNumberTextBox);
+            this.radGroupBox1.Controls.Add(this.SuppliersNaturalTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel1);
-            this.radGroupBox1.Controls.Add(this.employeeNameTextBox);
+            this.radGroupBox1.Controls.Add(this.NameTextBox);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGroupBox1.HeaderText = "اضافة مورد";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
@@ -187,14 +187,14 @@
             this.radLabel6.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel6.ThemeName = "Office2013Light";
             // 
-            // EmployeejobNumberTextBox
+            // SuppliersNaturalTextBox
             // 
-            this.EmployeejobNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmployeejobNumberTextBox.Location = new System.Drawing.Point(70, 72);
-            this.EmployeejobNumberTextBox.Name = "EmployeejobNumberTextBox";
-            this.EmployeejobNumberTextBox.Size = new System.Drawing.Size(193, 21);
-            this.EmployeejobNumberTextBox.TabIndex = 5;
-            this.EmployeejobNumberTextBox.ThemeName = "Office2013Light";
+            this.SuppliersNaturalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SuppliersNaturalTextBox.Location = new System.Drawing.Point(70, 72);
+            this.SuppliersNaturalTextBox.Name = "SuppliersNaturalTextBox";
+            this.SuppliersNaturalTextBox.Size = new System.Drawing.Size(193, 21);
+            this.SuppliersNaturalTextBox.TabIndex = 5;
+            this.SuppliersNaturalTextBox.ThemeName = "Office2013Light";
             // 
             // radLabel1
             // 
@@ -207,14 +207,14 @@
             this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel1.ThemeName = "Office2013Light";
             // 
-            // employeeNameTextBox
+            // NameTextBox
             // 
-            this.employeeNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.employeeNameTextBox.Location = new System.Drawing.Point(70, 45);
-            this.employeeNameTextBox.Name = "employeeNameTextBox";
-            this.employeeNameTextBox.Size = new System.Drawing.Size(193, 21);
-            this.employeeNameTextBox.TabIndex = 0;
-            this.employeeNameTextBox.ThemeName = "Office2013Light";
+            this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NameTextBox.Location = new System.Drawing.Point(70, 45);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(193, 21);
+            this.NameTextBox.TabIndex = 0;
+            this.NameTextBox.ThemeName = "Office2013Light";
             // 
             // FrmAddsupplier
             // 
@@ -244,9 +244,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.PhoneNumberTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeejobNumberTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SuppliersNaturalTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeNameTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NameTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -266,8 +266,8 @@
         private Telerik.WinControls.UI.RadTextBox PhoneNumberTextBox;
         private Telerik.WinControls.UI.RadButton AddBtn;
         private Telerik.WinControls.UI.RadLabel radLabel6;
-        private Telerik.WinControls.UI.RadTextBox EmployeejobNumberTextBox;
+        private Telerik.WinControls.UI.RadTextBox SuppliersNaturalTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel1;
-        private Telerik.WinControls.UI.RadTextBox employeeNameTextBox;
+        private Telerik.WinControls.UI.RadTextBox NameTextBox;
     }
 }
