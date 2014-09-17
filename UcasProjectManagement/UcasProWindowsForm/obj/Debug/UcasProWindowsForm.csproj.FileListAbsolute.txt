@@ -46,3 +46,4 @@ C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindows
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.supplierForm.FrmManagementSupplier.resources
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.FrmAddGroup.resources
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.frmAddUser.resources
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.MainForm.FrmAdmin.resources

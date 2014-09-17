@@ -101,6 +101,12 @@
     <Compile Include="Forms\ExpensesForm\FrmAddSalaries.Designer.cs">
       <DependentUpon>FrmAddSalaries.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MainForm\FrmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\FrmAdmin.Designer.cs">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProjectProfileForm\FrmAddAmountsReceiveds.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     <EmbeddedResource Include="Forms\ExpensesForm\FrmAddSalaries.resx">
       <DependentUpon>FrmAddSalaries.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm\FrmAdmin.resx">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProjectProfileForm\FrmAddAmountsReceiveds.resx">
       <DependentUpon>FrmAddAmountsReceiveds.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,7 +255,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\MainForm\" />
     <Folder Include="Report\" />
   </ItemGroup>
   <ItemGroup>

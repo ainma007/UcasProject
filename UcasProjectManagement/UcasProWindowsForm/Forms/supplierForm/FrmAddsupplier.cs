@@ -25,5 +25,10 @@ namespace UcasProWindowsForm.Forms.supplierForm
         {
 
         }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

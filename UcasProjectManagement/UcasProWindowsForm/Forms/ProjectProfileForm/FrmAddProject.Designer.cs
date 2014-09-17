@@ -35,52 +35,52 @@
             this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
-            this.radDropDownList1 = new Telerik.WinControls.UI.RadDropDownList();
+            this.CoineDropDownList = new Telerik.WinControls.UI.RadDropDownList();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.TotalCostTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.EndDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
-            this.ProjectDescriptionTextBox = new Telerik.WinControls.RichTextBox.RadRichTextBox();
             this.StartDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.TimeLineTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.ProjectNameTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.ProjectDescriptionTextBox = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CoineDropDownList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalCostTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EndDateTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProjectDescriptionTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StartDateTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeLineTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectNameTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectDescriptionTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.ProjectDescriptionTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel7);
-            this.radGroupBox1.Controls.Add(this.radDropDownList1);
+            this.radGroupBox1.Controls.Add(this.CoineDropDownList);
             this.radGroupBox1.Controls.Add(this.AddBtn);
             this.radGroupBox1.Controls.Add(this.radLabel6);
             this.radGroupBox1.Controls.Add(this.TotalCostTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel5);
             this.radGroupBox1.Controls.Add(this.EndDateTimePicker);
             this.radGroupBox1.Controls.Add(this.radLabel4);
-            this.radGroupBox1.Controls.Add(this.ProjectDescriptionTextBox);
             this.radGroupBox1.Controls.Add(this.StartDateTimePicker);
             this.radGroupBox1.Controls.Add(this.radLabel3);
             this.radGroupBox1.Controls.Add(this.TimeLineTextBox);
@@ -108,11 +108,11 @@
             this.radLabel7.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel7.ThemeName = "Office2013Light";
             // 
-            // radDropDownList1
+            // CoineDropDownList
             // 
-            this.radDropDownList1.AllowShowFocusCues = false;
-            this.radDropDownList1.AutoCompleteDisplayMember = null;
-            this.radDropDownList1.AutoCompleteValueMember = null;
+            this.CoineDropDownList.AllowShowFocusCues = false;
+            this.CoineDropDownList.AutoCompleteDisplayMember = null;
+            this.CoineDropDownList.AutoCompleteValueMember = null;
             radListDataItem1.Text = "شيكل";
             radListDataItem1.TextWrap = true;
             radListDataItem2.Text = "دولار";
@@ -121,15 +121,15 @@
             radListDataItem3.TextWrap = true;
             radListDataItem4.Text = "يورو";
             radListDataItem4.TextWrap = true;
-            this.radDropDownList1.Items.Add(radListDataItem1);
-            this.radDropDownList1.Items.Add(radListDataItem2);
-            this.radDropDownList1.Items.Add(radListDataItem3);
-            this.radDropDownList1.Items.Add(radListDataItem4);
-            this.radDropDownList1.Location = new System.Drawing.Point(32, 240);
-            this.radDropDownList1.Name = "radDropDownList1";
-            this.radDropDownList1.Size = new System.Drawing.Size(193, 21);
-            this.radDropDownList1.TabIndex = 6;
-            this.radDropDownList1.ThemeName = "Office2013Light";
+            this.CoineDropDownList.Items.Add(radListDataItem1);
+            this.CoineDropDownList.Items.Add(radListDataItem2);
+            this.CoineDropDownList.Items.Add(radListDataItem3);
+            this.CoineDropDownList.Items.Add(radListDataItem4);
+            this.CoineDropDownList.Location = new System.Drawing.Point(32, 240);
+            this.CoineDropDownList.Name = "CoineDropDownList";
+            this.CoineDropDownList.Size = new System.Drawing.Size(193, 21);
+            this.CoineDropDownList.TabIndex = 6;
+            this.CoineDropDownList.ThemeName = "Office2013Light";
             // 
             // AddBtn
             // 
@@ -139,6 +139,7 @@
             this.AddBtn.TabIndex = 7;
             this.AddBtn.Text = "اضافة";
             this.AddBtn.ThemeName = "Office2013Light";
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // radLabel6
             // 
@@ -195,16 +196,6 @@
             this.radLabel4.Text = "تاريخ الانتهاء:";
             this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel4.ThemeName = "Office2013Light";
-            // 
-            // ProjectDescriptionTextBox
-            // 
-            this.ProjectDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProjectDescriptionTextBox.HyperlinkToolTipFormatString = null;
-            this.ProjectDescriptionTextBox.Location = new System.Drawing.Point(32, 72);
-            this.ProjectDescriptionTextBox.Name = "ProjectDescriptionTextBox";
-            this.ProjectDescriptionTextBox.Size = new System.Drawing.Size(193, 54);
-            this.ProjectDescriptionTextBox.TabIndex = 1;
-            this.ProjectDescriptionTextBox.Text = "radRichTextBox1";
             // 
             // StartDateTimePicker
             // 
@@ -272,6 +263,17 @@
             this.ProjectNameTextBox.TabIndex = 0;
             this.ProjectNameTextBox.ThemeName = "Office2013Light";
             // 
+            // ProjectDescriptionTextBox
+            // 
+            this.ProjectDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProjectDescriptionTextBox.AutoSize = false;
+            this.ProjectDescriptionTextBox.Location = new System.Drawing.Point(32, 86);
+            this.ProjectDescriptionTextBox.Multiline = true;
+            this.ProjectDescriptionTextBox.Name = "ProjectDescriptionTextBox";
+            this.ProjectDescriptionTextBox.Size = new System.Drawing.Size(193, 40);
+            this.ProjectDescriptionTextBox.TabIndex = 13;
+            this.ProjectDescriptionTextBox.ThemeName = "Office2013Light";
+            // 
             // FrmAddProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,20 +292,20 @@
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CoineDropDownList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalCostTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EndDateTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProjectDescriptionTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StartDateTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeLineTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectNameTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectDescriptionTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -318,7 +320,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel5;
         private Telerik.WinControls.UI.RadDateTimePicker EndDateTimePicker;
         private Telerik.WinControls.UI.RadLabel radLabel4;
-        private Telerik.WinControls.RichTextBox.RadRichTextBox ProjectDescriptionTextBox;
         private Telerik.WinControls.UI.RadDateTimePicker StartDateTimePicker;
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadTextBox TimeLineTextBox;
@@ -327,6 +328,7 @@
         private Telerik.WinControls.UI.RadTextBox ProjectNameTextBox;
         private Telerik.WinControls.UI.RadButton AddBtn;
         private Telerik.WinControls.UI.RadLabel radLabel7;
-        private Telerik.WinControls.UI.RadDropDownList radDropDownList1;
+        private Telerik.WinControls.UI.RadDropDownList CoineDropDownList;
+        private Telerik.WinControls.UI.RadTextBox ProjectDescriptionTextBox;
     }
 }
