@@ -76,12 +76,16 @@ namespace Ucas.Data.CommandClass
             }
         }
 
-        public static List<ProjectActivity> GetAll()
+        public static List<ProjectActivity> GetAllActivitiesByProjectID(int ProID)
         {
             db = new UcasProEntities();
             db.Configuration.LazyLoadingEnabled = false;
             db.Configuration.ProxyCreationEnabled = false;
-            return db.ProjectActivities.ToList();
+            var LST = (from p in db.ProjectActivities
+                       orderby p.StartDate ascending 
+                       where p.ProjectProfile_ID == ProID
+                       select p).ToList();
+            return LST; ;
         }
     }
 

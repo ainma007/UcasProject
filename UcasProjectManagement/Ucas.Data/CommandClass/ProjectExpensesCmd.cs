@@ -75,12 +75,28 @@ namespace Ucas.Data.CommandClass
             }
         }
 
-        public static List<ProjectExpens> GetAll()
+        public static List<ProjectExpens> GetAllBySubActivity(int SubActivityID)
         {
             db = new UcasProEntities();
             db.Configuration.LazyLoadingEnabled = false;
             db.Configuration.ProxyCreationEnabled = false;
-            return db.ProjectExpenses.ToList();
+            var LST = (from p in db.ProjectExpenses
+                       orderby p.DateofProcess ascending 
+                       where p.ProjectSubActivity_ID == SubActivityID
+                       select p).ToList();
+            return LST;
+        }
+
+        public static List<ProjectExpens> GetAllExpensesBySupplier(int SupplID)
+        {
+            db = new UcasProEntities();
+            db.Configuration.LazyLoadingEnabled = false;
+            db.Configuration.ProxyCreationEnabled = false;
+            var LST = (from p in db.ProjectExpenses
+                       orderby p.DateofProcess ascending 
+                       where p.Supplier_ID  == SupplID
+                       select p).ToList();
+            return LST;
         }
 
     }

@@ -73,12 +73,21 @@ namespace Ucas.Data.CommandClass
             }
         }
 
-        public static List<Salary> GetAll()
+        public static List<Salary> GetAllSalaries()
         {
             db = new UcasProEntities();
             db.Configuration.LazyLoadingEnabled = false;
             db.Configuration.ProxyCreationEnabled = false;
             return db.Salaries.ToList();
+        }
+        public static List<Salary> GetSalaryBySelectedContractID(int ContID) {
+            db = new UcasProEntities();
+            db.Configuration.LazyLoadingEnabled = false;
+            db.Configuration.ProxyCreationEnabled = false;
+            var LST = (from c in db.Salaries
+                       where c.ContractID == ContID 
+                       select c).ToList();
+            return LST;
         }
     }
 }
