@@ -79,5 +79,17 @@ namespace Ucas.Data.CommandClass
             return db.AmountsReceiveds.ToList();
         }
 
+        public static List<AmountsReceived> GetAllAmountsReceivedByTheFinancierPrjectID(int F_PID)
+        {
+            db = new UcasProEntities();
+            db.Configuration.LazyLoadingEnabled = false;
+            db.Configuration.ProxyCreationEnabled = false;
+            var LST = ( from f in db.AmountsReceiveds 
+                        orderby f.Date ascending 
+                            where f.TheFinancerProjectsID == F_PID 
+                            select f).ToList();
+            return LST;
+        }
+
     }
 }

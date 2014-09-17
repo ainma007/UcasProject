@@ -10,7 +10,7 @@ namespace Ucas.Data.CommandClass
       static   UcasProEntities db = new UcasProEntities();
 
          #region " { Get Current Project's Financiers Only } "
-      public static List<TheFinancerProject> GetAllFinanciersProject(int ProjId)
+      public static List<TheFinancerProject> GetAllFinanciersOfSelectedProject(int ProjId)
          {
              try
              {
