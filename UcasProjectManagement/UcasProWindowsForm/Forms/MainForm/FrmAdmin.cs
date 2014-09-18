@@ -60,5 +60,11 @@ namespace UcasProWindowsForm.Forms.MainForm
             FrmAddThefinanciers finadd = new FrmAddThefinanciers();
             finadd.ShowDialog();
         }
+
+        private void SuppMangBtn_Click(object sender, EventArgs e)
+        {
+            FrmManagementSupplier MangSup = new FrmManagementSupplier();
+            MangSup.ShowDialog();
+        }
     }
 }

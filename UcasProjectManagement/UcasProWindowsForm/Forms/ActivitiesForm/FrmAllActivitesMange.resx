@@ -123,11 +123,11 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="radRibbonBar1.StartButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAYAAAB2HjRBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAALNJREFUOE+NkeENQiEMhBnBERzBkRzFTRzBERjBERzBn/wAgnd97Ut9lsglBCj3
-        HSUkaoxx6r3n1tqTaykGgudeSnnDc5ECFmdCfkQBBmJ+7AG11hcPaCAUBRxvxHzFGHKzOJxotgC33lpV
-        Rdwuu232jKloJkTYt/tXBvq2lwKOoJZ/vygSTJlDt19iXQPi9zNZDTctibCXr+GspVgwSABb1f0aaILR
-        AvLGLYImAPaECZjSB56hKtx0sdEUAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAYAAAB2HjRBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACzSURBVDhPjZHhDUIhDIQZwREcwZEcxU0cwREYwREcwZ/8
+        AIJ3fe1LfZbIJQQo9x0lJGqMceq959bak2spBoLnXkp5w3ORAhZnQn5EAQZifuwBtdYXD2ggFAUcb8R8
+        xRhyszicaLYAt95aVUXcLrtt9oypaCZE2Lf7Vwb6tpcCjqCWf78oEkyZQ7dfYl0D4vczWQ03LYmwl6/h
+        rKVYMEgAW9X9GmiC0QLyxi2CJgD2hAmY0geeoSrcdLHRFAAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>
