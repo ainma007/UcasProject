@@ -17,3 +17,13 @@ C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\bin\
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.dll
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.pdb
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.csprojResolveAssemblyReference.cache
+C:\Users\xprema\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\Ucas.Data.dll.config
+C:\Users\xprema\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\Ucas.Data.dll
+C:\Users\xprema\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\Ucas.Data.pdb
+C:\Users\xprema\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\EntityFramework.dll
+C:\Users\xprema\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\xprema\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\EntityFramework.xml
+C:\Users\xprema\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\xprema\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.csprojResolveAssemblyReference.cache
+C:\Users\xprema\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.dll
+C:\Users\xprema\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.pdb
