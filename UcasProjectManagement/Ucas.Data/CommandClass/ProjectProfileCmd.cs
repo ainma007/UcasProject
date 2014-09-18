@@ -39,6 +39,7 @@ namespace Ucas.Data.CommandClass
                 q.StartDate = ptb.StartDate;
                 q.EndDate = ptb.EndDate;
                 q.Status = ptb.Status;
+                q.Coin = ptb.Coin;
                 q.progress = ptb.progress;
                 db.SaveChanges();
                 return true;

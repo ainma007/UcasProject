@@ -18,6 +18,11 @@ namespace UcasProWindowsForm.Forms.supplierForm
             InitializeComponent();
         }
         UcasProEntities cmd = new UcasProEntities();
+        private void GetAllsupplier()
+        {
+
+            supplierBindingSource.DataSource = SuppliersCmd.GetAll();
+        }
         private void radRibbonBar1_Click(object sender, EventArgs e)
         {
 
@@ -25,15 +30,51 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void FrmManagementSupplier_Load(object sender, EventArgs e)
         {
-            supplierBindingSource.DataSource = SuppliersCmd.GetAll();
+            GetAllsupplier();
         }
-
+        
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+         
            
-            supplierBindingSource.EndEdit();
-            cmd.SaveChanges();
-           
+        }
+
+        private void MasterTemplate_CellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
+        {
+            try
+            {
+                if (radGridView1.Columns[e.ColumnIndex].Index == radGridView1.Columns[9].Index)
+                {
+                    if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Info) == DialogResult.Yes)
+                    {
+                        Supplier sup = supplierBindingSource.Current as Supplier;
+                        SuppliersCmd.EditSupplier(sup);
+                        GetAllsupplier();
+                    }
+                    else
+                    {
+
+                        GetAllsupplier();
+                    }
+
+
+                }
+
+                if (radGridView1.Columns[e.ColumnIndex].Index == radGridView1.Columns[10].Index)
+                    if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Info) == DialogResult.Yes)
+                    {
+                        Supplier sup = supplierBindingSource.Current as Supplier;
+                        SuppliersCmd.DeleteSupplier(sup.ID);
+                        GetAllsupplier();
+                    }
+
+            }
+            catch (Exception)
+            {
+
+                return;
+            }
+            
         }
     }
 }

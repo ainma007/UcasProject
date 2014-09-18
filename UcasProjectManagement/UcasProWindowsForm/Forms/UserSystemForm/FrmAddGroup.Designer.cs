@@ -35,6 +35,7 @@
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.GroupNameTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.PermssionList = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
@@ -48,6 +49,7 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.PermssionList);
             this.radGroupBox1.Controls.Add(this.radLabel7);
             this.radGroupBox1.Controls.Add(this.DescreptionTextBox);
             this.radGroupBox1.Controls.Add(this.AddBtn);
@@ -57,10 +59,11 @@
             this.radGroupBox1.HeaderText = "اضافة نشاط رئيسي";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(371, 324);
+            this.radGroupBox1.Size = new System.Drawing.Size(371, 491);
             this.radGroupBox1.TabIndex = 3;
             this.radGroupBox1.Text = "اضافة نشاط رئيسي";
             this.radGroupBox1.ThemeName = "Office2013Light";
+            this.radGroupBox1.Click += new System.EventHandler(this.radGroupBox1_Click);
             // 
             // radLabel7
             // 
@@ -86,7 +89,7 @@
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(229, 274);
+            this.AddBtn.Location = new System.Drawing.Point(229, 431);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(130, 38);
             this.AddBtn.TabIndex = 7;
@@ -113,11 +116,19 @@
             this.GroupNameTextBox.TabIndex = 0;
             this.GroupNameTextBox.ThemeName = "Office2013Light";
             // 
+            // PermssionList
+            // 
+            this.PermssionList.FormattingEnabled = true;
+            this.PermssionList.Location = new System.Drawing.Point(15, 159);
+            this.PermssionList.Name = "PermssionList";
+            this.PermssionList.Size = new System.Drawing.Size(343, 229);
+            this.PermssionList.TabIndex = 19;
+            // 
             // FrmAddGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 324);
+            this.ClientSize = new System.Drawing.Size(371, 491);
             this.Controls.Add(this.radGroupBox1);
             this.Name = "FrmAddGroup";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -127,6 +138,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "FrmAddGroup";
             this.ThemeName = "Office2013Light";
+            this.Load += new System.EventHandler(this.FrmAddGroup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
@@ -149,5 +161,6 @@
         private Telerik.WinControls.UI.RadButton AddBtn;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadTextBox GroupNameTextBox;
+        private System.Windows.Forms.CheckedListBox PermssionList;
     }
 }
