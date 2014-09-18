@@ -41,6 +41,8 @@
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.ThefinanciersNameTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
+            this.AdressTextBox = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -54,12 +56,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersNameTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdressTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.radLabel4);
+            this.radGroupBox1.Controls.Add(this.AdressTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel2);
             this.radGroupBox1.Controls.Add(this.AgentNameTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel7);
@@ -98,7 +104,7 @@
             this.AgentNameTextBox.Location = new System.Drawing.Point(62, 75);
             this.AgentNameTextBox.Name = "AgentNameTextBox";
             this.AgentNameTextBox.Size = new System.Drawing.Size(193, 21);
-            this.AgentNameTextBox.TabIndex = 19;
+            this.AgentNameTextBox.TabIndex = 2;
             this.AgentNameTextBox.ThemeName = "Office2013Light";
             // 
             // radLabel7
@@ -118,7 +124,7 @@
             this.faxTextBox4.Location = new System.Drawing.Point(62, 129);
             this.faxTextBox4.Name = "faxTextBox4";
             this.faxTextBox4.Size = new System.Drawing.Size(193, 21);
-            this.faxTextBox4.TabIndex = 17;
+            this.faxTextBox4.TabIndex = 4;
             this.faxTextBox4.ThemeName = "Office2013Light";
             // 
             // radLabel5
@@ -138,7 +144,7 @@
             this.EmailTextBox.Location = new System.Drawing.Point(62, 156);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(193, 21);
-            this.EmailTextBox.TabIndex = 15;
+            this.EmailTextBox.TabIndex = 5;
             this.EmailTextBox.ThemeName = "Office2013Light";
             // 
             // radLabel3
@@ -158,17 +164,18 @@
             this.PhoneNumberTextBox.Location = new System.Drawing.Point(62, 102);
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(193, 21);
-            this.PhoneNumberTextBox.TabIndex = 11;
+            this.PhoneNumberTextBox.TabIndex = 3;
             this.PhoneNumberTextBox.ThemeName = "Office2013Light";
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(221, 206);
+            this.AddBtn.Location = new System.Drawing.Point(221, 223);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(130, 38);
             this.AddBtn.TabIndex = 7;
             this.AddBtn.Text = "اضافة";
             this.AddBtn.ThemeName = "Office2013Light";
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // radLabel1
             // 
@@ -189,6 +196,26 @@
             this.ThefinanciersNameTextBox.Size = new System.Drawing.Size(193, 21);
             this.ThefinanciersNameTextBox.TabIndex = 0;
             this.ThefinanciersNameTextBox.ThemeName = "Office2013Light";
+            // 
+            // radLabel4
+            // 
+            this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radLabel4.Location = new System.Drawing.Point(261, 183);
+            this.radLabel4.Name = "radLabel4";
+            this.radLabel4.Size = new System.Drawing.Size(45, 19);
+            this.radLabel4.TabIndex = 22;
+            this.radLabel4.Text = "العنوان:";
+            this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            this.radLabel4.ThemeName = "Office2013Light";
+            // 
+            // AdressTextBox
+            // 
+            this.AdressTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AdressTextBox.Location = new System.Drawing.Point(62, 183);
+            this.AdressTextBox.Name = "AdressTextBox";
+            this.AdressTextBox.Size = new System.Drawing.Size(193, 21);
+            this.AdressTextBox.TabIndex = 6;
+            this.AdressTextBox.ThemeName = "Office2013Light";
             // 
             // FrmAddThefinanciers
             // 
@@ -217,6 +244,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersNameTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdressTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -237,5 +266,7 @@
         private Telerik.WinControls.UI.RadButton AddBtn;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadTextBox ThefinanciersNameTextBox;
+        private Telerik.WinControls.UI.RadLabel radLabel4;
+        private Telerik.WinControls.UI.RadTextBox AdressTextBox;
     }
 }

@@ -7,18 +7,13 @@ using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
-namespace UcasProWindowsForm.Forms.EmployeeForm
+namespace UcasProWindowsForm.Forms.MainForm
 {
-    public partial class FrmContractsAdd : Telerik.WinControls.UI.RadForm
+    public partial class FrmMainUserPro : Telerik.WinControls.UI.RadForm
     {
-        public FrmContractsAdd()
+        public FrmMainUserPro()
         {
             InitializeComponent();
-        }
-
-        private void AddBtn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

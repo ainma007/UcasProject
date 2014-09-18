@@ -6,19 +6,22 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
 
-namespace UcasProWindowsForm.Forms.EmployeeForm
+namespace UcasProWindowsForm.Forms.ProjectProfileForm
 {
-    public partial class FrmContractsAdd : Telerik.WinControls.UI.RadForm
+    public partial class FrmProjectManage : Telerik.WinControls.UI.RadForm
     {
-        public FrmContractsAdd()
+        public FrmProjectManage()
         {
             InitializeComponent();
         }
 
-        private void AddBtn_Click(object sender, EventArgs e)
+        private void FrmProjectManage_Load(object sender, EventArgs e)
         {
 
+
+         
         }
     }
 }

@@ -30,8 +30,6 @@
         {
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
@@ -43,12 +41,12 @@
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-            this.employeeNameTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.EmployeejobNumberTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.PhoneNumberTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.MobilenumberTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.EmailTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.EmployeeNationalNumberTextBox4 = new Telerik.WinControls.UI.RadTextBox();
+            this.EmailTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.MobilenumberTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.PhoneNumberTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.EmployeejobNumberTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.employeeNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
@@ -60,12 +58,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeNameTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeejobNumberTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhoneNumberTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MobilenumberTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmailTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeNationalNumberTextBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmailTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MobilenumberTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneNumberTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeejobNumberTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeNameTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,24 +108,20 @@
             this.AddBtn.TabIndex = 7;
             this.AddBtn.Text = "اضافة";
             this.AddBtn.ThemeName = "Office2013Light";
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // GenderDropDownList
             // 
             this.GenderDropDownList.AllowShowFocusCues = false;
             this.GenderDropDownList.AutoCompleteDisplayMember = null;
             this.GenderDropDownList.AutoCompleteValueMember = null;
-            radListDataItem1.Text = "شيكل";
+            this.GenderDropDownList.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            radListDataItem1.Text = "ذكر";
             radListDataItem1.TextWrap = true;
-            radListDataItem2.Text = "دولار";
+            radListDataItem2.Text = "انثى";
             radListDataItem2.TextWrap = true;
-            radListDataItem3.Text = "دينار اردني";
-            radListDataItem3.TextWrap = true;
-            radListDataItem4.Text = "يورو";
-            radListDataItem4.TextWrap = true;
             this.GenderDropDownList.Items.Add(radListDataItem1);
             this.GenderDropDownList.Items.Add(radListDataItem2);
-            this.GenderDropDownList.Items.Add(radListDataItem3);
-            this.GenderDropDownList.Items.Add(radListDataItem4);
             this.GenderDropDownList.Location = new System.Drawing.Point(57, 72);
             this.GenderDropDownList.Name = "GenderDropDownList";
             // 
@@ -135,7 +129,7 @@
             // 
             this.GenderDropDownList.RootElement.StretchVertically = true;
             this.GenderDropDownList.Size = new System.Drawing.Size(193, 21);
-            this.GenderDropDownList.TabIndex = 10;
+            this.GenderDropDownList.TabIndex = 1;
             this.GenderDropDownList.ThemeName = "Office2013Light";
             // 
             // radLabel3
@@ -209,6 +203,51 @@
             this.radGroupBox1.Text = "اضافة نشاط رئيسي";
             this.radGroupBox1.ThemeName = "Office2013Light";
             // 
+            // EmployeeNationalNumberTextBox4
+            // 
+            this.EmployeeNationalNumberTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.EmployeeNationalNumberTextBox4.Location = new System.Drawing.Point(57, 207);
+            this.EmployeeNationalNumberTextBox4.Name = "EmployeeNationalNumberTextBox4";
+            this.EmployeeNationalNumberTextBox4.Size = new System.Drawing.Size(193, 21);
+            this.EmployeeNationalNumberTextBox4.TabIndex = 6;
+            this.EmployeeNationalNumberTextBox4.ThemeName = "Office2013Light";
+            // 
+            // EmailTextBox
+            // 
+            this.EmailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.EmailTextBox.Location = new System.Drawing.Point(57, 180);
+            this.EmailTextBox.Name = "EmailTextBox";
+            this.EmailTextBox.Size = new System.Drawing.Size(193, 21);
+            this.EmailTextBox.TabIndex = 5;
+            this.EmailTextBox.ThemeName = "Office2013Light";
+            // 
+            // MobilenumberTextBox
+            // 
+            this.MobilenumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MobilenumberTextBox.Location = new System.Drawing.Point(57, 153);
+            this.MobilenumberTextBox.Name = "MobilenumberTextBox";
+            this.MobilenumberTextBox.Size = new System.Drawing.Size(193, 21);
+            this.MobilenumberTextBox.TabIndex = 4;
+            this.MobilenumberTextBox.ThemeName = "Office2013Light";
+            // 
+            // PhoneNumberTextBox
+            // 
+            this.PhoneNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PhoneNumberTextBox.Location = new System.Drawing.Point(57, 126);
+            this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
+            this.PhoneNumberTextBox.Size = new System.Drawing.Size(193, 21);
+            this.PhoneNumberTextBox.TabIndex = 3;
+            this.PhoneNumberTextBox.ThemeName = "Office2013Light";
+            // 
+            // EmployeejobNumberTextBox
+            // 
+            this.EmployeejobNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.EmployeejobNumberTextBox.Location = new System.Drawing.Point(57, 99);
+            this.EmployeejobNumberTextBox.Name = "EmployeejobNumberTextBox";
+            this.EmployeejobNumberTextBox.Size = new System.Drawing.Size(193, 21);
+            this.EmployeejobNumberTextBox.TabIndex = 2;
+            this.EmployeejobNumberTextBox.ThemeName = "Office2013Light";
+            // 
             // employeeNameTextBox
             // 
             this.employeeNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -217,51 +256,6 @@
             this.employeeNameTextBox.Size = new System.Drawing.Size(193, 21);
             this.employeeNameTextBox.TabIndex = 0;
             this.employeeNameTextBox.ThemeName = "Office2013Light";
-            // 
-            // EmployeejobNumberTextBox
-            // 
-            this.EmployeejobNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmployeejobNumberTextBox.Location = new System.Drawing.Point(57, 99);
-            this.EmployeejobNumberTextBox.Name = "EmployeejobNumberTextBox";
-            this.EmployeejobNumberTextBox.Size = new System.Drawing.Size(193, 21);
-            this.EmployeejobNumberTextBox.TabIndex = 5;
-            this.EmployeejobNumberTextBox.ThemeName = "Office2013Light";
-            // 
-            // PhoneNumberTextBox
-            // 
-            this.PhoneNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PhoneNumberTextBox.Location = new System.Drawing.Point(57, 126);
-            this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
-            this.PhoneNumberTextBox.Size = new System.Drawing.Size(193, 21);
-            this.PhoneNumberTextBox.TabIndex = 11;
-            this.PhoneNumberTextBox.ThemeName = "Office2013Light";
-            // 
-            // MobilenumberTextBox
-            // 
-            this.MobilenumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MobilenumberTextBox.Location = new System.Drawing.Point(57, 153);
-            this.MobilenumberTextBox.Name = "MobilenumberTextBox";
-            this.MobilenumberTextBox.Size = new System.Drawing.Size(193, 21);
-            this.MobilenumberTextBox.TabIndex = 13;
-            this.MobilenumberTextBox.ThemeName = "Office2013Light";
-            // 
-            // EmailTextBox
-            // 
-            this.EmailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmailTextBox.Location = new System.Drawing.Point(57, 180);
-            this.EmailTextBox.Name = "EmailTextBox";
-            this.EmailTextBox.Size = new System.Drawing.Size(193, 21);
-            this.EmailTextBox.TabIndex = 15;
-            this.EmailTextBox.ThemeName = "Office2013Light";
-            // 
-            // EmployeeNationalNumberTextBox4
-            // 
-            this.EmployeeNationalNumberTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmployeeNationalNumberTextBox4.Location = new System.Drawing.Point(57, 207);
-            this.EmployeeNationalNumberTextBox4.Name = "EmployeeNationalNumberTextBox4";
-            this.EmployeeNationalNumberTextBox4.Size = new System.Drawing.Size(193, 21);
-            this.EmployeeNationalNumberTextBox4.TabIndex = 17;
-            this.EmployeeNationalNumberTextBox4.ThemeName = "Office2013Light";
             // 
             // FrmAddEmployee
             // 
@@ -289,12 +283,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeNameTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeejobNumberTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhoneNumberTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MobilenumberTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmailTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeNationalNumberTextBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmailTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MobilenumberTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneNumberTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeejobNumberTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeNameTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
