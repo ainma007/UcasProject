@@ -17,6 +17,9 @@ namespace Ucas.Data.CommandClass
        public static bool AddUser(UsersTb tb)
        {
            db = new UcasProEntities();
+           db.Configuration.ProxyCreationEnabled = false;
+           db.Configuration.LazyLoadingEnabled = false;
+
            db.UsersTbs.Add(tb);
            db.SaveChanges();
            return true;
