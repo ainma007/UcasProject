@@ -10,8 +10,19 @@ namespace Ucas.Data.CommandClass
     {
        static UcasProEntities db = new UcasProEntities();
 
-       public static bool AddGroup(GroupsTb gtb)
-        { db = new UcasProEntities(); db.GroupsTbs.Add(gtb); db.SaveChanges(); return true; }
+       public static bool AddGroup(GroupsTb xgtb)
+        { 
+           db = new UcasProEntities();
+           db.Configuration.ProxyCreationEnabled = false;
+           db.Configuration.LazyLoadingEnabled = false;
+
+           db.GroupsTbs.Add(xgtb); 
+           db.SaveChanges(); 
+           return true; 
+       }
+
+
+
         public List<GroupsTb> GetAllGroups() { db = new UcasProEntities(); return db.GroupsTbs.ToList(); }
 
 
@@ -59,7 +70,14 @@ namespace Ucas.Data.CommandClass
             }
 
 
-
+        }
+        public static int  GetLastGroupID()
+        {
+            db = new UcasProEntities();
+            db.Configuration.LazyLoadingEnabled = false;
+            db.Configuration.ProxyCreationEnabled = false;
+            var GLast = (from g in db.GroupsTbs where g.ID != 0 select g.ID).Last();
+            return GLast;
         }
     }
 }

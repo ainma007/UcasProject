@@ -10,6 +10,7 @@ using Ucas.Data.CommandClass;
 using UcasProWindowsForm.Forms.EmployeeForm;
 using UcasProWindowsForm.Forms.ProjectProfileForm;
 using UcasProWindowsForm.Forms.supplierForm;
+using UcasProWindowsForm.Forms.UserSystemForm ;
 
 
 namespace UcasProWindowsForm.Forms.MainForm
@@ -19,6 +20,7 @@ namespace UcasProWindowsForm.Forms.MainForm
         public FrmAdmin()
         {
             InitializeComponent();
+           
         }
         ProjectProfileCmd cmd = new ProjectProfileCmd();
         private void FrmAdmin_Load(object sender, EventArgs e)
@@ -34,8 +36,11 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void GroupMangBtn_Click(object sender, EventArgs e)
         {
-          
+            Form frm = new FrmAddGroup();
+            frm.Show();
         }
+
+    
 
         private void EmployeeAddBtn_Click(object sender, EventArgs e)
         {
