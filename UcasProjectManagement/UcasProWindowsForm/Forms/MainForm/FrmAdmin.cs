@@ -71,5 +71,10 @@ namespace UcasProWindowsForm.Forms.MainForm
             FrmManagementSupplier MangSup = new FrmManagementSupplier();
             MangSup.ShowDialog();
         }
+
+        private void FrmAdmin_Activated(object sender, EventArgs e)
+        {
+            FrmAdmin_Load(sender, e);
+        }
     }
 }

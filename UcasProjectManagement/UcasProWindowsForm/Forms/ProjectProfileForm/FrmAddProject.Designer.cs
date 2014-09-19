@@ -34,6 +34,7 @@
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.ProjectDescriptionTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             this.CoineDropDownList = new Telerik.WinControls.UI.RadDropDownList();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
@@ -48,9 +49,9 @@
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.ProjectNameTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.ProjectDescriptionTextBox = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectDescriptionTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CoineDropDownList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
@@ -65,7 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectNameTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProjectDescriptionTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,6 +96,17 @@
             this.radGroupBox1.Text = "اضافة مشروع";
             this.radGroupBox1.ThemeName = "Office2013Light";
             this.radGroupBox1.Click += new System.EventHandler(this.radGroupBox1_Click);
+            // 
+            // ProjectDescriptionTextBox
+            // 
+            this.ProjectDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProjectDescriptionTextBox.AutoSize = false;
+            this.ProjectDescriptionTextBox.Location = new System.Drawing.Point(32, 86);
+            this.ProjectDescriptionTextBox.Multiline = true;
+            this.ProjectDescriptionTextBox.Name = "ProjectDescriptionTextBox";
+            this.ProjectDescriptionTextBox.Size = new System.Drawing.Size(193, 40);
+            this.ProjectDescriptionTextBox.TabIndex = 1;
+            this.ProjectDescriptionTextBox.ThemeName = "Office2013Light";
             // 
             // radLabel7
             // 
@@ -263,17 +274,6 @@
             this.ProjectNameTextBox.TabIndex = 0;
             this.ProjectNameTextBox.ThemeName = "Office2013Light";
             // 
-            // ProjectDescriptionTextBox
-            // 
-            this.ProjectDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProjectDescriptionTextBox.AutoSize = false;
-            this.ProjectDescriptionTextBox.Location = new System.Drawing.Point(32, 86);
-            this.ProjectDescriptionTextBox.Multiline = true;
-            this.ProjectDescriptionTextBox.Name = "ProjectDescriptionTextBox";
-            this.ProjectDescriptionTextBox.Size = new System.Drawing.Size(193, 40);
-            this.ProjectDescriptionTextBox.TabIndex = 13;
-            this.ProjectDescriptionTextBox.ThemeName = "Office2013Light";
-            // 
             // FrmAddProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,6 +291,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectDescriptionTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CoineDropDownList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
@@ -305,7 +306,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectNameTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProjectDescriptionTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

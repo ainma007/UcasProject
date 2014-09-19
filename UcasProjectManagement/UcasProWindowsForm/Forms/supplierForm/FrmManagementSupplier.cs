@@ -44,10 +44,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
             }
 
         }
-        private void radRibbonBar1_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void FrmManagementSupplier_Load(object sender, EventArgs e)
         {
@@ -55,17 +52,9 @@ namespace UcasProWindowsForm.Forms.supplierForm
             LockGrid();
         }
         
-        private void SaveBtn_Click(object sender, EventArgs e)
-        {
-         
-           
-        }
+        
 
-        private void MasterTemplate_CellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
-        {
-           
-            
-        }
+       
 
         private void MasterTemplate_CommandCellClick(object sender, EventArgs e)
         {
@@ -105,11 +94,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
             }
         }
 
-        private void MasterTemplate_DoubleClick(object sender, EventArgs e)
-        {
-            
-           
-        }
+     
 
         private void MasterTemplate_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {

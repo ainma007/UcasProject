@@ -12,22 +12,16 @@ namespace Ucas.Data.CommandClass
 
        public static bool AddGroup(GroupsTb xgtb)
         {
-            try
-            {
-           db = new UcasProEntities();
-           db.Configuration.ProxyCreationEnabled = false;
-           db.Configuration.LazyLoadingEnabled = false;
+           
+                db = new UcasProEntities();
+                db.Configuration.ProxyCreationEnabled = false;
+                db.Configuration.LazyLoadingEnabled = false;
 
-           db.GroupsTbs.Add(xgtb); 
-           db.SaveChanges(); 
-           return true; 
+                db.GroupsTbs.Add(xgtb);
+                db.SaveChanges();
+                return true;
             }
-            catch (Exception)
-            {
-                
-                throw;
-            }
-       }
+       
 
 
 
@@ -84,7 +78,7 @@ namespace Ucas.Data.CommandClass
             db = new UcasProEntities();
             db.Configuration.LazyLoadingEnabled = false;
             db.Configuration.ProxyCreationEnabled = false;
-            var GLast = (from g in db.GroupsTbs where g.ID != 0 select g.ID).Last();
+            var GLast = (from g in db.GroupsTbs where g.ID != 0 select g.ID).Max ();
             return GLast;
         }
     }
