@@ -116,3 +116,4 @@ C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWind
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Properties.Resources.resources
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.csproj.GenerateResource.Cache
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.FrmGroupManage.resources
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.EmployeeForm.FrmEmployeeMng.resources

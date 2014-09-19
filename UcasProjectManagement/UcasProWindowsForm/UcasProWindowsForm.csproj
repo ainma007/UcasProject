@@ -95,6 +95,12 @@
     <Compile Include="Forms\EmployeeForm\FrmContractsAdd.Designer.cs">
       <DependentUpon>FrmContractsAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EmployeeForm\FrmEmployeeMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm\FrmEmployeeMng.Designer.cs">
+      <DependentUpon>FrmEmployeeMng.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ExpensesForm\FrmAddExpenses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeForm\FrmContractsAdd.resx">
       <DependentUpon>FrmContractsAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForm\FrmEmployeeMng.resx">
+      <DependentUpon>FrmEmployeeMng.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExpensesForm\FrmAddExpenses.resx">
       <DependentUpon>FrmAddExpenses.cs</DependentUpon>

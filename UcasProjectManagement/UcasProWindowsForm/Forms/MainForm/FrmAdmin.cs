@@ -89,5 +89,11 @@ namespace UcasProWindowsForm.Forms.MainForm
             FrmManagementFinanciers finamang = new FrmManagementFinanciers();
             finamang.ShowDialog();
         }
+
+        private void EmployeeMangBtn_Click(object sender, EventArgs e)
+        {
+            FrmEmployeeMng empmang = new FrmEmployeeMng();
+            empmang.ShowDialog();
+        }
     }
 }
