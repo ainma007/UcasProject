@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/14/2014 23:57:45
--- Generated from EDMX file: C:\Users\Heroo\Documents\Visual Studio 2013\Projects\UcasProjectManagement\Ucas.Data\UcasPro.edmx
+-- Date Created: 09/19/2014 18:00:00
+-- Generated from EDMX file: C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\UcasPro.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -18,7 +18,7 @@ GO
 -- --------------------------------------------------
 
 IF OBJECT_ID(N'[dbo].[FK_AmountsReceived_TheFinancerProjects]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[AmountsReceived] DROP CONSTRAINT [FK_AmountsReceived_TheFinancerProjects];
+    ALTER TABLE [dbo].[AmountsReceiveds] DROP CONSTRAINT [FK_AmountsReceived_TheFinancerProjects];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Attachments_ProjectProfiles]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Attachments] DROP CONSTRAINT [FK_Attachments_ProjectProfiles];
@@ -29,14 +29,26 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_Contracts_ProjectProfiles]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Contracts] DROP CONSTRAINT [FK_Contracts_ProjectProfiles];
 GO
+IF OBJECT_ID(N'[dbo].[FK_Salaries_Contracts]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Salaries] DROP CONSTRAINT [FK_Salaries_Contracts];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UsersTb_Employees]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UsersTbs] DROP CONSTRAINT [FK_UsersTb_Employees];
+GO
 IF OBJECT_ID(N'[dbo].[FK_PeremissionsTb_GroupsTb]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PeremissionsTb] DROP CONSTRAINT [FK_PeremissionsTb_GroupsTb];
+    ALTER TABLE [dbo].[PeremissionsTbs] DROP CONSTRAINT [FK_PeremissionsTb_GroupsTb];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UsersTb_GroupsTb]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UsersTbs] DROP CONSTRAINT [FK_UsersTb_GroupsTb];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProjectSubActivities_ProjectActivities]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProjectSubActivities] DROP CONSTRAINT [FK_ProjectSubActivities_ProjectActivities];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ProjectControl_ProjectProfiles]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProjectControl] DROP CONSTRAINT [FK_ProjectControl_ProjectProfiles];
+    ALTER TABLE [dbo].[ProjectControls] DROP CONSTRAINT [FK_ProjectControl_ProjectProfiles];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ProjectControl_UsersTb]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProjectControl] DROP CONSTRAINT [FK_ProjectControl_UsersTb];
+    ALTER TABLE [dbo].[ProjectControls] DROP CONSTRAINT [FK_ProjectControl_UsersTb];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ProjectExpenses_ProjectSubActivities]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ProjectExpenses] DROP CONSTRAINT [FK_ProjectExpenses_ProjectSubActivities];
@@ -44,31 +56,19 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ProjectExpenses_Suppliers]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ProjectExpenses] DROP CONSTRAINT [FK_ProjectExpenses_Suppliers];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ProjectSubActivities_ProjectActivities]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProjectSubActivities] DROP CONSTRAINT [FK_ProjectSubActivities_ProjectActivities];
-GO
-IF OBJECT_ID(N'[dbo].[FK_Salaries_Contracts]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Salaries] DROP CONSTRAINT [FK_Salaries_Contracts];
-GO
 IF OBJECT_ID(N'[dbo].[FK_TheFinancerProject_ProjectProfiles]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[TheFinancerProjects] DROP CONSTRAINT [FK_TheFinancerProject_ProjectProfiles];
 GO
 IF OBJECT_ID(N'[dbo].[FK_TheFinancerProject_Thefinanciers]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[TheFinancerProjects] DROP CONSTRAINT [FK_TheFinancerProject_Thefinanciers];
 GO
-IF OBJECT_ID(N'[dbo].[FK_UsersTb_Employees]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[UsersTb] DROP CONSTRAINT [FK_UsersTb_Employees];
-GO
-IF OBJECT_ID(N'[dbo].[FK_UsersTb_GroupsTb]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[UsersTb] DROP CONSTRAINT [FK_UsersTb_GroupsTb];
-GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[AmountsReceived]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[AmountsReceived];
+IF OBJECT_ID(N'[dbo].[AmountsReceiveds]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[AmountsReceiveds];
 GO
 IF OBJECT_ID(N'[dbo].[Attachments]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Attachments];
@@ -79,17 +79,17 @@ GO
 IF OBJECT_ID(N'[dbo].[Employees]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Employees];
 GO
-IF OBJECT_ID(N'[dbo].[GroupsTb]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[GroupsTb];
+IF OBJECT_ID(N'[dbo].[GroupsTbs]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[GroupsTbs];
 GO
-IF OBJECT_ID(N'[dbo].[PeremissionsTb]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[PeremissionsTb];
+IF OBJECT_ID(N'[dbo].[PeremissionsTbs]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PeremissionsTbs];
 GO
 IF OBJECT_ID(N'[dbo].[ProjectActivities]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ProjectActivities];
 GO
-IF OBJECT_ID(N'[dbo].[ProjectControl]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ProjectControl];
+IF OBJECT_ID(N'[dbo].[ProjectControls]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ProjectControls];
 GO
 IF OBJECT_ID(N'[dbo].[ProjectExpenses]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ProjectExpenses];
@@ -115,8 +115,8 @@ GO
 IF OBJECT_ID(N'[dbo].[Thefinanciers]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Thefinanciers];
 GO
-IF OBJECT_ID(N'[dbo].[UsersTb]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[UsersTb];
+IF OBJECT_ID(N'[dbo].[UsersTbs]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UsersTbs];
 GO
 
 -- --------------------------------------------------

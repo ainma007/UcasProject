@@ -9,10 +9,10 @@ namespace Ucas.Data.CommandClass
     {
         static UcasProEntities db = new UcasProEntities();
 
-        public static List<PeremissionsTb> GetAllPeremissions(int xid)
+        public static List<PeremissionsTb> GetAllPeremissions(int xid )
         {
             db = new UcasProEntities();
-            var lst = (from p in db.PeremissionsTbs where p.GroupID == xid select p).ToList();
+            var lst = (from p in db.PeremissionsTbs where p.GroupID == xid  select p).ToList();
             return lst;
         }
         public static bool AddPeremissions(PeremissionsTb tb)
