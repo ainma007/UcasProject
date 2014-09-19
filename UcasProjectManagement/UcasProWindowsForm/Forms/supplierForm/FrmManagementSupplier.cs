@@ -16,12 +16,33 @@ namespace UcasProWindowsForm.Forms.supplierForm
         public FrmManagementSupplier()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("Office2013Light");
         }
         UcasProEntities cmd = new UcasProEntities();
         private void GetAllsupplier()
         {
 
             supplierBindingSource.DataSource = SuppliersCmd.GetAll();
+        }
+
+    private  void LockGrid()
+        {
+            for (int i = 0; i <= radGridView1.Rows.Count - 1; i++)
+            {
+                radGridView1.Rows[i].Cells[0].ReadOnly = true;
+                radGridView1.Rows[i].Cells[1].ReadOnly = true;
+                radGridView1.Rows[i].Cells[2].ReadOnly = true;
+                radGridView1.Rows[i].Cells[3].ReadOnly = true;
+                radGridView1.Rows[i].Cells[4].ReadOnly = true;
+                radGridView1.Rows[i].Cells[5].ReadOnly = true;
+                radGridView1.Rows[i].Cells[6].ReadOnly = true;
+                radGridView1.Rows[i].Cells[7].ReadOnly = true;
+              
+              
+
+
+            }
+
         }
         private void radRibbonBar1_Click(object sender, EventArgs e)
         {
@@ -31,6 +52,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
         private void FrmManagementSupplier_Load(object sender, EventArgs e)
         {
             GetAllsupplier();
+            LockGrid();
         }
         
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -41,39 +63,64 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void MasterTemplate_CellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
-            try
+           
+            
+        }
+
+        private void MasterTemplate_CommandCellClick(object sender, EventArgs e)
+        {
+          try{  
+        var col = radGridView1.CurrentColumn.Index;
+        if (col == 8)
+        {
+            if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
-                if (radGridView1.Columns[e.ColumnIndex].Index == radGridView1.Columns[9].Index)
-                {
-                    if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Info) == DialogResult.Yes)
-                    {
-                        Supplier sup = supplierBindingSource.Current as Supplier;
-                        SuppliersCmd.EditSupplier(sup);
-                        GetAllsupplier();
-                    }
-                    else
-                    {
+                Supplier sup = supplierBindingSource.Current as Supplier;
+                SuppliersCmd.EditSupplier(sup);
+                GetAllsupplier();
+                LockGrid();
+            }
+            else
+            {
 
-                        GetAllsupplier();
-                    }
-
-
-                }
-
-                if (radGridView1.Columns[e.ColumnIndex].Index == radGridView1.Columns[10].Index)
-                    if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Info) == DialogResult.Yes)
+                GetAllsupplier();
+                LockGrid();
+            }
+        }
+        if (col == 9) { if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                     {
                         Supplier sup = supplierBindingSource.Current as Supplier;
                         SuppliersCmd.DeleteSupplier(sup.ID);
                         GetAllsupplier();
+                        LockGrid();
                     }
 
             }
-            catch (Exception)
+            }
+           
+         catch (Exception)
             {
 
                 return;
             }
+        }
+
+        private void MasterTemplate_DoubleClick(object sender, EventArgs e)
+        {
+            
+           
+        }
+
+        private void MasterTemplate_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
+        {
+            radGridView1.Rows[e.RowIndex].Cells[0].ReadOnly = false;
+            radGridView1.Rows[e.RowIndex].Cells[1].ReadOnly = false;
+            radGridView1.Rows[e.RowIndex].Cells[2].ReadOnly = false;
+            radGridView1.Rows[e.RowIndex].Cells[3].ReadOnly = false;
+            radGridView1.Rows[e.RowIndex].Cells[4].ReadOnly = false;
+            radGridView1.Rows[e.RowIndex].Cells[5].ReadOnly = false;
+            radGridView1.Rows[e.RowIndex].Cells[6].ReadOnly = false;
+            radGridView1.Rows[e.RowIndex].Cells[7].ReadOnly = false;
             
         }
     }
