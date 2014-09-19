@@ -36,8 +36,8 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void GroupMangBtn_Click(object sender, EventArgs e)
         {
-            Form frm = new FrmAddGroup();
-            frm.Show();
+            FrmGroupManage mangfrm = new FrmGroupManage();
+            mangfrm.ShowDialog();
         }
 
     
@@ -75,6 +75,13 @@ namespace UcasProWindowsForm.Forms.MainForm
         private void FrmAdmin_Activated(object sender, EventArgs e)
         {
             FrmAdmin_Load(sender, e);
+        }
+
+        private void GroupAddBtn_Click(object sender, EventArgs e)
+        {
+
+            Form frm = new FrmAddGroup();
+            frm.Show();
         }
     }
 }

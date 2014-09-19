@@ -25,7 +25,7 @@ namespace Ucas.Data.CommandClass
 
 
 
-        public List<GroupsTb> GetAllGroups() { db = new UcasProEntities(); return db.GroupsTbs.ToList(); }
+        public static List<GroupsTb> GetAllGroups() { db = new UcasProEntities(); return db.GroupsTbs.ToList(); }
 
 
         public static bool DeleteGroup(int xid)

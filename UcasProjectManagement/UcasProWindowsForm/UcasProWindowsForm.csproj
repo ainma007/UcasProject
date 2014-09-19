@@ -179,6 +179,12 @@
     <Compile Include="Forms\UserSystemForm\frmAddUser.Designer.cs">
       <DependentUpon>frmAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UserSystemForm\FrmGroupManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserSystemForm\FrmGroupManage.Designer.cs">
+      <DependentUpon>FrmGroupManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="OperationX.cs" />
     <Compile Include="Program.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -240,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserSystemForm\frmAddUser.resx">
       <DependentUpon>frmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserSystemForm\FrmGroupManage.resx">
+      <DependentUpon>FrmGroupManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
