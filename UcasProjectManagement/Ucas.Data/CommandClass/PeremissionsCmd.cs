@@ -17,6 +17,9 @@ namespace Ucas.Data.CommandClass
         public static bool AddPeremissions(PeremissionsTb tb)
         {
             db = new UcasProEntities();
+            db.Configuration.ProxyCreationEnabled = false;
+            db.Configuration.LazyLoadingEnabled = false;
+
             db.PeremissionsTbs.Add(tb);
             db.SaveChanges();
             return true;
