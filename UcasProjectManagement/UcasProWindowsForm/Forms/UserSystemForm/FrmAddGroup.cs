@@ -84,19 +84,22 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                     GroupCmd.AddGroup(gtb);
                     //==============================================
                     int xLastGroupID = GroupCmd.GetLastGroupID();                
-                   //==============================================
+                   // ==============================================
                     ptb = new PeremissionsTb();
                     ArrayList Lst = new ArrayList() ;
-                   
-                    for (int per = 0; per < PermssionList .Items .Count ; per++)
-                    {                   
-                        string r = PermssionList.GetItemCheckState(PermssionList.Items.IndexOf(per)).ToString();
-                        if (r.ToString() == "Checked")
-                        { Lst.Add (1); }
-                        else
-                        {  Lst.Add(0); }                    
+                  
+                    foreach (string i in  PermssionList .Items )
+                    {
+                       
+                        string r = PermssionList.GetItemCheckState(PermssionList.Items.IndexOf(i)).ToString();
+                        if (r.ToString() == "Checked") 
+                                                     {  Lst.Add(1); }
+                                                else {  Lst.Add(0); }
+
+                     
                     }
-                    
+
+                   
                     ptb.GroupID = xLastGroupID;
                     ptb.AddUser = int.Parse (Lst[0].ToString ());
                     ptb.UpDateUser  = int.Parse(Lst[1].ToString());

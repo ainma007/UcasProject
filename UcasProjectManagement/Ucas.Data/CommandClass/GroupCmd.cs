@@ -11,7 +11,9 @@ namespace Ucas.Data.CommandClass
        static UcasProEntities db = new UcasProEntities();
 
        public static bool AddGroup(GroupsTb xgtb)
-        { 
+        {
+            try
+            {
            db = new UcasProEntities();
            db.Configuration.ProxyCreationEnabled = false;
            db.Configuration.LazyLoadingEnabled = false;
@@ -19,6 +21,12 @@ namespace Ucas.Data.CommandClass
            db.GroupsTbs.Add(xgtb); 
            db.SaveChanges(); 
            return true; 
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
        }
 
 
