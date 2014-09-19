@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
+using Ucas.Data;
 using Ucas.Data.CommandClass;
 
 namespace UcasProWindowsForm.Forms.UserSystemForm
@@ -121,6 +123,64 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
             UpdatePanelInfo(this.GroupGridView.CurrentRow, 5);
 
 
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+
+            if (GroupNameTextBox.Text != null)
+            {
+                GroupsTb gtb = new GroupsTb()
+                {
+                    GroupName = GroupNameTextBox.Text.ToString(),
+                    Description = DescreptionTextBox.Text.ToString(),
+
+                };
+                GroupCmd.EditGroup(gtb);
+                //==============================================
+
+                int xlast = GroupCmd.GetLastGroupID();
+                MessageBox.Show("" + xlast.ToString());
+                // ==============================================
+
+                ArrayList Lst = new ArrayList();
+
+                foreach (string i in PermssionList.Items)
+                {
+
+                    string r = PermssionList.GetItemCheckState(PermssionList.Items.IndexOf(i)).ToString();
+                    if (r.ToString() == "Checked")
+                    { Lst.Add(1); }
+                    else { Lst.Add(0); }
+
+
+                }
+
+                PeremissionsTb ptb = new PeremissionsTb()
+                {
+                   
+                    AddUser = int.Parse(Lst[0].ToString()),
+                    UpDateUser = int.Parse(Lst[1].ToString()),
+                    DeleteUser = int.Parse(Lst[2].ToString()),
+                    AddProject = int.Parse(Lst[3].ToString()),
+                    DisplayExpenses = int.Parse(Lst[4].ToString()),
+                    CanPrint = int.Parse(Lst[5].ToString()),
+                    AddEmployee = int.Parse(Lst[6].ToString()),
+                    AddSuppliers = int.Parse(Lst[7].ToString()),
+                    AddFinncers = int.Parse(Lst[8].ToString()),
+                    EditEmployee = int.Parse(Lst[9].ToString()),
+                    DeleteEmployee = int.Parse(Lst[10].ToString()),
+                    EditFinncers = int.Parse(Lst[11].ToString()),
+                    DeleteFinncers = int.Parse(Lst[12].ToString()),
+                    EditSuppliers = int.Parse(Lst[13].ToString()),
+                    DeleteSuppliers = int.Parse(Lst[14].ToString()),
+                };
+
+
+                PeremissionsCmd.EditPeremissions(ptb);
+                MessageBox.Show("Saved ..");
+
+            }
         }
     }
 }
