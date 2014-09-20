@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
@@ -47,6 +47,7 @@
             this.PhoneNumberTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.EmployeejobNumberTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.employeeNameTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
@@ -107,7 +108,7 @@
             this.AddBtn.Size = new System.Drawing.Size(130, 38);
             this.AddBtn.TabIndex = 7;
             this.AddBtn.Text = "اضافة";
-            this.AddBtn.ThemeName = "Office2013Light";
+            this.AddBtn.ThemeName = "TelerikMetroBlue";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // GenderDropDownList
@@ -116,12 +117,12 @@
             this.GenderDropDownList.AutoCompleteDisplayMember = null;
             this.GenderDropDownList.AutoCompleteValueMember = null;
             this.GenderDropDownList.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem1.Text = "ذكر";
-            radListDataItem1.TextWrap = true;
-            radListDataItem2.Text = "انثى";
-            radListDataItem2.TextWrap = true;
-            this.GenderDropDownList.Items.Add(radListDataItem1);
-            this.GenderDropDownList.Items.Add(radListDataItem2);
+            radListDataItem3.Text = "ذكر";
+            radListDataItem3.TextWrap = true;
+            radListDataItem4.Text = "انثى";
+            radListDataItem4.TextWrap = true;
+            this.GenderDropDownList.Items.Add(radListDataItem3);
+            this.GenderDropDownList.Items.Add(radListDataItem4);
             this.GenderDropDownList.Location = new System.Drawing.Point(57, 72);
             this.GenderDropDownList.Name = "GenderDropDownList";
             // 
@@ -195,13 +196,14 @@
             this.radGroupBox1.Controls.Add(this.radLabel1);
             this.radGroupBox1.Controls.Add(this.employeeNameTextBox);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.radGroupBox1.HeaderText = "اضافة نشاط رئيسي";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(363, 310);
+            this.radGroupBox1.Size = new System.Drawing.Size(363, 305);
             this.radGroupBox1.TabIndex = 2;
             this.radGroupBox1.Text = "اضافة نشاط رئيسي";
-            this.radGroupBox1.ThemeName = "Office2013Light";
+            this.radGroupBox1.ThemeName = "TelerikMetroBlue";
             // 
             // EmployeeNationalNumberTextBox4
             // 
@@ -261,7 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 310);
+            this.ClientSize = new System.Drawing.Size(363, 305);
             this.Controls.Add(this.radGroupBox1);
             this.Name = "FrmAddEmployee";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -270,7 +272,8 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "FrmAddEmployee";
-            this.ThemeName = "Office2013Light";
+            this.ThemeName = "TelerikMetroBlue";
+            this.Load += new System.EventHandler(this.FrmAddEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
@@ -313,5 +316,6 @@
         private Telerik.WinControls.UI.RadTextBox PhoneNumberTextBox;
         private Telerik.WinControls.UI.RadTextBox EmployeejobNumberTextBox;
         private Telerik.WinControls.UI.RadTextBox employeeNameTextBox;
+        private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
     }
 }

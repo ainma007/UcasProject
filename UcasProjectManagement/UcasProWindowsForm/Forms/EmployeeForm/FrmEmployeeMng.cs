@@ -63,15 +63,24 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
         private void EmployeeGridView_CellDoubleClick(object sender, GridViewCellEventArgs e)
         {
-            EmployeeGridView.Rows[e.RowIndex].Cells[0].ReadOnly = false;
-            EmployeeGridView.Rows[e.RowIndex].Cells[1].ReadOnly = false;
-            EmployeeGridView.Rows[e.RowIndex].Cells[2].ReadOnly = false;
-            EmployeeGridView.Rows[e.RowIndex].Cells[3].ReadOnly = false;
-            EmployeeGridView.Rows[e.RowIndex].Cells[4].ReadOnly = false;
-            EmployeeGridView.Rows[e.RowIndex].Cells[5].ReadOnly = false;
-            EmployeeGridView.Rows[e.RowIndex].Cells[6].ReadOnly = false;
-            EmployeeGridView.Rows[e.RowIndex].Cells[7].ReadOnly = false;
-            EmployeeGridView.Rows[e.RowIndex].Cells[8].ReadOnly = false;
+            try
+            {
+                EmployeeGridView.Rows[e.RowIndex].Cells[0].ReadOnly = false;
+                EmployeeGridView.Rows[e.RowIndex].Cells[1].ReadOnly = false;
+                EmployeeGridView.Rows[e.RowIndex].Cells[2].ReadOnly = false;
+                EmployeeGridView.Rows[e.RowIndex].Cells[3].ReadOnly = false;
+                EmployeeGridView.Rows[e.RowIndex].Cells[4].ReadOnly = false;
+                EmployeeGridView.Rows[e.RowIndex].Cells[5].ReadOnly = false;
+                EmployeeGridView.Rows[e.RowIndex].Cells[6].ReadOnly = false;
+                EmployeeGridView.Rows[e.RowIndex].Cells[7].ReadOnly = false;
+            }
+            catch (Exception)
+            {
+
+                return;
+            }
+          
+           
 
         }
 
@@ -110,17 +119,32 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             }
         }
 
-        private void EmployeeGridView_CellValidating(object sender, CellValidatingEventArgs e)
-        {
-   
-        
-        }
+    
 
        
 
-        private void EmployeeGridView_EditorRequired(object sender, EditorRequiredEventArgs e)
+   
+        private void AddBtn_Click(object sender, EventArgs e)
         {
-
+            FrmAddEmployee add = new FrmAddEmployee();
+            add.ShowDialog();
         }
-    }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            GetAllEmployee();
+        }
+
+        private void FrmEmployeeMng_Activated(object sender, EventArgs e)
+        {
+            
+        }
+       
+
+        private void EmployeeGridView_Click(object sender, EventArgs e)
+        {
 }
+}
+       
+    }
+

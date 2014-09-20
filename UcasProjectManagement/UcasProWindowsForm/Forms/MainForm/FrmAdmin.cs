@@ -95,5 +95,11 @@ namespace UcasProWindowsForm.Forms.MainForm
             FrmEmployeeMng empmang = new FrmEmployeeMng();
             empmang.ShowDialog();
         }
+
+        private void radGridView1_CommandCellClick(object sender, EventArgs e)
+        {
+            FrmMainUserPro user = new FrmMainUserPro();
+            user.ShowDialog();
+        }
     }
 }

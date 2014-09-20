@@ -22,8 +22,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         {
             if (employeeNameTextBox.Text == "")
             {
-                employeeNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
 
+                  employeeNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
                
                 employeeNameTextBox.Focus();
                
@@ -38,7 +38,9 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
             if (GenderDropDownList.SelectedItem == null)
             {
-                GenderDropDownList.DropDownListElement.TextBox.Fill.BackColor = Color.OrangeRed;
+                //GenderDropDownList.BackColor = System.Drawing.Color.Red;
+                  GenderDropDownList.DropDownListElement.TextBox.BackColor = Color.OrangeRed;
+               // GenderDropDownList.DropDownListElement.TextBox.Fill.BackColor = Color.OrangeRed;
 
 
                 GenderDropDownList.Focus();
@@ -47,7 +49,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             }
             else
             {
-                GenderDropDownList.DropDownListElement.TextBox.Fill.BackColor = Color.White;
+                GenderDropDownList.DropDownListElement.TextBox.BackColor = Color.White;
             }
 
             Employee emp = new Employee()
@@ -67,6 +69,11 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             RadMessageBox.SetThemeName("Office2013Light");
 
             DialogResult ds = RadMessageBox.Show(this, OperationX.AddMessageDone, "Done", MessageBoxButtons.OK, RadMessageIcon.Info);
+        }
+
+        private void FrmAddEmployee_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

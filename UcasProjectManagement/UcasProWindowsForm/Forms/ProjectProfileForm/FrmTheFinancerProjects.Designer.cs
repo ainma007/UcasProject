@@ -30,20 +30,21 @@
         {
             this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+            this.ThefinanciersComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.CostTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.ThefinanciersComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+            this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersComboBox.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,13 +57,56 @@
             this.radGroupBox1.Controls.Add(this.radLabel1);
             this.radGroupBox1.Controls.Add(this.CostTextBox);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.radGroupBox1.HeaderText = "اضافة ممول للمشروع";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
             this.radGroupBox1.Size = new System.Drawing.Size(410, 201);
             this.radGroupBox1.TabIndex = 1;
             this.radGroupBox1.Text = "اضافة ممول للمشروع";
-            this.radGroupBox1.ThemeName = "Office2013Light";
+            this.radGroupBox1.ThemeName = "TelerikMetroBlue";
+            // 
+            // radLabel2
+            // 
+            this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radLabel2.Location = new System.Drawing.Point(266, 38);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(132, 19);
+            this.radLabel2.TabIndex = 9;
+            this.radLabel2.Text = "الممول الخاص بالمشروع:";
+            this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            this.radLabel2.ThemeName = "Office2013Light";
+            // 
+            // ThefinanciersComboBox
+            // 
+            // 
+            // ThefinanciersComboBox.NestedRadGridView
+            // 
+            this.ThefinanciersComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.ThefinanciersComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.ThefinanciersComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ThefinanciersComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
+            // 
+            // 
+            // 
+            this.ThefinanciersComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.ThefinanciersComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.ThefinanciersComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.ThefinanciersComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.ThefinanciersComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.ThefinanciersComboBox.EditorControl.Name = "NestedRadGridView";
+            this.ThefinanciersComboBox.EditorControl.ReadOnly = true;
+            this.ThefinanciersComboBox.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ThefinanciersComboBox.EditorControl.ShowGroupPanel = false;
+            this.ThefinanciersComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.ThefinanciersComboBox.EditorControl.TabIndex = 0;
+            this.ThefinanciersComboBox.Location = new System.Drawing.Point(39, 38);
+            this.ThefinanciersComboBox.Name = "ThefinanciersComboBox";
+            this.ThefinanciersComboBox.Size = new System.Drawing.Size(221, 20);
+            this.ThefinanciersComboBox.TabIndex = 8;
+            this.ThefinanciersComboBox.TabStop = false;
+            this.ThefinanciersComboBox.Text = "اختر الممول";
+            this.ThefinanciersComboBox.ThemeName = "Office2013Light";
             // 
             // AddBtn
             // 
@@ -71,7 +115,7 @@
             this.AddBtn.Size = new System.Drawing.Size(130, 38);
             this.AddBtn.TabIndex = 7;
             this.AddBtn.Text = "اضافة";
-            this.AddBtn.ThemeName = "Office2013Light";
+            this.AddBtn.ThemeName = "TelerikMetroBlue";
             // 
             // radLabel1
             // 
@@ -93,48 +137,6 @@
             this.CostTextBox.TabIndex = 0;
             this.CostTextBox.ThemeName = "Office2013Light";
             // 
-            // ThefinanciersComboBox
-            // 
-            // 
-            // ThefinanciersComboBox.NestedRadGridView
-            // 
-            this.ThefinanciersComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.ThefinanciersComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.ThefinanciersComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ThefinanciersComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
-            // 
-            // ThefinanciersComboBox.NestedRadGridView
-            // 
-            this.ThefinanciersComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.ThefinanciersComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.ThefinanciersComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.ThefinanciersComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.ThefinanciersComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.ThefinanciersComboBox.EditorControl.Name = "NestedRadGridView";
-            this.ThefinanciersComboBox.EditorControl.ReadOnly = true;
-            this.ThefinanciersComboBox.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ThefinanciersComboBox.EditorControl.ShowGroupPanel = false;
-            this.ThefinanciersComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.ThefinanciersComboBox.EditorControl.TabIndex = 0;
-            this.ThefinanciersComboBox.Location = new System.Drawing.Point(39, 38);
-            this.ThefinanciersComboBox.Name = "ThefinanciersComboBox";
-            this.ThefinanciersComboBox.Size = new System.Drawing.Size(221, 20);
-            this.ThefinanciersComboBox.TabIndex = 8;
-            this.ThefinanciersComboBox.TabStop = false;
-            this.ThefinanciersComboBox.Text = "اختر الممول";
-            this.ThefinanciersComboBox.ThemeName = "Office2013Light";
-            // 
-            // radLabel2
-            // 
-            this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel2.Location = new System.Drawing.Point(266, 38);
-            this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(132, 19);
-            this.radLabel2.TabIndex = 9;
-            this.radLabel2.Text = "الممول الخاص بالمشروع:";
-            this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel2.ThemeName = "Office2013Light";
-            // 
             // FrmTheFinancerProjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -148,17 +150,17 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "FrmTheFinancerProjects";
-            this.ThemeName = "Office2013Light";
+            this.ThemeName = "TelerikMetroBlue";
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -173,5 +175,6 @@
         private Telerik.WinControls.UI.RadButton AddBtn;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadTextBox CostTextBox;
+        private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
     }
 }
