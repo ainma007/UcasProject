@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
-
+using Ucas.Data.CommandClass;
 namespace UcasProWindowsForm.Forms.UserSystemForm
 {
     public partial class frmAddUser : Telerik.WinControls.UI.RadForm
@@ -14,6 +14,17 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         public frmAddUser()
         {
             InitializeComponent();
+        }
+        #region " Load All Groups & Users If It Exiest "
+        private void PopulateComboxes()
+        {
+            
+        }
+        #endregion 
+
+        private void frmAddUser_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
