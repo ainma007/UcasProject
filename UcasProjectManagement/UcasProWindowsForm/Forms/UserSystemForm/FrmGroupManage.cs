@@ -132,6 +132,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
             {
                 GroupsTb gtb = new GroupsTb()
                 {
+                    ID = xGroupId ,
                     GroupName = GroupNameTextBox.Text.ToString(),
                     Description = DescreptionTextBox.Text.ToString(),
 
@@ -139,9 +140,6 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                 GroupCmd.EditGroup(gtb);
                 //==============================================
 
-                int xlast = GroupCmd.GetLastGroupID();
-                MessageBox.Show("" + xlast.ToString());
-                // ==============================================
 
                 ArrayList Lst = new ArrayList();
 
@@ -155,10 +153,11 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
 
                 }
-
+                int xPermID = PeremissionsCmd.GetPermissionsByGroupID(xGroupId);
                 PeremissionsTb ptb = new PeremissionsTb()
                 {
-                   
+                    ID = xPermID ,
+                    GroupID = xGroupId ,
                     AddUser = int.Parse(Lst[0].ToString()),
                     UpDateUser = int.Parse(Lst[1].ToString()),
                     DeleteUser = int.Parse(Lst[2].ToString()),
@@ -178,7 +177,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
 
                 PeremissionsCmd.EditPeremissions(ptb);
-                MessageBox.Show("Saved ..");
+                MessageBox.Show("Updated ..");
 
             }
         }

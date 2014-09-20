@@ -32,7 +32,7 @@ namespace Ucas.Data.CommandClass
             {
                
                 db = new UcasProEntities();
-                var q = db.PeremissionsTbs.Where(p => p.ID == tb.ID).SingleOrDefault();
+                var q = db.PeremissionsTbs.Where(p => p.GroupID  == tb.GroupID && p.ID == tb.ID  ).SingleOrDefault();
                 if (tb.ID != 0)
                 {
                     q.GroupID = tb.GroupID;
@@ -90,6 +90,16 @@ namespace Ucas.Data.CommandClass
                 return false;
             }
 
+        }
+        public static  int  GetPermissionsByGroupID(int GID)
+        {
+            db = new UcasProEntities();
+            db.Configuration.LazyLoadingEnabled = false;
+            db.Configuration.ProxyCreationEnabled = false;
+            var TheTargetRec = (from p in db.PeremissionsTbs
+                                where p.GroupID == GID
+                                select p.ID).Single();
+            return TheTargetRec;
         }
     }
 }
