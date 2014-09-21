@@ -52,11 +52,16 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         private void frmAddUser_Load(object sender, EventArgs e)
         {
             PopulateComboxes();
-        }
+            GroupComboBox.ResetText();
+            EmployeeComboBox.ResetText();
 
+        }
+        
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("" + GroupComboBox.ToString());
+            MessageBox.Show("" + EmployeeComboBox.SelectedValue.ToString());
+            MessageBox.Show("" + GroupComboBox.SelectedValue.ToString());
+           
         }
 
         private void EmployeeComboBox_SelectedIndexChanged(object sender, EventArgs e)
