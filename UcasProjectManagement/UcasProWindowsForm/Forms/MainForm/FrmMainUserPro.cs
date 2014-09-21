@@ -15,5 +15,10 @@ namespace UcasProWindowsForm.Forms.MainForm
         {
             InitializeComponent();
         }
+
+        private void FrmMainUserPro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

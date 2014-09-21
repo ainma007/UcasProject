@@ -33,12 +33,19 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
+            this.ProjectsComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.projectProfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.GroupComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.groupsTbBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.EmployeeComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.PaswwordTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
@@ -46,31 +53,38 @@
             this.UesrnameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
-            this.groupsTbBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ActivecheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectsComboBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectsComboBox.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectsComboBox.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectProfileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupComboBox.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupsTbBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaswwordTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UesrnameTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupsTbBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.ActivecheckBox);
+            this.radGroupBox1.Controls.Add(this.radLabel4);
+            this.radGroupBox1.Controls.Add(this.ProjectsComboBox);
             this.radGroupBox1.Controls.Add(this.radLabel2);
             this.radGroupBox1.Controls.Add(this.GroupComboBox);
             this.radGroupBox1.Controls.Add(this.EmployeeComboBox);
@@ -86,10 +100,78 @@
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
             this.radGroupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radGroupBox1.Size = new System.Drawing.Size(325, 232);
+            this.radGroupBox1.Size = new System.Drawing.Size(325, 303);
             this.radGroupBox1.TabIndex = 3;
             this.radGroupBox1.Text = "اضافة نشاط رئيسي";
             this.radGroupBox1.ThemeName = "TelerikMetroBlue";
+            // 
+            // radLabel4
+            // 
+            this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radLabel4.Location = new System.Drawing.Point(218, 212);
+            this.radLabel4.Name = "radLabel4";
+            this.radLabel4.Size = new System.Drawing.Size(85, 19);
+            this.radLabel4.TabIndex = 15;
+            this.radLabel4.Text = "قائمة المشاريع:";
+            this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            this.radLabel4.ThemeName = "Office2013Light";
+            // 
+            // ProjectsComboBox
+            // 
+            this.ProjectsComboBox.DataSource = this.projectProfileBindingSource;
+            // 
+            // ProjectsComboBox.NestedRadGridView
+            // 
+            this.ProjectsComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.ProjectsComboBox.EditorControl.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ProjectsComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.ProjectsComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ProjectsComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ProjectsComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
+            // 
+            // ProjectsComboBox.NestedRadGridView
+            // 
+            this.ProjectsComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.ProjectsComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.ProjectsComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.ProjectsComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
+            gridViewDecimalColumn1.DataType = typeof(int);
+            gridViewDecimalColumn1.EnableExpressionEditor = false;
+            gridViewDecimalColumn1.FieldName = "ID";
+            gridViewDecimalColumn1.HeaderText = "ID";
+            gridViewDecimalColumn1.IsAutoGenerated = true;
+            gridViewDecimalColumn1.IsVisible = false;
+            gridViewDecimalColumn1.Name = "ID";
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ProjectName";
+            gridViewTextBoxColumn1.HeaderText = "اسم المشروع";
+            gridViewTextBoxColumn1.IsAutoGenerated = true;
+            gridViewTextBoxColumn1.Name = "ProjectName";
+            gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn1.Width = 246;
+            this.ProjectsComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewDecimalColumn1,
+            gridViewTextBoxColumn1});
+            this.ProjectsComboBox.EditorControl.MasterTemplate.DataSource = this.projectProfileBindingSource;
+            this.ProjectsComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.ProjectsComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.ProjectsComboBox.EditorControl.Name = "NestedRadGridView";
+            this.ProjectsComboBox.EditorControl.ReadOnly = true;
+            this.ProjectsComboBox.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ProjectsComboBox.EditorControl.ShowGroupPanel = false;
+            this.ProjectsComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.ProjectsComboBox.EditorControl.TabIndex = 0;
+            this.ProjectsComboBox.Enabled = false;
+            this.ProjectsComboBox.Location = new System.Drawing.Point(21, 211);
+            this.ProjectsComboBox.Name = "ProjectsComboBox";
+            this.ProjectsComboBox.Size = new System.Drawing.Size(193, 22);
+            this.ProjectsComboBox.TabIndex = 14;
+            this.ProjectsComboBox.TabStop = false;
+            this.ProjectsComboBox.ThemeName = "Office2013Light";
+            // 
+            // projectProfileBindingSource
+            // 
+            this.projectProfileBindingSource.DataSource = typeof(Ucas.Data.ProjectProfile);
             // 
             // radLabel2
             // 
@@ -105,6 +187,7 @@
             // GroupComboBox
             // 
             this.GroupComboBox.DataSource = this.groupsTbBindingSource;
+            this.GroupComboBox.DisplayMember = "GroupName";
             // 
             // GroupComboBox.NestedRadGridView
             // 
@@ -115,29 +198,29 @@
             this.GroupComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.GroupComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // GroupComboBox.NestedRadGridView
             // 
             this.GroupComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.GroupComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.GroupComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.GroupComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
-            gridViewDecimalColumn1.DataType = typeof(int);
-            gridViewDecimalColumn1.EnableExpressionEditor = false;
-            gridViewDecimalColumn1.FieldName = "ID";
-            gridViewDecimalColumn1.HeaderText = "ID";
-            gridViewDecimalColumn1.IsAutoGenerated = true;
-            gridViewDecimalColumn1.IsVisible = false;
-            gridViewDecimalColumn1.Name = "ID";
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "GroupName";
-            gridViewTextBoxColumn1.HeaderText = "المجموعات";
-            gridViewTextBoxColumn1.IsAutoGenerated = true;
-            gridViewTextBoxColumn1.Name = "GroupName";
-            gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn1.Width = 183;
+            gridViewDecimalColumn2.DataType = typeof(int);
+            gridViewDecimalColumn2.EnableExpressionEditor = false;
+            gridViewDecimalColumn2.FieldName = "ID";
+            gridViewDecimalColumn2.HeaderText = "ID";
+            gridViewDecimalColumn2.IsAutoGenerated = true;
+            gridViewDecimalColumn2.IsVisible = false;
+            gridViewDecimalColumn2.Name = "ID";
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "GroupName";
+            gridViewTextBoxColumn2.HeaderText = "المجموعات";
+            gridViewTextBoxColumn2.IsAutoGenerated = true;
+            gridViewTextBoxColumn2.Name = "GroupName";
+            gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn2.Width = 183;
             this.GroupComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn1,
-            gridViewTextBoxColumn1});
+            gridViewDecimalColumn2,
+            gridViewTextBoxColumn2});
             this.GroupComboBox.EditorControl.MasterTemplate.DataSource = this.groupsTbBindingSource;
             this.GroupComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.GroupComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
@@ -155,6 +238,10 @@
             this.GroupComboBox.Text = "اختر المجموعة";
             this.GroupComboBox.ThemeName = "Office2013Light";
             // 
+            // groupsTbBindingSource
+            // 
+            this.groupsTbBindingSource.DataSource = typeof(Ucas.Data.GroupsTb);
+            // 
             // EmployeeComboBox
             // 
             this.EmployeeComboBox.DataSource = this.employeeBindingSource;
@@ -169,39 +256,40 @@
             this.EmployeeComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.EmployeeComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // EmployeeComboBox.NestedRadGridView
             // 
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
-            gridViewDecimalColumn2.DataType = typeof(int);
-            gridViewDecimalColumn2.EnableExpressionEditor = false;
-            gridViewDecimalColumn2.FieldName = "ID";
-            gridViewDecimalColumn2.HeaderText = "ID";
-            gridViewDecimalColumn2.IsAutoGenerated = true;
-            gridViewDecimalColumn2.IsVisible = false;
-            gridViewDecimalColumn2.Name = "ID";
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "EmployeeName";
-            gridViewTextBoxColumn2.HeaderText = "اسم الموظف";
-            gridViewTextBoxColumn2.IsAutoGenerated = true;
-            gridViewTextBoxColumn2.Name = "EmployeeName";
-            gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            gridViewTextBoxColumn2.Width = 113;
+            gridViewDecimalColumn3.DataType = typeof(int);
+            gridViewDecimalColumn3.EnableExpressionEditor = false;
+            gridViewDecimalColumn3.FieldName = "ID";
+            gridViewDecimalColumn3.HeaderText = "ID";
+            gridViewDecimalColumn3.IsAutoGenerated = true;
+            gridViewDecimalColumn3.IsVisible = false;
+            gridViewDecimalColumn3.Name = "ID";
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "EmployeejobNumber";
-            gridViewTextBoxColumn3.HeaderText = "الرقم الوظيفي";
+            gridViewTextBoxColumn3.FieldName = "EmployeeName";
+            gridViewTextBoxColumn3.HeaderText = "اسم الموظف";
             gridViewTextBoxColumn3.IsAutoGenerated = true;
-            gridViewTextBoxColumn3.Name = "EmployeejobNumber";
+            gridViewTextBoxColumn3.Name = "EmployeeName";
             gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn3.Width = 146;
+            gridViewTextBoxColumn3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            gridViewTextBoxColumn3.Width = 113;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "EmployeejobNumber";
+            gridViewTextBoxColumn4.HeaderText = "الرقم الوظيفي";
+            gridViewTextBoxColumn4.IsAutoGenerated = true;
+            gridViewTextBoxColumn4.Name = "EmployeejobNumber";
+            gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn4.Width = 146;
             this.EmployeeComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn2,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3});
+            gridViewDecimalColumn3,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4});
             this.EmployeeComboBox.EditorControl.MasterTemplate.DataSource = this.employeeBindingSource;
+            this.EmployeeComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
             this.EmployeeComboBox.EditorControl.Name = "NestedRadGridView";
             this.EmployeeComboBox.EditorControl.ReadOnly = true;
@@ -217,6 +305,10 @@
             this.EmployeeComboBox.Text = "اختر الموظف";
             this.EmployeeComboBox.ThemeName = "Office2013Light";
             this.EmployeeComboBox.SelectedIndexChanged += new System.EventHandler(this.EmployeeComboBox_SelectedIndexChanged);
+            // 
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataSource = typeof(Ucas.Data.Employee);
             // 
             // radLabel3
             // 
@@ -240,7 +332,7 @@
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(171, 184);
+            this.AddBtn.Location = new System.Drawing.Point(173, 255);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(130, 38);
             this.AddBtn.TabIndex = 7;
@@ -279,19 +371,22 @@
             this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel1.ThemeName = "Office2013Light";
             // 
-            // groupsTbBindingSource
+            // ActivecheckBox
             // 
-            this.groupsTbBindingSource.DataSource = typeof(Ucas.Data.GroupsTb);
-            // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataSource = typeof(Ucas.Data.Employee);
+            this.ActivecheckBox.AutoSize = true;
+            this.ActivecheckBox.Location = new System.Drawing.Point(83, 170);
+            this.ActivecheckBox.Name = "ActivecheckBox";
+            this.ActivecheckBox.Size = new System.Drawing.Size(126, 17);
+            this.ActivecheckBox.TabIndex = 16;
+            this.ActivecheckBox.Text = "ضمن مشروع مخصص";
+            this.ActivecheckBox.UseVisualStyleBackColor = true;
+            this.ActivecheckBox.CheckedChanged += new System.EventHandler(this.ActivecheckBox_CheckedChanged);
             // 
             // frmAddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 232);
+            this.ClientSize = new System.Drawing.Size(325, 303);
             this.Controls.Add(this.radGroupBox1);
             this.Name = "frmAddUser";
             // 
@@ -305,21 +400,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectsComboBox.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectsComboBox.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectsComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectProfileBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupsTbBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaswwordTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UesrnameTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupsTbBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -341,5 +441,9 @@
         private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
         private System.Windows.Forms.BindingSource groupsTbBindingSource;
         private System.Windows.Forms.BindingSource employeeBindingSource;
+        private Telerik.WinControls.UI.RadLabel radLabel4;
+        private Telerik.WinControls.UI.RadMultiColumnComboBox ProjectsComboBox;
+        private System.Windows.Forms.BindingSource projectProfileBindingSource;
+        private System.Windows.Forms.CheckBox ActivecheckBox;
     }
 }

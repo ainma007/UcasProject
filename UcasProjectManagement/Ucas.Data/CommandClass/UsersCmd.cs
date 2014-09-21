@@ -67,5 +67,15 @@ namespace Ucas.Data.CommandClass
                return false;
            }
        }
+
+       public static int GetLastUserID()
+       {
+
+           db = new UcasProEntities();
+           db.Configuration.ProxyCreationEnabled = false;
+           db.Configuration.LazyLoadingEnabled = false;
+           int XlAST = (from ueser in db.UsersTbs where ueser.ID != 0 select ueser.ID).Max();
+           return XlAST;
+       }
     }
 }
