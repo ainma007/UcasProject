@@ -101,5 +101,12 @@ namespace UcasProWindowsForm.Forms.MainForm
             FrmMainUserPro user = new FrmMainUserPro();
             user.ShowDialog();
         }
+
+        private void UserAddBtn_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmAddUser();
+            frm.ShowDialog();
+
+        }
     }
 }
