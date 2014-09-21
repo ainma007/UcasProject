@@ -68,5 +68,36 @@ namespace Ucas.Data.CommandClass
                }
            }
 
+        public static string GetStatusByID(int xid) {
+
+            db = new UcasProEntities();
+            db.Configuration.ProxyCreationEnabled = false;
+            db.Configuration.LazyLoadingEnabled = false;
+            string  xxx = (from u in db.ProjectControls
+                       where u.UserID == xid
+                       select u.Status)
+
+                            .Single();
+            return xxx;  
+        
+        }
+
+
+        public static int ChkProjectIDByUserID(int XUSERID)
+        {
+            db = new UcasProEntities();
+            db.Configuration.ProxyCreationEnabled = false;
+            db.Configuration.LazyLoadingEnabled = false;
+            int  xxx = (from u in db.ProjectControls
+                        where u.UserID == XUSERID
+                          select u.ID)
+
+                          .Single();
+            return xxx;  
+        }
     }
 }
+
+
+
+

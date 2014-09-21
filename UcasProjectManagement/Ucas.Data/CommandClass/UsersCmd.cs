@@ -77,5 +77,16 @@ namespace Ucas.Data.CommandClass
            int XlAST = (from ueser in db.UsersTbs where ueser.ID != 0 select ueser.ID).Max();
            return XlAST;
        }
+
+       public static List<UsersTb> GetCurrentUserByNameAndPass(string nam, string pass)
+       {
+           db = new UcasProEntities();
+           db.Configuration.ProxyCreationEnabled = false;
+           db.Configuration.LazyLoadingEnabled = false;
+           var lst = (from u in db.UsersTbs where u.Password == pass && u.UserName == nam select u).ToList();
+           return lst;
+       }
+
+
     }
 }
