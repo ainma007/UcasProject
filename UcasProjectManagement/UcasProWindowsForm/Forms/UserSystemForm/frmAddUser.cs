@@ -72,8 +72,19 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         {
             //MessageBox.Show("" + EmployeeComboBox.SelectedValue.ToString());
             //MessageBox.Show("" + GroupComboBox.SelectedValue.ToString());
-        
-            UsersTb tb = new UsersTb()
+            try
+            {
+                int CheckUserExiest = UsersCmd.GetCurrentUserIDByNameAndPass(UesrnameTextBox.Text, PaswwordTextBox.Text);
+                if (CheckUserExiest != 0)
+                {
+                    MessageBox.Show("Exiested ...  Save Process  Was Canceled");
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+                
+                           UsersTb tb = new UsersTb()
             {
 
                 EmployeeID=int.Parse( EmployeeComboBox.SelectedValue.ToString()),
@@ -105,6 +116,8 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
 
             }
+            }
+
           
            
         }
