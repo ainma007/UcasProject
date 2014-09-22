@@ -83,17 +83,24 @@ namespace Ucas.Data.CommandClass
         }
 
 
-        public static int ChkProjectIDByUserID(int XUSERID)
+        public static int ChkProjectIDByUserID(int xid)
         {
-            db = new UcasProEntities();
+            try
+            {
+                     db = new UcasProEntities();
             db.Configuration.ProxyCreationEnabled = false;
             db.Configuration.LazyLoadingEnabled = false;
-            int  xxx = (from u in db.ProjectControls
-                        where u.UserID == XUSERID
+            int  xGetHim = (from u in db.ProjectControls
+                        where u.UserID == xid
                           select u.ID)
-
                           .Single();
-            return xxx;  
+            return xGetHim; 
+            }
+            catch (Exception)
+            {
+                return 0 ;
+               
+            }
         }
     }
 }

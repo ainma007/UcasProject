@@ -60,11 +60,19 @@ namespace UcasProWindowsForm.Forms.MainForm
            
 
                 var GetUsre = UsersCmd.GetCurrentUserByNameAndPass(UserNameTextBox.Text, PsswordTextBox.Text);
-                foreach (var item in GetUsre)
+                
+                //=================================================================================================
+
+               foreach (var item in GetUsre)
                 {
-                    if (item.ID != 0)
-                    {
-                      
+                   
+                    //if (item.ID == 0)
+                    //{
+                    //    MessageBox.Show("Error data");
+                    //    clearTXT();
+                    //    return;
+                    //}
+                   
                         xUserID = item .ID ;
                         //===============================================================
                         // Transfare Peremissions :
@@ -107,17 +115,7 @@ namespace UcasProWindowsForm.Forms.MainForm
 
                     }
                    
-                        //===============================================================
-
-
-                    }
-                    else
-                    {
-
-                        MessageBox.Show("Error data");
-                    }
-                        
-               
+                           
                 } // for each
           
         }

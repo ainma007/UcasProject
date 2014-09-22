@@ -20,6 +20,8 @@ namespace Ucas.Data.CommandClass
     public static bool AddFinancier(Thefinancier finc)
        {
            db = new UcasProEntities();
+           db.Configuration.LazyLoadingEnabled = false;
+           db.Configuration.ProxyCreationEnabled = false;
            db.Thefinanciers.Add(finc);
            db.SaveChanges();
            return true;
