@@ -78,15 +78,23 @@ namespace Ucas.Data.CommandClass
            return XlAST;
        }
 
-       public static List<UsersTb> GetCurrentUserByNameAndPass(string nam, string pass)
+       public static int GetCurrentUserIDByNameAndPass(string nam, string pass)
        {
            db = new UcasProEntities();
            db.Configuration.ProxyCreationEnabled = false;
            db.Configuration.LazyLoadingEnabled = false;
-           var lst = (from u in db.UsersTbs where u.Password == pass && u.UserName == nam select u).ToList();
+           var lst = (from u in db.UsersTbs where u.UserName == nam && u.Password == pass select u.ID).Single();
            return lst;
        }
 
+       public static List<UsersTb> GetLoginUserDataByID(int XID)
+       {
+           db = new UcasProEntities();
+           db.Configuration.ProxyCreationEnabled = false;
+           db.Configuration.LazyLoadingEnabled = false;
+           var lst = (from u in db.UsersTbs where u.ID == XID select u).ToList();
+           return lst;
+       }
 
     }
 }

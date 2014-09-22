@@ -81,16 +81,29 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 StartDate = DateTime.Parse(StartDateTimePicker.Value.ToString()),
                 EndDate = DateTime.Parse(EndDateTimePicker.Value.ToString()),
                 TotalCost = Double.Parse(TotalCostTextBox.Text),
-                Status = "1",
+                Status = "فعال",
                 progress = 0,
-                Coin = CoineDropDownList.SelectedItem.ToString(),
+                Coin = CoineDropDownList.SelectedItem.ToString()
 
 
 
 
             };
             ProjectProfileCmd.AddNewProject(pro);
+            ClearText();
             MessageBox.Show("تمت العلمية بنجاح");
+        }
+
+        private void ClearText()
+        {
+            ProjectNameTextBox.Clear();
+            ProjectDescriptionTextBox.Clear();
+            TotalCostTextBox.Clear();
+            CoineDropDownList.ResetText();
+            ProjectNameTextBox.Focus();
+
+
+            
         }
     }
 }

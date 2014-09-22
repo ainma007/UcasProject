@@ -17,27 +17,32 @@ namespace UcasProWindowsForm.Forms.MainForm
         {
             InitializeComponent();
         }
-        void clearTXT() {
+        void clearTXT()
+        {
             UserNameTextBox.Clear();
             PsswordTextBox.Clear();
 
             UserNameTextBox.Focus();
         }
-        
-       
+
+
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             clearTXT();
 
         }
 
-        Int32 xGroupID;
-        void TransfaireGroupDataInf() {
+
+
+
+        int xGroupID;
+        void TransfaireGroupDataInf()
+        {
             var ListOfAllPeremissions = PeremissionsHolderClass.GetAllGroupPeremissionsByGroupID(xGroupID);
-            foreach (var item in ListOfAllPeremissions )
+            foreach (var item in ListOfAllPeremissions)
             {
                 PeremissionsHolderClass._AddUser = Convert.ToInt32(item.AddUser);
-                PeremissionsHolderClass._UpDateUser = Convert.ToInt32( item.UpDateUser);
+                PeremissionsHolderClass._UpDateUser = Convert.ToInt32(item.UpDateUser);
                 PeremissionsHolderClass._DeleteUser = Convert.ToInt32(item.DeleteUser);
                 PeremissionsHolderClass._AddEmployee = Convert.ToInt32(item.AddEmployee);
                 PeremissionsHolderClass._EditEmployee = Convert.ToInt32(item.EditEmployee);
@@ -51,74 +56,73 @@ namespace UcasProWindowsForm.Forms.MainForm
                 PeremissionsHolderClass._DeleteSuppliers = Convert.ToInt32(item.DeleteSuppliers);
                 PeremissionsHolderClass._DisplayExpenses = Convert.ToInt32(item.DisplayExpenses);
                 PeremissionsHolderClass._CanPrint = Convert.ToInt32(item.CanPrint);
-             
+
             }
         }
-        Int32  xUserID = 0;
+        int xUserID;
         private void EnterBtn_Click(object sender, EventArgs e)
         {
-           
-
-                var GetUsre = UsersCmd.GetCurrentUserByNameAndPass(UserNameTextBox.Text, PsswordTextBox.Text);
-                
-                //=================================================================================================
-
-               foreach (var item in GetUsre)
+            try
+            {
+                xUserID = UsersCmd.GetCurrentUserIDByNameAndPass(UserNameTextBox.Text, PsswordTextBox.Text);
+                var GetCurrentUserFullData = UsersCmd.GetLoginUserDataByID(xUserID);
+                foreach (var item in GetCurrentUserFullData)
                 {
-                   
-                    //if (item.ID == 0)
-                    //{
-                    //    MessageBox.Show("Error data");
-                    //    clearTXT();
-                    //    return;
-                    //}
-                   
-                        xUserID = item .ID ;
-                        //===============================================================
-                        // Transfare Peremissions :
-                        PeremissionsHolderClass.xCurrentUserID = item.ID;
-                        PeremissionsHolderClass.xCurrentUserName = UserNameTextBox.Text;
-                        PeremissionsHolderClass.xCurrentUserPass = PsswordTextBox.Text;
-                        PeremissionsHolderClass._GroupID = Convert.ToInt32(item.GroupID);
+                    xGroupID = Convert.ToInt32(item.GroupID);
+                    PeremissionsHolderClass.xCurrentUserID = item.ID;
+                    PeremissionsHolderClass.xCurrentUserName = UserNameTextBox.Text;
+                    PeremissionsHolderClass.xCurrentUserPass = PsswordTextBox.Text;
+                    PeremissionsHolderClass._GroupID = Convert.ToInt32(item.GroupID);
+                }
+                TransfaireGroupDataInf();
+                //=====================================================================
+                int ChkActiveUser = ProjectControlCmd.ChkProjectIDByUserID(xUserID);
 
-                        xGroupID = Convert.ToInt32(item.GroupID);
-                        TransfaireGroupDataInf();
-                        MessageBox.Show("Found ");
 
-                    
-                    int ChkActiveUser = ProjectControlCmd.ChkProjectIDByUserID(xUserID);
-                    if (ChkActiveUser != 0)
+                if (ChkActiveUser != 0)
+                {
+                    string GetUserStausValue = ProjectControlCmd.GetStatusByID(xUserID);
+                    switch (GetUserStausValue)
                     {
-                        string GetUserStausValue = ProjectControlCmd.GetStatusByID(item.ID);
-                        if (GetUserStausValue == "فعال")
-                        {
-                            MessageBox.Show("فعال");
+                        case "فعال":
 
                             FrmMainUserPro frpro = new FrmMainUserPro();
                             frpro.Show();
+                            break;
 
 
-                        }
-                        else
-                        {
-                            MessageBox.Show("غير فعال");
-
-
-                        } 
                     }
 
-                    else
+                    switch (GetUserStausValue)
                     {
-
-                        FrmAdmin fr = new FrmAdmin();
-                        fr.Show();
-
+                        case "غير فعال":
+                         MessageBox.Show(" تم ايقاف الحساب"); clearTXT(); return;
+                         break;
+ 
                     }
-                   
-                           
-                } // for each
-          
+
+                }
+
+                else
+                {
+                    FrmAdmin fr = new FrmAdmin();
+                     fr.Show();
+
+                }
+                
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show(" تأكد من اسم المستخدم وكلمة المرور"); clearTXT(); return;
+            }
         }
+
+
+
+
+
+
 
         private void TryBtn_Click(object sender, EventArgs e)
         {
