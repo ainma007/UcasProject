@@ -11,9 +11,9 @@ using Ucas.Data.CommandClass;
 
 namespace UcasProWindowsForm.Forms.supplierForm
 {
-    public partial class FrmManagementFinanciers : Telerik.WinControls.UI.RadForm
+    public partial class FrmManagementTheDonors : Telerik.WinControls.UI.RadForm
     {
-        public FrmManagementFinanciers()
+        public FrmManagementTheDonors()
         {
             InitializeComponent();
         }
@@ -21,7 +21,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
         private void GetAllFinanciers()
         {
 
-            thefinancierBindingSource.DataSource = FinanciersCmd.GetAllFinanciers();
+            theDonorsBindingSource.DataSource = TheDonorsCmd.GetAllDonors();
         }
         private void LockGrid()
         {
@@ -70,8 +70,8 @@ namespace UcasProWindowsForm.Forms.supplierForm
         {
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
-                Thefinancier financ = thefinancierBindingSource.Current as Thefinancier;
-               FinanciersCmd.Editfinancier(financ);
+                TheDonors Donrs = theDonorsBindingSource.Current as TheDonors;
+                TheDonorsCmd.EditDonor(Donrs);
                GetAllFinanciers();
                 LockGrid();
             }
@@ -84,8 +84,8 @@ namespace UcasProWindowsForm.Forms.supplierForm
         }
         if (col == 9) { if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                     {
-                       Thefinancier financ = thefinancierBindingSource.Current as Thefinancier;
-                       FinanciersCmd.DeleteFinancier(financ.ID);
+                        TheDonors Donrs = theDonorsBindingSource.Current as TheDonors;
+                        TheDonorsCmd.DeleteDonor(Donrs.ID);
                        GetAllFinanciers();
                        LockGrid();
                     }

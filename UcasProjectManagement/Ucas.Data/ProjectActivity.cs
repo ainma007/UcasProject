@@ -29,6 +29,7 @@ namespace Ucas.Data
         public Nullable<double> TotalCost { get; set; }
         public int ProjectProfile_ID { get; set; }
     
+        public virtual ProjectProfile ProjectProfile { get; set; }
         public virtual ICollection<ProjectSubActivity> ProjectSubActivities { get; set; }
     }
 }

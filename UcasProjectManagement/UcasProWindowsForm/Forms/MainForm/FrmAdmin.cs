@@ -62,7 +62,7 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void FinanAddBtn_Click(object sender, EventArgs e)
         {
-            FrmAddThefinanciers finadd = new FrmAddThefinanciers();
+            FrmAddTheTheDonors finadd = new FrmAddTheTheDonors();
             finadd.ShowDialog();
         }
 
@@ -86,7 +86,7 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void FinanMangBtn_Click(object sender, EventArgs e)
         {
-            FrmManagementFinanciers finamang = new FrmManagementFinanciers();
+            FrmManagementTheDonors finamang = new FrmManagementTheDonors();
             finamang.ShowDialog();
         }
 

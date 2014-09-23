@@ -134,6 +134,12 @@
     <Compile Include="Forms\MainForm\FrmMainUserPro.Designer.cs">
       <DependentUpon>FrmMainUserPro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MainForm\TheDonorsAndProjectMange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\TheDonorsAndProjectMange.Designer.cs">
+      <DependentUpon>TheDonorsAndProjectMange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProjectProfileForm\FrmAddAmountsReceiveds.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,17 +170,17 @@
     <Compile Include="Forms\supplierForm\FrmAddsupplier.Designer.cs">
       <DependentUpon>FrmAddsupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\supplierForm\FrmAddThefinanciers.cs">
+    <Compile Include="Forms\supplierForm\FrmAddTheTheDonors.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\supplierForm\FrmAddThefinanciers.Designer.cs">
-      <DependentUpon>FrmAddThefinanciers.cs</DependentUpon>
+    <Compile Include="Forms\supplierForm\FrmAddTheTheDonors.Designer.cs">
+      <DependentUpon>FrmAddTheTheDonors.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\supplierForm\FrmManagementFinanciers.cs">
+    <Compile Include="Forms\supplierForm\FrmManagementTheDonors.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\supplierForm\FrmManagementFinanciers.Designer.cs">
-      <DependentUpon>FrmManagementFinanciers.cs</DependentUpon>
+    <Compile Include="Forms\supplierForm\FrmManagementTheDonors.Designer.cs">
+      <DependentUpon>FrmManagementTheDonors.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\supplierForm\FrmManagementSupplier.cs">
       <SubType>Form</SubType>
@@ -238,6 +244,9 @@
     <EmbeddedResource Include="Forms\MainForm\FrmMainUserPro.resx">
       <DependentUpon>FrmMainUserPro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm\TheDonorsAndProjectMange.resx">
+      <DependentUpon>TheDonorsAndProjectMange.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProjectProfileForm\FrmAddAmountsReceiveds.resx">
       <DependentUpon>FrmAddAmountsReceiveds.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,11 +262,11 @@
     <EmbeddedResource Include="Forms\supplierForm\FrmAddsupplier.resx">
       <DependentUpon>FrmAddsupplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\supplierForm\FrmAddThefinanciers.resx">
-      <DependentUpon>FrmAddThefinanciers.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\supplierForm\FrmAddTheTheDonors.resx">
+      <DependentUpon>FrmAddTheTheDonors.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\supplierForm\FrmManagementFinanciers.resx">
-      <DependentUpon>FrmManagementFinanciers.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\supplierForm\FrmManagementTheDonors.resx">
+      <DependentUpon>FrmManagementTheDonors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\supplierForm\FrmManagementSupplier.resx">
       <DependentUpon>FrmManagementSupplier.cs</DependentUpon>
@@ -289,17 +298,17 @@
     <None Include="Properties\DataSources\Ucas.Data.Contract.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.Employee.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.GroupsTb.datasource" />
+    <None Include="Properties\DataSources\Ucas.Data.Monthlysalary.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.PeremissionsTb.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.ProjectActivity.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.ProjectControl.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.ProjectExpens.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.ProjectProfile.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.ProjectSubActivity.datasource" />
-    <None Include="Properties\DataSources\Ucas.Data.Salary.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.Supplier.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.sysdiagram.datasource" />
-    <None Include="Properties\DataSources\Ucas.Data.TheFinancerProject.datasource" />
-    <None Include="Properties\DataSources\Ucas.Data.Thefinancier.datasource" />
+    <None Include="Properties\DataSources\Ucas.Data.TheDonors.datasource" />
+    <None Include="Properties\DataSources\Ucas.Data.TheDonorsProject.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.UcasProEntities.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.UsersTb.datasource" />
     <None Include="Properties\Settings.settings">

@@ -19,6 +19,6 @@ namespace Ucas.Data
         public Nullable<System.DateTime> Date { get; set; }
         public Nullable<double> Cost { get; set; }
     
-        public virtual TheFinancerProject TheFinancerProject { get; set; }
+        public virtual TheDonorsProject TheDonorsProject { get; set; }
     }
 }

@@ -11,9 +11,9 @@ using Ucas.Data.CommandClass;
 
 namespace UcasProWindowsForm.Forms.supplierForm
 {
-    public partial class FrmAddThefinanciers : Telerik.WinControls.UI.RadForm
+    public partial class FrmAddTheTheDonors : Telerik.WinControls.UI.RadForm
     {
-        public FrmAddThefinanciers()
+        public FrmAddTheTheDonors()
         {
             InitializeComponent();
         }
@@ -37,7 +37,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
 
 
-             Thefinancier finc=new Thefinancier()
+             TheDonors Donrs=new TheDonors()
             {
                 Name= ThefinanciersNameTextBox.Text,
                 agentName=AgentNameTextBox.Text,
@@ -49,8 +49,8 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
 
             };
-           FinanciersCmd.AddFinancier(finc);
-            RadMessageBox.SetThemeName("Office2013Light");
+             TheDonorsCmd.AddDonor(Donrs);
+             RadMessageBox.SetThemeName("telerikMetroBlueTheme");
 
             DialogResult ds = RadMessageBox.Show(this, OperationX.AddMessageDone, "Done", MessageBoxButtons.OK, RadMessageIcon.Info);
         }

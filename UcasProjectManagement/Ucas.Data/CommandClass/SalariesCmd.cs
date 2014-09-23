@@ -10,14 +10,14 @@ namespace Ucas.Data.CommandClass
 
 
         static UcasProEntities db = new UcasProEntities();
-        public static bool NewSalary(Salary tb)
+        public static bool NewSalary(Monthlysalary tb)
         {
             try
             {
                 db = new UcasProEntities();
                 db.Configuration.ProxyCreationEnabled = false;
                 db.Configuration.LazyLoadingEnabled = false;
-                db.Salaries.Add(tb);
+                db.Monthlysalaries.Add(tb);
                 db.SaveChanges();
                 return true;
 
@@ -28,17 +28,17 @@ namespace Ucas.Data.CommandClass
                 return false;
             }
         }
-        public static bool EditSalary(Salary tb)
+        public static bool EditSalary(Monthlysalary tb)
         {
             try
             {
                 db = new UcasProEntities();
                 db.Configuration.LazyLoadingEnabled = false;
                 db.Configuration.ProxyCreationEnabled = false;
-                var q = db.Salaries.Where(p => p.ID == tb.ID).SingleOrDefault();
+                var q = db.Monthlysalaries.Where(p => p.ID == tb.ID).SingleOrDefault();
                 q.ContractID = tb.ContractID;
-                q.Dateofexchange = tb.Dateofexchange;
-                q.Salary1 = tb.Salary1;
+                q.IssueDate = tb.IssueDate;
+                q.Amount = tb.Amount;
                 q.Formonth = tb.Formonth;
                
 
@@ -61,8 +61,8 @@ namespace Ucas.Data.CommandClass
                 db = new UcasProEntities();
                 db.Configuration.LazyLoadingEnabled = false;
                 db.Configuration.ProxyCreationEnabled = false;
-                var q = db.Salaries.Where(p => p.ID == ID).SingleOrDefault();
-                db.Salaries.Remove(q);
+                var q = db.Monthlysalaries.Where(p => p.ID == ID).SingleOrDefault();
+                db.Monthlysalaries.Remove(q);
                 db.SaveChanges();
                 return true;
             }
@@ -73,18 +73,18 @@ namespace Ucas.Data.CommandClass
             }
         }
 
-        public static List<Salary> GetAllSalaries()
+        public static List<Monthlysalary> GetAllSalaries()
         {
             db = new UcasProEntities();
             db.Configuration.LazyLoadingEnabled = false;
             db.Configuration.ProxyCreationEnabled = false;
-            return db.Salaries.ToList();
+            return db.Monthlysalaries.ToList();
         }
-        public static List<Salary> GetSalaryBySelectedContractID(int ContID) {
+        public static List<Monthlysalary> GetSalaryBySelectedContractID(int ContID) {
             db = new UcasProEntities();
             db.Configuration.LazyLoadingEnabled = false;
             db.Configuration.ProxyCreationEnabled = false;
-            var LST = (from c in db.Salaries
+            var LST = (from c in db.Monthlysalaries
                        where c.ContractID == ContID 
                        select c).ToList();
             return LST;

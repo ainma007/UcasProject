@@ -18,8 +18,9 @@ namespace Ucas.Data
         {
             this.Attachments = new HashSet<Attachment>();
             this.Contracts = new HashSet<Contract>();
+            this.ProjectActivities = new HashSet<ProjectActivity>();
             this.ProjectControls = new HashSet<ProjectControl>();
-            this.TheFinancerProjects = new HashSet<TheFinancerProject>();
+            this.TheDonorsProjects = new HashSet<TheDonorsProject>();
         }
     
         public int ID { get; set; }
@@ -34,7 +35,8 @@ namespace Ucas.Data
     
         public virtual ICollection<Attachment> Attachments { get; set; }
         public virtual ICollection<Contract> Contracts { get; set; }
+        public virtual ICollection<ProjectActivity> ProjectActivities { get; set; }
         public virtual ICollection<ProjectControl> ProjectControls { get; set; }
-        public virtual ICollection<TheFinancerProject> TheFinancerProjects { get; set; }
+        public virtual ICollection<TheDonorsProject> TheDonorsProjects { get; set; }
     }
 }

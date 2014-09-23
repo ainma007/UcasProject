@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAllActivitesMange));
             this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radRibbonBar1 = new Telerik.WinControls.UI.RadRibbonBar();
-            this.radRibbonFormBehavior1 = new Telerik.WinControls.UI.RadRibbonFormBehavior();
-            this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
             this.ribbonTab1 = new Telerik.WinControls.UI.RibbonTab();
             this.radRibbonBarGroup1 = new Telerik.WinControls.UI.RadRibbonBarGroup();
             this.AdActivitesBtn = new Telerik.WinControls.UI.RadButtonElement();
@@ -44,8 +42,13 @@
             this.ViewReport = new Telerik.WinControls.UI.RadButtonElement();
             this.radButtonElement6 = new Telerik.WinControls.UI.RadButtonElement();
             this.ribbonTab2 = new Telerik.WinControls.UI.RibbonTab();
+            this.radRibbonFormBehavior1 = new Telerik.WinControls.UI.RadRibbonFormBehavior();
+            this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
+            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,29 +59,17 @@
             this.ribbonTab2});
             this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
             this.radRibbonBar1.Name = "radRibbonBar1";
-            this.radRibbonBar1.Size = new System.Drawing.Size(1003, 150);
+            this.radRibbonBar1.Size = new System.Drawing.Size(1011, 150);
             this.radRibbonBar1.StartButtonImage = ((System.Drawing.Image)(resources.GetObject("radRibbonBar1.StartButtonImage")));
             this.radRibbonBar1.TabIndex = 0;
             this.radRibbonBar1.Text = "radRibbonBar1";
             this.radRibbonBar1.ThemeName = "Office2013Light";
             // 
-            // radRibbonFormBehavior1
-            // 
-            this.radRibbonFormBehavior1.Form = this;
-            // 
-            // radStatusStrip1
-            // 
-            this.radStatusStrip1.Location = new System.Drawing.Point(0, 611);
-            this.radStatusStrip1.Name = "radStatusStrip1";
-            this.radStatusStrip1.Size = new System.Drawing.Size(1003, 27);
-            this.radStatusStrip1.TabIndex = 1;
-            this.radStatusStrip1.Text = "radStatusStrip1";
-            this.radStatusStrip1.ThemeName = "Office2013Light";
-            // 
             // ribbonTab1
             // 
             this.ribbonTab1.AccessibleDescription = "العمليات";
             this.ribbonTab1.AccessibleName = "العمليات";
+            this.ribbonTab1.IsSelected = true;
             this.ribbonTab1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radRibbonBarGroup1,
             this.radRibbonBarGroup2,
@@ -172,16 +163,40 @@
             // 
             this.ribbonTab2.AccessibleDescription = "أدوات";
             this.ribbonTab2.AccessibleName = "أدوات";
-            this.ribbonTab2.IsSelected = true;
+            this.ribbonTab2.IsSelected = false;
             this.ribbonTab2.Name = "ribbonTab2";
             this.ribbonTab2.Text = "أدوات";
             this.ribbonTab2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // radRibbonFormBehavior1
+            // 
+            this.radRibbonFormBehavior1.Form = this;
+            // 
+            // radStatusStrip1
+            // 
+            this.radStatusStrip1.Location = new System.Drawing.Point(0, 645);
+            this.radStatusStrip1.Name = "radStatusStrip1";
+            this.radStatusStrip1.Size = new System.Drawing.Size(1011, 27);
+            this.radStatusStrip1.TabIndex = 1;
+            this.radStatusStrip1.Text = "radStatusStrip1";
+            this.radStatusStrip1.ThemeName = "Office2013Light";
+            // 
+            // radGridView1
+            // 
+            this.radGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radGridView1.Location = new System.Drawing.Point(0, 150);
+            this.radGridView1.Name = "radGridView1";
+            this.radGridView1.Size = new System.Drawing.Size(1011, 495);
+            this.radGridView1.TabIndex = 2;
+            this.radGridView1.Text = "radGridView1";
+            this.radGridView1.ThemeName = "TelerikMetroBlue";
             // 
             // FrmAllActivitesMange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1003, 638);
+            this.ClientSize = new System.Drawing.Size(1011, 672);
+            this.Controls.Add(this.radGridView1);
             this.Controls.Add(this.radStatusStrip1);
             this.Controls.Add(this.radRibbonBar1);
             this.FormBehavior = this.radRibbonFormBehavior1;
@@ -196,6 +211,8 @@
             this.ThemeName = "Office2013Light";
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -219,5 +236,6 @@
         private Telerik.WinControls.UI.RibbonTab ribbonTab2;
         private Telerik.WinControls.UI.RadRibbonFormBehavior radRibbonFormBehavior1;
         private Telerik.WinControls.UI.RadStatusStrip radStatusStrip1;
+        private Telerik.WinControls.UI.RadGridView radGridView1;
     }
 }

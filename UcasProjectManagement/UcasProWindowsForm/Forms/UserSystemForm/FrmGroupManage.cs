@@ -123,7 +123,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         }
         private void GroupGridView_CurrentRowChanged(object sender, CurrentRowChangedEventArgs e)
         {
-            UpdatePanelInfo(this.GroupGridView.CurrentRow, 5);
+           
 
 
         }
@@ -183,6 +183,11 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                 MessageBox.Show("Updated ..");
 
             }
+        }
+
+        private void GroupGridView_DoubleClick(object sender, EventArgs e)
+        {
+            UpdatePanelInfo(this.GroupGridView.CurrentRow, 5);
         }
     }
 }

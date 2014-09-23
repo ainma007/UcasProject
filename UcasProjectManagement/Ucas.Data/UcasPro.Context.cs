@@ -30,17 +30,17 @@ namespace Ucas.Data
         public virtual DbSet<Contract> Contracts { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<GroupsTb> GroupsTbs { get; set; }
+        public virtual DbSet<Monthlysalary> Monthlysalaries { get; set; }
         public virtual DbSet<PeremissionsTb> PeremissionsTbs { get; set; }
         public virtual DbSet<ProjectActivity> ProjectActivities { get; set; }
         public virtual DbSet<ProjectControl> ProjectControls { get; set; }
         public virtual DbSet<ProjectExpens> ProjectExpenses { get; set; }
         public virtual DbSet<ProjectProfile> ProjectProfiles { get; set; }
         public virtual DbSet<ProjectSubActivity> ProjectSubActivities { get; set; }
-        public virtual DbSet<Salary> Salaries { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<TheFinancerProject> TheFinancerProjects { get; set; }
-        public virtual DbSet<Thefinancier> Thefinanciers { get; set; }
+        public virtual DbSet<TheDonors> TheDonors1 { get; set; }
+        public virtual DbSet<TheDonorsProject> TheDonorsProjects { get; set; }
         public virtual DbSet<UsersTb> UsersTbs { get; set; }
     }
 }

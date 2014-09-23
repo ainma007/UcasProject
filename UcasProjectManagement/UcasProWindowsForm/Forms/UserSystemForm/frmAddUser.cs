@@ -77,7 +77,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                 int CheckUserExiest = UsersCmd.GetCurrentUserIDByNameAndPass(UesrnameTextBox.Text, PaswwordTextBox.Text);
                 if (CheckUserExiest != 0)
                 {
-                    MessageBox.Show("Exiested ...  Save Process  Was Canceled");
+                    MessageBox.Show("اسم المستخدم موجود حاليا ");
                     return;
                 }
             }
@@ -115,6 +115,11 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                 MessageBox.Show("Done");
 
 
+            }
+            else
+            {
+
+                MessageBox.Show("تمت عملية الاضافة بنجاح");
             }
             }
 

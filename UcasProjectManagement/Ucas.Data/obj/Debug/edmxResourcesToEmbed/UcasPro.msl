@@ -58,6 +58,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Monthlysalaries">
+      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.Monthlysalary)">
+        <MappingFragment StoreEntitySet="Monthlysalaries">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+          <ScalarProperty Name="Formonth" ColumnName="Formonth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="PeremissionsTbs">
       <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.PeremissionsTb)">
         <MappingFragment StoreEntitySet="PeremissionsTbs">
@@ -150,17 +161,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Salaries">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.Salary)">
-        <MappingFragment StoreEntitySet="Salaries">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
-          <ScalarProperty Name="Salary1" ColumnName="Salary1" />
-          <ScalarProperty Name="Dateofexchange" ColumnName="Dateofexchange" />
-          <ScalarProperty Name="Formonth" ColumnName="Formonth" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Suppliers">
       <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.Supplier)">
         <MappingFragment StoreEntitySet="Suppliers">
@@ -185,19 +185,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TheFinancerProjects">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.TheFinancerProject)">
-        <MappingFragment StoreEntitySet="TheFinancerProjects">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
-          <ScalarProperty Name="FinacerID" ColumnName="FinacerID" />
-          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Thefinanciers">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.Thefinancier)">
-        <MappingFragment StoreEntitySet="Thefinanciers">
+    <EntitySetMapping Name="TheDonors1">
+      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.TheDonors)">
+        <MappingFragment StoreEntitySet="TheDonors1">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="agentName" ColumnName="agentName" />
@@ -205,6 +195,16 @@
           <ScalarProperty Name="Fax" ColumnName="Fax" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Adderss" ColumnName="Adderss" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TheDonorsProjects">
+      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.TheDonorsProject)">
+        <MappingFragment StoreEntitySet="TheDonorsProjects">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="DonorsID" ColumnName="DonorsID" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

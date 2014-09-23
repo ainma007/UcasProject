@@ -1,6 +1,6 @@
 ﻿namespace UcasProWindowsForm.Forms.supplierForm
 {
-    partial class FrmAddThefinanciers
+    partial class FrmAddTheTheDonors
     {
         /// <summary>
         /// Required designer variable.

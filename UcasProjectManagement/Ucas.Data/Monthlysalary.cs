@@ -12,21 +12,14 @@ namespace Ucas.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Thefinancier
+    public partial class Monthlysalary
     {
-        public Thefinancier()
-        {
-            this.TheFinancerProjects = new HashSet<TheFinancerProject>();
-        }
-    
         public int ID { get; set; }
-        public string Name { get; set; }
-        public string agentName { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Fax { get; set; }
-        public string Email { get; set; }
-        public string Adderss { get; set; }
+        public Nullable<int> ContractID { get; set; }
+        public Nullable<double> Amount { get; set; }
+        public Nullable<System.DateTime> IssueDate { get; set; }
+        public Nullable<System.DateTime> Formonth { get; set; }
     
-        public virtual ICollection<TheFinancerProject> TheFinancerProjects { get; set; }
+        public virtual Contract Contract { get; set; }
     }
 }

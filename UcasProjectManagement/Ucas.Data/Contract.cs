@@ -16,7 +16,7 @@ namespace Ucas.Data
     {
         public Contract()
         {
-            this.Salaries = new HashSet<Salary>();
+            this.Monthlysalaries = new HashSet<Monthlysalary>();
         }
     
         public int ID { get; set; }
@@ -29,6 +29,6 @@ namespace Ucas.Data
     
         public virtual Employee Employee { get; set; }
         public virtual ProjectProfile ProjectProfile { get; set; }
-        public virtual ICollection<Salary> Salaries { get; set; }
+        public virtual ICollection<Monthlysalary> Monthlysalaries { get; set; }
     }
 }
