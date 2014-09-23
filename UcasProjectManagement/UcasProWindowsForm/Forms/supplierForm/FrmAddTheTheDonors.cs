@@ -20,18 +20,18 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-             if (ThefinanciersNameTextBox.Text == "")
+             if (TheDonorsNameTextBox.Text == "")
             {
-                ThefinanciersNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                TheDonorsNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
 
                
-                ThefinanciersNameTextBox.Focus();
+                TheDonorsNameTextBox.Focus();
                
                 return;
             }
             else
             {
-                ThefinanciersNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                TheDonorsNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
             }
 
 
@@ -39,7 +39,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
              TheDonors Donrs=new TheDonors()
             {
-                Name= ThefinanciersNameTextBox.Text,
+                Name= TheDonorsNameTextBox.Text,
                 agentName=AgentNameTextBox.Text,
                 Email=EmailTextBox.Text,
                 PhoneNumber=PhoneNumberTextBox.Text,

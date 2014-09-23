@@ -25,17 +25,17 @@ namespace UcasProWindowsForm.Forms.supplierForm
         }
         private void LockGrid()
         {
-            for (int i = 0; i <= FinanciersGridView.Rows.Count - 1; i++)
+            for (int i = 0; i <= DonersGridView.Rows.Count - 1; i++)
             {
-                FinanciersGridView.Rows[i].Cells[0].ReadOnly = true;
-                FinanciersGridView.Rows[i].Cells[1].ReadOnly = true;
-                FinanciersGridView.Rows[i].Cells[2].ReadOnly = true;
-                FinanciersGridView.Rows[i].Cells[3].ReadOnly = true;
-                FinanciersGridView.Rows[i].Cells[4].ReadOnly = true;
-                FinanciersGridView.Rows[i].Cells[5].ReadOnly = true;
-                FinanciersGridView.Rows[i].Cells[6].ReadOnly = true;
-                FinanciersGridView.Rows[i].Cells[7].ReadOnly = true;
-                FinanciersGridView.Rows[i].Cells[8].ReadOnly = true;
+                DonersGridView.Rows[i].Cells[0].ReadOnly = true;
+                DonersGridView.Rows[i].Cells[1].ReadOnly = true;
+                DonersGridView.Rows[i].Cells[2].ReadOnly = true;
+                DonersGridView.Rows[i].Cells[3].ReadOnly = true;
+                DonersGridView.Rows[i].Cells[4].ReadOnly = true;
+                DonersGridView.Rows[i].Cells[5].ReadOnly = true;
+                DonersGridView.Rows[i].Cells[6].ReadOnly = true;
+                DonersGridView.Rows[i].Cells[7].ReadOnly = true;
+                DonersGridView.Rows[i].Cells[8].ReadOnly = true;
 
 
 
@@ -51,21 +51,21 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void radGridView1_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
-            FinanciersGridView.Rows[e.RowIndex].Cells[0].ReadOnly = false;
-            FinanciersGridView.Rows[e.RowIndex].Cells[1].ReadOnly = false;
-            FinanciersGridView.Rows[e.RowIndex].Cells[2].ReadOnly = false;
-            FinanciersGridView.Rows[e.RowIndex].Cells[3].ReadOnly = false;
-            FinanciersGridView.Rows[e.RowIndex].Cells[4].ReadOnly = false;
-            FinanciersGridView.Rows[e.RowIndex].Cells[5].ReadOnly = false;
-            FinanciersGridView.Rows[e.RowIndex].Cells[6].ReadOnly = false;
-            FinanciersGridView.Rows[e.RowIndex].Cells[7].ReadOnly = false;
-            FinanciersGridView.Rows[e.RowIndex].Cells[8].ReadOnly = false;
+            DonersGridView.Rows[e.RowIndex].Cells[0].ReadOnly = false;
+            DonersGridView.Rows[e.RowIndex].Cells[1].ReadOnly = false;
+            DonersGridView.Rows[e.RowIndex].Cells[2].ReadOnly = false;
+            DonersGridView.Rows[e.RowIndex].Cells[3].ReadOnly = false;
+            DonersGridView.Rows[e.RowIndex].Cells[4].ReadOnly = false;
+            DonersGridView.Rows[e.RowIndex].Cells[5].ReadOnly = false;
+            DonersGridView.Rows[e.RowIndex].Cells[6].ReadOnly = false;
+            DonersGridView.Rows[e.RowIndex].Cells[7].ReadOnly = false;
+            DonersGridView.Rows[e.RowIndex].Cells[8].ReadOnly = false;
         }
 
         private void FinanciersGridView_CommandCellClick(object sender, EventArgs e)
         {
             try{  
-        var col = FinanciersGridView.CurrentColumn.Index;
+        var col = DonersGridView.CurrentColumn.Index;
         if (col == 8)
         {
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)

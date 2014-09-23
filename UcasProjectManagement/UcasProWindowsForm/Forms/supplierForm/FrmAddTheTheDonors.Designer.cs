@@ -42,7 +42,7 @@
             this.PhoneNumberTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.ThefinanciersNameTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.TheDonorsNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
@@ -58,7 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PhoneNumberTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersNameTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TheDonorsNameTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +77,7 @@
             this.radGroupBox1.Controls.Add(this.PhoneNumberTextBox);
             this.radGroupBox1.Controls.Add(this.AddBtn);
             this.radGroupBox1.Controls.Add(this.radLabel1);
-            this.radGroupBox1.Controls.Add(this.ThefinanciersNameTextBox);
+            this.radGroupBox1.Controls.Add(this.TheDonorsNameTextBox);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.radGroupBox1.HeaderText = "اضافة ممول:";
@@ -210,22 +210,22 @@
             this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel1.ThemeName = "Office2013Light";
             // 
-            // ThefinanciersNameTextBox
+            // TheDonorsNameTextBox
             // 
-            this.ThefinanciersNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ThefinanciersNameTextBox.Location = new System.Drawing.Point(62, 45);
-            this.ThefinanciersNameTextBox.Name = "ThefinanciersNameTextBox";
-            this.ThefinanciersNameTextBox.Size = new System.Drawing.Size(193, 21);
-            this.ThefinanciersNameTextBox.TabIndex = 0;
-            this.ThefinanciersNameTextBox.ThemeName = "Office2013Light";
+            this.TheDonorsNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TheDonorsNameTextBox.Location = new System.Drawing.Point(62, 45);
+            this.TheDonorsNameTextBox.Name = "TheDonorsNameTextBox";
+            this.TheDonorsNameTextBox.Size = new System.Drawing.Size(193, 21);
+            this.TheDonorsNameTextBox.TabIndex = 0;
+            this.TheDonorsNameTextBox.ThemeName = "Office2013Light";
             // 
-            // FrmAddThefinanciers
+            // FrmAddTheTheDonors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 266);
             this.Controls.Add(this.radGroupBox1);
-            this.Name = "FrmAddThefinanciers";
+            this.Name = "FrmAddTheTheDonors";
             // 
             // 
             // 
@@ -247,7 +247,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PhoneNumberTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ThefinanciersNameTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TheDonorsNameTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -267,7 +267,7 @@
         private Telerik.WinControls.UI.RadTextBox PhoneNumberTextBox;
         private Telerik.WinControls.UI.RadButton AddBtn;
         private Telerik.WinControls.UI.RadLabel radLabel1;
-        private Telerik.WinControls.UI.RadTextBox ThefinanciersNameTextBox;
+        private Telerik.WinControls.UI.RadTextBox TheDonorsNameTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel4;
         private Telerik.WinControls.UI.RadTextBox AdressTextBox;
         private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;

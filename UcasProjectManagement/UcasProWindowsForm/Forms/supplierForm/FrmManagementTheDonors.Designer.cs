@@ -47,14 +47,14 @@
             this.ReportBtn = new Telerik.WinControls.UI.RadButtonElement();
             this.radRibbonFormBehavior1 = new Telerik.WinControls.UI.RadRibbonFormBehavior();
             this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
-            this.FinanciersGridView = new Telerik.WinControls.UI.RadGridView();
+            this.DonersGridView = new Telerik.WinControls.UI.RadGridView();
+            this.theDonorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
-            this.theDonorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FinanciersGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FinanciersGridView.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DonersGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DonersGridView.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.theDonorsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +65,7 @@
             this.ribbonTab1});
             this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
             this.radRibbonBar1.Name = "radRibbonBar1";
-            this.radRibbonBar1.Size = new System.Drawing.Size(1024, 154);
+            this.radRibbonBar1.Size = new System.Drawing.Size(1032, 154);
             this.radRibbonBar1.StartButtonImage = ((System.Drawing.Image)(resources.GetObject("radRibbonBar1.StartButtonImage")));
             this.radRibbonBar1.TabIndex = 1;
             this.radRibbonBar1.Text = "FrmManagementFinanciers";
@@ -130,80 +130,80 @@
             // 
             // radStatusStrip1
             // 
-            this.radStatusStrip1.Location = new System.Drawing.Point(0, 786);
+            this.radStatusStrip1.Location = new System.Drawing.Point(0, 820);
             this.radStatusStrip1.Name = "radStatusStrip1";
-            this.radStatusStrip1.Size = new System.Drawing.Size(1024, 27);
+            this.radStatusStrip1.Size = new System.Drawing.Size(1032, 27);
             this.radStatusStrip1.TabIndex = 2;
             this.radStatusStrip1.Text = "radStatusStrip1";
             this.radStatusStrip1.ThemeName = "Office2013Light";
             // 
-            // FinanciersGridView
+            // DonersGridView
             // 
-            this.FinanciersGridView.AutoSizeRows = true;
-            this.FinanciersGridView.BackColor = System.Drawing.SystemColors.Control;
-            this.FinanciersGridView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.FinanciersGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FinanciersGridView.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.FinanciersGridView.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.FinanciersGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.FinanciersGridView.Location = new System.Drawing.Point(0, 154);
+            this.DonersGridView.AutoSizeRows = true;
+            this.DonersGridView.BackColor = System.Drawing.SystemColors.Control;
+            this.DonersGridView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DonersGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DonersGridView.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DonersGridView.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DonersGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.DonersGridView.Location = new System.Drawing.Point(0, 154);
             // 
-            // FinanciersGridView
+            // DonersGridView
             // 
-            this.FinanciersGridView.MasterTemplate.AutoGenerateColumns = false;
-            this.FinanciersGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.DonersGridView.MasterTemplate.AutoGenerateColumns = false;
+            this.DonersGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewDecimalColumn1.DataType = typeof(int);
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "ID";
             gridViewDecimalColumn1.HeaderText = "الرقم";
             gridViewDecimalColumn1.IsAutoGenerated = true;
             gridViewDecimalColumn1.Name = "ID";
-            gridViewDecimalColumn1.Width = 98;
+            gridViewDecimalColumn1.Width = 99;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "Name";
             gridViewTextBoxColumn1.HeaderText = "الجهة المانحة";
             gridViewTextBoxColumn1.IsAutoGenerated = true;
             gridViewTextBoxColumn1.Name = "Name";
-            gridViewTextBoxColumn1.Width = 136;
+            gridViewTextBoxColumn1.Width = 137;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "agentName";
             gridViewTextBoxColumn2.HeaderText = "اسم الوكيل";
             gridViewTextBoxColumn2.IsAutoGenerated = true;
             gridViewTextBoxColumn2.Name = "agentName";
-            gridViewTextBoxColumn2.Width = 126;
+            gridViewTextBoxColumn2.Width = 127;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "PhoneNumber";
             gridViewTextBoxColumn3.HeaderText = "رقم الهاتف";
             gridViewTextBoxColumn3.IsAutoGenerated = true;
             gridViewTextBoxColumn3.Name = "PhoneNumber";
-            gridViewTextBoxColumn3.Width = 118;
+            gridViewTextBoxColumn3.Width = 119;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "Fax";
             gridViewTextBoxColumn4.HeaderText = "الفاكس";
             gridViewTextBoxColumn4.IsAutoGenerated = true;
             gridViewTextBoxColumn4.Name = "Fax";
-            gridViewTextBoxColumn4.Width = 128;
+            gridViewTextBoxColumn4.Width = 129;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.FieldName = "Email";
             gridViewTextBoxColumn5.HeaderText = "البريد الالكتروني";
             gridViewTextBoxColumn5.IsAutoGenerated = true;
             gridViewTextBoxColumn5.Name = "Email";
-            gridViewTextBoxColumn5.Width = 131;
+            gridViewTextBoxColumn5.Width = 132;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.FieldName = "Adderss";
             gridViewTextBoxColumn6.HeaderText = "العنوان";
             gridViewTextBoxColumn6.IsAutoGenerated = true;
             gridViewTextBoxColumn6.Name = "Adderss";
-            gridViewTextBoxColumn6.Width = 121;
+            gridViewTextBoxColumn6.Width = 122;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "حفظ";
             gridViewCommandColumn1.Name = "EditBtn";
-            gridViewCommandColumn1.Width = 90;
+            gridViewCommandColumn1.Width = 91;
             gridViewCommandColumn2.EnableExpressionEditor = false;
             gridViewCommandColumn2.HeaderText = "حذف";
             gridViewCommandColumn2.Name = "DelteBtn";
             gridViewCommandColumn2.Width = 64;
-            this.FinanciersGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            this.DonersGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -213,17 +213,17 @@
             gridViewTextBoxColumn6,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
-            this.FinanciersGridView.MasterTemplate.DataSource = this.theDonorsBindingSource;
-            this.FinanciersGridView.MasterTemplate.EnableFiltering = true;
-            this.FinanciersGridView.MasterTemplate.MultiSelect = true;
-            this.FinanciersGridView.Name = "FinanciersGridView";
-            this.FinanciersGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.FinanciersGridView.Size = new System.Drawing.Size(1024, 632);
-            this.FinanciersGridView.TabIndex = 3;
-            this.FinanciersGridView.Text = "radGridView1";
-            this.FinanciersGridView.ThemeName = "TelerikMetroBlue";
-            this.FinanciersGridView.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.radGridView1_CellDoubleClick);
-            this.FinanciersGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.FinanciersGridView_CommandCellClick);
+            this.DonersGridView.MasterTemplate.DataSource = this.theDonorsBindingSource;
+            this.DonersGridView.MasterTemplate.EnableFiltering = true;
+            this.DonersGridView.MasterTemplate.MultiSelect = true;
+            this.DonersGridView.Name = "DonersGridView";
+            this.DonersGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.DonersGridView.Size = new System.Drawing.Size(1032, 666);
+            this.DonersGridView.TabIndex = 3;
+            this.DonersGridView.Text = "radGridView1";
+            this.DonersGridView.ThemeName = "TelerikMetroBlue";
+            this.DonersGridView.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.radGridView1_CellDoubleClick);
+            this.DonersGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.FinanciersGridView_CommandCellClick);
             // 
             // theDonorsBindingSource
             // 
@@ -233,8 +233,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 813);
-            this.Controls.Add(this.FinanciersGridView);
+            this.ClientSize = new System.Drawing.Size(1032, 847);
+            this.Controls.Add(this.DonersGridView);
             this.Controls.Add(this.radStatusStrip1);
             this.Controls.Add(this.radRibbonBar1);
             this.FormBehavior = this.radRibbonFormBehavior1;
@@ -250,8 +250,8 @@
             this.Load += new System.EventHandler(this.FrmManagementFinanciers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FinanciersGridView.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FinanciersGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DonersGridView.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DonersGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.theDonorsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -268,7 +268,7 @@
         private Telerik.WinControls.UI.RadButtonElement RefreshBtn;
         private Telerik.WinControls.UI.RadButtonElement ReportBtn;
         private Telerik.WinControls.UI.RadRibbonFormBehavior radRibbonFormBehavior1;
-        private Telerik.WinControls.UI.RadGridView FinanciersGridView;
+        private Telerik.WinControls.UI.RadGridView DonersGridView;
         private Telerik.WinControls.UI.RadStatusStrip radStatusStrip1;
         private Telerik.WinControls.Themes.Office2013LightTheme office2013LightTheme1;
         private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
