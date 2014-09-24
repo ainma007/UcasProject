@@ -108,5 +108,11 @@ namespace UcasProWindowsForm.Forms.MainForm
             frm.ShowDialog();
 
         }
+
+        private void UserMangBtn_Click(object sender, EventArgs e)
+        {
+            FrmUserManagment userM = new FrmUserManagment();
+            userM.ShowDialog();
+        }
     }
 }

@@ -45,4 +45,3 @@ C:\Users\Heroo\Desktop\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\Ent
 C:\Users\Heroo\Desktop\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Heroo\Desktop\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.dll
 C:\Users\Heroo\Desktop\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.pdb
-C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.csprojResolveAssemblyReference.cache

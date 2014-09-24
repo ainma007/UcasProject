@@ -53,7 +53,7 @@ namespace Ucas.Data.CommandClass
       public static int xCurrentUserID;
       public static string xCurrentUserName;
       public static  string xCurrentUserPass;
-
+        
       #endregion 
 
     }

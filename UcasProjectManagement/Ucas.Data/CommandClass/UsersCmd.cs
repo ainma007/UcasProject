@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Entity;
+using System.Collections;
 
 namespace Ucas.Data.CommandClass
 {
@@ -34,6 +35,7 @@ namespace Ucas.Data.CommandClass
                q.UserName = tb.UserName;
                q.Password = tb.Password;
                q.GroupID = tb.GroupID;
+             
                db.SaveChanges();
                return true;
                }
@@ -94,6 +96,20 @@ namespace Ucas.Data.CommandClass
            db.Configuration.LazyLoadingEnabled = false;
            var lst = (from u in db.UsersTbs where u.ID == XID select u).ToList();
            return lst;
+       }
+
+       public static IEnumerable GetUserTb()
+       {
+           db=new UcasProEntities();
+           var q = (from i in db.UsersTbs
+                    join pro in db.ProjectControls on i.ID equals pro.UserID
+                    join emp in db.Employees on i.EmployeeID equals emp.ID
+                   
+
+
+                    select new { i.ID, emp.EmployeeName, i.UserName, i.Password, i.GroupID, pro.UserID, pro.ProjectID, pro.Status }).ToList();
+           return q;
+
        }
 
     }
