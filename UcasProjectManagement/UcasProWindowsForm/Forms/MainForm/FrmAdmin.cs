@@ -74,7 +74,7 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void FrmAdmin_Activated(object sender, EventArgs e)
         {
-            FrmAdmin_Load(sender, e);
+          //  FrmAdmin_Load(sender, e);
         }
 
         private void GroupAddBtn_Click(object sender, EventArgs e)

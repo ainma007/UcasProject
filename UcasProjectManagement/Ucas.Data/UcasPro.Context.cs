@@ -38,6 +38,7 @@ namespace Ucas.Data
         public virtual DbSet<ProjectProfile> ProjectProfiles { get; set; }
         public virtual DbSet<ProjectSubActivity> ProjectSubActivities { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TheDonors> TheDonors1 { get; set; }
         public virtual DbSet<TheDonorsProject> TheDonorsProjects { get; set; }
         public virtual DbSet<UsersTb> UsersTbs { get; set; }
