@@ -17,10 +17,20 @@ namespace UcasProWindowsForm.Forms.MainForm
             InitializeComponent();
         }
 
-  
+        int ProID = ProjectControlCmd.ChkProjectIDByUserID(PeremissionsHolderClass.xCurrentUserID);
         private void FrmMainUserPro_Load(object sender, EventArgs e)
         {
+            var ListData = ProjectProfileCmd.GetProjectData(ProID);
+            foreach (var item in ListData )
+            {
+                this.radTextBox1.Text = item.ProjectName;
+                this.DescTextBox.Text = item.ProjectDescription;
+                this.StartDateTextBox.Text = item.StartDate.ToString ();
+                this.EndDateTextBox.Text = item.EndDate.ToString ();
+                this.radTextBox2.Text = item.TotalCost.ToString ();
+                this.radTextBox3.Text = item.Coin.ToString();
 
+            }
         }
     }
 }

@@ -75,5 +75,12 @@ namespace Ucas.Data.CommandClass
                 return false;
             }
         }
+
+      public static List<ProjectProfile> GetProjectData(int PID)
+      {
+          db = new UcasProEntities();
+          var LST = (from p in db.ProjectProfiles where p.ID == PID select p).ToList();
+          return LST;
+      }
     }
 }
