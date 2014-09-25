@@ -94,6 +94,7 @@
             this.AddBtn.TabIndex = 7;
             this.AddBtn.Text = "اضافة";
             this.AddBtn.ThemeName = "Office2013Light";
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // radLabel6
             // 

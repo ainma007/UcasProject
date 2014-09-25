@@ -31,8 +31,10 @@ namespace Ucas.Data.CommandClass
       public static int _AddFinncers;
       public static int _EditFinncers;
       public static int _DeleteFinncers;
-
+        //==============================
+      public static int ProjID;
         //=============================
+      public static int AdminID;
 
       static UcasProEntities db = new UcasProEntities();
       public static List<PeremissionsTb> GetAllGroupPeremissionsByGroupID(int GID)

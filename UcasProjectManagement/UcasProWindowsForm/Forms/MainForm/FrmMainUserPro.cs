@@ -23,6 +23,7 @@ namespace UcasProWindowsForm.Forms.MainForm
             var ListData = ProjectProfileCmd.GetProjectData(ProID);
             foreach (var item in ListData )
             {
+                PeremissionsHolderClass.ProjID = item.ID;
                 this.radTextBox1.Text = item.ProjectName;
                 this.DescTextBox.Text = item.ProjectDescription;
                 this.StartDateTextBox.Text = item.StartDate.ToString ();
@@ -31,6 +32,12 @@ namespace UcasProWindowsForm.Forms.MainForm
                 this.radTextBox3.Text = item.Coin.ToString();
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmTheDonorsAndProjectAdd frm = new FrmTheDonorsAndProjectAdd();
+            frm.ShowDialog();
         }
     }
 }

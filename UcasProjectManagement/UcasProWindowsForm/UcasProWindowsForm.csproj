@@ -135,11 +135,11 @@
     <Compile Include="Forms\MainForm\FrmMainUserPro.Designer.cs">
       <DependentUpon>FrmMainUserPro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainForm\TheDonorsAndProjectMange.cs">
+    <Compile Include="Forms\MainForm\FrmTheDonorsAndProjectAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm\TheDonorsAndProjectMange.Designer.cs">
-      <DependentUpon>TheDonorsAndProjectMange.cs</DependentUpon>
+    <Compile Include="Forms\MainForm\FrmTheDonorsAndProjectAdd.Designer.cs">
+      <DependentUpon>FrmTheDonorsAndProjectAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProjectProfileForm\FrmAddAmountsReceiveds.cs">
       <SubType>Form</SubType>
@@ -257,8 +257,8 @@
     <EmbeddedResource Include="Forms\MainForm\FrmMainUserPro.resx">
       <DependentUpon>FrmMainUserPro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm\TheDonorsAndProjectMange.resx">
-      <DependentUpon>TheDonorsAndProjectMange.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MainForm\FrmTheDonorsAndProjectAdd.resx">
+      <DependentUpon>FrmTheDonorsAndProjectAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProjectProfileForm\FrmAddAmountsReceiveds.resx">
       <DependentUpon>FrmAddAmountsReceiveds.cs</DependentUpon>

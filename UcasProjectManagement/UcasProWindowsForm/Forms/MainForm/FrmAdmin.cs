@@ -99,13 +99,32 @@ namespace UcasProWindowsForm.Forms.MainForm
         private void radGridView1_CommandCellClick(object sender, EventArgs e)
         {
             FrmMainUserPro user = new FrmMainUserPro();
+            int XProId = int.Parse(radGridView1.CurrentRow.Cells[0].Value.ToString());
+            var ListData = ProjectProfileCmd.GetProjectData(XProId);
+            
+            foreach (var item in ListData)
+            {
+                PeremissionsHolderClass.ProjID = item.ID;
+                user.radTextBox1.Text = item.ProjectName;
+                user.DescTextBox.Text = item.ProjectDescription;
+                user.StartDateTextBox.Text = item.StartDate.ToString();
+                user.EndDateTextBox.Text = item.EndDate.ToString();
+                user.radTextBox2.Text = item.TotalCost.ToString();
+                user.radTextBox3.Text = item.Coin.ToString();
+
+            }
             user.ShowDialog();
+
+          //  MessageBox.Show("" + XProId);
         }
 
         private void UserAddBtn_Click(object sender, EventArgs e)
         {
+           //
             Form frm = new frmAddUser();
-            frm.ShowDialog();
+          
+          frm.ShowDialog();
+          
 
         }
 

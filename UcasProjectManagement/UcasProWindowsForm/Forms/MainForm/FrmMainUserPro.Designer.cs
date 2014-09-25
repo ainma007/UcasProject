@@ -46,34 +46,35 @@
             this.radRibbonFormBehavior1 = new Telerik.WinControls.UI.RadRibbonFormBehavior();
             this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
-            this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
-            this.DescTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
-            this.StartDateTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.EndDateTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
-            this.radTextBox2 = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
+            this.button1 = new System.Windows.Forms.Button();
             this.radTextBox3 = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
+            this.radTextBox2 = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
+            this.EndDateTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
+            this.StartDateTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+            this.DescTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DescTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StartDateTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EndDateTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EndDateTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StartDateTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DescTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +86,7 @@
             this.ribbonTab3});
             this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
             this.radRibbonBar1.Name = "radRibbonBar1";
-            this.radRibbonBar1.Size = new System.Drawing.Size(902, 150);
+            this.radRibbonBar1.Size = new System.Drawing.Size(918, 150);
             this.radRibbonBar1.StartButtonImage = ((System.Drawing.Image)(resources.GetObject("radRibbonBar1.StartButtonImage")));
             this.radRibbonBar1.TabIndex = 0;
             this.radRibbonBar1.Text = "radRibbonBar1";
@@ -209,9 +210,9 @@
             // 
             // radStatusStrip1
             // 
-            this.radStatusStrip1.Location = new System.Drawing.Point(0, 698);
+            this.radStatusStrip1.Location = new System.Drawing.Point(0, 766);
             this.radStatusStrip1.Name = "radStatusStrip1";
-            this.radStatusStrip1.Size = new System.Drawing.Size(902, 27);
+            this.radStatusStrip1.Size = new System.Drawing.Size(918, 27);
             this.radStatusStrip1.TabIndex = 2;
             this.radStatusStrip1.Text = "radStatusStrip1";
             this.radStatusStrip1.ThemeName = "Office2013Light";
@@ -219,6 +220,7 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.button1);
             this.radGroupBox1.Controls.Add(this.radTextBox3);
             this.radGroupBox1.Controls.Add(this.radLabel6);
             this.radGroupBox1.Controls.Add(this.radTextBox2);
@@ -235,92 +237,20 @@
             this.radGroupBox1.HeaderText = "موجز للمشروع";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 150);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(902, 548);
+            this.radGroupBox1.Size = new System.Drawing.Size(918, 616);
             this.radGroupBox1.TabIndex = 3;
             this.radGroupBox1.Text = "موجز للمشروع";
             this.radGroupBox1.ThemeName = "Office2013Light";
             // 
-            // radLabel1
+            // button1
             // 
-            this.radLabel1.Location = new System.Drawing.Point(822, 43);
-            this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(68, 18);
-            this.radLabel1.TabIndex = 0;
-            this.radLabel1.Text = "اسم المشروع:";
-            this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // radLabel3
-            // 
-            this.radLabel3.Location = new System.Drawing.Point(822, 80);
-            this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(78, 18);
-            this.radLabel3.TabIndex = 2;
-            this.radLabel3.Text = "وصف المشروع:";
-            this.radLabel3.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // radTextBox1
-            // 
-            this.radTextBox1.Location = new System.Drawing.Point(591, 45);
-            this.radTextBox1.Name = "radTextBox1";
-            this.radTextBox1.Size = new System.Drawing.Size(225, 20);
-            this.radTextBox1.TabIndex = 3;
-            // 
-            // DescTextBox
-            // 
-            this.DescTextBox.AutoSize = false;
-            this.DescTextBox.Location = new System.Drawing.Point(591, 78);
-            this.DescTextBox.Multiline = true;
-            this.DescTextBox.Name = "DescTextBox";
-            this.DescTextBox.Size = new System.Drawing.Size(225, 57);
-            this.DescTextBox.TabIndex = 4;
-            // 
-            // radLabel2
-            // 
-            this.radLabel2.Location = new System.Drawing.Point(822, 176);
-            this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(63, 18);
-            this.radLabel2.TabIndex = 5;
-            this.radLabel2.Text = "تاريخ البداية:";
-            this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // StartDateTextBox
-            // 
-            this.StartDateTextBox.Location = new System.Drawing.Point(591, 175);
-            this.StartDateTextBox.Name = "StartDateTextBox";
-            this.StartDateTextBox.Size = new System.Drawing.Size(225, 20);
-            this.StartDateTextBox.TabIndex = 6;
-            // 
-            // EndDateTextBox
-            // 
-            this.EndDateTextBox.Location = new System.Drawing.Point(591, 217);
-            this.EndDateTextBox.Name = "EndDateTextBox";
-            this.EndDateTextBox.Size = new System.Drawing.Size(225, 20);
-            this.EndDateTextBox.TabIndex = 8;
-            // 
-            // radLabel4
-            // 
-            this.radLabel4.Location = new System.Drawing.Point(822, 218);
-            this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(63, 18);
-            this.radLabel4.TabIndex = 7;
-            this.radLabel4.Text = "تاريخ البداية:";
-            this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // radTextBox2
-            // 
-            this.radTextBox2.Location = new System.Drawing.Point(591, 260);
-            this.radTextBox2.Name = "radTextBox2";
-            this.radTextBox2.Size = new System.Drawing.Size(216, 20);
-            this.radTextBox2.TabIndex = 10;
-            // 
-            // radLabel5
-            // 
-            this.radLabel5.Location = new System.Drawing.Point(813, 261);
-            this.radLabel5.Name = "radLabel5";
-            this.radLabel5.Size = new System.Drawing.Size(83, 18);
-            this.radLabel5.TabIndex = 9;
-            this.radLabel5.Text = "المبلغ المخصص";
-            this.radLabel5.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            this.button1.Location = new System.Drawing.Point(211, 58);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(157, 40);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "اضافة ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // radTextBox3
             // 
@@ -338,11 +268,93 @@
             this.radLabel6.Text = "العملة";
             this.radLabel6.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
+            // radTextBox2
+            // 
+            this.radTextBox2.Location = new System.Drawing.Point(591, 260);
+            this.radTextBox2.Name = "radTextBox2";
+            this.radTextBox2.Size = new System.Drawing.Size(216, 20);
+            this.radTextBox2.TabIndex = 10;
+            // 
+            // radLabel5
+            // 
+            this.radLabel5.Location = new System.Drawing.Point(813, 261);
+            this.radLabel5.Name = "radLabel5";
+            this.radLabel5.Size = new System.Drawing.Size(83, 18);
+            this.radLabel5.TabIndex = 9;
+            this.radLabel5.Text = "المبلغ المخصص";
+            this.radLabel5.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // EndDateTextBox
+            // 
+            this.EndDateTextBox.Location = new System.Drawing.Point(591, 217);
+            this.EndDateTextBox.Name = "EndDateTextBox";
+            this.EndDateTextBox.Size = new System.Drawing.Size(225, 20);
+            this.EndDateTextBox.TabIndex = 8;
+            // 
+            // radLabel4
+            // 
+            this.radLabel4.Location = new System.Drawing.Point(822, 218);
+            this.radLabel4.Name = "radLabel4";
+            this.radLabel4.Size = new System.Drawing.Size(63, 18);
+            this.radLabel4.TabIndex = 7;
+            this.radLabel4.Text = "تاريخ البداية:";
+            this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // StartDateTextBox
+            // 
+            this.StartDateTextBox.Location = new System.Drawing.Point(591, 175);
+            this.StartDateTextBox.Name = "StartDateTextBox";
+            this.StartDateTextBox.Size = new System.Drawing.Size(225, 20);
+            this.StartDateTextBox.TabIndex = 6;
+            // 
+            // radLabel2
+            // 
+            this.radLabel2.Location = new System.Drawing.Point(822, 176);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(63, 18);
+            this.radLabel2.TabIndex = 5;
+            this.radLabel2.Text = "تاريخ البداية:";
+            this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // DescTextBox
+            // 
+            this.DescTextBox.AutoSize = false;
+            this.DescTextBox.Location = new System.Drawing.Point(591, 78);
+            this.DescTextBox.Multiline = true;
+            this.DescTextBox.Name = "DescTextBox";
+            this.DescTextBox.Size = new System.Drawing.Size(225, 57);
+            this.DescTextBox.TabIndex = 4;
+            // 
+            // radTextBox1
+            // 
+            this.radTextBox1.Location = new System.Drawing.Point(591, 45);
+            this.radTextBox1.Name = "radTextBox1";
+            this.radTextBox1.Size = new System.Drawing.Size(225, 20);
+            this.radTextBox1.TabIndex = 3;
+            // 
+            // radLabel3
+            // 
+            this.radLabel3.Location = new System.Drawing.Point(822, 80);
+            this.radLabel3.Name = "radLabel3";
+            this.radLabel3.Size = new System.Drawing.Size(78, 18);
+            this.radLabel3.TabIndex = 2;
+            this.radLabel3.Text = "وصف المشروع:";
+            this.radLabel3.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // radLabel1
+            // 
+            this.radLabel1.Location = new System.Drawing.Point(822, 43);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(68, 18);
+            this.radLabel1.TabIndex = 0;
+            this.radLabel1.Text = "اسم المشروع:";
+            this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            // 
             // FrmMainUserPro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 725);
+            this.ClientSize = new System.Drawing.Size(918, 793);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.radStatusStrip1);
             this.Controls.Add(this.radRibbonBar1);
@@ -362,18 +374,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DescTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StartDateTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EndDateTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EndDateTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StartDateTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DescTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -400,16 +412,17 @@
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         private Telerik.WinControls.UI.RadStatusStrip radStatusStrip1;
         private Telerik.WinControls.UI.RadLabel radLabel1;
-        private Telerik.WinControls.UI.RadTextBox radTextBox3;
         private Telerik.WinControls.UI.RadLabel radLabel6;
-        private Telerik.WinControls.UI.RadTextBox radTextBox2;
         private Telerik.WinControls.UI.RadLabel radLabel5;
-        private Telerik.WinControls.UI.RadTextBox EndDateTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel4;
-        private Telerik.WinControls.UI.RadTextBox StartDateTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel2;
-        private Telerik.WinControls.UI.RadTextBox DescTextBox;
-        private Telerik.WinControls.UI.RadTextBox radTextBox1;
         private Telerik.WinControls.UI.RadLabel radLabel3;
+        private System.Windows.Forms.Button button1;
+        public Telerik.WinControls.UI.RadTextBox radTextBox3;
+        public Telerik.WinControls.UI.RadTextBox radTextBox2;
+        public Telerik.WinControls.UI.RadTextBox EndDateTextBox;
+        public Telerik.WinControls.UI.RadTextBox StartDateTextBox;
+        public Telerik.WinControls.UI.RadTextBox DescTextBox;
+        public Telerik.WinControls.UI.RadTextBox radTextBox1;
     }
 }
