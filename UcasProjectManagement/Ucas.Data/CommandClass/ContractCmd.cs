@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,7 +37,7 @@ namespace Ucas.Data.CommandClass
                 db.Configuration.ProxyCreationEnabled = false;
                 var q = db.Contracts.Where(p => p.ID == Ct.ID).SingleOrDefault();
                 q.Employee_ID = Ct.Employee_ID;
-                q.ProjectProfile_ID = Ct.ProjectProfile_ID;
+              //  q.ProjectProfile_ID = Ct.ProjectProfile_ID;
                 q.SelaryAmount = Ct.SelaryAmount;
                 q.StartDate = Ct.StartDate;
                 q.EndDate = Ct.EndDate;
@@ -73,12 +74,23 @@ namespace Ucas.Data.CommandClass
             }
         }
 
-        public static List<Contract> GetAll()
+        public static IEnumerable GetAllContractsBypro(int ProId)
         {
             db = new UcasProEntities();
-            db.Configuration.LazyLoadingEnabled = false;
-            db.Configuration.ProxyCreationEnabled = false;
-            return db.Contracts.ToList();
+            var q = (from i in db.Contracts
+                     join emp in db.Employees on i.Employee_ID equals emp.ID
+                     where i.ProjectProfile_ID == ProId
+
+
+
+
+                     select new { i.ID, emp.EmployeeName, i.StartDate,i.EndDate,i.SelaryAmount,i.Status,i.ProjectProfile_ID }).ToList();
+            return q;
+
         }
+
+
+      
+
     }
 }

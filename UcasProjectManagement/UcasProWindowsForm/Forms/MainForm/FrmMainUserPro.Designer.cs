@@ -33,8 +33,8 @@
             this.radRibbonBar1 = new Telerik.WinControls.UI.RadRibbonBar();
             this.ribbonTab1 = new Telerik.WinControls.UI.RibbonTab();
             this.radRibbonBarGroup1 = new Telerik.WinControls.UI.RadRibbonBarGroup();
-            this.radButtonElement1 = new Telerik.WinControls.UI.RadButtonElement();
-            this.radButtonElement2 = new Telerik.WinControls.UI.RadButtonElement();
+            this.ProjectManageBtn = new Telerik.WinControls.UI.RadButtonElement();
+            this.ContractsBtn = new Telerik.WinControls.UI.RadButtonElement();
             this.radButtonElement3 = new Telerik.WinControls.UI.RadButtonElement();
             this.radButtonElement6 = new Telerik.WinControls.UI.RadButtonElement();
             this.ribbonTab2 = new Telerik.WinControls.UI.RibbonTab();
@@ -86,7 +86,7 @@
             this.ribbonTab3});
             this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
             this.radRibbonBar1.Name = "radRibbonBar1";
-            this.radRibbonBar1.Size = new System.Drawing.Size(918, 150);
+            this.radRibbonBar1.Size = new System.Drawing.Size(942, 150);
             this.radRibbonBar1.StartButtonImage = ((System.Drawing.Image)(resources.GetObject("radRibbonBar1.StartButtonImage")));
             this.radRibbonBar1.TabIndex = 0;
             this.radRibbonBar1.Text = "radRibbonBar1";
@@ -108,29 +108,31 @@
             this.radRibbonBarGroup1.AccessibleDescription = "ادارة المشروع";
             this.radRibbonBarGroup1.AccessibleName = "ادارة المشروع";
             this.radRibbonBarGroup1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radButtonElement1,
-            this.radButtonElement2,
+            this.ProjectManageBtn,
+            this.ContractsBtn,
             this.radButtonElement3,
             this.radButtonElement6});
             this.radRibbonBarGroup1.Name = "radRibbonBarGroup1";
             this.radRibbonBarGroup1.Text = "ادارة المشروع";
             this.radRibbonBarGroup1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // radButtonElement1
+            // ProjectManageBtn
             // 
-            this.radButtonElement1.AccessibleDescription = "ادارة المشروع";
-            this.radButtonElement1.AccessibleName = "ادارة المشروع";
-            this.radButtonElement1.Name = "radButtonElement1";
-            this.radButtonElement1.Text = "ادارة المشروع";
-            this.radButtonElement1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.ProjectManageBtn.AccessibleDescription = "ادارة المشروع";
+            this.ProjectManageBtn.AccessibleName = "ادارة المشروع";
+            this.ProjectManageBtn.Name = "ProjectManageBtn";
+            this.ProjectManageBtn.Text = "ادارة المشروع";
+            this.ProjectManageBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.ProjectManageBtn.Click += new System.EventHandler(this.ProjectManageBtn_Click);
             // 
-            // radButtonElement2
+            // ContractsBtn
             // 
-            this.radButtonElement2.AccessibleDescription = "عقود المشروع";
-            this.radButtonElement2.AccessibleName = "عقود المشروع";
-            this.radButtonElement2.Name = "radButtonElement2";
-            this.radButtonElement2.Text = "عقود المشروع";
-            this.radButtonElement2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.ContractsBtn.AccessibleDescription = "عقود المشروع";
+            this.ContractsBtn.AccessibleName = "عقود المشروع";
+            this.ContractsBtn.Name = "ContractsBtn";
+            this.ContractsBtn.Text = "عقود المشروع";
+            this.ContractsBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.ContractsBtn.Click += new System.EventHandler(this.ContractsBtn_Click);
             // 
             // radButtonElement3
             // 
@@ -210,9 +212,9 @@
             // 
             // radStatusStrip1
             // 
-            this.radStatusStrip1.Location = new System.Drawing.Point(0, 766);
+            this.radStatusStrip1.Location = new System.Drawing.Point(0, 589);
             this.radStatusStrip1.Name = "radStatusStrip1";
-            this.radStatusStrip1.Size = new System.Drawing.Size(918, 27);
+            this.radStatusStrip1.Size = new System.Drawing.Size(942, 27);
             this.radStatusStrip1.TabIndex = 2;
             this.radStatusStrip1.Text = "radStatusStrip1";
             this.radStatusStrip1.ThemeName = "Office2013Light";
@@ -237,7 +239,7 @@
             this.radGroupBox1.HeaderText = "موجز للمشروع";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 150);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(918, 616);
+            this.radGroupBox1.Size = new System.Drawing.Size(942, 439);
             this.radGroupBox1.TabIndex = 3;
             this.radGroupBox1.Text = "موجز للمشروع";
             this.radGroupBox1.ThemeName = "Office2013Light";
@@ -354,7 +356,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 793);
+            this.ClientSize = new System.Drawing.Size(942, 616);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.radStatusStrip1);
             this.Controls.Add(this.radRibbonBar1);
@@ -398,8 +400,8 @@
         private Telerik.WinControls.UI.RadRibbonBar radRibbonBar1;
         private Telerik.WinControls.UI.RibbonTab ribbonTab1;
         private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup1;
-        private Telerik.WinControls.UI.RadButtonElement radButtonElement1;
-        private Telerik.WinControls.UI.RadButtonElement radButtonElement2;
+        private Telerik.WinControls.UI.RadButtonElement ProjectManageBtn;
+        private Telerik.WinControls.UI.RadButtonElement ContractsBtn;
         private Telerik.WinControls.UI.RadButtonElement radButtonElement3;
         private Telerik.WinControls.UI.RadButtonElement radButtonElement6;
         private Telerik.WinControls.UI.RibbonTab ribbonTab2;

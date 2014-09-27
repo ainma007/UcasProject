@@ -104,7 +104,7 @@ namespace UcasProWindowsForm.Forms.MainForm
             
             foreach (var item in ListData)
             {
-                PeremissionsHolderClass.ProjID = item.ID;
+                InformationsClass.ProjID = item.ID;
                 user.radTextBox1.Text = item.ProjectName;
                 user.DescTextBox.Text = item.ProjectDescription;
                 user.StartDateTextBox.Text = item.StartDate.ToString();

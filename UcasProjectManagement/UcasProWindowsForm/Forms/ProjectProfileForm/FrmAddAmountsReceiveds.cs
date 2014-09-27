@@ -15,5 +15,10 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
         {
             InitializeComponent();
         }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

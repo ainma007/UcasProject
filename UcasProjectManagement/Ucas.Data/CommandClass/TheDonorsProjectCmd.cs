@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,29 @@ namespace Ucas.Data.CommandClass
   public  class TheDonorsProjectCmd
     {
         static UcasProEntities db = new UcasProEntities();
+
+        public static List<TheDonorsProject> GetAllDonors()
+        {
+            db = new UcasProEntities();
+            return db.TheDonorsProjects.ToList();
+        }
+
+
+
+        public static IEnumerable GetAllDonorsBypro(int ProId)
+        {
+            db = new UcasProEntities();
+            var q = (from i in db.TheDonorsProjects
+                     join pro in db.TheDonors1 on i.DonorsID equals pro.ID
+                     where i.ProjectID == ProId
+                   
+
+
+
+                     select new { i.ID, pro.Name,i.TotalCost }).ToList();
+            return q;
+
+        }
         #region " { Get Current Project's Donors Only } "
         public static List<TheDonorsProject> GetAllDonorsOfSelectedProject(int ProjId)
         {

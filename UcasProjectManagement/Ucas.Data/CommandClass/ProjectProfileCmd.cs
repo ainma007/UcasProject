@@ -17,6 +17,8 @@ namespace Ucas.Data.CommandClass
                        select p).ToList();
             return lst;
         }
+
+      
       public static bool AddNewProject(ProjectProfile tb)
         {
             db = new UcasProEntities();

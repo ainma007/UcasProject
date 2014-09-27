@@ -113,9 +113,9 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Employee_ID" Type="int" Nullable="false" />
-    <Property Name="StartDate" Type="nchar" Nullable="true" MaxLength="10" />
-    <Property Name="EndDate" Type="nchar" Nullable="true" MaxLength="10" />
-    <Property Name="SelaryAmount" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="StartDate" Type="datetime" Nullable="true" />
+    <Property Name="EndDate" Type="datetime" Nullable="true" />
+    <Property Name="SelaryAmount" Type="float" Nullable="true" />
     <Property Name="Status" Type="nchar" Nullable="true" MaxLength="10" />
     <Property Name="ProjectProfile_ID" Type="int" Nullable="false" />
   </EntityType>
@@ -595,9 +595,9 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Employee_ID" Type="Int32" Nullable="false" />
-          <Property Name="StartDate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="EndDate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="SelaryAmount" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" />
+          <Property Name="EndDate" Type="DateTime" />
+          <Property Name="SelaryAmount" Type="Double" />
           <Property Name="Status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="ProjectProfile_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Employee" Relationship="UcasProModel.FK_Contracts_Employees" FromRole="Contract" ToRole="Employee" />

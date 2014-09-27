@@ -17,12 +17,7 @@ namespace Ucas.Data.CommandClass
            }
 
 
-        public static ProjectControl GetprojectContrl (int ID)
-        {
-           
-            var q = (from i in db.ProjectControls where i.UserID == ID select i).Take(1).SingleOrDefault();
-            return q;
-        }
+       
         public static bool AddNewProControl(ProjectControl tb)
            {
                db = new UcasProEntities();

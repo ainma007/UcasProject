@@ -73,7 +73,7 @@
             // 
             this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
             this.radRibbonBar1.Name = "radRibbonBar1";
-            this.radRibbonBar1.Size = new System.Drawing.Size(1155, 147);
+            this.radRibbonBar1.Size = new System.Drawing.Size(1171, 147);
             this.radRibbonBar1.StartButtonImage = ((System.Drawing.Image)(resources.GetObject("radRibbonBar1.StartButtonImage")));
             this.radRibbonBar1.TabIndex = 0;
             this.radRibbonBar1.Text = "radRibbonBar1";
@@ -86,9 +86,9 @@
             // 
             // radStatusStrip1
             // 
-            this.radStatusStrip1.Location = new System.Drawing.Point(0, 761);
+            this.radStatusStrip1.Location = new System.Drawing.Point(0, 828);
             this.radStatusStrip1.Name = "radStatusStrip1";
-            this.radStatusStrip1.Size = new System.Drawing.Size(1155, 27);
+            this.radStatusStrip1.Size = new System.Drawing.Size(1171, 27);
             this.radStatusStrip1.TabIndex = 1;
             this.radStatusStrip1.Text = "radStatusStrip1";
             this.radStatusStrip1.ThemeName = "Office2013Light";
@@ -101,7 +101,7 @@
             this.radGroupBox1.HeaderText = "قائمة المستخدمين العاديين";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 147);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(1155, 200);
+            this.radGroupBox1.Size = new System.Drawing.Size(1171, 200);
             this.radGroupBox1.TabIndex = 2;
             this.radGroupBox1.Text = "قائمة المستخدمين العاديين";
             this.radGroupBox1.ThemeName = "TelerikMetroBlue";
@@ -138,7 +138,7 @@
             gridViewMultiComboBoxColumn5});
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radGridView1.Size = new System.Drawing.Size(1151, 180);
+            this.radGridView1.Size = new System.Drawing.Size(1167, 180);
             this.radGridView1.TabIndex = 0;
             this.radGridView1.Text = "radGridView1";
             // 
@@ -150,7 +150,7 @@
             this.radGroupBox2.HeaderText = "قائمة المستخدمين حسب المشاريع";
             this.radGroupBox2.Location = new System.Drawing.Point(0, 347);
             this.radGroupBox2.Name = "radGroupBox2";
-            this.radGroupBox2.Size = new System.Drawing.Size(1155, 200);
+            this.radGroupBox2.Size = new System.Drawing.Size(1171, 200);
             this.radGroupBox2.TabIndex = 3;
             this.radGroupBox2.Text = "قائمة المستخدمين حسب المشاريع";
             this.radGroupBox2.ThemeName = "TelerikMetroBlue";
@@ -173,41 +173,41 @@
             gridViewDecimalColumn1.FieldName = "ID";
             gridViewDecimalColumn1.HeaderText = "الرقم";
             gridViewDecimalColumn1.Name = "ID";
-            gridViewDecimalColumn1.Width = 142;
+            gridViewDecimalColumn1.Width = 144;
             gridViewMultiComboBoxColumn1.EnableExpressionEditor = false;
             gridViewMultiComboBoxColumn1.HeaderText = "الموظف";
             gridViewMultiComboBoxColumn1.Name = "EmployeeID";
-            gridViewMultiComboBoxColumn1.Width = 142;
+            gridViewMultiComboBoxColumn1.Width = 144;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "UserName";
             gridViewTextBoxColumn1.HeaderText = "اسم المستخدم";
             gridViewTextBoxColumn1.Name = "UserName";
-            gridViewTextBoxColumn1.Width = 142;
+            gridViewTextBoxColumn1.Width = 144;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "Password";
             gridViewTextBoxColumn2.HeaderText = "كلمة المرور";
             gridViewTextBoxColumn2.Name = "Password";
-            gridViewTextBoxColumn2.Width = 142;
+            gridViewTextBoxColumn2.Width = 144;
             gridViewMultiComboBoxColumn2.EnableExpressionEditor = false;
             gridViewMultiComboBoxColumn2.FieldName = "GroupID";
             gridViewMultiComboBoxColumn2.HeaderText = "المجموعة";
             gridViewMultiComboBoxColumn2.Name = "GroupID";
-            gridViewMultiComboBoxColumn2.Width = 142;
+            gridViewMultiComboBoxColumn2.Width = 144;
             gridViewDecimalColumn2.EnableExpressionEditor = false;
             gridViewDecimalColumn2.FieldName = "UserID";
             gridViewDecimalColumn2.HeaderText = "UserID";
             gridViewDecimalColumn2.Name = "UserID";
-            gridViewDecimalColumn2.Width = 142;
+            gridViewDecimalColumn2.Width = 144;
             gridViewMultiComboBoxColumn3.EnableExpressionEditor = false;
             gridViewMultiComboBoxColumn3.FieldName = "ProjectID";
             gridViewMultiComboBoxColumn3.HeaderText = "ProjectID";
             gridViewMultiComboBoxColumn3.Name = "ProjectID";
-            gridViewMultiComboBoxColumn3.Width = 142;
+            gridViewMultiComboBoxColumn3.Width = 144;
             gridViewComboBoxColumn1.EnableExpressionEditor = false;
             gridViewComboBoxColumn1.FieldName = "Status";
             gridViewComboBoxColumn1.HeaderText = "Status";
             gridViewComboBoxColumn1.Name = "Status";
-            gridViewComboBoxColumn1.Width = 144;
+            gridViewComboBoxColumn1.Width = 146;
             this.projectUserGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewMultiComboBoxColumn1,
@@ -219,7 +219,7 @@
             gridViewComboBoxColumn1});
             this.projectUserGridView.Name = "projectUserGridView";
             this.projectUserGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.projectUserGridView.Size = new System.Drawing.Size(1151, 180);
+            this.projectUserGridView.Size = new System.Drawing.Size(1167, 180);
             this.projectUserGridView.TabIndex = 0;
             this.projectUserGridView.Text = "radGridView2";
             this.projectUserGridView.ThemeName = "TelerikMetroBlue";
@@ -240,7 +240,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 788);
+            this.ClientSize = new System.Drawing.Size(1171, 855);
             this.Controls.Add(this.radGroupBox2);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.radStatusStrip1);

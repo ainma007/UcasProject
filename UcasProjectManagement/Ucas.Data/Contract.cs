@@ -21,9 +21,9 @@ namespace Ucas.Data
     
         public int ID { get; set; }
         public int Employee_ID { get; set; }
-        public string StartDate { get; set; }
-        public string EndDate { get; set; }
-        public string SelaryAmount { get; set; }
+        public Nullable<System.DateTime> StartDate { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
+        public Nullable<double> SelaryAmount { get; set; }
         public string Status { get; set; }
         public int ProjectProfile_ID { get; set; }
     

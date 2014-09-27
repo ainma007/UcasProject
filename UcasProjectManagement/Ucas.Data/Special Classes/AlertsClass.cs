@@ -17,7 +17,7 @@ namespace Ucas.Data.Special_Classes
 
             db = new UcasProEntities();
             var LST = (from p in db.ProjectProfiles
-                       orderby c.StartDate ascending
+                       orderby p.StartDate ascending
                        where p.EndDate == CheckerDate 
                        select p).ToList();
             return LST;
@@ -36,7 +36,7 @@ namespace Ucas.Data.Special_Classes
             db.Configuration.ProxyCreationEnabled = false;
             var LstExpiers = ( from c in  db.Contracts.ToList()
                              orderby c.StartDate ascending 
-                             where c.EndDate == CheckerDate.ToShortDateString () 
+                      //       where c.EndDate == CheckerDate.ToShortDateString () 
                              select c).ToList ();
           return LstExpiers;
         }

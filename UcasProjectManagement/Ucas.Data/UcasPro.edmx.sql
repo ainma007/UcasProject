@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/25/2014 18:57:10
+-- Date Created: 09/27/2014 19:26:28
 -- Generated from EDMX file: C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\UcasPro.edmx
 -- --------------------------------------------------
 
@@ -149,9 +149,9 @@ GO
 CREATE TABLE [dbo].[Contracts] (
     [ID] int IDENTITY(1,1) NOT NULL,
     [Employee_ID] int  NOT NULL,
-    [StartDate] nchar(10)  NULL,
-    [EndDate] nchar(10)  NULL,
-    [SelaryAmount] nchar(10)  NULL,
+    [StartDate] datetime  NULL,
+    [EndDate] datetime  NULL,
+    [SelaryAmount] float  NULL,
     [Status] nchar(10)  NULL,
     [ProjectProfile_ID] int  NOT NULL
 );

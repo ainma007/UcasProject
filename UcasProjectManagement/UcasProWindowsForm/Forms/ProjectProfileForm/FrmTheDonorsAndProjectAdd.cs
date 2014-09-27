@@ -41,7 +41,7 @@ namespace UcasProWindowsForm.Forms.MainForm
             TheDonorsProject tb = new TheDonorsProject()
             {
 
-                ProjectID = PeremissionsHolderClass.ProjID,
+                ProjectID = InformationsClass.ProjID,
                 DonorsID = int.Parse(DonorsColumnComboBox.SelectedValue.ToString()),
                 TotalCost = Convert.ToDouble(CostTextBox.Text)
 
