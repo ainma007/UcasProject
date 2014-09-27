@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Ucas.Data.CommandClass
 {
-    public    class PeremissionsHolderClass
+    public    class InformationsClass
     {
 
     #region "   List Of Peremissions           "

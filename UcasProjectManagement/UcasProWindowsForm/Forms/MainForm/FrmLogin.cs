@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
-
+using Ucas.Data.Special_Classes;
 namespace UcasProWindowsForm.Forms.MainForm
 {
     public partial class FrmLogin : Telerik.WinControls.UI.RadForm
@@ -38,24 +38,24 @@ namespace UcasProWindowsForm.Forms.MainForm
         int xGroupID;
         void TransfaireGroupDataInf()
         {
-            var ListOfAllPeremissions = PeremissionsHolderClass.GetAllGroupPeremissionsByGroupID(xGroupID);
+            var ListOfAllPeremissions = InformationsClass.GetAllGroupPeremissionsByGroupID(xGroupID);
             foreach (var item in ListOfAllPeremissions)
             {
-                PeremissionsHolderClass._AddUser = Convert.ToInt32(item.AddUser);
-                PeremissionsHolderClass._UpDateUser = Convert.ToInt32(item.UpDateUser);
-                PeremissionsHolderClass._DeleteUser = Convert.ToInt32(item.DeleteUser);
-                PeremissionsHolderClass._AddEmployee = Convert.ToInt32(item.AddEmployee);
-                PeremissionsHolderClass._EditEmployee = Convert.ToInt32(item.EditEmployee);
-                PeremissionsHolderClass._DeleteEmployee = Convert.ToInt32(item.DeleteEmployee);
-                PeremissionsHolderClass._AddProject = Convert.ToInt32(item.AddProject);
-                PeremissionsHolderClass._AddFinncers = Convert.ToInt32(item.AddFinncers);
-                PeremissionsHolderClass._EditFinncers = Convert.ToInt32(item.EditFinncers);
-                PeremissionsHolderClass._DeleteFinncers = Convert.ToInt32(item.DeleteFinncers);
-                PeremissionsHolderClass._AddSuppliers = Convert.ToInt32(item.AddSuppliers);
-                PeremissionsHolderClass._DeleteSuppliers = Convert.ToInt32(item.EditSuppliers);
-                PeremissionsHolderClass._DeleteSuppliers = Convert.ToInt32(item.DeleteSuppliers);
-                PeremissionsHolderClass._DisplayExpenses = Convert.ToInt32(item.DisplayExpenses);
-                PeremissionsHolderClass._CanPrint = Convert.ToInt32(item.CanPrint);
+                InformationsClass._AddUser = Convert.ToInt32(item.AddUser);
+                InformationsClass._UpDateUser = Convert.ToInt32(item.UpDateUser);
+                InformationsClass._DeleteUser = Convert.ToInt32(item.DeleteUser);
+                InformationsClass._AddEmployee = Convert.ToInt32(item.AddEmployee);
+                InformationsClass._EditEmployee = Convert.ToInt32(item.EditEmployee);
+                InformationsClass._DeleteEmployee = Convert.ToInt32(item.DeleteEmployee);
+                InformationsClass._AddProject = Convert.ToInt32(item.AddProject);
+                InformationsClass._AddFinncers = Convert.ToInt32(item.AddFinncers);
+                InformationsClass._EditFinncers = Convert.ToInt32(item.EditFinncers);
+                InformationsClass._DeleteFinncers = Convert.ToInt32(item.DeleteFinncers);
+                InformationsClass._AddSuppliers = Convert.ToInt32(item.AddSuppliers);
+                InformationsClass._DeleteSuppliers = Convert.ToInt32(item.EditSuppliers);
+                InformationsClass._DeleteSuppliers = Convert.ToInt32(item.DeleteSuppliers);
+                InformationsClass._DisplayExpenses = Convert.ToInt32(item.DisplayExpenses);
+                InformationsClass._CanPrint = Convert.ToInt32(item.CanPrint);
 
             }
         }
@@ -69,10 +69,10 @@ namespace UcasProWindowsForm.Forms.MainForm
                 foreach (var item in GetCurrentUserFullData)
                 {
                     xGroupID = Convert.ToInt32(item.GroupID);
-                    PeremissionsHolderClass.xCurrentUserID = item.ID;
-                    PeremissionsHolderClass.xCurrentUserName = UserNameTextBox.Text;
-                    PeremissionsHolderClass.xCurrentUserPass = PsswordTextBox.Text;
-                    PeremissionsHolderClass._GroupID = Convert.ToInt32(item.GroupID);
+                    InformationsClass.xCurrentUserID = item.ID;
+                    InformationsClass.xCurrentUserName = UserNameTextBox.Text;
+                    InformationsClass.xCurrentUserPass = PsswordTextBox.Text;
+                    InformationsClass._GroupID = Convert.ToInt32(item.GroupID);
                 }
                 TransfaireGroupDataInf();
                 //=====================================================================

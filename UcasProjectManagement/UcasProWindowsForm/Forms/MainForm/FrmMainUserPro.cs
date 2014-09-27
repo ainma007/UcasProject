@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
+using Ucas.Data.Special_Classes;
 namespace UcasProWindowsForm.Forms.MainForm
 {
     public partial class FrmMainUserPro : Telerik.WinControls.UI.RadForm
@@ -17,13 +18,13 @@ namespace UcasProWindowsForm.Forms.MainForm
             InitializeComponent();
         }
 
-        int ProID = ProjectControlCmd.ChkProjectIDByUserID(PeremissionsHolderClass.xCurrentUserID);
+        int ProID = ProjectControlCmd.ChkProjectIDByUserID(InformationsClass.xCurrentUserID);
         private void FrmMainUserPro_Load(object sender, EventArgs e)
         {
             var ListData = ProjectProfileCmd.GetProjectData(ProID);
             foreach (var item in ListData )
             {
-                PeremissionsHolderClass.ProjID = item.ID;
+                InformationsClass.ProjID = item.ID;
                 this.radTextBox1.Text = item.ProjectName;
                 this.DescTextBox.Text = item.ProjectDescription;
                 this.StartDateTextBox.Text = item.StartDate.ToString ();
