@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using Telerik.WinControls;
-using Ucas.Data;
 using Ucas.Data.CommandClass;
-using Ucas.Data.Special_Classes;
 using UcasProWindowsForm.Forms.EmployeeForm;
 using UcasProWindowsForm.Forms.ProjectProfileForm;
 namespace UcasProWindowsForm.Forms.MainForm
@@ -53,6 +45,15 @@ namespace UcasProWindowsForm.Forms.MainForm
         {
             FrmContratsManage ContrMng = new FrmContratsManage();
             ContrMng.ShowDialog();
+        }
+
+        private void FrmMainUserPro_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+            this.Dispose();
+            
+
+           
         }
     }
 }
