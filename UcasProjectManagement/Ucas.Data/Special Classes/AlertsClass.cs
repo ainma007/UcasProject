@@ -36,7 +36,7 @@ namespace Ucas.Data.Special_Classes
             db.Configuration.ProxyCreationEnabled = false;
             var LstExpiers = ( from c in  db.Contracts.ToList()
                              orderby c.StartDate ascending 
-                      //       where c.EndDate == CheckerDate.ToShortDateString () 
+                             where c.EndDate == CheckerDate
                              select c).ToList ();
           return LstExpiers;
         }
