@@ -31,8 +31,8 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
             filter.Operator = FilterOperator.Contains;
             this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
 
-         
-            employeeBindingSource.DataSource = EmployeeCmd.GetAll();
+
+            EmployeeComboBox.DataSource = EmployeeCmd.GetAll();
             
             
             /////GetAllGroupComboBox
