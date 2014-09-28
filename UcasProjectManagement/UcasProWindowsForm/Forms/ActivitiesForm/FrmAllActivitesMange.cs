@@ -15,5 +15,17 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         {
             InitializeComponent();
         }
+
+        private void AdActivitesBtn_Click(object sender, EventArgs e)
+        {
+            FrmAddActivities AddActivfrm = new FrmAddActivities();
+            AddActivfrm.ShowDialog();
+        }
+
+        private void AddSupActivitesBtn_Click(object sender, EventArgs e)
+        {
+            FrmAddSubActivities AddSub = new FrmAddSubActivities();
+            AddSub.ShowDialog();
+        }
     }
 }

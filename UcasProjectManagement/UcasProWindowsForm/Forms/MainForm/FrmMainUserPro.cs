@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Ucas.Data.CommandClass;
+using UcasProWindowsForm.Forms.ActivitiesForm;
 using UcasProWindowsForm.Forms.EmployeeForm;
 using UcasProWindowsForm.Forms.ProjectProfileForm;
 namespace UcasProWindowsForm.Forms.MainForm
@@ -54,6 +55,12 @@ namespace UcasProWindowsForm.Forms.MainForm
             
 
            
+        }
+
+        private void ActivitesBtn_Click(object sender, EventArgs e)
+        {
+            FrmAllActivitesMange Activfrm = new FrmAllActivitesMange();
+            Activfrm.ShowDialog();
         }
     }
 }

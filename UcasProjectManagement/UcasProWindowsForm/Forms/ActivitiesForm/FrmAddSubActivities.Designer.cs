@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
@@ -38,13 +41,14 @@
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.EndDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
-            this.SubActivitiesDescriptionTextBox = new Telerik.WinControls.RichTextBox.RadRichTextBox();
             this.StartDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.TimeLineTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.SubActivitiesNameTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.projectActivityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SubActivitiesDescriptionTextBox = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
@@ -57,19 +61,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EndDateTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesDescriptionTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StartDateTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeLineTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesNameTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectActivityBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesDescriptionTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.SubActivitiesDescriptionTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel7);
             this.radGroupBox1.Controls.Add(this.ActivitiesColumnComboBox);
             this.radGroupBox1.Controls.Add(this.AddBtn);
@@ -78,7 +84,6 @@
             this.radGroupBox1.Controls.Add(this.radLabel5);
             this.radGroupBox1.Controls.Add(this.EndDateTimePicker);
             this.radGroupBox1.Controls.Add(this.radLabel4);
-            this.radGroupBox1.Controls.Add(this.SubActivitiesDescriptionTextBox);
             this.radGroupBox1.Controls.Add(this.StartDateTimePicker);
             this.radGroupBox1.Controls.Add(this.radLabel3);
             this.radGroupBox1.Controls.Add(this.TimeLineTextBox);
@@ -107,12 +112,15 @@
             // 
             // ActivitiesColumnComboBox
             // 
+            this.ActivitiesColumnComboBox.DataSource = this.projectActivityBindingSource;
             // 
             // ActivitiesColumnComboBox.NestedRadGridView
             // 
             this.ActivitiesColumnComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.ActivitiesColumnComboBox.EditorControl.Cursor = System.Windows.Forms.Cursors.Default;
             this.ActivitiesColumnComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
             this.ActivitiesColumnComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ActivitiesColumnComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ActivitiesColumnComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
             // 
@@ -120,6 +128,25 @@
             this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
+            gridViewDecimalColumn1.DataType = typeof(int);
+            gridViewDecimalColumn1.EnableExpressionEditor = false;
+            gridViewDecimalColumn1.FieldName = "ID";
+            gridViewDecimalColumn1.HeaderText = "ID";
+            gridViewDecimalColumn1.IsAutoGenerated = true;
+            gridViewDecimalColumn1.IsVisible = false;
+            gridViewDecimalColumn1.Name = "ID";
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ActivityName";
+            gridViewTextBoxColumn1.HeaderText = "ActivityName";
+            gridViewTextBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn1.IsAutoGenerated = true;
+            gridViewTextBoxColumn1.Name = "ActivityName";
+            gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewDecimalColumn1,
+            gridViewTextBoxColumn1});
+            this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.DataSource = this.projectActivityBindingSource;
             this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
             this.ActivitiesColumnComboBox.EditorControl.Name = "NestedRadGridView";
@@ -144,6 +171,7 @@
             this.AddBtn.TabIndex = 7;
             this.AddBtn.Text = "اضافة";
             this.AddBtn.ThemeName = "Office2013Light";
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // radLabel6
             // 
@@ -200,16 +228,6 @@
             this.radLabel4.Text = "تاريخ الانتهاء:";
             this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel4.ThemeName = "Office2013Light";
-            // 
-            // SubActivitiesDescriptionTextBox
-            // 
-            this.SubActivitiesDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SubActivitiesDescriptionTextBox.HyperlinkToolTipFormatString = null;
-            this.SubActivitiesDescriptionTextBox.Location = new System.Drawing.Point(50, 106);
-            this.SubActivitiesDescriptionTextBox.Name = "SubActivitiesDescriptionTextBox";
-            this.SubActivitiesDescriptionTextBox.Size = new System.Drawing.Size(193, 54);
-            this.SubActivitiesDescriptionTextBox.TabIndex = 1;
-            this.SubActivitiesDescriptionTextBox.Text = "radRichTextBox1";
             // 
             // StartDateTimePicker
             // 
@@ -277,6 +295,19 @@
             this.SubActivitiesNameTextBox.TabIndex = 0;
             this.SubActivitiesNameTextBox.ThemeName = "Office2013Light";
             // 
+            // projectActivityBindingSource
+            // 
+            this.projectActivityBindingSource.DataSource = typeof(Ucas.Data.ProjectActivity);
+            // 
+            // SubActivitiesDescriptionTextBox
+            // 
+            this.SubActivitiesDescriptionTextBox.AutoSize = false;
+            this.SubActivitiesDescriptionTextBox.Location = new System.Drawing.Point(50, 106);
+            this.SubActivitiesDescriptionTextBox.Multiline = true;
+            this.SubActivitiesDescriptionTextBox.Name = "SubActivitiesDescriptionTextBox";
+            this.SubActivitiesDescriptionTextBox.Size = new System.Drawing.Size(193, 54);
+            this.SubActivitiesDescriptionTextBox.TabIndex = 12;
+            // 
             // FrmAddSubActivities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,6 +322,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "FrmAddSubActivities";
             this.ThemeName = "Office2013Light";
+            this.Load += new System.EventHandler(this.FrmAddSubActivities_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
@@ -304,13 +336,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EndDateTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesDescriptionTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StartDateTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeLineTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesNameTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectActivityBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesDescriptionTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -328,13 +361,14 @@
         private Telerik.WinControls.UI.RadLabel radLabel5;
         private Telerik.WinControls.UI.RadDateTimePicker EndDateTimePicker;
         private Telerik.WinControls.UI.RadLabel radLabel4;
-        private Telerik.WinControls.RichTextBox.RadRichTextBox SubActivitiesDescriptionTextBox;
         private Telerik.WinControls.UI.RadDateTimePicker StartDateTimePicker;
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadTextBox TimeLineTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadTextBox SubActivitiesNameTextBox;
+        private System.Windows.Forms.BindingSource projectActivityBindingSource;
+        private Telerik.WinControls.UI.RadTextBox SubActivitiesDescriptionTextBox;
 
     }
 }

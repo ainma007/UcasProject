@@ -36,13 +36,13 @@
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.EndDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
-            this.ActivitiesDescriptionTextBox = new Telerik.WinControls.RichTextBox.RadRichTextBox();
             this.StartDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.TimeLineTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.ActivitiesNameTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.ActivitiesDescriptionTextBox = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
@@ -51,26 +51,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EndDateTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ActivitiesDescriptionTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StartDateTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeLineTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActivitiesNameTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ActivitiesDescriptionTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.ActivitiesDescriptionTextBox);
             this.radGroupBox1.Controls.Add(this.AddBtn);
             this.radGroupBox1.Controls.Add(this.radLabel6);
             this.radGroupBox1.Controls.Add(this.TotalCostTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel5);
             this.radGroupBox1.Controls.Add(this.EndDateTimePicker);
             this.radGroupBox1.Controls.Add(this.radLabel4);
-            this.radGroupBox1.Controls.Add(this.ActivitiesDescriptionTextBox);
             this.radGroupBox1.Controls.Add(this.StartDateTimePicker);
             this.radGroupBox1.Controls.Add(this.radLabel3);
             this.radGroupBox1.Controls.Add(this.TimeLineTextBox);
@@ -152,16 +152,6 @@
             this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel4.ThemeName = "Office2013Light";
             // 
-            // ActivitiesDescriptionTextBox
-            // 
-            this.ActivitiesDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ActivitiesDescriptionTextBox.HyperlinkToolTipFormatString = null;
-            this.ActivitiesDescriptionTextBox.Location = new System.Drawing.Point(49, 72);
-            this.ActivitiesDescriptionTextBox.Name = "ActivitiesDescriptionTextBox";
-            this.ActivitiesDescriptionTextBox.Size = new System.Drawing.Size(193, 54);
-            this.ActivitiesDescriptionTextBox.TabIndex = 1;
-            this.ActivitiesDescriptionTextBox.Text = "radRichTextBox1";
-            // 
             // StartDateTimePicker
             // 
             this.StartDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -228,6 +218,17 @@
             this.ActivitiesNameTextBox.TabIndex = 0;
             this.ActivitiesNameTextBox.ThemeName = "Office2013Light";
             // 
+            // ActivitiesDescriptionTextBox
+            // 
+            this.ActivitiesDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ActivitiesDescriptionTextBox.AutoSize = false;
+            this.ActivitiesDescriptionTextBox.Location = new System.Drawing.Point(49, 72);
+            this.ActivitiesDescriptionTextBox.Multiline = true;
+            this.ActivitiesDescriptionTextBox.Name = "ActivitiesDescriptionTextBox";
+            this.ActivitiesDescriptionTextBox.Size = new System.Drawing.Size(193, 54);
+            this.ActivitiesDescriptionTextBox.TabIndex = 10;
+            this.ActivitiesDescriptionTextBox.ThemeName = "Office2013Light";
+            // 
             // FrmAddActivities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,13 +252,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EndDateTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ActivitiesDescriptionTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StartDateTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeLineTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActivitiesNameTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ActivitiesDescriptionTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -273,12 +274,12 @@
         private Telerik.WinControls.UI.RadLabel radLabel5;
         private Telerik.WinControls.UI.RadDateTimePicker EndDateTimePicker;
         private Telerik.WinControls.UI.RadLabel radLabel4;
-        private Telerik.WinControls.RichTextBox.RadRichTextBox ActivitiesDescriptionTextBox;
         private Telerik.WinControls.UI.RadDateTimePicker StartDateTimePicker;
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadTextBox TimeLineTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadTextBox ActivitiesNameTextBox;
+        private Telerik.WinControls.UI.RadTextBox ActivitiesDescriptionTextBox;
     }
 }
