@@ -9,6 +9,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.Data;
 using Ucas.Data.CommandClass;
 using Ucas.Data;
+using Ucas.Data.Special_Classes;
 namespace UcasProWindowsForm.Forms.UserSystemForm
 {
     public partial class frmAddUser : Telerik.WinControls.UI.RadForm
@@ -60,12 +61,15 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         }
         #endregion 
 
+
+
         private void frmAddUser_Load(object sender, EventArgs e)
         {
             PopulateComboxes();
             GroupComboBox.ResetText();
             EmployeeComboBox.ResetText();
-
+            //==============================
+            xPeremissions();
         }
         
         private void AddBtn_Click(object sender, EventArgs e)
@@ -153,5 +157,21 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                 throw;
             }
         }
+
+
+        #region "  Activate Peremissions       "
+        void xPeremissions() {
+            try
+            {
+                if (InformationsClass._AddUser == 0) { AddBtn.Enabled = false; } 
+            }
+            catch (Exception)
+            {
+                
+                throw ;
+            }
+        }
+        #endregion 
+
     }
 }

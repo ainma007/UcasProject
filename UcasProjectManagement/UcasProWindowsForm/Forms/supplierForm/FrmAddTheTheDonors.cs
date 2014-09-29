@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
-
+using Ucas.Data.Special_Classes;
 namespace UcasProWindowsForm.Forms.supplierForm
 {
     public partial class FrmAddTheTheDonors : Telerik.WinControls.UI.RadForm
@@ -16,6 +16,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
         public FrmAddTheTheDonors()
         {
             InitializeComponent();
+            xPeremissions();
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
@@ -53,6 +54,21 @@ namespace UcasProWindowsForm.Forms.supplierForm
              RadMessageBox.SetThemeName("telerikMetroBlueTheme");
 
             DialogResult ds = RadMessageBox.Show(this, OperationX.AddMessageDone, "Done", MessageBoxButtons.OK, RadMessageIcon.Info);
+        }
+
+
+
+        void xPeremissions()
+        {
+            try
+            {
+                if (InformationsClass._AddFinncers == 0) { AddBtn.Enabled = false; }
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
         }
     }

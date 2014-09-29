@@ -63,7 +63,7 @@
             this.ribbonTab2});
             this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
             this.radRibbonBar1.Name = "radRibbonBar1";
-            this.radRibbonBar1.Size = new System.Drawing.Size(1027, 150);
+            this.radRibbonBar1.Size = new System.Drawing.Size(1035, 150);
             this.radRibbonBar1.StartButtonImage = ((System.Drawing.Image)(resources.GetObject("radRibbonBar1.StartButtonImage")));
             this.radRibbonBar1.TabIndex = 0;
             this.radRibbonBar1.Text = "radRibbonBar1";
@@ -129,6 +129,7 @@
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Text = "حفظ التعديلات";
             this.SaveBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // DeleteBtn
             // 
@@ -180,9 +181,9 @@
             // 
             // radStatusStrip1
             // 
-            this.radStatusStrip1.Location = new System.Drawing.Point(0, 713);
+            this.radStatusStrip1.Location = new System.Drawing.Point(0, 696);
             this.radStatusStrip1.Name = "radStatusStrip1";
-            this.radStatusStrip1.Size = new System.Drawing.Size(1027, 27);
+            this.radStatusStrip1.Size = new System.Drawing.Size(1035, 27);
             this.radStatusStrip1.TabIndex = 1;
             this.radStatusStrip1.Text = "radStatusStrip1";
             this.radStatusStrip1.ThemeName = "Office2013Light";
@@ -193,7 +194,7 @@
             this.radGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGridView1.Location = new System.Drawing.Point(0, 150);
             this.radGridView1.Name = "radGridView1";
-            this.radGridView1.Size = new System.Drawing.Size(1027, 563);
+            this.radGridView1.Size = new System.Drawing.Size(1035, 546);
             this.radGridView1.TabIndex = 2;
             this.radGridView1.Text = "radGridView1";
             this.radGridView1.ThemeName = "TelerikMetroBlue";
@@ -203,7 +204,7 @@
             this.radGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGridView2.Location = new System.Drawing.Point(0, 0);
             this.radGridView2.Name = "radGridView2";
-            this.radGridView2.Size = new System.Drawing.Size(1027, 563);
+            this.radGridView2.Size = new System.Drawing.Size(1035, 546);
             this.radGridView2.TabIndex = 1;
             this.radGridView2.Text = "radGridView2";
             // 
@@ -211,7 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 740);
+            this.ClientSize = new System.Drawing.Size(1035, 723);
             this.Controls.Add(this.radGridView1);
             this.Controls.Add(this.radStatusStrip1);
             this.Controls.Add(this.radRibbonBar1);
