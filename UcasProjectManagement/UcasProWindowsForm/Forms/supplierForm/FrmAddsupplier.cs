@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
-
+using Ucas.Data.Special_Classes;
 namespace UcasProWindowsForm.Forms.supplierForm
 {
     public partial class FrmAddsupplier : Telerik.WinControls.UI.RadForm
@@ -20,7 +20,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void FrmAddsupplier_Load(object sender, EventArgs e)
         {
-
+            xPeremissions();
         }
 
         private void radGroupBox1_Click(object sender, EventArgs e)
@@ -63,6 +63,22 @@ namespace UcasProWindowsForm.Forms.supplierForm
             RadMessageBox.SetThemeName("Office2013Light");
 
             DialogResult ds = RadMessageBox.Show(this, OperationX.AddMessageDone, "Done", MessageBoxButtons.OK, RadMessageIcon.Info);
+        }
+
+
+
+
+        void xPeremissions()
+        {
+            try
+            {
+                if (InformationsClass._AddSuppliers == 0) { AddBtn.Enabled = false; }
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
         }
     }

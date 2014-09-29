@@ -11,11 +11,19 @@ namespace Ucas.Data.CommandClass
 
       public static List<ProjectProfile> GetAllProjects()
         {
-            db = new UcasProEntities();
+            try
+            {
+                   db = new UcasProEntities();
             var lst = (from p in db.ProjectProfiles
                        orderby p.StartDate  ascending 
                        select p).ToList();
             return lst;
+            }
+            catch (Exception)
+            {
+                
+                throw new Exception() ;
+            }
         }
 
       

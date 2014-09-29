@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Ucas.Data.CommandClass;
 using Ucas.Data;
+using Ucas.Data.Special_Classes;
 
 namespace UcasProWindowsForm.Forms.EmployeeForm
 {
@@ -73,7 +74,23 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
         private void FrmAddEmployee_Load(object sender, EventArgs e)
         {
-           
+            Xperemissions();
+            //=========================
         }
+        #region "   Activate Peremissions     "
+        void Xperemissions()
+        {
+            try
+            {
+                if (InformationsClass._AddEmployee == 0) { AddBtn.Enabled = false; }
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        #endregion 
+
     }
 }

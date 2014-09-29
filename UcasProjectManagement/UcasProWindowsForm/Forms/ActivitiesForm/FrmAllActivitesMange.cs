@@ -24,8 +24,14 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void AddSupActivitesBtn_Click(object sender, EventArgs e)
         {
+            
             FrmAddSubActivities AddSub = new FrmAddSubActivities();
             AddSub.ShowDialog();
+        }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Edit");
         }
     }
 }

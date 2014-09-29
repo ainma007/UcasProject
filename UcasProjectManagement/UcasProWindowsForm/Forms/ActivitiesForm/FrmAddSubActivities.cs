@@ -58,6 +58,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
             };
             SubActivityCmd.NewSubActivity(tb);
+            MessageBox.Show("Saved...");
         }
     }
 }
