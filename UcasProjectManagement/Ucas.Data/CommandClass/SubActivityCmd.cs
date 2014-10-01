@@ -85,6 +85,10 @@ namespace Ucas.Data.CommandClass
                      select A).ToList();
           return LST;
         }
-
+        public static List<ProjectSubActivity> GetAllSubActivities()
+        {
+            db = new UcasProEntities();
+            return db.ProjectSubActivities.ToList();
+        }
     }
 }

@@ -30,20 +30,21 @@ namespace Ucas.Data.CommandClass
         }
         public static bool EditActivity(ProjectActivity Actv)
         {
+
+
             try
             {
                 db = new UcasProEntities();
                 db.Configuration.LazyLoadingEnabled = false;
                 db.Configuration.ProxyCreationEnabled = false;
                 var q = db.ProjectActivities.Where(p => p.ID == Actv.ID).SingleOrDefault();
-                q.ProjectProfile_ID = Actv.ProjectProfile_ID;
                 q.ActivityName = Actv.ActivityName;
                 q.Description = Actv.Description;
                 q.StartDate = Actv.StartDate;
                 q.EndDate = Actv.EndDate;
                 q.TotalCost = Actv.TotalCost;
                 q.Status = Actv.Status;
-                q.Progress = Actv.Progress;
+          
 
                 db.SaveChanges();
                 return true;

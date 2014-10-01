@@ -20,6 +20,34 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            if (ActivitiesNameTextBox.Text == "")
+            {
+
+                ActivitiesNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+
+                ActivitiesNameTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                ActivitiesNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+            }
+            if (TotalCostTextBox.Text == "")
+            {
+
+                TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+
+                TotalCostTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.White;
+            }
+
+
             ProjectActivity tb = new ProjectActivity()
             {
 
@@ -35,6 +63,11 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
             ActivityCmd.NewActivity(tb);
             MessageBox.Show("تمت عملية الاضافة");
+        }
+
+        private void FrmAddActivities_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

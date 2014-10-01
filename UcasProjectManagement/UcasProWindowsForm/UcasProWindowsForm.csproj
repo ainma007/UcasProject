@@ -70,6 +70,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ActivitiesForm\FrmActivitiesEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ActivitiesForm\FrmActivitiesEdit.Designer.cs">
+      <DependentUpon>FrmActivitiesEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ActivitiesForm\FrmAddActivities.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,12 @@
     </Compile>
     <Compile Include="Forms\ActivitiesForm\FrmAllActivitesMange.Designer.cs">
       <DependentUpon>FrmAllActivitesMange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ActivitiesForm\FrmSubActivityEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ActivitiesForm\FrmSubActivityEdit.Designer.cs">
+      <DependentUpon>FrmSubActivityEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EmployeeForm\FrmAddEmployee.cs">
       <SubType>Form</SubType>
@@ -231,6 +243,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActivitiesForm\FrmActivitiesEdit.resx">
+      <DependentUpon>FrmActivitiesEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActivitiesForm\FrmAddActivities.resx">
       <DependentUpon>FrmAddActivities.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActivitiesForm\FrmAllActivitesMange.resx">
       <DependentUpon>FrmAllActivitesMange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActivitiesForm\FrmSubActivityEdit.resx">
+      <DependentUpon>FrmSubActivityEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeForm\FrmAddEmployee.resx">
       <DependentUpon>FrmAddEmployee.cs</DependentUpon>
