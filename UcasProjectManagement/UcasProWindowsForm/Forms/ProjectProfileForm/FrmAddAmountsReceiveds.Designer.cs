@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.TheFinancerProjectsComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
@@ -37,7 +36,7 @@
             this.ReleaseDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
+            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TheFinancerProjectsComboBox)).BeginInit();
@@ -70,10 +69,11 @@
             this.radGroupBox1.Size = new System.Drawing.Size(388, 209);
             this.radGroupBox1.TabIndex = 1;
             this.radGroupBox1.Text = "اضافة دفعة للتمويل";
-            this.radGroupBox1.ThemeName = "TelerikMetroBlue";
+            this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
             // TheFinancerProjectsComboBox
             // 
+            this.TheFinancerProjectsComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // TheFinancerProjectsComboBox.NestedRadGridView
             // 
@@ -82,7 +82,7 @@
             this.TheFinancerProjectsComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TheFinancerProjectsComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // TheFinancerProjectsComboBox.NestedRadGridView
             // 
             this.TheFinancerProjectsComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.TheFinancerProjectsComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -101,37 +101,37 @@
             this.TheFinancerProjectsComboBox.TabIndex = 10;
             this.TheFinancerProjectsComboBox.TabStop = false;
             this.TheFinancerProjectsComboBox.Text = "اختر الممول";
-            this.TheFinancerProjectsComboBox.ThemeName = "Office2013Light";
+            this.TheFinancerProjectsComboBox.ThemeName = "TelerikMetro";
             // 
             // AddBtn
             // 
+            this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AddBtn.Location = new System.Drawing.Point(244, 149);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(130, 38);
             this.AddBtn.TabIndex = 7;
             this.AddBtn.Text = "اضافة";
-            this.AddBtn.ThemeName = "TelerikMetroBlue";
+            this.AddBtn.ThemeName = "TelerikMetro";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // radLabel6
             // 
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel6.Location = new System.Drawing.Point(281, 99);
+            this.radLabel6.Location = new System.Drawing.Point(281, 103);
             this.radLabel6.Name = "radLabel6";
-            this.radLabel6.Size = new System.Drawing.Size(39, 19);
+            this.radLabel6.Size = new System.Drawing.Size(36, 18);
             this.radLabel6.TabIndex = 9;
             this.radLabel6.Text = "المبلغ:";
             this.radLabel6.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel6.ThemeName = "Office2013Light";
             // 
             // CostTextBox
             // 
             this.CostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CostTextBox.Location = new System.Drawing.Point(82, 99);
             this.CostTextBox.Name = "CostTextBox";
-            this.CostTextBox.Size = new System.Drawing.Size(193, 21);
+            this.CostTextBox.Size = new System.Drawing.Size(193, 22);
             this.CostTextBox.TabIndex = 5;
-            this.CostTextBox.ThemeName = "Office2013Light";
+            this.CostTextBox.ThemeName = "TelerikMetro";
             // 
             // ReleaseDateTimePicker
             // 
@@ -140,34 +140,32 @@
             this.ReleaseDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ReleaseDateTimePicker.Location = new System.Drawing.Point(82, 72);
             this.ReleaseDateTimePicker.Name = "ReleaseDateTimePicker";
-            this.ReleaseDateTimePicker.Size = new System.Drawing.Size(193, 21);
+            this.ReleaseDateTimePicker.Size = new System.Drawing.Size(193, 22);
             this.ReleaseDateTimePicker.TabIndex = 2;
             this.ReleaseDateTimePicker.TabStop = false;
             this.ReleaseDateTimePicker.Text = "15/09/2014";
-            this.ReleaseDateTimePicker.ThemeName = "Office2013Light";
+            this.ReleaseDateTimePicker.ThemeName = "TelerikMetro";
             this.ReleaseDateTimePicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
             // 
             // radLabel3
             // 
             this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel3.Location = new System.Drawing.Point(281, 73);
+            this.radLabel3.Location = new System.Drawing.Point(279, 73);
             this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(70, 19);
+            this.radLabel3.Size = new System.Drawing.Size(65, 18);
             this.radLabel3.TabIndex = 5;
             this.radLabel3.Text = "تاريخ الدفعة:";
             this.radLabel3.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel3.ThemeName = "Office2013Light";
             // 
             // radLabel1
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel1.Location = new System.Drawing.Point(281, 45);
+            this.radLabel1.Location = new System.Drawing.Point(281, 43);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(45, 19);
+            this.radLabel1.Size = new System.Drawing.Size(42, 18);
             this.radLabel1.TabIndex = 1;
             this.radLabel1.Text = "الممول:";
             this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel1.ThemeName = "Office2013Light";
             // 
             // FrmAddAmountsReceiveds
             // 
@@ -182,7 +180,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "FrmAddAmountsReceiveds";
-            this.ThemeName = "TelerikMetroBlue";
+            this.ThemeName = "TelerikMetro";
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
@@ -202,7 +200,6 @@
 
         #endregion
 
-        private Telerik.WinControls.Themes.Office2013LightTheme office2013LightTheme1;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         private Telerik.WinControls.UI.RadButton AddBtn;
         private Telerik.WinControls.UI.RadLabel radLabel6;
@@ -211,6 +208,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadMultiColumnComboBox TheFinancerProjectsComboBox;
-        private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
+        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
     }
 }

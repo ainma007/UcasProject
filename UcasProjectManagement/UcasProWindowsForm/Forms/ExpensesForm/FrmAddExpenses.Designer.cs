@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.BillTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
@@ -43,6 +42,7 @@
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.ExpensesNameTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillTextBox)).BeginInit();
@@ -66,6 +66,7 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radGroupBox1.Controls.Add(this.BillTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel7);
             this.radGroupBox1.Controls.Add(this.SubActivtiesComboBox);
@@ -79,37 +80,36 @@
             this.radGroupBox1.Controls.Add(this.radLabel2);
             this.radGroupBox1.Controls.Add(this.radLabel1);
             this.radGroupBox1.Controls.Add(this.ExpensesNameTextBox);
-            this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGroupBox1.HeaderText = "اضافة نشاط رئيسي";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
             this.radGroupBox1.Size = new System.Drawing.Size(375, 282);
             this.radGroupBox1.TabIndex = 2;
             this.radGroupBox1.Text = "اضافة نشاط رئيسي";
-            this.radGroupBox1.ThemeName = "Office2013Light";
+            this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
             // BillTextBox
             // 
             this.BillTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BillTextBox.Location = new System.Drawing.Point(59, 126);
             this.BillTextBox.Name = "BillTextBox";
-            this.BillTextBox.Size = new System.Drawing.Size(193, 21);
+            this.BillTextBox.Size = new System.Drawing.Size(193, 22);
             this.BillTextBox.TabIndex = 1;
-            this.BillTextBox.ThemeName = "Office2013Light";
+            this.BillTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel7
             // 
             this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel7.Location = new System.Drawing.Point(265, 40);
+            this.radLabel7.Location = new System.Drawing.Point(257, 46);
             this.radLabel7.Name = "radLabel7";
-            this.radLabel7.Size = new System.Drawing.Size(83, 19);
+            this.radLabel7.Size = new System.Drawing.Size(76, 18);
             this.radLabel7.TabIndex = 2;
             this.radLabel7.Text = "النشاط الفرعي:";
             this.radLabel7.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel7.ThemeName = "Office2013Light";
             // 
             // SubActivtiesComboBox
             // 
+            this.SubActivtiesComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // SubActivtiesComboBox.NestedRadGridView
             // 
@@ -118,7 +118,7 @@
             this.SubActivtiesComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.SubActivtiesComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // SubActivtiesComboBox.NestedRadGridView
             // 
             this.SubActivtiesComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.SubActivtiesComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -137,47 +137,46 @@
             this.SubActivtiesComboBox.TabIndex = 10;
             this.SubActivtiesComboBox.TabStop = false;
             this.SubActivtiesComboBox.Text = "اختر النشاط المخصص";
-            this.SubActivtiesComboBox.ThemeName = "Office2013Light";
+            this.SubActivtiesComboBox.ThemeName = "TelerikMetro";
             // 
             // AddBtn
             // 
+            this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AddBtn.Location = new System.Drawing.Point(217, 232);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(130, 38);
             this.AddBtn.TabIndex = 7;
             this.AddBtn.Text = "اضافة";
-            this.AddBtn.ThemeName = "Office2013Light";
+            this.AddBtn.ThemeName = "TelerikMetro";
             // 
             // radLabel6
             // 
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel6.Location = new System.Drawing.Point(258, 157);
+            this.radLabel6.Location = new System.Drawing.Point(258, 158);
             this.radLabel6.Name = "radLabel6";
-            this.radLabel6.Size = new System.Drawing.Size(93, 19);
+            this.radLabel6.Size = new System.Drawing.Size(86, 18);
             this.radLabel6.TabIndex = 9;
             this.radLabel6.Text = "المبلغ المخصص:";
             this.radLabel6.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel6.ThemeName = "Office2013Light";
             // 
             // TotalCostTextBox
             // 
             this.TotalCostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TotalCostTextBox.Location = new System.Drawing.Point(59, 157);
             this.TotalCostTextBox.Name = "TotalCostTextBox";
-            this.TotalCostTextBox.Size = new System.Drawing.Size(193, 21);
+            this.TotalCostTextBox.Size = new System.Drawing.Size(193, 22);
             this.TotalCostTextBox.TabIndex = 5;
-            this.TotalCostTextBox.ThemeName = "Office2013Light";
+            this.TotalCostTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel5
             // 
             this.radLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel5.Location = new System.Drawing.Point(258, 185);
+            this.radLabel5.Location = new System.Drawing.Point(257, 186);
             this.radLabel5.Name = "radLabel5";
-            this.radLabel5.Size = new System.Drawing.Size(89, 19);
+            this.radLabel5.Size = new System.Drawing.Size(82, 18);
             this.radLabel5.TabIndex = 7;
             this.radLabel5.Text = "رقم سند الصرف:";
             this.radLabel5.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel5.ThemeName = "Office2013Light";
             // 
             // StartDateTimePicker
             // 
@@ -186,63 +185,60 @@
             this.StartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.StartDateTimePicker.Location = new System.Drawing.Point(59, 97);
             this.StartDateTimePicker.Name = "StartDateTimePicker";
-            this.StartDateTimePicker.Size = new System.Drawing.Size(193, 21);
+            this.StartDateTimePicker.Size = new System.Drawing.Size(193, 22);
             this.StartDateTimePicker.TabIndex = 2;
             this.StartDateTimePicker.TabStop = false;
             this.StartDateTimePicker.Text = "15/09/2014";
-            this.StartDateTimePicker.ThemeName = "Office2013Light";
+            this.StartDateTimePicker.ThemeName = "TelerikMetro";
             this.StartDateTimePicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
             // 
             // radLabel3
             // 
             this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel3.Location = new System.Drawing.Point(258, 98);
+            this.radLabel3.Location = new System.Drawing.Point(257, 99);
             this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(66, 19);
+            this.radLabel3.Size = new System.Drawing.Size(61, 18);
             this.radLabel3.TabIndex = 5;
             this.radLabel3.Text = "تاريخ الشراء:";
             this.radLabel3.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel3.ThemeName = "Office2013Light";
             // 
             // CashingNumberTextBox
             // 
             this.CashingNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CashingNumberTextBox.Location = new System.Drawing.Point(59, 184);
             this.CashingNumberTextBox.Name = "CashingNumberTextBox";
-            this.CashingNumberTextBox.Size = new System.Drawing.Size(193, 21);
+            this.CashingNumberTextBox.Size = new System.Drawing.Size(193, 22);
             this.CashingNumberTextBox.TabIndex = 3;
-            this.CashingNumberTextBox.ThemeName = "Office2013Light";
+            this.CashingNumberTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel2
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel2.Location = new System.Drawing.Point(258, 126);
+            this.radLabel2.Location = new System.Drawing.Point(257, 127);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(67, 19);
+            this.radLabel2.Size = new System.Drawing.Size(62, 18);
             this.radLabel2.TabIndex = 3;
             this.radLabel2.Text = "رقم الفاتورة:";
             this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel2.ThemeName = "Office2013Light";
             // 
             // radLabel1
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel1.Location = new System.Drawing.Point(258, 70);
+            this.radLabel1.Location = new System.Drawing.Point(258, 72);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(82, 19);
+            this.radLabel1.Size = new System.Drawing.Size(75, 18);
             this.radLabel1.TabIndex = 1;
             this.radLabel1.Text = "اسم المصروف:";
             this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel1.ThemeName = "Office2013Light";
             // 
             // ExpensesNameTextBox
             // 
             this.ExpensesNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ExpensesNameTextBox.Location = new System.Drawing.Point(59, 70);
             this.ExpensesNameTextBox.Name = "ExpensesNameTextBox";
-            this.ExpensesNameTextBox.Size = new System.Drawing.Size(193, 21);
+            this.ExpensesNameTextBox.Size = new System.Drawing.Size(193, 22);
             this.ExpensesNameTextBox.TabIndex = 0;
-            this.ExpensesNameTextBox.ThemeName = "Office2013Light";
+            this.ExpensesNameTextBox.ThemeName = "TelerikMetro";
             // 
             // FrmAddExpenses
             // 
@@ -257,7 +253,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "FrmAddExpenses";
-            this.ThemeName = "Office2013Light";
+            this.ThemeName = "TelerikMetro";
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
@@ -283,7 +279,6 @@
 
         #endregion
 
-        private Telerik.WinControls.Themes.Office2013LightTheme office2013LightTheme1;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         private Telerik.WinControls.UI.RadTextBox BillTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel7;
@@ -298,5 +293,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadTextBox ExpensesNameTextBox;
+        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
     }
 }

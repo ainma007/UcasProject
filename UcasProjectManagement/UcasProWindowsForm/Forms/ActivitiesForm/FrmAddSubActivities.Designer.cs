@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.SubActivitiesDescriptionTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
@@ -47,7 +46,7 @@
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.SubActivitiesNameTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
+            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesDescriptionTextBox)).BeginInit();
@@ -92,7 +91,7 @@
             this.radGroupBox1.Size = new System.Drawing.Size(355, 314);
             this.radGroupBox1.TabIndex = 2;
             this.radGroupBox1.Text = "اضافة نشاط فرعي";
-            this.radGroupBox1.ThemeName = "Office2013Light";
+            this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
             // SubActivitiesDescriptionTextBox
             // 
@@ -102,18 +101,17 @@
             this.SubActivitiesDescriptionTextBox.Name = "SubActivitiesDescriptionTextBox";
             this.SubActivitiesDescriptionTextBox.Size = new System.Drawing.Size(193, 54);
             this.SubActivitiesDescriptionTextBox.TabIndex = 2;
-            this.SubActivitiesDescriptionTextBox.ThemeName = "TelerikMetroBlue";
+            this.SubActivitiesDescriptionTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel7
             // 
             this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel7.Location = new System.Drawing.Point(249, 42);
             this.radLabel7.Name = "radLabel7";
-            this.radLabel7.Size = new System.Drawing.Size(85, 19);
+            this.radLabel7.Size = new System.Drawing.Size(78, 18);
             this.radLabel7.TabIndex = 11;
             this.radLabel7.Text = "النشاط الرئيسي:";
             this.radLabel7.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel7.ThemeName = "Office2013Light";
             // 
             // ActivitiesColumnComboBox
             // 
@@ -167,7 +165,7 @@
             this.ActivitiesColumnComboBox.TabIndex = 0;
             this.ActivitiesColumnComboBox.TabStop = false;
             this.ActivitiesColumnComboBox.Text = "اختر النشاط الرئيسي";
-            this.ActivitiesColumnComboBox.ThemeName = "TelerikMetroBlue";
+            this.ActivitiesColumnComboBox.ThemeName = "TelerikMetro";
             // 
             // projectActivityBindingSource
             // 
@@ -180,19 +178,18 @@
             this.AddBtn.Size = new System.Drawing.Size(130, 38);
             this.AddBtn.TabIndex = 6;
             this.AddBtn.Text = "اضافة";
-            this.AddBtn.ThemeName = "Office2013Light";
+            this.AddBtn.ThemeName = "TelerikMetro";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // radLabel6
             // 
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel6.Location = new System.Drawing.Point(249, 220);
+            this.radLabel6.Location = new System.Drawing.Point(244, 219);
             this.radLabel6.Name = "radLabel6";
-            this.radLabel6.Size = new System.Drawing.Size(93, 19);
+            this.radLabel6.Size = new System.Drawing.Size(86, 18);
             this.radLabel6.TabIndex = 9;
             this.radLabel6.Text = "المبلغ المخصص:";
             this.radLabel6.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel6.ThemeName = "Office2013Light";
             // 
             // TotalCostTextBox
             // 
@@ -201,7 +198,7 @@
             this.TotalCostTextBox.Name = "TotalCostTextBox";
             this.TotalCostTextBox.Size = new System.Drawing.Size(193, 22);
             this.TotalCostTextBox.TabIndex = 5;
-            this.TotalCostTextBox.ThemeName = "TelerikMetroBlue";
+            this.TotalCostTextBox.ThemeName = "TelerikMetro";
             // 
             // EndDateTimePicker
             // 
@@ -214,19 +211,18 @@
             this.EndDateTimePicker.TabIndex = 4;
             this.EndDateTimePicker.TabStop = false;
             this.EndDateTimePicker.Text = "15/09/2014";
-            this.EndDateTimePicker.ThemeName = "TelerikMetroBlue";
+            this.EndDateTimePicker.ThemeName = "TelerikMetro";
             this.EndDateTimePicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
             // 
             // radLabel4
             // 
             this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel4.Location = new System.Drawing.Point(249, 189);
+            this.radLabel4.Location = new System.Drawing.Point(249, 188);
             this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(70, 19);
+            this.radLabel4.Size = new System.Drawing.Size(65, 18);
             this.radLabel4.TabIndex = 6;
             this.radLabel4.Text = "تاريخ الانتهاء:";
             this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel4.ThemeName = "Office2013Light";
             // 
             // StartDateTimePicker
             // 
@@ -239,41 +235,38 @@
             this.StartDateTimePicker.TabIndex = 3;
             this.StartDateTimePicker.TabStop = false;
             this.StartDateTimePicker.Text = "15/09/2014";
-            this.StartDateTimePicker.ThemeName = "TelerikMetroBlue";
+            this.StartDateTimePicker.ThemeName = "TelerikMetro";
             this.StartDateTimePicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
             // 
             // radLabel3
             // 
             this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel3.Location = new System.Drawing.Point(249, 160);
+            this.radLabel3.Location = new System.Drawing.Point(249, 159);
             this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(60, 19);
+            this.radLabel3.Size = new System.Drawing.Size(55, 18);
             this.radLabel3.TabIndex = 5;
             this.radLabel3.Text = "تاريخ البدء:";
             this.radLabel3.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel3.ThemeName = "Office2013Light";
             // 
             // radLabel2
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel2.Location = new System.Drawing.Point(249, 114);
+            this.radLabel2.Location = new System.Drawing.Point(249, 109);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(79, 19);
+            this.radLabel2.Size = new System.Drawing.Size(72, 18);
             this.radLabel2.TabIndex = 3;
             this.radLabel2.Text = "وصف النشاط:";
             this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel2.ThemeName = "Office2013Light";
             // 
             // radLabel1
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel1.Location = new System.Drawing.Point(245, 68);
+            this.radLabel1.Location = new System.Drawing.Point(249, 71);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(107, 19);
+            this.radLabel1.Size = new System.Drawing.Size(98, 18);
             this.radLabel1.TabIndex = 1;
             this.radLabel1.Text = "اسم النشاط الفرعي:";
             this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel1.ThemeName = "Office2013Light";
             // 
             // SubActivitiesNameTextBox
             // 
@@ -282,7 +275,7 @@
             this.SubActivitiesNameTextBox.Name = "SubActivitiesNameTextBox";
             this.SubActivitiesNameTextBox.Size = new System.Drawing.Size(193, 22);
             this.SubActivitiesNameTextBox.TabIndex = 1;
-            this.SubActivitiesNameTextBox.ThemeName = "TelerikMetroBlue";
+            this.SubActivitiesNameTextBox.ThemeName = "TelerikMetro";
             // 
             // FrmAddSubActivities
             // 
@@ -297,7 +290,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "FrmAddSubActivities";
-            this.ThemeName = "TelerikMetroBlue";
+            this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmAddSubActivities_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
@@ -325,7 +318,6 @@
 
         #endregion
 
-        private Telerik.WinControls.Themes.Office2013LightTheme office2013LightTheme1;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         private Telerik.WinControls.UI.RadLabel radLabel7;
         private Telerik.WinControls.UI.RadMultiColumnComboBox ActivitiesColumnComboBox;
@@ -341,7 +333,7 @@
         private Telerik.WinControls.UI.RadTextBox SubActivitiesNameTextBox;
         private System.Windows.Forms.BindingSource projectActivityBindingSource;
         private Telerik.WinControls.UI.RadTextBox SubActivitiesDescriptionTextBox;
-        private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
+        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
 
     }
 }

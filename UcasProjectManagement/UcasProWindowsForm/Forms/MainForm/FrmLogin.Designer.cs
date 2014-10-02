@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.TryBtn = new Telerik.WinControls.UI.RadButton();
             this.ExitBtn = new Telerik.WinControls.UI.RadButton();
@@ -37,6 +36,7 @@
             this.PsswordTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.UserNameTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TryBtn)).BeginInit();
@@ -66,7 +66,7 @@
             this.radGroupBox1.Size = new System.Drawing.Size(363, 208);
             this.radGroupBox1.TabIndex = 0;
             this.radGroupBox1.Text = "الدخول للبرنامج";
-            this.radGroupBox1.ThemeName = "Office2013Light";
+            this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
             // TryBtn
             // 
@@ -75,7 +75,7 @@
             this.TryBtn.Size = new System.Drawing.Size(110, 37);
             this.TryBtn.TabIndex = 4;
             this.TryBtn.Text = "حاول مرة اخرى";
-            this.TryBtn.ThemeName = "Office2013Light";
+            this.TryBtn.ThemeName = "TelerikMetro";
             this.TryBtn.Click += new System.EventHandler(this.TryBtn_Click);
             // 
             // ExitBtn
@@ -85,7 +85,7 @@
             this.ExitBtn.Size = new System.Drawing.Size(110, 37);
             this.ExitBtn.TabIndex = 3;
             this.ExitBtn.Text = "خروج";
-            this.ExitBtn.ThemeName = "Office2013Light";
+            this.ExitBtn.ThemeName = "TelerikMetro";
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // EnterBtn
@@ -95,14 +95,14 @@
             this.EnterBtn.Size = new System.Drawing.Size(110, 37);
             this.EnterBtn.TabIndex = 2;
             this.EnterBtn.Text = "دخول";
-            this.EnterBtn.ThemeName = "Office2013Light";
+            this.EnterBtn.ThemeName = "TelerikMetro";
             this.EnterBtn.Click += new System.EventHandler(this.EnterBtn_Click);
             // 
             // radLabel2
             // 
             this.radLabel2.Location = new System.Drawing.Point(231, 84);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(53, 18);
+            this.radLabel2.Size = new System.Drawing.Size(61, 18);
             this.radLabel2.TabIndex = 3;
             this.radLabel2.Text = "كلمة المرور:";
             this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -111,15 +111,15 @@
             // 
             this.PsswordTextBox.Location = new System.Drawing.Point(27, 82);
             this.PsswordTextBox.Name = "PsswordTextBox";
-            this.PsswordTextBox.Size = new System.Drawing.Size(186, 21);
+            this.PsswordTextBox.Size = new System.Drawing.Size(186, 22);
             this.PsswordTextBox.TabIndex = 1;
-            this.PsswordTextBox.ThemeName = "Office2013Light";
+            this.PsswordTextBox.ThemeName = "TelerikMetroBlue";
             // 
             // radLabel1
             // 
             this.radLabel1.Location = new System.Drawing.Point(231, 46);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(58, 18);
+            this.radLabel1.Size = new System.Drawing.Size(76, 18);
             this.radLabel1.TabIndex = 1;
             this.radLabel1.Text = "اسم المستخدم:";
             this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -128,9 +128,9 @@
             // 
             this.UserNameTextBox.Location = new System.Drawing.Point(27, 44);
             this.UserNameTextBox.Name = "UserNameTextBox";
-            this.UserNameTextBox.Size = new System.Drawing.Size(186, 21);
+            this.UserNameTextBox.Size = new System.Drawing.Size(186, 22);
             this.UserNameTextBox.TabIndex = 0;
-            this.UserNameTextBox.ThemeName = "Office2013Light";
+            this.UserNameTextBox.ThemeName = "TelerikMetro";
             // 
             // FrmLogin
             // 
@@ -145,7 +145,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "FrmLogin";
-            this.ThemeName = "Office2013Light";
+            this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
@@ -164,7 +164,6 @@
 
         #endregion
 
-        private Telerik.WinControls.Themes.Office2013LightTheme office2013LightTheme1;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         private Telerik.WinControls.UI.RadButton ExitBtn;
         private Telerik.WinControls.UI.RadButton EnterBtn;
@@ -173,5 +172,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadTextBox UserNameTextBox;
         private Telerik.WinControls.UI.RadButton TryBtn;
+        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
     }
 }

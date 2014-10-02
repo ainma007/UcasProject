@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainUserPro));
-            this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radRibbonBar1 = new Telerik.WinControls.UI.RadRibbonBar();
             this.ribbonTab1 = new Telerik.WinControls.UI.RibbonTab();
             this.radRibbonBarGroup1 = new Telerik.WinControls.UI.RadRibbonBarGroup();
@@ -59,6 +58,7 @@
             this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
@@ -86,11 +86,11 @@
             this.ribbonTab3});
             this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
             this.radRibbonBar1.Name = "radRibbonBar1";
-            this.radRibbonBar1.Size = new System.Drawing.Size(958, 150);
+            this.radRibbonBar1.Size = new System.Drawing.Size(974, 161);
             this.radRibbonBar1.StartButtonImage = ((System.Drawing.Image)(resources.GetObject("radRibbonBar1.StartButtonImage")));
             this.radRibbonBar1.TabIndex = 0;
             this.radRibbonBar1.Text = "radRibbonBar1";
-            this.radRibbonBar1.ThemeName = "Office2013Light";
+            this.radRibbonBar1.ThemeName = "TelerikMetro";
             // 
             // ribbonTab1
             // 
@@ -213,12 +213,12 @@
             // 
             // radStatusStrip1
             // 
-            this.radStatusStrip1.Location = new System.Drawing.Point(0, 657);
+            this.radStatusStrip1.Location = new System.Drawing.Point(0, 728);
             this.radStatusStrip1.Name = "radStatusStrip1";
-            this.radStatusStrip1.Size = new System.Drawing.Size(958, 27);
+            this.radStatusStrip1.Size = new System.Drawing.Size(974, 25);
             this.radStatusStrip1.TabIndex = 2;
             this.radStatusStrip1.Text = "radStatusStrip1";
-            this.radStatusStrip1.ThemeName = "Office2013Light";
+            this.radStatusStrip1.ThemeName = "TelerikMetro";
             // 
             // radGroupBox1
             // 
@@ -238,12 +238,12 @@
             this.radGroupBox1.Controls.Add(this.radLabel1);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGroupBox1.HeaderText = "موجز للمشروع";
-            this.radGroupBox1.Location = new System.Drawing.Point(0, 150);
+            this.radGroupBox1.Location = new System.Drawing.Point(0, 161);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(958, 507);
+            this.radGroupBox1.Size = new System.Drawing.Size(974, 566);
             this.radGroupBox1.TabIndex = 3;
             this.radGroupBox1.Text = "موجز للمشروع";
-            this.radGroupBox1.ThemeName = "Office2013Light";
+            this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
             // button1
             // 
@@ -259,8 +259,9 @@
             // 
             this.radTextBox3.Location = new System.Drawing.Point(591, 304);
             this.radTextBox3.Name = "radTextBox3";
-            this.radTextBox3.Size = new System.Drawing.Size(216, 20);
+            this.radTextBox3.Size = new System.Drawing.Size(216, 22);
             this.radTextBox3.TabIndex = 12;
+            this.radTextBox3.ThemeName = "TelerikMetro";
             // 
             // radLabel6
             // 
@@ -275,8 +276,9 @@
             // 
             this.radTextBox2.Location = new System.Drawing.Point(591, 260);
             this.radTextBox2.Name = "radTextBox2";
-            this.radTextBox2.Size = new System.Drawing.Size(216, 20);
+            this.radTextBox2.Size = new System.Drawing.Size(216, 22);
             this.radTextBox2.TabIndex = 10;
+            this.radTextBox2.ThemeName = "TelerikMetro";
             // 
             // radLabel5
             // 
@@ -291,8 +293,9 @@
             // 
             this.EndDateTextBox.Location = new System.Drawing.Point(591, 217);
             this.EndDateTextBox.Name = "EndDateTextBox";
-            this.EndDateTextBox.Size = new System.Drawing.Size(225, 20);
+            this.EndDateTextBox.Size = new System.Drawing.Size(225, 22);
             this.EndDateTextBox.TabIndex = 8;
+            this.EndDateTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel4
             // 
@@ -307,8 +310,9 @@
             // 
             this.StartDateTextBox.Location = new System.Drawing.Point(591, 175);
             this.StartDateTextBox.Name = "StartDateTextBox";
-            this.StartDateTextBox.Size = new System.Drawing.Size(225, 20);
+            this.StartDateTextBox.Size = new System.Drawing.Size(225, 22);
             this.StartDateTextBox.TabIndex = 6;
+            this.StartDateTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel2
             // 
@@ -327,13 +331,15 @@
             this.DescTextBox.Name = "DescTextBox";
             this.DescTextBox.Size = new System.Drawing.Size(225, 57);
             this.DescTextBox.TabIndex = 4;
+            this.DescTextBox.ThemeName = "TelerikMetro";
             // 
             // radTextBox1
             // 
             this.radTextBox1.Location = new System.Drawing.Point(591, 45);
             this.radTextBox1.Name = "radTextBox1";
-            this.radTextBox1.Size = new System.Drawing.Size(225, 20);
+            this.radTextBox1.Size = new System.Drawing.Size(225, 22);
             this.radTextBox1.TabIndex = 3;
+            this.radTextBox1.ThemeName = "TelerikMetro";
             // 
             // radLabel3
             // 
@@ -357,7 +363,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 684);
+            this.ClientSize = new System.Drawing.Size(974, 752);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.radStatusStrip1);
             this.Controls.Add(this.radRibbonBar1);
@@ -370,7 +376,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "radRibbonBar1";
-            this.ThemeName = "Office2013Light";
+            this.ThemeName = "TelerikMetro";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMainUserPro_FormClosed);
             this.Load += new System.EventHandler(this.FrmMainUserPro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).EndInit();
@@ -398,7 +404,6 @@
 
         #endregion
 
-        private Telerik.WinControls.Themes.Office2013LightTheme office2013LightTheme1;
         private Telerik.WinControls.UI.RadRibbonBar radRibbonBar1;
         private Telerik.WinControls.UI.RibbonTab ribbonTab1;
         private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup1;
@@ -428,5 +433,6 @@
         public Telerik.WinControls.UI.RadTextBox StartDateTextBox;
         public Telerik.WinControls.UI.RadTextBox DescTextBox;
         public Telerik.WinControls.UI.RadTextBox radTextBox1;
+        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radMultiColumnComboBox1 = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
@@ -50,6 +49,7 @@
             this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
             this.SalaryTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
+            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).BeginInit();
@@ -215,12 +215,12 @@
             this.radGroupBox1.Controls.Add(this.radLabel4);
             this.radGroupBox1.Controls.Add(this.EmployeeComboBox);
             this.radGroupBox1.Controls.Add(this.ReleaseDateTimePicker);
+            this.radGroupBox1.Controls.Add(this.radLabel12);
             this.radGroupBox1.Controls.Add(this.FromonthDateTimePicker);
-            this.radGroupBox1.Controls.Add(this.radLabel9);
-            this.radGroupBox1.Controls.Add(this.radButton1);
             this.radGroupBox1.Controls.Add(this.radLabel10);
             this.radGroupBox1.Controls.Add(this.SalaryTextBox);
-            this.radGroupBox1.Controls.Add(this.radLabel12);
+            this.radGroupBox1.Controls.Add(this.radLabel9);
+            this.radGroupBox1.Controls.Add(this.radButton1);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGroupBox1.HeaderText = "اضافة راتب";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
@@ -228,18 +228,17 @@
             this.radGroupBox1.Size = new System.Drawing.Size(362, 250);
             this.radGroupBox1.TabIndex = 3;
             this.radGroupBox1.Text = "اضافة راتب";
-            this.radGroupBox1.ThemeName = "Office2013Light";
+            this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
             // radLabel4
             // 
             this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel4.Location = new System.Drawing.Point(255, 141);
+            this.radLabel4.Location = new System.Drawing.Point(251, 141);
             this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(74, 19);
+            this.radLabel4.Size = new System.Drawing.Size(68, 18);
             this.radLabel4.TabIndex = 13;
             this.radLabel4.Text = "تاريخ الاصدار:";
             this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel4.ThemeName = "Office2013Light";
             // 
             // EmployeeComboBox
             // 
@@ -251,7 +250,7 @@
             this.EmployeeComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.EmployeeComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // EmployeeComboBox.NestedRadGridView
             // 
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -270,7 +269,7 @@
             this.EmployeeComboBox.TabIndex = 15;
             this.EmployeeComboBox.TabStop = false;
             this.EmployeeComboBox.Text = "اختر الموظف";
-            this.EmployeeComboBox.ThemeName = "Office2013Light";
+            this.EmployeeComboBox.ThemeName = "TelerikMetro";
             // 
             // ReleaseDateTimePicker
             // 
@@ -279,11 +278,11 @@
             this.ReleaseDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ReleaseDateTimePicker.Location = new System.Drawing.Point(56, 139);
             this.ReleaseDateTimePicker.Name = "ReleaseDateTimePicker";
-            this.ReleaseDateTimePicker.Size = new System.Drawing.Size(193, 21);
+            this.ReleaseDateTimePicker.Size = new System.Drawing.Size(193, 22);
             this.ReleaseDateTimePicker.TabIndex = 14;
             this.ReleaseDateTimePicker.TabStop = false;
-            this.ReleaseDateTimePicker.Text = "16/09/2014";
-            this.ReleaseDateTimePicker.ThemeName = "Office2013Light";
+            this.ReleaseDateTimePicker.Text = "15/09/2014";
+            this.ReleaseDateTimePicker.ThemeName = "TelerikMetro";
             this.ReleaseDateTimePicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
             // 
             // FromonthDateTimePicker
@@ -293,63 +292,60 @@
             this.FromonthDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FromonthDateTimePicker.Location = new System.Drawing.Point(56, 101);
             this.FromonthDateTimePicker.Name = "FromonthDateTimePicker";
-            this.FromonthDateTimePicker.Size = new System.Drawing.Size(193, 21);
+            this.FromonthDateTimePicker.Size = new System.Drawing.Size(193, 22);
             this.FromonthDateTimePicker.TabIndex = 13;
             this.FromonthDateTimePicker.TabStop = false;
             this.FromonthDateTimePicker.Text = "15/09/2014";
-            this.FromonthDateTimePicker.ThemeName = "Office2013Light";
+            this.FromonthDateTimePicker.ThemeName = "TelerikMetro";
             this.FromonthDateTimePicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
             // 
             // radLabel9
             // 
             this.radLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel9.Location = new System.Drawing.Point(255, 103);
+            this.radLabel9.Location = new System.Drawing.Point(252, 103);
             this.radLabel9.Name = "radLabel9";
-            this.radLabel9.Size = new System.Drawing.Size(80, 19);
+            this.radLabel9.Size = new System.Drawing.Size(73, 18);
             this.radLabel9.TabIndex = 12;
             this.radLabel9.Text = "مستحقة لشهر:";
             this.radLabel9.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel9.ThemeName = "Office2013Light";
             // 
             // radButton1
             // 
-            this.radButton1.Location = new System.Drawing.Point(220, 195);
+            this.radButton1.Location = new System.Drawing.Point(189, 200);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(130, 38);
             this.radButton1.TabIndex = 7;
             this.radButton1.Text = "اضافة";
-            this.radButton1.ThemeName = "Office2013Light";
+            this.radButton1.ThemeName = "TelerikMetro";
             // 
             // radLabel10
             // 
             this.radLabel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel10.Location = new System.Drawing.Point(255, 74);
+            this.radLabel10.Location = new System.Drawing.Point(251, 76);
             this.radLabel10.Name = "radLabel10";
-            this.radLabel10.Size = new System.Drawing.Size(39, 19);
+            this.radLabel10.Size = new System.Drawing.Size(36, 18);
             this.radLabel10.TabIndex = 9;
             this.radLabel10.Text = "الراتب:";
             this.radLabel10.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel10.ThemeName = "Office2013Light";
             // 
             // SalaryTextBox
             // 
             this.SalaryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SalaryTextBox.Location = new System.Drawing.Point(56, 74);
             this.SalaryTextBox.Name = "SalaryTextBox";
-            this.SalaryTextBox.Size = new System.Drawing.Size(193, 21);
+            this.SalaryTextBox.Size = new System.Drawing.Size(193, 22);
             this.SalaryTextBox.TabIndex = 5;
-            this.SalaryTextBox.ThemeName = "Office2013Light";
+            this.SalaryTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel12
             // 
             this.radLabel12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel12.Location = new System.Drawing.Point(255, 45);
+            this.radLabel12.Location = new System.Drawing.Point(251, 48);
             this.radLabel12.Name = "radLabel12";
-            this.radLabel12.Size = new System.Drawing.Size(77, 19);
+            this.radLabel12.Size = new System.Drawing.Size(70, 18);
             this.radLabel12.TabIndex = 1;
             this.radLabel12.Text = "اسم الموظف:";
             this.radLabel12.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel12.ThemeName = "Office2013Light";
             // 
             // FrmAddSalaries
             // 
@@ -364,7 +360,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "FrmAddSalaries";
-            this.ThemeName = "Office2013Light";
+            this.ThemeName = "TelerikMetro";
             ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).EndInit();
@@ -399,7 +395,6 @@
 
         #endregion
 
-        private Telerik.WinControls.Themes.Office2013LightTheme office2013LightTheme1;
         private Telerik.WinControls.UI.RadMultiColumnComboBox radMultiColumnComboBox1;
         private Telerik.WinControls.UI.RadButton AddBtn;
         private Telerik.WinControls.UI.RadLabel radLabel6;
@@ -421,5 +416,6 @@
         private Telerik.WinControls.UI.RadMultiColumnComboBox EmployeeComboBox;
         private Telerik.WinControls.UI.RadDateTimePicker ReleaseDateTimePicker;
         private Telerik.WinControls.UI.RadDateTimePicker FromonthDateTimePicker;
+        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
     }
 }

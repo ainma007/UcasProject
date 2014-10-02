@@ -41,7 +41,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             projectActivityBindingSource.DataSource = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
 
             projectSubActivityBindingSource.DataSource = SubActivityCmd.GetAllSubActivities();
-            ActivitiesGridView.MasterTemplate.ExpandAll();
+           // ActivitiesGridView.MasterTemplate.ExpandAll();
         }
 
         private void ActivitiesGridView_CommandCellClick(object sender, EventArgs e)
