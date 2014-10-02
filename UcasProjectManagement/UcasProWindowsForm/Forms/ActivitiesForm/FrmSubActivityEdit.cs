@@ -45,6 +45,50 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            if (ActivitiesColumnComboBox.SelectedValue == null)
+            {
+                //GenderDropDownList.BackColor = System.Drawing.Color.Red;
+                ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                // GenderDropDownList.DropDownListElement.TextBox.Fill.BackColor = Color.OrangeRed;
+
+
+                ActivitiesColumnComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+            }
+
+            if (SubActivitiesNameTextBox.Text == "")
+            {
+
+                SubActivitiesNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+
+                SubActivitiesNameTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                SubActivitiesNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+            }
+
+            if (TotalCostTextBox.Text == "")
+            {
+
+                TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+
+                TotalCostTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.White;
+            }
+
             ProjectSubActivity tb = new ProjectSubActivity()
 
             {

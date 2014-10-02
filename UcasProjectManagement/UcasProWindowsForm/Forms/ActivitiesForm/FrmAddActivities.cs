@@ -20,6 +20,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
+
             if (ActivitiesNameTextBox.Text == "")
             {
 

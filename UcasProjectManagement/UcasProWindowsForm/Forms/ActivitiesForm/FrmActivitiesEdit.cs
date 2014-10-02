@@ -26,6 +26,50 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+
+            if (ActivitiesNameTextBox.Text == "")
+            {
+
+                ActivitiesNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+
+                ActivitiesNameTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                ActivitiesNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+            }
+
+            if (TotalCostTextBox.Text == "")
+            {
+
+                TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+
+                TotalCostTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.White;
+            }
+
+            if (StatusDropDownList.SelectedItem == null)
+            {
+                //GenderDropDownList.BackColor = System.Drawing.Color.Red;
+                StatusDropDownList.DropDownListElement.TextBox.BackColor = Color.OrangeRed;
+                // GenderDropDownList.DropDownListElement.TextBox.Fill.BackColor = Color.OrangeRed;
+
+
+                StatusDropDownList.Focus();
+
+                return;
+            }
+            else
+            {
+                StatusDropDownList.DropDownListElement.TextBox.BackColor = Color.White;
+            }
             ProjectActivity tb = new ProjectActivity()
             {
 
