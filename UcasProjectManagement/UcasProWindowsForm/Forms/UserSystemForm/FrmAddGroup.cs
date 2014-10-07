@@ -17,6 +17,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         public FrmAddGroup()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
 
         private void radGroupBox1_Click(object sender, EventArgs e)

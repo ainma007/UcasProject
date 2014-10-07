@@ -17,7 +17,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         public FrmEmployeeMng()
         {
             InitializeComponent();
-            RadMessageBox.SetThemeName("Office2013Light");
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         public void GetAllEmployee()
         {

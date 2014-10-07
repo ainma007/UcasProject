@@ -16,6 +16,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
         public FrmAddsupplier()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
 
         private void FrmAddsupplier_Load(object sender, EventArgs e)

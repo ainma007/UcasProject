@@ -18,6 +18,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         public FrmGroupManage()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         #region "  PopulateCheckList       "
         private void PopulateCheckList()

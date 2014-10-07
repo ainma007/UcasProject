@@ -231,6 +231,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "FrmAddThefinanciers";
             this.ThemeName = "TelerikMetro";
+            this.Load += new System.EventHandler(this.FrmAddTheTheDonors_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();

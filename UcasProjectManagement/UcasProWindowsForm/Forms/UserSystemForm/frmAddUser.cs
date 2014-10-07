@@ -17,6 +17,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         public frmAddUser()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         #region " Load All Groups & Employee & Project If It Exiest "
         private void PopulateComboxes()

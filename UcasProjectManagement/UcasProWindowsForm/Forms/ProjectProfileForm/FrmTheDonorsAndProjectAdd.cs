@@ -18,6 +18,7 @@ namespace UcasProWindowsForm.Forms.MainForm
         public FrmTheDonorsAndProjectAdd()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         private void fillDonorsCombo()
         {

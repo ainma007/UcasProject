@@ -16,6 +16,7 @@ namespace UcasProWindowsForm.Forms.MainForm
         public FrmLogin()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         void clearTXT()
         {

@@ -17,6 +17,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         public FrmSubActivityEdit()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         public int SubXid { get; set; }
         public void FillActivty()
@@ -88,26 +89,29 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             {
                 TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.White;
             }
+         if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+         {
+             ProjectSubActivity tb = new ProjectSubActivity()
 
-            ProjectSubActivity tb = new ProjectSubActivity()
-
-            {
-                ID=SubXid,
-                ProjectActivity_ID = int.Parse(ActivitiesColumnComboBox.SelectedValue.ToString()),
-                SubActivityName=SubActivitiesNameTextBox.Text,
-                Description=SubActivitiesDescriptionTextBox.Text,
-                Startdate=StartDateTimePicker.Value.Date,
-                enddate=EndDateTimePicker.Value.Date,
-                TotalCost=Convert.ToDouble(TotalCostTextBox.Text),
-                Progress=int.Parse(ProgressEditor.Value.ToString()),
-                Status=StatusDropDownList.Text,
+             {
+                 ID = SubXid,
+                 ProjectActivity_ID = int.Parse(ActivitiesColumnComboBox.SelectedValue.ToString()),
+                 SubActivityName = SubActivitiesNameTextBox.Text,
+                 Description = SubActivitiesDescriptionTextBox.Text,
+                 Startdate = StartDateTimePicker.Value.Date,
+                 enddate = EndDateTimePicker.Value.Date,
+                 TotalCost = Convert.ToDouble(TotalCostTextBox.Text),
+                 Progress = int.Parse(ProgressEditor.Value.ToString()),
+                 Status = StatusDropDownList.Text,
 
 
 
 
-            };
-            SubActivityCmd.EditSubActivity(tb);
-            MessageBox.Show("تمت عملية التعديل");
+             };
+             SubActivityCmd.EditSubActivity(tb);
+             MessageBox.Show("تمت عملية التعديل");
+         }
         }
+           
     }
 }

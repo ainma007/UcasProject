@@ -16,7 +16,13 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         public FrmAddExpenses()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
       
+        }
+
+        private void FrmAddExpenses_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

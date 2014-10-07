@@ -84,6 +84,7 @@ namespace Ucas.Data.CommandClass
                      where A.ProjectActivity_ID== ActID
                      select A).ToList();
           return LST;
+         
         }
         public static List<ProjectSubActivity> GetAllSubActivities()
         {

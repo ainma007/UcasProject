@@ -13,10 +13,12 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 {
     public partial class FrmActivitiesEdit : Telerik.WinControls.UI.RadForm
     {
+          
         public int xID { get; set; }
         public FrmActivitiesEdit()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
 
         private void FrmActivitiesEdit_Load(object sender, EventArgs e)
@@ -26,7 +28,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-
+         
             if (ActivitiesNameTextBox.Text == "")
             {
 
@@ -55,7 +57,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.White;
             }
 
-            if (StatusDropDownList.SelectedItem == null)
+            if (StatusDropDownList.Text == "")
             {
                 //GenderDropDownList.BackColor = System.Drawing.Color.Red;
                 StatusDropDownList.DropDownListElement.TextBox.BackColor = Color.OrangeRed;
@@ -70,22 +72,28 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             {
                 StatusDropDownList.DropDownListElement.TextBox.BackColor = Color.White;
             }
-            ProjectActivity tb = new ProjectActivity()
+
+            if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
+                ProjectActivity tb = new ProjectActivity()
+                {
 
 
-                ID = xID,
-                ActivityName=ActivitiesNameTextBox.Text,
-                Description=ActivitiesDescriptionTextBox.Text,
-                StartDate=StartDateTimePicker.Value.Date,
-                EndDate=EndDateTimePicker.Value.Date,
-                TotalCost=Convert.ToDouble (TotalCostTextBox.Text),
-                Status=StatusDropDownList.Text,
+                    ID = xID,
+                    ActivityName = ActivitiesNameTextBox.Text,
+                    Description = ActivitiesDescriptionTextBox.Text,
+                    StartDate = StartDateTimePicker.Value.Date,
+                    EndDate = EndDateTimePicker.Value.Date,
+                    TotalCost = Convert.ToDouble(TotalCostTextBox.Text),
+                    Status = StatusDropDownList.Text,
 
 
-            };
-            ActivityCmd.EditActivity(tb);
-            MessageBox.Show("Saved");
-        }
+                };
+                ActivityCmd.EditActivity(tb);
+                MessageBox.Show("Saved");
+            }
+
+            }
+           
     }
 }

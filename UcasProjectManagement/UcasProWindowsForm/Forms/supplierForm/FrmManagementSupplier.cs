@@ -16,7 +16,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
         public FrmManagementSupplier()
         {
             InitializeComponent();
-            RadMessageBox.SetThemeName("Office2013Light");
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         UcasProEntities cmd = new UcasProEntities();
         private void GetAllsupplier()
@@ -50,6 +50,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
         {
             GetAllsupplier();
             LockGrid();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         
         

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Telerik.WinControls;
 using Ucas.Data.CommandClass;
 using UcasProWindowsForm.Forms.ActivitiesForm;
 using UcasProWindowsForm.Forms.EmployeeForm;
@@ -11,6 +12,7 @@ namespace UcasProWindowsForm.Forms.MainForm
         public FrmMainUserPro()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
 
         int ProID = ProjectControlCmd.ChkProjectIDByUserID(InformationsClass.xCurrentUserID);

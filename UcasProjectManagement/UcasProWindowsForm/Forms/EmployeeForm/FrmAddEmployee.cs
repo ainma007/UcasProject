@@ -17,6 +17,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         public FrmAddEmployee()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
 
         private void AddBtn_Click(object sender, EventArgs e)

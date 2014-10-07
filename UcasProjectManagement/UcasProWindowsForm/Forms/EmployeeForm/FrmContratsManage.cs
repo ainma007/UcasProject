@@ -15,6 +15,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         public FrmContratsManage()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         public int GetContractsID { get; set; }
         private void AddBtn_Click(object sender, EventArgs e)

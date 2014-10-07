@@ -16,6 +16,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
         public FrmManagementTheDonors()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
 
         private void GetAllFinanciers()

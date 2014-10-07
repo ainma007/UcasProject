@@ -18,6 +18,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
         public FrmAddProject()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
            
         }
       
@@ -104,6 +105,11 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
 
             
+        }
+
+        private void FrmAddProject_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

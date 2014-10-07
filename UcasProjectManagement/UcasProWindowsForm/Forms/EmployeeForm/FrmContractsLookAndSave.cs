@@ -17,10 +17,12 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         public FrmContractsLookAndSave()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         public int myContractId { get; set; }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+
             Contract tb = new Contract()
             {
                 ID=myContractId,

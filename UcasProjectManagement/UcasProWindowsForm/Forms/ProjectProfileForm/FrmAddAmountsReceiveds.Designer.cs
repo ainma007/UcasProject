@@ -82,7 +82,7 @@
             this.TheFinancerProjectsComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TheFinancerProjectsComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // TheFinancerProjectsComboBox.NestedRadGridView
+            // 
             // 
             this.TheFinancerProjectsComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.TheFinancerProjectsComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -181,6 +181,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "FrmAddAmountsReceiveds";
             this.ThemeName = "TelerikMetro";
+            this.Load += new System.EventHandler(this.FrmAddAmountsReceiveds_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();

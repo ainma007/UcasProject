@@ -17,6 +17,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         public FrmAddSubActivities()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         private void FillActivty()
         {

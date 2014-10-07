@@ -16,6 +16,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         public FrmAllActivitesMange()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         UcasProEntities db = new UcasProEntities();
         private void AdActivitesBtn_Click(object sender, EventArgs e)
@@ -66,11 +67,13 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             }
 
                         
-            if (col2 == 9)
+            if (col2 == 9) 
             {
-                MessageBox.Show("delte");
+                ProjectActivity tb = projectActivityBindingSource.Current as ProjectActivity;
+                ActivityCmd.DeleteActivity(tb.ID);
+                MessageBox.Show("تمت علمية الحذف");
                 return;
-
+                
             }
 
 
@@ -97,8 +100,12 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
 
             if (col == 11)
+                
             {
-                MessageBox.Show("SubDelete");
+                ProjectSubActivity tb = projectSubActivityBindingSource.Current as ProjectSubActivity;
+                SubActivityCmd.DeleteSubActivity(tb.ID);
+                MessageBox.Show("تمت علمية الحذف");
+                return;
             }
         }
     }

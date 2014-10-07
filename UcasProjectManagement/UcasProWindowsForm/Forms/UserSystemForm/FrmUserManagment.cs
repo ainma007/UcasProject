@@ -17,6 +17,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         public FrmUserManagment()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
 
         private void FillCombo()

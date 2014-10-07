@@ -17,6 +17,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
         {
             InitializeComponent();
             xPeremissions();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
@@ -69,6 +70,11 @@ namespace UcasProWindowsForm.Forms.supplierForm
                 
                 throw;
             }
+        }
+
+        private void FrmAddTheTheDonors_Load(object sender, EventArgs e)
+        {
+
         }
         }
     }

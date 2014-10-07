@@ -20,6 +20,7 @@ namespace UcasProWindowsForm.Forms.MainForm
         public FrmAdmin()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
            
         }
         ProjectProfileCmd cmd = new ProjectProfileCmd();

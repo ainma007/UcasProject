@@ -14,6 +14,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         public FrmAddSalaries()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
     }
 }

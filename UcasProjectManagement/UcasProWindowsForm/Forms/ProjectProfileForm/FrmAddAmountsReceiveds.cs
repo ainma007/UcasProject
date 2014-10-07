@@ -14,9 +14,15 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
         public FrmAddAmountsReceiveds()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmAddAmountsReceiveds_Load(object sender, EventArgs e)
         {
 
         }

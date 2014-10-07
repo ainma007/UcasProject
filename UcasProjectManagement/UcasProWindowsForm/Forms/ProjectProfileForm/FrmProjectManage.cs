@@ -17,7 +17,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
         public FrmProjectManage()
         {
             InitializeComponent();
-            RadMessageBox.SetThemeName("Office2013Light");
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
 
         private void FrmProjectManage_Load(object sender, EventArgs e)
