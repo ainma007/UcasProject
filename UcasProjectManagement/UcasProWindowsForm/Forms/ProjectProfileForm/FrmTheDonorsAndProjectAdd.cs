@@ -39,6 +39,19 @@ namespace UcasProWindowsForm.Forms.MainForm
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
+
+            if (DonorsColumnComboBox.SelectedValue == null)
+            {
+                DonorsColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+
+                DonorsColumnComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                DonorsColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+            }
             TheDonorsProject tb = new TheDonorsProject()
             {
 

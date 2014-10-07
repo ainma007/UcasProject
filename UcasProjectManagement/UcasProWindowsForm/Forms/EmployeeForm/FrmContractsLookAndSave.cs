@@ -22,20 +22,35 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         public int myContractId { get; set; }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-
-            Contract tb = new Contract()
+            if (EmployeeComboBox.SelectedValue == null)
             {
-                ID=myContractId,
-                Employee_ID= int.Parse(EmployeeComboBox.SelectedValue.ToString()),
-                StartDate=DateTime.Parse(StartDateTimePicker.Value.Date.ToString()),
-                EndDate=DateTime.Parse(EndDateTimePicker.Value.Date.ToString()),
-                Status=StatusDropDownList.Text,
-                SelaryAmount= Convert.ToDouble(SalaryTextBox.Text)
+                EmployeeComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
 
-            };
-            ContractCmd.EditContract(tb);
-            MessageBox.Show("تمت عملية التعديل");
+                EmployeeComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                EmployeeComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+            }
+              if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                        {
+                            Contract tb = new Contract()
+                            {
+                                ID = myContractId,
+                                Employee_ID = int.Parse(EmployeeComboBox.SelectedValue.ToString()),
+                                StartDate = DateTime.Parse(StartDateTimePicker.Value.Date.ToString()),
+                                EndDate = DateTime.Parse(EndDateTimePicker.Value.Date.ToString()),
+                                Status = StatusDropDownList.Text,
+                                SelaryAmount = Convert.ToDouble(SalaryTextBox.Text)
+
+                            };
+                            ContractCmd.EditContract(tb);
+                            MessageBox.Show("تمت عملية التعديل");
+                        }
         }
+            
         public void GetEmplyeeCombo()
         {
             ///GetAllEmployeeCombo

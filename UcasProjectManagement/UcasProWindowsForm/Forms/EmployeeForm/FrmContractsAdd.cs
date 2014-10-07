@@ -37,6 +37,18 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            if (EmployeeComboBox.SelectedValue == null)
+            {
+                EmployeeComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+
+                EmployeeComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                EmployeeComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+            }
             Contract tb = new Contract()
             {
                 Employee_ID=int.Parse(EmployeeComboBox.SelectedValue.ToString()),
