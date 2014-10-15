@@ -28,8 +28,10 @@ namespace Ucas.Data
         public Nullable<int> Progress { get; set; }
         public Nullable<double> TotalCost { get; set; }
         public Nullable<int> ProjectActivity_ID { get; set; }
+        public Nullable<int> ProjectProfile_ID { get; set; }
     
         public virtual ProjectActivity ProjectActivity { get; set; }
         public virtual ICollection<ProjectExpens> ProjectExpenses { get; set; }
+        public virtual ProjectProfile ProjectProfile { get; set; }
     }
 }

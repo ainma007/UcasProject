@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="UcasProModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="UcasProEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="UcasProModel.sysdiagram" />
     <EntitySet Name="AmountsReceiveds" EntityType="UcasProModel.AmountsReceived" />
     <EntitySet Name="Attachments" EntityType="UcasProModel.Attachment" />
     <EntitySet Name="Contracts" EntityType="UcasProModel.Contract" />
@@ -14,12 +15,15 @@
     <EntitySet Name="ProjectProfiles" EntityType="UcasProModel.ProjectProfile" />
     <EntitySet Name="ProjectSubActivities" EntityType="UcasProModel.ProjectSubActivity" />
     <EntitySet Name="Suppliers" EntityType="UcasProModel.Supplier" />
-    <EntitySet Name="sysdiagrams" EntityType="UcasProModel.sysdiagram" />
-    <EntitySet Name="TheDonors1" EntityType="UcasProModel.TheDonors" />
+    <EntitySet Name="TheDonors" EntityType="UcasProModel.TheDonor" />
     <EntitySet Name="TheDonorsProjects" EntityType="UcasProModel.TheDonorsProject" />
-    <EntitySet Name="UsersTbs" EntityType="UcasProModel.UsersTb" />
+    <EntitySet Name="UserTbs" EntityType="UcasProModel.UserTb" />
     <AssociationSet Name="FK_AmountsReceived_TheFinancerProjects" Association="UcasProModel.FK_AmountsReceived_TheFinancerProjects">
       <End Role="TheDonorsProject" EntitySet="TheDonorsProjects" />
+      <End Role="AmountsReceived" EntitySet="AmountsReceiveds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AmountsReceiveds_ProjectProfiles" Association="UcasProModel.FK_AmountsReceiveds_ProjectProfiles">
+      <End Role="ProjectProfile" EntitySet="ProjectProfiles" />
       <End Role="AmountsReceived" EntitySet="AmountsReceiveds" />
     </AssociationSet>
     <AssociationSet Name="FK_Attachments_ProjectProfiles" Association="UcasProModel.FK_Attachments_ProjectProfiles">
@@ -38,17 +42,21 @@
       <End Role="Contract" EntitySet="Contracts" />
       <End Role="Monthlysalary" EntitySet="Monthlysalaries" />
     </AssociationSet>
-    <AssociationSet Name="FK_UsersTb_Employees" Association="UcasProModel.FK_UsersTb_Employees">
+    <AssociationSet Name="FK_UserTb_Employees" Association="UcasProModel.FK_UserTb_Employees">
       <End Role="Employee" EntitySet="Employees" />
-      <End Role="UsersTb" EntitySet="UsersTbs" />
+      <End Role="UserTb" EntitySet="UserTbs" />
     </AssociationSet>
     <AssociationSet Name="FK_PeremissionsTb_GroupsTb" Association="UcasProModel.FK_PeremissionsTb_GroupsTb">
       <End Role="GroupsTb" EntitySet="GroupsTbs" />
       <End Role="PeremissionsTb" EntitySet="PeremissionsTbs" />
     </AssociationSet>
-    <AssociationSet Name="FK_UsersTb_GroupsTb" Association="UcasProModel.FK_UsersTb_GroupsTb">
+    <AssociationSet Name="FK_UserTb_GroupsTbs" Association="UcasProModel.FK_UserTb_GroupsTbs">
       <End Role="GroupsTb" EntitySet="GroupsTbs" />
-      <End Role="UsersTb" EntitySet="UsersTbs" />
+      <End Role="UserTb" EntitySet="UserTbs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Monthlysalaries_ProjectProfiles" Association="UcasProModel.FK_Monthlysalaries_ProjectProfiles">
+      <End Role="ProjectProfile" EntitySet="ProjectProfiles" />
+      <End Role="Monthlysalary" EntitySet="Monthlysalaries" />
     </AssociationSet>
     <AssociationSet Name="FK_ProjectActivities_ProjectProfiles" Association="UcasProModel.FK_ProjectActivities_ProjectProfiles">
       <End Role="ProjectProfile" EntitySet="ProjectProfiles" />
@@ -58,13 +66,17 @@
       <End Role="ProjectActivity" EntitySet="ProjectActivities" />
       <End Role="ProjectSubActivity" EntitySet="ProjectSubActivities" />
     </AssociationSet>
-    <AssociationSet Name="FK_ProjectControl_ProjectProfiles" Association="UcasProModel.FK_ProjectControl_ProjectProfiles">
+    <AssociationSet Name="FK_ProjectControls_ProjectProfiles1" Association="UcasProModel.FK_ProjectControls_ProjectProfiles1">
       <End Role="ProjectProfile" EntitySet="ProjectProfiles" />
       <End Role="ProjectControl" EntitySet="ProjectControls" />
     </AssociationSet>
-    <AssociationSet Name="FK_ProjectControl_UsersTb" Association="UcasProModel.FK_ProjectControl_UsersTb">
-      <End Role="UsersTb" EntitySet="UsersTbs" />
+    <AssociationSet Name="FK_ProjectControls_UserTb" Association="UcasProModel.FK_ProjectControls_UserTb">
+      <End Role="UserTb" EntitySet="UserTbs" />
       <End Role="ProjectControl" EntitySet="ProjectControls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectExpenses_ProjectProfiles" Association="UcasProModel.FK_ProjectExpenses_ProjectProfiles">
+      <End Role="ProjectProfile" EntitySet="ProjectProfiles" />
+      <End Role="ProjectExpens" EntitySet="ProjectExpenses" />
     </AssociationSet>
     <AssociationSet Name="FK_ProjectExpenses_ProjectSubActivities" Association="UcasProModel.FK_ProjectExpenses_ProjectSubActivities">
       <End Role="ProjectSubActivity" EntitySet="ProjectSubActivities" />
@@ -74,15 +86,29 @@
       <End Role="Supplier" EntitySet="Suppliers" />
       <End Role="ProjectExpens" EntitySet="ProjectExpenses" />
     </AssociationSet>
+    <AssociationSet Name="FK_ProjectSubActivities_ProjectProfiles" Association="UcasProModel.FK_ProjectSubActivities_ProjectProfiles">
+      <End Role="ProjectProfile" EntitySet="ProjectProfiles" />
+      <End Role="ProjectSubActivity" EntitySet="ProjectSubActivities" />
+    </AssociationSet>
     <AssociationSet Name="FK_TheFinancerProject_ProjectProfiles" Association="UcasProModel.FK_TheFinancerProject_ProjectProfiles">
       <End Role="ProjectProfile" EntitySet="ProjectProfiles" />
       <End Role="TheDonorsProject" EntitySet="TheDonorsProjects" />
     </AssociationSet>
     <AssociationSet Name="FK_TheFinancerProject_Thefinanciers" Association="UcasProModel.FK_TheFinancerProject_Thefinanciers">
-      <End Role="TheDonor" EntitySet="TheDonors1" />
+      <End Role="TheDonor" EntitySet="TheDonors" />
       <End Role="TheDonorsProject" EntitySet="TheDonorsProjects" />
     </AssociationSet>
   </EntityContainer>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <EntityType Name="AmountsReceived">
     <Key>
       <PropertyRef Name="ID" />
@@ -91,7 +117,9 @@
     <Property Name="TheFinancerProjectsID" Type="Int32" />
     <Property Name="Date" Type="DateTime" Precision="3" />
     <Property Name="Cost" Type="Double" />
+    <Property Name="ProjectProfile_ID" Type="Int32" />
     <NavigationProperty Name="TheDonorsProject" Relationship="UcasProModel.FK_AmountsReceived_TheFinancerProjects" FromRole="AmountsReceived" ToRole="TheDonorsProject" />
+    <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_AmountsReceiveds_ProjectProfiles" FromRole="AmountsReceived" ToRole="ProjectProfile" />
   </EntityType>
   <EntityType Name="Attachment">
     <Key>
@@ -110,8 +138,8 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Employee_ID" Type="Int32" Nullable="false" />
-    <Property Name="StartDate" Type="DateTime" />
-    <Property Name="EndDate" Type="DateTime" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
     <Property Name="SelaryAmount" Type="Double" />
     <Property Name="Status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="ProjectProfile_ID" Type="Int32" Nullable="false" />
@@ -132,7 +160,7 @@
     <Property Name="Mobilenumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Contracts" Relationship="UcasProModel.FK_Contracts_Employees" FromRole="Employee" ToRole="Contract" />
-    <NavigationProperty Name="UsersTbs" Relationship="UcasProModel.FK_UsersTb_Employees" FromRole="Employee" ToRole="UsersTb" />
+    <NavigationProperty Name="UserTbs" Relationship="UcasProModel.FK_UserTb_Employees" FromRole="Employee" ToRole="UserTb" />
   </EntityType>
   <EntityType Name="GroupsTb">
     <Key>
@@ -142,7 +170,7 @@
     <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="PeremissionsTbs" Relationship="UcasProModel.FK_PeremissionsTb_GroupsTb" FromRole="GroupsTb" ToRole="PeremissionsTb" />
-    <NavigationProperty Name="UsersTbs" Relationship="UcasProModel.FK_UsersTb_GroupsTb" FromRole="GroupsTb" ToRole="UsersTb" />
+    <NavigationProperty Name="UserTbs" Relationship="UcasProModel.FK_UserTb_GroupsTbs" FromRole="GroupsTb" ToRole="UserTb" />
   </EntityType>
   <EntityType Name="Monthlysalary">
     <Key>
@@ -153,7 +181,9 @@
     <Property Name="Amount" Type="Double" />
     <Property Name="IssueDate" Type="DateTime" Precision="3" />
     <Property Name="Formonth" Type="DateTime" Precision="3" />
+    <Property Name="ProjectProfile_ID" Type="Int32" />
     <NavigationProperty Name="Contract" Relationship="UcasProModel.FK_Salaries_Contracts" FromRole="Monthlysalary" ToRole="Contract" />
+    <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_Monthlysalaries_ProjectProfiles" FromRole="Monthlysalary" ToRole="ProjectProfile" />
   </EntityType>
   <EntityType Name="PeremissionsTb">
     <Key>
@@ -202,8 +232,8 @@
     <Property Name="UserID" Type="Int32" />
     <Property Name="ProjectID" Type="Int32" />
     <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_ProjectControl_ProjectProfiles" FromRole="ProjectControl" ToRole="ProjectProfile" />
-    <NavigationProperty Name="UsersTb" Relationship="UcasProModel.FK_ProjectControl_UsersTb" FromRole="ProjectControl" ToRole="UsersTb" />
+    <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_ProjectControls_ProjectProfiles1" FromRole="ProjectControl" ToRole="ProjectProfile" />
+    <NavigationProperty Name="UserTb" Relationship="UcasProModel.FK_ProjectControls_UserTb" FromRole="ProjectControl" ToRole="UserTb" />
   </EntityType>
   <EntityType Name="ProjectExpens">
     <Key>
@@ -217,6 +247,8 @@
     <Property Name="CashingNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ProjectSubActivity_ID" Type="Int32" />
     <Property Name="Supplier_ID" Type="Int32" />
+    <Property Name="ProjectProfile_ID" Type="Int32" />
+    <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_ProjectExpenses_ProjectProfiles" FromRole="ProjectExpens" ToRole="ProjectProfile" />
     <NavigationProperty Name="ProjectSubActivity" Relationship="UcasProModel.FK_ProjectExpenses_ProjectSubActivities" FromRole="ProjectExpens" ToRole="ProjectSubActivity" />
     <NavigationProperty Name="Supplier" Relationship="UcasProModel.FK_ProjectExpenses_Suppliers" FromRole="ProjectExpens" ToRole="Supplier" />
   </EntityType>
@@ -233,10 +265,14 @@
     <Property Name="progress" Type="Int32" />
     <Property Name="TotalCost" Type="Double" />
     <Property Name="Coin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AmountsReceiveds" Relationship="UcasProModel.FK_AmountsReceiveds_ProjectProfiles" FromRole="ProjectProfile" ToRole="AmountsReceived" />
     <NavigationProperty Name="Attachments" Relationship="UcasProModel.FK_Attachments_ProjectProfiles" FromRole="ProjectProfile" ToRole="Attachment" />
     <NavigationProperty Name="Contracts" Relationship="UcasProModel.FK_Contracts_ProjectProfiles" FromRole="ProjectProfile" ToRole="Contract" />
+    <NavigationProperty Name="Monthlysalaries" Relationship="UcasProModel.FK_Monthlysalaries_ProjectProfiles" FromRole="ProjectProfile" ToRole="Monthlysalary" />
     <NavigationProperty Name="ProjectActivities" Relationship="UcasProModel.FK_ProjectActivities_ProjectProfiles" FromRole="ProjectProfile" ToRole="ProjectActivity" />
-    <NavigationProperty Name="ProjectControls" Relationship="UcasProModel.FK_ProjectControl_ProjectProfiles" FromRole="ProjectProfile" ToRole="ProjectControl" />
+    <NavigationProperty Name="ProjectControls" Relationship="UcasProModel.FK_ProjectControls_ProjectProfiles1" FromRole="ProjectProfile" ToRole="ProjectControl" />
+    <NavigationProperty Name="ProjectExpenses" Relationship="UcasProModel.FK_ProjectExpenses_ProjectProfiles" FromRole="ProjectProfile" ToRole="ProjectExpens" />
+    <NavigationProperty Name="ProjectSubActivities" Relationship="UcasProModel.FK_ProjectSubActivities_ProjectProfiles" FromRole="ProjectProfile" ToRole="ProjectSubActivity" />
     <NavigationProperty Name="TheDonorsProjects" Relationship="UcasProModel.FK_TheFinancerProject_ProjectProfiles" FromRole="ProjectProfile" ToRole="TheDonorsProject" />
   </EntityType>
   <EntityType Name="ProjectSubActivity">
@@ -252,8 +288,10 @@
     <Property Name="Progress" Type="Int32" />
     <Property Name="TotalCost" Type="Double" />
     <Property Name="ProjectActivity_ID" Type="Int32" />
+    <Property Name="ProjectProfile_ID" Type="Int32" />
     <NavigationProperty Name="ProjectActivity" Relationship="UcasProModel.FK_ProjectSubActivities_ProjectActivities" FromRole="ProjectSubActivity" ToRole="ProjectActivity" />
     <NavigationProperty Name="ProjectExpenses" Relationship="UcasProModel.FK_ProjectExpenses_ProjectSubActivities" FromRole="ProjectSubActivity" ToRole="ProjectExpens" />
+    <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_ProjectSubActivities_ProjectProfiles" FromRole="ProjectSubActivity" ToRole="ProjectProfile" />
   </EntityType>
   <EntityType Name="Supplier">
     <Key>
@@ -268,17 +306,7 @@
     <Property Name="Adderss" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="ProjectExpenses" Relationship="UcasProModel.FK_ProjectExpenses_Suppliers" FromRole="Supplier" ToRole="ProjectExpens" />
   </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
-  <EntityType Name="TheDonors">
+  <EntityType Name="TheDonor">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
@@ -303,18 +331,18 @@
     <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_TheFinancerProject_ProjectProfiles" FromRole="TheDonorsProject" ToRole="ProjectProfile" />
     <NavigationProperty Name="TheDonor" Relationship="UcasProModel.FK_TheFinancerProject_Thefinanciers" FromRole="TheDonorsProject" ToRole="TheDonor" />
   </EntityType>
-  <EntityType Name="UsersTb">
+  <EntityType Name="UserTb">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="GroupID" Type="Int32" />
-    <Property Name="EmployeeID" Type="Int32" />
-    <NavigationProperty Name="Employee" Relationship="UcasProModel.FK_UsersTb_Employees" FromRole="UsersTb" ToRole="Employee" />
-    <NavigationProperty Name="GroupsTb" Relationship="UcasProModel.FK_UsersTb_GroupsTb" FromRole="UsersTb" ToRole="GroupsTb" />
-    <NavigationProperty Name="ProjectControls" Relationship="UcasProModel.FK_ProjectControl_UsersTb" FromRole="UsersTb" ToRole="ProjectControl" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Group_ID" Type="Int32" />
+    <Property Name="Employee_ID" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="UcasProModel.FK_UserTb_Employees" FromRole="UserTb" ToRole="Employee" />
+    <NavigationProperty Name="GroupsTb" Relationship="UcasProModel.FK_UserTb_GroupsTbs" FromRole="UserTb" ToRole="GroupsTb" />
+    <NavigationProperty Name="ProjectControls" Relationship="UcasProModel.FK_ProjectControls_UserTb" FromRole="UserTb" ToRole="ProjectControl" />
   </EntityType>
   <Association Name="FK_AmountsReceived_TheFinancerProjects">
     <End Type="UcasProModel.TheDonorsProject" Role="TheDonorsProject" Multiplicity="0..1" />
@@ -325,6 +353,18 @@
       </Principal>
       <Dependent Role="AmountsReceived">
         <PropertyRef Name="TheFinancerProjectsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AmountsReceiveds_ProjectProfiles">
+    <End Type="UcasProModel.ProjectProfile" Role="ProjectProfile" Multiplicity="0..1" />
+    <End Type="UcasProModel.AmountsReceived" Role="AmountsReceived" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectProfile">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AmountsReceived">
+        <PropertyRef Name="ProjectProfile_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -376,15 +416,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_UsersTb_Employees">
+  <Association Name="FK_UserTb_Employees">
     <End Type="UcasProModel.Employee" Role="Employee" Multiplicity="0..1" />
-    <End Type="UcasProModel.UsersTb" Role="UsersTb" Multiplicity="*" />
+    <End Type="UcasProModel.UserTb" Role="UserTb" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Employee">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="UsersTb">
-        <PropertyRef Name="EmployeeID" />
+      <Dependent Role="UserTb">
+        <PropertyRef Name="Employee_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -400,15 +440,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_UsersTb_GroupsTb">
+  <Association Name="FK_UserTb_GroupsTbs">
     <End Type="UcasProModel.GroupsTb" Role="GroupsTb" Multiplicity="0..1" />
-    <End Type="UcasProModel.UsersTb" Role="UsersTb" Multiplicity="*" />
+    <End Type="UcasProModel.UserTb" Role="UserTb" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="GroupsTb">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="UsersTb">
-        <PropertyRef Name="GroupID" />
+      <Dependent Role="UserTb">
+        <PropertyRef Name="Group_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Monthlysalaries_ProjectProfiles">
+    <End Type="UcasProModel.ProjectProfile" Role="ProjectProfile" Multiplicity="0..1" />
+    <End Type="UcasProModel.Monthlysalary" Role="Monthlysalary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectProfile">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Monthlysalary">
+        <PropertyRef Name="ProjectProfile_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -436,7 +488,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ProjectControl_ProjectProfiles">
+  <Association Name="FK_ProjectControls_ProjectProfiles1">
     <End Type="UcasProModel.ProjectProfile" Role="ProjectProfile" Multiplicity="0..1" />
     <End Type="UcasProModel.ProjectControl" Role="ProjectControl" Multiplicity="*" />
     <ReferentialConstraint>
@@ -448,15 +500,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ProjectControl_UsersTb">
-    <End Type="UcasProModel.UsersTb" Role="UsersTb" Multiplicity="0..1" />
+  <Association Name="FK_ProjectControls_UserTb">
+    <End Type="UcasProModel.UserTb" Role="UserTb" Multiplicity="0..1" />
     <End Type="UcasProModel.ProjectControl" Role="ProjectControl" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="UsersTb">
+      <Principal Role="UserTb">
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="ProjectControl">
         <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectExpenses_ProjectProfiles">
+    <End Type="UcasProModel.ProjectProfile" Role="ProjectProfile" Multiplicity="0..1" />
+    <End Type="UcasProModel.ProjectExpens" Role="ProjectExpens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectProfile">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectExpens">
+        <PropertyRef Name="ProjectProfile_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -484,6 +548,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ProjectSubActivities_ProjectProfiles">
+    <End Type="UcasProModel.ProjectProfile" Role="ProjectProfile" Multiplicity="0..1" />
+    <End Type="UcasProModel.ProjectSubActivity" Role="ProjectSubActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectProfile">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectSubActivity">
+        <PropertyRef Name="ProjectProfile_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TheFinancerProject_ProjectProfiles">
     <End Type="UcasProModel.ProjectProfile" Role="ProjectProfile" Multiplicity="1" />
     <End Type="UcasProModel.TheDonorsProject" Role="TheDonorsProject" Multiplicity="*" />
@@ -497,7 +573,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_TheFinancerProject_Thefinanciers">
-    <End Type="UcasProModel.TheDonors" Role="TheDonor" Multiplicity="1" />
+    <End Type="UcasProModel.TheDonor" Role="TheDonor" Multiplicity="1" />
     <End Type="UcasProModel.TheDonorsProject" Role="TheDonorsProject" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TheDonor">

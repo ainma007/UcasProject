@@ -102,6 +102,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             if (col == 11)
                 
             {
+                
                 ProjectSubActivity tb = projectSubActivityBindingSource.Current as ProjectSubActivity;
                 SubActivityCmd.DeleteSubActivity(tb.ID);
                 MessageBox.Show("تمت علمية الحذف");

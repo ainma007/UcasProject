@@ -22,7 +22,7 @@ namespace Ucas.Data.CommandClass
         {
             db = new UcasProEntities();
             var q = (from i in db.TheDonorsProjects
-                     join pro in db.TheDonors1 on i.DonorsID equals pro.ID
+                     join pro in db.TheDonors on i.DonorsID equals pro.ID
                      where i.ProjectID == ProId
                    
 

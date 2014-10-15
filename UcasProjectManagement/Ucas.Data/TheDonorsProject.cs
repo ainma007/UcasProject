@@ -26,6 +26,6 @@ namespace Ucas.Data
     
         public virtual ICollection<AmountsReceived> AmountsReceiveds { get; set; }
         public virtual ProjectProfile ProjectProfile { get; set; }
-        public virtual TheDonors TheDonor { get; set; }
+        public virtual TheDonor TheDonor { get; set; }
     }
 }

@@ -39,7 +39,7 @@
             this.ribbonTab2 = new Telerik.WinControls.UI.RibbonTab();
             this.radRibbonBarGroup2 = new Telerik.WinControls.UI.RadRibbonBarGroup();
             this.radButtonElement7 = new Telerik.WinControls.UI.RadButtonElement();
-            this.radButtonElement4 = new Telerik.WinControls.UI.RadButtonElement();
+            this.ExpensesBTn = new Telerik.WinControls.UI.RadButtonElement();
             this.radButtonElement5 = new Telerik.WinControls.UI.RadButtonElement();
             this.ribbonTab3 = new Telerik.WinControls.UI.RibbonTab();
             this.radRibbonFormBehavior1 = new Telerik.WinControls.UI.RadRibbonFormBehavior();
@@ -86,7 +86,7 @@
             this.ribbonTab3});
             this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
             this.radRibbonBar1.Name = "radRibbonBar1";
-            this.radRibbonBar1.Size = new System.Drawing.Size(974, 161);
+            this.radRibbonBar1.Size = new System.Drawing.Size(982, 154);
             this.radRibbonBar1.StartButtonImage = ((System.Drawing.Image)(resources.GetObject("radRibbonBar1.StartButtonImage")));
             this.radRibbonBar1.TabIndex = 0;
             this.radRibbonBar1.Text = "radRibbonBar1";
@@ -96,7 +96,7 @@
             // 
             this.ribbonTab1.AccessibleDescription = "ادارة المشروع";
             this.ribbonTab1.AccessibleName = "ادارة المشروع";
-            this.ribbonTab1.IsSelected = true;
+            this.ribbonTab1.IsSelected = false;
             this.ribbonTab1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radRibbonBarGroup1});
             this.ribbonTab1.Name = "ribbonTab1";
@@ -155,7 +155,7 @@
             // 
             this.ribbonTab2.AccessibleDescription = "مصاريف وايرادات المشروع";
             this.ribbonTab2.AccessibleName = "مصاريف وايرادات المشروع";
-            this.ribbonTab2.IsSelected = false;
+            this.ribbonTab2.IsSelected = true;
             this.ribbonTab2.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radRibbonBarGroup2});
             this.ribbonTab2.Name = "ribbonTab2";
@@ -169,7 +169,7 @@
             this.radRibbonBarGroup2.AccessibleName = "مصاريف المشروع";
             this.radRibbonBarGroup2.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radButtonElement7,
-            this.radButtonElement4,
+            this.ExpensesBTn,
             this.radButtonElement5});
             this.radRibbonBarGroup2.Name = "radRibbonBarGroup2";
             this.radRibbonBarGroup2.Text = "مصاريف المشروع";
@@ -183,13 +183,14 @@
             this.radButtonElement7.Text = "المبالغ المستلمة من الموردين";
             this.radButtonElement7.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // radButtonElement4
+            // ExpensesBTn
             // 
-            this.radButtonElement4.AccessibleDescription = "مصروفات المشروع";
-            this.radButtonElement4.AccessibleName = "مصروفات المشروع";
-            this.radButtonElement4.Name = "radButtonElement4";
-            this.radButtonElement4.Text = "مصروفات المشروع";
-            this.radButtonElement4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.ExpensesBTn.AccessibleDescription = "مصروفات المشروع";
+            this.ExpensesBTn.AccessibleName = "مصروفات المشروع";
+            this.ExpensesBTn.Name = "ExpensesBTn";
+            this.ExpensesBTn.Text = "مصروفات المشروع";
+            this.ExpensesBTn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.ExpensesBTn.Click += new System.EventHandler(this.ExpensesBTn_Click);
             // 
             // radButtonElement5
             // 
@@ -213,9 +214,9 @@
             // 
             // radStatusStrip1
             // 
-            this.radStatusStrip1.Location = new System.Drawing.Point(0, 728);
+            this.radStatusStrip1.Location = new System.Drawing.Point(0, 761);
             this.radStatusStrip1.Name = "radStatusStrip1";
-            this.radStatusStrip1.Size = new System.Drawing.Size(974, 25);
+            this.radStatusStrip1.Size = new System.Drawing.Size(982, 25);
             this.radStatusStrip1.TabIndex = 2;
             this.radStatusStrip1.Text = "radStatusStrip1";
             this.radStatusStrip1.ThemeName = "TelerikMetro";
@@ -238,9 +239,9 @@
             this.radGroupBox1.Controls.Add(this.radLabel1);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGroupBox1.HeaderText = "موجز للمشروع";
-            this.radGroupBox1.Location = new System.Drawing.Point(0, 161);
+            this.radGroupBox1.Location = new System.Drawing.Point(0, 154);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(974, 566);
+            this.radGroupBox1.Size = new System.Drawing.Size(982, 607);
             this.radGroupBox1.TabIndex = 3;
             this.radGroupBox1.Text = "موجز للمشروع";
             this.radGroupBox1.ThemeName = "TelerikMetro";
@@ -363,7 +364,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 752);
+            this.ClientSize = new System.Drawing.Size(982, 786);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.radStatusStrip1);
             this.Controls.Add(this.radRibbonBar1);
@@ -414,7 +415,7 @@
         private Telerik.WinControls.UI.RibbonTab ribbonTab2;
         private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup2;
         private Telerik.WinControls.UI.RadButtonElement radButtonElement7;
-        private Telerik.WinControls.UI.RadButtonElement radButtonElement4;
+        private Telerik.WinControls.UI.RadButtonElement ExpensesBTn;
         private Telerik.WinControls.UI.RadButtonElement radButtonElement5;
         private Telerik.WinControls.UI.RibbonTab ribbonTab3;
         private Telerik.WinControls.UI.RadRibbonFormBehavior radRibbonFormBehavior1;

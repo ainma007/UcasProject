@@ -109,7 +109,7 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>UcasPro.tt</DependentUpon>
     </Compile>
-    <Compile Include="TheDonors.cs">
+    <Compile Include="TheDonor.cs">
       <DependentUpon>UcasPro.tt</DependentUpon>
     </Compile>
     <Compile Include="TheDonorsProject.cs">
@@ -130,7 +130,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UcasPro.edmx</DependentUpon>
     </Compile>
-    <Compile Include="UsersTb.cs">
+    <Compile Include="UserTb.cs">
       <DependentUpon>UcasPro.tt</DependentUpon>
     </Compile>
   </ItemGroup>

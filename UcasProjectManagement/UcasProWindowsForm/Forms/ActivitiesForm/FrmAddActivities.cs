@@ -60,7 +60,8 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 EndDate = DateTime.Parse(EndDateTimePicker.Value.Date.ToString()),
                 Status = "فعال",
                 Progress = 0,
-                TotalCost = Convert.ToDouble(TotalCostTextBox.Text)
+                TotalCost = Convert.ToDouble(TotalCostTextBox.Text),
+                
             };
 
             ActivityCmd.NewActivity(tb);

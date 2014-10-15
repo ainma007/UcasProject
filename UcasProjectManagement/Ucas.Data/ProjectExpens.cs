@@ -22,7 +22,9 @@ namespace Ucas.Data
         public string CashingNumber { get; set; }
         public Nullable<int> ProjectSubActivity_ID { get; set; }
         public Nullable<int> Supplier_ID { get; set; }
+        public Nullable<int> ProjectProfile_ID { get; set; }
     
+        public virtual ProjectProfile ProjectProfile { get; set; }
         public virtual ProjectSubActivity ProjectSubActivity { get; set; }
         public virtual Supplier Supplier { get; set; }
     }

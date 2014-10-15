@@ -4,6 +4,7 @@ using Telerik.WinControls;
 using Ucas.Data.CommandClass;
 using UcasProWindowsForm.Forms.ActivitiesForm;
 using UcasProWindowsForm.Forms.EmployeeForm;
+using UcasProWindowsForm.Forms.ExpensesForm;
 using UcasProWindowsForm.Forms.ProjectProfileForm;
 namespace UcasProWindowsForm.Forms.MainForm
 {
@@ -34,7 +35,7 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmTheDonorsAndProjectAdd frm = new FrmTheDonorsAndProjectAdd();
+            FrmAddSalaries frm = new FrmAddSalaries();
             frm.ShowDialog();
         }
 
@@ -63,6 +64,12 @@ namespace UcasProWindowsForm.Forms.MainForm
         {
             FrmAllActivitesMange Activfrm = new FrmAllActivitesMange();
             Activfrm.ShowDialog();
+        }
+
+        private void ExpensesBTn_Click(object sender, EventArgs e)
+        {
+            FrmManageExpenses frm = new FrmManageExpenses();
+            frm.ShowDialog();
         }
     }
 }

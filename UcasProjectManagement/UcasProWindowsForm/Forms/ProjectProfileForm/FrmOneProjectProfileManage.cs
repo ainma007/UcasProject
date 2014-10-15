@@ -35,7 +35,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             this.DonarsColumnComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
 
 
-            DonarsColumnComboBox.DataSource = TheDonorsCmd.GetAllDonors();
+            DonarsColumnComboBox.DataSource = TheDonorCmd.GetAllDonors();
 
 
         }

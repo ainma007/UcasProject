@@ -20,6 +20,6 @@ namespace Ucas.Data
         public string Status { get; set; }
     
         public virtual ProjectProfile ProjectProfile { get; set; }
-        public virtual UsersTb UsersTb { get; set; }
+        public virtual UserTb UserTb { get; set; }
     }
 }

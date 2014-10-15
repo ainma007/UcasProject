@@ -16,10 +16,14 @@ namespace Ucas.Data
     {
         public ProjectProfile()
         {
+            this.AmountsReceiveds = new HashSet<AmountsReceived>();
             this.Attachments = new HashSet<Attachment>();
             this.Contracts = new HashSet<Contract>();
+            this.Monthlysalaries = new HashSet<Monthlysalary>();
             this.ProjectActivities = new HashSet<ProjectActivity>();
             this.ProjectControls = new HashSet<ProjectControl>();
+            this.ProjectExpenses = new HashSet<ProjectExpens>();
+            this.ProjectSubActivities = new HashSet<ProjectSubActivity>();
             this.TheDonorsProjects = new HashSet<TheDonorsProject>();
         }
     
@@ -33,10 +37,14 @@ namespace Ucas.Data
         public Nullable<double> TotalCost { get; set; }
         public string Coin { get; set; }
     
+        public virtual ICollection<AmountsReceived> AmountsReceiveds { get; set; }
         public virtual ICollection<Attachment> Attachments { get; set; }
         public virtual ICollection<Contract> Contracts { get; set; }
+        public virtual ICollection<Monthlysalary> Monthlysalaries { get; set; }
         public virtual ICollection<ProjectActivity> ProjectActivities { get; set; }
         public virtual ICollection<ProjectControl> ProjectControls { get; set; }
+        public virtual ICollection<ProjectExpens> ProjectExpenses { get; set; }
+        public virtual ICollection<ProjectSubActivity> ProjectSubActivities { get; set; }
         public virtual ICollection<TheDonorsProject> TheDonorsProjects { get; set; }
     }
 }

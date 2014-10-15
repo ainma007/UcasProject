@@ -17,7 +17,7 @@ namespace Ucas.Data
         public GroupsTb()
         {
             this.PeremissionsTbs = new HashSet<PeremissionsTb>();
-            this.UsersTbs = new HashSet<UsersTb>();
+            this.UserTbs = new HashSet<UserTb>();
         }
     
         public int ID { get; set; }
@@ -25,6 +25,6 @@ namespace Ucas.Data
         public string Description { get; set; }
     
         public virtual ICollection<PeremissionsTb> PeremissionsTbs { get; set; }
-        public virtual ICollection<UsersTb> UsersTbs { get; set; }
+        public virtual ICollection<UserTb> UserTbs { get; set; }
     }
 }

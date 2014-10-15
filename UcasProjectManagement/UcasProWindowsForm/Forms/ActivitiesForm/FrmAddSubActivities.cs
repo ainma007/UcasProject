@@ -99,6 +99,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 Status="فعال",
                 Progress=0,
                 TotalCost=Convert.ToDouble(TotalCostTextBox.Text),
+                ProjectProfile_ID = InformationsClass.ProjID,
 
 
             };

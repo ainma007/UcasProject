@@ -17,7 +17,7 @@ namespace Ucas.Data
         public Employee()
         {
             this.Contracts = new HashSet<Contract>();
-            this.UsersTbs = new HashSet<UsersTb>();
+            this.UserTbs = new HashSet<UserTb>();
         }
     
         public int ID { get; set; }
@@ -30,6 +30,6 @@ namespace Ucas.Data
         public string Email { get; set; }
     
         public virtual ICollection<Contract> Contracts { get; set; }
-        public virtual ICollection<UsersTb> UsersTbs { get; set; }
+        public virtual ICollection<UserTb> UserTbs { get; set; }
     }
 }

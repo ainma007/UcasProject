@@ -7,21 +7,20 @@ using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
-using Ucas.Data;
 using Ucas.Data.CommandClass;
-using Ucas.Data.Special_Classes;
+using Ucas.Data;
 
 namespace UcasProWindowsForm.Forms.ExpensesForm
 {
-    public partial class FrmAddExpenses : Telerik.WinControls.UI.RadForm
+    public partial class FrmEditExpense : Telerik.WinControls.UI.RadForm
     {
-        public FrmAddExpenses()
+        public FrmEditExpense()
         {
             InitializeComponent();
             RadMessageBox.SetThemeName("TelerikMetro");
-      
         }
-        private void FillComboBox()
+        public int XExpID { get; set; }
+        public void FillComboBox()
         {
             ///تعبئة النشاطات الفرعية
             this.SubActivtiesComboBox.AutoFilter = true;
@@ -34,7 +33,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             filter.Operator = FilterOperator.Contains;
             this.SubActivtiesComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
             SubActivtiesComboBox.DataSource = SubActivityCmd.GetAllSubActivitiesByProjectID(InformationsClass.ProjID);
-            
+
             //تعبئة الموردين
             this.SupplierComboBox.AutoFilter = true;
             this.SupplierComboBox.ValueMember = "ID";
@@ -46,38 +45,33 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             filter2.Operator = FilterOperator.Contains;
             this.SupplierComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter2);
             SupplierComboBox.DataSource = SuppliersCmd.GetAll();
-            
+
         }
-        private void FrmAddExpenses_Load(object sender, EventArgs e)
+        private void FrmEditExpense_Load(object sender, EventArgs e)
         {
-            FillComboBox();
-          
+          //  FillComboBox();
         }
 
-        
-
-     
-        private void AddBtn_Click(object sender, EventArgs e)
+        private void SaveBtn_Click(object sender, EventArgs e)
         {
-            ProjectExpens tb = new ProjectExpens
+            if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
-                ProjectProfile_ID=InformationsClass.ProjID,
-                ProjectSubActivity_ID=int.Parse(SubActivtiesComboBox.SelectedValue.ToString()),
-                ExpensesName=ExpensesNameTextBox.Text,
-                DateofProcess=DateOfProecssPicker.Value.Date,
-                BillNumber=BillTextBox.Text,
-                RequiarAmount=Convert.ToDouble( RequiarAmountTextBox.Text),
-                CashingNumber = CashingNumberTextBox.Text,
-                Supplier_ID=int.Parse(SupplierComboBox.SelectedValue.ToString())
+                ProjectExpens tb = new ProjectExpens
+                {
+                    ID = XExpID,
+                    ProjectSubActivity_ID = int.Parse(SubActivtiesComboBox.SelectedValue.ToString()),
+                    ExpensesName = ExpensesNameTextBox.Text,
+                    BillNumber = BillTextBox.Text,
+                    DateofProcess = DateOfProecssPicker.Value.Date,
+                    CashingNumber = CashingNumberTextBox.Text,
+                    RequiarAmount = Convert.ToDouble(RequiarAmountTextBox.Text),
+                    Supplier_ID = int.Parse(SupplierComboBox.SelectedValue.ToString()),
 
 
-
-            };
-
-            ProjectExpensesCmd.NewProjectExpens(tb);
-            MessageBox.Show("تمت علمية الاضافة");
+                };
+                ProjectExpensesCmd.EditProjectExpens(tb);
+                RadMessageBox.Show("تمت عملية التعديل");
+            }
         }
-      
-
     }
 }

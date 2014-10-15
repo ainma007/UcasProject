@@ -33,7 +33,7 @@ namespace UcasProWindowsForm.Forms.MainForm
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
 
 
-            DonorsColumnComboBox.DataSource = TheDonorsCmd.GetAllDonors();
+            DonorsColumnComboBox.DataSource = TheDonorCmd.GetAllDonors();
 
 
         }

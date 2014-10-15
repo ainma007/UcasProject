@@ -12,21 +12,21 @@ namespace Ucas.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class TheDonors
+    public partial class UserTb
     {
-        public TheDonors()
+        public UserTb()
         {
-            this.TheDonorsProjects = new HashSet<TheDonorsProject>();
+            this.ProjectControls = new HashSet<ProjectControl>();
         }
     
         public int ID { get; set; }
-        public string Name { get; set; }
-        public string agentName { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Fax { get; set; }
-        public string Email { get; set; }
-        public string Adderss { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public Nullable<int> Group_ID { get; set; }
+        public Nullable<int> Employee_ID { get; set; }
     
-        public virtual ICollection<TheDonorsProject> TheDonorsProjects { get; set; }
+        public virtual Employee Employee { get; set; }
+        public virtual GroupsTb GroupsTb { get; set; }
+        public virtual ICollection<ProjectControl> ProjectControls { get; set; }
     }
 }

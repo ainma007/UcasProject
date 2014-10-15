@@ -136,6 +136,24 @@
     <Compile Include="Forms\ExpensesForm\FrmAddSalaries.Designer.cs">
       <DependentUpon>FrmAddSalaries.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ExpensesForm\FrmEditExpense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExpensesForm\FrmEditExpense.Designer.cs">
+      <DependentUpon>FrmEditExpense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExpensesForm\FrmManageExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExpensesForm\FrmManageExpenses.Designer.cs">
+      <DependentUpon>FrmManageExpenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExpensesForm\FrmSalariesManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExpensesForm\FrmSalariesManage.Designer.cs">
+      <DependentUpon>FrmSalariesManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm\FrmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,23 +232,11 @@
     <Compile Include="Forms\UserSystemForm\FrmAddGroup.Designer.cs">
       <DependentUpon>FrmAddGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UserSystemForm\frmAddUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\UserSystemForm\frmAddUser.Designer.cs">
-      <DependentUpon>frmAddUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\UserSystemForm\FrmGroupManage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\UserSystemForm\FrmGroupManage.Designer.cs">
       <DependentUpon>FrmGroupManage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\UserSystemForm\FrmUserManagment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\UserSystemForm\FrmUserManagment.Designer.cs">
-      <DependentUpon>FrmUserManagment.cs</DependentUpon>
     </Compile>
     <Compile Include="OperationX.cs" />
     <Compile Include="Program.cs" />
@@ -273,6 +279,15 @@
     <EmbeddedResource Include="Forms\ExpensesForm\FrmAddSalaries.resx">
       <DependentUpon>FrmAddSalaries.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExpensesForm\FrmEditExpense.resx">
+      <DependentUpon>FrmEditExpense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExpensesForm\FrmManageExpenses.resx">
+      <DependentUpon>FrmManageExpenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExpensesForm\FrmSalariesManage.resx">
+      <DependentUpon>FrmSalariesManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm\FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,14 +327,8 @@
     <EmbeddedResource Include="Forms\UserSystemForm\FrmAddGroup.resx">
       <DependentUpon>FrmAddGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserSystemForm\frmAddUser.resx">
-      <DependentUpon>frmAddUser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserSystemForm\FrmGroupManage.resx">
       <DependentUpon>FrmGroupManage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserSystemForm\FrmUserManagment.resx">
-      <DependentUpon>FrmUserManagment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -348,10 +357,10 @@
     <None Include="Properties\DataSources\Ucas.Data.ProjectSubActivity.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.Supplier.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.sysdiagram.datasource" />
-    <None Include="Properties\DataSources\Ucas.Data.TheDonors.datasource" />
+    <None Include="Properties\DataSources\Ucas.Data.TheDonor.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.TheDonorsProject.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.UcasProEntities.datasource" />
-    <None Include="Properties\DataSources\Ucas.Data.UsersTb.datasource" />
+    <None Include="Properties\DataSources\Ucas.Data.UserTb.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

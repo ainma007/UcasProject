@@ -226,7 +226,7 @@
             // 
             // theDonorsBindingSource
             // 
-            this.theDonorsBindingSource.DataSource = typeof(Ucas.Data.TheDonors);
+            this.theDonorsBindingSource.DataSource = typeof(Ucas.Data.TheDonor);
             // 
             // FrmManagementTheDonors
             // 

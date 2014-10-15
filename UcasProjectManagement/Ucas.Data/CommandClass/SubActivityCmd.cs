@@ -74,6 +74,8 @@ namespace Ucas.Data.CommandClass
             }
         }
 
+
+     
         public static List<ProjectSubActivity> GetAllSubActivitiesByActivityID(int ActID)
         {
             db = new UcasProEntities();
@@ -85,6 +87,19 @@ namespace Ucas.Data.CommandClass
                      select A).ToList();
           return LST;
          
+        }
+
+        public static List<ProjectSubActivity> GetAllSubActivitiesByProjectID(int ProID)
+        {
+            db = new UcasProEntities();
+            db.Configuration.LazyLoadingEnabled = false;
+            db.Configuration.ProxyCreationEnabled = false;
+            var LST = (from A in db.ProjectSubActivities
+                       orderby A.Startdate ascending
+                       where A.ProjectProfile_ID == ProID
+                       select A).ToList();
+            return LST;
+
         }
         public static List<ProjectSubActivity> GetAllSubActivities()
         {

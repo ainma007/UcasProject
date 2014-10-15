@@ -44,11 +44,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn groupNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn peremissionsTbsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usersTbsDataGridViewTextBoxColumn;
+       
     }
 }
 

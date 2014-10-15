@@ -39,7 +39,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
 
 
-             TheDonors Donrs=new TheDonors()
+             TheDonor Donrs=new TheDonor()
             {
                 Name= TheDonorsNameTextBox.Text,
                 agentName=AgentNameTextBox.Text,
@@ -51,7 +51,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
 
             };
-             TheDonorsCmd.AddDonor(Donrs);
+             TheDonorCmd.AddDonor(Donrs);
              RadMessageBox.SetThemeName("telerikMetroBlueTheme");
 
             DialogResult ds = RadMessageBox.Show(this, OperationX.AddMessageDone, "Done", MessageBoxButtons.OK, RadMessageIcon.Info);

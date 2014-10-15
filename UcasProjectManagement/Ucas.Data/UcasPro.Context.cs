@@ -25,6 +25,7 @@ namespace Ucas.Data
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<AmountsReceived> AmountsReceiveds { get; set; }
         public virtual DbSet<Attachment> Attachments { get; set; }
         public virtual DbSet<Contract> Contracts { get; set; }
@@ -38,9 +39,8 @@ namespace Ucas.Data
         public virtual DbSet<ProjectProfile> ProjectProfiles { get; set; }
         public virtual DbSet<ProjectSubActivity> ProjectSubActivities { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<TheDonors> TheDonors1 { get; set; }
+        public virtual DbSet<TheDonor> TheDonors { get; set; }
         public virtual DbSet<TheDonorsProject> TheDonorsProjects { get; set; }
-        public virtual DbSet<UsersTb> UsersTbs { get; set; }
+        public virtual DbSet<UserTb> UserTbs { get; set; }
     }
 }

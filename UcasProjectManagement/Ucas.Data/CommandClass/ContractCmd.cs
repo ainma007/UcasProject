@@ -90,7 +90,20 @@ namespace Ucas.Data.CommandClass
         }
 
 
-      
+        public static IEnumerable GetAllContractsForComboBox(int ProId)
+        {
+            db = new UcasProEntities();
+            var q = (from i in db.Contracts
+                     join emp in db.Employees on i.Employee_ID equals emp.ID
+                     where i.ProjectProfile_ID == ProId
+
+
+
+
+                     select new { i.ID, emp.EmployeeName, emp.EmployeejobNumber }).ToList();
+            return q;
+
+        }
 
     }
 }

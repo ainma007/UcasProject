@@ -69,11 +69,11 @@ namespace UcasProWindowsForm.Forms.MainForm
                 var GetCurrentUserFullData = UsersCmd.GetLoginUserDataByID(xUserID);
                 foreach (var item in GetCurrentUserFullData)
                 {
-                    xGroupID = Convert.ToInt32(item.GroupID);
+                    xGroupID = Convert.ToInt32(item.Group_ID);
                     InformationsClass.xCurrentUserID = item.ID;
                     InformationsClass.xCurrentUserName = UserNameTextBox.Text;
                     InformationsClass.xCurrentUserPass = PsswordTextBox.Text;
-                    InformationsClass._GroupID = Convert.ToInt32(item.GroupID);
+                    InformationsClass._GroupID = Convert.ToInt32(item.Group_ID);
                 }
                 TransfaireGroupDataInf();
                 //=====================================================================

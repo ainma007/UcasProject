@@ -4,37 +4,41 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="50202300d4234be69bbade1317c3b003" Name="Diagram1" ZoomLevel="93">
-        <EntityTypeShape EntityType="UcasProModel.AmountsReceived" Width="1.875" PointX="7.5" PointY="13.25" />
-        <EntityTypeShape EntityType="UcasProModel.Attachment" Width="1.5" PointX="4.5" PointY="9.5" />
-        <EntityTypeShape EntityType="UcasProModel.Contract" Width="1.5" PointX="9.5" PointY="6" />
-        <EntityTypeShape EntityType="UcasProModel.Employee" Width="1.5" PointX="12.125" PointY="5.875" />
-        <EntityTypeShape EntityType="UcasProModel.GroupsTb" Width="1.5" PointX="9.125" PointY="0.5" />
-        <EntityTypeShape EntityType="UcasProModel.Monthlysalary" Width="1.5" PointX="9.625" PointY="9.125" />
-        <EntityTypeShape EntityType="UcasProModel.PeremissionsTb" Width="1.5" PointX="11.75" PointY="0.5" />
-        <EntityTypeShape EntityType="UcasProModel.ProjectActivity" Width="1.5" PointX="9.625" PointY="15" />
-        <EntityTypeShape EntityType="UcasProModel.ProjectControl" Width="1.5" PointX="7.125" PointY="5.875" />
-        <EntityTypeShape EntityType="UcasProModel.ProjectExpens" Width="1.5" PointX="14.125" PointY="15.125" />
-        <EntityTypeShape EntityType="UcasProModel.ProjectProfile" Width="1.5" PointX="7" PointY="8.5" />
-        <EntityTypeShape EntityType="UcasProModel.ProjectSubActivity" Width="1.5" PointX="11.875" PointY="15" />
-        <EntityTypeShape EntityType="UcasProModel.Supplier" Width="1.5" PointX="17.5" PointY="15.625" />
-        <EntityTypeShape EntityType="UcasProModel.TheDonors" Width="1.5" PointX="14" PointY="11.625" />
-        <EntityTypeShape EntityType="UcasProModel.TheDonorsProject" Width="1.5" PointX="10.75" PointY="11.625" />
-        <EntityTypeShape EntityType="UcasProModel.UsersTb" Width="1.5" PointX="7" PointY="2.625" />
+      <Diagram DiagramId="50202300d4234be69bbade1317c3b003" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="UcasProModel.AmountsReceived" Width="1.5" PointX="3" PointY="7.25" />
+        <EntityTypeShape EntityType="UcasProModel.Attachment" Width="1.5" PointX="15.375" PointY="14.375" />
+        <EntityTypeShape EntityType="UcasProModel.Contract" Width="1.5" PointX="15.875" PointY="10.125" />
+        <EntityTypeShape EntityType="UcasProModel.Employee" Width="1.5" PointX="3.75" PointY="3.625" />
+        <EntityTypeShape EntityType="UcasProModel.GroupsTb" Width="1.5" PointX="0.875" PointY="2.625" />
+        <EntityTypeShape EntityType="UcasProModel.Monthlysalary" Width="1.5" PointX="18.25" PointY="10.375" />
+        <EntityTypeShape EntityType="UcasProModel.PeremissionsTb" Width="1.5" PointX="11.125" PointY="0.875" />
+        <EntityTypeShape EntityType="UcasProModel.ProjectActivity" Width="1.5" PointX="3" PointY="24.125" />
+        <EntityTypeShape EntityType="UcasProModel.ProjectControl" Width="1.5" PointX="8.75" PointY="7.5" />
+        <EntityTypeShape EntityType="UcasProModel.ProjectExpens" Width="1.5" PointX="8.125" PointY="13.875" />
+        <EntityTypeShape EntityType="UcasProModel.ProjectProfile" Width="1.5" PointX="11.75" PointY="9.75" />
+        <EntityTypeShape EntityType="UcasProModel.ProjectSubActivity" Width="1.5" PointX="5.375" PointY="14.25" />
+        <EntityTypeShape EntityType="UcasProModel.Supplier" Width="1.5" PointX="8.375" PointY="21.5" />
+        <EntityTypeShape EntityType="UcasProModel.TheDonor" Width="1.5" PointX="0.75" PointY="15.125" />
+        <EntityTypeShape EntityType="UcasProModel.TheDonorsProject" Width="1.5" PointX="3" PointY="13.25" />
+        <EntityTypeShape EntityType="UcasProModel.UserTb" Width="1.5" PointX="7.875" PointY="4.125" />
         <AssociationConnector Association="UcasProModel.FK_AmountsReceived_TheFinancerProjects" />
+        <AssociationConnector Association="UcasProModel.FK_AmountsReceiveds_ProjectProfiles" />
         <AssociationConnector Association="UcasProModel.FK_Attachments_ProjectProfiles" />
         <AssociationConnector Association="UcasProModel.FK_Contracts_Employees" />
         <AssociationConnector Association="UcasProModel.FK_Contracts_ProjectProfiles" />
         <AssociationConnector Association="UcasProModel.FK_Salaries_Contracts" />
-        <AssociationConnector Association="UcasProModel.FK_UsersTb_Employees" />
+        <AssociationConnector Association="UcasProModel.FK_UserTb_Employees" />
         <AssociationConnector Association="UcasProModel.FK_PeremissionsTb_GroupsTb" />
-        <AssociationConnector Association="UcasProModel.FK_UsersTb_GroupsTb" />
+        <AssociationConnector Association="UcasProModel.FK_UserTb_GroupsTbs" />
+        <AssociationConnector Association="UcasProModel.FK_Monthlysalaries_ProjectProfiles" />
         <AssociationConnector Association="UcasProModel.FK_ProjectActivities_ProjectProfiles" />
         <AssociationConnector Association="UcasProModel.FK_ProjectSubActivities_ProjectActivities" />
-        <AssociationConnector Association="UcasProModel.FK_ProjectControl_ProjectProfiles" />
-        <AssociationConnector Association="UcasProModel.FK_ProjectControl_UsersTb" />
+        <AssociationConnector Association="UcasProModel.FK_ProjectControls_ProjectProfiles1" />
+        <AssociationConnector Association="UcasProModel.FK_ProjectControls_UserTb" />
+        <AssociationConnector Association="UcasProModel.FK_ProjectExpenses_ProjectProfiles" />
         <AssociationConnector Association="UcasProModel.FK_ProjectExpenses_ProjectSubActivities" />
         <AssociationConnector Association="UcasProModel.FK_ProjectExpenses_Suppliers" />
+        <AssociationConnector Association="UcasProModel.FK_ProjectSubActivities_ProjectProfiles" />
         <AssociationConnector Association="UcasProModel.FK_TheFinancerProject_ProjectProfiles" />
         <AssociationConnector Association="UcasProModel.FK_TheFinancerProject_Thefinanciers" />
       </Diagram>

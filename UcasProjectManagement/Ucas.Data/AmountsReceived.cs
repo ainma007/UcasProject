@@ -18,7 +18,9 @@ namespace Ucas.Data
         public Nullable<int> TheFinancerProjectsID { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
         public Nullable<double> Cost { get; set; }
+        public Nullable<int> ProjectProfile_ID { get; set; }
     
         public virtual TheDonorsProject TheDonorsProject { get; set; }
+        public virtual ProjectProfile ProjectProfile { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
         private void GetAllFinanciers()
         {
 
-            theDonorsBindingSource.DataSource = TheDonorsCmd.GetAllDonors();
+            theDonorsBindingSource.DataSource = TheDonorCmd.GetAllDonors();
         }
         private void LockGrid()
         {
@@ -71,8 +71,8 @@ namespace UcasProWindowsForm.Forms.supplierForm
         {
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
-                TheDonors Donrs = theDonorsBindingSource.Current as TheDonors;
-                TheDonorsCmd.EditDonor(Donrs);
+                TheDonor Donrs = theDonorsBindingSource.Current as TheDonor;
+                TheDonorCmd.EditDonor(Donrs);
                GetAllFinanciers();
                 LockGrid();
             }
@@ -85,8 +85,8 @@ namespace UcasProWindowsForm.Forms.supplierForm
         }
         if (col == 9) { if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                     {
-                        TheDonors Donrs = theDonorsBindingSource.Current as TheDonors;
-                        TheDonorsCmd.DeleteDonor(Donrs.ID);
+                        TheDonorCmd Donrs = theDonorsBindingSource.Current as TheDonorCmd;
+                       // TheDonorCmd.DeleteDonor(Donrs.);
                        GetAllFinanciers();
                        LockGrid();
                     }

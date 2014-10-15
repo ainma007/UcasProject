@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/27/2014 22:43:15
--- Generated from EDMX file: C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\UcasPro.edmx
+-- Date Created: 10/13/2014 13:08:26
+-- Generated from EDMX file: C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\UcasPro.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -20,6 +20,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_AmountsReceived_TheFinancerProjects]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[AmountsReceiveds] DROP CONSTRAINT [FK_AmountsReceived_TheFinancerProjects];
 GO
+IF OBJECT_ID(N'[dbo].[FK_AmountsReceiveds_ProjectProfiles]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[AmountsReceiveds] DROP CONSTRAINT [FK_AmountsReceiveds_ProjectProfiles];
+GO
 IF OBJECT_ID(N'[dbo].[FK_Attachments_ProjectProfiles]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Attachments] DROP CONSTRAINT [FK_Attachments_ProjectProfiles];
 GO
@@ -29,29 +32,23 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_Contracts_ProjectProfiles]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Contracts] DROP CONSTRAINT [FK_Contracts_ProjectProfiles];
 GO
-IF OBJECT_ID(N'[dbo].[FK_Salaries_Contracts]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Monthlysalaries] DROP CONSTRAINT [FK_Salaries_Contracts];
-GO
-IF OBJECT_ID(N'[dbo].[FK_UsersTb_Employees]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[UsersTbs] DROP CONSTRAINT [FK_UsersTb_Employees];
+IF OBJECT_ID(N'[dbo].[FK_Monthlysalaries_ProjectProfiles]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Monthlysalaries] DROP CONSTRAINT [FK_Monthlysalaries_ProjectProfiles];
 GO
 IF OBJECT_ID(N'[dbo].[FK_PeremissionsTb_GroupsTb]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[PeremissionsTbs] DROP CONSTRAINT [FK_PeremissionsTb_GroupsTb];
 GO
-IF OBJECT_ID(N'[dbo].[FK_UsersTb_GroupsTb]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[UsersTbs] DROP CONSTRAINT [FK_UsersTb_GroupsTb];
-GO
 IF OBJECT_ID(N'[dbo].[FK_ProjectActivities_ProjectProfiles]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ProjectActivities] DROP CONSTRAINT [FK_ProjectActivities_ProjectProfiles];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ProjectSubActivities_ProjectActivities]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProjectSubActivities] DROP CONSTRAINT [FK_ProjectSubActivities_ProjectActivities];
+IF OBJECT_ID(N'[dbo].[FK_ProjectControls_ProjectProfiles1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProjectControls] DROP CONSTRAINT [FK_ProjectControls_ProjectProfiles1];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ProjectControl_ProjectProfiles]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProjectControls] DROP CONSTRAINT [FK_ProjectControl_ProjectProfiles];
+IF OBJECT_ID(N'[dbo].[FK_ProjectControls_UserTb]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProjectControls] DROP CONSTRAINT [FK_ProjectControls_UserTb];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ProjectControl_UsersTb]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProjectControls] DROP CONSTRAINT [FK_ProjectControl_UsersTb];
+IF OBJECT_ID(N'[dbo].[FK_ProjectExpenses_ProjectProfiles]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProjectExpenses] DROP CONSTRAINT [FK_ProjectExpenses_ProjectProfiles];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ProjectExpenses_ProjectSubActivities]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ProjectExpenses] DROP CONSTRAINT [FK_ProjectExpenses_ProjectSubActivities];
@@ -59,11 +56,26 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ProjectExpenses_Suppliers]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ProjectExpenses] DROP CONSTRAINT [FK_ProjectExpenses_Suppliers];
 GO
+IF OBJECT_ID(N'[dbo].[FK_ProjectSubActivities_ProjectActivities]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProjectSubActivities] DROP CONSTRAINT [FK_ProjectSubActivities_ProjectActivities];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProjectSubActivities_ProjectProfiles]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProjectSubActivities] DROP CONSTRAINT [FK_ProjectSubActivities_ProjectProfiles];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Salaries_Contracts]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Monthlysalaries] DROP CONSTRAINT [FK_Salaries_Contracts];
+GO
 IF OBJECT_ID(N'[dbo].[FK_TheFinancerProject_ProjectProfiles]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[TheDonorsProjects] DROP CONSTRAINT [FK_TheFinancerProject_ProjectProfiles];
 GO
 IF OBJECT_ID(N'[dbo].[FK_TheFinancerProject_Thefinanciers]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[TheDonorsProjects] DROP CONSTRAINT [FK_TheFinancerProject_Thefinanciers];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserTb_Employees]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserTb] DROP CONSTRAINT [FK_UserTb_Employees];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserTb_GroupsTbs]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserTb] DROP CONSTRAINT [FK_UserTb_GroupsTbs];
 GO
 
 -- --------------------------------------------------
@@ -112,26 +124,37 @@ GO
 IF OBJECT_ID(N'[dbo].[sysdiagrams]', 'U') IS NOT NULL
     DROP TABLE [dbo].[sysdiagrams];
 GO
-IF OBJECT_ID(N'[dbo].[TheDonors1]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[TheDonors1];
+IF OBJECT_ID(N'[dbo].[TheDonor]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TheDonor];
 GO
 IF OBJECT_ID(N'[dbo].[TheDonorsProjects]', 'U') IS NOT NULL
     DROP TABLE [dbo].[TheDonorsProjects];
 GO
-IF OBJECT_ID(N'[dbo].[UsersTbs]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[UsersTbs];
+IF OBJECT_ID(N'[dbo].[UserTb]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserTb];
 GO
 
 -- --------------------------------------------------
 -- Creating all tables
 -- --------------------------------------------------
 
+-- Creating table 'sysdiagrams'
+CREATE TABLE [dbo].[sysdiagrams] (
+    [name] nvarchar(128)  NOT NULL,
+    [principal_id] int  NOT NULL,
+    [diagram_id] int IDENTITY(1,1) NOT NULL,
+    [version] int  NULL,
+    [definition] varbinary(max)  NULL
+);
+GO
+
 -- Creating table 'AmountsReceiveds'
 CREATE TABLE [dbo].[AmountsReceiveds] (
     [ID] int IDENTITY(1,1) NOT NULL,
     [TheFinancerProjectsID] int  NULL,
     [Date] datetime  NULL,
-    [Cost] float  NULL
+    [Cost] float  NULL,
+    [ProjectProfile_ID] int  NULL
 );
 GO
 
@@ -184,7 +207,8 @@ CREATE TABLE [dbo].[Monthlysalaries] (
     [ContractID] int  NULL,
     [Amount] float  NULL,
     [IssueDate] datetime  NULL,
-    [Formonth] datetime  NULL
+    [Formonth] datetime  NULL,
+    [ProjectProfile_ID] int  NULL
 );
 GO
 
@@ -242,7 +266,8 @@ CREATE TABLE [dbo].[ProjectExpenses] (
     [RequiarAmount] float  NULL,
     [CashingNumber] nvarchar(max)  NULL,
     [ProjectSubActivity_ID] int  NULL,
-    [Supplier_ID] int  NULL
+    [Supplier_ID] int  NULL,
+    [ProjectProfile_ID] int  NULL
 );
 GO
 
@@ -270,7 +295,8 @@ CREATE TABLE [dbo].[ProjectSubActivities] (
     [Status] nvarchar(max)  NULL,
     [Progress] int  NULL,
     [TotalCost] float  NULL,
-    [ProjectActivity_ID] int  NULL
+    [ProjectActivity_ID] int  NULL,
+    [ProjectProfile_ID] int  NULL
 );
 GO
 
@@ -286,18 +312,8 @@ CREATE TABLE [dbo].[Suppliers] (
 );
 GO
 
--- Creating table 'sysdiagrams'
-CREATE TABLE [dbo].[sysdiagrams] (
-    [name] nvarchar(128)  NOT NULL,
-    [principal_id] int  NOT NULL,
-    [diagram_id] int IDENTITY(1,1) NOT NULL,
-    [version] int  NULL,
-    [definition] varbinary(max)  NULL
-);
-GO
-
--- Creating table 'TheDonors1'
-CREATE TABLE [dbo].[TheDonors1] (
+-- Creating table 'TheDonors'
+CREATE TABLE [dbo].[TheDonors] (
     [ID] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NULL,
     [agentName] nvarchar(max)  NULL,
@@ -317,19 +333,25 @@ CREATE TABLE [dbo].[TheDonorsProjects] (
 );
 GO
 
--- Creating table 'UsersTbs'
-CREATE TABLE [dbo].[UsersTbs] (
+-- Creating table 'UserTbs'
+CREATE TABLE [dbo].[UserTbs] (
     [ID] int IDENTITY(1,1) NOT NULL,
-    [UserName] nvarchar(50)  NULL,
-    [Password] nvarchar(50)  NULL,
-    [GroupID] int  NULL,
-    [EmployeeID] int  NULL
+    [UserName] nvarchar(max)  NULL,
+    [Password] nvarchar(max)  NULL,
+    [Group_ID] int  NULL,
+    [Employee_ID] int  NULL
 );
 GO
 
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
+
+-- Creating primary key on [diagram_id] in table 'sysdiagrams'
+ALTER TABLE [dbo].[sysdiagrams]
+ADD CONSTRAINT [PK_sysdiagrams]
+    PRIMARY KEY CLUSTERED ([diagram_id] ASC);
+GO
 
 -- Creating primary key on [ID] in table 'AmountsReceiveds'
 ALTER TABLE [dbo].[AmountsReceiveds]
@@ -409,15 +431,9 @@ ADD CONSTRAINT [PK_Suppliers]
     PRIMARY KEY CLUSTERED ([ID] ASC);
 GO
 
--- Creating primary key on [diagram_id] in table 'sysdiagrams'
-ALTER TABLE [dbo].[sysdiagrams]
-ADD CONSTRAINT [PK_sysdiagrams]
-    PRIMARY KEY CLUSTERED ([diagram_id] ASC);
-GO
-
--- Creating primary key on [ID] in table 'TheDonors1'
-ALTER TABLE [dbo].[TheDonors1]
-ADD CONSTRAINT [PK_TheDonors1]
+-- Creating primary key on [ID] in table 'TheDonors'
+ALTER TABLE [dbo].[TheDonors]
+ADD CONSTRAINT [PK_TheDonors]
     PRIMARY KEY CLUSTERED ([ID] ASC);
 GO
 
@@ -427,9 +443,9 @@ ADD CONSTRAINT [PK_TheDonorsProjects]
     PRIMARY KEY CLUSTERED ([ID] ASC);
 GO
 
--- Creating primary key on [ID] in table 'UsersTbs'
-ALTER TABLE [dbo].[UsersTbs]
-ADD CONSTRAINT [PK_UsersTbs]
+-- Creating primary key on [ID] in table 'UserTbs'
+ALTER TABLE [dbo].[UserTbs]
+ADD CONSTRAINT [PK_UserTbs]
     PRIMARY KEY CLUSTERED ([ID] ASC);
 GO
 
@@ -449,6 +465,20 @@ ADD CONSTRAINT [FK_AmountsReceived_TheFinancerProjects]
 CREATE INDEX [IX_FK_AmountsReceived_TheFinancerProjects]
 ON [dbo].[AmountsReceiveds]
     ([TheFinancerProjectsID]);
+GO
+
+-- Creating foreign key on [ProjectProfile_ID] in table 'AmountsReceiveds'
+ALTER TABLE [dbo].[AmountsReceiveds]
+ADD CONSTRAINT [FK_AmountsReceiveds_ProjectProfiles]
+    FOREIGN KEY ([ProjectProfile_ID])
+    REFERENCES [dbo].[ProjectProfiles]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_AmountsReceiveds_ProjectProfiles'
+CREATE INDEX [IX_FK_AmountsReceiveds_ProjectProfiles]
+ON [dbo].[AmountsReceiveds]
+    ([ProjectProfile_ID]);
 GO
 
 -- Creating foreign key on [ProjectProfile_ID] in table 'Attachments'
@@ -507,18 +537,18 @@ ON [dbo].[Monthlysalaries]
     ([ContractID]);
 GO
 
--- Creating foreign key on [EmployeeID] in table 'UsersTbs'
-ALTER TABLE [dbo].[UsersTbs]
-ADD CONSTRAINT [FK_UsersTb_Employees]
-    FOREIGN KEY ([EmployeeID])
+-- Creating foreign key on [Employee_ID] in table 'UserTbs'
+ALTER TABLE [dbo].[UserTbs]
+ADD CONSTRAINT [FK_UserTb_Employees]
+    FOREIGN KEY ([Employee_ID])
     REFERENCES [dbo].[Employees]
         ([ID])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
--- Creating non-clustered index for FOREIGN KEY 'FK_UsersTb_Employees'
-CREATE INDEX [IX_FK_UsersTb_Employees]
-ON [dbo].[UsersTbs]
-    ([EmployeeID]);
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserTb_Employees'
+CREATE INDEX [IX_FK_UserTb_Employees]
+ON [dbo].[UserTbs]
+    ([Employee_ID]);
 GO
 
 -- Creating foreign key on [GroupID] in table 'PeremissionsTbs'
@@ -535,18 +565,32 @@ ON [dbo].[PeremissionsTbs]
     ([GroupID]);
 GO
 
--- Creating foreign key on [GroupID] in table 'UsersTbs'
-ALTER TABLE [dbo].[UsersTbs]
-ADD CONSTRAINT [FK_UsersTb_GroupsTb]
-    FOREIGN KEY ([GroupID])
+-- Creating foreign key on [Group_ID] in table 'UserTbs'
+ALTER TABLE [dbo].[UserTbs]
+ADD CONSTRAINT [FK_UserTb_GroupsTbs]
+    FOREIGN KEY ([Group_ID])
     REFERENCES [dbo].[GroupsTbs]
         ([ID])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
--- Creating non-clustered index for FOREIGN KEY 'FK_UsersTb_GroupsTb'
-CREATE INDEX [IX_FK_UsersTb_GroupsTb]
-ON [dbo].[UsersTbs]
-    ([GroupID]);
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserTb_GroupsTbs'
+CREATE INDEX [IX_FK_UserTb_GroupsTbs]
+ON [dbo].[UserTbs]
+    ([Group_ID]);
+GO
+
+-- Creating foreign key on [ProjectProfile_ID] in table 'Monthlysalaries'
+ALTER TABLE [dbo].[Monthlysalaries]
+ADD CONSTRAINT [FK_Monthlysalaries_ProjectProfiles]
+    FOREIGN KEY ([ProjectProfile_ID])
+    REFERENCES [dbo].[ProjectProfiles]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_Monthlysalaries_ProjectProfiles'
+CREATE INDEX [IX_FK_Monthlysalaries_ProjectProfiles]
+ON [dbo].[Monthlysalaries]
+    ([ProjectProfile_ID]);
 GO
 
 -- Creating foreign key on [ProjectProfile_ID] in table 'ProjectActivities'
@@ -579,30 +623,44 @@ GO
 
 -- Creating foreign key on [ProjectID] in table 'ProjectControls'
 ALTER TABLE [dbo].[ProjectControls]
-ADD CONSTRAINT [FK_ProjectControl_ProjectProfiles]
+ADD CONSTRAINT [FK_ProjectControls_ProjectProfiles1]
     FOREIGN KEY ([ProjectID])
     REFERENCES [dbo].[ProjectProfiles]
         ([ID])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
--- Creating non-clustered index for FOREIGN KEY 'FK_ProjectControl_ProjectProfiles'
-CREATE INDEX [IX_FK_ProjectControl_ProjectProfiles]
+-- Creating non-clustered index for FOREIGN KEY 'FK_ProjectControls_ProjectProfiles1'
+CREATE INDEX [IX_FK_ProjectControls_ProjectProfiles1]
 ON [dbo].[ProjectControls]
     ([ProjectID]);
 GO
 
 -- Creating foreign key on [UserID] in table 'ProjectControls'
 ALTER TABLE [dbo].[ProjectControls]
-ADD CONSTRAINT [FK_ProjectControl_UsersTb]
+ADD CONSTRAINT [FK_ProjectControls_UserTb]
     FOREIGN KEY ([UserID])
-    REFERENCES [dbo].[UsersTbs]
+    REFERENCES [dbo].[UserTbs]
         ([ID])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
--- Creating non-clustered index for FOREIGN KEY 'FK_ProjectControl_UsersTb'
-CREATE INDEX [IX_FK_ProjectControl_UsersTb]
+-- Creating non-clustered index for FOREIGN KEY 'FK_ProjectControls_UserTb'
+CREATE INDEX [IX_FK_ProjectControls_UserTb]
 ON [dbo].[ProjectControls]
     ([UserID]);
+GO
+
+-- Creating foreign key on [ProjectProfile_ID] in table 'ProjectExpenses'
+ALTER TABLE [dbo].[ProjectExpenses]
+ADD CONSTRAINT [FK_ProjectExpenses_ProjectProfiles]
+    FOREIGN KEY ([ProjectProfile_ID])
+    REFERENCES [dbo].[ProjectProfiles]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ProjectExpenses_ProjectProfiles'
+CREATE INDEX [IX_FK_ProjectExpenses_ProjectProfiles]
+ON [dbo].[ProjectExpenses]
+    ([ProjectProfile_ID]);
 GO
 
 -- Creating foreign key on [ProjectSubActivity_ID] in table 'ProjectExpenses'
@@ -633,6 +691,20 @@ ON [dbo].[ProjectExpenses]
     ([Supplier_ID]);
 GO
 
+-- Creating foreign key on [ProjectProfile_ID] in table 'ProjectSubActivities'
+ALTER TABLE [dbo].[ProjectSubActivities]
+ADD CONSTRAINT [FK_ProjectSubActivities_ProjectProfiles]
+    FOREIGN KEY ([ProjectProfile_ID])
+    REFERENCES [dbo].[ProjectProfiles]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ProjectSubActivities_ProjectProfiles'
+CREATE INDEX [IX_FK_ProjectSubActivities_ProjectProfiles]
+ON [dbo].[ProjectSubActivities]
+    ([ProjectProfile_ID]);
+GO
+
 -- Creating foreign key on [ProjectID] in table 'TheDonorsProjects'
 ALTER TABLE [dbo].[TheDonorsProjects]
 ADD CONSTRAINT [FK_TheFinancerProject_ProjectProfiles]
@@ -651,7 +723,7 @@ GO
 ALTER TABLE [dbo].[TheDonorsProjects]
 ADD CONSTRAINT [FK_TheFinancerProject_Thefinanciers]
     FOREIGN KEY ([DonorsID])
-    REFERENCES [dbo].[TheDonors1]
+    REFERENCES [dbo].[TheDonors]
         ([ID])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 

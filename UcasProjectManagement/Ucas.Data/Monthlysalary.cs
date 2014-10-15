@@ -19,7 +19,9 @@ namespace Ucas.Data
         public Nullable<double> Amount { get; set; }
         public Nullable<System.DateTime> IssueDate { get; set; }
         public Nullable<System.DateTime> Formonth { get; set; }
+        public Nullable<int> ProjectProfile_ID { get; set; }
     
         public virtual Contract Contract { get; set; }
+        public virtual ProjectProfile ProjectProfile { get; set; }
     }
 }

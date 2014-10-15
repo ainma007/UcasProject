@@ -122,17 +122,16 @@ namespace UcasProWindowsForm.Forms.MainForm
         private void UserAddBtn_Click(object sender, EventArgs e)
         {
            //
-            Form frm = new frmAddUser();
           
-          frm.ShowDialog();
+          
+         
           
 
         }
 
         private void UserMangBtn_Click(object sender, EventArgs e)
         {
-            FrmUserManagment userM = new FrmUserManagment();
-            userM.ShowDialog();
+          
         }
     }
 }
