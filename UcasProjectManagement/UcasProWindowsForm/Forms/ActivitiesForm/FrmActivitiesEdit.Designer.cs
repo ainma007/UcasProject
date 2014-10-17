@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
@@ -114,19 +114,19 @@
             this.StatusDropDownList.AutoCompleteDisplayMember = null;
             this.StatusDropDownList.AutoCompleteValueMember = null;
             this.StatusDropDownList.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem1.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem1.Text = "فعال";
-            radListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem1.TextWrap = true;
-            radListDataItem2.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem2.Text = "غير فعال";
-            radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem2.TextWrap = true;
-            this.StatusDropDownList.Items.Add(radListDataItem1);
-            this.StatusDropDownList.Items.Add(radListDataItem2);
-            this.StatusDropDownList.Location = new System.Drawing.Point(54, 204);
+            radListDataItem3.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem3.Text = "فعال";
+            radListDataItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem3.TextWrap = true;
+            radListDataItem4.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem4.Text = "غير فعال";
+            radListDataItem4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem4.TextWrap = true;
+            this.StatusDropDownList.Items.Add(radListDataItem3);
+            this.StatusDropDownList.Items.Add(radListDataItem4);
+            this.StatusDropDownList.Location = new System.Drawing.Point(111, 204);
             this.StatusDropDownList.Name = "StatusDropDownList";
-            this.StatusDropDownList.Size = new System.Drawing.Size(193, 19);
+            this.StatusDropDownList.Size = new System.Drawing.Size(136, 19);
             this.StatusDropDownList.TabIndex = 6;
             this.StatusDropDownList.ThemeName = "TelerikMetro";
             // 
@@ -134,10 +134,10 @@
             // 
             this.ActivitiesDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ActivitiesDescriptionTextBox.AutoSize = false;
-            this.ActivitiesDescriptionTextBox.Location = new System.Drawing.Point(54, 61);
+            this.ActivitiesDescriptionTextBox.Location = new System.Drawing.Point(12, 61);
             this.ActivitiesDescriptionTextBox.Multiline = true;
             this.ActivitiesDescriptionTextBox.Name = "ActivitiesDescriptionTextBox";
-            this.ActivitiesDescriptionTextBox.Size = new System.Drawing.Size(193, 54);
+            this.ActivitiesDescriptionTextBox.Size = new System.Drawing.Size(235, 54);
             this.ActivitiesDescriptionTextBox.TabIndex = 2;
             this.ActivitiesDescriptionTextBox.ThemeName = "TelerikMetro";
             // 
@@ -154,9 +154,9 @@
             // TotalCostTextBox
             // 
             this.TotalCostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TotalCostTextBox.Location = new System.Drawing.Point(54, 176);
+            this.TotalCostTextBox.Location = new System.Drawing.Point(111, 176);
             this.TotalCostTextBox.Name = "TotalCostTextBox";
-            this.TotalCostTextBox.Size = new System.Drawing.Size(193, 22);
+            this.TotalCostTextBox.Size = new System.Drawing.Size(136, 22);
             this.TotalCostTextBox.TabIndex = 5;
             this.TotalCostTextBox.ThemeName = "TelerikMetro";
             // 
@@ -165,9 +165,9 @@
             this.EndDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.EndDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.EndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.EndDateTimePicker.Location = new System.Drawing.Point(54, 149);
+            this.EndDateTimePicker.Location = new System.Drawing.Point(147, 149);
             this.EndDateTimePicker.Name = "EndDateTimePicker";
-            this.EndDateTimePicker.Size = new System.Drawing.Size(193, 22);
+            this.EndDateTimePicker.Size = new System.Drawing.Size(100, 22);
             this.EndDateTimePicker.TabIndex = 4;
             this.EndDateTimePicker.TabStop = false;
             this.EndDateTimePicker.Text = "15/09/2014";
@@ -189,9 +189,9 @@
             this.StartDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.StartDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.StartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StartDateTimePicker.Location = new System.Drawing.Point(54, 121);
+            this.StartDateTimePicker.Location = new System.Drawing.Point(147, 121);
             this.StartDateTimePicker.Name = "StartDateTimePicker";
-            this.StartDateTimePicker.Size = new System.Drawing.Size(193, 22);
+            this.StartDateTimePicker.Size = new System.Drawing.Size(100, 22);
             this.StartDateTimePicker.TabIndex = 3;
             this.StartDateTimePicker.TabStop = false;
             this.StartDateTimePicker.Text = "15/09/2014";
@@ -231,9 +231,9 @@
             // ActivitiesNameTextBox
             // 
             this.ActivitiesNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ActivitiesNameTextBox.Location = new System.Drawing.Point(54, 34);
+            this.ActivitiesNameTextBox.Location = new System.Drawing.Point(12, 34);
             this.ActivitiesNameTextBox.Name = "ActivitiesNameTextBox";
-            this.ActivitiesNameTextBox.Size = new System.Drawing.Size(193, 22);
+            this.ActivitiesNameTextBox.Size = new System.Drawing.Size(235, 22);
             this.ActivitiesNameTextBox.TabIndex = 1;
             this.ActivitiesNameTextBox.ThemeName = "TelerikMetro";
             // 
@@ -249,7 +249,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "FrmActivitiesEdit";
+            this.Text = "تعديل نشاط رئيسي";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmActivitiesEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();

@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Ucas.Data.CommandClass;
 using UcasProWindowsForm.Forms.ActivitiesForm;
+using UcasProWindowsForm.Forms.AmountRecivedForms;
 using UcasProWindowsForm.Forms.EmployeeForm;
 using UcasProWindowsForm.Forms.ExpensesForm;
 using UcasProWindowsForm.Forms.ProjectProfileForm;
@@ -69,6 +70,18 @@ namespace UcasProWindowsForm.Forms.MainForm
         private void ExpensesBTn_Click(object sender, EventArgs e)
         {
             FrmManageExpenses frm = new FrmManageExpenses();
+            frm.ShowDialog();
+        }
+
+        private void SalaryBtn_Click(object sender, EventArgs e)
+        {
+            FrmSalariesManage frm = new FrmSalariesManage();
+            frm.ShowDialog();
+        }
+
+        private void AmountRrecvBtn_Click(object sender, EventArgs e)
+        {
+            FrmMangeAmount frm = new FrmMangeAmount();
             frm.ShowDialog();
         }
     }

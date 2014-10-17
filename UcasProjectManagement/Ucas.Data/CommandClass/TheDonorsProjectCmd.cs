@@ -105,5 +105,17 @@ namespace Ucas.Data.CommandClass
                 return false;
             }
         }
+        public static IEnumerable GetAllDonorsForAmountsBypro(int ProId)
+        {
+            db = new UcasProEntities();
+            var q = (from i in db.TheDonorsProjects
+                     join donrs in db.TheDonors on i.DonorsID equals donrs.ID
+                     where i.ProjectID == ProId
+                     select new { i.ID, donrs.Name }).ToList();
+            return q;
+
+        }
     }
+
+
 }

@@ -59,11 +59,9 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
             if (StatusDropDownList.Text == "")
             {
-                //GenderDropDownList.BackColor = System.Drawing.Color.Red;
+              
                 StatusDropDownList.DropDownListElement.TextBox.BackColor = Color.OrangeRed;
-                // GenderDropDownList.DropDownListElement.TextBox.Fill.BackColor = Color.OrangeRed;
-
-
+                              
                 StatusDropDownList.Focus();
 
                 return;
@@ -73,7 +71,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 StatusDropDownList.DropDownListElement.TextBox.BackColor = Color.White;
             }
 
-            if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+            if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
                 ProjectActivity tb = new ProjectActivity()
                 {
@@ -90,7 +88,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
                 };
                 ActivityCmd.EditActivity(tb);
-                MessageBox.Show("Saved");
+               RadMessageBox.Show("تمت عملية التعديل");
             }
 
             }

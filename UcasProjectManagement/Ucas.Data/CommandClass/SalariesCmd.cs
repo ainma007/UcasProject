@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -89,5 +90,23 @@ namespace Ucas.Data.CommandClass
                        select c).ToList();
             return LST;
         }
+
+
+        public static IEnumerable GetAllSalaryBypro(int ProId)
+        {
+            db = new UcasProEntities();
+            var q = (from i in db.Monthlysalaries
+                     join Cont in db.Contracts on i.ContractID equals Cont.ID
+                     join emp in db.Employees on Cont.Employee_ID equals emp.ID
+                     where i.ProjectProfile_ID == ProId
+
+
+
+
+                     select new { i.ID, emp.EmployeeName, i.IssueDate, i.Formonth, i.Amount, i.ContractID, i.ProjectProfile_ID }).ToList();
+            return q;
+
+        }
+
     }
 }

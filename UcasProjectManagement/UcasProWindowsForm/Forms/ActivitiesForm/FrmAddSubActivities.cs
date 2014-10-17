@@ -46,12 +46,9 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         {
             if (ActivitiesColumnComboBox.SelectedValue == null)
             {
-                //GenderDropDownList.BackColor = System.Drawing.Color.Red;
+              
                 ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
-                // GenderDropDownList.DropDownListElement.TextBox.Fill.BackColor = Color.OrangeRed;
-
-
-                ActivitiesColumnComboBox.Focus();
+                 ActivitiesColumnComboBox.Focus();
 
                 return;
             }

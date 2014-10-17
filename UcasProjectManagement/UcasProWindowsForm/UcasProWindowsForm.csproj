@@ -94,6 +94,24 @@
     <Compile Include="Forms\ActivitiesForm\FrmSubActivityEdit.Designer.cs">
       <DependentUpon>FrmSubActivityEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AmountRecivedForms\FrmAddAmount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AmountRecivedForms\FrmAddAmount.Designer.cs">
+      <DependentUpon>FrmAddAmount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AmountRecivedForms\FrmEditAmount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AmountRecivedForms\FrmEditAmount.Designer.cs">
+      <DependentUpon>FrmEditAmount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AmountRecivedForms\FrmMangeAmount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AmountRecivedForms\FrmMangeAmount.Designer.cs">
+      <DependentUpon>FrmMangeAmount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EmployeeForm\FrmAddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +171,12 @@
     </Compile>
     <Compile Include="Forms\ExpensesForm\FrmSalariesManage.Designer.cs">
       <DependentUpon>FrmSalariesManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExpensesForm\FrmSalaryMang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExpensesForm\FrmSalaryMang.Designer.cs">
+      <DependentUpon>FrmSalaryMang.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm\FrmAdmin.cs">
       <SubType>Form</SubType>
@@ -258,6 +282,15 @@
     <EmbeddedResource Include="Forms\ActivitiesForm\FrmSubActivityEdit.resx">
       <DependentUpon>FrmSubActivityEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AmountRecivedForms\FrmAddAmount.resx">
+      <DependentUpon>FrmAddAmount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AmountRecivedForms\FrmEditAmount.resx">
+      <DependentUpon>FrmEditAmount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AmountRecivedForms\FrmMangeAmount.resx">
+      <DependentUpon>FrmMangeAmount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeForm\FrmAddEmployee.resx">
       <DependentUpon>FrmAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExpensesForm\FrmSalariesManage.resx">
       <DependentUpon>FrmSalariesManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExpensesForm\FrmSalaryMang.resx">
+      <DependentUpon>FrmSalaryMang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm\FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>

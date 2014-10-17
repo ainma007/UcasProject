@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -89,6 +90,21 @@ namespace Ucas.Data.CommandClass
                             where f.TheFinancerProjectsID == F_PID 
                             select f).ToList();
             return LST;
+        }
+        public static IEnumerable GetAllAmountsReceivedBypro(int ProId)
+        {
+            db = new UcasProEntities();
+            var q = (from i in db.AmountsReceiveds
+                     join Dpro in db.TheDonorsProjects on i.TheFinancerProjectsID equals Dpro.ID
+                     join donrs in db.TheDonors on Dpro.DonorsID equals donrs.ID
+                     where i.ProjectProfile_ID == ProId
+
+
+
+
+                     select new { i.ID, donrs.Name, i.Date, i.Cost}).ToList();
+            return q;
+
         }
 
     }

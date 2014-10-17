@@ -72,12 +72,12 @@
             this.radGroupBox1.Controls.Add(this.radLabel1);
             this.radGroupBox1.Controls.Add(this.ActivitiesNameTextBox);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGroupBox1.HeaderText = "اضافة نشاط رئيسي";
+            this.radGroupBox1.HeaderText = "بيانات الادخال";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
             this.radGroupBox1.Size = new System.Drawing.Size(355, 296);
             this.radGroupBox1.TabIndex = 1;
-            this.radGroupBox1.Text = "اضافة نشاط رئيسي";
+            this.radGroupBox1.Text = "بيانات الادخال";
             this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
             // ActivitiesDescriptionTextBox
@@ -114,9 +114,9 @@
             // TotalCostTextBox
             // 
             this.TotalCostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TotalCostTextBox.Location = new System.Drawing.Point(46, 189);
+            this.TotalCostTextBox.Location = new System.Drawing.Point(84, 189);
             this.TotalCostTextBox.Name = "TotalCostTextBox";
-            this.TotalCostTextBox.Size = new System.Drawing.Size(193, 22);
+            this.TotalCostTextBox.Size = new System.Drawing.Size(155, 22);
             this.TotalCostTextBox.TabIndex = 4;
             this.TotalCostTextBox.ThemeName = "TelerikMetro";
             // 
@@ -125,9 +125,9 @@
             this.EndDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.EndDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.EndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.EndDateTimePicker.Location = new System.Drawing.Point(47, 161);
+            this.EndDateTimePicker.Location = new System.Drawing.Point(148, 161);
             this.EndDateTimePicker.Name = "EndDateTimePicker";
-            this.EndDateTimePicker.Size = new System.Drawing.Size(193, 22);
+            this.EndDateTimePicker.Size = new System.Drawing.Size(92, 22);
             this.EndDateTimePicker.TabIndex = 3;
             this.EndDateTimePicker.TabStop = false;
             this.EndDateTimePicker.Text = "15/09/2014";
@@ -149,9 +149,9 @@
             this.StartDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.StartDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.StartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StartDateTimePicker.Location = new System.Drawing.Point(47, 131);
+            this.StartDateTimePicker.Location = new System.Drawing.Point(148, 131);
             this.StartDateTimePicker.Name = "StartDateTimePicker";
-            this.StartDateTimePicker.Size = new System.Drawing.Size(193, 22);
+            this.StartDateTimePicker.Size = new System.Drawing.Size(92, 22);
             this.StartDateTimePicker.TabIndex = 2;
             this.StartDateTimePicker.TabStop = false;
             this.StartDateTimePicker.Text = "15/09/2014";
@@ -209,7 +209,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "FrmAddActivities";
+            this.Text = "اضافة نشاط رئيسي";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmAddActivities_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
