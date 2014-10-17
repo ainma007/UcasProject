@@ -66,11 +66,34 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
             ActivityCmd.NewActivity(tb);
             MessageBox.Show("تمت عملية الاضافة");
+            ClearTxt();
         }
-
+        private void ClearTxt()
+        {
+                ActivitiesNameTextBox.Clear();
+                ActivitiesDescriptionTextBox.Clear();
+                TotalCostTextBox.Clear();
+                ActivitiesNameTextBox.Focus();
+        }
         private void FrmAddActivities_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void TotalCostTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 46 && TotalCostTextBox.Text.IndexOf(".") != -1)
+            {
+
+                e.Handled = true;
+                return;
+            }
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

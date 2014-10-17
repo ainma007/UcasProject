@@ -186,7 +186,7 @@
             this.ActivitiesColumnComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ActivitiesColumnComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // ActivitiesColumnComboBox.NestedRadGridView
+            // 
             // 
             this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -272,6 +272,7 @@
             this.TotalCostTextBox.Size = new System.Drawing.Size(157, 22);
             this.TotalCostTextBox.TabIndex = 5;
             this.TotalCostTextBox.ThemeName = "TelerikMetro";
+            this.TotalCostTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalCostTextBox_KeyPress);
             // 
             // EndDateTimePicker
             // 

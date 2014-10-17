@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
@@ -70,7 +70,7 @@
             // radLabel1
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel1.Location = new System.Drawing.Point(256, 47);
+            this.radLabel1.Location = new System.Drawing.Point(276, 40);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(70, 18);
             this.radLabel1.TabIndex = 1;
@@ -81,7 +81,7 @@
             // radLabel2
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel2.Location = new System.Drawing.Point(257, 75);
+            this.radLabel2.Location = new System.Drawing.Point(277, 68);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(39, 18);
             this.radLabel2.TabIndex = 3;
@@ -92,7 +92,7 @@
             // radLabel6
             // 
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel6.Location = new System.Drawing.Point(256, 101);
+            this.radLabel6.Location = new System.Drawing.Point(276, 94);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(75, 18);
             this.radLabel6.TabIndex = 9;
@@ -116,26 +116,28 @@
             this.GenderDropDownList.AutoCompleteDisplayMember = null;
             this.GenderDropDownList.AutoCompleteValueMember = null;
             this.GenderDropDownList.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem1.Text = "ذكر";
-            radListDataItem1.TextWrap = true;
-            radListDataItem2.Text = "انثى";
-            radListDataItem2.TextWrap = true;
-            this.GenderDropDownList.Items.Add(radListDataItem1);
-            this.GenderDropDownList.Items.Add(radListDataItem2);
-            this.GenderDropDownList.Location = new System.Drawing.Point(58, 71);
+            radListDataItem3.Text = "ذكر";
+            radListDataItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem3.TextWrap = true;
+            radListDataItem4.Text = "انثى";
+            radListDataItem4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem4.TextWrap = true;
+            this.GenderDropDownList.Items.Add(radListDataItem3);
+            this.GenderDropDownList.Items.Add(radListDataItem4);
+            this.GenderDropDownList.Location = new System.Drawing.Point(188, 64);
             this.GenderDropDownList.Name = "GenderDropDownList";
             // 
             // 
             // 
             this.GenderDropDownList.RootElement.StretchVertically = true;
-            this.GenderDropDownList.Size = new System.Drawing.Size(193, 21);
+            this.GenderDropDownList.Size = new System.Drawing.Size(83, 21);
             this.GenderDropDownList.TabIndex = 1;
             this.GenderDropDownList.ThemeName = "TelerikMetro";
             // 
             // radLabel3
             // 
             this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel3.Location = new System.Drawing.Point(256, 128);
+            this.radLabel3.Location = new System.Drawing.Point(276, 121);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(58, 18);
             this.radLabel3.TabIndex = 12;
@@ -146,7 +148,7 @@
             // radLabel4
             // 
             this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel4.Location = new System.Drawing.Point(256, 155);
+            this.radLabel4.Location = new System.Drawing.Point(276, 148);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(57, 18);
             this.radLabel4.TabIndex = 14;
@@ -157,7 +159,7 @@
             // radLabel5
             // 
             this.radLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel5.Location = new System.Drawing.Point(256, 182);
+            this.radLabel5.Location = new System.Drawing.Point(276, 175);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(83, 18);
             this.radLabel5.TabIndex = 16;
@@ -168,7 +170,7 @@
             // radLabel7
             // 
             this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel7.Location = new System.Drawing.Point(257, 209);
+            this.radLabel7.Location = new System.Drawing.Point(277, 202);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(56, 18);
             this.radLabel7.TabIndex = 18;
@@ -207,16 +209,17 @@
             // EmployeeNationalNumberTextBox4
             // 
             this.EmployeeNationalNumberTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmployeeNationalNumberTextBox4.Location = new System.Drawing.Point(57, 207);
+            this.EmployeeNationalNumberTextBox4.Location = new System.Drawing.Point(77, 200);
             this.EmployeeNationalNumberTextBox4.Name = "EmployeeNationalNumberTextBox4";
             this.EmployeeNationalNumberTextBox4.Size = new System.Drawing.Size(193, 22);
             this.EmployeeNationalNumberTextBox4.TabIndex = 6;
             this.EmployeeNationalNumberTextBox4.ThemeName = "TelerikMetro";
+            this.EmployeeNationalNumberTextBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmployeeNationalNumberTextBox4_KeyPress);
             // 
             // EmailTextBox
             // 
             this.EmailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmailTextBox.Location = new System.Drawing.Point(57, 180);
+            this.EmailTextBox.Location = new System.Drawing.Point(77, 173);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(193, 22);
             this.EmailTextBox.TabIndex = 5;
@@ -225,36 +228,39 @@
             // MobilenumberTextBox
             // 
             this.MobilenumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MobilenumberTextBox.Location = new System.Drawing.Point(57, 153);
+            this.MobilenumberTextBox.Location = new System.Drawing.Point(77, 146);
             this.MobilenumberTextBox.Name = "MobilenumberTextBox";
             this.MobilenumberTextBox.Size = new System.Drawing.Size(193, 22);
             this.MobilenumberTextBox.TabIndex = 4;
             this.MobilenumberTextBox.ThemeName = "TelerikMetro";
+            this.MobilenumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MobilenumberTextBox_KeyPress);
             // 
             // PhoneNumberTextBox
             // 
             this.PhoneNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PhoneNumberTextBox.Location = new System.Drawing.Point(57, 126);
+            this.PhoneNumberTextBox.Location = new System.Drawing.Point(77, 119);
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(193, 22);
             this.PhoneNumberTextBox.TabIndex = 3;
             this.PhoneNumberTextBox.ThemeName = "TelerikMetro";
+            this.PhoneNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumberTextBox_KeyPress);
             // 
             // EmployeejobNumberTextBox
             // 
             this.EmployeejobNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmployeejobNumberTextBox.Location = new System.Drawing.Point(57, 99);
+            this.EmployeejobNumberTextBox.Location = new System.Drawing.Point(124, 92);
             this.EmployeejobNumberTextBox.Name = "EmployeejobNumberTextBox";
-            this.EmployeejobNumberTextBox.Size = new System.Drawing.Size(193, 22);
+            this.EmployeejobNumberTextBox.Size = new System.Drawing.Size(146, 22);
             this.EmployeejobNumberTextBox.TabIndex = 2;
             this.EmployeejobNumberTextBox.ThemeName = "TelerikMetro";
+            this.EmployeejobNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmployeejobNumberTextBox_KeyPress);
             // 
             // employeeNameTextBox
             // 
             this.employeeNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.employeeNameTextBox.Location = new System.Drawing.Point(57, 45);
+            this.employeeNameTextBox.Location = new System.Drawing.Point(12, 38);
             this.employeeNameTextBox.Name = "employeeNameTextBox";
-            this.employeeNameTextBox.Size = new System.Drawing.Size(193, 22);
+            this.employeeNameTextBox.Size = new System.Drawing.Size(258, 22);
             this.employeeNameTextBox.TabIndex = 0;
             this.employeeNameTextBox.ThemeName = "TelerikMetro";
             // 

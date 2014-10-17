@@ -49,6 +49,20 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             {
                 EmployeeComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
             }
+
+            if (SalaryTextBox.Text == "")
+            {
+
+                SalaryTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+
+                SalaryTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                SalaryTextBox.TextBoxElement.Fill.BackColor = Color.White;
+            }
             Contract tb = new Contract()
             {
                 Employee_ID=int.Parse(EmployeeComboBox.SelectedValue.ToString()),
@@ -60,11 +74,35 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
             };
             ContractCmd.NewContract(tb);
+            RadMessageBox.Show("تمت الاضافة");
+            ClearTxt();
         }
+        private void ClearTxt()
+        {
+            EmployeeComboBox.ResetText();
+            SalaryTextBox.Clear();
+            EmployeeComboBox.Focus();
 
+        }
         private void FrmContractsAdd_Load(object sender, EventArgs e)
         {
             FillEmployeeCombo();
+        }
+
+        private void SalaryTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 46 && SalaryTextBox.Text.IndexOf(".") != -1)
+            {
+
+                e.Handled = true;
+                return;
+            }
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

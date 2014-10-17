@@ -43,6 +43,33 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+
+            if (ContractComboBox.SelectedValue == null)
+            {
+
+                ContractComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                ContractComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                ContractComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+            }
+            ///
+            if (SalaryTextBox.Text == "")
+            {
+
+                SalaryTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+
+                SalaryTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                SalaryTextBox.TextBoxElement.Fill.BackColor = Color.White;
+            }
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
                 Monthlysalary tb = new Monthlysalary()
@@ -57,6 +84,22 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 };
                 SalariesCmd.EditSalary(tb);
                 RadMessageBox.Show("تمت علمية التعديل");
+            }
+        }
+
+        private void SalaryTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 46 && SalaryTextBox.Text.IndexOf(".") != -1)
+            {
+
+                e.Handled = true;
+                return;
+            }
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
             }
         }
     }

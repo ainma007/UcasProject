@@ -43,6 +43,32 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void AddBtn1_Click(object sender, EventArgs e)
         {
+            if (EmployeeComboBox.SelectedValue == null)
+            {
+
+                EmployeeComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                EmployeeComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                EmployeeComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+            }
+            ///
+            if (SalaryTextBox.Text == "")
+            {
+
+                SalaryTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+
+                SalaryTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                SalaryTextBox.TextBoxElement.Fill.BackColor = Color.White;
+            }
             Monthlysalary tb = new Monthlysalary
             {
                 ProjectProfile_ID= InformationsClass.ProjID,
@@ -54,6 +80,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             };
             SalariesCmd.NewSalary(tb);
             RadMessageBox.Show("تمت عملية الاضافة");
+            ClearText();
         }
 
 
@@ -62,6 +89,22 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             EmployeeComboBox.ResetText();
             SalaryTextBox.ResetText();
             EmployeeComboBox.Focus();
+        }
+
+        private void SalaryTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 46 && SalaryTextBox.Text.IndexOf(".") != -1)
+            {
+
+                e.Handled = true;
+                return;
+            }
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -162,6 +162,7 @@
             this.RequiarAmountTextBox.Size = new System.Drawing.Size(193, 22);
             this.RequiarAmountTextBox.TabIndex = 5;
             this.RequiarAmountTextBox.ThemeName = "TelerikMetro";
+            this.RequiarAmountTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RequiarAmountTextBox_KeyPress);
             // 
             // radLabel5
             // 

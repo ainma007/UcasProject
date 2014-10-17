@@ -119,6 +119,7 @@
             this.TotalCostTextBox.Size = new System.Drawing.Size(155, 22);
             this.TotalCostTextBox.TabIndex = 4;
             this.TotalCostTextBox.ThemeName = "TelerikMetro";
+            this.TotalCostTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalCostTextBox_KeyPress);
             // 
             // EndDateTimePicker
             // 

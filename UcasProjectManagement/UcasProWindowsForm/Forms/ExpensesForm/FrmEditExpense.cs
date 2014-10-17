@@ -54,6 +54,32 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            if (SubActivtiesComboBox.SelectedValue == null)
+            {
+
+                SubActivtiesComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                SubActivtiesComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                SubActivtiesComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+            }
+            ///
+            if (ExpensesNameTextBox.Text == "")
+            {
+
+                ExpensesNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+
+                ExpensesNameTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                ExpensesNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+            }
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
                 ProjectExpens tb = new ProjectExpens
@@ -71,6 +97,22 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 };
                 ProjectExpensesCmd.EditProjectExpens(tb);
                 RadMessageBox.Show("تمت عملية التعديل");
+            }
+        }
+
+        private void RequiarAmountTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 46 && RequiarAmountTextBox.Text.IndexOf(".") != -1)
+            {
+
+                e.Handled = true;
+                return;
+            }
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
             }
         }
     }

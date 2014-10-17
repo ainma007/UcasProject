@@ -68,9 +68,22 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
             };
             EmployeeCmd.addEmployee(emp);
-            RadMessageBox.SetThemeName("Office2013Light");
 
-            DialogResult ds = RadMessageBox.Show(this, OperationX.AddMessageDone, "Done", MessageBoxButtons.OK, RadMessageIcon.Info);
+
+            RadMessageBox.Show("تمت الاضافة");
+            ClearTxt();
+        }
+
+        private void ClearTxt()
+        {
+            employeeNameTextBox.Clear();
+            GenderDropDownList.ResetText();
+           EmployeejobNumberTextBox.Clear();
+            EmployeeNationalNumberTextBox4.Clear();
+             EmailTextBox.Clear();
+            PhoneNumberTextBox.Clear();
+             MobilenumberTextBox.Clear();
+             employeeNameTextBox.Focus();
         }
 
         private void FrmAddEmployee_Load(object sender, EventArgs e)
@@ -92,6 +105,26 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             }
         }
         #endregion 
+
+        private void EmployeejobNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void PhoneNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void MobilenumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void EmployeeNationalNumberTextBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
 
     }
 }

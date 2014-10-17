@@ -165,6 +165,7 @@
             this.SalaryTextBox.Size = new System.Drawing.Size(125, 22);
             this.SalaryTextBox.TabIndex = 1;
             this.SalaryTextBox.ThemeName = "TelerikMetro";
+            this.SalaryTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SalaryTextBox_KeyPress);
             // 
             // radLabel9
             // 

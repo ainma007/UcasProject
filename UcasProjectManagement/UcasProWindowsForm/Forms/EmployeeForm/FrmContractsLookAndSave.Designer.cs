@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -100,9 +102,17 @@
             this.StatusDropDownList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.StatusDropDownList.AutoCompleteDisplayMember = null;
             this.StatusDropDownList.AutoCompleteValueMember = null;
-            this.StatusDropDownList.Location = new System.Drawing.Point(12, 168);
+            radListDataItem1.Text = "فعال";
+            radListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem1.TextWrap = true;
+            radListDataItem2.Text = "غير فعال";
+            radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem2.TextWrap = true;
+            this.StatusDropDownList.Items.Add(radListDataItem1);
+            this.StatusDropDownList.Items.Add(radListDataItem2);
+            this.StatusDropDownList.Location = new System.Drawing.Point(184, 168);
             this.StatusDropDownList.Name = "StatusDropDownList";
-            this.StatusDropDownList.Size = new System.Drawing.Size(285, 19);
+            this.StatusDropDownList.Size = new System.Drawing.Size(113, 19);
             this.StatusDropDownList.TabIndex = 17;
             this.StatusDropDownList.ThemeName = "TelerikMetro";
             // 
@@ -130,20 +140,21 @@
             // SalaryTextBox
             // 
             this.SalaryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SalaryTextBox.Location = new System.Drawing.Point(12, 139);
+            this.SalaryTextBox.Location = new System.Drawing.Point(157, 139);
             this.SalaryTextBox.Name = "SalaryTextBox";
-            this.SalaryTextBox.Size = new System.Drawing.Size(285, 22);
+            this.SalaryTextBox.Size = new System.Drawing.Size(140, 22);
             this.SalaryTextBox.TabIndex = 12;
             this.SalaryTextBox.ThemeName = "TelerikMetro";
+            this.SalaryTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SalaryTextBox_KeyPress);
             // 
             // EndDateTimePicker
             // 
             this.EndDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.EndDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.EndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.EndDateTimePicker.Location = new System.Drawing.Point(12, 109);
+            this.EndDateTimePicker.Location = new System.Drawing.Point(157, 109);
             this.EndDateTimePicker.Name = "EndDateTimePicker";
-            this.EndDateTimePicker.Size = new System.Drawing.Size(285, 22);
+            this.EndDateTimePicker.Size = new System.Drawing.Size(140, 22);
             this.EndDateTimePicker.TabIndex = 11;
             this.EndDateTimePicker.TabStop = false;
             this.EndDateTimePicker.Text = "15/09/2014";
@@ -165,9 +176,9 @@
             this.StartDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.StartDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.StartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StartDateTimePicker.Location = new System.Drawing.Point(12, 79);
+            this.StartDateTimePicker.Location = new System.Drawing.Point(157, 79);
             this.StartDateTimePicker.Name = "StartDateTimePicker";
-            this.StartDateTimePicker.Size = new System.Drawing.Size(285, 22);
+            this.StartDateTimePicker.Size = new System.Drawing.Size(140, 22);
             this.StartDateTimePicker.TabIndex = 10;
             this.StartDateTimePicker.TabStop = false;
             this.StartDateTimePicker.Text = "15/09/2014";
@@ -213,6 +224,7 @@
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
+            this.EmployeeComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "ID";
             gridViewDecimalColumn1.HeaderText = "ID";
@@ -221,20 +233,20 @@
             gridViewDecimalColumn1.Name = "ID";
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "EmployeeName";
-            gridViewTextBoxColumn1.HeaderText = "EmployeeName";
+            gridViewTextBoxColumn1.HeaderText = "اسم الموظف";
             gridViewTextBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             gridViewTextBoxColumn1.IsAutoGenerated = true;
             gridViewTextBoxColumn1.Name = "EmployeeName";
             gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn1.Width = 127;
+            gridViewTextBoxColumn1.Width = 132;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "EmployeejobNumber";
-            gridViewTextBoxColumn2.HeaderText = "EmployeejobNumber";
+            gridViewTextBoxColumn2.HeaderText = "الرقم الوظيفي";
             gridViewTextBoxColumn2.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             gridViewTextBoxColumn2.IsAutoGenerated = true;
             gridViewTextBoxColumn2.Name = "EmployeejobNumber";
             gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn2.Width = 128;
+            gridViewTextBoxColumn2.Width = 89;
             this.EmployeeComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
@@ -247,9 +259,9 @@
             this.EmployeeComboBox.EditorControl.ShowGroupPanel = false;
             this.EmployeeComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.EmployeeComboBox.EditorControl.TabIndex = 0;
-            this.EmployeeComboBox.Location = new System.Drawing.Point(12, 39);
+            this.EmployeeComboBox.Location = new System.Drawing.Point(12, 45);
             this.EmployeeComboBox.Name = "EmployeeComboBox";
-            this.EmployeeComboBox.Size = new System.Drawing.Size(285, 26);
+            this.EmployeeComboBox.Size = new System.Drawing.Size(285, 24);
             this.EmployeeComboBox.TabIndex = 0;
             this.EmployeeComboBox.TabStop = false;
             this.EmployeeComboBox.ThemeName = "TelerikMetro";

@@ -356,6 +356,7 @@
             this.FromonthDateTimePicker.Name = "FromonthDateTimePicker";
             this.FromonthDateTimePicker.Size = new System.Drawing.Size(193, 22);
             this.FromonthDateTimePicker.TabIndex = 3;
+            this.FromonthDateTimePicker.TabStop = false;
             this.FromonthDateTimePicker.Text = "15/09/2014";
             this.FromonthDateTimePicker.ThemeName = "TelerikMetro";
             this.FromonthDateTimePicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
@@ -378,6 +379,7 @@
             this.SalaryTextBox.Size = new System.Drawing.Size(193, 22);
             this.SalaryTextBox.TabIndex = 2;
             this.SalaryTextBox.ThemeName = "TelerikMetro";
+            this.SalaryTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SalaryTextBox_KeyPress);
             // 
             // radLabel9
             // 

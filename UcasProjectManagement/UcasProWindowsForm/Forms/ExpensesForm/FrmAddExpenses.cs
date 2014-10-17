@@ -59,6 +59,48 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
      
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            if (SubActivtiesComboBox.SelectedValue == null)
+            {
+
+                SubActivtiesComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                SubActivtiesComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                SubActivtiesComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+            }
+            ///
+            if (ExpensesNameTextBox.Text == "")
+            {
+
+                ExpensesNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+
+                ExpensesNameTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                ExpensesNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+            }
+
+            ///
+            if (RequiarAmountTextBox.Text == "")
+            {
+
+                RequiarAmountTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+
+                RequiarAmountTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                RequiarAmountTextBox.TextBoxElement.Fill.BackColor = Color.White;
+            }
+
             ProjectExpens tb = new ProjectExpens
             {
                 ProjectProfile_ID=InformationsClass.ProjID,
@@ -75,7 +117,34 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             };
 
             ProjectExpensesCmd.NewProjectExpens(tb);
-            MessageBox.Show("تمت علمية الاضافة");
+
+            RadMessageBox.Show("تمت علمية الاضافة");
+            ClearTxt();
+        }
+        private void ClearTxt()
+        {
+            ExpensesNameTextBox.Clear();
+            BillTextBox.Clear();
+            RequiarAmountTextBox.Clear();
+            CashingNumberTextBox.Clear();
+            SupplierComboBox.ResetText();
+            SubActivtiesComboBox.Focus();
+
+        }
+        private void RequiarAmountTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 46 && RequiarAmountTextBox.Text.IndexOf(".") != -1)
+            {
+
+                e.Handled = true;
+                return;
+            }
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
         }
       
 

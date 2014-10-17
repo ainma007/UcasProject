@@ -170,6 +170,7 @@
             this.CostTextBox.Size = new System.Drawing.Size(131, 22);
             this.CostTextBox.TabIndex = 7;
             this.CostTextBox.ThemeName = "TelerikMetro";
+            this.CostTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CostTextBox_KeyPress);
             // 
             // label1
             // 

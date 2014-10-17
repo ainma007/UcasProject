@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
@@ -114,16 +114,16 @@
             this.StatusDropDownList.AutoCompleteDisplayMember = null;
             this.StatusDropDownList.AutoCompleteValueMember = null;
             this.StatusDropDownList.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem3.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem3.Text = "فعال";
-            radListDataItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem3.TextWrap = true;
-            radListDataItem4.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem4.Text = "غير فعال";
-            radListDataItem4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem4.TextWrap = true;
-            this.StatusDropDownList.Items.Add(radListDataItem3);
-            this.StatusDropDownList.Items.Add(radListDataItem4);
+            radListDataItem1.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem1.Text = "فعال";
+            radListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem1.TextWrap = true;
+            radListDataItem2.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem2.Text = "غير فعال";
+            radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem2.TextWrap = true;
+            this.StatusDropDownList.Items.Add(radListDataItem1);
+            this.StatusDropDownList.Items.Add(radListDataItem2);
             this.StatusDropDownList.Location = new System.Drawing.Point(111, 204);
             this.StatusDropDownList.Name = "StatusDropDownList";
             this.StatusDropDownList.Size = new System.Drawing.Size(136, 19);
@@ -159,6 +159,7 @@
             this.TotalCostTextBox.Size = new System.Drawing.Size(136, 22);
             this.TotalCostTextBox.TabIndex = 5;
             this.TotalCostTextBox.ThemeName = "TelerikMetro";
+            this.TotalCostTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalCostTextBox_KeyPress);
             // 
             // EndDateTimePicker
             // 

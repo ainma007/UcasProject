@@ -37,22 +37,38 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
         private void radGridView1_CommandCellClick(object sender, EventArgs e)
         {
-            FrmContractsLookAndSave frmsave = new FrmContractsLookAndSave();
-            frmsave.GetEmplyeeCombo();
-            frmsave.myContractId = int.Parse(radGridView1.CurrentRow.Cells["ID"].Value.ToString());
-            frmsave.EmployeeComboBox.Text = radGridView1.CurrentRow.Cells[1].Value.ToString();
-            frmsave.StartDateTimePicker.Text = radGridView1.CurrentRow.Cells[2].Value.ToString();
-            frmsave.EndDateTimePicker.Text = radGridView1.CurrentRow.Cells[3].Value.ToString();
-            frmsave.SalaryTextBox.Text = radGridView1.CurrentRow.Cells[4].Value.ToString();
-            frmsave.StatusDropDownList.Text = radGridView1.CurrentRow.Cells[5].Value.ToString();
+            var col = radGridView1.CurrentColumn.Index;
+
+            if (col == 6)
+            {
+                FrmContractsLookAndSave frmsave = new FrmContractsLookAndSave();
+                frmsave.GetEmplyeeCombo();
+                frmsave.myContractId = int.Parse(radGridView1.CurrentRow.Cells["ID"].Value.ToString());
+                frmsave.EmployeeComboBox.Text = radGridView1.CurrentRow.Cells[1].Value.ToString();
+                frmsave.StartDateTimePicker.Text = radGridView1.CurrentRow.Cells[2].Value.ToString();
+                frmsave.EndDateTimePicker.Text = radGridView1.CurrentRow.Cells[3].Value.ToString();
+                frmsave.SalaryTextBox.Text = radGridView1.CurrentRow.Cells[4].Value.ToString();
+                frmsave.StatusDropDownList.Text = radGridView1.CurrentRow.Cells[5].Value.ToString();
 
 
-           
-          //  frmsave.myContractId = GetContractsID;
-            frmsave.ShowDialog();
 
+
+                frmsave.ShowDialog();
+                return;
+            }
+
+            if (col == 7)
+            {
+                if (RadMessageBox.Show(this, OperationX.DeleteMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                {
+
+                    ContractCmd.DeleteContract(int.Parse(radGridView1.CurrentRow.Cells[0].Value.ToString()));
+                    MessageBox.Show(OperationX.DeletedMessage);
+                    return;
+                }
+               
+            }
         }
-
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
             FillData();

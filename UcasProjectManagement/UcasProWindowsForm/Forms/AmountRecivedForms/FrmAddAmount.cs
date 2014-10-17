@@ -98,11 +98,18 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
 
         private void CostTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-          if ((e.KeyChar < 48 || e.KeyChar > 57) &&
+            char ch = e.KeyChar;
+            if (ch == 46 && CostTextBox.Text.IndexOf(".") != -1)
+            {
 
-         e.KeyChar != 46 && e.KeyChar != 44 && e.KeyChar != 8)
+                e.Handled = true;
+                return;
+            }
 
-        e.Handled = true;
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
 
         }
 
