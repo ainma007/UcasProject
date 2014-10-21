@@ -52,9 +52,9 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
             };
              TheDonorCmd.AddDonor(Donrs);
-             RadMessageBox.SetThemeName("telerikMetroBlueTheme");
+         
 
-            DialogResult ds = RadMessageBox.Show(this, OperationX.AddMessageDone, "Done", MessageBoxButtons.OK, RadMessageIcon.Info);
+             RadMessageBox.Show(this, OperationX.AddMessageDone, "Done", MessageBoxButtons.OK, RadMessageIcon.Info);
         }
 
 

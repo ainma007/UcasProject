@@ -24,71 +24,44 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
             theDonorsBindingSource.DataSource = TheDonorCmd.GetAllDonors();
         }
-        private void LockGrid()
-        {
-            for (int i = 0; i <= DonersGridView.Rows.Count - 1; i++)
-            {
-                DonersGridView.Rows[i].Cells[0].ReadOnly = true;
-                DonersGridView.Rows[i].Cells[1].ReadOnly = true;
-                DonersGridView.Rows[i].Cells[2].ReadOnly = true;
-                DonersGridView.Rows[i].Cells[3].ReadOnly = true;
-                DonersGridView.Rows[i].Cells[4].ReadOnly = true;
-                DonersGridView.Rows[i].Cells[5].ReadOnly = true;
-                DonersGridView.Rows[i].Cells[6].ReadOnly = true;
-                DonersGridView.Rows[i].Cells[7].ReadOnly = true;
-                DonersGridView.Rows[i].Cells[8].ReadOnly = true;
+        
 
-
-
-
-            }
-
-        }
+       
         private void FrmManagementFinanciers_Load(object sender, EventArgs e)
         {
             GetAllFinanciers();
-            LockGrid();
+          
         }
 
         private void radGridView1_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
-            DonersGridView.Rows[e.RowIndex].Cells[0].ReadOnly = false;
-            DonersGridView.Rows[e.RowIndex].Cells[1].ReadOnly = false;
-            DonersGridView.Rows[e.RowIndex].Cells[2].ReadOnly = false;
-            DonersGridView.Rows[e.RowIndex].Cells[3].ReadOnly = false;
-            DonersGridView.Rows[e.RowIndex].Cells[4].ReadOnly = false;
-            DonersGridView.Rows[e.RowIndex].Cells[5].ReadOnly = false;
-            DonersGridView.Rows[e.RowIndex].Cells[6].ReadOnly = false;
-            DonersGridView.Rows[e.RowIndex].Cells[7].ReadOnly = false;
-            DonersGridView.Rows[e.RowIndex].Cells[8].ReadOnly = false;
+          
         }
 
         private void FinanciersGridView_CommandCellClick(object sender, EventArgs e)
         {
             try{  
         var col = DonersGridView.CurrentColumn.Index;
-        if (col == 8)
+        if (col == 7)
         {
-            if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
-            {
-                TheDonor Donrs = theDonorsBindingSource.Current as TheDonor;
-                TheDonorCmd.EditDonor(Donrs);
-               GetAllFinanciers();
-                LockGrid();
-            }
-            else
-            {
-
-                 GetAllFinanciers();
-                LockGrid();
-            }
+            FrmDonorsEdit frm = new FrmDonorsEdit();
+            frm.XDonorsId = int.Parse(DonersGridView.CurrentRow.Cells[0].Value.ToString());
+            frm.TheDonorsNameTextBox.Text = DonersGridView.CurrentRow.Cells[1].Value.ToString();
+            frm.AgentNameTextBox.Text = DonersGridView.CurrentRow.Cells[2].Value.ToString();
+            frm.PhoneNumberTextBox.Text = DonersGridView.CurrentRow.Cells[3].Value.ToString();
+            frm.faxTextBox4.Text = DonersGridView.CurrentRow.Cells[4].Value.ToString();
+            frm.EmailTextBox.Text = DonersGridView.CurrentRow.Cells[5].Value.ToString();
+            frm.AdressTextBox.Text = DonersGridView.CurrentRow.Cells[6].Value.ToString();
+            frm.ShowDialog();
+            
         }
-        if (col == 9) { if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+        if (col == 8) { if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                     {
-                        TheDonorCmd Donrs = theDonorsBindingSource.Current as TheDonorCmd;
-                       // TheDonorCmd.DeleteDonor(Donrs.);
-                       GetAllFinanciers();
-                       LockGrid();
+                       
+                       TheDonorCmd.DeleteDonor(int.Parse(DonersGridView.CurrentRow.Cells[0].Value.ToString()));
+                       RadMessageBox.Show(OperationX.DeletedMessage);
+                     
+                      
                     }
 
             }

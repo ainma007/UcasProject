@@ -100,7 +100,7 @@
             // 
             // radLabel2
             // 
-            this.radLabel2.Location = new System.Drawing.Point(231, 84);
+            this.radLabel2.Location = new System.Drawing.Point(270, 76);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(61, 18);
             this.radLabel2.TabIndex = 3;
@@ -109,15 +109,15 @@
             // 
             // PsswordTextBox
             // 
-            this.PsswordTextBox.Location = new System.Drawing.Point(27, 82);
+            this.PsswordTextBox.Location = new System.Drawing.Point(34, 74);
             this.PsswordTextBox.Name = "PsswordTextBox";
-            this.PsswordTextBox.Size = new System.Drawing.Size(186, 22);
+            this.PsswordTextBox.Size = new System.Drawing.Size(218, 22);
             this.PsswordTextBox.TabIndex = 1;
-            this.PsswordTextBox.ThemeName = "TelerikMetroBlue";
+            this.PsswordTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel1
             // 
-            this.radLabel1.Location = new System.Drawing.Point(231, 46);
+            this.radLabel1.Location = new System.Drawing.Point(270, 38);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(76, 18);
             this.radLabel1.TabIndex = 1;
@@ -126,9 +126,9 @@
             // 
             // UserNameTextBox
             // 
-            this.UserNameTextBox.Location = new System.Drawing.Point(27, 44);
+            this.UserNameTextBox.Location = new System.Drawing.Point(34, 36);
             this.UserNameTextBox.Name = "UserNameTextBox";
-            this.UserNameTextBox.Size = new System.Drawing.Size(186, 22);
+            this.UserNameTextBox.Size = new System.Drawing.Size(218, 22);
             this.UserNameTextBox.TabIndex = 0;
             this.UserNameTextBox.ThemeName = "TelerikMetro";
             // 
@@ -144,6 +144,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmLogin_Load);

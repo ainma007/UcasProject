@@ -117,55 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="radRibbonBar1.StartButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAYAAAB2HjRBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAALNJREFUOE+NkeENQiEMhBnBERzBkRzFTRzBERjBERzBn/wAgnd97Ut9lsglBCj3
-        HSUkaoxx6r3n1tqTaykGgudeSnnDc5ECFmdCfkQBBmJ+7AG11hcPaCAUBRxvxHzFGHKzOJxotgC33lpV
-        Rdwuu232jKloJkTYt/tXBvq2lwKOoJZ/vygSTJlDt19iXQPi9zNZDTctibCXr+GspVgwSABb1f0aaILR
-        AvLGLYImAPaECZjSB56hKtx0sdEUAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="gridViewCommandColumn1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJGSURBVDhPrZNdSJNRHMbfoJuuCrrprjI/qKx9vXPvnDii
-        sKiB25rv3JcyRCojxYo0L9KwNDMLW2ltaVtNydyFEmqU0kXGAl1lr6QVlYgj+zJsFstGT3uPMUdJ86I/
-        /M7hwO95OHA41H8ZmnXUbWAd36SsA4uBd/kMCUuzrq5S5LhR5PkO36Mn4Djun/R7B4krMzSD0dUto0Ta
-        C6sVua3Y2xpcMPAn98MFvMuYnJBkXV5OClJzWmC5MgO/3x+Tx8MviCszOiHIPLeCCi9rGEsL1PVTCAQC
-        MRnkXhNXZogqkJndyKh+h1AoFJOh537iyk+kQViZdJYUpJjcSK+YwGLGNzoGee0W5LdrselUwjQpkBqv
-        Q172BpMfv/zWFp7gjyBUDVtxqMeMoZAbR3stoUhBypGXfyEtfRB1HgFTsw2FXXp4Z+0o7TNF3cBwDZKD
-        zyKMvQ1g3w0zlPVCHLt1GKPjn6G270BBtwbdwdO4OVUBcdV6bDygXkcKaIMLwsKnESwuLXI7t8M1U4Kd
-        DgaKMwqYOubOje+LIAqHaZNt/hXobBeS9wxEsLqyofOko3Y6j1D2iiV75aQFwqoEJBf0gtY3zxdI9E4k
-        WfsjDPg45Ln0ULXJUPIpk1A8sQvi6nikFt8mDq1vmiuQqm0rabYJccY+xBvvItHQA3eHF56uh9Bd0iCj
-        TQTreBoEJ9fC2XkH4vx7xOE/lVJZvpT/T0sk2oaLUpV9ltae/yDabeOiSTzOfN1cHvdTwNaM8A4fFOsa
-        h8Ua236KoqhfaMtyYodGoQ8AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="gridViewCommandColumn2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMWSURBVDhPZZJrSJNxFMb/urk5Z6bYxdAPTeYyrbwgKHkJ
-        LKy0i5ciDCkoog95TeyCpmTpFKEwotTK6dAiLZ0ubV1IMGzdoISBiF1ompdpMZf9ifrwdN7tFbo88HAO
-        z/mdw5+Xlz3J2vLEYerljscm7jAt+j6fN/WR73E7zeymHm7vN3D7vS6q3dzReY33pSS/CWNMzRZ0N37N
-        9t7BXIces7dbMXe7BbZbzZhtv4HZtmuw6Rtha70KW8sVzDRfxsz1S7C1NeFnvRYH/f2qmL3hLJ+qr8bU
-        xXOYrC2HtaIYE5Ul+FxThs/aUkycP4WJ0gKMn87FxJlCjJcXwUqerziOk6tW6JklO4U/j1TjWUgAnseE
-        QZB5fyYGVirxIjQQQ4FLYT6U7cwHNKtgVq/AkCYAo3FrUein1DGTF+O9UoYuxpzQonqiI9FBmWlTgpi4
-        JHC9HgyDcoZjEjcd6/Jw4zc93KCngSEzQ8Rc6j58SOxcqo+OQitx7VI39MvccUxGBzqlEq53l6BNIkED
-        DTtTU0X8b11Yvw5NwjKxrWSjVEoHJDrWr5DzLrkc3eQeDxnahSfm5YlrLjXt2oEWyo2enk7uLnlAIUe+
-        Jx0weSv5I6USj7y88JCgx5s3i2t/60FsLPqEubc3HhD/aok3ChV04LWPDzf7+uKZQoGn/zz/5oEDYufS
-        0+RkDMpkGCJ+xN8XJUqZjlmCVXw4OBhvAwNFzKWOhAR6pgIvc3LExCXz8uUYVqlgVQfjhK9Cx0biN/Kx
-        +Hi8i4vDm8REJ2TMyIAlIgLWpCRYwsNhKS525gPR0XhP3FhCIr4kxqPUn/6Dr2mpfDIrC1N79mA6PR0f
-        t2+HNS0NM4sZ1U/btmE0JQVTu3djmrJJ8o99e1ER5Kdn348e+TWfXwhHbi6+0ddfoLpA1fGHv+W6cmEu
-        cI6CIuB4AU4FLWtgH7K2jENbBdRoAW01UC1a6P8zMbXkuhqMZu/8vkEu2crWSFlMuSaosW69xlgRqjaU
-        qFWGkhCV4TS5jCxklWFqQ1V4iKGWfCFSY6wMXd0WpZDtZIyx3586hr5HZ1pwAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="supplierBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>196, 17</value>
-  </metadata>
   <metadata name="telerikMetroTheme1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>556, 17</value>
+    <value>17, 17</value>
   </metadata>
 </root>

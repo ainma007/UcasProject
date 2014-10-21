@@ -196,17 +196,17 @@
     <Compile Include="Forms\MainForm\FrmMainUserPro.Designer.cs">
       <DependentUpon>FrmMainUserPro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ProjectProfileForm\FrmEditProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProjectProfileForm\FrmEditProject.Designer.cs">
+      <DependentUpon>FrmEditProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProjectProfileForm\FrmTheDonorsAndProjectAdd.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ProjectProfileForm\FrmTheDonorsAndProjectAdd.Designer.cs">
       <DependentUpon>FrmTheDonorsAndProjectAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ProjectProfileForm\FrmAddAmountsReceiveds.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ProjectProfileForm\FrmAddAmountsReceiveds.Designer.cs">
-      <DependentUpon>FrmAddAmountsReceiveds.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProjectProfileForm\FrmAddProject.cs">
       <SubType>Form</SubType>
@@ -214,17 +214,23 @@
     <Compile Include="Forms\ProjectProfileForm\FrmAddProject.Designer.cs">
       <DependentUpon>FrmAddProject.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProjectProfileForm\FrmOneProjectProfileManage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ProjectProfileForm\FrmOneProjectProfileManage.Designer.cs">
-      <DependentUpon>FrmOneProjectProfileManage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ProjectProfileForm\FrmProjectManage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ProjectProfileForm\FrmProjectManage.Designer.cs">
       <DependentUpon>FrmProjectManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProjectProfileForm\FrmTheDonorsAndProjectEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProjectProfileForm\FrmTheDonorsAndProjectEdit.Designer.cs">
+      <DependentUpon>FrmTheDonorsAndProjectEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProjectProfileForm\FrmTheDonorsAndProjectManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProjectProfileForm\FrmTheDonorsAndProjectManage.Designer.cs">
+      <DependentUpon>FrmTheDonorsAndProjectManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\supplierForm\FrmAddsupplier.cs">
       <SubType>Form</SubType>
@@ -237,6 +243,18 @@
     </Compile>
     <Compile Include="Forms\supplierForm\FrmAddTheTheDonors.Designer.cs">
       <DependentUpon>FrmAddTheTheDonors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\supplierForm\FrmDonorsEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\supplierForm\FrmDonorsEdit.Designer.cs">
+      <DependentUpon>FrmDonorsEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\supplierForm\FrmEditsupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\supplierForm\FrmEditsupplier.Designer.cs">
+      <DependentUpon>FrmEditsupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\supplierForm\FrmManagementTheDonors.cs">
       <SubType>Form</SubType>
@@ -333,26 +351,35 @@
     <EmbeddedResource Include="Forms\MainForm\FrmMainUserPro.resx">
       <DependentUpon>FrmMainUserPro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectProfileForm\FrmEditProject.resx">
+      <DependentUpon>FrmEditProject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProjectProfileForm\FrmTheDonorsAndProjectAdd.resx">
       <DependentUpon>FrmTheDonorsAndProjectAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProjectProfileForm\FrmAddAmountsReceiveds.resx">
-      <DependentUpon>FrmAddAmountsReceiveds.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProjectProfileForm\FrmAddProject.resx">
       <DependentUpon>FrmAddProject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProjectProfileForm\FrmOneProjectProfileManage.resx">
-      <DependentUpon>FrmOneProjectProfileManage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProjectProfileForm\FrmProjectManage.resx">
       <DependentUpon>FrmProjectManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectProfileForm\FrmTheDonorsAndProjectEdit.resx">
+      <DependentUpon>FrmTheDonorsAndProjectEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectProfileForm\FrmTheDonorsAndProjectManage.resx">
+      <DependentUpon>FrmTheDonorsAndProjectManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\supplierForm\FrmAddsupplier.resx">
       <DependentUpon>FrmAddsupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\supplierForm\FrmAddTheTheDonors.resx">
       <DependentUpon>FrmAddTheTheDonors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\supplierForm\FrmDonorsEdit.resx">
+      <DependentUpon>FrmDonorsEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\supplierForm\FrmEditsupplier.resx">
+      <DependentUpon>FrmEditsupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\supplierForm\FrmManagementTheDonors.resx">
       <DependentUpon>FrmManagementTheDonors.cs</DependentUpon>

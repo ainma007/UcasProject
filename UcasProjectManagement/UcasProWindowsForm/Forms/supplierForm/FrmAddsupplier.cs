@@ -61,9 +61,9 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
             };
              SuppliersCmd.newSupplier(Sup);
-            RadMessageBox.SetThemeName("Office2013Light");
+           
 
-            DialogResult ds = RadMessageBox.Show(this, OperationX.AddMessageDone, "Done", MessageBoxButtons.OK, RadMessageIcon.Info);
+          RadMessageBox.Show(this, OperationX.AddMessageDone, "Done", MessageBoxButtons.OK, RadMessageIcon.Info);
         }
 
 

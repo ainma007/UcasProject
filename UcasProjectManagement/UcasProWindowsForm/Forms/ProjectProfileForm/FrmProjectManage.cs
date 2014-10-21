@@ -24,7 +24,6 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
         {
             FillCombo();
             GetAllProject();
-            LockGrid();
            
         }
         private void FillCombo()
@@ -44,24 +43,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             GridViewComboBoxColumn Col2 = (GridViewComboBoxColumn)radGridView1.Columns["Status"];
             Col2.DataSource = s1;
         }
-        private void LockGrid()
-        {
-            for (int i = 0; i <= radGridView1.Rows.Count - 1; i++)
-            {
-                radGridView1.Rows[i].Cells[0].ReadOnly = true;
-                radGridView1.Rows[i].Cells[1].ReadOnly = true;
-                radGridView1.Rows[i].Cells[2].ReadOnly = true;
-                radGridView1.Rows[i].Cells[3].ReadOnly = true;
-                radGridView1.Rows[i].Cells[4].ReadOnly = true;
-                radGridView1.Rows[i].Cells[5].ReadOnly = true;
-                radGridView1.Rows[i].Cells[6].ReadOnly = true;
-                radGridView1.Rows[i].Cells[7].ReadOnly = true;
-                radGridView1.Rows[i].Cells[8].ReadOnly = true;
-
-
-            }
-
-        }
+        
         private void GetAllProject()
         {
             ProjectbindingSource.DataSource = ProjectProfileCmd.GetAllProjects();
@@ -87,19 +69,17 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             var col = radGridView1.CurrentColumn.Index;
             if (col == 9)
             {
-                if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Info) == DialogResult.Yes)
-                {
-                    ProjectProfile cp = ProjectbindingSource.Current as ProjectProfile;
-                    ProjectProfileCmd.EditProjectProfile(cp);
-                    GetAllProject();
-                    LockGrid();
-                }
-                else
-                {
-
-                    GetAllProject();
-                    LockGrid();
-                }
+                FrmEditProject frm = new FrmEditProject();
+                frm.XProID =int.Parse( radGridView1.CurrentRow.Cells[0].Value.ToString());
+                frm.ProjectNameTextBox.Text = radGridView1.CurrentRow.Cells[1].Value.ToString();
+                frm.ProjectDescriptionTextBox.Text = radGridView1.CurrentRow.Cells[2].Value.ToString();
+                frm.StartDateTimePicker.Text = radGridView1.CurrentRow.Cells[3].Value.ToString();
+                frm.EndDateTimePicker.Text = radGridView1.CurrentRow.Cells[4].Value.ToString();
+                frm.TotalCostTextBox.Text = radGridView1.CurrentRow.Cells[5].Value.ToString();
+                frm.CoineDropDownList.Text = radGridView1.CurrentRow.Cells[6].Value.ToString();
+                frm.StatusDownList.Text = radGridView1.CurrentRow.Cells[8].Value.ToString();
+                frm.ShowDialog();
+            }
 
                 if (col == 10)
                 {
@@ -108,14 +88,13 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                         ProjectProfile cp = ProjectbindingSource.Current as ProjectProfile;
                         ProjectProfileCmd.DeleteProjectProfile(cp.ID);
                         GetAllProject();
-                        LockGrid();
                     }
                     
 
                 }
             }
 
-        }
+       
 
         private void MasterTemplate_CellClick(object sender, GridViewCellEventArgs e)
         {
@@ -126,21 +105,10 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void MasterTemplate_CellDoubleClick(object sender, GridViewCellEventArgs e)
         {
-                radGridView1.Rows[e.RowIndex].Cells[0].ReadOnly = false;
-                radGridView1.Rows[e.RowIndex].Cells[1].ReadOnly = false;
-                radGridView1.Rows[e.RowIndex].Cells[2].ReadOnly = false;
-                radGridView1.Rows[e.RowIndex].Cells[3].ReadOnly = false;
-                radGridView1.Rows[e.RowIndex].Cells[4].ReadOnly = false;
-                radGridView1.Rows[e.RowIndex].Cells[5].ReadOnly = false;
-                radGridView1.Rows[e.RowIndex].Cells[6].ReadOnly = false;
-                radGridView1.Rows[e.RowIndex].Cells[7].ReadOnly = false;
-                radGridView1.Rows[e.RowIndex].Cells[8].ReadOnly = false;
-                radGridView1.Rows[e.RowIndex].Cells[9].ReadOnly = false;
-                radGridView1.Rows[e.RowIndex].Cells[10].ReadOnly = false;
+               
 
 
-
-            }
+      }
 
         private void MasterTemplate_ValueChanged(object sender, EventArgs e)
         {

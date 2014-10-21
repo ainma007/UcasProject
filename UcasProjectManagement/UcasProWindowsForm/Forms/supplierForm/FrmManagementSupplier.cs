@@ -61,28 +61,25 @@ namespace UcasProWindowsForm.Forms.supplierForm
         {
           try{  
         var col = radGridView1.CurrentColumn.Index;
-        if (col == 8)
+        if (col == 7)
         {
-            if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
-            {
-                Supplier sup = supplierBindingSource.Current as Supplier;
-                SuppliersCmd.EditSupplier(sup);
-                GetAllsupplier();
-                LockGrid();
-            }
-            else
-            {
-
-                GetAllsupplier();
-                LockGrid();
-            }
+            FrmEditsupplier frm = new FrmEditsupplier();
+            frm.XSupID = int.Parse(radGridView1.CurrentRow.Cells[0].Value.ToString());
+            frm.NameTextBox.Text = radGridView1.CurrentRow.Cells[1].Value.ToString();
+            frm.SuppliersNaturalTextBox.Text = radGridView1.CurrentRow.Cells[2].Value.ToString();
+            frm.PhoneNumberTextBox.Text = radGridView1.CurrentRow.Cells[3].Value.ToString();
+            frm.faxTextBox4.Text = radGridView1.CurrentRow.Cells[4].Value.ToString();
+            frm.EmailTextBox.Text = radGridView1.CurrentRow.Cells[5].Value.ToString();
+            frm.AdressTextBox.Text = radGridView1.CurrentRow.Cells[6].Value.ToString();
+            frm.ShowDialog();
+           
         }
-        if (col == 9) { if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+        if (col == 8) { if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                     {
-                        Supplier sup = supplierBindingSource.Current as Supplier;
-                        SuppliersCmd.DeleteSupplier(sup.ID);
+                      
+                        SuppliersCmd.DeleteSupplier(int.Parse(radGridView1.CurrentRow.Cells[0].Value.ToString()));
                         GetAllsupplier();
-                        LockGrid();
+                     
                     }
 
             }
@@ -99,14 +96,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void MasterTemplate_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
-            radGridView1.Rows[e.RowIndex].Cells[0].ReadOnly = false;
-            radGridView1.Rows[e.RowIndex].Cells[1].ReadOnly = false;
-            radGridView1.Rows[e.RowIndex].Cells[2].ReadOnly = false;
-            radGridView1.Rows[e.RowIndex].Cells[3].ReadOnly = false;
-            radGridView1.Rows[e.RowIndex].Cells[4].ReadOnly = false;
-            radGridView1.Rows[e.RowIndex].Cells[5].ReadOnly = false;
-            radGridView1.Rows[e.RowIndex].Cells[6].ReadOnly = false;
-            radGridView1.Rows[e.RowIndex].Cells[7].ReadOnly = false;
+          
             
         }
     }

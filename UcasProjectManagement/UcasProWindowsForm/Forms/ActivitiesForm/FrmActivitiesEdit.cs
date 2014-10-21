@@ -57,19 +57,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.White;
             }
 
-            if (StatusDropDownList.Text == "")
-            {
-              
-                StatusDropDownList.DropDownListElement.TextBox.BackColor = Color.OrangeRed;
-                              
-                StatusDropDownList.Focus();
-
-                return;
-            }
-            else
-            {
-                StatusDropDownList.DropDownListElement.TextBox.BackColor = Color.White;
-            }
+           
 
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {

@@ -42,8 +42,8 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void ProjectManageBtn_Click(object sender, EventArgs e)
         {
-            FrmOneProjectProfileManage proMange = new FrmOneProjectProfileManage();
-            proMange.ShowDialog();
+            FrmTheDonorsAndProjectManage frm =new FrmTheDonorsAndProjectManage();
+            frm.ShowDialog();
         }
 
         private void ContractsBtn_Click(object sender, EventArgs e)
