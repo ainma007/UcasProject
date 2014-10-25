@@ -74,6 +74,14 @@ namespace UcasProWindowsForm.Forms.supplierForm
             }
         }
 
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            FrmAddTheTheDonors frm = new FrmAddTheTheDonors();
+            frm.ShowDialog();
+            this.Cursor = Cursors.Default;
+        }
+
         }
 
 

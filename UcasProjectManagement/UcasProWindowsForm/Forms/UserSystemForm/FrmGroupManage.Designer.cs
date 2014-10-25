@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGroupManage));
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.radRibbonBar1 = new Telerik.WinControls.UI.RadRibbonBar();
             this.ribbonTab1 = new Telerik.WinControls.UI.RibbonTab();
             this.radRibbonBarGroup1 = new Telerik.WinControls.UI.RadRibbonBarGroup();
-            this.radButtonElement1 = new Telerik.WinControls.UI.RadButtonElement();
-            this.EditBtn = new Telerik.WinControls.UI.RadButtonElement();
+            this.AddBtn = new Telerik.WinControls.UI.RadButtonElement();
+            this.RefreshBtn = new Telerik.WinControls.UI.RadButtonElement();
             this.radRibbonFormBehavior1 = new Telerik.WinControls.UI.RadRibbonFormBehavior();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.PermssionList = new System.Windows.Forms.CheckedListBox();
@@ -67,7 +67,7 @@
             this.ribbonTab1});
             this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
             this.radRibbonBar1.Name = "radRibbonBar1";
-            this.radRibbonBar1.Size = new System.Drawing.Size(955, 154);
+            this.radRibbonBar1.Size = new System.Drawing.Size(963, 154);
             this.radRibbonBar1.StartButtonImage = ((System.Drawing.Image)(resources.GetObject("radRibbonBar1.StartButtonImage")));
             this.radRibbonBar1.TabIndex = 0;
             this.radRibbonBar1.Text = "radRibbonBar1";
@@ -89,28 +89,28 @@
             this.radRibbonBarGroup1.AccessibleDescription = "العمليات";
             this.radRibbonBarGroup1.AccessibleName = "العمليات";
             this.radRibbonBarGroup1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radButtonElement1,
-            this.EditBtn});
+            this.AddBtn,
+            this.RefreshBtn});
             this.radRibbonBarGroup1.Name = "radRibbonBarGroup1";
             this.radRibbonBarGroup1.Text = "العمليات";
             this.radRibbonBarGroup1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // radButtonElement1
+            // AddBtn
             // 
-            this.radButtonElement1.AccessibleDescription = "radButtonElement1";
-            this.radButtonElement1.AccessibleName = "radButtonElement1";
-            this.radButtonElement1.Name = "radButtonElement1";
-            this.radButtonElement1.Text = "radButtonElement1";
-            this.radButtonElement1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.AddBtn.AccessibleDescription = "radButtonElement1";
+            this.AddBtn.AccessibleName = "radButtonElement1";
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Text = "اضافة مجموعة";
+            this.AddBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // EditBtn
+            // RefreshBtn
             // 
-            this.EditBtn.AccessibleDescription = "radButtonElement2";
-            this.EditBtn.AccessibleName = "radButtonElement2";
-            this.EditBtn.Name = "EditBtn";
-            this.EditBtn.Text = "radButtonElement2";
-            this.EditBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
+            this.RefreshBtn.AccessibleDescription = "radButtonElement2";
+            this.RefreshBtn.AccessibleName = "radButtonElement2";
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Text = "تحديث السجلات";
+            this.RefreshBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.RefreshBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // radRibbonFormBehavior1
             // 
@@ -126,12 +126,12 @@
             this.radGroupBox1.Controls.Add(this.GroupNameTextBox);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
-            this.radGroupBox1.HeaderText = "radGroupBox1";
+            this.radGroupBox1.HeaderText = "بيانات المجموعة";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 154);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(955, 197);
+            this.radGroupBox1.Size = new System.Drawing.Size(963, 197);
             this.radGroupBox1.TabIndex = 1;
-            this.radGroupBox1.Text = "radGroupBox1";
+            this.radGroupBox1.Text = "بيانات المجموعة";
             this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
             // PermssionList
@@ -145,7 +145,7 @@
             // radLabel7
             // 
             this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel7.Location = new System.Drawing.Point(843, 87);
+            this.radLabel7.Location = new System.Drawing.Point(855, 87);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(92, 19);
             this.radLabel7.TabIndex = 23;
@@ -157,7 +157,7 @@
             // 
             this.DescreptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DescreptionTextBox.AutoSize = false;
-            this.DescreptionTextBox.Location = new System.Drawing.Point(637, 86);
+            this.DescreptionTextBox.Location = new System.Drawing.Point(645, 86);
             this.DescreptionTextBox.Multiline = true;
             this.DescreptionTextBox.Name = "DescreptionTextBox";
             this.DescreptionTextBox.Size = new System.Drawing.Size(193, 50);
@@ -167,7 +167,7 @@
             // radLabel1
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel1.Location = new System.Drawing.Point(852, 48);
+            this.radLabel1.Location = new System.Drawing.Point(882, 48);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(82, 19);
             this.radLabel1.TabIndex = 21;
@@ -178,7 +178,7 @@
             // GroupNameTextBox
             // 
             this.GroupNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.GroupNameTextBox.Location = new System.Drawing.Point(637, 47);
+            this.GroupNameTextBox.Location = new System.Drawing.Point(645, 47);
             this.GroupNameTextBox.Name = "GroupNameTextBox";
             this.GroupNameTextBox.Size = new System.Drawing.Size(193, 22);
             this.GroupNameTextBox.TabIndex = 20;
@@ -198,33 +198,33 @@
             // 
             this.GroupGridView.MasterTemplate.AutoGenerateColumns = false;
             this.GroupGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn1.DataType = typeof(int);
-            gridViewDecimalColumn1.EnableExpressionEditor = false;
-            gridViewDecimalColumn1.FieldName = "ID";
-            gridViewDecimalColumn1.HeaderText = "ID";
-            gridViewDecimalColumn1.IsAutoGenerated = true;
-            gridViewDecimalColumn1.Name = "ID";
-            gridViewDecimalColumn1.Width = 314;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "GroupName";
-            gridViewTextBoxColumn1.HeaderText = "GroupName";
-            gridViewTextBoxColumn1.IsAutoGenerated = true;
-            gridViewTextBoxColumn1.Name = "GroupName";
-            gridViewTextBoxColumn1.Width = 314;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "Description";
-            gridViewTextBoxColumn2.HeaderText = "Description";
-            gridViewTextBoxColumn2.IsAutoGenerated = true;
-            gridViewTextBoxColumn2.Name = "Description";
-            gridViewTextBoxColumn2.Width = 309;
+            gridViewDecimalColumn4.DataType = typeof(int);
+            gridViewDecimalColumn4.EnableExpressionEditor = false;
+            gridViewDecimalColumn4.FieldName = "ID";
+            gridViewDecimalColumn4.HeaderText = "ID";
+            gridViewDecimalColumn4.IsAutoGenerated = true;
+            gridViewDecimalColumn4.Name = "ID";
+            gridViewDecimalColumn4.Width = 317;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "GroupName";
+            gridViewTextBoxColumn7.HeaderText = "GroupName";
+            gridViewTextBoxColumn7.IsAutoGenerated = true;
+            gridViewTextBoxColumn7.Name = "GroupName";
+            gridViewTextBoxColumn7.Width = 317;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "Description";
+            gridViewTextBoxColumn8.HeaderText = "Description";
+            gridViewTextBoxColumn8.IsAutoGenerated = true;
+            gridViewTextBoxColumn8.Name = "Description";
+            gridViewTextBoxColumn8.Width = 311;
             this.GroupGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn1,
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2});
+            gridViewDecimalColumn4,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8});
             this.GroupGridView.MasterTemplate.DataSource = this.groupsTbBindingSource;
             this.GroupGridView.Name = "GroupGridView";
             this.GroupGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.GroupGridView.Size = new System.Drawing.Size(955, 504);
+            this.GroupGridView.Size = new System.Drawing.Size(963, 504);
             this.GroupGridView.TabIndex = 2;
             this.GroupGridView.Text = "radGridView1";
             this.GroupGridView.ThemeName = "TelerikMetro";
@@ -239,7 +239,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 855);
+            this.ClientSize = new System.Drawing.Size(963, 855);
             this.Controls.Add(this.GroupGridView);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.radRibbonBar1);
@@ -287,8 +287,8 @@
         private System.Windows.Forms.BindingSource groupsTbBindingSource;
         private Telerik.WinControls.UI.RibbonTab ribbonTab1;
         private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup1;
-        private Telerik.WinControls.UI.RadButtonElement radButtonElement1;
-        private Telerik.WinControls.UI.RadButtonElement EditBtn;
+        private Telerik.WinControls.UI.RadButtonElement AddBtn;
+        private Telerik.WinControls.UI.RadButtonElement RefreshBtn;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
     }
 }

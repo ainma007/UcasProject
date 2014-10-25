@@ -61,6 +61,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
+                this.Cursor = Cursors.WaitCursor;
                 ProjectActivity tb = new ProjectActivity()
                 {
 
@@ -76,6 +77,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
                 };
                 ActivityCmd.EditActivity(tb);
+                this.Cursor = Cursors.Default;
                RadMessageBox.Show("تمت عملية التعديل");
             }
 

@@ -49,7 +49,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.White;
             }
 
-
+            this.Cursor = Cursors.WaitCursor;
             ProjectActivity tb = new ProjectActivity()
             {
 
@@ -65,6 +65,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             };
 
             ActivityCmd.NewActivity(tb);
+            this.Cursor = Cursors.Default;
             MessageBox.Show("تمت عملية الاضافة");
             ClearTxt();
         }
