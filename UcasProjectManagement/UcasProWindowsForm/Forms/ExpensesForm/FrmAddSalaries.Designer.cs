@@ -284,13 +284,13 @@
             gridViewDecimalColumn2.Name = "Employee_ID";
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "EmployeeName";
-            gridViewTextBoxColumn1.HeaderText = "EmployeeName";
+            gridViewTextBoxColumn1.HeaderText = "الموظف";
             gridViewTextBoxColumn1.Name = "EmployeeName";
             gridViewTextBoxColumn1.SortOrder = Telerik.WinControls.UI.RadSortOrder.Descending;
             gridViewTextBoxColumn1.Width = 110;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "EmployeejobNumber";
-            gridViewTextBoxColumn2.HeaderText = "EmployeejobNumber";
+            gridViewTextBoxColumn2.HeaderText = "الرقم الوظيفي";
             gridViewTextBoxColumn2.Name = "EmployeejobNumber";
             gridViewTextBoxColumn2.Width = 129;
             this.EmployeeComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
