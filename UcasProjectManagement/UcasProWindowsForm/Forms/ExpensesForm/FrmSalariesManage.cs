@@ -27,7 +27,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void FrmSalariesManage_Load(object sender, EventArgs e)
         {
-            monthlysalaryBindingSource.DataSource = SalariesCmd.GetAllSalaryBypro(InformationsClass.ProjID);
+            SalaryGridView.DataSource = SalariesCmd.GetAllSalaryBypro(InformationsClass.ProjID);
         }
 
         private void SalaryGridView_CommandCellClick(object sender, EventArgs e)

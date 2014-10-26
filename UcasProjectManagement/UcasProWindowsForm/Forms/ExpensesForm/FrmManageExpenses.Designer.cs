@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageExpenses));
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -44,16 +43,14 @@
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.radRibbonBar1 = new Telerik.WinControls.UI.RadRibbonBar();
-            this.radRibbonFormBehavior1 = new Telerik.WinControls.UI.RadRibbonFormBehavior();
-            this.projectExpensBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ExpensesGridView = new Telerik.WinControls.UI.RadGridView();
             this.ribbonTab1 = new Telerik.WinControls.UI.RibbonTab();
             this.radRibbonBarGroup1 = new Telerik.WinControls.UI.RadRibbonBarGroup();
             this.AddBtn = new Telerik.WinControls.UI.RadButtonElement();
             this.radButtonElement2 = new Telerik.WinControls.UI.RadButtonElement();
             this.radButtonElement3 = new Telerik.WinControls.UI.RadButtonElement();
+            this.radRibbonFormBehavior1 = new Telerik.WinControls.UI.RadRibbonFormBehavior();
+            this.ExpensesGridView = new Telerik.WinControls.UI.RadGridView();
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectExpensBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExpensesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExpensesGridView.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -65,19 +62,62 @@
             this.ribbonTab1});
             this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
             this.radRibbonBar1.Name = "radRibbonBar1";
-            this.radRibbonBar1.Size = new System.Drawing.Size(1126, 154);
+            this.radRibbonBar1.Size = new System.Drawing.Size(1134, 154);
             this.radRibbonBar1.StartButtonImage = ((System.Drawing.Image)(resources.GetObject("radRibbonBar1.StartButtonImage")));
             this.radRibbonBar1.TabIndex = 0;
             this.radRibbonBar1.Text = "radRibbonBar1";
             this.radRibbonBar1.ThemeName = "TelerikMetro";
             // 
+            // ribbonTab1
+            // 
+            this.ribbonTab1.AccessibleDescription = "العمليات";
+            this.ribbonTab1.AccessibleName = "العمليات";
+            this.ribbonTab1.IsSelected = true;
+            this.ribbonTab1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radRibbonBarGroup1});
+            this.ribbonTab1.Name = "ribbonTab1";
+            this.ribbonTab1.Text = "العمليات";
+            this.ribbonTab1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // radRibbonBarGroup1
+            // 
+            this.radRibbonBarGroup1.AccessibleDescription = "العمليات";
+            this.radRibbonBarGroup1.AccessibleName = "العمليات";
+            this.radRibbonBarGroup1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.AddBtn,
+            this.radButtonElement2,
+            this.radButtonElement3});
+            this.radRibbonBarGroup1.Name = "radRibbonBarGroup1";
+            this.radRibbonBarGroup1.Text = "العمليات";
+            this.radRibbonBarGroup1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // AddBtn
+            // 
+            this.AddBtn.AccessibleDescription = "اضافة مصروف";
+            this.AddBtn.AccessibleName = "اضافة مصروف";
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Text = "اضافة مصروف";
+            this.AddBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // radButtonElement2
+            // 
+            this.radButtonElement2.AccessibleDescription = "تحديث السجلات";
+            this.radButtonElement2.AccessibleName = "تحديث السجلات";
+            this.radButtonElement2.Name = "radButtonElement2";
+            this.radButtonElement2.Text = "تحديث السجلات";
+            this.radButtonElement2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // radButtonElement3
+            // 
+            this.radButtonElement3.AccessibleDescription = "طباعة تقرير ";
+            this.radButtonElement3.AccessibleName = "طباعة تقرير ";
+            this.radButtonElement3.Name = "radButtonElement3";
+            this.radButtonElement3.Text = "طباعة تقرير ";
+            this.radButtonElement3.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
             // radRibbonFormBehavior1
             // 
             this.radRibbonFormBehavior1.Form = this;
-            // 
-            // projectExpensBindingSource
-            // 
-            this.projectExpensBindingSource.DataSource = typeof(Ucas.Data.ProjectExpens);
             // 
             // ExpensesGridView
             // 
@@ -148,11 +188,11 @@
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "تعديل";
             gridViewCommandColumn1.Name = "editColm";
-            gridViewCommandColumn1.Width = 81;
+            gridViewCommandColumn1.Width = 83;
             gridViewCommandColumn2.EnableExpressionEditor = false;
             gridViewCommandColumn2.HeaderText = "حذف";
             gridViewCommandColumn2.Name = "DelColm";
-            gridViewCommandColumn2.Width = 74;
+            gridViewCommandColumn2.Width = 80;
             gridViewDecimalColumn3.DataType = typeof(System.Nullable<int>);
             gridViewDecimalColumn3.EnableExpressionEditor = false;
             gridViewDecimalColumn3.FieldName = "Supplier_ID";
@@ -182,67 +222,19 @@
             gridViewCommandColumn2,
             gridViewDecimalColumn3,
             gridViewDecimalColumn4});
-            this.ExpensesGridView.MasterTemplate.DataSource = this.projectExpensBindingSource;
             this.ExpensesGridView.Name = "ExpensesGridView";
             this.ExpensesGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ExpensesGridView.Size = new System.Drawing.Size(1126, 647);
+            this.ExpensesGridView.Size = new System.Drawing.Size(1134, 681);
             this.ExpensesGridView.TabIndex = 1;
             this.ExpensesGridView.Text = "radGridView1";
             this.ExpensesGridView.ThemeName = "TelerikMetro";
             this.ExpensesGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.ExpensesGridView_CommandCellClick);
             // 
-            // ribbonTab1
-            // 
-            this.ribbonTab1.AccessibleDescription = "العمليات";
-            this.ribbonTab1.AccessibleName = "العمليات";
-            this.ribbonTab1.IsSelected = true;
-            this.ribbonTab1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radRibbonBarGroup1});
-            this.ribbonTab1.Name = "ribbonTab1";
-            this.ribbonTab1.Text = "العمليات";
-            this.ribbonTab1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // radRibbonBarGroup1
-            // 
-            this.radRibbonBarGroup1.AccessibleDescription = "العمليات";
-            this.radRibbonBarGroup1.AccessibleName = "العمليات";
-            this.radRibbonBarGroup1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.AddBtn,
-            this.radButtonElement2,
-            this.radButtonElement3});
-            this.radRibbonBarGroup1.Name = "radRibbonBarGroup1";
-            this.radRibbonBarGroup1.Text = "العمليات";
-            this.radRibbonBarGroup1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // AddBtn
-            // 
-            this.AddBtn.AccessibleDescription = "اضافة مصروف";
-            this.AddBtn.AccessibleName = "اضافة مصروف";
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Text = "اضافة مصروف";
-            this.AddBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // radButtonElement2
-            // 
-            this.radButtonElement2.AccessibleDescription = "تحديث السجلات";
-            this.radButtonElement2.AccessibleName = "تحديث السجلات";
-            this.radButtonElement2.Name = "radButtonElement2";
-            this.radButtonElement2.Text = "تحديث السجلات";
-            this.radButtonElement2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // radButtonElement3
-            // 
-            this.radButtonElement3.AccessibleDescription = "طباعة تقرير ";
-            this.radButtonElement3.AccessibleName = "طباعة تقرير ";
-            this.radButtonElement3.Name = "radButtonElement3";
-            this.radButtonElement3.Text = "طباعة تقرير ";
-            this.radButtonElement3.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
             // FrmManageExpenses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1126, 801);
+            this.ClientSize = new System.Drawing.Size(1134, 835);
             this.Controls.Add(this.ExpensesGridView);
             this.Controls.Add(this.radRibbonBar1);
             this.FormBehavior = this.radRibbonFormBehavior1;
@@ -257,7 +249,6 @@
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmManageExpenses_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectExpensBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExpensesGridView.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExpensesGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -271,7 +262,6 @@
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private Telerik.WinControls.UI.RadRibbonBar radRibbonBar1;
         private Telerik.WinControls.UI.RadRibbonFormBehavior radRibbonFormBehavior1;
-        private System.Windows.Forms.BindingSource projectExpensBindingSource;
         private Telerik.WinControls.UI.RadGridView ExpensesGridView;
         private Telerik.WinControls.UI.RibbonTab ribbonTab1;
         private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup1;

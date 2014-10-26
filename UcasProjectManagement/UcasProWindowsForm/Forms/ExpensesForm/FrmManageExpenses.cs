@@ -22,7 +22,16 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         private void FrmManageExpenses_Load(object sender, EventArgs e)
         {
 
-            projectExpensBindingSource.DataSource = ProjectExpensesCmd.ExpensesByProjectID(InformationsClass.ProjID);
+            ExpensesGridView.DataSource = ProjectExpensesCmd.ExpensesByProjectID(InformationsClass.ProjID);
+
+            double Totals = ProjectExpensesCmd.GetTotalExpensesByProject(InformationsClass.ProjID);
+
+            MessageBox.Show("Totals Expenses Of Current Project is =  :   " + Totals.ToString());
+
+            
+            //ExpensesGridView.Rows.Add(new string[] {"Totals ",Totals .ToString () });
+
+         
 
         }
 

@@ -10,6 +10,23 @@ namespace Ucas.Data.CommandClass
     {
 
         static UcasProEntities db = new UcasProEntities();
+        public static double GetTotalExpensesByProject(int ProID)
+        {
+            db = new UcasProEntities();
+            db.Configuration.LazyLoadingEnabled = false;
+            db.Configuration.ProxyCreationEnabled = false;
+            var LST = (from p in db.ProjectExpenses
+                       orderby p.DateofProcess ascending
+                       where p.ProjectProfile_ID == ProID
+                       select p.CashingNumber).ToList();
+
+            double total = 0;
+            foreach (var Sm in LST) { total += Convert.ToDouble(Sm); }
+
+            return total;
+
+        }
+
         public static bool NewProjectExpens(ProjectExpens tb)
         {
             try
