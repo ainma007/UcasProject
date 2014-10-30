@@ -85,6 +85,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.White;
             }
 
+            this.Cursor = Cursors.WaitCursor;
             ProjectSubActivity tb = new ProjectSubActivity()
             {
 
@@ -101,8 +102,10 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
             };
             SubActivityCmd.NewSubActivity(tb);
+            this.Cursor = Cursors.Default;
             MessageBox.Show("Saved...");
             ClearTxt();
+
         }
 
         private void ClearTxt()

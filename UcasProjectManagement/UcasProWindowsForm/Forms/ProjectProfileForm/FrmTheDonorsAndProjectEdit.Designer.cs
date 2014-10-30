@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
@@ -71,9 +71,9 @@
             // SaveBtn
             // 
             this.SaveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SaveBtn.Location = new System.Drawing.Point(213, 114);
+            this.SaveBtn.Location = new System.Drawing.Point(228, 121);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(139, 42);
+            this.SaveBtn.Size = new System.Drawing.Size(127, 44);
             this.SaveBtn.TabIndex = 7;
             this.SaveBtn.Text = "حفظ التعديلات";
             this.SaveBtn.ThemeName = "TelerikMetro";
@@ -100,6 +100,7 @@
             this.CostTextBox.TabIndex = 6;
             this.CostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.CostTextBox.ThemeName = "TelerikMetro";
+            this.CostTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CostTextBox_KeyPress);
             // 
             // radLabel1
             // 
@@ -125,35 +126,35 @@
             this.DonorsColumnComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.DonorsColumnComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // DonorsColumnComboBox.NestedRadGridView
+            // 
             // 
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.AllowSearchRow = true;
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "ID";
-            gridViewTextBoxColumn3.HeaderText = "column1";
-            gridViewTextBoxColumn3.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn3.IsVisible = false;
-            gridViewTextBoxColumn3.Name = "ID";
-            gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "Name";
-            gridViewTextBoxColumn4.HeaderText = "اختر الممول";
-            gridViewTextBoxColumn4.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn4.Name = "Name";
-            gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn4.Width = 220;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "column1";
+            gridViewTextBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "ID";
+            gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "Name";
+            gridViewTextBoxColumn2.HeaderText = "اختر الممول";
+            gridViewTextBoxColumn2.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn2.Name = "Name";
+            gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn2.Width = 220;
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2});
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            sortDescriptor2.PropertyName = "column1";
+            sortDescriptor1.PropertyName = "column1";
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor2});
+            sortDescriptor1});
             this.DonorsColumnComboBox.EditorControl.Name = "NestedRadGridView";
             this.DonorsColumnComboBox.EditorControl.ReadOnly = true;
             this.DonorsColumnComboBox.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -173,12 +174,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(374, 170);
             this.Controls.Add(this.radGroupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(382, 205);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(382, 205);
             this.Name = "FrmTheDonorsAndProjectEdit";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(382, 205);
             this.Text = "تعديل بيانات ممول مشروع";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmTheDonorsAndProjectEdit_Load);

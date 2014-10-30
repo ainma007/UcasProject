@@ -57,5 +57,15 @@ namespace UcasProWindowsForm.Forms.supplierForm
                 RadMessageBox.Show(OperationX.SaveMessagedone);
             }
         }
+
+        private void PhoneNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void faxTextBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }

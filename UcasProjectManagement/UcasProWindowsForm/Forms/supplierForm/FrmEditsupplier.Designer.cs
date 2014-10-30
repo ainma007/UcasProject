@@ -125,6 +125,7 @@
             this.faxTextBox4.Size = new System.Drawing.Size(193, 22);
             this.faxTextBox4.TabIndex = 25;
             this.faxTextBox4.ThemeName = "TelerikMetro";
+            this.faxTextBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.faxTextBox4_KeyPress);
             // 
             // radLabel5
             // 
@@ -165,13 +166,14 @@
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(193, 22);
             this.PhoneNumberTextBox.TabIndex = 24;
             this.PhoneNumberTextBox.ThemeName = "TelerikMetro";
+            this.PhoneNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumberTextBox_KeyPress);
             // 
             // saveBtn
             // 
             this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveBtn.Location = new System.Drawing.Point(190, 216);
+            this.saveBtn.Location = new System.Drawing.Point(190, 214);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(130, 38);
+            this.saveBtn.Size = new System.Drawing.Size(127, 44);
             this.saveBtn.TabIndex = 28;
             this.saveBtn.Text = "حفظ التعديلات";
             this.saveBtn.ThemeName = "TelerikMetro";
@@ -223,12 +225,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(338, 270);
             this.Controls.Add(this.radGroupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(346, 305);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(346, 305);
             this.Name = "FrmEditsupplier";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(346, 305);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعديل بيانات مورد";
             this.ThemeName = "TelerikMetro";
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();

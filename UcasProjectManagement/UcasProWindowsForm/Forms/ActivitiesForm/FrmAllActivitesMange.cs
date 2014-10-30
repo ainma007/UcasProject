@@ -22,20 +22,23 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         UcasProEntities db = new UcasProEntities();
         private void AdActivitesBtn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             FrmAddActivities AddActivfrm = new FrmAddActivities();
             AddActivfrm.ShowDialog();
+            this.Cursor = Cursors.Default;
         }
 
         private void AddSupActivitesBtn_Click(object sender, EventArgs e)
         {
-            
+            this.Cursor = Cursors.WaitCursor;
             FrmAddSubActivities AddSub = new FrmAddSubActivities();
             AddSub.ShowDialog();
+            this.Cursor = Cursors.Default;
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Edit");
+          
         }
         private void TotalActivites()
         {
@@ -48,6 +51,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         }
         private void FrmAllActivitesMange_Load(object sender, EventArgs e)
         {
+
             projectActivityBindingSource.DataSource = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
 
             projectSubActivityBindingSource.DataSource = SubActivityCmd.GetAllSubActivities();
@@ -57,11 +61,13 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void ActivitiesGridView_CommandCellClick(object sender, EventArgs e)
         {
+
             var col2 = ActivitiesGridView.CurrentColumn.Index;
 
             if (col2 == 8)
             {
-                
+
+                this.Cursor = Cursors.WaitCursor;
                 FrmActivitiesEdit EditActi = new FrmActivitiesEdit();
                 EditActi.xID = int.Parse(ActivitiesGridView.CurrentRow.Cells[0].Value.ToString());
                 EditActi.ActivitiesNameTextBox.Text = ActivitiesGridView.CurrentRow.Cells[1].Value.ToString();
@@ -72,6 +78,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 EditActi.StatusDropDownList.Text = ActivitiesGridView.CurrentRow.Cells[5].Value.ToString();
 
                 EditActi.ShowDialog();
+                this.Cursor = Cursors.Default;
                 return;
 
             }
@@ -79,9 +86,12 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                         
             if (col2 == 9) 
             {
+                this.Cursor = Cursors.WaitCursor;
                 ProjectActivity tb = projectActivityBindingSource.Current as ProjectActivity;
                 ActivityCmd.DeleteActivity(tb.ID);
+                this.Cursor = Cursors.Default;
                 MessageBox.Show("تمت علمية الحذف");
+
                 return;
                 
             }

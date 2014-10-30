@@ -91,6 +91,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             }
          if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
          {
+             this.Cursor = Cursors.WaitCursor;
              ProjectSubActivity tb = new ProjectSubActivity()
 
              {
@@ -109,6 +110,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
              };
              SubActivityCmd.EditSubActivity(tb);
+             this.Cursor = Cursors.Default;
              MessageBox.Show("تمت عملية التعديل");
          }
         }

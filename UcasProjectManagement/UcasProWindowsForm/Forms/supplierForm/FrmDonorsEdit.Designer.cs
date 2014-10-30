@@ -81,7 +81,7 @@
             this.radGroupBox1.HeaderText = "بيانات الممول";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(369, 278);
+            this.radGroupBox1.Size = new System.Drawing.Size(369, 269);
             this.radGroupBox1.TabIndex = 0;
             this.radGroupBox1.Text = "بيانات الممول";
             this.radGroupBox1.ThemeName = "TelerikMetro";
@@ -144,7 +144,9 @@
             this.faxTextBox4.Name = "faxTextBox4";
             this.faxTextBox4.Size = new System.Drawing.Size(193, 22);
             this.faxTextBox4.TabIndex = 27;
+            this.faxTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.faxTextBox4.ThemeName = "TelerikMetro";
+            this.faxTextBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.faxTextBox4_KeyPress);
             // 
             // radLabel5
             // 
@@ -164,6 +166,7 @@
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(259, 22);
             this.EmailTextBox.TabIndex = 28;
+            this.EmailTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.EmailTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel3
@@ -184,13 +187,15 @@
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(193, 22);
             this.PhoneNumberTextBox.TabIndex = 26;
+            this.PhoneNumberTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.PhoneNumberTextBox.ThemeName = "TelerikMetro";
+            this.PhoneNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumberTextBox_KeyPress);
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(227, 217);
+            this.SaveBtn.Location = new System.Drawing.Point(227, 213);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(130, 38);
+            this.SaveBtn.Size = new System.Drawing.Size(127, 44);
             this.SaveBtn.TabIndex = 30;
             this.SaveBtn.Text = "حفظ التعديلات";
             this.SaveBtn.ThemeName = "TelerikMetro";
@@ -220,14 +225,20 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 278);
+            this.ClientSize = new System.Drawing.Size(369, 269);
             this.Controls.Add(this.radGroupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(377, 304);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(377, 304);
             this.Name = "FrmDonorsEdit";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(377, 304);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعديل بيانات ممول";
             this.ThemeName = "TelerikMetro";
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();

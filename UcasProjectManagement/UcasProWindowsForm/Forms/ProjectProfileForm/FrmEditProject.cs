@@ -72,5 +72,21 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 MessageBox.Show("تمت العلمية بنجاح");
             }
         }
+
+        private void TotalCostTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 46 && TotalCostTextBox.Text.IndexOf(".") != -1)
+            {
+
+                e.Handled = true;
+                return;
+            }
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

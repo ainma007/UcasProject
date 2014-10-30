@@ -88,12 +88,14 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void ProjectManageBtn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             FrmTheDonorsAndProjectManage frm =new FrmTheDonorsAndProjectManage();
             frm.ShowDialog();
         }
 
         private void ContractsBtn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             FrmContratsManage ContrMng = new FrmContratsManage();
             ContrMng.ShowDialog();
         }
@@ -109,26 +111,34 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void ActivitesBtn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             FrmAllActivitesMange Activfrm = new FrmAllActivitesMange();
             Activfrm.ShowDialog();
+            this.Cursor = Cursors.Default;
         }
 
         private void ExpensesBTn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             FrmManageExpenses frm = new FrmManageExpenses();
             frm.ShowDialog();
+            this.Cursor = Cursors.Default;
         }
 
         private void SalaryBtn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             FrmSalariesManage frm = new FrmSalariesManage();
             frm.ShowDialog();
+            this.Cursor = Cursors.Default;
         }
 
         private void AmountRrecvBtn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             FrmMangeAmount frm = new FrmMangeAmount();
             frm.ShowDialog();
+            this.Cursor = Cursors.Default;
         }
 
         private void Expenseslbl_Click(object sender, EventArgs e)
