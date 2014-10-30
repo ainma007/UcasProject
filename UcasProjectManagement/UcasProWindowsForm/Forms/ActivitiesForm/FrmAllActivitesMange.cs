@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
 
@@ -36,13 +37,22 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         {
             MessageBox.Show("Edit");
         }
+        private void TotalActivites()
+        {
 
+            GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("TotalCost", "المجموع الكلي للانشطة الرئيسية = {0}", GridAggregateFunction.Sum);
+            GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight });
+            this.ActivitiesGridView.SummaryRowsBottom.Add(summaryRowItem);
+            ///
+         
+        }
         private void FrmAllActivitesMange_Load(object sender, EventArgs e)
         {
             projectActivityBindingSource.DataSource = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
 
             projectSubActivityBindingSource.DataSource = SubActivityCmd.GetAllSubActivities();
            // ActivitiesGridView.MasterTemplate.ExpandAll();
+            TotalActivites();
         }
 
         private void ActivitiesGridView_CommandCellClick(object sender, EventArgs e)

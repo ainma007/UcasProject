@@ -106,6 +106,22 @@ namespace Ucas.Data.CommandClass
             return q;
 
         }
+        public static double GetTotalAmountsByProject(int ProID)
+        {
+            db = new UcasProEntities();
+            db.Configuration.LazyLoadingEnabled = false;
+            db.Configuration.ProxyCreationEnabled = false;
+            var LST = (from p in db.AmountsReceiveds
+
+                       where p.ProjectProfile_ID == ProID
+                       select p.Cost).ToList();
+
+            double total = 0;
+            foreach (var Sm in LST) { total += Convert.ToDouble(Sm); }
+
+            return total;
+
+        }
 
     }
 }

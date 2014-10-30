@@ -105,9 +105,9 @@
             this.DonorsColumnComboBox.EditorControl.ShowGroupPanel = false;
             this.DonorsColumnComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.DonorsColumnComboBox.EditorControl.TabIndex = 0;
-            this.DonorsColumnComboBox.Location = new System.Drawing.Point(22, 43);
+            this.DonorsColumnComboBox.Location = new System.Drawing.Point(9, 43);
             this.DonorsColumnComboBox.Name = "DonorsColumnComboBox";
-            this.DonorsColumnComboBox.Size = new System.Drawing.Size(311, 20);
+            this.DonorsColumnComboBox.Size = new System.Drawing.Size(289, 20);
             this.DonorsColumnComboBox.TabIndex = 0;
             this.DonorsColumnComboBox.TabStop = false;
             this.DonorsColumnComboBox.ThemeName = "TelerikMetro";
@@ -125,17 +125,18 @@
             this.radGroupBox1.Controls.Add(this.radLabel1);
             this.radGroupBox1.Controls.Add(this.DonorsColumnComboBox);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGroupBox1.HeaderText = "اضافة ممولين";
+            this.radGroupBox1.HeaderText = "بيانات الادخال";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(420, 182);
+            this.radGroupBox1.Size = new System.Drawing.Size(385, 161);
             this.radGroupBox1.TabIndex = 1;
-            this.radGroupBox1.Text = "اضافة ممولين";
+            this.radGroupBox1.Text = "بيانات الادخال";
             this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(244, 128);
+            this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddBtn.Location = new System.Drawing.Point(230, 114);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(139, 42);
             this.AddBtn.TabIndex = 3;
@@ -146,7 +147,7 @@
             // radLabel2
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel2.Location = new System.Drawing.Point(339, 83);
+            this.radLabel2.Location = new System.Drawing.Point(304, 77);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(44, 16);
             this.radLabel2.TabIndex = 2;
@@ -156,16 +157,19 @@
             // 
             // CostTextBox
             // 
-            this.CostTextBox.Location = new System.Drawing.Point(22, 81);
+            this.CostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CostTextBox.Location = new System.Drawing.Point(174, 75);
             this.CostTextBox.Name = "CostTextBox";
-            this.CostTextBox.Size = new System.Drawing.Size(310, 22);
+            this.CostTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.CostTextBox.Size = new System.Drawing.Size(124, 22);
             this.CostTextBox.TabIndex = 2;
+            this.CostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.CostTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel1
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel1.Location = new System.Drawing.Point(339, 45);
+            this.radLabel1.Location = new System.Drawing.Point(304, 45);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(65, 16);
             this.radLabel1.TabIndex = 1;
@@ -177,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 182);
+            this.ClientSize = new System.Drawing.Size(385, 161);
             this.Controls.Add(this.radGroupBox1);
             this.Name = "FrmTheDonorsAndProjectAdd";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -185,7 +189,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "TheDonorsAndProjectMange";
+            this.Text = "اضافة الممولين";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmTheDonorsAndProjectAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DonorsColumnComboBox.EditorControl.MasterTemplate)).EndInit();

@@ -16,9 +16,9 @@ namespace Ucas.Data.CommandClass
             db.Configuration.LazyLoadingEnabled = false;
             db.Configuration.ProxyCreationEnabled = false;
             var LST = (from p in db.ProjectExpenses
-                       orderby p.DateofProcess ascending
+                       
                        where p.ProjectProfile_ID == ProID
-                       select p.CashingNumber).ToList();
+                       select p.RequiarAmount).ToList();
 
             double total = 0;
             foreach (var Sm in LST) { total += Convert.ToDouble(Sm); }
@@ -142,6 +142,7 @@ namespace Ucas.Data.CommandClass
             return q;
 
         }
+
         }
     }
 

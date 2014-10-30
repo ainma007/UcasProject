@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
 
@@ -17,7 +18,15 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         {
             InitializeComponent();
         }
+        private void TotalAmount()
+        {
 
+            GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("Cost", "المجموع الكلي   = {0}", GridAggregateFunction.Sum);
+            GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight });
+            this.radGridView1.SummaryRowsBottom.Add(summaryRowItem);
+            ///
+
+        }
         private void AddBtn_Click(object sender, EventArgs e)
         {
             FrmAddAmount Frm = new FrmAddAmount();
@@ -59,6 +68,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         private void FrmMangeAmount_Load(object sender, EventArgs e)
         {
             radGridView1.DataSource = AmountsReceivedsCmd.GetAllAmountsReceivedBypro(InformationsClass.ProjID);
+            TotalAmount();
         }
     }
 }

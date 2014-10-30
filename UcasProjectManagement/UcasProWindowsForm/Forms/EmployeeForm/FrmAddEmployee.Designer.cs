@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
@@ -83,7 +83,7 @@
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel2.Location = new System.Drawing.Point(277, 68);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(39, 18);
+            this.radLabel2.Size = new System.Drawing.Size(42, 19);
             this.radLabel2.TabIndex = 3;
             this.radLabel2.Text = "الجنس:";
             this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -94,7 +94,7 @@
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel6.Location = new System.Drawing.Point(276, 94);
             this.radLabel6.Name = "radLabel6";
-            this.radLabel6.Size = new System.Drawing.Size(75, 18);
+            this.radLabel6.Size = new System.Drawing.Size(82, 19);
             this.radLabel6.TabIndex = 9;
             this.radLabel6.Text = "الرقم الوظيفي:";
             this.radLabel6.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -102,9 +102,9 @@
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(221, 258);
+            this.AddBtn.Location = new System.Drawing.Point(219, 242);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(130, 38);
+            this.AddBtn.Size = new System.Drawing.Size(127, 44);
             this.AddBtn.TabIndex = 7;
             this.AddBtn.Text = "اضافة";
             this.AddBtn.ThemeName = "TelerikMetro";
@@ -116,14 +116,14 @@
             this.GenderDropDownList.AutoCompleteDisplayMember = null;
             this.GenderDropDownList.AutoCompleteValueMember = null;
             this.GenderDropDownList.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem3.Text = "ذكر";
-            radListDataItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem3.TextWrap = true;
-            radListDataItem4.Text = "انثى";
-            radListDataItem4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem4.TextWrap = true;
-            this.GenderDropDownList.Items.Add(radListDataItem3);
-            this.GenderDropDownList.Items.Add(radListDataItem4);
+            radListDataItem1.Text = "ذكر";
+            radListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem1.TextWrap = true;
+            radListDataItem2.Text = "انثى";
+            radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem2.TextWrap = true;
+            this.GenderDropDownList.Items.Add(radListDataItem1);
+            this.GenderDropDownList.Items.Add(radListDataItem2);
             this.GenderDropDownList.Location = new System.Drawing.Point(188, 64);
             this.GenderDropDownList.Name = "GenderDropDownList";
             // 
@@ -139,7 +139,7 @@
             this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel3.Location = new System.Drawing.Point(276, 121);
             this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(58, 18);
+            this.radLabel3.Size = new System.Drawing.Size(63, 19);
             this.radLabel3.TabIndex = 12;
             this.radLabel3.Text = "رقم الهاتف:";
             this.radLabel3.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -150,7 +150,7 @@
             this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel4.Location = new System.Drawing.Point(276, 148);
             this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(57, 18);
+            this.radLabel4.Size = new System.Drawing.Size(62, 19);
             this.radLabel4.TabIndex = 14;
             this.radLabel4.Text = "رقم الجوال:";
             this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -161,7 +161,7 @@
             this.radLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel5.Location = new System.Drawing.Point(276, 175);
             this.radLabel5.Name = "radLabel5";
-            this.radLabel5.Size = new System.Drawing.Size(83, 18);
+            this.radLabel5.Size = new System.Drawing.Size(90, 19);
             this.radLabel5.TabIndex = 16;
             this.radLabel5.Text = "البريد الالكتروني:";
             this.radLabel5.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -170,9 +170,9 @@
             // radLabel7
             // 
             this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel7.Location = new System.Drawing.Point(277, 202);
+            this.radLabel7.Location = new System.Drawing.Point(272, 202);
             this.radLabel7.Name = "radLabel7";
-            this.radLabel7.Size = new System.Drawing.Size(56, 18);
+            this.radLabel7.Size = new System.Drawing.Size(61, 19);
             this.radLabel7.TabIndex = 18;
             this.radLabel7.Text = "رقم الهوية:";
             this.radLabel7.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -198,12 +198,12 @@
             this.radGroupBox1.Controls.Add(this.employeeNameTextBox);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
-            this.radGroupBox1.HeaderText = "اضافة موظف:";
+            this.radGroupBox1.HeaderText = "اضافة موظف";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(363, 305);
+            this.radGroupBox1.Size = new System.Drawing.Size(363, 300);
             this.radGroupBox1.TabIndex = 2;
-            this.radGroupBox1.Text = "اضافة موظف:";
+            this.radGroupBox1.Text = "اضافة موظف";
             this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
             // EmployeeNationalNumberTextBox4
@@ -268,15 +268,21 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 305);
+            this.ClientSize = new System.Drawing.Size(363, 300);
             this.Controls.Add(this.radGroupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(371, 335);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(371, 335);
             this.Name = "FrmAddEmployee";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "FrmAddEmployee";
+            this.RootElement.MaxSize = new System.Drawing.Size(371, 335);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "اضافة موظف";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmAddEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();

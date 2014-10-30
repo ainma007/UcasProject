@@ -82,9 +82,9 @@
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(177, 161);
+            this.AddBtn.Location = new System.Drawing.Point(196, 149);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(139, 32);
+            this.AddBtn.Size = new System.Drawing.Size(127, 44);
             this.AddBtn.TabIndex = 3;
             this.AddBtn.Text = "اضافة";
             this.AddBtn.ThemeName = "TelerikMetro";
@@ -147,7 +147,7 @@
             this.DonorsComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.DonorsComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // DonorsComboBox.NestedRadGridView
             // 
             this.DonorsComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.DonorsComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -192,12 +192,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(335, 205);
             this.Controls.Add(this.radGroupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(343, 240);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(343, 240);
             this.Name = "FrmAddAmount";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(343, 240);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اضافة دفعة";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmAddAmount_Load);

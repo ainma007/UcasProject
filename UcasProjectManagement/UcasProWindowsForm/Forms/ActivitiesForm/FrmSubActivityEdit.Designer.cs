@@ -53,6 +53,7 @@
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.SubActivitiesNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
+            this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StatusDropDownList)).BeginInit();
@@ -75,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesNameTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +84,7 @@
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radGroupBox1.Controls.Add(this.radLabel9);
             this.radGroupBox1.Controls.Add(this.StatusDropDownList);
             this.radGroupBox1.Controls.Add(this.ProgressEditor);
             this.radGroupBox1.Controls.Add(this.radLabel8);
@@ -123,20 +126,22 @@
             radListDataItem2.TextWrap = true;
             this.StatusDropDownList.Items.Add(radListDataItem1);
             this.StatusDropDownList.Items.Add(radListDataItem2);
-            this.StatusDropDownList.Location = new System.Drawing.Point(38, 243);
+            this.StatusDropDownList.Location = new System.Drawing.Point(74, 243);
             this.StatusDropDownList.Name = "StatusDropDownList";
-            this.StatusDropDownList.Size = new System.Drawing.Size(193, 19);
+            this.StatusDropDownList.Size = new System.Drawing.Size(157, 19);
             this.StatusDropDownList.TabIndex = 28;
             this.StatusDropDownList.ThemeName = "TelerikMetro";
             // 
             // ProgressEditor
             // 
             this.ProgressEditor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProgressEditor.Location = new System.Drawing.Point(142, 274);
+            this.ProgressEditor.Location = new System.Drawing.Point(168, 274);
             this.ProgressEditor.Name = "ProgressEditor";
-            this.ProgressEditor.Size = new System.Drawing.Size(88, 22);
+            this.ProgressEditor.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ProgressEditor.Size = new System.Drawing.Size(62, 22);
             this.ProgressEditor.TabIndex = 27;
             this.ProgressEditor.TabStop = false;
+            this.ProgressEditor.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProgressEditor.ThemeName = "TelerikMetro";
             // 
             // radLabel8
@@ -186,7 +191,7 @@
             this.ActivitiesColumnComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ActivitiesColumnComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // ActivitiesColumnComboBox.NestedRadGridView
             // 
             this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -247,7 +252,7 @@
             this.SaveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveBtn.Location = new System.Drawing.Point(200, 317);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(130, 38);
+            this.SaveBtn.Size = new System.Drawing.Size(127, 44);
             this.SaveBtn.TabIndex = 21;
             this.SaveBtn.Text = "حفظ التعديلات";
             this.SaveBtn.ThemeName = "TelerikMetro";
@@ -269,8 +274,10 @@
             this.TotalCostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TotalCostTextBox.Location = new System.Drawing.Point(74, 213);
             this.TotalCostTextBox.Name = "TotalCostTextBox";
+            this.TotalCostTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TotalCostTextBox.Size = new System.Drawing.Size(157, 22);
             this.TotalCostTextBox.TabIndex = 5;
+            this.TotalCostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TotalCostTextBox.ThemeName = "TelerikMetro";
             this.TotalCostTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalCostTextBox_KeyPress);
             // 
@@ -281,6 +288,7 @@
             this.EndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.EndDateTimePicker.Location = new System.Drawing.Point(116, 182);
             this.EndDateTimePicker.Name = "EndDateTimePicker";
+            this.EndDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.EndDateTimePicker.Size = new System.Drawing.Size(115, 22);
             this.EndDateTimePicker.TabIndex = 4;
             this.EndDateTimePicker.TabStop = false;
@@ -306,6 +314,7 @@
             this.StartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.StartDateTimePicker.Location = new System.Drawing.Point(116, 149);
             this.StartDateTimePicker.Name = "StartDateTimePicker";
+            this.StartDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartDateTimePicker.Size = new System.Drawing.Size(115, 22);
             this.StartDateTimePicker.TabIndex = 3;
             this.StartDateTimePicker.TabStop = false;
@@ -355,18 +364,34 @@
             this.SubActivitiesNameTextBox.TabIndex = 1;
             this.SubActivitiesNameTextBox.ThemeName = "TelerikMetro";
             // 
+            // radLabel9
+            // 
+            this.radLabel9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.radLabel9.Location = new System.Drawing.Point(151, 275);
+            this.radLabel9.Name = "radLabel9";
+            this.radLabel9.Size = new System.Drawing.Size(17, 19);
+            this.radLabel9.TabIndex = 29;
+            this.radLabel9.Text = "%";
+            this.radLabel9.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            // 
             // FrmSubActivityEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(352, 367);
             this.Controls.Add(this.radGroupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(360, 402);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(360, 402);
             this.Name = "FrmSubActivityEdit";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعديل نشاط فرعي";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmSubActivityEdit_Load);
@@ -393,6 +418,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesNameTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -420,5 +446,6 @@
         public Telerik.WinControls.UI.RadDropDownList StatusDropDownList;
         public Telerik.WinControls.UI.RadSpinEditor ProgressEditor;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
+        private Telerik.WinControls.UI.RadLabel radLabel9;
     }
 }

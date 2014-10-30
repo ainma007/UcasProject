@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.ProjectDescriptionTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
@@ -82,12 +82,12 @@
             this.radGroupBox1.Controls.Add(this.ProjectNameTextBox);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
-            this.radGroupBox1.HeaderText = "اضافة مشروع";
+            this.radGroupBox1.HeaderText = "بيانات الاضافة";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(338, 315);
+            this.radGroupBox1.Size = new System.Drawing.Size(338, 282);
             this.radGroupBox1.TabIndex = 0;
-            this.radGroupBox1.Text = "اضافة مشروع";
+            this.radGroupBox1.Text = "بيانات الاضافة";
             this.radGroupBox1.ThemeName = "TelerikMetro";
             this.radGroupBox1.Click += new System.EventHandler(this.radGroupBox1_Click);
             // 
@@ -95,7 +95,7 @@
             // 
             this.ProjectDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ProjectDescriptionTextBox.AutoSize = false;
-            this.ProjectDescriptionTextBox.Location = new System.Drawing.Point(32, 86);
+            this.ProjectDescriptionTextBox.Location = new System.Drawing.Point(32, 61);
             this.ProjectDescriptionTextBox.Multiline = true;
             this.ProjectDescriptionTextBox.Name = "ProjectDescriptionTextBox";
             this.ProjectDescriptionTextBox.Size = new System.Drawing.Size(193, 40);
@@ -105,7 +105,7 @@
             // radLabel7
             // 
             this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel7.Location = new System.Drawing.Point(253, 215);
+            this.radLabel7.Location = new System.Drawing.Point(231, 194);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(38, 16);
             this.radLabel7.TabIndex = 12;
@@ -120,27 +120,27 @@
             this.CoineDropDownList.AutoCompleteDisplayMember = null;
             this.CoineDropDownList.AutoCompleteValueMember = null;
             this.CoineDropDownList.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem1.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem1.Text = "شيكل";
-            radListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem1.TextWrap = true;
-            radListDataItem2.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem2.Text = "دولار";
-            radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem2.TextWrap = true;
-            radListDataItem3.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem3.Text = "دينار اردني";
-            radListDataItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem3.TextWrap = true;
-            radListDataItem4.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem4.Text = "يورو";
-            radListDataItem4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem4.TextWrap = true;
-            this.CoineDropDownList.Items.Add(radListDataItem1);
-            this.CoineDropDownList.Items.Add(radListDataItem2);
-            this.CoineDropDownList.Items.Add(radListDataItem3);
-            this.CoineDropDownList.Items.Add(radListDataItem4);
-            this.CoineDropDownList.Location = new System.Drawing.Point(32, 213);
+            radListDataItem5.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem5.Text = "شيكل";
+            radListDataItem5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem5.TextWrap = true;
+            radListDataItem6.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem6.Text = "دولار";
+            radListDataItem6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem6.TextWrap = true;
+            radListDataItem7.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem7.Text = "دينار اردني";
+            radListDataItem7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem7.TextWrap = true;
+            radListDataItem8.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem8.Text = "يورو";
+            radListDataItem8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem8.TextWrap = true;
+            this.CoineDropDownList.Items.Add(radListDataItem5);
+            this.CoineDropDownList.Items.Add(radListDataItem6);
+            this.CoineDropDownList.Items.Add(radListDataItem7);
+            this.CoineDropDownList.Items.Add(radListDataItem8);
+            this.CoineDropDownList.Location = new System.Drawing.Point(32, 191);
             this.CoineDropDownList.Name = "CoineDropDownList";
             this.CoineDropDownList.Size = new System.Drawing.Size(193, 19);
             this.CoineDropDownList.TabIndex = 6;
@@ -149,7 +149,7 @@
             // radLabel6
             // 
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel6.Location = new System.Drawing.Point(237, 188);
+            this.radLabel6.Location = new System.Drawing.Point(231, 167);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(81, 16);
             this.radLabel6.TabIndex = 9;
@@ -160,9 +160,9 @@
             // AddBtn
             // 
             this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddBtn.Location = new System.Drawing.Point(194, 261);
+            this.AddBtn.Location = new System.Drawing.Point(194, 233);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(130, 38);
+            this.AddBtn.Size = new System.Drawing.Size(127, 44);
             this.AddBtn.TabIndex = 7;
             this.AddBtn.Text = "اضافة";
             this.AddBtn.ThemeName = "TelerikMetro";
@@ -171,7 +171,7 @@
             // radLabel1
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel1.Location = new System.Drawing.Point(241, 47);
+            this.radLabel1.Location = new System.Drawing.Point(231, 37);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(74, 16);
             this.radLabel1.TabIndex = 1;
@@ -182,7 +182,7 @@
             // radLabel2
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel2.Location = new System.Drawing.Point(237, 90);
+            this.radLabel2.Location = new System.Drawing.Point(231, 65);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(76, 16);
             this.radLabel2.TabIndex = 3;
@@ -193,16 +193,18 @@
             // TotalCostTextBox
             // 
             this.TotalCostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TotalCostTextBox.Location = new System.Drawing.Point(32, 186);
+            this.TotalCostTextBox.Location = new System.Drawing.Point(93, 163);
             this.TotalCostTextBox.Name = "TotalCostTextBox";
-            this.TotalCostTextBox.Size = new System.Drawing.Size(193, 22);
+            this.TotalCostTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TotalCostTextBox.Size = new System.Drawing.Size(132, 22);
             this.TotalCostTextBox.TabIndex = 5;
+            this.TotalCostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TotalCostTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel3
             // 
             this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel3.Location = new System.Drawing.Point(245, 135);
+            this.radLabel3.Location = new System.Drawing.Point(231, 110);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(54, 16);
             this.radLabel3.TabIndex = 5;
@@ -215,9 +217,10 @@
             this.EndDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.EndDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.EndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.EndDateTimePicker.Location = new System.Drawing.Point(32, 159);
+            this.EndDateTimePicker.Location = new System.Drawing.Point(133, 135);
             this.EndDateTimePicker.Name = "EndDateTimePicker";
-            this.EndDateTimePicker.Size = new System.Drawing.Size(193, 22);
+            this.EndDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.EndDateTimePicker.Size = new System.Drawing.Size(92, 22);
             this.EndDateTimePicker.TabIndex = 4;
             this.EndDateTimePicker.TabStop = false;
             this.EndDateTimePicker.Text = "15/09/2014";
@@ -227,7 +230,7 @@
             // radLabel4
             // 
             this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel4.Location = new System.Drawing.Point(245, 160);
+            this.radLabel4.Location = new System.Drawing.Point(231, 136);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(64, 16);
             this.radLabel4.TabIndex = 6;
@@ -240,9 +243,10 @@
             this.StartDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.StartDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.StartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StartDateTimePicker.Location = new System.Drawing.Point(32, 132);
+            this.StartDateTimePicker.Location = new System.Drawing.Point(133, 107);
             this.StartDateTimePicker.Name = "StartDateTimePicker";
-            this.StartDateTimePicker.Size = new System.Drawing.Size(193, 22);
+            this.StartDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.StartDateTimePicker.Size = new System.Drawing.Size(92, 22);
             this.StartDateTimePicker.TabIndex = 2;
             this.StartDateTimePicker.TabStop = false;
             this.StartDateTimePicker.Text = "15/09/2014";
@@ -252,7 +256,7 @@
             // ProjectNameTextBox
             // 
             this.ProjectNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProjectNameTextBox.Location = new System.Drawing.Point(32, 45);
+            this.ProjectNameTextBox.Location = new System.Drawing.Point(32, 33);
             this.ProjectNameTextBox.Name = "ProjectNameTextBox";
             this.ProjectNameTextBox.Size = new System.Drawing.Size(193, 22);
             this.ProjectNameTextBox.TabIndex = 0;
@@ -262,14 +266,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 315);
+            this.ClientSize = new System.Drawing.Size(338, 282);
             this.Controls.Add(this.radGroupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(346, 317);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(346, 317);
             this.Name = "FrmAddProject";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اضافة مشروع";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmAddProject_Load);

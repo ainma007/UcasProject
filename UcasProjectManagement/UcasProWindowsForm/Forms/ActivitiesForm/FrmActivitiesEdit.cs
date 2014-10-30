@@ -79,6 +79,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 ActivityCmd.EditActivity(tb);
                 this.Cursor = Cursors.Default;
                RadMessageBox.Show("تمت عملية التعديل");
+               this.Close();
             }
 
             }

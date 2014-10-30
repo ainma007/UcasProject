@@ -108,5 +108,21 @@ namespace Ucas.Data.CommandClass
 
         }
 
+        public static double GetTotalSalaryByProject(int ProID)
+        {
+            db = new UcasProEntities();
+            db.Configuration.LazyLoadingEnabled = false;
+            db.Configuration.ProxyCreationEnabled = false;
+            var LST = (from p in db.Monthlysalaries
+
+                       where p.ProjectProfile_ID == ProID
+                       select p.Amount).ToList();
+
+            double total = 0;
+            foreach (var Sm in LST) { total += Convert.ToDouble(Sm); }
+
+            return total;
+
+        }
     }
 }

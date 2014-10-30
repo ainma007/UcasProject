@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmActivitiesEdit));
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
@@ -100,11 +101,15 @@
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(196, 240);
+            this.SaveBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SaveBtn.BackgroundImage")));
+            this.SaveBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.SaveBtn.Image = ((System.Drawing.Image)(resources.GetObject("SaveBtn.Image")));
+            this.SaveBtn.Location = new System.Drawing.Point(212, 236);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(127, 33);
+            this.SaveBtn.Size = new System.Drawing.Size(127, 44);
             this.SaveBtn.TabIndex = 7;
             this.SaveBtn.Text = "حفظ التعديلات";
+            this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SaveBtn.ThemeName = "TelerikMetro";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
@@ -156,8 +161,10 @@
             this.TotalCostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TotalCostTextBox.Location = new System.Drawing.Point(111, 176);
             this.TotalCostTextBox.Name = "TotalCostTextBox";
+            this.TotalCostTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TotalCostTextBox.Size = new System.Drawing.Size(136, 22);
             this.TotalCostTextBox.TabIndex = 5;
+            this.TotalCostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TotalCostTextBox.ThemeName = "TelerikMetro";
             this.TotalCostTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalCostTextBox_KeyPress);
             // 
@@ -168,6 +175,7 @@
             this.EndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.EndDateTimePicker.Location = new System.Drawing.Point(147, 149);
             this.EndDateTimePicker.Name = "EndDateTimePicker";
+            this.EndDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.EndDateTimePicker.Size = new System.Drawing.Size(100, 22);
             this.EndDateTimePicker.TabIndex = 4;
             this.EndDateTimePicker.TabStop = false;
@@ -192,6 +200,7 @@
             this.StartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.StartDateTimePicker.Location = new System.Drawing.Point(147, 121);
             this.StartDateTimePicker.Name = "StartDateTimePicker";
+            this.StartDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartDateTimePicker.Size = new System.Drawing.Size(100, 22);
             this.StartDateTimePicker.TabIndex = 3;
             this.StartDateTimePicker.TabStop = false;
@@ -244,12 +253,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(352, 285);
             this.Controls.Add(this.radGroupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(360, 320);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(360, 320);
             this.Name = "FrmActivitiesEdit";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(360, 320);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعديل نشاط رئيسي";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmActivitiesEdit_Load);

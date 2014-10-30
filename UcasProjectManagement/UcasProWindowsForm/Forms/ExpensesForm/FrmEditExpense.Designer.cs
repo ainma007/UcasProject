@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
@@ -107,9 +107,9 @@
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(231, 238);
+            this.SaveBtn.Location = new System.Drawing.Point(234, 236);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(134, 43);
+            this.SaveBtn.Size = new System.Drawing.Size(127, 44);
             this.SaveBtn.TabIndex = 8;
             this.SaveBtn.Text = "حفظ التعديلات";
             this.SaveBtn.ThemeName = "TelerikMetro";
@@ -128,10 +128,12 @@
             // BillTextBox
             // 
             this.BillTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BillTextBox.Location = new System.Drawing.Point(91, 116);
+            this.BillTextBox.Location = new System.Drawing.Point(155, 116);
             this.BillTextBox.Name = "BillTextBox";
-            this.BillTextBox.Size = new System.Drawing.Size(193, 22);
+            this.BillTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.BillTextBox.Size = new System.Drawing.Size(129, 22);
             this.BillTextBox.TabIndex = 4;
+            this.BillTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.BillTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel7
@@ -157,10 +159,12 @@
             // RequiarAmountTextBox
             // 
             this.RequiarAmountTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RequiarAmountTextBox.Location = new System.Drawing.Point(91, 147);
+            this.RequiarAmountTextBox.Location = new System.Drawing.Point(155, 147);
             this.RequiarAmountTextBox.Name = "RequiarAmountTextBox";
-            this.RequiarAmountTextBox.Size = new System.Drawing.Size(193, 22);
+            this.RequiarAmountTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.RequiarAmountTextBox.Size = new System.Drawing.Size(129, 22);
             this.RequiarAmountTextBox.TabIndex = 5;
+            this.RequiarAmountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.RequiarAmountTextBox.ThemeName = "TelerikMetro";
             this.RequiarAmountTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RequiarAmountTextBox_KeyPress);
             // 
@@ -181,6 +185,7 @@
             this.DateOfProecssPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DateOfProecssPicker.Location = new System.Drawing.Point(181, 87);
             this.DateOfProecssPicker.Name = "DateOfProecssPicker";
+            this.DateOfProecssPicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DateOfProecssPicker.Size = new System.Drawing.Size(103, 22);
             this.DateOfProecssPicker.TabIndex = 2;
             this.DateOfProecssPicker.TabStop = false;
@@ -201,10 +206,12 @@
             // CashingNumberTextBox
             // 
             this.CashingNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CashingNumberTextBox.Location = new System.Drawing.Point(91, 174);
+            this.CashingNumberTextBox.Location = new System.Drawing.Point(155, 174);
             this.CashingNumberTextBox.Name = "CashingNumberTextBox";
-            this.CashingNumberTextBox.Size = new System.Drawing.Size(193, 22);
+            this.CashingNumberTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.CashingNumberTextBox.Size = new System.Drawing.Size(129, 22);
             this.CashingNumberTextBox.TabIndex = 6;
+            this.CashingNumberTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.CashingNumberTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel2
@@ -230,9 +237,9 @@
             // ExpensesNameTextBox
             // 
             this.ExpensesNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExpensesNameTextBox.Location = new System.Drawing.Point(40, 60);
+            this.ExpensesNameTextBox.Location = new System.Drawing.Point(28, 60);
             this.ExpensesNameTextBox.Name = "ExpensesNameTextBox";
-            this.ExpensesNameTextBox.Size = new System.Drawing.Size(244, 22);
+            this.ExpensesNameTextBox.Size = new System.Drawing.Size(256, 22);
             this.ExpensesNameTextBox.TabIndex = 1;
             this.ExpensesNameTextBox.ThemeName = "TelerikMetro";
             // 
@@ -251,30 +258,30 @@
             this.SupplierComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.SupplierComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // SupplierComboBox.NestedRadGridView
             // 
             this.SupplierComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.SupplierComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.SupplierComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.SupplierComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
-            gridViewDecimalColumn1.DataType = typeof(int);
-            gridViewDecimalColumn1.EnableExpressionEditor = false;
-            gridViewDecimalColumn1.FieldName = "ID";
-            gridViewDecimalColumn1.HeaderText = "ID";
-            gridViewDecimalColumn1.IsAutoGenerated = true;
-            gridViewDecimalColumn1.IsVisible = false;
-            gridViewDecimalColumn1.Name = "ID";
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "Name";
-            gridViewTextBoxColumn1.HeaderText = "اختر المورد";
-            gridViewTextBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn1.IsAutoGenerated = true;
-            gridViewTextBoxColumn1.Name = "Name";
-            gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn1.Width = 238;
+            gridViewDecimalColumn3.DataType = typeof(int);
+            gridViewDecimalColumn3.EnableExpressionEditor = false;
+            gridViewDecimalColumn3.FieldName = "ID";
+            gridViewDecimalColumn3.HeaderText = "ID";
+            gridViewDecimalColumn3.IsAutoGenerated = true;
+            gridViewDecimalColumn3.IsVisible = false;
+            gridViewDecimalColumn3.Name = "ID";
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "Name";
+            gridViewTextBoxColumn3.HeaderText = "اختر المورد";
+            gridViewTextBoxColumn3.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn3.IsAutoGenerated = true;
+            gridViewTextBoxColumn3.Name = "Name";
+            gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn3.Width = 238;
             this.SupplierComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn1,
-            gridViewTextBoxColumn1});
+            gridViewDecimalColumn3,
+            gridViewTextBoxColumn3});
             this.SupplierComboBox.EditorControl.MasterTemplate.DataSource = this.supplierBindingSource;
             this.SupplierComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.SupplierComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
@@ -309,30 +316,30 @@
             this.SubActivtiesComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.SubActivtiesComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // SubActivtiesComboBox.NestedRadGridView
             // 
             this.SubActivtiesComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.SubActivtiesComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.SubActivtiesComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.SubActivtiesComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
-            gridViewDecimalColumn2.DataType = typeof(int);
-            gridViewDecimalColumn2.EnableExpressionEditor = false;
-            gridViewDecimalColumn2.FieldName = "ID";
-            gridViewDecimalColumn2.HeaderText = "ID";
-            gridViewDecimalColumn2.IsAutoGenerated = true;
-            gridViewDecimalColumn2.IsVisible = false;
-            gridViewDecimalColumn2.Name = "ID";
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "SubActivityName";
-            gridViewTextBoxColumn2.HeaderText = "اختر النشاط";
-            gridViewTextBoxColumn2.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn2.IsAutoGenerated = true;
-            gridViewTextBoxColumn2.Name = "SubActivityName";
-            gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn2.Width = 187;
+            gridViewDecimalColumn1.DataType = typeof(int);
+            gridViewDecimalColumn1.EnableExpressionEditor = false;
+            gridViewDecimalColumn1.FieldName = "ID";
+            gridViewDecimalColumn1.HeaderText = "ID";
+            gridViewDecimalColumn1.IsAutoGenerated = true;
+            gridViewDecimalColumn1.IsVisible = false;
+            gridViewDecimalColumn1.Name = "ID";
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "SubActivityName";
+            gridViewTextBoxColumn1.HeaderText = "اختر النشاط";
+            gridViewTextBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn1.IsAutoGenerated = true;
+            gridViewTextBoxColumn1.Name = "SubActivityName";
+            gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn1.Width = 187;
             this.SubActivtiesComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn2,
-            gridViewTextBoxColumn2});
+            gridViewDecimalColumn1,
+            gridViewTextBoxColumn1});
             this.SubActivtiesComboBox.EditorControl.MasterTemplate.DataSource = this.projectSubActivityBindingSource;
             this.SubActivtiesComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.SubActivtiesComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
@@ -359,13 +366,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(379, 286);
             this.Controls.Add(this.radGroupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(387, 321);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(387, 321);
             this.Name = "FrmEditExpense";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "FrmEditExpense";
+            this.Text = "تعديل مصروف";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmEditExpense_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();

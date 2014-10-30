@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSalariesManage));
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
             Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn2 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
@@ -45,6 +46,9 @@
             this.radRibbonBarGroup1 = new Telerik.WinControls.UI.RadRibbonBarGroup();
             this.AddBtn = new Telerik.WinControls.UI.RadButtonElement();
             this.radButtonElement2 = new Telerik.WinControls.UI.RadButtonElement();
+            this.radRibbonBarGroup2 = new Telerik.WinControls.UI.RadRibbonBarGroup();
+            this.radButtonElement1 = new Telerik.WinControls.UI.RadButtonElement();
+            this.radButtonElement3 = new Telerik.WinControls.UI.RadButtonElement();
             this.radRibbonFormBehavior1 = new Telerik.WinControls.UI.RadRibbonFormBehavior();
             this.SalaryGridView = new Telerik.WinControls.UI.RadGridView();
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).BeginInit();
@@ -59,10 +63,10 @@
             this.ribbonTab1});
             this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
             this.radRibbonBar1.Name = "radRibbonBar1";
-            this.radRibbonBar1.Size = new System.Drawing.Size(994, 154);
+            this.radRibbonBar1.Size = new System.Drawing.Size(1034, 154);
             this.radRibbonBar1.StartButtonImage = ((System.Drawing.Image)(resources.GetObject("radRibbonBar1.StartButtonImage")));
             this.radRibbonBar1.TabIndex = 0;
-            this.radRibbonBar1.Text = "radRibbonBar1";
+            this.radRibbonBar1.Text = "ادارة الرواتب";
             this.radRibbonBar1.ThemeName = "TelerikMetro";
             // 
             // ribbonTab1
@@ -71,7 +75,8 @@
             this.ribbonTab1.AccessibleName = "العمليات";
             this.ribbonTab1.IsSelected = true;
             this.ribbonTab1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radRibbonBarGroup1});
+            this.radRibbonBarGroup1,
+            this.radRibbonBarGroup2});
             this.ribbonTab1.Name = "ribbonTab1";
             this.ribbonTab1.Text = "العمليات";
             this.ribbonTab1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
@@ -101,8 +106,35 @@
             this.radButtonElement2.AccessibleDescription = "radButtonElement2";
             this.radButtonElement2.AccessibleName = "radButtonElement2";
             this.radButtonElement2.Name = "radButtonElement2";
-            this.radButtonElement2.Text = "radButtonElement2";
+            this.radButtonElement2.Text = "تحديث السجل";
             this.radButtonElement2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // radRibbonBarGroup2
+            // 
+            this.radRibbonBarGroup2.AccessibleDescription = "التقارير";
+            this.radRibbonBarGroup2.AccessibleName = "التقارير";
+            this.radRibbonBarGroup2.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radButtonElement1,
+            this.radButtonElement3});
+            this.radRibbonBarGroup2.Name = "radRibbonBarGroup2";
+            this.radRibbonBarGroup2.Text = "التقارير";
+            this.radRibbonBarGroup2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // radButtonElement1
+            // 
+            this.radButtonElement1.AccessibleDescription = "طباعة مسودة";
+            this.radButtonElement1.AccessibleName = "طباعة مسودة";
+            this.radButtonElement1.Name = "radButtonElement1";
+            this.radButtonElement1.Text = "طباعة مسودة";
+            this.radButtonElement1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // radButtonElement3
+            // 
+            this.radButtonElement3.AccessibleDescription = "عرض تقرير";
+            this.radButtonElement3.AccessibleName = "عرض تقرير";
+            this.radButtonElement3.Name = "radButtonElement3";
+            this.radButtonElement3.Text = "عرض تقرير";
+            this.radButtonElement3.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // radRibbonFormBehavior1
             // 
@@ -120,60 +152,74 @@
             // 
             // SalaryGridView
             // 
+            this.SalaryGridView.MasterTemplate.AllowSearchRow = true;
             this.SalaryGridView.MasterTemplate.AutoGenerateColumns = false;
             this.SalaryGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn1.DataType = typeof(int);
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.HeaderText = "الرقم";
+            gridViewTextBoxColumn1.MaxWidth = 50;
+            gridViewTextBoxColumn1.MinWidth = 50;
+            gridViewTextBoxColumn1.Name = "Num";
+            gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "ID";
             gridViewDecimalColumn1.HeaderText = "ID";
             gridViewDecimalColumn1.IsAutoGenerated = true;
+            gridViewDecimalColumn1.IsVisible = false;
             gridViewDecimalColumn1.Name = "ID";
             gridViewDecimalColumn1.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewDecimalColumn1.Width = 90;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "EmployeeName";
-            gridViewTextBoxColumn1.HeaderText = "EmployeeName";
-            gridViewTextBoxColumn1.Name = "EmployeeName";
-            gridViewTextBoxColumn1.Width = 163;
-            gridViewDecimalColumn2.DataType = typeof(System.Nullable<double>);
+            gridViewDecimalColumn1.Width = 52;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "EmployeeName";
+            gridViewTextBoxColumn2.HeaderText = "الموظف";
+            gridViewTextBoxColumn2.Name = "EmployeeName";
+            gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn2.Width = 372;
             gridViewDecimalColumn2.EnableExpressionEditor = false;
             gridViewDecimalColumn2.FieldName = "Amount";
-            gridViewDecimalColumn2.HeaderText = "Amount";
+            gridViewDecimalColumn2.HeaderText = "الراتب";
             gridViewDecimalColumn2.IsAutoGenerated = true;
             gridViewDecimalColumn2.Name = "Amount";
-            gridViewDecimalColumn2.Width = 195;
-            gridViewDateTimeColumn1.DataType = typeof(System.Nullable<System.DateTime>);
+            gridViewDecimalColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn2.Width = 163;
             gridViewDateTimeColumn1.EnableExpressionEditor = false;
             gridViewDateTimeColumn1.FieldName = "Formonth";
             gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            gridViewDateTimeColumn1.HeaderText = "Formonth";
+            gridViewDateTimeColumn1.HeaderText = "مستحق لشهر";
             gridViewDateTimeColumn1.IsAutoGenerated = true;
             gridViewDateTimeColumn1.Name = "Formonth";
-            gridViewDateTimeColumn1.Width = 192;
-            gridViewDateTimeColumn2.DataType = typeof(System.Nullable<System.DateTime>);
+            gridViewDateTimeColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDateTimeColumn1.Width = 179;
             gridViewDateTimeColumn2.EnableExpressionEditor = false;
             gridViewDateTimeColumn2.FieldName = "IssueDate";
             gridViewDateTimeColumn2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            gridViewDateTimeColumn2.HeaderText = "IssueDate";
+            gridViewDateTimeColumn2.HeaderText = "تاريخ الاصدار";
             gridViewDateTimeColumn2.IsAutoGenerated = true;
             gridViewDateTimeColumn2.Name = "IssueDate";
-            gridViewDateTimeColumn2.Width = 187;
+            gridViewDateTimeColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDateTimeColumn2.Width = 166;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "تعديل";
+            gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
+            gridViewCommandColumn1.MaxWidth = 45;
+            gridViewCommandColumn1.MinWidth = 45;
             gridViewCommandColumn1.Name = "Editcolm";
-            gridViewCommandColumn1.Width = 77;
+            gridViewCommandColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewCommandColumn1.Width = 45;
             gridViewCommandColumn2.EnableExpressionEditor = false;
             gridViewCommandColumn2.HeaderText = "حذف";
+            gridViewCommandColumn2.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn2.Image")));
+            gridViewCommandColumn2.MaxWidth = 45;
+            gridViewCommandColumn2.MinWidth = 45;
             gridViewCommandColumn2.Name = "DelColm";
-            gridViewCommandColumn2.Width = 76;
-            gridViewDecimalColumn3.DataType = typeof(System.Nullable<int>);
+            gridViewCommandColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewCommandColumn2.Width = 45;
             gridViewDecimalColumn3.EnableExpressionEditor = false;
             gridViewDecimalColumn3.FieldName = "ContractID";
             gridViewDecimalColumn3.HeaderText = "ContractID";
             gridViewDecimalColumn3.IsAutoGenerated = true;
             gridViewDecimalColumn3.IsVisible = false;
             gridViewDecimalColumn3.Name = "ContractID";
-            gridViewDecimalColumn4.DataType = typeof(System.Nullable<int>);
             gridViewDecimalColumn4.EnableExpressionEditor = false;
             gridViewDecimalColumn4.FieldName = "ProjectProfile_ID";
             gridViewDecimalColumn4.HeaderText = "ProjectProfile_ID";
@@ -181,8 +227,9 @@
             gridViewDecimalColumn4.IsVisible = false;
             gridViewDecimalColumn4.Name = "ProjectProfile_ID";
             this.SalaryGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
+            gridViewDecimalColumn1,
+            gridViewTextBoxColumn2,
             gridViewDecimalColumn2,
             gridViewDateTimeColumn1,
             gridViewDateTimeColumn2,
@@ -195,7 +242,7 @@
             sortDescriptor1});
             this.SalaryGridView.Name = "SalaryGridView";
             this.SalaryGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.SalaryGridView.Size = new System.Drawing.Size(994, 689);
+            this.SalaryGridView.Size = new System.Drawing.Size(1034, 701);
             this.SalaryGridView.TabIndex = 1;
             this.SalaryGridView.Text = "SalariesGridView";
             this.SalaryGridView.ThemeName = "TelerikMetro";
@@ -205,7 +252,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(994, 843);
+            this.ClientSize = new System.Drawing.Size(1034, 855);
             this.Controls.Add(this.SalaryGridView);
             this.Controls.Add(this.radRibbonBar1);
             this.FormBehavior = this.radRibbonFormBehavior1;
@@ -216,7 +263,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "radRibbonBar1";
+            this.Text = "ادارة الرواتب";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmSalariesManage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).EndInit();
@@ -238,5 +285,8 @@
         private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup1;
         private Telerik.WinControls.UI.RadButtonElement AddBtn;
         private Telerik.WinControls.UI.RadButtonElement radButtonElement2;
+        private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup2;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement1;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement3;
     }
 }

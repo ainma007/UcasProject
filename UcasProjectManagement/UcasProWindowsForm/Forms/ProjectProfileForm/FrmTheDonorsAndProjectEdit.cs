@@ -72,5 +72,10 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 MessageBox.Show("تمت العملية بنجاح");
             }
         }
+
+        private void radGroupBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -33,7 +33,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             filter.PropertyName = this.EmployeeComboBox.DisplayMember;
             filter.Operator = FilterOperator.Contains;
             this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-            EmployeeComboBox.DataSource = ContractCmd.GetAllContractsBypro(InformationsClass.ProjID);
+            EmployeeComboBox.DataSource = ContractCmd.GetAllContractsForComboBox(InformationsClass.ProjID);
 
         }
         private void FrmAddSalaries_Load(object sender, EventArgs e)
@@ -105,6 +105,11 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             {
                 e.Handled = true;
             }
+        }
+
+        private void radGroupBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

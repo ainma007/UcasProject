@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainUserPro));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.radRibbonBar1 = new Telerik.WinControls.UI.RadRibbonBar();
             this.ribbonTab1 = new Telerik.WinControls.UI.RibbonTab();
             this.radRibbonBarGroup1 = new Telerik.WinControls.UI.RadRibbonBarGroup();
@@ -42,6 +45,7 @@
             this.ExpensesBTn = new Telerik.WinControls.UI.RadButtonElement();
             this.SalaryBtn = new Telerik.WinControls.UI.RadButtonElement();
             this.ribbonTab3 = new Telerik.WinControls.UI.RibbonTab();
+            this.ribbonTab4 = new Telerik.WinControls.UI.RibbonTab();
             this.radRibbonFormBehavior1 = new Telerik.WinControls.UI.RadRibbonFormBehavior();
             this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
@@ -61,14 +65,16 @@
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.radGroupBox2 = new Telerik.WinControls.UI.RadGroupBox();
-            this.radProgressBar3 = new Telerik.WinControls.UI.RadProgressBar();
-            this.radProgressBar2 = new Telerik.WinControls.UI.RadProgressBar();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.RemainingTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.TotalSalayTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.TotalExpensesTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
-            this.radTextBox9 = new Telerik.WinControls.UI.RadTextBox();
+            this.AmountRecvTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel14 = new Telerik.WinControls.UI.RadLabel();
-            this.radProgressBar4 = new Telerik.WinControls.UI.RadProgressBar();
-            this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
+            this.radGroupBox3 = new Telerik.WinControls.UI.RadGroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
@@ -89,14 +95,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
             this.radGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radProgressBar3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radProgressBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RemainingTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TotalSalayTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TotalExpensesTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AmountRecvTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radProgressBar4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,10 +113,11 @@
             this.radRibbonBar1.CommandTabs.AddRange(new Telerik.WinControls.RadItem[] {
             this.ribbonTab1,
             this.ribbonTab2,
-            this.ribbonTab3});
+            this.ribbonTab3,
+            this.ribbonTab4});
             this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
             this.radRibbonBar1.Name = "radRibbonBar1";
-            this.radRibbonBar1.Size = new System.Drawing.Size(1014, 154);
+            this.radRibbonBar1.Size = new System.Drawing.Size(1094, 168);
             this.radRibbonBar1.StartButtonImage = ((System.Drawing.Image)(resources.GetObject("radRibbonBar1.StartButtonImage")));
             this.radRibbonBar1.TabIndex = 0;
             this.radRibbonBar1.Text = "radRibbonBar1";
@@ -118,6 +127,9 @@
             // 
             this.ribbonTab1.AccessibleDescription = "ادارة المشروع";
             this.ribbonTab1.AccessibleName = "ادارة المشروع";
+            this.ribbonTab1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ribbonTab1.BackgroundImage")));
+            this.ribbonTab1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ribbonTab1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonTab1.Image")));
             this.ribbonTab1.IsSelected = true;
             this.ribbonTab1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radRibbonBarGroup1});
@@ -177,6 +189,9 @@
             // 
             this.ribbonTab2.AccessibleDescription = "مصاريف وايرادات المشروع";
             this.ribbonTab2.AccessibleName = "مصاريف وايرادات المشروع";
+            this.ribbonTab2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ribbonTab2.BackgroundImage")));
+            this.ribbonTab2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ribbonTab2.Image = ((System.Drawing.Image)(resources.GetObject("ribbonTab2.Image")));
             this.ribbonTab2.IsSelected = false;
             this.ribbonTab2.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radRibbonBarGroup2});
@@ -228,9 +243,26 @@
             // 
             this.ribbonTab3.AccessibleDescription = "تقارير";
             this.ribbonTab3.AccessibleName = "تقارير";
+            this.ribbonTab3.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.Auto;
+            this.ribbonTab3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ribbonTab3.BackgroundImage")));
+            this.ribbonTab3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ribbonTab3.Image = ((System.Drawing.Image)(resources.GetObject("ribbonTab3.Image")));
+            this.ribbonTab3.IsSelected = false;
             this.ribbonTab3.Name = "ribbonTab3";
-            this.ribbonTab3.Text = "تقارير";
+            this.ribbonTab3.Text = "تقارير المشروع";
+            this.ribbonTab3.TextOrientation = System.Windows.Forms.Orientation.Horizontal;
             this.ribbonTab3.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // ribbonTab4
+            // 
+            this.ribbonTab4.AccessibleDescription = "ادوات";
+            this.ribbonTab4.AccessibleName = "ادوات";
+            this.ribbonTab4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ribbonTab4.BackgroundImage")));
+            this.ribbonTab4.Image = ((System.Drawing.Image)(resources.GetObject("ribbonTab4.Image")));
+            this.ribbonTab4.IsSelected = false;
+            this.ribbonTab4.Name = "ribbonTab4";
+            this.ribbonTab4.Text = "ادوات";
+            this.ribbonTab4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // radRibbonFormBehavior1
             // 
@@ -240,7 +272,7 @@
             // 
             this.radStatusStrip1.Location = new System.Drawing.Point(0, 830);
             this.radStatusStrip1.Name = "radStatusStrip1";
-            this.radStatusStrip1.Size = new System.Drawing.Size(1014, 25);
+            this.radStatusStrip1.Size = new System.Drawing.Size(1094, 25);
             this.radStatusStrip1.TabIndex = 2;
             this.radStatusStrip1.Text = "radStatusStrip1";
             this.radStatusStrip1.ThemeName = "TelerikMetro";
@@ -262,10 +294,11 @@
             this.radGroupBox1.Controls.Add(this.radTextBox1);
             this.radGroupBox1.Controls.Add(this.radLabel3);
             this.radGroupBox1.Controls.Add(this.radLabel1);
+            this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radGroupBox1.HeaderText = "موجز للمشروع";
-            this.radGroupBox1.Location = new System.Drawing.Point(368, 154);
+            this.radGroupBox1.Location = new System.Drawing.Point(0, 168);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(638, 170);
+            this.radGroupBox1.Size = new System.Drawing.Size(1094, 170);
             this.radGroupBox1.TabIndex = 3;
             this.radGroupBox1.Text = "موجز للمشروع";
             this.radGroupBox1.ThemeName = "TelerikMetro";
@@ -273,76 +306,84 @@
             // radProgressBar1
             // 
             this.radProgressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radProgressBar1.Location = new System.Drawing.Point(326, 127);
+            this.radProgressBar1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radProgressBar1.Location = new System.Drawing.Point(766, 131);
             this.radProgressBar1.Name = "radProgressBar1";
             this.radProgressBar1.ProgressOrientation = Telerik.WinControls.ProgressOrientation.Right;
-            this.radProgressBar1.Size = new System.Drawing.Size(224, 24);
+            this.radProgressBar1.Size = new System.Drawing.Size(220, 24);
             this.radProgressBar1.TabIndex = 14;
             this.radProgressBar1.ThemeName = "TelerikMetro";
             // 
             // radLabel7
             // 
             this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel7.Location = new System.Drawing.Point(557, 134);
+            this.radLabel7.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel7.Location = new System.Drawing.Point(998, 137);
             this.radLabel7.Name = "radLabel7";
-            this.radLabel7.Size = new System.Drawing.Size(59, 18);
+            this.radLabel7.Size = new System.Drawing.Size(82, 18);
             this.radLabel7.TabIndex = 13;
-            this.radLabel7.Text = "نسبة الانجاز";
+            this.radLabel7.Text = "نسبة الانجاز:";
             this.radLabel7.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
             // radTextBox3
             // 
             this.radTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radTextBox3.Location = new System.Drawing.Point(12, 126);
+            this.radTextBox3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radTextBox3.Location = new System.Drawing.Point(416, 124);
             this.radTextBox3.Name = "radTextBox3";
-            this.radTextBox3.Size = new System.Drawing.Size(225, 22);
+            this.radTextBox3.Size = new System.Drawing.Size(225, 21);
             this.radTextBox3.TabIndex = 12;
             this.radTextBox3.ThemeName = "TelerikMetro";
             // 
             // radLabel6
             // 
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel6.Location = new System.Drawing.Point(237, 127);
+            this.radLabel6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel6.Location = new System.Drawing.Point(647, 127);
             this.radLabel6.Name = "radLabel6";
-            this.radLabel6.Size = new System.Drawing.Size(35, 18);
+            this.radLabel6.Size = new System.Drawing.Size(47, 18);
             this.radLabel6.TabIndex = 11;
-            this.radLabel6.Text = "العملة";
+            this.radLabel6.Text = "العملة:";
             this.radLabel6.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
             // radTextBox2
             // 
             this.radTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radTextBox2.Location = new System.Drawing.Point(12, 94);
+            this.radTextBox2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radTextBox2.Location = new System.Drawing.Point(416, 92);
             this.radTextBox2.Name = "radTextBox2";
-            this.radTextBox2.Size = new System.Drawing.Size(225, 22);
+            this.radTextBox2.Size = new System.Drawing.Size(225, 21);
             this.radTextBox2.TabIndex = 10;
             this.radTextBox2.ThemeName = "TelerikMetro";
             // 
             // radLabel5
             // 
             this.radLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel5.Location = new System.Drawing.Point(234, 95);
+            this.radLabel5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel5.Location = new System.Drawing.Point(643, 95);
             this.radLabel5.Name = "radLabel5";
-            this.radLabel5.Size = new System.Drawing.Size(83, 18);
+            this.radLabel5.Size = new System.Drawing.Size(105, 18);
             this.radLabel5.TabIndex = 9;
-            this.radLabel5.Text = "المبلغ المخصص";
+            this.radLabel5.Text = "المبلغ المخصص:";
             this.radLabel5.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
             // EndDateTextBox
             // 
             this.EndDateTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EndDateTextBox.Location = new System.Drawing.Point(12, 63);
+            this.EndDateTextBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EndDateTextBox.Location = new System.Drawing.Point(416, 61);
             this.EndDateTextBox.Name = "EndDateTextBox";
-            this.EndDateTextBox.Size = new System.Drawing.Size(225, 22);
+            this.EndDateTextBox.Size = new System.Drawing.Size(225, 21);
             this.EndDateTextBox.TabIndex = 8;
             this.EndDateTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel4
             // 
             this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel4.Location = new System.Drawing.Point(243, 64);
+            this.radLabel4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel4.Location = new System.Drawing.Point(647, 64);
             this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(63, 18);
+            this.radLabel4.Size = new System.Drawing.Size(79, 18);
             this.radLabel4.TabIndex = 7;
             this.radLabel4.Text = "تاريخ البداية:";
             this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -350,18 +391,20 @@
             // StartDateTextBox
             // 
             this.StartDateTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.StartDateTextBox.Location = new System.Drawing.Point(12, 33);
+            this.StartDateTextBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartDateTextBox.Location = new System.Drawing.Point(416, 31);
             this.StartDateTextBox.Name = "StartDateTextBox";
-            this.StartDateTextBox.Size = new System.Drawing.Size(225, 22);
+            this.StartDateTextBox.Size = new System.Drawing.Size(225, 21);
             this.StartDateTextBox.TabIndex = 6;
             this.StartDateTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel2
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel2.Location = new System.Drawing.Point(243, 34);
+            this.radLabel2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel2.Location = new System.Drawing.Point(647, 34);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(63, 18);
+            this.radLabel2.Size = new System.Drawing.Size(79, 18);
             this.radLabel2.TabIndex = 5;
             this.radLabel2.Text = "تاريخ البداية:";
             this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -370,7 +413,8 @@
             // 
             this.DescTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DescTextBox.AutoSize = false;
-            this.DescTextBox.Location = new System.Drawing.Point(326, 63);
+            this.DescTextBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescTextBox.Location = new System.Drawing.Point(766, 68);
             this.DescTextBox.Multiline = true;
             this.DescTextBox.Name = "DescTextBox";
             this.DescTextBox.Size = new System.Drawing.Size(225, 57);
@@ -380,18 +424,20 @@
             // radTextBox1
             // 
             this.radTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radTextBox1.Location = new System.Drawing.Point(326, 33);
+            this.radTextBox1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radTextBox1.Location = new System.Drawing.Point(766, 34);
             this.radTextBox1.Name = "radTextBox1";
-            this.radTextBox1.Size = new System.Drawing.Size(225, 22);
+            this.radTextBox1.Size = new System.Drawing.Size(228, 21);
             this.radTextBox1.TabIndex = 3;
             this.radTextBox1.ThemeName = "TelerikMetro";
             // 
             // radLabel3
             // 
             this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel3.Location = new System.Drawing.Point(557, 65);
+            this.radLabel3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel3.Location = new System.Drawing.Point(994, 68);
             this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(78, 18);
+            this.radLabel3.Size = new System.Drawing.Size(97, 18);
             this.radLabel3.TabIndex = 2;
             this.radLabel3.Text = "وصف المشروع:";
             this.radLabel3.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -399,9 +445,10 @@
             // radLabel1
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel1.Location = new System.Drawing.Point(557, 31);
+            this.radLabel1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel1.Location = new System.Drawing.Point(998, 34);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(68, 18);
+            this.radLabel1.Size = new System.Drawing.Size(93, 18);
             this.radLabel1.TabIndex = 0;
             this.radLabel1.Text = "اسم المشروع:";
             this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -409,67 +456,120 @@
             // radGroupBox2
             // 
             this.radGroupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox2.Controls.Add(this.radProgressBar4);
+            this.radGroupBox2.Controls.Add(this.chart1);
+            this.radGroupBox2.Controls.Add(this.RemainingTextBox);
+            this.radGroupBox2.Controls.Add(this.TotalSalayTextBox);
+            this.radGroupBox2.Controls.Add(this.TotalExpensesTextBox);
             this.radGroupBox2.Controls.Add(this.radLabel9);
-            this.radGroupBox2.Controls.Add(this.radProgressBar3);
-            this.radGroupBox2.Controls.Add(this.radProgressBar2);
             this.radGroupBox2.Controls.Add(this.radLabel8);
-            this.radGroupBox2.Controls.Add(this.radTextBox9);
+            this.radGroupBox2.Controls.Add(this.AmountRecvTextBox);
             this.radGroupBox2.Controls.Add(this.radLabel13);
             this.radGroupBox2.Controls.Add(this.radLabel14);
+            this.radGroupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.radGroupBox2.HeaderText = "موجز حسابات المشروع";
-            this.radGroupBox2.Location = new System.Drawing.Point(368, 330);
+            this.radGroupBox2.Location = new System.Drawing.Point(0, 338);
             this.radGroupBox2.Name = "radGroupBox2";
-            this.radGroupBox2.Size = new System.Drawing.Size(638, 184);
+            this.radGroupBox2.Size = new System.Drawing.Size(1094, 249);
             this.radGroupBox2.TabIndex = 4;
             this.radGroupBox2.Text = "موجز حسابات المشروع";
             this.radGroupBox2.ThemeName = "TelerikMetro";
             // 
-            // radProgressBar3
+            // chart1
             // 
-            this.radProgressBar3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radProgressBar3.Location = new System.Drawing.Point(234, 125);
-            this.radProgressBar3.Name = "radProgressBar3";
-            this.radProgressBar3.ProgressOrientation = Telerik.WinControls.ProgressOrientation.Right;
-            this.radProgressBar3.Size = new System.Drawing.Size(226, 24);
-            this.radProgressBar3.TabIndex = 15;
-            this.radProgressBar3.ThemeName = "TelerikMetro";
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
+            this.chart1.Location = new System.Drawing.Point(5, 10);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chart1.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.YellowGreen};
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "المبالغ";
+            this.chart1.Series.Add(series3);
+            this.chart1.Size = new System.Drawing.Size(482, 217);
+            this.chart1.TabIndex = 19;
+            this.chart1.Text = "chart1";
             // 
-            // radProgressBar2
+            // RemainingTextBox
             // 
-            this.radProgressBar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radProgressBar2.Location = new System.Drawing.Point(237, 66);
-            this.radProgressBar2.Name = "radProgressBar2";
-            this.radProgressBar2.ProgressOrientation = Telerik.WinControls.ProgressOrientation.Right;
-            this.radProgressBar2.Size = new System.Drawing.Size(226, 24);
-            this.radProgressBar2.TabIndex = 14;
-            this.radProgressBar2.ThemeName = "TelerikMetro";
+            this.RemainingTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RemainingTextBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemainingTextBox.ForeColor = System.Drawing.Color.Purple;
+            this.RemainingTextBox.Location = new System.Drawing.Point(753, 136);
+            this.RemainingTextBox.Name = "RemainingTextBox";
+            this.RemainingTextBox.Size = new System.Drawing.Size(205, 21);
+            this.RemainingTextBox.TabIndex = 18;
+            this.RemainingTextBox.ThemeName = "TelerikMetro";
+            // 
+            // TotalSalayTextBox
+            // 
+            this.TotalSalayTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TotalSalayTextBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalSalayTextBox.ForeColor = System.Drawing.Color.Red;
+            this.TotalSalayTextBox.Location = new System.Drawing.Point(753, 103);
+            this.TotalSalayTextBox.Name = "TotalSalayTextBox";
+            this.TotalSalayTextBox.Size = new System.Drawing.Size(204, 21);
+            this.TotalSalayTextBox.TabIndex = 17;
+            this.TotalSalayTextBox.ThemeName = "TelerikMetro";
+            // 
+            // TotalExpensesTextBox
+            // 
+            this.TotalExpensesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TotalExpensesTextBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalExpensesTextBox.ForeColor = System.Drawing.Color.Red;
+            this.TotalExpensesTextBox.Location = new System.Drawing.Point(753, 69);
+            this.TotalExpensesTextBox.Name = "TotalExpensesTextBox";
+            this.TotalExpensesTextBox.Size = new System.Drawing.Size(204, 24);
+            this.TotalExpensesTextBox.TabIndex = 4;
+            this.TotalExpensesTextBox.ThemeName = "TelerikMetro";
+            this.TotalExpensesTextBox.UseGenericBorderPaint = true;
+            // 
+            // radLabel9
+            // 
+            this.radLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radLabel9.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel9.ForeColor = System.Drawing.Color.Red;
+            this.radLabel9.Location = new System.Drawing.Point(963, 105);
+            this.radLabel9.Name = "radLabel9";
+            this.radLabel9.Size = new System.Drawing.Size(100, 18);
+            this.radLabel9.TabIndex = 16;
+            this.radLabel9.Text = "اجمالي الرواتب:";
+            this.radLabel9.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
             // radLabel8
             // 
             this.radLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel8.Location = new System.Drawing.Point(462, 125);
+            this.radLabel8.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel8.ForeColor = System.Drawing.Color.Blue;
+            this.radLabel8.Location = new System.Drawing.Point(963, 136);
             this.radLabel8.Name = "radLabel8";
-            this.radLabel8.Size = new System.Drawing.Size(96, 18);
+            this.radLabel8.Size = new System.Drawing.Size(120, 18);
             this.radLabel8.TabIndex = 13;
             this.radLabel8.Text = "المتبقى من الرصيد:";
             this.radLabel8.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
-            // radTextBox9
+            // AmountRecvTextBox
             // 
-            this.radTextBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radTextBox9.Location = new System.Drawing.Point(238, 30);
-            this.radTextBox9.Name = "radTextBox9";
-            this.radTextBox9.Size = new System.Drawing.Size(225, 22);
-            this.radTextBox9.TabIndex = 3;
-            this.radTextBox9.ThemeName = "TelerikMetro";
+            this.AmountRecvTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AmountRecvTextBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AmountRecvTextBox.ForeColor = System.Drawing.Color.Blue;
+            this.AmountRecvTextBox.Location = new System.Drawing.Point(753, 35);
+            this.AmountRecvTextBox.Name = "AmountRecvTextBox";
+            this.AmountRecvTextBox.Size = new System.Drawing.Size(204, 21);
+            this.AmountRecvTextBox.TabIndex = 3;
+            this.AmountRecvTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel13
             // 
             this.radLabel13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel13.Location = new System.Drawing.Point(462, 62);
+            this.radLabel13.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel13.ForeColor = System.Drawing.Color.Red;
+            this.radLabel13.Location = new System.Drawing.Point(963, 69);
             this.radLabel13.Name = "radLabel13";
-            this.radLabel13.Size = new System.Drawing.Size(96, 18);
+            this.radLabel13.Size = new System.Drawing.Size(122, 18);
             this.radLabel13.TabIndex = 2;
             this.radLabel13.Text = "اجمالي المصروفات:";
             this.radLabel13.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -477,38 +577,34 @@
             // radLabel14
             // 
             this.radLabel14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel14.Location = new System.Drawing.Point(462, 30);
+            this.radLabel14.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel14.ForeColor = System.Drawing.Color.Green;
+            this.radLabel14.Location = new System.Drawing.Point(963, 37);
             this.radLabel14.Name = "radLabel14";
-            this.radLabel14.Size = new System.Drawing.Size(171, 18);
+            this.radLabel14.Size = new System.Drawing.Size(102, 18);
             this.radLabel14.TabIndex = 0;
-            this.radLabel14.Text = "اجمالي المبلغ المسلتم من الموردين:";
+            this.radLabel14.Text = "إجمالي الايرادات";
             this.radLabel14.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
-            // radProgressBar4
+            // radGroupBox3
             // 
-            this.radProgressBar4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radProgressBar4.Location = new System.Drawing.Point(234, 96);
-            this.radProgressBar4.Name = "radProgressBar4";
-            this.radProgressBar4.ProgressOrientation = Telerik.WinControls.ProgressOrientation.Right;
-            this.radProgressBar4.Size = new System.Drawing.Size(226, 24);
-            this.radProgressBar4.TabIndex = 17;
-            this.radProgressBar4.ThemeName = "TelerikMetro";
-            // 
-            // radLabel9
-            // 
-            this.radLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel9.Location = new System.Drawing.Point(459, 92);
-            this.radLabel9.Name = "radLabel9";
-            this.radLabel9.Size = new System.Drawing.Size(77, 18);
-            this.radLabel9.TabIndex = 16;
-            this.radLabel9.Text = "اجمالي الرواتب:";
-            this.radLabel9.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            this.radGroupBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radGroupBox3.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
+            this.radGroupBox3.HeaderText = "ملخص أنشطة المشروع";
+            this.radGroupBox3.Location = new System.Drawing.Point(0, 587);
+            this.radGroupBox3.Name = "radGroupBox3";
+            this.radGroupBox3.Size = new System.Drawing.Size(1094, 243);
+            this.radGroupBox3.TabIndex = 5;
+            this.radGroupBox3.Text = "ملخص أنشطة المشروع";
+            this.radGroupBox3.ThemeName = "TelerikMetro";
             // 
             // FrmMainUserPro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 855);
+            this.ClientSize = new System.Drawing.Size(1094, 855);
+            this.Controls.Add(this.radGroupBox3);
             this.Controls.Add(this.radGroupBox2);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.radStatusStrip1);
@@ -549,14 +645,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).EndInit();
             this.radGroupBox2.ResumeLayout(false);
             this.radGroupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radProgressBar3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radProgressBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RemainingTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TotalSalayTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TotalExpensesTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AmountRecvTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radProgressBar4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -597,13 +695,16 @@
         private Telerik.WinControls.UI.RadProgressBar radProgressBar1;
         private Telerik.WinControls.UI.RadLabel radLabel7;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox2;
-        private Telerik.WinControls.UI.RadProgressBar radProgressBar3;
-        private Telerik.WinControls.UI.RadProgressBar radProgressBar2;
         private Telerik.WinControls.UI.RadLabel radLabel8;
-        public Telerik.WinControls.UI.RadTextBox radTextBox9;
+        public Telerik.WinControls.UI.RadTextBox AmountRecvTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel13;
         private Telerik.WinControls.UI.RadLabel radLabel14;
-        private Telerik.WinControls.UI.RadProgressBar radProgressBar4;
         private Telerik.WinControls.UI.RadLabel radLabel9;
+        public Telerik.WinControls.UI.RadTextBox RemainingTextBox;
+        public Telerik.WinControls.UI.RadTextBox TotalSalayTextBox;
+        public Telerik.WinControls.UI.RadTextBox TotalExpensesTextBox;
+        private Telerik.WinControls.UI.RibbonTab ribbonTab4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Telerik.WinControls.UI.RadGroupBox radGroupBox3;
     }
 }

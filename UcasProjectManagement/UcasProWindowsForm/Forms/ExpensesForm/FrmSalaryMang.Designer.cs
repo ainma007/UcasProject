@@ -28,17 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn2 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
@@ -50,7 +42,6 @@
             this.SalaryTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.ContractComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.contractBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
@@ -64,7 +55,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ContractComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContractComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContractComboBox.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,9 +81,9 @@
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(219, 184);
+            this.SaveBtn.Location = new System.Drawing.Point(219, 174);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(127, 33);
+            this.SaveBtn.Size = new System.Drawing.Size(127, 44);
             this.SaveBtn.TabIndex = 1;
             this.SaveBtn.Text = "حفظ التعديلات";
             this.SaveBtn.ThemeName = "TelerikMetro";
@@ -114,9 +104,10 @@
             this.ReleaseDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ReleaseDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.ReleaseDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ReleaseDateTimePicker.Location = new System.Drawing.Point(151, 123);
+            this.ReleaseDateTimePicker.Location = new System.Drawing.Point(170, 123);
             this.ReleaseDateTimePicker.Name = "ReleaseDateTimePicker";
-            this.ReleaseDateTimePicker.Size = new System.Drawing.Size(125, 22);
+            this.ReleaseDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ReleaseDateTimePicker.Size = new System.Drawing.Size(106, 22);
             this.ReleaseDateTimePicker.TabIndex = 3;
             this.ReleaseDateTimePicker.TabStop = false;
             this.ReleaseDateTimePicker.Text = "15/09/2014";
@@ -138,9 +129,10 @@
             this.FromonthDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FromonthDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FromonthDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FromonthDateTimePicker.Location = new System.Drawing.Point(151, 93);
+            this.FromonthDateTimePicker.Location = new System.Drawing.Point(170, 93);
             this.FromonthDateTimePicker.Name = "FromonthDateTimePicker";
-            this.FromonthDateTimePicker.Size = new System.Drawing.Size(125, 22);
+            this.FromonthDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.FromonthDateTimePicker.Size = new System.Drawing.Size(106, 22);
             this.FromonthDateTimePicker.TabIndex = 2;
             this.FromonthDateTimePicker.TabStop = false;
             this.FromonthDateTimePicker.Text = "15/09/2014";
@@ -162,8 +154,10 @@
             this.SalaryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SalaryTextBox.Location = new System.Drawing.Point(151, 66);
             this.SalaryTextBox.Name = "SalaryTextBox";
+            this.SalaryTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.SalaryTextBox.Size = new System.Drawing.Size(125, 22);
             this.SalaryTextBox.TabIndex = 1;
+            this.SalaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.SalaryTextBox.ThemeName = "TelerikMetro";
             this.SalaryTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SalaryTextBox_KeyPress);
             // 
@@ -179,82 +173,45 @@
             // 
             // ContractComboBox
             // 
-            this.ContractComboBox.DataSource = this.contractBindingSource;
             this.ContractComboBox.DisplayMember = "Status";
             // 
             // ContractComboBox.NestedRadGridView
             // 
             this.ContractComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.ContractComboBox.EditorControl.Cursor = System.Windows.Forms.Cursors.Default;
             this.ContractComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
             this.ContractComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ContractComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ContractComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // ContractComboBox.NestedRadGridView
             // 
             this.ContractComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.ContractComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.ContractComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            gridViewDecimalColumn1.DataType = typeof(int);
-            gridViewDecimalColumn1.FieldName = "ID";
-            gridViewDecimalColumn1.HeaderText = "ID";
-            gridViewDecimalColumn1.IsAutoGenerated = true;
-            gridViewDecimalColumn1.Name = "ID";
-            gridViewDecimalColumn2.DataType = typeof(int);
-            gridViewDecimalColumn2.FieldName = "Employee_ID";
-            gridViewDecimalColumn2.HeaderText = "Employee_ID";
-            gridViewDecimalColumn2.IsAutoGenerated = true;
-            gridViewDecimalColumn2.Name = "Employee_ID";
-            gridViewDateTimeColumn1.DataType = typeof(System.Nullable<System.DateTime>);
-            gridViewDateTimeColumn1.FieldName = "StartDate";
-            gridViewDateTimeColumn1.HeaderText = "StartDate";
-            gridViewDateTimeColumn1.IsAutoGenerated = true;
-            gridViewDateTimeColumn1.Name = "StartDate";
-            gridViewDateTimeColumn2.DataType = typeof(System.Nullable<System.DateTime>);
-            gridViewDateTimeColumn2.FieldName = "EndDate";
-            gridViewDateTimeColumn2.HeaderText = "EndDate";
-            gridViewDateTimeColumn2.IsAutoGenerated = true;
-            gridViewDateTimeColumn2.Name = "EndDate";
-            gridViewDecimalColumn3.DataType = typeof(System.Nullable<double>);
-            gridViewDecimalColumn3.FieldName = "SelaryAmount";
-            gridViewDecimalColumn3.HeaderText = "SelaryAmount";
-            gridViewDecimalColumn3.IsAutoGenerated = true;
-            gridViewDecimalColumn3.Name = "SelaryAmount";
-            gridViewTextBoxColumn1.FieldName = "Status";
-            gridViewTextBoxColumn1.HeaderText = "Status";
-            gridViewTextBoxColumn1.IsAutoGenerated = true;
-            gridViewTextBoxColumn1.Name = "Status";
-            gridViewDecimalColumn4.DataType = typeof(int);
-            gridViewDecimalColumn4.FieldName = "ProjectProfile_ID";
-            gridViewDecimalColumn4.HeaderText = "ProjectProfile_ID";
-            gridViewDecimalColumn4.IsAutoGenerated = true;
-            gridViewDecimalColumn4.Name = "ProjectProfile_ID";
-            gridViewTextBoxColumn2.DataType = typeof(Ucas.Data.Employee);
-            gridViewTextBoxColumn2.FieldName = "Employee";
-            gridViewTextBoxColumn2.HeaderText = "Employee";
-            gridViewTextBoxColumn2.IsAutoGenerated = true;
-            gridViewTextBoxColumn2.Name = "Employee";
-            gridViewTextBoxColumn3.DataType = typeof(Ucas.Data.ProjectProfile);
-            gridViewTextBoxColumn3.FieldName = "ProjectProfile";
-            gridViewTextBoxColumn3.HeaderText = "ProjectProfile";
-            gridViewTextBoxColumn3.IsAutoGenerated = true;
-            gridViewTextBoxColumn3.Name = "ProjectProfile";
-            gridViewTextBoxColumn4.DataType = typeof(System.Collections.Generic.ICollection<Ucas.Data.Monthlysalary>);
-            gridViewTextBoxColumn4.FieldName = "Monthlysalaries";
-            gridViewTextBoxColumn4.HeaderText = "Monthlysalaries";
-            gridViewTextBoxColumn4.IsAutoGenerated = true;
-            gridViewTextBoxColumn4.Name = "Monthlysalaries";
+            this.ContractComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "ID";
+            gridViewTextBoxColumn4.HeaderText = "ID";
+            gridViewTextBoxColumn4.IsVisible = false;
+            gridViewTextBoxColumn4.Name = "ID";
+            gridViewTextBoxColumn4.Width = 57;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "EmployeeName";
+            gridViewTextBoxColumn5.HeaderText = "اسم الموظف";
+            gridViewTextBoxColumn5.Name = "EmployeeName";
+            gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn5.Width = 122;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "EmployeejobNumber";
+            gridViewTextBoxColumn6.HeaderText = "الرقم الوظيفي";
+            gridViewTextBoxColumn6.Name = "EmployeejobNumber";
+            gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn6.Width = 99;
             this.ContractComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn1,
-            gridViewDecimalColumn2,
-            gridViewDateTimeColumn1,
-            gridViewDateTimeColumn2,
-            gridViewDecimalColumn3,
-            gridViewTextBoxColumn1,
-            gridViewDecimalColumn4,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4});
-            this.ContractComboBox.EditorControl.MasterTemplate.DataSource = this.contractBindingSource;
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6});
             this.ContractComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ContractComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
             this.ContractComboBox.EditorControl.Name = "NestedRadGridView";
@@ -269,10 +226,6 @@
             this.ContractComboBox.TabIndex = 0;
             this.ContractComboBox.TabStop = false;
             this.ContractComboBox.ThemeName = "TelerikMetro";
-            // 
-            // contractBindingSource
-            // 
-            this.contractBindingSource.DataSource = typeof(Ucas.Data.Contract);
             // 
             // FrmSalaryMang
             // 
@@ -303,7 +256,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ContractComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContractComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContractComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -313,7 +265,6 @@
 
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
-        private System.Windows.Forms.BindingSource contractBindingSource;
         private Telerik.WinControls.UI.RadButton SaveBtn;
         private Telerik.WinControls.UI.RadLabel radLabel4;
         private Telerik.WinControls.UI.RadLabel radLabel12;

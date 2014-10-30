@@ -88,7 +88,7 @@
             this.radGroupBox1.HeaderText = "بيانات الادخال";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(355, 314);
+            this.radGroupBox1.Size = new System.Drawing.Size(352, 285);
             this.radGroupBox1.TabIndex = 2;
             this.radGroupBox1.Text = "بيانات الادخال";
             this.radGroupBox1.ThemeName = "TelerikMetro";
@@ -96,7 +96,7 @@
             // SubActivitiesDescriptionTextBox
             // 
             this.SubActivitiesDescriptionTextBox.AutoSize = false;
-            this.SubActivitiesDescriptionTextBox.Location = new System.Drawing.Point(12, 98);
+            this.SubActivitiesDescriptionTextBox.Location = new System.Drawing.Point(12, 80);
             this.SubActivitiesDescriptionTextBox.Multiline = true;
             this.SubActivitiesDescriptionTextBox.Name = "SubActivitiesDescriptionTextBox";
             this.SubActivitiesDescriptionTextBox.Size = new System.Drawing.Size(231, 54);
@@ -106,7 +106,7 @@
             // radLabel7
             // 
             this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel7.Location = new System.Drawing.Point(249, 42);
+            this.radLabel7.Location = new System.Drawing.Point(246, 24);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(78, 18);
             this.radLabel7.TabIndex = 11;
@@ -161,7 +161,7 @@
             this.ActivitiesColumnComboBox.EditorControl.ShowGroupPanel = false;
             this.ActivitiesColumnComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.ActivitiesColumnComboBox.EditorControl.TabIndex = 0;
-            this.ActivitiesColumnComboBox.Location = new System.Drawing.Point(12, 42);
+            this.ActivitiesColumnComboBox.Location = new System.Drawing.Point(12, 24);
             this.ActivitiesColumnComboBox.Name = "ActivitiesColumnComboBox";
             this.ActivitiesColumnComboBox.Size = new System.Drawing.Size(231, 20);
             this.ActivitiesColumnComboBox.TabIndex = 0;
@@ -175,9 +175,9 @@
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(212, 258);
+            this.AddBtn.Location = new System.Drawing.Point(194, 239);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(130, 38);
+            this.AddBtn.Size = new System.Drawing.Size(127, 44);
             this.AddBtn.TabIndex = 6;
             this.AddBtn.Text = "اضافة";
             this.AddBtn.ThemeName = "TelerikMetro";
@@ -186,7 +186,7 @@
             // radLabel6
             // 
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel6.Location = new System.Drawing.Point(244, 219);
+            this.radLabel6.Location = new System.Drawing.Point(241, 201);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(86, 18);
             this.radLabel6.TabIndex = 9;
@@ -196,10 +196,12 @@
             // TotalCostTextBox
             // 
             this.TotalCostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TotalCostTextBox.Location = new System.Drawing.Point(96, 219);
+            this.TotalCostTextBox.Location = new System.Drawing.Point(93, 201);
             this.TotalCostTextBox.Name = "TotalCostTextBox";
+            this.TotalCostTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TotalCostTextBox.Size = new System.Drawing.Size(147, 22);
             this.TotalCostTextBox.TabIndex = 5;
+            this.TotalCostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TotalCostTextBox.ThemeName = "TelerikMetro";
             this.TotalCostTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalCostTextBox_KeyPress);
             // 
@@ -208,8 +210,9 @@
             this.EndDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.EndDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.EndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.EndDateTimePicker.Location = new System.Drawing.Point(140, 190);
+            this.EndDateTimePicker.Location = new System.Drawing.Point(137, 172);
             this.EndDateTimePicker.Name = "EndDateTimePicker";
+            this.EndDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.EndDateTimePicker.Size = new System.Drawing.Size(103, 22);
             this.EndDateTimePicker.TabIndex = 4;
             this.EndDateTimePicker.TabStop = false;
@@ -220,7 +223,7 @@
             // radLabel4
             // 
             this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel4.Location = new System.Drawing.Point(249, 188);
+            this.radLabel4.Location = new System.Drawing.Point(246, 170);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(65, 18);
             this.radLabel4.TabIndex = 6;
@@ -232,8 +235,9 @@
             this.StartDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.StartDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.StartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StartDateTimePicker.Location = new System.Drawing.Point(140, 159);
+            this.StartDateTimePicker.Location = new System.Drawing.Point(137, 141);
             this.StartDateTimePicker.Name = "StartDateTimePicker";
+            this.StartDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartDateTimePicker.Size = new System.Drawing.Size(103, 22);
             this.StartDateTimePicker.TabIndex = 3;
             this.StartDateTimePicker.TabStop = false;
@@ -244,7 +248,7 @@
             // radLabel3
             // 
             this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel3.Location = new System.Drawing.Point(249, 159);
+            this.radLabel3.Location = new System.Drawing.Point(246, 141);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(55, 18);
             this.radLabel3.TabIndex = 5;
@@ -254,7 +258,7 @@
             // radLabel2
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel2.Location = new System.Drawing.Point(249, 109);
+            this.radLabel2.Location = new System.Drawing.Point(246, 91);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(72, 18);
             this.radLabel2.TabIndex = 3;
@@ -264,7 +268,7 @@
             // radLabel1
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel1.Location = new System.Drawing.Point(249, 71);
+            this.radLabel1.Location = new System.Drawing.Point(246, 53);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(98, 18);
             this.radLabel1.TabIndex = 1;
@@ -274,9 +278,9 @@
             // SubActivitiesNameTextBox
             // 
             this.SubActivitiesNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SubActivitiesNameTextBox.Location = new System.Drawing.Point(12, 69);
+            this.SubActivitiesNameTextBox.Location = new System.Drawing.Point(12, 51);
             this.SubActivitiesNameTextBox.Name = "SubActivitiesNameTextBox";
-            this.SubActivitiesNameTextBox.Size = new System.Drawing.Size(231, 22);
+            this.SubActivitiesNameTextBox.Size = new System.Drawing.Size(228, 22);
             this.SubActivitiesNameTextBox.TabIndex = 1;
             this.SubActivitiesNameTextBox.ThemeName = "TelerikMetro";
             // 
@@ -284,14 +288,20 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 314);
+            this.ClientSize = new System.Drawing.Size(352, 285);
             this.Controls.Add(this.radGroupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(360, 320);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(360, 320);
             this.Name = "FrmAddSubActivities";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(360, 320);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اضافة نشاط فرعي";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmAddSubActivities_Load);

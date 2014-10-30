@@ -130,7 +130,7 @@
             this.SupplierComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.SupplierComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // SupplierComboBox.NestedRadGridView
+            // 
             // 
             this.SupplierComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.SupplierComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -185,10 +185,12 @@
             // BillTextBox
             // 
             this.BillTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BillTextBox.Location = new System.Drawing.Point(59, 126);
+            this.BillTextBox.Location = new System.Drawing.Point(102, 126);
             this.BillTextBox.Name = "BillTextBox";
-            this.BillTextBox.Size = new System.Drawing.Size(193, 22);
+            this.BillTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.BillTextBox.Size = new System.Drawing.Size(150, 22);
             this.BillTextBox.TabIndex = 3;
+            this.BillTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.BillTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel7
@@ -216,7 +218,7 @@
             this.SubActivtiesComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.SubActivtiesComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // SubActivtiesComboBox.NestedRadGridView
+            // 
             // 
             this.SubActivtiesComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.SubActivtiesComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -265,9 +267,9 @@
             // AddBtn
             // 
             this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddBtn.Location = new System.Drawing.Point(240, 256);
+            this.AddBtn.Location = new System.Drawing.Point(240, 252);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(130, 38);
+            this.AddBtn.Size = new System.Drawing.Size(127, 44);
             this.AddBtn.TabIndex = 8;
             this.AddBtn.Text = "اضافة";
             this.AddBtn.ThemeName = "TelerikMetro";
@@ -286,10 +288,12 @@
             // RequiarAmountTextBox
             // 
             this.RequiarAmountTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RequiarAmountTextBox.Location = new System.Drawing.Point(59, 157);
+            this.RequiarAmountTextBox.Location = new System.Drawing.Point(102, 157);
             this.RequiarAmountTextBox.Name = "RequiarAmountTextBox";
-            this.RequiarAmountTextBox.Size = new System.Drawing.Size(193, 22);
+            this.RequiarAmountTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.RequiarAmountTextBox.Size = new System.Drawing.Size(150, 22);
             this.RequiarAmountTextBox.TabIndex = 4;
+            this.RequiarAmountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.RequiarAmountTextBox.ThemeName = "TelerikMetro";
             this.RequiarAmountTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RequiarAmountTextBox_KeyPress);
             // 
@@ -308,9 +312,10 @@
             this.DateOfProecssPicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DateOfProecssPicker.CustomFormat = "dd/MM/yyyy";
             this.DateOfProecssPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateOfProecssPicker.Location = new System.Drawing.Point(144, 97);
+            this.DateOfProecssPicker.Location = new System.Drawing.Point(157, 97);
             this.DateOfProecssPicker.Name = "DateOfProecssPicker";
-            this.DateOfProecssPicker.Size = new System.Drawing.Size(108, 22);
+            this.DateOfProecssPicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DateOfProecssPicker.Size = new System.Drawing.Size(95, 22);
             this.DateOfProecssPicker.TabIndex = 2;
             this.DateOfProecssPicker.TabStop = false;
             this.DateOfProecssPicker.Text = "15/09/2014";
@@ -330,10 +335,12 @@
             // CashingNumberTextBox
             // 
             this.CashingNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CashingNumberTextBox.Location = new System.Drawing.Point(59, 184);
+            this.CashingNumberTextBox.Location = new System.Drawing.Point(102, 184);
             this.CashingNumberTextBox.Name = "CashingNumberTextBox";
-            this.CashingNumberTextBox.Size = new System.Drawing.Size(193, 22);
+            this.CashingNumberTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.CashingNumberTextBox.Size = new System.Drawing.Size(150, 22);
             this.CashingNumberTextBox.TabIndex = 5;
+            this.CashingNumberTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.CashingNumberTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel2
@@ -371,12 +378,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 302);
             this.Controls.Add(this.radGroupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(383, 337);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(383, 337);
             this.Name = "FrmAddExpenses";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(383, 337);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اضافة مصروف";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmAddExpenses_Load);

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
 
@@ -18,7 +19,15 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             InitializeComponent();
             RadMessageBox.SetThemeName("TelerikMetro");
         }
+        private void TotalExpenses()
+        {
 
+            GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("Amount", "المجموع الكلي = {0}", GridAggregateFunction.Sum);
+            GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight });
+            this.SalaryGridView.SummaryRowsBottom.Add(summaryRowItem);
+
+          
+        }
         private void AddBtn_Click(object sender, EventArgs e)
         {
             FrmAddSalaries Addfrm = new FrmAddSalaries();
@@ -28,21 +37,27 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         private void FrmSalariesManage_Load(object sender, EventArgs e)
         {
             SalaryGridView.DataSource = SalariesCmd.GetAllSalaryBypro(InformationsClass.ProjID);
+            for (int i = 1; i <= SalaryGridView.Rows.Count; i++)
+            {
+                SalaryGridView.Rows[i - 1].Cells[0].Value = i.ToString();
+            }
+           
+            TotalExpenses();
         }
 
         private void SalaryGridView_CommandCellClick(object sender, EventArgs e)
         {
              var col = SalaryGridView.CurrentColumn.Index;
 
-             if (col == 5)
+             if (col == 6)
              {
                  FrmSalaryMang EditSalary= new FrmSalaryMang();
                  EditSalary.FillCombo();
-                 EditSalary.XSalaryID = int.Parse(SalaryGridView.CurrentRow.Cells[0].Value.ToString());
-                 EditSalary.ContractComboBox.Text = SalaryGridView.CurrentRow.Cells[1].Value.ToString();
-                 EditSalary.SalaryTextBox.Text = SalaryGridView.CurrentRow.Cells[2].Value.ToString();
-                 EditSalary.FromonthDateTimePicker.Text = SalaryGridView.CurrentRow.Cells[3].Value.ToString();
-                 EditSalary.ReleaseDateTimePicker.Text = SalaryGridView.CurrentRow.Cells[4].Value.ToString();
+                 EditSalary.XSalaryID = int.Parse(SalaryGridView.CurrentRow.Cells[1].Value.ToString());
+                 EditSalary.ContractComboBox.Text = SalaryGridView.CurrentRow.Cells[2].Value.ToString();
+                 EditSalary.SalaryTextBox.Text = SalaryGridView.CurrentRow.Cells[3].Value.ToString();
+                 EditSalary.FromonthDateTimePicker.Text = SalaryGridView.CurrentRow.Cells[4].Value.ToString();
+                 EditSalary.ReleaseDateTimePicker.Text = SalaryGridView.CurrentRow.Cells[5].Value.ToString();
                  
 
                  EditSalary.ShowDialog();
@@ -50,13 +65,13 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
              }
 
-             if (col == 6)
+             if (col == 7)
              {
 
                  if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                  {
 
-                     SalariesCmd.DeleteSalary(int.Parse(SalaryGridView.CurrentRow.Cells[0].Value.ToString()));
+                     SalariesCmd.DeleteSalary(int.Parse(SalaryGridView.CurrentRow.Cells[1].Value.ToString()));
                      RadMessageBox.Show("تمت علمية الحذف");
                      return;
                  }
