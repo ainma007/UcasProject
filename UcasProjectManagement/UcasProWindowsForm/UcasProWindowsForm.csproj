@@ -440,7 +440,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Report\" />
+    <Folder Include="Reports\ReportObj\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ucas.Data\Ucas.Data.csproj">
