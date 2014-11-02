@@ -24,6 +24,7 @@ namespace Ucas.Data
         public string Password { get; set; }
         public Nullable<int> Group_ID { get; set; }
         public Nullable<int> Employee_ID { get; set; }
+        public string TypeUser { get; set; }
     
         public virtual Employee Employee { get; set; }
         public virtual GroupsTb GroupsTb { get; set; }

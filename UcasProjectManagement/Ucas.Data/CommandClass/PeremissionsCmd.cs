@@ -36,9 +36,9 @@ namespace Ucas.Data.CommandClass
                 if (tb.ID != 0)
                 {
                     q.GroupID = tb.GroupID;
-                    q.AddUser = tb.AddUser;
+                    q.EditProject = tb.EditProject;
                     q.UpDateUser = tb.UpDateUser;
-                    q.DeleteUser = tb.DeleteUser;
+                   
 
                     q.AddProject = tb.AddProject;
                     q.DisplayExpenses = tb.DisplayExpenses;

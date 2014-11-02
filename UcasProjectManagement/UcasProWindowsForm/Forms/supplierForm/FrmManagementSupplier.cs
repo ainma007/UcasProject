@@ -22,34 +22,18 @@ namespace UcasProWindowsForm.Forms.supplierForm
         private void GetAllsupplier()
         {
 
-            supplierBindingSource.DataSource = SuppliersCmd.GetAll();
+            radGridView1.DataSource = SuppliersCmd.GetAll();
         }
 
-    private  void LockGrid()
-        {
-            for (int i = 0; i <= radGridView1.Rows.Count - 1; i++)
-            {
-                radGridView1.Rows[i].Cells[0].ReadOnly = true;
-                radGridView1.Rows[i].Cells[1].ReadOnly = true;
-                radGridView1.Rows[i].Cells[2].ReadOnly = true;
-                radGridView1.Rows[i].Cells[3].ReadOnly = true;
-                radGridView1.Rows[i].Cells[4].ReadOnly = true;
-                radGridView1.Rows[i].Cells[5].ReadOnly = true;
-                radGridView1.Rows[i].Cells[6].ReadOnly = true;
-                radGridView1.Rows[i].Cells[7].ReadOnly = true;
-              
-              
+    
 
-
-            }
-
-        }
+      
      
 
         private void FrmManagementSupplier_Load(object sender, EventArgs e)
         {
             GetAllsupplier();
-            LockGrid();
+           
             RadMessageBox.SetThemeName("TelerikMetro");
         }
         

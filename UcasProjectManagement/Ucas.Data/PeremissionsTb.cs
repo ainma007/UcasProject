@@ -16,9 +16,7 @@ namespace Ucas.Data
     {
         public int ID { get; set; }
         public Nullable<int> GroupID { get; set; }
-        public Nullable<int> AddUser { get; set; }
         public Nullable<int> UpDateUser { get; set; }
-        public Nullable<int> DeleteUser { get; set; }
         public Nullable<int> AddProject { get; set; }
         public Nullable<int> DisplayExpenses { get; set; }
         public Nullable<int> CanPrint { get; set; }
@@ -31,6 +29,7 @@ namespace Ucas.Data
         public Nullable<int> DeleteFinncers { get; set; }
         public Nullable<int> EditSuppliers { get; set; }
         public Nullable<int> DeleteSuppliers { get; set; }
+        public int EditProject { get; set; }
     
         public virtual GroupsTb GroupsTb { get; set; }
     }

@@ -16,7 +16,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.AmountsReceived)">
         <MappingFragment StoreEntitySet="AmountsReceiveds">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="TheFinancerProjectsID" ColumnName="TheFinancerProjectsID" />
+          <ScalarProperty Name="TheDonorsProjectID" ColumnName="TheDonorsProjectID" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="Cost" ColumnName="Cost" />
           <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
@@ -87,9 +87,7 @@
         <MappingFragment StoreEntitySet="PeremissionsTbs">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="GroupID" ColumnName="GroupID" />
-          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
           <ScalarProperty Name="UpDateUser" ColumnName="UpDateUser" />
-          <ScalarProperty Name="DeleteUser" ColumnName="DeleteUser" />
           <ScalarProperty Name="AddProject" ColumnName="AddProject" />
           <ScalarProperty Name="DisplayExpenses" ColumnName="DisplayExpenses" />
           <ScalarProperty Name="CanPrint" ColumnName="CanPrint" />
@@ -102,6 +100,7 @@
           <ScalarProperty Name="DeleteFinncers" ColumnName="DeleteFinncers" />
           <ScalarProperty Name="EditSuppliers" ColumnName="EditSuppliers" />
           <ScalarProperty Name="DeleteSuppliers" ColumnName="DeleteSuppliers" />
+          <ScalarProperty Name="EditProject" ColumnName="EditProject" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -220,6 +219,7 @@
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Group_ID" ColumnName="Group_ID" />
           <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="TypeUser" ColumnName="TypeUser" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

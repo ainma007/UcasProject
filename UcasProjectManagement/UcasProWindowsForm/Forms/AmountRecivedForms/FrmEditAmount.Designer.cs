@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.GroupBox = new Telerik.WinControls.UI.RadGroupBox();
             this.saveBtn = new Telerik.WinControls.UI.RadButton();
@@ -93,26 +93,26 @@
             this.DonorsComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.DonorsComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // DonorsComboBox.NestedRadGridView
             // 
             this.DonorsComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.DonorsComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.DonorsComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.DonorsComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "ID";
-            gridViewTextBoxColumn3.HeaderText = "ID";
-            gridViewTextBoxColumn3.IsVisible = false;
-            gridViewTextBoxColumn3.Name = "ID";
-            gridViewTextBoxColumn3.Width = 100;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "Name";
-            gridViewTextBoxColumn4.HeaderText = "اختر الممول";
-            gridViewTextBoxColumn4.Name = "Name";
-            gridViewTextBoxColumn4.Width = 220;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "ID";
+            gridViewTextBoxColumn1.Width = 100;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "Name";
+            gridViewTextBoxColumn2.HeaderText = "اختر الممول";
+            gridViewTextBoxColumn2.Name = "Name";
+            gridViewTextBoxColumn2.Width = 220;
             this.DonorsComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2});
             this.DonorsComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.DonorsComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
             this.DonorsComboBox.EditorControl.Name = "NestedRadGridView";
@@ -153,9 +153,10 @@
             this.DateOfProecssPicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DateOfProecssPicker.CustomFormat = "dd/MM/yyyy";
             this.DateOfProecssPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateOfProecssPicker.Location = new System.Drawing.Point(104, 53);
+            this.DateOfProecssPicker.Location = new System.Drawing.Point(142, 53);
             this.DateOfProecssPicker.Name = "DateOfProecssPicker";
-            this.DateOfProecssPicker.Size = new System.Drawing.Size(131, 22);
+            this.DateOfProecssPicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DateOfProecssPicker.Size = new System.Drawing.Size(93, 22);
             this.DateOfProecssPicker.TabIndex = 8;
             this.DateOfProecssPicker.TabStop = false;
             this.DateOfProecssPicker.Text = "15/09/2014";
@@ -165,10 +166,12 @@
             // CostTextBox
             // 
             this.CostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CostTextBox.Location = new System.Drawing.Point(104, 91);
+            this.CostTextBox.Location = new System.Drawing.Point(124, 91);
             this.CostTextBox.Name = "CostTextBox";
-            this.CostTextBox.Size = new System.Drawing.Size(131, 22);
+            this.CostTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.CostTextBox.Size = new System.Drawing.Size(111, 22);
             this.CostTextBox.TabIndex = 7;
+            this.CostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.CostTextBox.ThemeName = "TelerikMetro";
             this.CostTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CostTextBox_KeyPress);
             // 

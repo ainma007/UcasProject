@@ -23,6 +23,7 @@ namespace UcasProWindowsForm.Forms.MainForm
         int ProID = ProjectControlCmd.ChkProjectIDByUserID(InformationsClass.xCurrentUserID);
         private void FrmMainUserPro_Load(object sender, EventArgs e)
         {
+            
             var ListData = ProjectProfileCmd.GetProjectData(ProID);
             foreach (var item in ListData )
             {
@@ -71,19 +72,20 @@ namespace UcasProWindowsForm.Forms.MainForm
             chart1.Series[0].Points.AddXY("اجمالي الرواتب",val2);
             chart1.Series[0].Points.AddXY("المتبقي من الرصيد",RemainingTextBox.Text);
             chart1.Titles.Add("مخطط موجز الحسابات للمشروع");
+            
+
             chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
             chart1.ChartAreas[0].BackColor = Color.Azure;
             
             chart1.ChartAreas[0].ShadowColor = Color.Red;
 
         ///    chart1.ChartAreas[0].Area3DStyle.Enable3D = true;
-
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmAddSalaries frm = new FrmAddSalaries();
-            frm.ShowDialog();
+            
         }
 
         private void ProjectManageBtn_Click(object sender, EventArgs e)
@@ -91,6 +93,7 @@ namespace UcasProWindowsForm.Forms.MainForm
             this.Cursor = Cursors.WaitCursor;
             FrmTheDonorsAndProjectManage frm =new FrmTheDonorsAndProjectManage();
             frm.ShowDialog();
+            this.Cursor = Cursors.Default;
         }
 
         private void ContractsBtn_Click(object sender, EventArgs e)
@@ -98,6 +101,7 @@ namespace UcasProWindowsForm.Forms.MainForm
             this.Cursor = Cursors.WaitCursor;
             FrmContratsManage ContrMng = new FrmContratsManage();
             ContrMng.ShowDialog();
+            this.Cursor = Cursors.Default;
         }
 
         private void FrmMainUserPro_FormClosed(object sender, FormClosedEventArgs e)

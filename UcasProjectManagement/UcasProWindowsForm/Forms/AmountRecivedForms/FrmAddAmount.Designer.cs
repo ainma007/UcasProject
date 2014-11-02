@@ -39,7 +39,6 @@
             this.DateOfProecssPicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.DonorsComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).BeginInit();
@@ -72,10 +71,12 @@
             // 
             // CostTextBox
             // 
-            this.CostTextBox.Location = new System.Drawing.Point(111, 103);
+            this.CostTextBox.Location = new System.Drawing.Point(127, 103);
             this.CostTextBox.Name = "CostTextBox";
-            this.CostTextBox.Size = new System.Drawing.Size(139, 22);
+            this.CostTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.CostTextBox.Size = new System.Drawing.Size(123, 22);
             this.CostTextBox.TabIndex = 2;
+            this.CostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.CostTextBox.ThemeName = "TelerikMetro";
             this.CostTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CostTextBox_KeyDown);
             this.CostTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CostTextBox_KeyPress);
@@ -115,9 +116,10 @@
             this.DateOfProecssPicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DateOfProecssPicker.CustomFormat = "dd/MM/yyyy";
             this.DateOfProecssPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateOfProecssPicker.Location = new System.Drawing.Point(27, 64);
+            this.DateOfProecssPicker.Location = new System.Drawing.Point(160, 64);
             this.DateOfProecssPicker.Name = "DateOfProecssPicker";
-            this.DateOfProecssPicker.Size = new System.Drawing.Size(223, 22);
+            this.DateOfProecssPicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DateOfProecssPicker.Size = new System.Drawing.Size(90, 22);
             this.DateOfProecssPicker.TabIndex = 1;
             this.DateOfProecssPicker.TabStop = false;
             this.DateOfProecssPicker.Text = "15/09/2014";
@@ -147,7 +149,7 @@
             this.DonorsComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.DonorsComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // DonorsComboBox.NestedRadGridView
+            // 
             // 
             this.DonorsComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.DonorsComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -232,6 +234,5 @@
         private System.Windows.Forms.Label label2;
         private Telerik.WinControls.UI.RadDateTimePicker DateOfProecssPicker;
         private Telerik.WinControls.UI.RadTextBox CostTextBox;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

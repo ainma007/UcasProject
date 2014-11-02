@@ -111,9 +111,9 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                 PeremissionsTb ptb = new PeremissionsTb()
                 {
                     GroupID = xlast,
-                    AddUser = int.Parse(Lst[0].ToString()),
+                   
                     UpDateUser = int.Parse(Lst[1].ToString()),
-                    DeleteUser = int.Parse(Lst[2].ToString()),
+                 
                     AddProject = int.Parse(Lst[3].ToString()),
                     DisplayExpenses = int.Parse(Lst[4].ToString()),
                     CanPrint = int.Parse(Lst[5].ToString()),

@@ -114,7 +114,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TheFinancerProjectsID" Type="Int32" />
+    <Property Name="TheDonorsProjectID" Type="Int32" />
     <Property Name="Date" Type="DateTime" Precision="3" />
     <Property Name="Cost" Type="Double" />
     <Property Name="ProjectProfile_ID" Type="Int32" />
@@ -191,9 +191,7 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="GroupID" Type="Int32" />
-    <Property Name="AddUser" Type="Int32" />
     <Property Name="UpDateUser" Type="Int32" />
-    <Property Name="DeleteUser" Type="Int32" />
     <Property Name="AddProject" Type="Int32" />
     <Property Name="DisplayExpenses" Type="Int32" />
     <Property Name="CanPrint" Type="Int32" />
@@ -207,6 +205,7 @@
     <Property Name="EditSuppliers" Type="Int32" />
     <Property Name="DeleteSuppliers" Type="Int32" />
     <NavigationProperty Name="GroupsTb" Relationship="UcasProModel.FK_PeremissionsTb_GroupsTb" FromRole="PeremissionsTb" ToRole="GroupsTb" />
+    <Property Name="EditProject" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
   </EntityType>
   <EntityType Name="ProjectActivity">
     <Key>
@@ -343,6 +342,7 @@
     <NavigationProperty Name="Employee" Relationship="UcasProModel.FK_UserTb_Employees" FromRole="UserTb" ToRole="Employee" />
     <NavigationProperty Name="GroupsTb" Relationship="UcasProModel.FK_UserTb_GroupsTbs" FromRole="UserTb" ToRole="GroupsTb" />
     <NavigationProperty Name="ProjectControls" Relationship="UcasProModel.FK_ProjectControls_UserTb" FromRole="UserTb" ToRole="ProjectControl" />
+    <Property Name="TypeUser" Type="String" Nullable="false" />
   </EntityType>
   <Association Name="FK_AmountsReceived_TheFinancerProjects">
     <End Type="UcasProModel.TheDonorsProject" Role="TheDonorsProject" Multiplicity="0..1" />
@@ -352,7 +352,7 @@
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="AmountsReceived">
-        <PropertyRef Name="TheFinancerProjectsID" />
+        <PropertyRef Name="TheDonorsProjectID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

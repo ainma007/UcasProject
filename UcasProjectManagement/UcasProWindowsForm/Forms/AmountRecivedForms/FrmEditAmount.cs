@@ -69,7 +69,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
                 AmountsReceived tb = new AmountsReceived()
                 {
                     ID = XAmountID,
-                    TheFinancerProjectsID = int.Parse(DonorsComboBox.SelectedValue.ToString()),
+                    TheDonorsProjectID = int.Parse(DonorsComboBox.SelectedValue.ToString()),
                     Date = DateOfProecssPicker.Value.Date,
                     Cost = Convert.ToDouble(CostTextBox.Text),
 

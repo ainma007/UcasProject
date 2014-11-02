@@ -55,6 +55,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
          
 
              RadMessageBox.Show(this, OperationX.AddMessageDone, "Done", MessageBoxButtons.OK, RadMessageIcon.Info);
+             ClearText();
         }
 
 
@@ -85,6 +86,18 @@ namespace UcasProWindowsForm.Forms.supplierForm
         private void faxTextBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+        private void ClearText()
+        {
+            TheDonorsNameTextBox.Clear();
+            AgentNameTextBox.Clear();
+            EmailTextBox.Clear();
+            PhoneNumberTextBox.Clear();
+            faxTextBox4.Clear();
+            AdressTextBox.Clear();
+            TheDonorsNameTextBox.Focus();
+
+
         }
         }
     }

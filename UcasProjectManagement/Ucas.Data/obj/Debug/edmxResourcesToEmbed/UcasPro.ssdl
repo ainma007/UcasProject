@@ -114,7 +114,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TheFinancerProjectsID" Type="int" Nullable="true" />
+    <Property Name="TheDonorsProjectID" Type="int" Nullable="true" />
     <Property Name="Date" Type="datetime" Nullable="true" />
     <Property Name="Cost" Type="float" Nullable="true" />
     <Property Name="ProjectProfile_ID" Type="int" Nullable="true" />
@@ -179,9 +179,7 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="GroupID" Type="int" Nullable="true" />
-    <Property Name="AddUser" Type="int" Nullable="true" />
     <Property Name="UpDateUser" Type="int" Nullable="true" />
-    <Property Name="DeleteUser" Type="int" Nullable="true" />
     <Property Name="AddProject" Type="int" Nullable="true" />
     <Property Name="DisplayExpenses" Type="int" Nullable="true" />
     <Property Name="CanPrint" Type="int" Nullable="true" />
@@ -194,6 +192,7 @@
     <Property Name="DeleteFinncers" Type="int" Nullable="true" />
     <Property Name="EditSuppliers" Type="int" Nullable="true" />
     <Property Name="DeleteSuppliers" Type="int" Nullable="true" />
+    <Property Name="EditProject" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ProjectActivities">
     <Key>
@@ -303,6 +302,7 @@
     <Property Name="Password" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Group_ID" Type="int" Nullable="true" />
     <Property Name="Employee_ID" Type="int" Nullable="true" />
+    <Property Name="TypeUser" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="FK_AmountsReceived_TheFinancerProjects">
     <End Role="TheDonorsProject" Type="UcasProModel.Store.TheDonorsProjects" Multiplicity="0..1" />
@@ -312,7 +312,7 @@
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="AmountsReceived">
-        <PropertyRef Name="TheFinancerProjectsID" />
+        <PropertyRef Name="TheDonorsProjectID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

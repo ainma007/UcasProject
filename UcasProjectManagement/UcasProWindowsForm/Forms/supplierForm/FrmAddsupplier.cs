@@ -64,6 +64,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
            
 
           RadMessageBox.Show(this, OperationX.AddMessageDone, "Done", MessageBoxButtons.OK, RadMessageIcon.Info);
+          clearText();
         }
 
 
@@ -91,6 +92,20 @@ namespace UcasProWindowsForm.Forms.supplierForm
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+        private void clearText()
+        {
+               NameTextBox.Clear();
+               SuppliersNaturalTextBox.Clear();
+               EmailTextBox.Clear();
+                PhoneNumberTextBox.Clear();
+               faxTextBox4.Clear();
+               AdressTextBox.Clear();
+               NameTextBox.Focus();
+
+            
+
         }
+        }
+    
     }
 

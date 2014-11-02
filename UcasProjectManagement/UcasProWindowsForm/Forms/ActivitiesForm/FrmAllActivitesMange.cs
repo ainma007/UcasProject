@@ -43,7 +43,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         private void TotalActivites()
         {
 
-            GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("TotalCost", "المجموع الكلي للانشطة الرئيسية = {0}", GridAggregateFunction.Sum);
+            GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("TotalCost", "اجمالي الانشطة = {0}", GridAggregateFunction.Sum);
             GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight });
             this.ActivitiesGridView.SummaryRowsBottom.Add(summaryRowItem);
             ///
@@ -51,12 +51,12 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         }
         private void FrmAllActivitesMange_Load(object sender, EventArgs e)
         {
-
             projectActivityBindingSource.DataSource = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
-
             projectSubActivityBindingSource.DataSource = SubActivityCmd.GetAllSubActivities();
+           
            // ActivitiesGridView.MasterTemplate.ExpandAll();
             TotalActivites();
+            
         }
 
         private void ActivitiesGridView_CommandCellClick(object sender, EventArgs e)
@@ -87,8 +87,8 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             if (col2 == 9) 
             {
                 this.Cursor = Cursors.WaitCursor;
-                ProjectActivity tb = projectActivityBindingSource.Current as ProjectActivity;
-                ActivityCmd.DeleteActivity(tb.ID);
+               
+                ActivityCmd.DeleteActivity(int.Parse(ActivitiesGridView.CurrentRow.Cells[0].Value.ToString()));
                 this.Cursor = Cursors.Default;
                 MessageBox.Show("تمت علمية الحذف");
 
@@ -128,6 +128,13 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 MessageBox.Show("تمت علمية الحذف");
                 return;
             }
+        }
+
+        private void ActivitiesGridView_CellFormatting(object sender, CellFormattingEventArgs e)
+        {
+
+           
+            
         }
     }
 }

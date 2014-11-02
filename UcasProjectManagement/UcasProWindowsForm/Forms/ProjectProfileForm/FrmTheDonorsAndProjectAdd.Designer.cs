@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.DonorsColumnComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.theDonorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
@@ -43,7 +41,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DonorsColumnComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsColumnComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsColumnComboBox.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.theDonorsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
@@ -56,7 +53,6 @@
             // DonorsColumnComboBox
             // 
             this.DonorsColumnComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.DonorsColumnComboBox.DataSource = this.theDonorsBindingSource;
             // 
             // DonorsColumnComboBox.NestedRadGridView
             // 
@@ -73,7 +69,6 @@
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
-            gridViewDecimalColumn1.DataType = typeof(int);
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "ID";
             gridViewDecimalColumn1.HeaderText = "ID";
@@ -96,7 +91,6 @@
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2});
-            this.DonorsColumnComboBox.EditorControl.MasterTemplate.DataSource = this.theDonorsBindingSource;
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
             this.DonorsColumnComboBox.EditorControl.Name = "NestedRadGridView";
@@ -111,10 +105,6 @@
             this.DonorsColumnComboBox.TabIndex = 0;
             this.DonorsColumnComboBox.TabStop = false;
             this.DonorsColumnComboBox.ThemeName = "TelerikMetro";
-            // 
-            // theDonorsBindingSource
-            // 
-            this.theDonorsBindingSource.DataSource = typeof(Ucas.Data.TheDonor);
             // 
             // radGroupBox1
             // 
@@ -202,7 +192,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DonorsColumnComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsColumnComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsColumnComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.theDonorsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
@@ -223,7 +212,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadTextBox CostTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel1;
-        private System.Windows.Forms.BindingSource theDonorsBindingSource;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
     }
 }

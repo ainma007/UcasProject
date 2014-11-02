@@ -234,7 +234,7 @@
             // 
             // projectActivityBindingSource
             // 
-            this.projectActivityBindingSource.DataSource = typeof(Ucas.Data.ProjectActivity);
+           
             // 
             // SubActivitiesDescriptionTextBox
             // 

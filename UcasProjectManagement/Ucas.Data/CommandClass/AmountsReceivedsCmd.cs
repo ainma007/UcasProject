@@ -36,7 +36,7 @@ namespace Ucas.Data.CommandClass
                 db.Configuration.LazyLoadingEnabled = false;
                 db.Configuration.ProxyCreationEnabled = false;
                 var q = db.AmountsReceiveds.Where(p => p.ID == tb.ID).SingleOrDefault();
-                q.TheFinancerProjectsID = tb.TheFinancerProjectsID;
+                q.TheDonorsProjectID = tb.TheDonorsProjectID;
                 q.Date = tb.Date;
                 q.Cost = tb.Cost;
 
@@ -87,7 +87,7 @@ namespace Ucas.Data.CommandClass
             db.Configuration.ProxyCreationEnabled = false;
             var LST = ( from f in db.AmountsReceiveds 
                         orderby f.Date ascending 
-                            where f.TheFinancerProjectsID == F_PID 
+                            where f.TheDonorsProjectID == F_PID 
                             select f).ToList();
             return LST;
         }
@@ -95,7 +95,7 @@ namespace Ucas.Data.CommandClass
         {
             db = new UcasProEntities();
             var q = (from i in db.AmountsReceiveds
-                     join Dpro in db.TheDonorsProjects on i.TheFinancerProjectsID equals Dpro.ID
+                     join Dpro in db.TheDonorsProjects on i.TheDonorsProjectID equals Dpro.ID
                      join donrs in db.TheDonors on Dpro.DonorsID equals donrs.ID
                      where i.ProjectProfile_ID == ProId
 

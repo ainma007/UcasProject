@@ -42,9 +42,8 @@ namespace UcasProWindowsForm.Forms.MainForm
             var ListOfAllPeremissions = InformationsClass.GetAllGroupPeremissionsByGroupID(xGroupID);
             foreach (var item in ListOfAllPeremissions)
             {
-                InformationsClass._AddUser = Convert.ToInt32(item.AddUser);
+              
                 InformationsClass._UpDateUser = Convert.ToInt32(item.UpDateUser);
-                InformationsClass._DeleteUser = Convert.ToInt32(item.DeleteUser);
                 InformationsClass._AddEmployee = Convert.ToInt32(item.AddEmployee);
                 InformationsClass._EditEmployee = Convert.ToInt32(item.EditEmployee);
                 InformationsClass._DeleteEmployee = Convert.ToInt32(item.DeleteEmployee);

@@ -101,6 +101,7 @@
             // 
             // SaveBtn
             // 
+            this.SaveBtn.BackColor = System.Drawing.Color.Linen;
             this.SaveBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SaveBtn.BackgroundImage")));
             this.SaveBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SaveBtn.Image = ((System.Drawing.Image)(resources.GetObject("SaveBtn.Image")));

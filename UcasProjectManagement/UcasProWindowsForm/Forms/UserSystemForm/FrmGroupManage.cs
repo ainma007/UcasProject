@@ -77,11 +77,11 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
                 foreach(var  item in lstperm )
                 {
-                    if (item.AddUser.Value == 1) { PermssionList.SetItemCheckState(0, CheckState.Checked); } else { PermssionList.SetItemCheckState(0, CheckState.Unchecked ); }
+                   
 
                     if (item.UpDateUser.Value == 1) { PermssionList.SetItemCheckState(1, CheckState.Checked); } else { PermssionList.SetItemCheckState(1, CheckState.Unchecked); }
 
-                    if (item.DeleteUser.Value == 1) { PermssionList.SetItemCheckState(2, CheckState.Checked); } else { PermssionList.SetItemCheckState(2, CheckState.Unchecked); }
+                  
 
  
 
@@ -160,11 +160,11 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                 int xPermID = PeremissionsCmd.GetPermissionsByGroupID(xGroupId);
                 PeremissionsTb ptb = new PeremissionsTb()
                 {
-                    ID = xPermID ,
-                    GroupID = xGroupId ,
-                    AddUser = int.Parse(Lst[0].ToString()),
+                    ID = xPermID,
+                    GroupID = xGroupId,
+                   
                     UpDateUser = int.Parse(Lst[1].ToString()),
-                    DeleteUser = int.Parse(Lst[2].ToString()),
+                   
                     AddProject = int.Parse(Lst[3].ToString()),
                     DisplayExpenses = int.Parse(Lst[4].ToString()),
                     CanPrint = int.Parse(Lst[5].ToString()),

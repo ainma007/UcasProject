@@ -119,7 +119,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TheFinancerProjectsID" Type="int" Nullable="true" />
+    <Property Name="TheDonorsProjectID" Type="int" Nullable="true" />
     <Property Name="Date" Type="datetime" Nullable="true" />
     <Property Name="Cost" Type="float" Nullable="true" />
     <Property Name="ProjectProfile_ID" Type="int" Nullable="true" />
@@ -184,9 +184,7 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="GroupID" Type="int" Nullable="true" />
-    <Property Name="AddUser" Type="int" Nullable="true" />
     <Property Name="UpDateUser" Type="int" Nullable="true" />
-    <Property Name="DeleteUser" Type="int" Nullable="true" />
     <Property Name="AddProject" Type="int" Nullable="true" />
     <Property Name="DisplayExpenses" Type="int" Nullable="true" />
     <Property Name="CanPrint" Type="int" Nullable="true" />
@@ -199,6 +197,7 @@
     <Property Name="DeleteFinncers" Type="int" Nullable="true" />
     <Property Name="EditSuppliers" Type="int" Nullable="true" />
     <Property Name="DeleteSuppliers" Type="int" Nullable="true" />
+    <Property Name="EditProject" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ProjectActivities">
     <Key>
@@ -308,6 +307,7 @@
     <Property Name="Password" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Group_ID" Type="int" Nullable="true" />
     <Property Name="Employee_ID" Type="int" Nullable="true" />
+    <Property Name="TypeUser" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="FK_AmountsReceived_TheFinancerProjects">
     <End Role="TheDonorsProject" Type="UcasProModel.Store.TheDonorsProjects" Multiplicity="0..1" />
@@ -317,7 +317,7 @@
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="AmountsReceived">
-        <PropertyRef Name="TheFinancerProjectsID" />
+        <PropertyRef Name="TheDonorsProjectID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -667,7 +667,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TheFinancerProjectsID" Type="Int32" />
+          <Property Name="TheDonorsProjectID" Type="Int32" />
           <Property Name="Date" Type="DateTime" Precision="3" />
           <Property Name="Cost" Type="Double" />
           <Property Name="ProjectProfile_ID" Type="Int32" />
@@ -744,9 +744,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="GroupID" Type="Int32" />
-          <Property Name="AddUser" Type="Int32" />
           <Property Name="UpDateUser" Type="Int32" />
-          <Property Name="DeleteUser" Type="Int32" />
           <Property Name="AddProject" Type="Int32" />
           <Property Name="DisplayExpenses" Type="Int32" />
           <Property Name="CanPrint" Type="Int32" />
@@ -760,6 +758,7 @@
           <Property Name="EditSuppliers" Type="Int32" />
           <Property Name="DeleteSuppliers" Type="Int32" />
           <NavigationProperty Name="GroupsTb" Relationship="UcasProModel.FK_PeremissionsTb_GroupsTb" FromRole="PeremissionsTb" ToRole="GroupsTb" />
+          <Property Name="EditProject" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
         </EntityType>
         <EntityType Name="ProjectActivity">
           <Key>
@@ -896,6 +895,7 @@
           <NavigationProperty Name="Employee" Relationship="UcasProModel.FK_UserTb_Employees" FromRole="UserTb" ToRole="Employee" />
           <NavigationProperty Name="GroupsTb" Relationship="UcasProModel.FK_UserTb_GroupsTbs" FromRole="UserTb" ToRole="GroupsTb" />
           <NavigationProperty Name="ProjectControls" Relationship="UcasProModel.FK_ProjectControls_UserTb" FromRole="UserTb" ToRole="ProjectControl" />
+          <Property Name="TypeUser" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="FK_AmountsReceived_TheFinancerProjects">
           <End Type="UcasProModel.TheDonorsProject" Role="TheDonorsProject" Multiplicity="0..1" />
@@ -905,7 +905,7 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="AmountsReceived">
-              <PropertyRef Name="TheFinancerProjectsID" />
+              <PropertyRef Name="TheDonorsProjectID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1158,7 +1158,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.AmountsReceived)">
         <MappingFragment StoreEntitySet="AmountsReceiveds">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="TheFinancerProjectsID" ColumnName="TheFinancerProjectsID" />
+          <ScalarProperty Name="TheDonorsProjectID" ColumnName="TheDonorsProjectID" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="Cost" ColumnName="Cost" />
           <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
@@ -1229,9 +1229,7 @@
         <MappingFragment StoreEntitySet="PeremissionsTbs">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="GroupID" ColumnName="GroupID" />
-          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
           <ScalarProperty Name="UpDateUser" ColumnName="UpDateUser" />
-          <ScalarProperty Name="DeleteUser" ColumnName="DeleteUser" />
           <ScalarProperty Name="AddProject" ColumnName="AddProject" />
           <ScalarProperty Name="DisplayExpenses" ColumnName="DisplayExpenses" />
           <ScalarProperty Name="CanPrint" ColumnName="CanPrint" />
@@ -1244,6 +1242,7 @@
           <ScalarProperty Name="DeleteFinncers" ColumnName="DeleteFinncers" />
           <ScalarProperty Name="EditSuppliers" ColumnName="EditSuppliers" />
           <ScalarProperty Name="DeleteSuppliers" ColumnName="DeleteSuppliers" />
+          <ScalarProperty Name="EditProject" ColumnName="EditProject" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1362,6 +1361,7 @@
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Group_ID" ColumnName="Group_ID" />
           <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="TypeUser" ColumnName="TypeUser" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
