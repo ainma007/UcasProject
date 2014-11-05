@@ -63,6 +63,16 @@ namespace UcasProWindowsForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap addadd {
+            get {
+                object obj = ResourceManager.GetObject("addadd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DeletColm {
             get {
                 object obj = ResourceManager.GetObject("DeletColm", resourceCulture);
@@ -76,6 +86,16 @@ namespace UcasProWindowsForm.Properties {
         internal static System.Drawing.Bitmap editColm {
             get {
                 object obj = ResourceManager.GetObject("editColm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SaveChang {
+            get {
+                object obj = ResourceManager.GetObject("SaveChang", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

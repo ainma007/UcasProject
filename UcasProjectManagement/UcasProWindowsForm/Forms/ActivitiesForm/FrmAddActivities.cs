@@ -50,25 +50,35 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             }
 
             this.Cursor = Cursors.WaitCursor;
-            ProjectActivity tb = new ProjectActivity()
+            try
             {
+                ProjectActivity tb = new ProjectActivity()
+                {
 
-                ProjectProfile_ID = InformationsClass.ProjID,
-                ActivityName = ActivitiesNameTextBox.Text,
-                Description = ActivitiesDescriptionTextBox.Text,
-                StartDate = DateTime.Parse(StartDateTimePicker.Value.Date.ToString()),
-                EndDate = DateTime.Parse(EndDateTimePicker.Value.Date.ToString()),
-                Status = "فعال",
-                Progress = 0,
-                TotalCost = Convert.ToDouble(TotalCostTextBox.Text),
-                
-            };
+                    ProjectProfile_ID = InformationsClass.ProjID,
+                    ActivityName = ActivitiesNameTextBox.Text,
+                    Description = ActivitiesDescriptionTextBox.Text,
+                    StartDate = DateTime.Parse(StartDateTimePicker.Value.Date.ToString()),
+                    EndDate = DateTime.Parse(EndDateTimePicker.Value.Date.ToString()),
+                    Status = "فعال",
+                    Progress = 0,
+                    TotalCost = Convert.ToDouble(TotalCostTextBox.Text),
 
-            ActivityCmd.NewActivity(tb);
-            this.Cursor = Cursors.Default;
-            MessageBox.Show("تمت عملية الاضافة");
-            ClearTxt();
+                };
+
+                ActivityCmd.NewActivity(tb);
+                this.Cursor = Cursors.Default;
+                MessageBox.Show("تمت عملية الاضافة");
+                ClearTxt();
+            }
+            catch (Xprema.XpremaException ex)
+            {
+                this.Cursor = Cursors.Default;
+                RadMessageBox.Show(ex.OtherDescription);
+
+            }
         }
+        
         private void ClearTxt()
         {
                 ActivitiesNameTextBox.Clear();

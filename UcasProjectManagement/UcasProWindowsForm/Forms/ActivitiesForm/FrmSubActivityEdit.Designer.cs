@@ -160,7 +160,7 @@
             this.radLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel8.Location = new System.Drawing.Point(237, 276);
             this.radLabel8.Name = "radLabel8";
-            this.radLabel8.Size = new System.Drawing.Size(55, 16);
+            this.radLabel8.Size = new System.Drawing.Size(65, 16);
             this.radLabel8.TabIndex = 26;
             this.radLabel8.Text = "نسبة الانجاز:";
             this.radLabel8.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -171,7 +171,7 @@
             this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel7.Location = new System.Drawing.Point(237, 243);
             this.radLabel7.Name = "radLabel7";
-            this.radLabel7.Size = new System.Drawing.Size(30, 16);
+            this.radLabel7.Size = new System.Drawing.Size(36, 16);
             this.radLabel7.TabIndex = 24;
             this.radLabel7.Text = "الحالة:";
             this.radLabel7.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -182,7 +182,7 @@
             this.radLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel5.Location = new System.Drawing.Point(240, 30);
             this.radLabel5.Name = "radLabel5";
-            this.radLabel5.Size = new System.Drawing.Size(66, 16);
+            this.radLabel5.Size = new System.Drawing.Size(85, 16);
             this.radLabel5.TabIndex = 15;
             this.radLabel5.Text = "النشاط الرئيسي:";
             this.radLabel5.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -202,7 +202,7 @@
             this.ActivitiesColumnComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ActivitiesColumnComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // ActivitiesColumnComboBox.NestedRadGridView
             // 
             this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -243,10 +243,6 @@
             this.ActivitiesColumnComboBox.TabStop = false;
             this.ActivitiesColumnComboBox.ThemeName = "TelerikMetro";
             // 
-            // projectActivityBindingSource
-            // 
-           
-            // 
             // SubActivitiesDescriptionTextBox
             // 
             this.SubActivitiesDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -261,7 +257,7 @@
             // SaveBtn
             // 
             this.SaveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SaveBtn.Location = new System.Drawing.Point(200, 317);
+            this.SaveBtn.Location = new System.Drawing.Point(220, 318);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(127, 44);
             this.SaveBtn.TabIndex = 21;
@@ -274,7 +270,7 @@
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel6.Location = new System.Drawing.Point(237, 213);
             this.radLabel6.Name = "radLabel6";
-            this.radLabel6.Size = new System.Drawing.Size(70, 16);
+            this.radLabel6.Size = new System.Drawing.Size(81, 16);
             this.radLabel6.TabIndex = 22;
             this.radLabel6.Text = "المبلغ المخصص:";
             this.radLabel6.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -312,7 +308,7 @@
             this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel4.Location = new System.Drawing.Point(237, 181);
             this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(58, 16);
+            this.radLabel4.Size = new System.Drawing.Size(64, 16);
             this.radLabel4.TabIndex = 20;
             this.radLabel4.Text = "تاريخ الانتهاء:";
             this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -338,7 +334,7 @@
             this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel3.Location = new System.Drawing.Point(237, 150);
             this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(49, 16);
+            this.radLabel3.Size = new System.Drawing.Size(54, 16);
             this.radLabel3.TabIndex = 19;
             this.radLabel3.Text = "تاريخ البدء:";
             this.radLabel3.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -349,7 +345,7 @@
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel2.Location = new System.Drawing.Point(237, 103);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(60, 16);
+            this.radLabel2.Size = new System.Drawing.Size(68, 16);
             this.radLabel2.TabIndex = 16;
             this.radLabel2.Text = "وصف النشاط:";
             this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -360,7 +356,7 @@
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel1.Location = new System.Drawing.Point(233, 57);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(79, 16);
+            this.radLabel1.Size = new System.Drawing.Size(103, 16);
             this.radLabel1.TabIndex = 14;
             this.radLabel1.Text = "اسم النشاط الفرعي:";
             this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;

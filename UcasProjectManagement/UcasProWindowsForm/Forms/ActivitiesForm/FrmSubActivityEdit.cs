@@ -91,27 +91,36 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             }
          if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
          {
-             this.Cursor = Cursors.WaitCursor;
-             ProjectSubActivity tb = new ProjectSubActivity()
-
+             try
              {
-                 ID = SubXid,
-                 ProjectActivity_ID = int.Parse(ActivitiesColumnComboBox.SelectedValue.ToString()),
-                 SubActivityName = SubActivitiesNameTextBox.Text,
-                 Description = SubActivitiesDescriptionTextBox.Text,
-                 Startdate = StartDateTimePicker.Value.Date,
-                 enddate = EndDateTimePicker.Value.Date,
-                 TotalCost = Convert.ToDouble(TotalCostTextBox.Text),
-                 Progress = int.Parse(ProgressEditor.Value.ToString()),
-                 Status = StatusDropDownList.Text,
+                 this.Cursor = Cursors.WaitCursor;
+                 ProjectSubActivity tb = new ProjectSubActivity()
+
+                 {
+                     ID = SubXid,
+                     ProjectActivity_ID = int.Parse(ActivitiesColumnComboBox.SelectedValue.ToString()),
+                     SubActivityName = SubActivitiesNameTextBox.Text,
+                     Description = SubActivitiesDescriptionTextBox.Text,
+                     Startdate = StartDateTimePicker.Value.Date,
+                     enddate = EndDateTimePicker.Value.Date,
+                     TotalCost = Convert.ToDouble(TotalCostTextBox.Text),
+                     Progress = int.Parse(ProgressEditor.Value.ToString()),
+                     Status = StatusDropDownList.Text,
 
 
 
 
-             };
-             SubActivityCmd.EditSubActivity(tb);
-             this.Cursor = Cursors.Default;
-             MessageBox.Show("تمت عملية التعديل");
+                 };
+                 SubActivityCmd.EditSubActivity(tb);
+                 this.Cursor = Cursors.Default;
+                 MessageBox.Show("تمت عملية التعديل");
+             }
+             catch (Xprema.XpremaException ex)
+             {
+
+                 RadMessageBox.Show(ex.OtherDescription);
+                
+             }
          }
         }
 

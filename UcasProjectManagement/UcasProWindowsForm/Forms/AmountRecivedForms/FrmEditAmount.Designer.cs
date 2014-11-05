@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
@@ -40,7 +39,6 @@
             this.DateOfProecssPicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.CostTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GroupBox)).BeginInit();
             this.GroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.saveBtn)).BeginInit();
@@ -73,11 +71,13 @@
             // 
             // saveBtn
             // 
+            this.saveBtn.Image = global::UcasProWindowsForm.Properties.Resources.SaveChang;
             this.saveBtn.Location = new System.Drawing.Point(184, 129);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(127, 44);
             this.saveBtn.TabIndex = 12;
             this.saveBtn.Text = "حفظ التعديلات";
+            this.saveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.saveBtn.ThemeName = "TelerikMetro";
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
@@ -93,7 +93,7 @@
             this.DonorsComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.DonorsComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // DonorsComboBox.NestedRadGridView
+            // 
             // 
             this.DonorsComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.DonorsComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -185,11 +185,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "الممول:";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // FrmEditAmount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,7 +227,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         public Telerik.WinControls.UI.RadGroupBox GroupBox;
         public Telerik.WinControls.UI.RadMultiColumnComboBox DonorsComboBox;
         public Telerik.WinControls.UI.RadDateTimePicker DateOfProecssPicker;

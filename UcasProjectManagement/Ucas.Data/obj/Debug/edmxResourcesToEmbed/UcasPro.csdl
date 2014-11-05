@@ -217,7 +217,7 @@
     <Property Name="StartDate" Type="DateTime" Precision="3" />
     <Property Name="EndDate" Type="DateTime" Precision="3" />
     <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Progress" Type="Int32" />
+    <Property Name="Progress" Type="Double" />
     <Property Name="TotalCost" Type="Double" />
     <Property Name="ProjectProfile_ID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_ProjectActivities_ProjectProfiles" FromRole="ProjectActivity" ToRole="ProjectProfile" />
@@ -261,7 +261,7 @@
     <Property Name="StartDate" Type="DateTime" Precision="3" />
     <Property Name="EndDate" Type="DateTime" Precision="3" />
     <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="progress" Type="Int32" />
+    <Property Name="progress" Type="Double" />
     <Property Name="TotalCost" Type="Double" />
     <Property Name="Coin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="AmountsReceiveds" Relationship="UcasProModel.FK_AmountsReceiveds_ProjectProfiles" FromRole="ProjectProfile" ToRole="AmountsReceived" />
@@ -284,7 +284,7 @@
     <Property Name="Startdate" Type="DateTime" Precision="3" />
     <Property Name="enddate" Type="DateTime" Precision="3" />
     <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Progress" Type="Int32" />
+    <Property Name="Progress" Type="Double" />
     <Property Name="TotalCost" Type="Double" />
     <Property Name="ProjectActivity_ID" Type="Int32" />
     <Property Name="ProjectProfile_ID" Type="Int32" />
@@ -342,7 +342,7 @@
     <NavigationProperty Name="Employee" Relationship="UcasProModel.FK_UserTb_Employees" FromRole="UserTb" ToRole="Employee" />
     <NavigationProperty Name="GroupsTb" Relationship="UcasProModel.FK_UserTb_GroupsTbs" FromRole="UserTb" ToRole="GroupsTb" />
     <NavigationProperty Name="ProjectControls" Relationship="UcasProModel.FK_ProjectControls_UserTb" FromRole="UserTb" ToRole="ProjectControl" />
-    <Property Name="TypeUser" Type="String" Nullable="false" />
+    <Property Name="TypeUser" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
   </EntityType>
   <Association Name="FK_AmountsReceived_TheFinancerProjects">
     <End Type="UcasProModel.TheDonorsProject" Role="TheDonorsProject" Multiplicity="0..1" />

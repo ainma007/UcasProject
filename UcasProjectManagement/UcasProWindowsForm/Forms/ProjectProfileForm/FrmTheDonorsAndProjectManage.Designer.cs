@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTheDonorsAndProjectManage));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn4 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.radRibbonBar1 = new Telerik.WinControls.UI.RadRibbonBar();
             this.ribbonTab1 = new Telerik.WinControls.UI.RibbonTab();
@@ -54,10 +54,10 @@
             this.ribbonTab1});
             this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
             this.radRibbonBar1.Name = "radRibbonBar1";
-            this.radRibbonBar1.Size = new System.Drawing.Size(838, 154);
+            this.radRibbonBar1.Size = new System.Drawing.Size(688, 154);
             this.radRibbonBar1.StartButtonImage = ((System.Drawing.Image)(resources.GetObject("radRibbonBar1.StartButtonImage")));
             this.radRibbonBar1.TabIndex = 0;
-            this.radRibbonBar1.Text = "radRibbonBar1";
+            this.radRibbonBar1.Text = "ممولين المشروع";
             this.radRibbonBar1.ThemeName = "TelerikMetro";
             // 
             // ribbonTab1
@@ -86,8 +86,10 @@
             // 
             this.AddDonorsBtn.AccessibleDescription = "radButtonElement1";
             this.AddDonorsBtn.AccessibleName = "radButtonElement1";
+            this.AddDonorsBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddDonorsBtn.Image")));
             this.AddDonorsBtn.Name = "AddDonorsBtn";
             this.AddDonorsBtn.Text = "اضافة ممول";
+            this.AddDonorsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AddDonorsBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.AddDonorsBtn.Click += new System.EventHandler(this.AddDonorsBtn_Click);
             // 
@@ -95,8 +97,10 @@
             // 
             this.RefreshBtn.AccessibleDescription = "تحديث السجلات";
             this.RefreshBtn.AccessibleName = "تحديث السجلات";
+            this.RefreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("RefreshBtn.Image")));
             this.RefreshBtn.Name = "RefreshBtn";
             this.RefreshBtn.Text = "تحديث السجلات";
+            this.RefreshBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.RefreshBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // radRibbonFormBehavior1
@@ -115,47 +119,57 @@
             // 
             // radGridView1
             // 
+            this.radGridView1.MasterTemplate.AllowAddNewRow = false;
+            this.radGridView1.MasterTemplate.AllowColumnReorder = false;
             this.radGridView1.MasterTemplate.AllowSearchRow = true;
             this.radGridView1.MasterTemplate.AutoGenerateColumns = false;
             this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "ID";
-            gridViewTextBoxColumn1.HeaderText = "ID";
-            gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn1.Width = 104;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "Name";
-            gridViewTextBoxColumn2.HeaderText = "الممول";
-            gridViewTextBoxColumn2.Name = "Name";
-            gridViewTextBoxColumn2.Width = 304;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "TotalCost";
-            gridViewTextBoxColumn3.HeaderText = "مبلغ المنحة";
-            gridViewTextBoxColumn3.Name = "TotalCost";
-            gridViewTextBoxColumn3.Width = 324;
-            gridViewCommandColumn1.EnableExpressionEditor = false;
-            gridViewCommandColumn1.HeaderText = "تعديل";
-            gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
-            gridViewCommandColumn1.MaxWidth = 45;
-            gridViewCommandColumn1.MinWidth = 45;
-            gridViewCommandColumn1.Name = "EditClm";
-            gridViewCommandColumn1.Width = 45;
-            gridViewCommandColumn2.EnableExpressionEditor = false;
-            gridViewCommandColumn2.HeaderText = "حذف";
-            gridViewCommandColumn2.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn2.Image")));
-            gridViewCommandColumn2.MaxWidth = 45;
-            gridViewCommandColumn2.MinWidth = 45;
-            gridViewCommandColumn2.Name = "DelClm";
-            gridViewCommandColumn2.Width = 45;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "ID";
+            gridViewTextBoxColumn4.HeaderText = "ID";
+            gridViewTextBoxColumn4.IsVisible = false;
+            gridViewTextBoxColumn4.Name = "ID";
+            gridViewTextBoxColumn4.Width = 73;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "Name";
+            gridViewTextBoxColumn5.HeaderText = "الممول";
+            gridViewTextBoxColumn5.Name = "Name";
+            gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn5.Width = 400;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "TotalCost";
+            gridViewTextBoxColumn6.HeaderText = "مبلغ المنحة";
+            gridViewTextBoxColumn6.Name = "TotalCost";
+            gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn6.Width = 181;
+            gridViewCommandColumn3.EnableExpressionEditor = false;
+            gridViewCommandColumn3.HeaderText = "تعديل";
+            gridViewCommandColumn3.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn3.Image")));
+            gridViewCommandColumn3.ImageLayout = System.Windows.Forms.ImageLayout.Center;
+            gridViewCommandColumn3.MaxWidth = 45;
+            gridViewCommandColumn3.MinWidth = 45;
+            gridViewCommandColumn3.Name = "EditClm";
+            gridViewCommandColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewCommandColumn3.Width = 45;
+            gridViewCommandColumn4.EnableExpressionEditor = false;
+            gridViewCommandColumn4.HeaderText = "حذف";
+            gridViewCommandColumn4.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn4.Image")));
+            gridViewCommandColumn4.ImageLayout = System.Windows.Forms.ImageLayout.Center;
+            gridViewCommandColumn4.MaxWidth = 45;
+            gridViewCommandColumn4.MinWidth = 45;
+            gridViewCommandColumn4.Name = "DelClm";
+            gridViewCommandColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewCommandColumn4.Width = 45;
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewCommandColumn1,
-            gridViewCommandColumn2});
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewCommandColumn3,
+            gridViewCommandColumn4});
             this.radGridView1.Name = "radGridView1";
+            this.radGridView1.ReadOnly = true;
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radGridView1.Size = new System.Drawing.Size(838, 379);
+            this.radGridView1.Size = new System.Drawing.Size(688, 316);
             this.radGridView1.TabIndex = 1;
             this.radGridView1.Text = "radGridView1";
             this.radGridView1.ThemeName = "TelerikMetro";
@@ -166,18 +180,22 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(838, 533);
+            this.ClientSize = new System.Drawing.Size(688, 470);
             this.Controls.Add(this.radGridView1);
             this.Controls.Add(this.radRibbonBar1);
             this.FormBehavior = this.radRibbonFormBehavior1;
             this.IconScaling = Telerik.WinControls.Enumerations.ImageScaling.None;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(696, 475);
+            this.MinimumSize = new System.Drawing.Size(696, 475);
             this.Name = "FrmTheDonorsAndProjectManage";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "radRibbonBar1";
+            this.RootElement.MaxSize = new System.Drawing.Size(696, 475);
+            this.Text = "ممولين المشروع";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmTheDonorsAndProjectManage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).EndInit();

@@ -25,7 +25,12 @@ namespace Ucas.Data.CommandClass
             catch (Exception ex)
             {
 
-                return false;
+                Xprema.XpremaException e = new Xprema.XpremaException();
+                e.CodeNumber = 6;
+                e.OtherDescription = ex.InnerException.InnerException.Message;
+                e.UserDescription = "Error in Save Changed";
+                e.UserDescriptionArabic = "خطاء في اضافة البيانات";
+                throw e;
             }
         }
         public static bool EditActivity(ProjectActivity Actv)
@@ -54,7 +59,12 @@ namespace Ucas.Data.CommandClass
             {
 
 
-                return false;
+                Xprema.XpremaException e = new Xprema.XpremaException();
+                e.CodeNumber = 6;
+                e.OtherDescription = ex.InnerException.InnerException.Message;
+                e.UserDescription = "Error in Save Changed";
+                e.UserDescriptionArabic = "خطاء في حفظ البيانات";
+                throw e;
             }
         }
 

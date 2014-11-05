@@ -29,24 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
             Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn2 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn5 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn5 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn3 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
             Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn4 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn6 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn7 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
@@ -54,14 +56,14 @@
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             Telerik.WinControls.UI.GridViewRelation gridViewRelation1 = new Telerik.WinControls.UI.GridViewRelation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAllActivitesMange));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.gridViewTemplate2 = new Telerik.WinControls.UI.GridViewTemplate();
             this.projectSubActivityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ActivitiesGridView = new Telerik.WinControls.UI.RadGridView();
@@ -71,6 +73,7 @@
             this.radRibbonBarGroup1 = new Telerik.WinControls.UI.RadRibbonBarGroup();
             this.AdActivitesBtn = new Telerik.WinControls.UI.RadButtonElement();
             this.AddSupActivitesBtn = new Telerik.WinControls.UI.RadButtonElement();
+            this.RefreshBtn = new Telerik.WinControls.UI.RadButtonElement();
             this.radRibbonBarGroup2 = new Telerik.WinControls.UI.RadRibbonBarGroup();
             this.SaveBtn = new Telerik.WinControls.UI.RadButtonElement();
             this.radRibbonBarGroup3 = new Telerik.WinControls.UI.RadRibbonBarGroup();
@@ -111,26 +114,30 @@
             this.gridViewTemplate2.AllowRowResize = false;
             this.gridViewTemplate2.AutoGenerateColumns = false;
             this.gridViewTemplate2.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.HeaderText = "Num1";
+            gridViewTextBoxColumn1.Name = "Num1";
             gridViewDecimalColumn1.DataType = typeof(int);
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "ID";
             gridViewDecimalColumn1.HeaderText = "الرقم";
             gridViewDecimalColumn1.IsAutoGenerated = true;
+            gridViewDecimalColumn1.IsVisible = false;
             gridViewDecimalColumn1.Name = "ID";
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "SubActivityName";
-            gridViewTextBoxColumn1.HeaderText = "النشاط الفرعي";
-            gridViewTextBoxColumn1.IsAutoGenerated = true;
-            gridViewTextBoxColumn1.Name = "SubActivityName";
-            gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn1.Width = 100;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "Description";
-            gridViewTextBoxColumn2.HeaderText = "الوصف";
+            gridViewTextBoxColumn2.FieldName = "SubActivityName";
+            gridViewTextBoxColumn2.HeaderText = "النشاط الفرعي";
             gridViewTextBoxColumn2.IsAutoGenerated = true;
-            gridViewTextBoxColumn2.Name = "Description";
-            gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn2.Width = 202;
+            gridViewTextBoxColumn2.Name = "SubActivityName";
+            gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn2.Width = 100;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "Description";
+            gridViewTextBoxColumn3.HeaderText = "الوصف";
+            gridViewTextBoxColumn3.IsAutoGenerated = true;
+            gridViewTextBoxColumn3.Name = "Description";
+            gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn3.Width = 202;
             gridViewDateTimeColumn1.DataType = typeof(System.Nullable<System.DateTime>);
             gridViewDateTimeColumn1.EnableExpressionEditor = false;
             gridViewDateTimeColumn1.FieldName = "Startdate";
@@ -151,15 +158,15 @@
             gridViewDateTimeColumn2.Name = "enddate";
             gridViewDateTimeColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewDateTimeColumn2.Width = 80;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "Status";
-            gridViewTextBoxColumn3.HeaderText = "الحالة";
-            gridViewTextBoxColumn3.IsAutoGenerated = true;
-            gridViewTextBoxColumn3.MaxWidth = 100;
-            gridViewTextBoxColumn3.Name = "Status";
-            gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn3.Width = 80;
-            gridViewDecimalColumn2.DataType = typeof(System.Nullable<int>);
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "Status";
+            gridViewTextBoxColumn4.HeaderText = "الحالة";
+            gridViewTextBoxColumn4.IsAutoGenerated = true;
+            gridViewTextBoxColumn4.MaxWidth = 100;
+            gridViewTextBoxColumn4.Name = "Status";
+            gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn4.Width = 80;
+            gridViewDecimalColumn2.DataType = typeof(System.Nullable<double>);
             gridViewDecimalColumn2.EnableExpressionEditor = false;
             gridViewDecimalColumn2.FieldName = "Progress";
             gridViewDecimalColumn2.HeaderText = "نسبة الانجاز";
@@ -173,10 +180,11 @@
             gridViewDecimalColumn3.FieldName = "TotalCost";
             gridViewDecimalColumn3.HeaderText = "المبلغ المخصص";
             gridViewDecimalColumn3.IsAutoGenerated = true;
-            gridViewDecimalColumn3.MaxWidth = 100;
+            gridViewDecimalColumn3.MaxWidth = 150;
+            gridViewDecimalColumn3.MinWidth = 150;
             gridViewDecimalColumn3.Name = "SubTotalCost";
             gridViewDecimalColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn3.Width = 90;
+            gridViewDecimalColumn3.Width = 150;
             gridViewDecimalColumn4.DataType = typeof(System.Nullable<int>);
             gridViewDecimalColumn4.EnableExpressionEditor = false;
             gridViewDecimalColumn4.FieldName = "ProjectActivity_ID";
@@ -184,11 +192,11 @@
             gridViewDecimalColumn4.IsAutoGenerated = true;
             gridViewDecimalColumn4.IsVisible = false;
             gridViewDecimalColumn4.Name = "ProjectActivity_ID";
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "ProjectActivity.ActivityName";
-            gridViewTextBoxColumn4.HeaderText = "االنشاط الرئسيري";
-            gridViewTextBoxColumn4.IsVisible = false;
-            gridViewTextBoxColumn4.Name = "ActiName";
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "ProjectActivity.ActivityName";
+            gridViewTextBoxColumn5.HeaderText = "االنشاط الرئسيري";
+            gridViewTextBoxColumn5.IsVisible = false;
+            gridViewTextBoxColumn5.Name = "ActiName";
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "تعديل ";
             gridViewCommandColumn1.MaxWidth = 30;
@@ -200,16 +208,17 @@
             gridViewCommandColumn2.Name = "DeletSubCol";
             gridViewCommandColumn2.Width = 20;
             this.gridViewTemplate2.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
+            gridViewDecimalColumn1,
             gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
             gridViewDateTimeColumn1,
             gridViewDateTimeColumn2,
-            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
             gridViewDecimalColumn2,
             gridViewDecimalColumn3,
             gridViewDecimalColumn4,
-            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
             this.gridViewTemplate2.DataSource = this.projectSubActivityBindingSource;
@@ -240,34 +249,42 @@
             this.ActivitiesGridView.MasterTemplate.AllowSearchRow = true;
             this.ActivitiesGridView.MasterTemplate.AutoGenerateColumns = false;
             this.ActivitiesGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.HeaderText = "الرقم";
+            gridViewTextBoxColumn6.MaxWidth = 40;
+            gridViewTextBoxColumn6.MinWidth = 40;
+            gridViewTextBoxColumn6.Name = "Num";
+            gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn6.Width = 40;
             gridViewDecimalColumn5.DataType = typeof(int);
             gridViewDecimalColumn5.EnableExpressionEditor = false;
             gridViewDecimalColumn5.FieldName = "ID";
             gridViewDecimalColumn5.HeaderText = "ID";
             gridViewDecimalColumn5.IsAutoGenerated = true;
+            gridViewDecimalColumn5.IsVisible = false;
             gridViewDecimalColumn5.MaxWidth = 40;
             gridViewDecimalColumn5.MinWidth = 40;
             gridViewDecimalColumn5.Name = "ID";
             gridViewDecimalColumn5.Width = 40;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "ActivityName";
-            gridViewTextBoxColumn5.HeaderText = "النشاط الرئيسي";
-            gridViewTextBoxColumn5.IsAutoGenerated = true;
-            gridViewTextBoxColumn5.MaxWidth = 400;
-            gridViewTextBoxColumn5.MinWidth = 200;
-            gridViewTextBoxColumn5.Name = "ActivityName";
-            gridViewTextBoxColumn5.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn5.Width = 222;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "Description";
-            gridViewTextBoxColumn6.HeaderText = "الوصف";
-            gridViewTextBoxColumn6.IsAutoGenerated = true;
-            gridViewTextBoxColumn6.MaxWidth = 700;
-            gridViewTextBoxColumn6.MinWidth = 300;
-            gridViewTextBoxColumn6.Name = "Description";
-            gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn6.Width = 332;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "ActivityName";
+            gridViewTextBoxColumn7.HeaderText = "النشاط الرئيسي";
+            gridViewTextBoxColumn7.IsAutoGenerated = true;
+            gridViewTextBoxColumn7.MaxWidth = 400;
+            gridViewTextBoxColumn7.MinWidth = 200;
+            gridViewTextBoxColumn7.Name = "ActivityName";
+            gridViewTextBoxColumn7.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
+            gridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn7.Width = 231;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "Description";
+            gridViewTextBoxColumn8.HeaderText = "الوصف";
+            gridViewTextBoxColumn8.IsAutoGenerated = true;
+            gridViewTextBoxColumn8.MaxWidth = 700;
+            gridViewTextBoxColumn8.MinWidth = 300;
+            gridViewTextBoxColumn8.Name = "Description";
+            gridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn8.Width = 347;
             gridViewDateTimeColumn3.DataType = typeof(System.Nullable<System.DateTime>);
             gridViewDateTimeColumn3.EnableExpressionEditor = false;
             gridViewDateTimeColumn3.FieldName = "StartDate";
@@ -290,16 +307,16 @@
             gridViewDateTimeColumn4.Name = "EndDate";
             gridViewDateTimeColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewDateTimeColumn4.Width = 100;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "Status";
-            gridViewTextBoxColumn7.HeaderText = "الحالة";
-            gridViewTextBoxColumn7.IsAutoGenerated = true;
-            gridViewTextBoxColumn7.MaxWidth = 70;
-            gridViewTextBoxColumn7.MinWidth = 70;
-            gridViewTextBoxColumn7.Name = "Status";
-            gridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn7.Width = 70;
-            gridViewDecimalColumn6.DataType = typeof(System.Nullable<int>);
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "Status";
+            gridViewTextBoxColumn9.HeaderText = "الحالة";
+            gridViewTextBoxColumn9.IsAutoGenerated = true;
+            gridViewTextBoxColumn9.MaxWidth = 70;
+            gridViewTextBoxColumn9.MinWidth = 70;
+            gridViewTextBoxColumn9.Name = "Status";
+            gridViewTextBoxColumn9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn9.Width = 70;
+            gridViewDecimalColumn6.DataType = typeof(System.Nullable<double>);
             gridViewDecimalColumn6.EnableExpressionEditor = false;
             gridViewDecimalColumn6.FieldName = "Progress";
             gridViewDecimalColumn6.HeaderText = "نسبة الانجاز";
@@ -332,12 +349,13 @@
             gridViewCommandColumn4.Name = "DeleteCol";
             gridViewCommandColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.ActivitiesGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn5,
-            gridViewTextBoxColumn5,
             gridViewTextBoxColumn6,
+            gridViewDecimalColumn5,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
             gridViewDateTimeColumn3,
             gridViewDateTimeColumn4,
-            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn9,
             gridViewDecimalColumn6,
             gridViewDecimalColumn7,
             gridViewCommandColumn3,
@@ -357,7 +375,7 @@
             this.ActivitiesGridView.Relations.AddRange(new Telerik.WinControls.UI.GridViewRelation[] {
             gridViewRelation1});
             this.ActivitiesGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ActivitiesGridView.Size = new System.Drawing.Size(1216, 656);
+            this.ActivitiesGridView.Size = new System.Drawing.Size(1240, 656);
             this.ActivitiesGridView.TabIndex = 0;
             this.ActivitiesGridView.Text = "radGridView1";
             this.ActivitiesGridView.ThemeName = "TelerikMetro";
@@ -375,7 +393,7 @@
             this.ribbonTab2});
             this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
             this.radRibbonBar1.Name = "radRibbonBar1";
-            this.radRibbonBar1.Size = new System.Drawing.Size(1220, 154);
+            this.radRibbonBar1.Size = new System.Drawing.Size(1244, 154);
             this.radRibbonBar1.StartButtonImage = ((System.Drawing.Image)(resources.GetObject("radRibbonBar1.StartButtonImage")));
             this.radRibbonBar1.TabIndex = 0;
             this.radRibbonBar1.Text = "ادارة النشاطات";
@@ -400,7 +418,8 @@
             this.radRibbonBarGroup1.AccessibleName = "اضافة";
             this.radRibbonBarGroup1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.AdActivitesBtn,
-            this.AddSupActivitesBtn});
+            this.AddSupActivitesBtn,
+            this.RefreshBtn});
             this.radRibbonBarGroup1.Name = "radRibbonBarGroup1";
             this.radRibbonBarGroup1.Text = "اضافة";
             this.radRibbonBarGroup1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
@@ -409,8 +428,10 @@
             // 
             this.AdActivitesBtn.AccessibleDescription = "اضافة نشاط رئيسي";
             this.AdActivitesBtn.AccessibleName = "اضافة نشاط رئيسي";
+            this.AdActivitesBtn.Image = ((System.Drawing.Image)(resources.GetObject("AdActivitesBtn.Image")));
             this.AdActivitesBtn.Name = "AdActivitesBtn";
             this.AdActivitesBtn.Text = "اضافة نشاط رئيسي";
+            this.AdActivitesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AdActivitesBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.AdActivitesBtn.Click += new System.EventHandler(this.AdActivitesBtn_Click);
             // 
@@ -418,10 +439,23 @@
             // 
             this.AddSupActivitesBtn.AccessibleDescription = "اضافة نشاط فرعي ";
             this.AddSupActivitesBtn.AccessibleName = "اضافة نشاط فرعي ";
+            this.AddSupActivitesBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddSupActivitesBtn.Image")));
             this.AddSupActivitesBtn.Name = "AddSupActivitesBtn";
             this.AddSupActivitesBtn.Text = "اضافة نشاط فرعي ";
+            this.AddSupActivitesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AddSupActivitesBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.AddSupActivitesBtn.Click += new System.EventHandler(this.AddSupActivitesBtn_Click);
+            // 
+            // RefreshBtn
+            // 
+            this.RefreshBtn.AccessibleDescription = "تحديث السجلات";
+            this.RefreshBtn.AccessibleName = "تحديث السجلات";
+            this.RefreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("RefreshBtn.Image")));
+            this.RefreshBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Text = "تحديث السجلات";
+            this.RefreshBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.RefreshBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // radRibbonBarGroup2
             // 
@@ -486,7 +520,7 @@
             // 
             this.radStatusStrip1.Location = new System.Drawing.Point(0, 830);
             this.radStatusStrip1.Name = "radStatusStrip1";
-            this.radStatusStrip1.Size = new System.Drawing.Size(1220, 25);
+            this.radStatusStrip1.Size = new System.Drawing.Size(1244, 25);
             this.radStatusStrip1.TabIndex = 1;
             this.radStatusStrip1.Text = "radStatusStrip1";
             this.radStatusStrip1.ThemeName = "TelerikMetro";
@@ -494,54 +528,54 @@
             // radGridView2
             // 
             this.radGridView2.AllowAddNewRow = false;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "ID";
-            gridViewTextBoxColumn8.HeaderText = "ID";
-            gridViewTextBoxColumn8.Name = "ID";
-            gridViewTextBoxColumn8.Width = 80;
-            gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "ActivityName";
-            gridViewTextBoxColumn9.HeaderText = "ActivityName";
-            gridViewTextBoxColumn9.Name = "ActivityName";
-            gridViewTextBoxColumn9.Width = 165;
             gridViewTextBoxColumn10.EnableExpressionEditor = false;
-            gridViewTextBoxColumn10.FieldName = "Description";
-            gridViewTextBoxColumn10.HeaderText = "Description";
-            gridViewTextBoxColumn10.Name = "Description";
-            gridViewTextBoxColumn10.Width = 164;
+            gridViewTextBoxColumn10.FieldName = "ID";
+            gridViewTextBoxColumn10.HeaderText = "ID";
+            gridViewTextBoxColumn10.Name = "ID";
+            gridViewTextBoxColumn10.Width = 80;
             gridViewTextBoxColumn11.EnableExpressionEditor = false;
-            gridViewTextBoxColumn11.FieldName = "StartDate";
-            gridViewTextBoxColumn11.HeaderText = "StartDate";
-            gridViewTextBoxColumn11.Name = "StartDate";
-            gridViewTextBoxColumn11.Width = 144;
+            gridViewTextBoxColumn11.FieldName = "ActivityName";
+            gridViewTextBoxColumn11.HeaderText = "ActivityName";
+            gridViewTextBoxColumn11.Name = "ActivityName";
+            gridViewTextBoxColumn11.Width = 165;
             gridViewTextBoxColumn12.EnableExpressionEditor = false;
-            gridViewTextBoxColumn12.FieldName = "EndDate";
-            gridViewTextBoxColumn12.HeaderText = "EndDate";
-            gridViewTextBoxColumn12.Name = "EndDate";
-            gridViewTextBoxColumn12.Width = 102;
+            gridViewTextBoxColumn12.FieldName = "Description";
+            gridViewTextBoxColumn12.HeaderText = "Description";
+            gridViewTextBoxColumn12.Name = "Description";
+            gridViewTextBoxColumn12.Width = 164;
             gridViewTextBoxColumn13.EnableExpressionEditor = false;
-            gridViewTextBoxColumn13.FieldName = "Status";
-            gridViewTextBoxColumn13.HeaderText = "Status";
-            gridViewTextBoxColumn13.Name = "Status";
+            gridViewTextBoxColumn13.FieldName = "StartDate";
+            gridViewTextBoxColumn13.HeaderText = "StartDate";
+            gridViewTextBoxColumn13.Name = "StartDate";
+            gridViewTextBoxColumn13.Width = 144;
             gridViewTextBoxColumn14.EnableExpressionEditor = false;
-            gridViewTextBoxColumn14.FieldName = "Progress";
-            gridViewTextBoxColumn14.HeaderText = "Progress";
-            gridViewTextBoxColumn14.Name = "Progress";
-            gridViewTextBoxColumn14.Width = 128;
+            gridViewTextBoxColumn14.FieldName = "EndDate";
+            gridViewTextBoxColumn14.HeaderText = "EndDate";
+            gridViewTextBoxColumn14.Name = "EndDate";
+            gridViewTextBoxColumn14.Width = 102;
             gridViewTextBoxColumn15.EnableExpressionEditor = false;
-            gridViewTextBoxColumn15.FieldName = "TotalCost";
-            gridViewTextBoxColumn15.HeaderText = "TotalCost";
-            gridViewTextBoxColumn15.Name = "TotalCost";
-            gridViewTextBoxColumn15.Width = 128;
+            gridViewTextBoxColumn15.FieldName = "Status";
+            gridViewTextBoxColumn15.HeaderText = "Status";
+            gridViewTextBoxColumn15.Name = "Status";
+            gridViewTextBoxColumn16.EnableExpressionEditor = false;
+            gridViewTextBoxColumn16.FieldName = "Progress";
+            gridViewTextBoxColumn16.HeaderText = "Progress";
+            gridViewTextBoxColumn16.Name = "Progress";
+            gridViewTextBoxColumn16.Width = 128;
+            gridViewTextBoxColumn17.EnableExpressionEditor = false;
+            gridViewTextBoxColumn17.FieldName = "TotalCost";
+            gridViewTextBoxColumn17.HeaderText = "TotalCost";
+            gridViewTextBoxColumn17.Name = "TotalCost";
+            gridViewTextBoxColumn17.Width = 128;
             this.radGridView2.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9,
             gridViewTextBoxColumn10,
             gridViewTextBoxColumn11,
             gridViewTextBoxColumn12,
             gridViewTextBoxColumn13,
             gridViewTextBoxColumn14,
-            gridViewTextBoxColumn15});
+            gridViewTextBoxColumn15,
+            gridViewTextBoxColumn16,
+            gridViewTextBoxColumn17});
             this.radGridView2.Templates.AddRange(new Telerik.WinControls.UI.GridViewTemplate[] {
             this.gridViewTemplate1});
             // 
@@ -554,7 +588,7 @@
             this.radGroupBox1.HeaderText = "جدول النشاطات";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 154);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(1220, 676);
+            this.radGroupBox1.Size = new System.Drawing.Size(1244, 676);
             this.radGroupBox1.TabIndex = 2;
             this.radGroupBox1.Text = "جدول النشاطات";
             this.radGroupBox1.ThemeName = "Office2013Light";
@@ -563,7 +597,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 855);
+            this.ClientSize = new System.Drawing.Size(1244, 855);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.radStatusStrip1);
             this.Controls.Add(this.radRibbonBar1);
@@ -623,5 +657,6 @@
         private System.Windows.Forms.BindingSource projectActivityBindingSource;
         private Telerik.WinControls.UI.GridViewTemplate gridViewTemplate2;
         private System.Windows.Forms.BindingSource projectSubActivityBindingSource;
+        private Telerik.WinControls.UI.RadButtonElement RefreshBtn;
     }
 }

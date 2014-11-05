@@ -83,11 +83,13 @@
             // 
             // AddBtn
             // 
+            this.AddBtn.Image = global::UcasProWindowsForm.Properties.Resources.addadd;
             this.AddBtn.Location = new System.Drawing.Point(196, 149);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(127, 44);
             this.AddBtn.TabIndex = 3;
-            this.AddBtn.Text = "اضافة";
+            this.AddBtn.Text = "اضافة سجل";
+            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AddBtn.ThemeName = "TelerikMetro";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
@@ -116,10 +118,10 @@
             this.DateOfProecssPicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DateOfProecssPicker.CustomFormat = "dd/MM/yyyy";
             this.DateOfProecssPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateOfProecssPicker.Location = new System.Drawing.Point(160, 64);
+            this.DateOfProecssPicker.Location = new System.Drawing.Point(169, 64);
             this.DateOfProecssPicker.Name = "DateOfProecssPicker";
             this.DateOfProecssPicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DateOfProecssPicker.Size = new System.Drawing.Size(90, 22);
+            this.DateOfProecssPicker.Size = new System.Drawing.Size(81, 22);
             this.DateOfProecssPicker.TabIndex = 1;
             this.DateOfProecssPicker.TabStop = false;
             this.DateOfProecssPicker.Text = "15/09/2014";

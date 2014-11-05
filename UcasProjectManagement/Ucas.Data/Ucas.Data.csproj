@@ -46,6 +46,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Xprema">
+      <HintPath>..\..\..\..\..\Desktop\Rec\xprema frame work\Debug\Xprema.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AmountsReceived.cs">

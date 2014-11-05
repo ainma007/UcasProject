@@ -86,25 +86,34 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             }
 
             this.Cursor = Cursors.WaitCursor;
-            ProjectSubActivity tb = new ProjectSubActivity()
+            try
             {
+                ProjectSubActivity tb = new ProjectSubActivity()
+                {
 
-                ProjectActivity_ID=int.Parse(ActivitiesColumnComboBox.SelectedValue.ToString()),
-                SubActivityName=SubActivitiesNameTextBox.Text,
-                Description=SubActivitiesDescriptionTextBox.Text,
-                Startdate=DateTime.Parse(StartDateTimePicker.Value.ToString()),
-                enddate=DateTime.Parse(EndDateTimePicker.Value.Date.ToString()),
-                Status="فعال",
-                Progress=0,
-                TotalCost=Convert.ToDouble(TotalCostTextBox.Text),
-                ProjectProfile_ID = InformationsClass.ProjID,
+                    ProjectActivity_ID = int.Parse(ActivitiesColumnComboBox.SelectedValue.ToString()),
+                    SubActivityName = SubActivitiesNameTextBox.Text,
+                    Description = SubActivitiesDescriptionTextBox.Text,
+                    Startdate = DateTime.Parse(StartDateTimePicker.Value.ToString()),
+                    enddate = DateTime.Parse(EndDateTimePicker.Value.Date.ToString()),
+                    Status = "فعال",
+                    Progress = 0,
+                    TotalCost = Convert.ToDouble(TotalCostTextBox.Text),
+                    ProjectProfile_ID = InformationsClass.ProjID,
 
 
-            };
-            SubActivityCmd.NewSubActivity(tb);
-            this.Cursor = Cursors.Default;
-            MessageBox.Show("Saved...");
-            ClearTxt();
+                };
+                SubActivityCmd.NewSubActivity(tb);
+                this.Cursor = Cursors.Default;
+                MessageBox.Show("Saved...");
+                ClearTxt();
+            }
+            catch (Xprema.XpremaException ex)
+            {
+                this.Cursor = Cursors.Default;
+                RadMessageBox.Show(ex.OtherDescription);
+
+            }
 
         }
 

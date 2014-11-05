@@ -88,14 +88,7 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         }
 
-        private void SuppMangBtn_Click(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.WaitCursor;
-            FrmManagementSupplier MangSup = new FrmManagementSupplier();
-            MangSup.ShowDialog();
-            this.Cursor = Cursors.Default;
-
-        }
+     
 
         private void FrmAdmin_Activated(object sender, EventArgs e)
         {
@@ -153,24 +146,14 @@ namespace UcasProWindowsForm.Forms.MainForm
             this.Cursor = Cursors.Default;
         }
 
-        private void UserAddBtn_Click(object sender, EventArgs e)
-        {
-           //
-          
-          
-         
-          
+     
 
-        }
-
-        private void UserMangBtn_Click(object sender, EventArgs e)
+        private void SupmanageBtn_Click(object sender, EventArgs e)
         {
-          
-        }
-
-        private void radGridView1_CellFormatting(object sender, CellFormattingEventArgs e)
-        {
-           
+            this.Cursor = Cursors.WaitCursor;
+            FrmManagementSupplier MangSup = new FrmManagementSupplier();
+            MangSup.ShowDialog();
+            this.Cursor = Cursors.Default;
         }
 
        

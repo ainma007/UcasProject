@@ -33,7 +33,7 @@ namespace Ucas.Data
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
         public string Status { get; set; }
-        public Nullable<int> progress { get; set; }
+        public Nullable<double> progress { get; set; }
         public Nullable<double> TotalCost { get; set; }
         public string Coin { get; set; }
     

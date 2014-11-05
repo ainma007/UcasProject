@@ -25,7 +25,7 @@ namespace Ucas.Data
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
         public string Status { get; set; }
-        public Nullable<int> Progress { get; set; }
+        public Nullable<double> Progress { get; set; }
         public Nullable<double> TotalCost { get; set; }
         public int ProjectProfile_ID { get; set; }
     

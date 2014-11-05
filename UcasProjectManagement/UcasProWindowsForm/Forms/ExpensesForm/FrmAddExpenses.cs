@@ -100,26 +100,37 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             {
                 RequiarAmountTextBox.TextBoxElement.Fill.BackColor = Color.White;
             }
-
-            ProjectExpens tb = new ProjectExpens
+           
+            try
             {
-                ProjectProfile_ID=InformationsClass.ProjID,
-                ProjectSubActivity_ID=int.Parse(SubActivtiesComboBox.SelectedValue.ToString()),
-                ExpensesName=ExpensesNameTextBox.Text,
-                DateofProcess=DateOfProecssPicker.Value.Date,
-                BillNumber=BillTextBox.Text,
-                RequiarAmount=Convert.ToDouble( RequiarAmountTextBox.Text),
-                CashingNumber = CashingNumberTextBox.Text,
-                Supplier_ID=int.Parse(SupplierComboBox.SelectedValue.ToString())
+                this.Cursor = Cursors.WaitCursor;
+                ProjectExpens tb = new ProjectExpens
+                {
+                    ProjectProfile_ID = InformationsClass.ProjID,
+                    ProjectSubActivity_ID = int.Parse(SubActivtiesComboBox.SelectedValue.ToString()),
+                    ExpensesName = ExpensesNameTextBox.Text,
+                    DateofProcess = DateOfProecssPicker.Value.Date,
+                    BillNumber = BillTextBox.Text,
+                    RequiarAmount = Convert.ToDouble(RequiarAmountTextBox.Text),
+                    CashingNumber = CashingNumberTextBox.Text,
+                    Supplier_ID = int.Parse(SupplierComboBox.SelectedValue.ToString())
 
 
 
-            };
+                };
 
-            ProjectExpensesCmd.NewProjectExpens(tb);
+                ProjectExpensesCmd.NewProjectExpens(tb);
 
-            RadMessageBox.Show("تمت علمية الاضافة");
-            ClearTxt();
+                RadMessageBox.Show("تمت علمية الاضافة");
+                this.Cursor = Cursors.Default;
+                ClearTxt();
+            }
+            catch (Xprema.XpremaException ex)
+            {
+                this.Cursor = Cursors.Default;
+                RadMessageBox.Show(ex.OtherDescription);
+
+            }
         }
         private void ClearTxt()
         {

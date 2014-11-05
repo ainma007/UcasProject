@@ -82,21 +82,33 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             }
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
-                ProjectExpens tb = new ProjectExpens
+                try
                 {
-                    ID = XExpID,
-                    ProjectSubActivity_ID = int.Parse(SubActivtiesComboBox.SelectedValue.ToString()),
-                    ExpensesName = ExpensesNameTextBox.Text,
-                    BillNumber = BillTextBox.Text,
-                    DateofProcess = DateOfProecssPicker.Value.Date,
-                    CashingNumber = CashingNumberTextBox.Text,
-                    RequiarAmount = Convert.ToDouble(RequiarAmountTextBox.Text),
-                    Supplier_ID = int.Parse(SupplierComboBox.SelectedValue.ToString()),
+                    this.Cursor = Cursors.WaitCursor;
+                    ProjectExpens tb = new ProjectExpens
+                    {
+                         
+                        ID = XExpID,
+                        ProjectSubActivity_ID = int.Parse(SubActivtiesComboBox.SelectedValue.ToString()),
+                        ExpensesName = ExpensesNameTextBox.Text,
+                        BillNumber = BillTextBox.Text,
+                        DateofProcess = DateOfProecssPicker.Value.Date,
+                        CashingNumber = CashingNumberTextBox.Text,
+                        RequiarAmount = Convert.ToDouble(RequiarAmountTextBox.Text),
+                        Supplier_ID = int.Parse(SupplierComboBox.SelectedValue.ToString()),
 
 
-                };
-                ProjectExpensesCmd.EditProjectExpens(tb);
-                RadMessageBox.Show("تمت عملية التعديل");
+                    };
+                    ProjectExpensesCmd.EditProjectExpens(tb);
+                    RadMessageBox.Show("تمت عملية التعديل");
+                    this.Cursor = Cursors.Default;
+                }
+                catch (Xprema.XpremaException ex)
+                {
+                    this.Cursor = Cursors.Default;
+                    RadMessageBox.Show(ex.OtherDescription);
+
+                }
             }
         }
 

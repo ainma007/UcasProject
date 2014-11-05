@@ -61,25 +61,35 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
-                this.Cursor = Cursors.WaitCursor;
-                ProjectActivity tb = new ProjectActivity()
+                try
                 {
+                    this.Cursor = Cursors.WaitCursor;
+                    ProjectActivity tb = new ProjectActivity()
+                    {
 
 
-                    ID = xID,
-                    ActivityName = ActivitiesNameTextBox.Text,
-                    Description = ActivitiesDescriptionTextBox.Text,
-                    StartDate = StartDateTimePicker.Value.Date,
-                    EndDate = EndDateTimePicker.Value.Date,
-                    TotalCost = Convert.ToDouble(TotalCostTextBox.Text),
-                    Status = StatusDropDownList.Text,
+                        ID = xID,
+                        ActivityName = ActivitiesNameTextBox.Text,
+                        Description = ActivitiesDescriptionTextBox.Text,
+                        StartDate = StartDateTimePicker.Value.Date,
+                        EndDate = EndDateTimePicker.Value.Date,
+                        TotalCost = Convert.ToDouble(TotalCostTextBox.Text),
+                        Status = StatusDropDownList.Text,
 
 
-                };
-                ActivityCmd.EditActivity(tb);
-                this.Cursor = Cursors.Default;
-               RadMessageBox.Show("تمت عملية التعديل");
-               this.Close();
+                    };
+                    ActivityCmd.EditActivity(tb);
+                    this.Cursor = Cursors.Default;
+                    RadMessageBox.Show("تمت عملية التعديل");
+                    this.Close();
+                }
+                catch (Xprema.XpremaException ex)
+                {
+                    this.Cursor = Cursors.Default;
+                    RadMessageBox.Show(ex.OtherDescription);
+                   
+
+                }
             }
 
             }

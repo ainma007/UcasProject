@@ -46,6 +46,11 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("TotalCost", "اجمالي الانشطة = {0}", GridAggregateFunction.Sum);
             GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight });
             this.ActivitiesGridView.SummaryRowsBottom.Add(summaryRowItem);
+
+
+            GridViewSummaryItem summaryItemFreight1 = new GridViewSummaryItem("SubTotalCost", "الاجمالي  = {0}", GridAggregateFunction.Sum);
+            GridViewSummaryRowItem summaryRowItem1 = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight1 });
+            this.gridViewTemplate2.SummaryRowsBottom.Add(summaryRowItem1);
             ///
          
         }
@@ -53,7 +58,17 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         {
             projectActivityBindingSource.DataSource = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
             projectSubActivityBindingSource.DataSource = SubActivityCmd.GetAllSubActivities();
-           
+            for (int i = 1; i <= ActivitiesGridView.Rows.Count; i++)
+            {
+                ActivitiesGridView.Rows[i - 1].Cells["Num"].Value = i.ToString();
+                
+            }
+
+
+            //for (int i = 1; i <= gridViewTemplate2.Rows.Count; i++)
+            //{
+            //    gridViewTemplate2.Rows[i - 1].Cells["Num1"].Value = i.ToString();
+            //}
            // ActivitiesGridView.MasterTemplate.ExpandAll();
             TotalActivites();
             

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddActivities));
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.ActivitiesDescriptionTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
@@ -94,7 +93,7 @@
             // 
             // AddBtn
             // 
-            this.AddBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddBtn.Image")));
+            this.AddBtn.Image = global::UcasProWindowsForm.Properties.Resources.addadd;
             this.AddBtn.Location = new System.Drawing.Point(206, 229);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(127, 44);
@@ -119,8 +118,10 @@
             this.TotalCostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TotalCostTextBox.Location = new System.Drawing.Point(101, 168);
             this.TotalCostTextBox.Name = "TotalCostTextBox";
+            this.TotalCostTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TotalCostTextBox.Size = new System.Drawing.Size(155, 22);
             this.TotalCostTextBox.TabIndex = 4;
+            this.TotalCostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TotalCostTextBox.ThemeName = "TelerikMetro";
             this.TotalCostTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalCostTextBox_KeyPress);
             // 
@@ -131,6 +132,7 @@
             this.EndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.EndDateTimePicker.Location = new System.Drawing.Point(164, 140);
             this.EndDateTimePicker.Name = "EndDateTimePicker";
+            this.EndDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.EndDateTimePicker.Size = new System.Drawing.Size(92, 22);
             this.EndDateTimePicker.TabIndex = 3;
             this.EndDateTimePicker.TabStop = false;
@@ -155,6 +157,7 @@
             this.StartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.StartDateTimePicker.Location = new System.Drawing.Point(164, 110);
             this.StartDateTimePicker.Name = "StartDateTimePicker";
+            this.StartDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartDateTimePicker.Size = new System.Drawing.Size(92, 22);
             this.StartDateTimePicker.TabIndex = 2;
             this.StartDateTimePicker.TabStop = false;

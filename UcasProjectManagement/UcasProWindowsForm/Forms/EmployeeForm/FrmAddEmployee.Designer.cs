@@ -102,11 +102,13 @@
             // 
             // AddBtn
             // 
+            this.AddBtn.Image = global::UcasProWindowsForm.Properties.Resources.addadd;
             this.AddBtn.Location = new System.Drawing.Point(219, 242);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(127, 44);
             this.AddBtn.TabIndex = 7;
-            this.AddBtn.Text = "اضافة";
+            this.AddBtn.Text = "اضافة السجل";
+            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AddBtn.ThemeName = "TelerikMetro";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
@@ -170,7 +172,7 @@
             // radLabel7
             // 
             this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel7.Location = new System.Drawing.Point(272, 202);
+            this.radLabel7.Location = new System.Drawing.Point(267, 202);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(61, 19);
             this.radLabel7.TabIndex = 18;
