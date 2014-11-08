@@ -100,6 +100,7 @@
             this.UserGridView.Text = "radGridView2";
             this.UserGridView.ThemeName = "TelerikMetro";
             this.UserGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.UserGridView_CommandCellClick);
+            this.UserGridView.Click += new System.EventHandler(this.UserGridView_Click);
             // 
             // frmUserManage
             // 

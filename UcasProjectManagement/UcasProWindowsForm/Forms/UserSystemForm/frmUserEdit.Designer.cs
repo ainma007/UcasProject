@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.employeeNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
@@ -132,29 +132,29 @@
             // 
             // PermesssionGdv
             // 
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "ID";
-            gridViewTextBoxColumn3.HeaderText = "column1";
-            gridViewTextBoxColumn3.Name = "ID";
-            gridViewTextBoxColumn3.Width = 110;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "PermessionName";
-            gridViewTextBoxColumn4.HeaderText = "الصلاحيات";
-            gridViewTextBoxColumn4.Name = "colPermession";
-            gridViewTextBoxColumn4.Width = 81;
-            gridViewCheckBoxColumn2.Checked = Telerik.WinControls.Enumerations.ToggleState.Off;
-            gridViewCheckBoxColumn2.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn2.EnableHeaderCheckBox = false;
-            gridViewCheckBoxColumn2.MinWidth = 20;
-            gridViewCheckBoxColumn2.Name = "colValue";
-            gridViewCheckBoxColumn2.Width = 110;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "column1";
+            gridViewTextBoxColumn1.Name = "ID";
+            gridViewTextBoxColumn1.Width = 110;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "PermessionName";
+            gridViewTextBoxColumn2.HeaderText = "الصلاحيات";
+            gridViewTextBoxColumn2.Name = "colPermession";
+            gridViewTextBoxColumn2.Width = 81;
+            gridViewCheckBoxColumn1.Checked = Telerik.WinControls.Enumerations.ToggleState.Off;
+            gridViewCheckBoxColumn1.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn1.EnableHeaderCheckBox = false;
+            gridViewCheckBoxColumn1.MinWidth = 20;
+            gridViewCheckBoxColumn1.Name = "colValue";
+            gridViewCheckBoxColumn1.Width = 110;
             this.PermesssionGdv.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewCheckBoxColumn2});
-            sortDescriptor2.PropertyName = "column2";
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewCheckBoxColumn1});
+            sortDescriptor1.PropertyName = "column2";
             this.PermesssionGdv.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor2});
+            sortDescriptor1});
             this.PermesssionGdv.Name = "PermesssionGdv";
             this.PermesssionGdv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.PermesssionGdv.Size = new System.Drawing.Size(510, 124);
@@ -183,40 +183,40 @@
             // 
             this.radGridView1.MasterTemplate.AutoGenerateColumns = false;
             this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "ID";
+            gridViewTextBoxColumn3.HeaderText = "ID";
+            gridViewTextBoxColumn3.Name = "ID";
+            gridViewTextBoxColumn3.Width = 97;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "UserID";
+            gridViewTextBoxColumn4.HeaderText = "UserID";
+            gridViewTextBoxColumn4.Name = "UserID";
+            gridViewTextBoxColumn4.Width = 97;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "ID";
-            gridViewTextBoxColumn5.HeaderText = "ID";
-            gridViewTextBoxColumn5.Name = "ID";
+            gridViewTextBoxColumn5.FieldName = "PermessioID";
+            gridViewTextBoxColumn5.HeaderText = "PermessioID";
+            gridViewTextBoxColumn5.Name = "PermessioID";
             gridViewTextBoxColumn5.Width = 97;
+            gridViewCheckBoxColumn2.Checked = Telerik.WinControls.Enumerations.ToggleState.Off;
+            gridViewCheckBoxColumn2.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn2.EnableHeaderCheckBox = false;
+            gridViewCheckBoxColumn2.FieldName = "PermessionValue";
+            gridViewCheckBoxColumn2.HeaderText = "PermessionValue";
+            gridViewCheckBoxColumn2.MinWidth = 20;
+            gridViewCheckBoxColumn2.Name = "PermessionValue";
+            gridViewCheckBoxColumn2.Width = 97;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "UserID";
-            gridViewTextBoxColumn6.HeaderText = "UserID";
-            gridViewTextBoxColumn6.Name = "UserID";
-            gridViewTextBoxColumn6.Width = 97;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "PermessioID";
-            gridViewTextBoxColumn7.HeaderText = "PermessioID";
-            gridViewTextBoxColumn7.Name = "PermessioID";
-            gridViewTextBoxColumn7.Width = 97;
-            gridViewCheckBoxColumn3.Checked = Telerik.WinControls.Enumerations.ToggleState.Off;
-            gridViewCheckBoxColumn3.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn3.EnableHeaderCheckBox = false;
-            gridViewCheckBoxColumn3.FieldName = "PermessionValue";
-            gridViewCheckBoxColumn3.HeaderText = "PermessionValue";
-            gridViewCheckBoxColumn3.MinWidth = 20;
-            gridViewCheckBoxColumn3.Name = "PermessionValue";
-            gridViewCheckBoxColumn3.Width = 97;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "projectID";
-            gridViewTextBoxColumn8.HeaderText = "projectID";
-            gridViewTextBoxColumn8.Name = "projectID";
-            gridViewTextBoxColumn8.Width = 95;
+            gridViewTextBoxColumn6.FieldName = "projectID";
+            gridViewTextBoxColumn6.HeaderText = "projectID";
+            gridViewTextBoxColumn6.Name = "projectID";
+            gridViewTextBoxColumn6.Width = 95;
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
             gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewCheckBoxColumn3,
-            gridViewTextBoxColumn8});
+            gridViewCheckBoxColumn2,
+            gridViewTextBoxColumn6});
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.radGridView1.Size = new System.Drawing.Size(499, 164);

@@ -35,12 +35,19 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
              if (col2 == 5)
              {
                  frmUserEdit frm= new frmUserEdit();
-                 frm.XUserId = int.Parse(UserGridView.CurrentRow.Cells[0].Value.ToString());
-                 frm.employeeNameTextBox.Text = UserGridView.CurrentRow.Cells[1].Value.ToString();
-                 frm.UserNameTextBox.Text = UserGridView.CurrentRow.Cells[2].Value.ToString();
-                 frm.PasswordTextBox.Text = UserGridView.CurrentRow.Cells[3].Value.ToString();
+                 Ucas.Data.UserTb usr =( Ucas.Data.UserTb) UserGridView.CurrentRow.DataBoundItem;
+                 frm.TragetUser = usr;
+                 //frm.XUserId = int.Parse(UserGridView.CurrentRow.Cells[0].Value.ToString());
+                 //frm.employeeNameTextBox.Text = UserGridView.CurrentRow.Cells[1].Value.ToString();
+                 //frm.UserNameTextBox.Text = UserGridView.CurrentRow.Cells[2].Value.ToString();
+                 //frm.PasswordTextBox.Text = UserGridView.CurrentRow.Cells[3].Value.ToString();
                  frm.ShowDialog();
              }
+        }
+
+        private void UserGridView_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
