@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
@@ -117,15 +117,15 @@
             this.StatusDownList.AutoCompleteDisplayMember = null;
             this.StatusDownList.AutoCompleteValueMember = null;
             this.StatusDownList.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem5.Text = "فعال";
-            radListDataItem5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem5.TextWrap = true;
-            radListDataItem6.Text = "غير فعال";
-            radListDataItem6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem6.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            radListDataItem6.TextWrap = true;
-            this.StatusDownList.Items.Add(radListDataItem5);
-            this.StatusDownList.Items.Add(radListDataItem6);
+            radListDataItem1.Text = "فعال";
+            radListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem1.TextWrap = true;
+            radListDataItem2.Text = "غير فعال";
+            radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem2.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            radListDataItem2.TextWrap = true;
+            this.StatusDownList.Items.Add(radListDataItem1);
+            this.StatusDownList.Items.Add(radListDataItem2);
             this.StatusDownList.Location = new System.Drawing.Point(115, 226);
             this.StatusDownList.Name = "StatusDownList";
             this.StatusDownList.Size = new System.Drawing.Size(123, 19);
@@ -161,26 +161,26 @@
             this.CoineDropDownList.AutoCompleteDisplayMember = null;
             this.CoineDropDownList.AutoCompleteValueMember = null;
             this.CoineDropDownList.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem1.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem1.Text = "شيكل";
-            radListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem1.TextWrap = true;
-            radListDataItem2.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem2.Text = "دولار";
-            radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem2.TextWrap = true;
-            radListDataItem7.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem7.Text = "دينار اردني";
-            radListDataItem7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem7.TextWrap = true;
-            radListDataItem8.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem8.Text = "يورو";
-            radListDataItem8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem8.TextWrap = true;
-            this.CoineDropDownList.Items.Add(radListDataItem1);
-            this.CoineDropDownList.Items.Add(radListDataItem2);
-            this.CoineDropDownList.Items.Add(radListDataItem7);
-            this.CoineDropDownList.Items.Add(radListDataItem8);
+            radListDataItem3.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem3.Text = "شيكل";
+            radListDataItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem3.TextWrap = true;
+            radListDataItem4.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem4.Text = "دولار";
+            radListDataItem4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem4.TextWrap = true;
+            radListDataItem5.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem5.Text = "دينار اردني";
+            radListDataItem5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem5.TextWrap = true;
+            radListDataItem6.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem6.Text = "يورو";
+            radListDataItem6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            radListDataItem6.TextWrap = true;
+            this.CoineDropDownList.Items.Add(radListDataItem3);
+            this.CoineDropDownList.Items.Add(radListDataItem4);
+            this.CoineDropDownList.Items.Add(radListDataItem5);
+            this.CoineDropDownList.Items.Add(radListDataItem6);
             this.CoineDropDownList.Location = new System.Drawing.Point(115, 196);
             this.CoineDropDownList.Name = "CoineDropDownList";
             this.CoineDropDownList.Size = new System.Drawing.Size(123, 19);
@@ -201,11 +201,13 @@
             // SaveBtn
             // 
             this.SaveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveBtn.Image = global::UcasProWindowsForm.Properties.Resources.SaveChang;
             this.SaveBtn.Location = new System.Drawing.Point(196, 261);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(127, 44);
             this.SaveBtn.TabIndex = 8;
             this.SaveBtn.Text = "حفظ التعديلات";
+            this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SaveBtn.ThemeName = "TelerikMetro";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 

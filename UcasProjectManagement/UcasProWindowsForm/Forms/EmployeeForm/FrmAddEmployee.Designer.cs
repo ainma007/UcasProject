@@ -83,7 +83,7 @@
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel2.Location = new System.Drawing.Point(277, 68);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(42, 19);
+            this.radLabel2.Size = new System.Drawing.Size(39, 18);
             this.radLabel2.TabIndex = 3;
             this.radLabel2.Text = "الجنس:";
             this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -94,7 +94,7 @@
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel6.Location = new System.Drawing.Point(276, 94);
             this.radLabel6.Name = "radLabel6";
-            this.radLabel6.Size = new System.Drawing.Size(82, 19);
+            this.radLabel6.Size = new System.Drawing.Size(75, 18);
             this.radLabel6.TabIndex = 9;
             this.radLabel6.Text = "الرقم الوظيفي:";
             this.radLabel6.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -141,7 +141,7 @@
             this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel3.Location = new System.Drawing.Point(276, 121);
             this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(63, 19);
+            this.radLabel3.Size = new System.Drawing.Size(58, 18);
             this.radLabel3.TabIndex = 12;
             this.radLabel3.Text = "رقم الهاتف:";
             this.radLabel3.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -152,7 +152,7 @@
             this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel4.Location = new System.Drawing.Point(276, 148);
             this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(62, 19);
+            this.radLabel4.Size = new System.Drawing.Size(57, 18);
             this.radLabel4.TabIndex = 14;
             this.radLabel4.Text = "رقم الجوال:";
             this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -163,7 +163,7 @@
             this.radLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel5.Location = new System.Drawing.Point(276, 175);
             this.radLabel5.Name = "radLabel5";
-            this.radLabel5.Size = new System.Drawing.Size(90, 19);
+            this.radLabel5.Size = new System.Drawing.Size(83, 18);
             this.radLabel5.TabIndex = 16;
             this.radLabel5.Text = "البريد الالكتروني:";
             this.radLabel5.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -174,7 +174,7 @@
             this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel7.Location = new System.Drawing.Point(267, 202);
             this.radLabel7.Name = "radLabel7";
-            this.radLabel7.Size = new System.Drawing.Size(61, 19);
+            this.radLabel7.Size = new System.Drawing.Size(56, 18);
             this.radLabel7.TabIndex = 18;
             this.radLabel7.Text = "رقم الهوية:";
             this.radLabel7.TextAlignment = System.Drawing.ContentAlignment.TopRight;

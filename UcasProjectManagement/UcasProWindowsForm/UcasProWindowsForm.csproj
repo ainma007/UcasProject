@@ -191,12 +191,6 @@
     <Compile Include="Forms\MainForm\FrmAdmin.Designer.cs">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainForm\FrmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MainForm\FrmLogin.Designer.cs">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\MainForm\FrmMainUserPro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,17 +269,23 @@
     <Compile Include="Forms\supplierForm\FrmManagementSupplier.Designer.cs">
       <DependentUpon>FrmManagementSupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UserSystemForm\FrmAddGroup.cs">
+    <Compile Include="Forms\UserSystemForm\FrmAddUserToProject.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UserSystemForm\FrmAddGroup.Designer.cs">
-      <DependentUpon>FrmAddGroup.cs</DependentUpon>
+    <Compile Include="Forms\UserSystemForm\FrmAddUserToProject.Designer.cs">
+      <DependentUpon>FrmAddUserToProject.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UserSystemForm\FrmGroupManage.cs">
+    <Compile Include="Forms\UserSystemForm\frmUserEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UserSystemForm\FrmGroupManage.Designer.cs">
-      <DependentUpon>FrmGroupManage.cs</DependentUpon>
+    <Compile Include="Forms\UserSystemForm\frmUserEdit.Designer.cs">
+      <DependentUpon>frmUserEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserSystemForm\frmUserManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserSystemForm\frmUserManage.Designer.cs">
+      <DependentUpon>frmUserManage.cs</DependentUpon>
     </Compile>
     <Compile Include="OperationX.cs" />
     <Compile Include="Program.cs" />
@@ -352,9 +352,6 @@
     <EmbeddedResource Include="Forms\MainForm\FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm\FrmLogin.resx">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm\FrmMainUserPro.resx">
       <DependentUpon>FrmMainUserPro.cs</DependentUpon>
     </EmbeddedResource>
@@ -394,11 +391,14 @@
     <EmbeddedResource Include="Forms\supplierForm\FrmManagementSupplier.resx">
       <DependentUpon>FrmManagementSupplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserSystemForm\FrmAddGroup.resx">
-      <DependentUpon>FrmAddGroup.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\UserSystemForm\FrmAddUserToProject.resx">
+      <DependentUpon>FrmAddUserToProject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserSystemForm\FrmGroupManage.resx">
-      <DependentUpon>FrmGroupManage.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\UserSystemForm\frmUserEdit.resx">
+      <DependentUpon>frmUserEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserSystemForm\frmUserManage.resx">
+      <DependentUpon>frmUserManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

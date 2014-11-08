@@ -171,11 +171,13 @@
             // saveBtn
             // 
             this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveBtn.Image = global::UcasProWindowsForm.Properties.Resources.SaveChang;
             this.saveBtn.Location = new System.Drawing.Point(190, 214);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(127, 44);
             this.saveBtn.TabIndex = 28;
             this.saveBtn.Text = "حفظ التعديلات";
+            this.saveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.saveBtn.ThemeName = "TelerikMetro";
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 

@@ -15,17 +15,7 @@ namespace Ucas.Data.CommandClass
            db = new UcasProEntities();
            return db.UserTbs.ToList();
        }
-       public static bool AddUser(UserTb tb)
-       {
-           db = new UcasProEntities();
-           db.Configuration.ProxyCreationEnabled = false;
-           db.Configuration.LazyLoadingEnabled = false;
-
-           db.UserTbs.Add(tb);
-           db.SaveChanges();
-           return true;
-       }
-
+     
        public static bool EditUser(UserTb tb)
        {
            try
@@ -34,7 +24,7 @@ namespace Ucas.Data.CommandClass
                var q = db.UserTbs.Where(p => p.ID == tb.ID).SingleOrDefault();
                q.UserName = tb.UserName;
                q.Password = tb.Password;
-               q.Group_ID = tb.Group_ID;
+              
              
              
                db.SaveChanges();
@@ -99,19 +89,49 @@ namespace Ucas.Data.CommandClass
            return lst;
        }
 
-       public static IEnumerable GetUserTb()
+       public static UserPermession LoadPermession(int ID)
        {
-           db=new UcasProEntities();
-           var q = (from i in db.UserTbs
-                    join pro in db.ProjectControls on i.ID equals pro.UserID
-                    join emp in db.Employees on i.Employee_ID equals emp.ID
-                   
-
-
-                    select new { i.ID, emp.EmployeeName, i.UserName, i.Password, i.Group_ID, pro.UserID, pro.ProjectID, pro.Status }).ToList();
-           return q;
+           db = new UcasProEntities();
+           return db.UserPermessions.Where(p => p.UserID == ID).SingleOrDefault();
 
        }
+       public static bool UserPermessioSave(UserPermession u)
+       {
+           db = new UcasProEntities();
+           db.UserPermessions.Add(u);
+           return true;
+       }
+
+       public static UserTb Login(string usr, string pwd)
+       {
+           try
+           {
+               var q = db.UserTbs.Where(p => p.UserName == usr && p.Password == pwd).ToList();
+               if (q.Count == 0 || q.Count == -1)
+               {
+                   return new UserTb();
+               }
+               else
+               {
+                   return q[0];
+               }
+
+           }
+           catch (Exception e)
+           {
+               
+               throw e;
+           }
+       }
+
+       public static List<SystemPermession> GetAllSystemPermession()
+       {
+           db = new UcasProEntities();
+           return db.SystemPermessions.ToList();
+       }
+
+       //=============================
+
 
     }
 }

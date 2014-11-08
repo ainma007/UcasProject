@@ -120,15 +120,15 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="radButtonElement1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABsAAAAdCAYAAABbjRdIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8
-        AAABhklEQVRIS8WV0XGDMBBE+ckkn5TgElxCSnAJlJASUoJLoISUQAkpISW4A3yr6BhpvYCEPOOPN4jT
-        cas7nUT39v7RG98VfEb6eZ67GiCGAHMFLvprVAm2iGFcJdgqBkYVWPEMMVAkqMSmFf4MzCsxsCvIYgjo
-        3ca439U4RVuGEkg5UkagMp+UQIrKTHYX+Un4G+bInq3CwZmjZZRwcOalYlvdqMhKy8EZlRlaG7Y94Jd+
-        Z/G0iPPSMt6U0xrm72VEjN0LWWWGm1y1PgO/m3E2/J+Y7iHG2SJay3gxIJY1CrH8hlrEwsVrTwRL7YPx
-        RbZwlbWIISMEzuxxATgWmd24HBULjWRP7F02tyE2lophb9LDfI5BfR5lC3PRjoZx39GAz1Qqxh16TcRC
-        R+JdYXNe6mIxvlWGGIibw8zBjowyu/FTIoaVcxmBn63Mf0NsKM1MgWwhiMWkdnQpFpfacA77FjGgAkM8
-        XcCypxDjA1hDuB0MiD4cg2hbmsc7hvejhpMHw1jZ/5m7O4jaME+OxPK1AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABsAAAAdCAYAAABbjRdIAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGGSURBVEhLxZXR
+        cYMwEET5ySSflOASXEJKcAmUkBJSgkughJRACSkhJbgDfKvoGGm9gIQ84483iNNxqzudRPf2/tEb3xV8
+        Rvp5nrsaIIYAcwUu+mtUCbaIYVwl2CoGRhVY8QwxUCSoxKYV/gzMKzGwK8hiCOjdxrjf1ThFW4YSSDlS
+        RqAyn5RAispMdhf5Sfgb5siercLBmaNllHBw5qViW92oyErLwRmVGVobtj3gl35n8bSI89Iy3pTTGubv
+        ZUSM3QtZZYabXLU+A7+bcTb8n5juIcbZIlrLeDEgljUKsfyGWsTCxWtPBEvtg/FFtnCVtYghIwTO7HEB
+        OBaZ3bgcFQuNZE/sXTa3ITaWimFv0sN8jkF9HmULc9GOhnHf0YDPVCrGHXpNxEJH4l1hc17qYjG+VYYY
+        iJvDzMGOjDK78VMihpVzGYGfrcx/Q2wozUyBbCGIxaR2dCkWl9pwDvsWMaACQzxdwLKnEOMDWEO4HQyI
+        PhyDaFuaxzuG96OGkwfDWNn/mbs7iNowT47E8rUAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="radRibbonBar1.StartButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

@@ -62,8 +62,7 @@
     <Compile Include="CommandClass\AttachmentsClass.cs" />
     <Compile Include="CommandClass\ContractCmd.cs" />
     <Compile Include="CommandClass\EmployeeCmd.cs" />
-    <Compile Include="CommandClass\GroupCmd.cs" />
-    <Compile Include="CommandClass\PeremissionsCmd.cs" />
+    <Compile Include="CommandClass\PeremissionsSystemCmd.cs" />
     <Compile Include="Special Classes\InformationsClass.cs" />
     <Compile Include="CommandClass\ProjectControlCmd.cs" />
     <Compile Include="CommandClass\ProjectExpensesCmd.cs" />
@@ -80,13 +79,7 @@
     <Compile Include="Employee.cs">
       <DependentUpon>UcasPro.tt</DependentUpon>
     </Compile>
-    <Compile Include="GroupsTb.cs">
-      <DependentUpon>UcasPro.tt</DependentUpon>
-    </Compile>
     <Compile Include="Monthlysalary.cs">
-      <DependentUpon>UcasPro.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PeremissionsTb.cs">
       <DependentUpon>UcasPro.tt</DependentUpon>
     </Compile>
     <Compile Include="ProjectActivity.cs">
@@ -112,6 +105,9 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>UcasPro.tt</DependentUpon>
     </Compile>
+    <Compile Include="SystemPermession.cs">
+      <DependentUpon>UcasPro.tt</DependentUpon>
+    </Compile>
     <Compile Include="TheDonor.cs">
       <DependentUpon>UcasPro.tt</DependentUpon>
     </Compile>
@@ -132,6 +128,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UcasPro.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPermession.cs">
+      <DependentUpon>UcasPro.tt</DependentUpon>
     </Compile>
     <Compile Include="UserTb.cs">
       <DependentUpon>UcasPro.tt</DependentUpon>

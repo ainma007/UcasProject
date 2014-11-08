@@ -9,6 +9,7 @@ using UcasProWindowsForm.Forms.MainForm;
 using UcasProWindowsForm.Forms.ProjectProfileForm;
 using UcasProWindowsForm.Forms.UserSystemForm;
 
+
 namespace UcasProWindowsForm
 {
     static class Program
@@ -26,7 +27,7 @@ namespace UcasProWindowsForm
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
            // Application.Run(new FrmLogin ());
-            Application.Run(new FrmLogin());
+            Application.Run(new frmUserManage());
         }
     }
 }

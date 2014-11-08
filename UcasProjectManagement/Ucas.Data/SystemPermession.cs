@@ -12,22 +12,17 @@ namespace Ucas.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class UserTb
+    public partial class SystemPermession
     {
-        public UserTb()
+        public SystemPermession()
         {
-            this.ProjectControls = new HashSet<ProjectControl>();
             this.UserPermessions = new HashSet<UserPermession>();
         }
     
         public int ID { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public Nullable<int> Employee_ID { get; set; }
-        public string TypeUser { get; set; }
+        public string PermessionName { get; set; }
+        public string Desription { get; set; }
     
-        public virtual Employee Employee { get; set; }
-        public virtual ICollection<ProjectControl> ProjectControls { get; set; }
         public virtual ICollection<UserPermession> UserPermessions { get; set; }
     }
 }

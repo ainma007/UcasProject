@@ -51,6 +51,10 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             GridViewSummaryItem summaryItemFreight1 = new GridViewSummaryItem("SubTotalCost", "الاجمالي  = {0}", GridAggregateFunction.Sum);
             GridViewSummaryRowItem summaryRowItem1 = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight1 });
             this.gridViewTemplate2.SummaryRowsBottom.Add(summaryRowItem1);
+            foreach (var item in ActivitiesGridView.Rows)
+            {
+                
+            }
             ///
          
         }
@@ -71,7 +75,41 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             //}
            // ActivitiesGridView.MasterTemplate.ExpandAll();
             TotalActivites();
+
+
+            ActivitiesGridView.RowFormatting += ActivitiesGridView_RowFormatting;
+            ActivitiesGridView.ViewRowFormatting += ActivitiesGridView_ViewRowFormatting;
             
+        }
+
+        void ActivitiesGridView_ViewRowFormatting(object sender, RowFormattingEventArgs e)
+        {
+           
+           
+         }
+
+        void ActivitiesGridView_RowFormatting(object sender, RowFormattingEventArgs e)
+        {
+            try
+            {
+               // e.RowElement.RowInfo.Cells[0].ColumnInfo.HeaderText
+                if (e.RowElement.RowInfo.Cells[2].ColumnInfo.HeaderText == "النشاط الرئيسي")
+                {
+                    e.RowElement.DrawFill = true;
+                    e.RowElement.GradientStyle = GradientStyles.Solid;
+                    e.RowElement.BackColor = Color.Aqua;
+                }
+                else
+                {
+                    e.RowElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local);
+                  
+                }
+            }
+            catch (Exception)
+            {
+
+                return;
+            }
         }
 
         private void ActivitiesGridView_CommandCellClick(object sender, EventArgs e)
@@ -149,6 +187,11 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         {
 
            
+            
+        }
+
+        private void radRibbonBar1_Click(object sender, EventArgs e)
+        {
             
         }
     }

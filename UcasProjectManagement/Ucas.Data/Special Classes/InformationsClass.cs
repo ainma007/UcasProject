@@ -37,16 +37,7 @@ namespace Ucas.Data.CommandClass
       public static int AdminID;
 
       static UcasProEntities db = new UcasProEntities();
-      public static List<PeremissionsTb> GetAllGroupPeremissionsByGroupID(int GID)
-      {
-          db = new UcasProEntities();
-          db.Configuration.LazyLoadingEnabled = false;
-          db.Configuration.ProxyCreationEnabled = false;
-         var  ListOfPeremissions = (from g in db.PeremissionsTbs
-                                where g.GroupID == GID
-                                select g).ToList();
-         return ListOfPeremissions;
-      }
+     
 
       #endregion 
 

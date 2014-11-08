@@ -13,213 +13,201 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="AmountsReceiveds">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.AmountsReceived)">
+      <EntityTypeMapping TypeName="UcasProModel.AmountsReceived">
         <MappingFragment StoreEntitySet="AmountsReceiveds">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="TheDonorsProjectID" ColumnName="TheDonorsProjectID" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="Cost" ColumnName="Cost" />
           <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="TheDonorsProjectID" ColumnName="TheDonorsProjectID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Attachments">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.Attachment)">
+      <EntityTypeMapping TypeName="UcasProModel.Attachment">
         <MappingFragment StoreEntitySet="Attachments">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="AttachmentName" ColumnName="AttachmentName" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-          <ScalarProperty Name="fileContent" ColumnName="fileContent" />
           <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
+          <ScalarProperty Name="fileContent" ColumnName="fileContent" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="AttachmentName" ColumnName="AttachmentName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Contracts">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.Contract)">
+      <EntityTypeMapping TypeName="UcasProModel.Contract">
         <MappingFragment StoreEntitySet="Contracts">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="SelaryAmount" ColumnName="SelaryAmount" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SelaryAmount" ColumnName="SelaryAmount" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Employees">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.Employee)">
+      <EntityTypeMapping TypeName="UcasProModel.Employee">
         <MappingFragment StoreEntitySet="Employees">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-          <ScalarProperty Name="EmployeejobNumber" ColumnName="EmployeejobNumber" />
-          <ScalarProperty Name="EmployeeGender" ColumnName="EmployeeGender" />
-          <ScalarProperty Name="EmployeeNationalNumber" ColumnName="EmployeeNationalNumber" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="Mobilenumber" ColumnName="Mobilenumber" />
           <ScalarProperty Name="Email" ColumnName="Email" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="GroupsTbs">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.GroupsTb)">
-        <MappingFragment StoreEntitySet="GroupsTbs">
+          <ScalarProperty Name="Mobilenumber" ColumnName="Mobilenumber" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EmployeeNationalNumber" ColumnName="EmployeeNationalNumber" />
+          <ScalarProperty Name="EmployeeGender" ColumnName="EmployeeGender" />
+          <ScalarProperty Name="EmployeejobNumber" ColumnName="EmployeejobNumber" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Monthlysalaries">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.Monthlysalary)">
+      <EntityTypeMapping TypeName="UcasProModel.Monthlysalary">
         <MappingFragment StoreEntitySet="Monthlysalaries">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
-          <ScalarProperty Name="Amount" ColumnName="Amount" />
-          <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
-          <ScalarProperty Name="Formonth" ColumnName="Formonth" />
           <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PeremissionsTbs">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.PeremissionsTb)">
-        <MappingFragment StoreEntitySet="PeremissionsTbs">
+          <ScalarProperty Name="Formonth" ColumnName="Formonth" />
+          <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
-          <ScalarProperty Name="UpDateUser" ColumnName="UpDateUser" />
-          <ScalarProperty Name="AddProject" ColumnName="AddProject" />
-          <ScalarProperty Name="DisplayExpenses" ColumnName="DisplayExpenses" />
-          <ScalarProperty Name="CanPrint" ColumnName="CanPrint" />
-          <ScalarProperty Name="AddEmployee" ColumnName="AddEmployee" />
-          <ScalarProperty Name="AddSuppliers" ColumnName="AddSuppliers" />
-          <ScalarProperty Name="AddFinncers" ColumnName="AddFinncers" />
-          <ScalarProperty Name="EditEmployee" ColumnName="EditEmployee" />
-          <ScalarProperty Name="DeleteEmployee" ColumnName="DeleteEmployee" />
-          <ScalarProperty Name="EditFinncers" ColumnName="EditFinncers" />
-          <ScalarProperty Name="DeleteFinncers" ColumnName="DeleteFinncers" />
-          <ScalarProperty Name="EditSuppliers" ColumnName="EditSuppliers" />
-          <ScalarProperty Name="DeleteSuppliers" ColumnName="DeleteSuppliers" />
-          <ScalarProperty Name="EditProject" ColumnName="EditProject" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ProjectActivities">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.ProjectActivity)">
+      <EntityTypeMapping TypeName="UcasProModel.ProjectActivity">
         <MappingFragment StoreEntitySet="ProjectActivities">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Progress" ColumnName="Progress" />
-          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
           <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="Progress" ColumnName="Progress" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ProjectControls">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.ProjectControl)">
+      <EntityTypeMapping TypeName="UcasProModel.ProjectControl">
         <MappingFragment StoreEntitySet="ProjectControls">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
           <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ProjectExpenses">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.ProjectExpens)">
+      <EntityTypeMapping TypeName="UcasProModel.ProjectExpens">
         <MappingFragment StoreEntitySet="ProjectExpenses">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ExpensesName" ColumnName="ExpensesName" />
-          <ScalarProperty Name="DateofProcess" ColumnName="DateofProcess" />
-          <ScalarProperty Name="BillNumber" ColumnName="BillNumber" />
-          <ScalarProperty Name="RequiarAmount" ColumnName="RequiarAmount" />
-          <ScalarProperty Name="CashingNumber" ColumnName="CashingNumber" />
-          <ScalarProperty Name="ProjectSubActivity_ID" ColumnName="ProjectSubActivity_ID" />
-          <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
           <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
+          <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+          <ScalarProperty Name="ProjectSubActivity_ID" ColumnName="ProjectSubActivity_ID" />
+          <ScalarProperty Name="CashingNumber" ColumnName="CashingNumber" />
+          <ScalarProperty Name="RequiarAmount" ColumnName="RequiarAmount" />
+          <ScalarProperty Name="BillNumber" ColumnName="BillNumber" />
+          <ScalarProperty Name="DateofProcess" ColumnName="DateofProcess" />
+          <ScalarProperty Name="ExpensesName" ColumnName="ExpensesName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ProjectProfiles">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.ProjectProfile)">
+      <EntityTypeMapping TypeName="UcasProModel.ProjectProfile">
         <MappingFragment StoreEntitySet="ProjectProfiles">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
-          <ScalarProperty Name="ProjectDescription" ColumnName="ProjectDescription" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="progress" ColumnName="progress" />
-          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
           <ScalarProperty Name="Coin" ColumnName="Coin" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="progress" ColumnName="progress" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="ProjectDescription" ColumnName="ProjectDescription" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ProjectSubActivities">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.ProjectSubActivity)">
+      <EntityTypeMapping TypeName="UcasProModel.ProjectSubActivity">
         <MappingFragment StoreEntitySet="ProjectSubActivities">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="SubActivityName" ColumnName="SubActivityName" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Startdate" ColumnName="Startdate" />
-          <ScalarProperty Name="enddate" ColumnName="enddate" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Progress" ColumnName="Progress" />
-          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
-          <ScalarProperty Name="ProjectActivity_ID" ColumnName="ProjectActivity_ID" />
           <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
+          <ScalarProperty Name="ProjectActivity_ID" ColumnName="ProjectActivity_ID" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="Progress" ColumnName="Progress" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="Startdate" ColumnName="Startdate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubActivityName" ColumnName="SubActivityName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Suppliers">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.Supplier)">
+      <EntityTypeMapping TypeName="UcasProModel.Supplier">
         <MappingFragment StoreEntitySet="Suppliers">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="SuppliersNatural" ColumnName="SuppliersNatural" />
-          <ScalarProperty Name="Fax" ColumnName="Fax" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Adderss" ColumnName="Adderss" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="SuppliersNatural" ColumnName="SuppliersNatural" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemPermessions">
+      <EntityTypeMapping TypeName="UcasProModel.SystemPermession">
+        <MappingFragment StoreEntitySet="SystemPermession">
+          <ScalarProperty Name="Desription" ColumnName="Desription" />
+          <ScalarProperty Name="PermessionName" ColumnName="PermessionName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TheDonors">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.TheDonor)">
+      <EntityTypeMapping TypeName="UcasProModel.TheDonor">
         <MappingFragment StoreEntitySet="TheDonors">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="agentName" ColumnName="agentName" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="Fax" ColumnName="Fax" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Adderss" ColumnName="Adderss" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="agentName" ColumnName="agentName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TheDonorsProjects">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.TheDonorsProject)">
+      <EntityTypeMapping TypeName="UcasProModel.TheDonorsProject">
         <MappingFragment StoreEntitySet="TheDonorsProjects">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
-          <ScalarProperty Name="DonorsID" ColumnName="DonorsID" />
           <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="DonorsID" ColumnName="DonorsID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPermessions">
+      <EntityTypeMapping TypeName="UcasProModel.UserPermession">
+        <MappingFragment StoreEntitySet="UserPermession">
+          <ScalarProperty Name="projectID" ColumnName="projectID" />
+          <ScalarProperty Name="PermessionValue" ColumnName="PermessionValue" />
+          <ScalarProperty Name="PermessioID" ColumnName="PermessioID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="UserTbs">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.UserTb)">
+      <EntityTypeMapping TypeName="UcasProModel.UserTb">
         <MappingFragment StoreEntitySet="UserTbs">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="Group_ID" ColumnName="Group_ID" />
-          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
           <ScalarProperty Name="TypeUser" ColumnName="TypeUser" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

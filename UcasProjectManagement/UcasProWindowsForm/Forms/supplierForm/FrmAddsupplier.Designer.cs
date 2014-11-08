@@ -179,11 +179,13 @@
             // AddBtn
             // 
             this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddBtn.Image = global::UcasProWindowsForm.Properties.Resources.addadd;
             this.AddBtn.Location = new System.Drawing.Point(205, 207);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(127, 44);
             this.AddBtn.TabIndex = 8;
-            this.AddBtn.Text = "اضافة";
+            this.AddBtn.Text = "اضافة السجل";
+            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AddBtn.ThemeName = "TelerikMetro";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 

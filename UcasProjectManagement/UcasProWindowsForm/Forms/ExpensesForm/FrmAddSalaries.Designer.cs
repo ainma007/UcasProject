@@ -409,11 +409,13 @@
             // 
             // AddBtn1
             // 
+            this.AddBtn1.Image = global::UcasProWindowsForm.Properties.Resources.addadd;
             this.AddBtn1.Location = new System.Drawing.Point(227, 166);
             this.AddBtn1.Name = "AddBtn1";
             this.AddBtn1.Size = new System.Drawing.Size(127, 44);
             this.AddBtn1.TabIndex = 5;
-            this.AddBtn1.Text = "اضافة";
+            this.AddBtn1.Text = "اضافة سجل";
+            this.AddBtn1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AddBtn1.ThemeName = "TelerikMetro";
             this.AddBtn1.Click += new System.EventHandler(this.AddBtn1_Click);
             // 

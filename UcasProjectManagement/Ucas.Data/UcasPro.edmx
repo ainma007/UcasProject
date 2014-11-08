@@ -50,14 +50,6 @@
           <Property Name="Mobilenumber" Type="nvarchar(max)" />
           <Property Name="Email" Type="nvarchar(max)" />
         </EntityType>
-        <EntityType Name="GroupsTbs">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="GroupName" Type="nvarchar" MaxLength="50" />
-          <Property Name="Description" Type="nvarchar(max)" />
-        </EntityType>
         <EntityType Name="Monthlysalaries">
           <Key>
             <PropertyRef Name="ID" />
@@ -68,27 +60,6 @@
           <Property Name="IssueDate" Type="datetime" />
           <Property Name="Formonth" Type="datetime" />
           <Property Name="ProjectProfile_ID" Type="int" />
-        </EntityType>
-        <EntityType Name="PeremissionsTbs">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="GroupID" Type="int" />
-          <Property Name="UpDateUser" Type="int" />
-          <Property Name="AddProject" Type="int" />
-          <Property Name="DisplayExpenses" Type="int" />
-          <Property Name="CanPrint" Type="int" />
-          <Property Name="AddEmployee" Type="int" />
-          <Property Name="AddSuppliers" Type="int" />
-          <Property Name="AddFinncers" Type="int" />
-          <Property Name="EditEmployee" Type="int" />
-          <Property Name="DeleteEmployee" Type="int" />
-          <Property Name="EditFinncers" Type="int" />
-          <Property Name="DeleteFinncers" Type="int" />
-          <Property Name="EditSuppliers" Type="int" />
-          <Property Name="DeleteSuppliers" Type="int" />
-          <Property Name="EditProject" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ProjectActivities">
           <Key>
@@ -178,6 +149,14 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="SystemPermession">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PermessionName" Type="varchar" MaxLength="50" />
+          <Property Name="Desription" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="TheDonors">
           <Key>
             <PropertyRef Name="ID" />
@@ -199,6 +178,16 @@
           <Property Name="DonorsID" Type="int" Nullable="false" />
           <Property Name="TotalCost" Type="float" />
         </EntityType>
+        <EntityType Name="UserPermession">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="PermessioID" Type="int" Nullable="false" />
+          <Property Name="PermessionValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="projectID" Type="int" />
+        </EntityType>
         <EntityType Name="UserTbs">
           <Key>
             <PropertyRef Name="ID" />
@@ -206,7 +195,6 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserName" Type="nvarchar(max)" />
           <Property Name="Password" Type="nvarchar(max)" />
-          <Property Name="Group_ID" Type="int" />
           <Property Name="Employee_ID" Type="int" />
           <Property Name="TypeUser" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
@@ -279,18 +267,6 @@
             </Principal>
             <Dependent Role="Monthlysalaries">
               <PropertyRef Name="ProjectProfile_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PeremissionsTb_GroupsTb">
-          <End Role="GroupsTbs" Type="Self.GroupsTbs" Multiplicity="0..1" />
-          <End Role="PeremissionsTbs" Type="Self.PeremissionsTbs" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GroupsTbs">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="PeremissionsTbs">
-              <PropertyRef Name="GroupID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -426,6 +402,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_UserPermession_ProjectProfiles">
+          <End Role="ProjectProfiles" Type="Self.ProjectProfiles" Multiplicity="0..1" />
+          <End Role="UserPermession" Type="Self.UserPermession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectProfiles">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserPermession">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPermession_SystemPermession">
+          <End Role="SystemPermession" Type="Self.SystemPermession" Multiplicity="1" />
+          <End Role="UserPermession" Type="Self.UserPermession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SystemPermession">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserPermession">
+              <PropertyRef Name="PermessioID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPermession_UserTbs">
+          <End Role="UserTbs" Type="Self.UserTbs" Multiplicity="0..1" />
+          <End Role="UserPermession" Type="Self.UserPermession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTbs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserPermession">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_UserTb_Employees">
           <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
           <End Role="UserTbs" Type="Self.UserTbs" Multiplicity="*" />
@@ -438,26 +450,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserTb_GroupsTbs">
-          <End Role="GroupsTbs" Type="Self.GroupsTbs" Multiplicity="0..1" />
-          <End Role="UserTbs" Type="Self.UserTbs" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GroupsTbs">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="UserTbs">
-              <PropertyRef Name="Group_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="UcasProModelStoreContainer">
           <EntitySet Name="AmountsReceiveds" EntityType="Self.AmountsReceiveds" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Attachments" EntityType="Self.Attachments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contracts" EntityType="Self.Contracts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="GroupsTbs" EntityType="Self.GroupsTbs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Monthlysalaries" EntityType="Self.Monthlysalaries" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PeremissionsTbs" EntityType="Self.PeremissionsTbs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProjectActivities" EntityType="Self.ProjectActivities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProjectControls" EntityType="Self.ProjectControls" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProjectExpenses" EntityType="Self.ProjectExpenses" Schema="dbo" store:Type="Tables" />
@@ -465,8 +463,10 @@
           <EntitySet Name="ProjectSubActivities" EntityType="Self.ProjectSubActivities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemPermession" EntityType="Self.SystemPermession" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TheDonors" EntityType="Self.TheDonors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TheDonorsProjects" EntityType="Self.TheDonorsProjects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserPermession" EntityType="Self.UserPermession" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserTbs" EntityType="Self.UserTbs" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_AmountsReceived_TheFinancerProjects" Association="Self.FK_AmountsReceived_TheFinancerProjects">
             <End Role="TheDonorsProjects" EntitySet="TheDonorsProjects" />
@@ -491,10 +491,6 @@
           <AssociationSet Name="FK_Monthlysalaries_ProjectProfiles" Association="Self.FK_Monthlysalaries_ProjectProfiles">
             <End Role="ProjectProfiles" EntitySet="ProjectProfiles" />
             <End Role="Monthlysalaries" EntitySet="Monthlysalaries" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PeremissionsTb_GroupsTb" Association="Self.FK_PeremissionsTb_GroupsTb">
-            <End Role="GroupsTbs" EntitySet="GroupsTbs" />
-            <End Role="PeremissionsTbs" EntitySet="PeremissionsTbs" />
           </AssociationSet>
           <AssociationSet Name="FK_ProjectActivities_ProjectProfiles" Association="Self.FK_ProjectActivities_ProjectProfiles">
             <End Role="ProjectProfiles" EntitySet="ProjectProfiles" />
@@ -540,12 +536,20 @@
             <End Role="TheDonors" EntitySet="TheDonors" />
             <End Role="TheDonorsProjects" EntitySet="TheDonorsProjects" />
           </AssociationSet>
+          <AssociationSet Name="FK_UserPermession_ProjectProfiles" Association="Self.FK_UserPermession_ProjectProfiles">
+            <End Role="ProjectProfiles" EntitySet="ProjectProfiles" />
+            <End Role="UserPermession" EntitySet="UserPermession" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPermession_SystemPermession" Association="Self.FK_UserPermession_SystemPermession">
+            <End Role="SystemPermession" EntitySet="SystemPermession" />
+            <End Role="UserPermession" EntitySet="UserPermession" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPermession_UserTbs" Association="Self.FK_UserPermession_UserTbs">
+            <End Role="UserTbs" EntitySet="UserTbs" />
+            <End Role="UserPermession" EntitySet="UserPermession" />
+          </AssociationSet>
           <AssociationSet Name="FK_UserTb_Employees" Association="Self.FK_UserTb_Employees">
             <End Role="Employees" EntitySet="Employees" />
-            <End Role="UserTbs" EntitySet="UserTbs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UserTb_GroupsTbs" Association="Self.FK_UserTb_GroupsTbs">
-            <End Role="GroupsTbs" EntitySet="GroupsTbs" />
             <End Role="UserTbs" EntitySet="UserTbs" />
           </AssociationSet>
         </EntityContainer>
@@ -559,17 +563,17 @@
           <EntitySet Name="Attachments" EntityType="UcasProModel.Attachment" />
           <EntitySet Name="Contracts" EntityType="UcasProModel.Contract" />
           <EntitySet Name="Employees" EntityType="UcasProModel.Employee" />
-          <EntitySet Name="GroupsTbs" EntityType="UcasProModel.GroupsTb" />
           <EntitySet Name="Monthlysalaries" EntityType="UcasProModel.Monthlysalary" />
-          <EntitySet Name="PeremissionsTbs" EntityType="UcasProModel.PeremissionsTb" />
           <EntitySet Name="ProjectActivities" EntityType="UcasProModel.ProjectActivity" />
           <EntitySet Name="ProjectControls" EntityType="UcasProModel.ProjectControl" />
           <EntitySet Name="ProjectExpenses" EntityType="UcasProModel.ProjectExpens" />
           <EntitySet Name="ProjectProfiles" EntityType="UcasProModel.ProjectProfile" />
           <EntitySet Name="ProjectSubActivities" EntityType="UcasProModel.ProjectSubActivity" />
           <EntitySet Name="Suppliers" EntityType="UcasProModel.Supplier" />
+          <EntitySet Name="SystemPermessions" EntityType="UcasProModel.SystemPermession" />
           <EntitySet Name="TheDonors" EntityType="UcasProModel.TheDonor" />
           <EntitySet Name="TheDonorsProjects" EntityType="UcasProModel.TheDonorsProject" />
+          <EntitySet Name="UserPermessions" EntityType="UcasProModel.UserPermession" />
           <EntitySet Name="UserTbs" EntityType="UcasProModel.UserTb" />
           <AssociationSet Name="FK_AmountsReceived_TheFinancerProjects" Association="UcasProModel.FK_AmountsReceived_TheFinancerProjects">
             <End Role="TheDonorsProject" EntitySet="TheDonorsProjects" />
@@ -597,14 +601,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_UserTb_Employees" Association="UcasProModel.FK_UserTb_Employees">
             <End Role="Employee" EntitySet="Employees" />
-            <End Role="UserTb" EntitySet="UserTbs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PeremissionsTb_GroupsTb" Association="UcasProModel.FK_PeremissionsTb_GroupsTb">
-            <End Role="GroupsTb" EntitySet="GroupsTbs" />
-            <End Role="PeremissionsTb" EntitySet="PeremissionsTbs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UserTb_GroupsTbs" Association="UcasProModel.FK_UserTb_GroupsTbs">
-            <End Role="GroupsTb" EntitySet="GroupsTbs" />
             <End Role="UserTb" EntitySet="UserTbs" />
           </AssociationSet>
           <AssociationSet Name="FK_Monthlysalaries_ProjectProfiles" Association="UcasProModel.FK_Monthlysalaries_ProjectProfiles">
@@ -647,9 +643,21 @@
             <End Role="ProjectProfile" EntitySet="ProjectProfiles" />
             <End Role="TheDonorsProject" EntitySet="TheDonorsProjects" />
           </AssociationSet>
+          <AssociationSet Name="FK_UserPermession_ProjectProfiles" Association="UcasProModel.FK_UserPermession_ProjectProfiles">
+            <End Role="ProjectProfile" EntitySet="ProjectProfiles" />
+            <End Role="UserPermession" EntitySet="UserPermessions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPermession_SystemPermession" Association="UcasProModel.FK_UserPermession_SystemPermession">
+            <End Role="SystemPermession" EntitySet="SystemPermessions" />
+            <End Role="UserPermession" EntitySet="UserPermessions" />
+          </AssociationSet>
           <AssociationSet Name="FK_TheFinancerProject_Thefinanciers" Association="UcasProModel.FK_TheFinancerProject_Thefinanciers">
             <End Role="TheDonor" EntitySet="TheDonors" />
             <End Role="TheDonorsProject" EntitySet="TheDonorsProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPermession_UserTbs" Association="UcasProModel.FK_UserPermession_UserTbs">
+            <End Role="UserTb" EntitySet="UserTbs" />
+            <End Role="UserPermession" EntitySet="UserPermessions" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="sysdiagram">
@@ -715,16 +723,6 @@
           <NavigationProperty Name="Contracts" Relationship="UcasProModel.FK_Contracts_Employees" FromRole="Employee" ToRole="Contract" />
           <NavigationProperty Name="UserTbs" Relationship="UcasProModel.FK_UserTb_Employees" FromRole="Employee" ToRole="UserTb" />
         </EntityType>
-        <EntityType Name="GroupsTb">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="PeremissionsTbs" Relationship="UcasProModel.FK_PeremissionsTb_GroupsTb" FromRole="GroupsTb" ToRole="PeremissionsTb" />
-          <NavigationProperty Name="UserTbs" Relationship="UcasProModel.FK_UserTb_GroupsTbs" FromRole="GroupsTb" ToRole="UserTb" />
-        </EntityType>
         <EntityType Name="Monthlysalary">
           <Key>
             <PropertyRef Name="ID" />
@@ -737,28 +735,6 @@
           <Property Name="ProjectProfile_ID" Type="Int32" />
           <NavigationProperty Name="Contract" Relationship="UcasProModel.FK_Salaries_Contracts" FromRole="Monthlysalary" ToRole="Contract" />
           <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_Monthlysalaries_ProjectProfiles" FromRole="Monthlysalary" ToRole="ProjectProfile" />
-        </EntityType>
-        <EntityType Name="PeremissionsTb">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="GroupID" Type="Int32" />
-          <Property Name="UpDateUser" Type="Int32" />
-          <Property Name="AddProject" Type="Int32" />
-          <Property Name="DisplayExpenses" Type="Int32" />
-          <Property Name="CanPrint" Type="Int32" />
-          <Property Name="AddEmployee" Type="Int32" />
-          <Property Name="AddSuppliers" Type="Int32" />
-          <Property Name="AddFinncers" Type="Int32" />
-          <Property Name="EditEmployee" Type="Int32" />
-          <Property Name="DeleteEmployee" Type="Int32" />
-          <Property Name="EditFinncers" Type="Int32" />
-          <Property Name="DeleteFinncers" Type="Int32" />
-          <Property Name="EditSuppliers" Type="Int32" />
-          <Property Name="DeleteSuppliers" Type="Int32" />
-          <NavigationProperty Name="GroupsTb" Relationship="UcasProModel.FK_PeremissionsTb_GroupsTb" FromRole="PeremissionsTb" ToRole="GroupsTb" />
-          <Property Name="EditProject" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
         </EntityType>
         <EntityType Name="ProjectActivity">
           <Key>
@@ -826,6 +802,7 @@
           <NavigationProperty Name="ProjectExpenses" Relationship="UcasProModel.FK_ProjectExpenses_ProjectProfiles" FromRole="ProjectProfile" ToRole="ProjectExpens" />
           <NavigationProperty Name="ProjectSubActivities" Relationship="UcasProModel.FK_ProjectSubActivities_ProjectProfiles" FromRole="ProjectProfile" ToRole="ProjectSubActivity" />
           <NavigationProperty Name="TheDonorsProjects" Relationship="UcasProModel.FK_TheFinancerProject_ProjectProfiles" FromRole="ProjectProfile" ToRole="TheDonorsProject" />
+          <NavigationProperty Name="UserPermessions" Relationship="UcasProModel.FK_UserPermession_ProjectProfiles" FromRole="ProjectProfile" ToRole="UserPermession" />
         </EntityType>
         <EntityType Name="ProjectSubActivity">
           <Key>
@@ -858,6 +835,15 @@
           <Property Name="Adderss" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ProjectExpenses" Relationship="UcasProModel.FK_ProjectExpenses_Suppliers" FromRole="Supplier" ToRole="ProjectExpens" />
         </EntityType>
+        <EntityType Name="SystemPermession">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PermessionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Desription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserPermessions" Relationship="UcasProModel.FK_UserPermession_SystemPermession" FromRole="SystemPermession" ToRole="UserPermession" />
+        </EntityType>
         <EntityType Name="TheDonor">
           <Key>
             <PropertyRef Name="ID" />
@@ -883,6 +869,19 @@
           <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_TheFinancerProject_ProjectProfiles" FromRole="TheDonorsProject" ToRole="ProjectProfile" />
           <NavigationProperty Name="TheDonor" Relationship="UcasProModel.FK_TheFinancerProject_Thefinanciers" FromRole="TheDonorsProject" ToRole="TheDonor" />
         </EntityType>
+        <EntityType Name="UserPermession">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="PermessioID" Type="Int32" Nullable="false" />
+          <Property Name="PermessionValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="projectID" Type="Int32" />
+          <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_UserPermession_ProjectProfiles" FromRole="UserPermession" ToRole="ProjectProfile" />
+          <NavigationProperty Name="SystemPermession" Relationship="UcasProModel.FK_UserPermession_SystemPermession" FromRole="UserPermession" ToRole="SystemPermession" />
+          <NavigationProperty Name="UserTb" Relationship="UcasProModel.FK_UserPermession_UserTbs" FromRole="UserPermession" ToRole="UserTb" />
+        </EntityType>
         <EntityType Name="UserTb">
           <Key>
             <PropertyRef Name="ID" />
@@ -890,12 +889,11 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Group_ID" Type="Int32" />
           <Property Name="Employee_ID" Type="Int32" />
+          <Property Name="TypeUser" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Employee" Relationship="UcasProModel.FK_UserTb_Employees" FromRole="UserTb" ToRole="Employee" />
-          <NavigationProperty Name="GroupsTb" Relationship="UcasProModel.FK_UserTb_GroupsTbs" FromRole="UserTb" ToRole="GroupsTb" />
           <NavigationProperty Name="ProjectControls" Relationship="UcasProModel.FK_ProjectControls_UserTb" FromRole="UserTb" ToRole="ProjectControl" />
-          <Property Name="TypeUser" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="UserPermessions" Relationship="UcasProModel.FK_UserPermession_UserTbs" FromRole="UserTb" ToRole="UserPermession" />
         </EntityType>
         <Association Name="FK_AmountsReceived_TheFinancerProjects">
           <End Type="UcasProModel.TheDonorsProject" Role="TheDonorsProject" Multiplicity="0..1" />
@@ -978,30 +976,6 @@
             </Principal>
             <Dependent Role="UserTb">
               <PropertyRef Name="Employee_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PeremissionsTb_GroupsTb">
-          <End Type="UcasProModel.GroupsTb" Role="GroupsTb" Multiplicity="0..1" />
-          <End Type="UcasProModel.PeremissionsTb" Role="PeremissionsTb" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GroupsTb">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="PeremissionsTb">
-              <PropertyRef Name="GroupID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_UserTb_GroupsTbs">
-          <End Type="UcasProModel.GroupsTb" Role="GroupsTb" Multiplicity="0..1" />
-          <End Type="UcasProModel.UserTb" Role="UserTb" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GroupsTb">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="UserTb">
-              <PropertyRef Name="Group_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1125,6 +1099,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_UserPermession_ProjectProfiles">
+          <End Type="UcasProModel.ProjectProfile" Role="ProjectProfile" Multiplicity="0..1" />
+          <End Type="UcasProModel.UserPermession" Role="UserPermession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectProfile">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserPermession">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPermession_SystemPermession">
+          <End Type="UcasProModel.SystemPermession" Role="SystemPermession" Multiplicity="1" />
+          <End Type="UcasProModel.UserPermession" Role="UserPermession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SystemPermession">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserPermession">
+              <PropertyRef Name="PermessioID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TheFinancerProject_Thefinanciers">
           <End Type="UcasProModel.TheDonor" Role="TheDonor" Multiplicity="1" />
           <End Type="UcasProModel.TheDonorsProject" Role="TheDonorsProject" Multiplicity="*" />
@@ -1134,6 +1132,18 @@
             </Principal>
             <Dependent Role="TheDonorsProject">
               <PropertyRef Name="DonorsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPermession_UserTbs">
+          <End Type="UcasProModel.UserTb" Role="UserTb" Multiplicity="0..1" />
+          <End Type="UcasProModel.UserPermession" Role="UserPermession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTb">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserPermession">
+              <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1154,218 +1164,206 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="AmountsReceiveds">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.AmountsReceived)">
-        <MappingFragment StoreEntitySet="AmountsReceiveds">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="TheDonorsProjectID" ColumnName="TheDonorsProjectID" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="Cost" ColumnName="Cost" />
-          <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Attachments">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.Attachment)">
-        <MappingFragment StoreEntitySet="Attachments">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="AttachmentName" ColumnName="AttachmentName" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-          <ScalarProperty Name="fileContent" ColumnName="fileContent" />
-          <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Contracts">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.Contract)">
-        <MappingFragment StoreEntitySet="Contracts">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="SelaryAmount" ColumnName="SelaryAmount" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Employees">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.Employee)">
-        <MappingFragment StoreEntitySet="Employees">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-          <ScalarProperty Name="EmployeejobNumber" ColumnName="EmployeejobNumber" />
-          <ScalarProperty Name="EmployeeGender" ColumnName="EmployeeGender" />
-          <ScalarProperty Name="EmployeeNationalNumber" ColumnName="EmployeeNationalNumber" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="Mobilenumber" ColumnName="Mobilenumber" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="GroupsTbs">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.GroupsTb)">
-        <MappingFragment StoreEntitySet="GroupsTbs">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Monthlysalaries">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.Monthlysalary)">
-        <MappingFragment StoreEntitySet="Monthlysalaries">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
-          <ScalarProperty Name="Amount" ColumnName="Amount" />
-          <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
-          <ScalarProperty Name="Formonth" ColumnName="Formonth" />
-          <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PeremissionsTbs">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.PeremissionsTb)">
-        <MappingFragment StoreEntitySet="PeremissionsTbs">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
-          <ScalarProperty Name="UpDateUser" ColumnName="UpDateUser" />
-          <ScalarProperty Name="AddProject" ColumnName="AddProject" />
-          <ScalarProperty Name="DisplayExpenses" ColumnName="DisplayExpenses" />
-          <ScalarProperty Name="CanPrint" ColumnName="CanPrint" />
-          <ScalarProperty Name="AddEmployee" ColumnName="AddEmployee" />
-          <ScalarProperty Name="AddSuppliers" ColumnName="AddSuppliers" />
-          <ScalarProperty Name="AddFinncers" ColumnName="AddFinncers" />
-          <ScalarProperty Name="EditEmployee" ColumnName="EditEmployee" />
-          <ScalarProperty Name="DeleteEmployee" ColumnName="DeleteEmployee" />
-          <ScalarProperty Name="EditFinncers" ColumnName="EditFinncers" />
-          <ScalarProperty Name="DeleteFinncers" ColumnName="DeleteFinncers" />
-          <ScalarProperty Name="EditSuppliers" ColumnName="EditSuppliers" />
-          <ScalarProperty Name="DeleteSuppliers" ColumnName="DeleteSuppliers" />
-          <ScalarProperty Name="EditProject" ColumnName="EditProject" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ProjectActivities">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.ProjectActivity)">
-        <MappingFragment StoreEntitySet="ProjectActivities">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Progress" ColumnName="Progress" />
-          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
-          <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ProjectControls">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.ProjectControl)">
-        <MappingFragment StoreEntitySet="ProjectControls">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ProjectExpenses">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.ProjectExpens)">
-        <MappingFragment StoreEntitySet="ProjectExpenses">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ExpensesName" ColumnName="ExpensesName" />
-          <ScalarProperty Name="DateofProcess" ColumnName="DateofProcess" />
-          <ScalarProperty Name="BillNumber" ColumnName="BillNumber" />
-          <ScalarProperty Name="RequiarAmount" ColumnName="RequiarAmount" />
-          <ScalarProperty Name="CashingNumber" ColumnName="CashingNumber" />
-          <ScalarProperty Name="ProjectSubActivity_ID" ColumnName="ProjectSubActivity_ID" />
-          <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
-          <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ProjectProfiles">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.ProjectProfile)">
-        <MappingFragment StoreEntitySet="ProjectProfiles">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
-          <ScalarProperty Name="ProjectDescription" ColumnName="ProjectDescription" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="progress" ColumnName="progress" />
-          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
-          <ScalarProperty Name="Coin" ColumnName="Coin" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ProjectSubActivities">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.ProjectSubActivity)">
-        <MappingFragment StoreEntitySet="ProjectSubActivities">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="SubActivityName" ColumnName="SubActivityName" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Startdate" ColumnName="Startdate" />
-          <ScalarProperty Name="enddate" ColumnName="enddate" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Progress" ColumnName="Progress" />
-          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
-          <ScalarProperty Name="ProjectActivity_ID" ColumnName="ProjectActivity_ID" />
-          <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Suppliers">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.Supplier)">
-        <MappingFragment StoreEntitySet="Suppliers">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="SuppliersNatural" ColumnName="SuppliersNatural" />
-          <ScalarProperty Name="Fax" ColumnName="Fax" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Adderss" ColumnName="Adderss" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TheDonors">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.TheDonor)">
-        <MappingFragment StoreEntitySet="TheDonors">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="agentName" ColumnName="agentName" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="Fax" ColumnName="Fax" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Adderss" ColumnName="Adderss" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TheDonorsProjects">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.TheDonorsProject)">
-        <MappingFragment StoreEntitySet="TheDonorsProjects">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
-          <ScalarProperty Name="DonorsID" ColumnName="DonorsID" />
-          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="UserTbs">
-      <EntityTypeMapping TypeName="IsTypeOf(UcasProModel.UserTb)">
-        <MappingFragment StoreEntitySet="UserTbs">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="Group_ID" ColumnName="Group_ID" />
-          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
-          <ScalarProperty Name="TypeUser" ColumnName="TypeUser" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-  </EntityContainerMapping>
+          <EntitySetMapping Name="AmountsReceiveds">
+            <EntityTypeMapping TypeName="UcasProModel.AmountsReceived">
+              <MappingFragment StoreEntitySet="AmountsReceiveds">
+                <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="TheDonorsProjectID" ColumnName="TheDonorsProjectID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Attachments">
+            <EntityTypeMapping TypeName="UcasProModel.Attachment">
+              <MappingFragment StoreEntitySet="Attachments">
+                <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
+                <ScalarProperty Name="fileContent" ColumnName="fileContent" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="AttachmentName" ColumnName="AttachmentName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contracts">
+            <EntityTypeMapping TypeName="UcasProModel.Contract">
+              <MappingFragment StoreEntitySet="Contracts">
+                <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SelaryAmount" ColumnName="SelaryAmount" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="UcasProModel.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobilenumber" ColumnName="Mobilenumber" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="EmployeeNationalNumber" ColumnName="EmployeeNationalNumber" />
+                <ScalarProperty Name="EmployeeGender" ColumnName="EmployeeGender" />
+                <ScalarProperty Name="EmployeejobNumber" ColumnName="EmployeejobNumber" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Monthlysalaries">
+            <EntityTypeMapping TypeName="UcasProModel.Monthlysalary">
+              <MappingFragment StoreEntitySet="Monthlysalaries">
+                <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
+                <ScalarProperty Name="Formonth" ColumnName="Formonth" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectActivities">
+            <EntityTypeMapping TypeName="UcasProModel.ProjectActivity">
+              <MappingFragment StoreEntitySet="ProjectActivities">
+                <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="Progress" ColumnName="Progress" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectControls">
+            <EntityTypeMapping TypeName="UcasProModel.ProjectControl">
+              <MappingFragment StoreEntitySet="ProjectControls">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectExpenses">
+            <EntityTypeMapping TypeName="UcasProModel.ProjectExpens">
+              <MappingFragment StoreEntitySet="ProjectExpenses">
+                <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
+                <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+                <ScalarProperty Name="ProjectSubActivity_ID" ColumnName="ProjectSubActivity_ID" />
+                <ScalarProperty Name="CashingNumber" ColumnName="CashingNumber" />
+                <ScalarProperty Name="RequiarAmount" ColumnName="RequiarAmount" />
+                <ScalarProperty Name="BillNumber" ColumnName="BillNumber" />
+                <ScalarProperty Name="DateofProcess" ColumnName="DateofProcess" />
+                <ScalarProperty Name="ExpensesName" ColumnName="ExpensesName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectProfiles">
+            <EntityTypeMapping TypeName="UcasProModel.ProjectProfile">
+              <MappingFragment StoreEntitySet="ProjectProfiles">
+                <ScalarProperty Name="Coin" ColumnName="Coin" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="progress" ColumnName="progress" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="ProjectDescription" ColumnName="ProjectDescription" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectSubActivities">
+            <EntityTypeMapping TypeName="UcasProModel.ProjectSubActivity">
+              <MappingFragment StoreEntitySet="ProjectSubActivities">
+                <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
+                <ScalarProperty Name="ProjectActivity_ID" ColumnName="ProjectActivity_ID" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="Progress" ColumnName="Progress" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="enddate" ColumnName="enddate" />
+                <ScalarProperty Name="Startdate" ColumnName="Startdate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SubActivityName" ColumnName="SubActivityName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="UcasProModel.Supplier">
+              <MappingFragment StoreEntitySet="Suppliers">
+                <ScalarProperty Name="Adderss" ColumnName="Adderss" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="SuppliersNatural" ColumnName="SuppliersNatural" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemPermessions">
+            <EntityTypeMapping TypeName="UcasProModel.SystemPermession">
+              <MappingFragment StoreEntitySet="SystemPermession">
+                <ScalarProperty Name="Desription" ColumnName="Desription" />
+                <ScalarProperty Name="PermessionName" ColumnName="PermessionName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TheDonors">
+            <EntityTypeMapping TypeName="UcasProModel.TheDonor">
+              <MappingFragment StoreEntitySet="TheDonors">
+                <ScalarProperty Name="Adderss" ColumnName="Adderss" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="agentName" ColumnName="agentName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TheDonorsProjects">
+            <EntityTypeMapping TypeName="UcasProModel.TheDonorsProject">
+              <MappingFragment StoreEntitySet="TheDonorsProjects">
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="DonorsID" ColumnName="DonorsID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPermessions">
+            <EntityTypeMapping TypeName="UcasProModel.UserPermession">
+              <MappingFragment StoreEntitySet="UserPermession">
+                <ScalarProperty Name="projectID" ColumnName="projectID" />
+                <ScalarProperty Name="PermessionValue" ColumnName="PermessionValue" />
+                <ScalarProperty Name="PermessioID" ColumnName="PermessioID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTbs">
+            <EntityTypeMapping TypeName="UcasProModel.UserTb">
+              <MappingFragment StoreEntitySet="UserTbs">
+                <ScalarProperty Name="TypeUser" ColumnName="TypeUser" />
+                <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+    </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->

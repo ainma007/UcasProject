@@ -12,19 +12,16 @@ namespace Ucas.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class GroupsTb
+    public partial class UserPermession
     {
-        public GroupsTb()
-        {
-            this.PeremissionsTbs = new HashSet<PeremissionsTb>();
-            this.UserTbs = new HashSet<UserTb>();
-        }
-    
         public int ID { get; set; }
-        public string GroupName { get; set; }
-        public string Description { get; set; }
+        public Nullable<int> UserID { get; set; }
+        public int PermessioID { get; set; }
+        public string PermessionValue { get; set; }
+        public Nullable<int> projectID { get; set; }
     
-        public virtual ICollection<PeremissionsTb> PeremissionsTbs { get; set; }
-        public virtual ICollection<UserTb> UserTbs { get; set; }
+        public virtual ProjectProfile ProjectProfile { get; set; }
+        public virtual SystemPermession SystemPermession { get; set; }
+        public virtual UserTb UserTb { get; set; }
     }
 }
