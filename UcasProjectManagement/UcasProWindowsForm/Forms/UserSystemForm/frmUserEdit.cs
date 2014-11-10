@@ -8,6 +8,9 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Ucas.Data.CommandClass;
 using Ucas.Data;
+using Telerik.WinControls.UI;
+using System.Linq;
+using System.Data.Linq;
 
 namespace UcasProWindowsForm.Forms.UserSystemForm
 {
@@ -31,32 +34,49 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
             foreach (var item in UsersCmd.GetAllSystemPermession())
             {
-                PermesssionGdv.Rows.Add(new string[] { item.ID.ToString(), item.PermessionName, "" });
+                
+                var UserPerm = q.Where(p => p.ID == item.ID).SingleOrDefault(); 
+                if (UserPerm==null)
+                {
+                   
+                    radGridView1.Rows.Add(item.ID, item.PermessionName, false,0);
+                }
+                else
+                {
+                    radGridView1.Rows.Add(item.ID, item.PermessionName, bool.Parse(UserPerm.PermessionValue.ToString()),UserPerm.ID); 
+                }
+              
             }
-            //PermesssionGdv.DataSource = UsersCmd.GetAllSystemPermession();
-            //radGridView1.DataSource = PeremissionsSystemCmd.GetAllUserPeremissionsByID(XUserId);
-
          
 
         }
-        UserPermession tb = new UserPermession();
+    
         private void btnOky_Click(object sender, EventArgs e)
         {
-           //string  xvalue = "";
-           // if (XUserId != 0)
-           // {
-           //     tb = new UserPermession ();
-           //     for (int i = 0; i < radGridView1 .Rows .Count - 1 ; i++)
-           //     {
-           //         xvalue  =  radGridView1 .Rows [i].Cells [3].Value .ToString ();
-           //         tb.UserID = XUserId;
-           //     if (xvalue == "True") { tb.PermessionValue = "True"; } else { tb.PermessionValue = "False"; }
-           //     PeremissionsSystemCmd.EditPeremission(tb);
-           //     }
 
+            foreach (var item in radGridView1.Rows)
+            {
+                var q = UsersCmd.GetAllSystemPermession().Where(p => p.ID == int.Parse(item.Cells[0].Value.ToString())).SingleOrDefault();
+                UserPermession px = new UserPermession();
+               
+                if (int.Parse(item.Cells[3].Value.ToString())==0)
+                {
+                    px.PermessioID = q.ID;
+                    px.PermessionValue = item.Cells[2].Value.ToString();
+                    px.UserID = TragetUser.ID;
+                    UsersCmd.SaveUserPermession(px);
+
+                }
+                else
+                {
+                    px.ID = int.Parse(item.Cells[3].Value.ToString());
+                    px.PermessioID = q.ID;
+                    px.PermessionValue = item.Cells[2].Value.ToString();
+                    px.UserID = TragetUser.ID;
                 
-           // }
-
+                    UsersCmd.EditPermessionValue(px);
+                }
+            }
         }
     }
 }

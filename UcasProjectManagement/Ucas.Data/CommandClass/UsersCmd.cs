@@ -128,8 +128,23 @@ namespace Ucas.Data.CommandClass
        {
            db = new UcasProEntities();
            return db.SystemPermessions.ToList();
+
+
+       }
+       public static void EditPermessionValue(UserPermession u)
+       {
+           var q = db.UserPermessions.Where(p => p.ID == u.ID).SingleOrDefault();
+           q.PermessioID = u.PermessioID;
+           q.PermessionValue = u.PermessionValue;
+           q.UserID = u.UserID;
+           db.SaveChanges();
        }
 
+       public static void SaveUserPermession(UserPermession p)
+       {
+           db.UserPermessions.Add(p);
+           db.SaveChanges();
+       }
        //=============================
 
 
