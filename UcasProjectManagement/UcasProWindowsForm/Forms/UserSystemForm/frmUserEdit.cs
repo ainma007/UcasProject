@@ -23,36 +23,49 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         public Ucas.Data.UserTb TragetUser { get; set; }
        
         public int XUserId  { get; set; }
+      
         private void frmUserEdit_Load(object sender, EventArgs e)
-        {
+        
+       {
            // this.Cursor = Cursors.WaitCursor;
            // TragetUser = new UserTb();
+
+           ReFrishData();
+
+        }
+        UserPermession px = new UserPermession();
+        private void ReFrishData()
+        {
+           
+            px = new UserPermession();
             this.employeeNameTextBox.Text = TragetUser.Employee.EmployeeName;
             this.UserNameTextBox.Text = TragetUser.UserName;
             this.PasswordTextBox.Text = TragetUser.Password;
             var q = TragetUser.UserPermessions;
-
-            foreach (var item in UsersCmd.GetAllSystemPermession())
+            radGridView1.Rows.Clear();
+            var xData = UsersCmd.GetAllSystemPermession();
+            foreach (var item in xData )
             {
-                
-                var UserPerm = q.Where(p => p.ID == item.ID).SingleOrDefault(); 
-                if (UserPerm==null)
+
+                var UserPerm = q.Where(p => p.ID == item.ID).SingleOrDefault();
+                if (UserPerm == null)
                 {
-                   
-                    radGridView1.Rows.Add(item.ID, item.PermessionName, false,0);
+
+                    radGridView1.Rows.Add(item.ID, item.PermessionName, false, 0);
                 }
                 else
                 {
-                    radGridView1.Rows.Add(item.ID, item.PermessionName, bool.Parse(UserPerm.PermessionValue.ToString()),UserPerm.ID); 
+                 
+                  radGridView1.Rows.Add(new string []{item.ID.ToString(), item.PermessionName, bool.Parse(UserPerm.PermessionValue.ToString()).ToString (), UserPerm.ID.ToString ()});
                 }
-              
+
             }
-         
 
         }
     
         private void btnOky_Click(object sender, EventArgs e)
         {
+            
 
             foreach (var item in radGridView1.Rows)
             {
@@ -75,8 +88,16 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                     px.UserID = TragetUser.ID;
                 
                     UsersCmd.EditPermessionValue(px);
+                  
+                  
+
                 }
             }
+        }
+
+        private void frmUserEdit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

@@ -92,6 +92,7 @@ namespace Ucas.Data.CommandClass
        public static UserPermession LoadPermession(int ID)
        {
            db = new UcasProEntities();
+          
            return db.UserPermessions.Where(p => p.UserID == ID).SingleOrDefault();
 
        }
@@ -127,8 +128,8 @@ namespace Ucas.Data.CommandClass
        public static List<SystemPermession> GetAllSystemPermession()
        {
            db = new UcasProEntities();
-           return db.SystemPermessions.ToList();
-
+           var q =  db.SystemPermessions.ToList();
+           return q;
 
        }
        public static void EditPermessionValue(UserPermession u)

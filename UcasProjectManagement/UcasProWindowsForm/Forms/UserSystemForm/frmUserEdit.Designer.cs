@@ -184,6 +184,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "frmUserEdit";
             this.ThemeName = "ControlDefault";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmUserEdit_FormClosed);
             this.Load += new System.EventHandler(this.frmUserEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeNameTextBox)).EndInit();

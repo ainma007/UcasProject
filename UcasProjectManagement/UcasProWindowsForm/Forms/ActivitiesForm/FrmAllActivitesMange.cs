@@ -73,7 +73,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             //{
             //    gridViewTemplate2.Rows[i - 1].Cells["Num1"].Value = i.ToString();
             //}
-           // ActivitiesGridView.MasterTemplate.ExpandAll();
+            //ActivitiesGridView.MasterTemplate.ExpandAll();
             TotalActivites();
 
 
@@ -90,26 +90,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         void ActivitiesGridView_RowFormatting(object sender, RowFormattingEventArgs e)
         {
-            try
-            {
-               // e.RowElement.RowInfo.Cells[0].ColumnInfo.HeaderText
-                if (e.RowElement.RowInfo.Cells[2].ColumnInfo.HeaderText == "النشاط الرئيسي")
-                {
-                    e.RowElement.DrawFill = true;
-                    e.RowElement.GradientStyle = GradientStyles.Solid;
-                    e.RowElement.BackColor = Color.Aqua;
-                }
-                else
-                {
-                    e.RowElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local);
-                  
-                }
-            }
-            catch (Exception)
-            {
-
-                return;
-            }
+            
         }
 
         private void ActivitiesGridView_CommandCellClick(object sender, EventArgs e)
@@ -185,8 +166,22 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void ActivitiesGridView_CellFormatting(object sender, CellFormattingEventArgs e)
         {
+            Font newFont = new Font("Arial", 12f, FontStyle.Bold);
 
+            if (e.CellElement.ColumnInfo.Name == "ActivityName") 
+            {
+                e.CellElement.ForeColor = Color.Blue;
+                e.CellElement.Font = newFont;
+                
+            }
            
+
+           if (e.CellElement.ColumnInfo.Name == "ActivityDescription"){
+               e.CellElement.ForeColor = Color.Blue;
+               e.CellElement.Font = newFont;
+
+           }
+          
             
         }
 

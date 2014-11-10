@@ -42,6 +42,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                  //frm.UserNameTextBox.Text = UserGridView.CurrentRow.Cells[2].Value.ToString();
                  //frm.PasswordTextBox.Text = UserGridView.CurrentRow.Cells[3].Value.ToString();
                  frm.ShowDialog();
+                 frm.Dispose();
              }
         }
 
