@@ -38,6 +38,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         {
            
             px = new UserPermession();
+            XUserId = TragetUser.Employee.ID ;
             this.employeeNameTextBox.Text = TragetUser.Employee.EmployeeName;
             this.UserNameTextBox.Text = TragetUser.UserName;
             this.PasswordTextBox.Text = TragetUser.Password;
@@ -87,7 +88,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                     px.PermessionValue = item.Cells[2].Value.ToString();
                     px.UserID = TragetUser.ID;
                 
-                    UsersCmd.EditPermessionValue(px);
+                    UsersCmd.EditPermessionValue(px, XUserId );
                   
                   
 
