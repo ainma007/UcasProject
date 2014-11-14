@@ -48,3 +48,4 @@ C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\obj\
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\Xprema.dll
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\Xprema.pdb
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.csprojResolveAssemblyReference.cache
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\Xprema.pdb

@@ -143,21 +143,14 @@ C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWind
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ExpensesForm.FrmAddExpenses.resources
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ExpensesForm.FrmAddSalaries.resources
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.MainForm.FrmAdmin.resources
-C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.MainForm.FrmLogin.resources
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.MainForm.FrmMainUserPro.resources
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.MainForm.FrmTheDonorsAndProjectAdd.resources
-C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ProjectProfileForm.FrmAddAmountsReceiveds.resources
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ProjectProfileForm.FrmAddProject.resources
-C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ProjectProfileForm.FrmOneProjectProfileManage.resources
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ProjectProfileForm.FrmProjectManage.resources
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.supplierForm.FrmAddsupplier.resources
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.supplierForm.FrmAddTheTheDonors.resources
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.supplierForm.FrmManagementTheDonors.resources
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.supplierForm.FrmManagementSupplier.resources
-C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.FrmAddGroup.resources
-C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.frmAddUser.resources
-C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.FrmGroupManage.resources
-C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.FrmUserManagment.resources
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Properties.Resources.resources
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.csproj.GenerateResource.Cache
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ActivitiesForm.FrmActivitiesEdit.resources
@@ -179,3 +172,21 @@ C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindows
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.frmUserManage.resources
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.FrmAddUserToProject.resources
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.frmUserEdit.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\Xprema.pdb
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ActivitiesForm.FrmActivitiesEdit.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ActivitiesForm.FrmSubActivityEdit.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.AmountRecivedForms.FrmAddAmount.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.AmountRecivedForms.FrmEditAmount.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.AmountRecivedForms.FrmMangeAmount.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ExpensesForm.FrmEditExpense.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ExpensesForm.FrmManageExpenses.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ExpensesForm.FrmSalariesManage.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ExpensesForm.FrmSalaryMang.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ProjectProfileForm.FrmEditProject.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ProjectProfileForm.FrmTheDonorsAndProjectEdit.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ProjectProfileForm.FrmTheDonorsAndProjectManage.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.supplierForm.FrmDonorsEdit.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.supplierForm.FrmEditsupplier.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.FrmAddUserToProject.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.frmUserEdit.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.frmUserManage.resources

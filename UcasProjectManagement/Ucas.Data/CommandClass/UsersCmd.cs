@@ -132,13 +132,26 @@ namespace Ucas.Data.CommandClass
            return q;
 
        }
-       public static void EditPermessionValue(UserPermession u)
+       public static bool  EditPermessionValue(UserPermession u,int xxUserID)
        {
-           var q = db.UserPermessions.Where(p => p.ID == u.ID).SingleOrDefault();
-           q.PermessioID = u.PermessioID;
-           q.PermessionValue = u.PermessionValue;
-           q.UserID = u.UserID;
-           db.SaveChanges();
+           var q = db.UserPermessions.Where(p => p.ID == u.ID && p.UserID == xxUserID ).SingleOrDefault();
+           try
+           {
+               if (q.ID != 0)
+               {
+                   q.PermessioID = u.PermessioID;
+                   q.PermessionValue = u.PermessionValue;
+                   q.UserID = u.UserID;
+                   db.SaveChanges();
+                   return true;
+               }
+               return false;
+           }
+           catch (Exception)
+           {
+
+               return false;
+           }
        }
 
        public static void SaveUserPermession(UserPermession p)
