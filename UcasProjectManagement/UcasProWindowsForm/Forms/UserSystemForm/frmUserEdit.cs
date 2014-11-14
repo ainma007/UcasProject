@@ -56,7 +56,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                 else
                 {
                  
-                  radGridView1.Rows.Add(new string []{item.ID.ToString(), item.PermessionName, bool.Parse(UserPerm.PermessionValue.ToString()).ToString (), UserPerm.ID.ToString ()});
+                  radGridView1.Rows.Add(item.ID, item.PermessionName, bool.Parse(UserPerm.PermessionValue.ToString()), UserPerm.ID);
                 }
 
             }
@@ -97,7 +97,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
         private void frmUserEdit_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Dispose();
+           // this.Dispose();
         }
     }
 }

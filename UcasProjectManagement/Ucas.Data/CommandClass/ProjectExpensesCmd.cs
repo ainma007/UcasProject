@@ -131,8 +131,8 @@ namespace Ucas.Data.CommandClass
         public static List<ProjectExpens> GetAllExpensesByProject(int ProID)
         {
             db = new UcasProEntities();
-            db.Configuration.LazyLoadingEnabled = false;
-            db.Configuration.ProxyCreationEnabled = false;
+            //db.Configuration.LazyLoadingEnabled = false;
+            //db.Configuration.ProxyCreationEnabled = false;
             var LST = (from p in db.ProjectExpenses
                        orderby p.DateofProcess ascending
                        where p.ProjectProfile_ID == ProID

@@ -149,5 +149,11 @@ namespace UcasProWindowsForm.Forms.MainForm
         {
 
         }
+
+        private void radButtonElement1_Click(object sender, EventArgs e)
+        {
+            Reports.ReportCommand.ExpensessReportCmd cmd = new Reports.ReportCommand.ExpensessReportCmd();
+            cmd.GetByProjectId(InformationsClass.ProjID);
+        }
     }
 }

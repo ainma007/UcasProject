@@ -73,7 +73,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             //{
             //    gridViewTemplate2.Rows[i - 1].Cells["Num1"].Value = i.ToString();
             //}
-            //ActivitiesGridView.MasterTemplate.ExpandAll();
+            ActivitiesGridView.MasterTemplate.ExpandAll();
             TotalActivites();
 
 
@@ -98,18 +98,18 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
             var col2 = ActivitiesGridView.CurrentColumn.Index;
 
-            if (col2 == 8)
+            if (col2 == 9)
             {
 
                 this.Cursor = Cursors.WaitCursor;
                 FrmActivitiesEdit EditActi = new FrmActivitiesEdit();
-                EditActi.xID = int.Parse(ActivitiesGridView.CurrentRow.Cells[0].Value.ToString());
-                EditActi.ActivitiesNameTextBox.Text = ActivitiesGridView.CurrentRow.Cells[1].Value.ToString();
-                EditActi.ActivitiesDescriptionTextBox.Text = ActivitiesGridView.CurrentRow.Cells[2].Value.ToString();
-                EditActi.StartDateTimePicker.Text = ActivitiesGridView.CurrentRow.Cells[3].Value.ToString();
-                EditActi.EndDateTimePicker.Text = ActivitiesGridView.CurrentRow.Cells[4].Value.ToString();
-                EditActi.TotalCostTextBox.Text = ActivitiesGridView.CurrentRow.Cells[7].Value.ToString();
-                EditActi.StatusDropDownList.Text = ActivitiesGridView.CurrentRow.Cells[5].Value.ToString();
+                EditActi.xID = int.Parse(ActivitiesGridView.CurrentRow.Cells[1].Value.ToString());
+                EditActi.ActivitiesNameTextBox.Text = ActivitiesGridView.CurrentRow.Cells[2].Value.ToString();
+                EditActi.ActivitiesDescriptionTextBox.Text = ActivitiesGridView.CurrentRow.Cells[3].Value.ToString();
+                EditActi.StartDateTimePicker.Text = ActivitiesGridView.CurrentRow.Cells[4].Value.ToString();
+                EditActi.EndDateTimePicker.Text = ActivitiesGridView.CurrentRow.Cells[5].Value.ToString();
+                EditActi.TotalCostTextBox.Text = ActivitiesGridView.CurrentRow.Cells[8].Value.ToString();
+                EditActi.StatusDropDownList.Text = ActivitiesGridView.CurrentRow.Cells[6].Value.ToString();
 
                 EditActi.ShowDialog();
                 this.Cursor = Cursors.Default;
@@ -118,7 +118,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             }
 
                         
-            if (col2 == 9) 
+            if (col2 == 10) 
             {
                 this.Cursor = Cursors.WaitCursor;
                
@@ -132,7 +132,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
 
             var col = gridViewTemplate2.CurrentColumn.Index;
-            if (col == 10)
+            if (col == 8)
             {
                
                 FrmSubActivityEdit EditSubActi = new FrmSubActivityEdit();
@@ -153,7 +153,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             }
 
 
-            if (col == 11)
+            if (col == 9)
                 
             {
                 
@@ -170,14 +170,51 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
             if (e.CellElement.ColumnInfo.Name == "ActivityName") 
             {
-                e.CellElement.ForeColor = Color.Blue;
+                e.CellElement.ForeColor = Color.DeepSkyBlue;
                 e.CellElement.Font = newFont;
                 
             }
            
 
            if (e.CellElement.ColumnInfo.Name == "ActivityDescription"){
-               e.CellElement.ForeColor = Color.Blue;
+               e.CellElement.ForeColor = Color.DeepSkyBlue;
+               e.CellElement.Font = newFont;
+
+           }
+
+
+           if (e.CellElement.ColumnInfo.Name == "ActivityStartDate")
+           {
+               e.CellElement.ForeColor = Color.DeepSkyBlue;
+               e.CellElement.Font = newFont;
+
+           }
+
+            //
+           if (e.CellElement.ColumnInfo.Name == "ActivityEndDate")
+           {
+               e.CellElement.ForeColor = Color.DeepSkyBlue;
+               e.CellElement.Font = newFont;
+
+           }
+            //
+           if (e.CellElement.ColumnInfo.Name == "ActivityStatus")
+           {
+               e.CellElement.ForeColor = Color.DeepSkyBlue;
+               e.CellElement.Font = newFont;
+
+           }
+            //
+           if (e.CellElement.ColumnInfo.Name == "ActivityProgress")
+           {
+               e.CellElement.ForeColor = Color.DeepSkyBlue;
+               e.CellElement.Font = newFont;
+
+           }
+
+           if (e.CellElement.ColumnInfo.Name == "ActivityProgress")
+           {
+               e.CellElement.ForeColor = Color.DeepSkyBlue;
                e.CellElement.Font = newFont;
 
            }
