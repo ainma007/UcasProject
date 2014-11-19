@@ -43,62 +43,79 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
             this.UserNameTextBox.Text = TragetUser.UserName;
             this.PasswordTextBox.Text = TragetUser.Password;
             var q = TragetUser.UserPermessions;
+
             radGridView1.Rows.Clear();
+
             var xData = UsersCmd.GetAllSystemPermession();
             foreach (var item in xData )
             {
 
-                var UserPerm = q.Where(p => p.ID == item.ID).SingleOrDefault();
-                if (UserPerm == null)
-                {
-
-                    radGridView1.Rows.Add(item.ID, item.PermessionName, false, 0);
+                dataGridView1.Rows.Add( new string []{item.ID.ToString (), item.PermessionName, item.Desription});                
+            }
+            //==========================================================
+            var lst = UsersCmd.GetAllUserPermissonsByUserID(XUserId);
+            int rw = 0;
+            foreach (var i in lst)
+            {
+                
+                if (i.PermessionValue.ToString () == "True"){
+                    dataGridView1.Rows[rw].Cells[3].Value = "True";
                 }
-                else
-                {
-                 
-                  radGridView1.Rows.Add(item.ID, item.PermessionName, bool.Parse(UserPerm.PermessionValue.ToString()), UserPerm.ID);
-                }
-
+                rw++;
             }
 
         }
     
         private void btnOky_Click(object sender, EventArgs e)
         {
-            
 
-            foreach (var item in radGridView1.Rows)
+
+            string xValue = "";
+
+      
+            //==========================================
+            UsersCmd .ClearAllUserPermessions (XUserId );
+            //===========================================
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
             {
-                var q = UsersCmd.GetAllSystemPermession().Where(p => p.ID == int.Parse(item.Cells[0].Value.ToString())).SingleOrDefault();
-                UserPermession px = new UserPermession();
-               
-                if (int.Parse(item.Cells[3].Value.ToString())==0)
-                {
-                    px.PermessioID = q.ID;
-                    px.PermessionValue = item.Cells[2].Value.ToString();
-                    px.UserID = TragetUser.ID;
-                    UsersCmd.SaveUserPermession(px);
 
-                }
-                else
-                {
-                    px.ID = int.Parse(item.Cells[3].Value.ToString());
-                    px.PermessioID = q.ID;
-                    px.PermessionValue = item.Cells[2].Value.ToString();
-                    px.UserID = TragetUser.ID;
-                
-                    UsersCmd.EditPermessionValue(px, XUserId );
-                  
-                  
+                DataGridViewCheckBoxCell chkchecking = dataGridView1.Rows [i].Cells[3] as DataGridViewCheckBoxCell;
+                if (Convert.ToBoolean(chkchecking.Value) == true)
+                { xValue = "True"; } else {xValue = "False"; }            
 
-                }
+                px.PermessioID = int.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString());
+                px.PermessionValue =  xValue ;
+                px.UserID = XUserId;
+                PeremissionsSystemCmd.AddPeremission(px);
             }
+
+  
+            MessageBox.Show(" Changes Was Saved ..");
+            frmUserEdit_Load(sender, e);
+            this.Hide();
+              
         }
+
+
+
+
+
+
+
+
 
         private void frmUserEdit_FormClosed(object sender, FormClosedEventArgs e)
         {
            // this.Dispose();
         }
+      
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+
+
+
     }
 }
