@@ -92,7 +92,8 @@ namespace Ucas.Data.CommandClass
        public static UserPermession LoadPermession(int ID)
        {
            db = new UcasProEntities();
-          
+           db.UserPermessions.Load();
+
            return db.UserPermessions.Where(p => p.UserID == ID).SingleOrDefault();
 
        }
@@ -161,6 +162,36 @@ namespace Ucas.Data.CommandClass
        }
        //=============================
 
+       public static List<UserPermession> GetAllUserPermissonsByUserID(int UsrID )
+       {
+           db = new UcasProEntities();
+           var LST = (from u in db.UserPermessions where u.UserID == UsrID   select u).ToList();
+           return LST;
+       }
 
+
+       public static bool  ClearAllUserPermessions(int usrid)
+       {
+           db = new UcasProEntities();
+           UserPermession tb = new UserPermession();
+           var lst = (from u in db.UserPermessions where u.UserID == usrid select u).ToList();
+
+           List<int> IDes = new List<int>();
+           IDes.Clear();
+           foreach (var i in lst )
+           {
+               IDes.Add(i.ID );
+           }
+           foreach (var item in IDes )
+           {
+               
+                tb = db.UserPermessions.Where(x => x.ID == item   ).Single();
+               db.UserPermessions.Remove(tb);
+               db.SaveChanges();
+                
+           }
+
+           return true; 
+       }
     }
 }
