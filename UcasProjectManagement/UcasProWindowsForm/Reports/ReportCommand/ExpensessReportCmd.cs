@@ -6,6 +6,7 @@ using Microsoft.Reporting.WinForms;
 using UcasProWindowsForm.Reports.ReportObj;
 using UcasProWindowsForm.Reports;
 using Ucas.Data.CommandClass;
+using UcasProWindowsForm.Reports.ReportObj;
 namespace UcasProWindowsForm.Reports.ReportCommand
   
 {

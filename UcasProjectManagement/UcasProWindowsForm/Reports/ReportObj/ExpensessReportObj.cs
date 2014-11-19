@@ -5,7 +5,7 @@ using System.Text;
 
 namespace UcasProWindowsForm.Reports.ReportObj
 {
-   public class ExpensessReportObj
+   public class ExpensessReportObj 
     {
         public int ExpensessID { get; set; }
         public string  ExpensessName { get; set; }

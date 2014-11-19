@@ -9,7 +9,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.Data;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
-using Ucas.Data;
+using UcasProWindowsForm.Reports.ReportObj;
 
 namespace UcasProWindowsForm.Forms.ExpensesForm
 {

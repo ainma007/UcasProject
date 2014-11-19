@@ -190,3 +190,6 @@ C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWind
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.FrmAddUserToProject.resources
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.frmUserEdit.resources
 C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.frmUserManage.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Reports.frmReportViewer.resources
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\RdlCompile.cache
+C:\Users\Abu Ehab\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\RdlCompile.compiled
