@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
+using UcasProWindowsForm.Reports.ReportCommand;
 
 namespace UcasProWindowsForm.Forms.supplierForm
 {
@@ -90,6 +91,12 @@ namespace UcasProWindowsForm.Forms.supplierForm
             FrmAddsupplier frm = new FrmAddsupplier();
             frm.ShowDialog();
             this.Cursor = Cursors.Default;
+        }
+
+        private void ReportviewBtn_Click(object sender, EventArgs e)
+        {
+            SupplierReportCmd cmd = new SupplierReportCmd();
+            cmd.GetAllSupplier();
         }
     }
 }

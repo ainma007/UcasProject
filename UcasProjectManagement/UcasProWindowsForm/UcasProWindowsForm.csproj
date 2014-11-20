@@ -149,6 +149,12 @@
     <Compile Include="Forms\EmployeeForm\FrmContratsManage.Designer.cs">
       <DependentUpon>FrmContratsManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EmployeeForm\FrmEmployeeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm\FrmEmployeeEdit.Designer.cs">
+      <DependentUpon>FrmEmployeeEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EmployeeForm\FrmEmployeeMng.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,8 +307,16 @@
     <Compile Include="Reports\frmReportViewer.Designer.cs">
       <DependentUpon>frmReportViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ReportCommand\DonorsReportCmd.cs" />
+    <Compile Include="Reports\ReportCommand\EmployeeReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\ExpensessReportCmd.cs" />
+    <Compile Include="Reports\ReportCommand\SalaryReportCmd.cs" />
+    <Compile Include="Reports\ReportCommand\SupplierReportCmd.cs" />
+    <Compile Include="Reports\ReportObj\DonaorReportObj.cs" />
+    <Compile Include="Reports\ReportObj\EmployeeReportObj.cs" />
     <Compile Include="Reports\ReportObj\ExpensessReportObj.cs" />
+    <Compile Include="Reports\ReportObj\SalaryReportObj.cs" />
+    <Compile Include="Reports\ReportObj\SupplierReportObj.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -341,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeForm\FrmContratsManage.resx">
       <DependentUpon>FrmContratsManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForm\FrmEmployeeEdit.resx">
+      <DependentUpon>FrmEmployeeEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeForm\FrmEmployeeMng.resx">
       <DependentUpon>FrmEmployeeMng.cs</DependentUpon>
@@ -427,7 +444,12 @@
     <EmbeddedResource Include="Reports\frmReportViewer.resx">
       <DependentUpon>frmReportViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDonor.rdlc" />
+    <EmbeddedResource Include="Reports\rptEmolyee.rdlc" />
     <EmbeddedResource Include="Reports\rptExpensess.rdlc" />
+    <EmbeddedResource Include="Reports\rptSalary.rdlc" />
+    <EmbeddedResource Include="Reports\rptSalaryGroupby.rdlc" />
+    <EmbeddedResource Include="Reports\rptSupplier.rdlc" />
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
@@ -450,7 +472,11 @@
     <None Include="Properties\DataSources\Ucas.Data.TheDonorsProject.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.UcasProEntities.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.UserTb.datasource" />
+    <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.DonaorReportObj.datasource" />
+    <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.EmployeeReportObj.datasource" />
     <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.ExpensessReportObj.datasource" />
+    <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.SalaryReportObj.datasource" />
+    <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.SupplierReportObj.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -461,7 +487,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Add1.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ucas.Data\Ucas.Data.csproj">
       <Project>{0fa4221e-0a64-4a40-b9cc-112cd52d62d4}</Project>
@@ -482,6 +510,20 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refrech1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportvew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddEmp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Add.png" />
+    <Content Include="Resources\Print.png" />
+    <Content Include="Resources\Refrech.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

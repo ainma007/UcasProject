@@ -18,9 +18,9 @@ namespace UcasProWindowsForm.Reports
 
         private void frmReportViewer_Load(object sender, EventArgs e)
         {
-
-            this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
+            this.Cursor = Cursors.WaitCursor;
+             this.reportViewer1.RefreshReport();
+            this.Cursor = Cursors.Default;
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)

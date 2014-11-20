@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
+using UcasProWindowsForm.Reports.ReportCommand;
 
 namespace UcasProWindowsForm.Forms.supplierForm
 {
@@ -80,6 +81,15 @@ namespace UcasProWindowsForm.Forms.supplierForm
             FrmAddTheTheDonors frm = new FrmAddTheTheDonors();
             frm.ShowDialog();
             this.Cursor = Cursors.Default;
+        }
+
+        private void ReportBtn_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            DonorsReportCmd cmd = new DonorsReportCmd();
+            cmd.GetAllDonor();
+            this.Cursor = Cursors.Default;
+
         }
 
         }

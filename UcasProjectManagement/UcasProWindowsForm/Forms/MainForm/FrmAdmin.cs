@@ -11,6 +11,7 @@ using Ucas.Data.CommandClass;
 using UcasProWindowsForm.Forms.EmployeeForm;
 using UcasProWindowsForm.Forms.ProjectProfileForm;
 using UcasProWindowsForm.Forms.supplierForm;
+using UcasProWindowsForm.Forms.UserSystemForm;
 
 
 
@@ -147,6 +148,12 @@ namespace UcasProWindowsForm.Forms.MainForm
             FrmManagementSupplier MangSup = new FrmManagementSupplier();
             MangSup.ShowDialog();
             this.Cursor = Cursors.Default;
+        }
+
+        private void UserMangBtn_Click(object sender, EventArgs e)
+        {
+            frmUserManage frm = new frmUserManage();
+            frm.ShowDialog();
         }
 
        

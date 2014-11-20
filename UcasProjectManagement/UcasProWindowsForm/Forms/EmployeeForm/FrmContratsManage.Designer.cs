@@ -94,6 +94,7 @@
             // 
             this.AddBtn.AccessibleDescription = "اضافة سجل";
             this.AddBtn.AccessibleName = "اضافة سجل";
+            this.AddBtn.Image = global::UcasProWindowsForm.Properties.Resources.Add1;
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Text = "اضافة سجل";
             this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -104,8 +105,10 @@
             // 
             this.RefreshBtn.AccessibleDescription = "تحديث البيانات";
             this.RefreshBtn.AccessibleName = "تحديث البيانات";
+            this.RefreshBtn.Image = global::UcasProWindowsForm.Properties.Resources.Refrech;
             this.RefreshBtn.Name = "RefreshBtn";
             this.RefreshBtn.Text = "تحديث البيانات";
+            this.RefreshBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.RefreshBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 

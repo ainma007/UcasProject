@@ -626,6 +626,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <Direction>RTL</Direction>
                       </Style>
                     </Textbox>
                   </CellContents>

@@ -90,7 +90,16 @@ namespace Ucas.Data.CommandClass
                        select c).ToList();
             return LST;
         }
-
+        public static List<Monthlysalary> GetSalaryBySelectedprotID(int ProId)
+        {
+            db = new UcasProEntities();
+            //db.Configuration.LazyLoadingEnabled = false;
+            //db.Configuration.ProxyCreationEnabled = false;
+            var LST = (from c in db.Monthlysalaries
+                       where c.ProjectProfile_ID == ProId
+                       select c).ToList();
+            return LST;
+        }
 
         public static IEnumerable GetAllSalaryBypro(int ProId)
         {

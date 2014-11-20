@@ -93,8 +93,10 @@
             // 
             this.AddBtn.AccessibleDescription = "اضافة سجل";
             this.AddBtn.AccessibleName = "اضافة سجل";
+            this.AddBtn.Image = global::UcasProWindowsForm.Properties.Resources.Add1;
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Text = "اضافة سجل";
+            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AddBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
@@ -102,8 +104,10 @@
             // 
             this.RefreshBtn.AccessibleDescription = "تحديث السجلات";
             this.RefreshBtn.AccessibleName = "تحديث السجلات";
+            this.RefreshBtn.Image = global::UcasProWindowsForm.Properties.Resources.Refrech1;
             this.RefreshBtn.Name = "RefreshBtn";
             this.RefreshBtn.Text = "تحديث السجلات";
+            this.RefreshBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.RefreshBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // ReportGroup
@@ -121,16 +125,20 @@
             // 
             this.PrintDraftBtn.AccessibleDescription = "PrintDraftBtn";
             this.PrintDraftBtn.AccessibleName = "PrintDraftBtn";
+            this.PrintDraftBtn.Image = global::UcasProWindowsForm.Properties.Resources.Print;
             this.PrintDraftBtn.Name = "PrintDraftBtn";
             this.PrintDraftBtn.Text = "طباعة مسودة";
+            this.PrintDraftBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.PrintDraftBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // Reportbtn
             // 
             this.Reportbtn.AccessibleDescription = "Reportbtn";
             this.Reportbtn.AccessibleName = "Reportbtn";
+            this.Reportbtn.Image = global::UcasProWindowsForm.Properties.Resources.reportvew;
             this.Reportbtn.Name = "Reportbtn";
             this.Reportbtn.Text = "عرض تقرير";
+            this.Reportbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Reportbtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // radRibbonFormBehavior1

@@ -152,8 +152,24 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void radButtonElement1_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void Expenses_Rbt_btn_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
             Reports.ReportCommand.ExpensessReportCmd cmd = new Reports.ReportCommand.ExpensessReportCmd();
             cmd.GetByProjectId(InformationsClass.ProjID);
+            this.Cursor = Cursors.Default;
+        }
+
+        private void Salary_rbt_btn_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+
+            Reports.ReportCommand.SalaryReportCmd cmd = new Reports.ReportCommand.SalaryReportCmd();
+            cmd.GetByProjectId(InformationsClass.ProjID);
+            this.Cursor = Cursors.Default;
         }
     }
 }

@@ -36,49 +36,17 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             Col2.DataSource = s1;
         }
 
-        private void LockGrid()
-        {
-            for (int i = 0; i <= EmployeeGridView.Rows.Count - 1; i++)
-            {
-                EmployeeGridView.Rows[i].Cells[0].ReadOnly = true;
-                EmployeeGridView.Rows[i].Cells[1].ReadOnly = true;
-                EmployeeGridView.Rows[i].Cells[2].ReadOnly = true;
-                EmployeeGridView.Rows[i].Cells[3].ReadOnly = true;
-                EmployeeGridView.Rows[i].Cells[4].ReadOnly = true;
-                EmployeeGridView.Rows[i].Cells[5].ReadOnly = true;
-                EmployeeGridView.Rows[i].Cells[6].ReadOnly = true;
-                EmployeeGridView.Rows[i].Cells[7].ReadOnly = true;
-                EmployeeGridView.Rows[i].Cells[8].ReadOnly = true;
-
-
-            }
-
-        }
+       
         private void FrmEmployeeMng_Load(object sender, EventArgs e)
         {
             GetAllEmployee();
             FillCombo();
-            LockGrid();
+            
         }
 
         private void EmployeeGridView_CellDoubleClick(object sender, GridViewCellEventArgs e)
         {
-            try
-            {
-                EmployeeGridView.Rows[e.RowIndex].Cells[0].ReadOnly = false;
-                EmployeeGridView.Rows[e.RowIndex].Cells[1].ReadOnly = false;
-                EmployeeGridView.Rows[e.RowIndex].Cells[2].ReadOnly = false;
-                EmployeeGridView.Rows[e.RowIndex].Cells[3].ReadOnly = false;
-                EmployeeGridView.Rows[e.RowIndex].Cells[4].ReadOnly = false;
-                EmployeeGridView.Rows[e.RowIndex].Cells[5].ReadOnly = false;
-                EmployeeGridView.Rows[e.RowIndex].Cells[6].ReadOnly = false;
-                EmployeeGridView.Rows[e.RowIndex].Cells[7].ReadOnly = false;
-            }
-            catch (Exception)
-            {
-
-                return;
-            }
+            
           
            
 
@@ -89,20 +57,24 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             var col = EmployeeGridView.CurrentColumn.Index;
             if (col == 8)
             {
-                if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
-                {
-                    Employee emp = employeeBindingSource.Current as Employee;
-                    EmployeeCmd.EditEmployee(emp);
-                    GetAllEmployee();
-                    LockGrid();
-                }
-                else
-                {
+                //if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                //{
+                //Employee emp = employeeBindingSource.Current as Employee;
+                //EmployeeCmd.EditEmployee(emp);
 
-                    GetAllEmployee();
+                FrmEmployeeEdit frm = new FrmEmployeeEdit();
+                Ucas.Data.Employee emp = (Ucas.Data.Employee)EmployeeGridView.CurrentRow.DataBoundItem;
+                frm.TragetEmployee = emp;
+                frm.ShowDialog();
+                    
+                //}
+                //else
+                //{
 
-                    LockGrid();
-                }
+                  
+
+                    
+                //}
             }
 
             if (col == 9)
@@ -112,7 +84,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                     Employee emp = employeeBindingSource.Current as Employee;
                     EmployeeCmd.DeleteEmployee(emp.ID);
                     GetAllEmployee();
-                    LockGrid();
+                    
                 }
 
 
@@ -144,6 +116,16 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         private void EmployeeGridView_Click(object sender, EventArgs e)
         {
 }
+
+        private void ReportBtn_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+
+            Reports.ReportCommand.EmployeeReportCmd cmd = new Reports.ReportCommand.EmployeeReportCmd();
+            cmd.GetAllEmployee();
+            this.Cursor = Cursors.Default;
+
+        }
 }
        
     }

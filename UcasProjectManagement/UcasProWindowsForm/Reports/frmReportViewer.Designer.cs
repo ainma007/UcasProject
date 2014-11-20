@@ -30,18 +30,30 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.DonaorReportObjBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SupplierReportObjBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SalaryReportObjBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ExpensessReportObjBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.DonaorReportObjBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SupplierReportObjBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryReportObjBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExpensessReportObjBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
+            // DonaorReportObjBindingSource
+            // 
+            this.DonaorReportObjBindingSource.DataSource = typeof(UcasProWindowsForm.Reports.ReportObj.DonaorReportObj);
+            // 
+            // SupplierReportObjBindingSource
+            // 
+            this.SupplierReportObjBindingSource.DataSource = typeof(UcasProWindowsForm.Reports.ReportObj.SupplierReportObj);
+            // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "SalaryDataSet";
+            reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.SalaryReportObjBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "";
@@ -74,6 +86,8 @@
             this.Text = "frmReportViewer";
             this.ThemeName = "ControlDefault";
             this.Load += new System.EventHandler(this.frmReportViewer_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DonaorReportObjBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SupplierReportObjBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryReportObjBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExpensessReportObjBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -86,6 +100,8 @@
         private System.Windows.Forms.BindingSource ExpensessReportObjBindingSource;
         private System.Windows.Forms.BindingSource SalaryReportObjBindingSource;
         public Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource SupplierReportObjBindingSource;
+        private System.Windows.Forms.BindingSource DonaorReportObjBindingSource;
 
     }
 }
