@@ -76,7 +76,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
             //==========================================
             UsersCmd .ClearAllUserPermessions (XUserId );
             //===========================================
-            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            for (int i = 0; i < dataGridView1.Rows.Count ; i++)
             {
 
                 DataGridViewCheckBoxCell chkchecking = dataGridView1.Rows [i].Cells[3] as DataGridViewCheckBoxCell;

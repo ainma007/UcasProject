@@ -66,7 +66,7 @@
             // 
             // SalaryReportObjBindingSource
             // 
-            this.SalaryReportObjBindingSource.DataSource = typeof(UcasProWindowsForm.Reports.ReportObj.SalaryReportObj);
+//            this.SalaryReportObjBindingSource.DataSource = typeof(UcasProWindowsForm.Reports.ReportObj.SalaryReportObj);
             // 
             // ExpensessReportObjBindingSource
             // 
