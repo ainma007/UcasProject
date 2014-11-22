@@ -26,6 +26,7 @@ namespace Ucas.Data
         public Nullable<double> SelaryAmount { get; set; }
         public string Status { get; set; }
         public int ProjectProfile_ID { get; set; }
+        public Nullable<double> TotalSalary { get; set; }
     
         public virtual Employee Employee { get; set; }
         public virtual ProjectProfile ProjectProfile { get; set; }

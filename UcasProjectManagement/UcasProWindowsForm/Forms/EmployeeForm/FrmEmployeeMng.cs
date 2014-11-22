@@ -57,33 +57,25 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             var col = EmployeeGridView.CurrentColumn.Index;
             if (col == 8)
             {
-                //if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
-                //{
-                //Employee emp = employeeBindingSource.Current as Employee;
-                //EmployeeCmd.EditEmployee(emp);
-
+                this.Cursor = Cursors.WaitCursor;
                 FrmEmployeeEdit frm = new FrmEmployeeEdit();
                 Ucas.Data.Employee emp = (Ucas.Data.Employee)EmployeeGridView.CurrentRow.DataBoundItem;
                 frm.TragetEmployee = emp;
                 frm.ShowDialog();
-                    
-                //}
-                //else
-                //{
-
-                  
-
-                    
-                //}
+                this.Cursor = Cursors.Default;     
+              
+              
             }
 
             if (col == 9)
             {
-                if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
+                    this.Cursor = Cursors.WaitCursor;
                     Employee emp = employeeBindingSource.Current as Employee;
                     EmployeeCmd.DeleteEmployee(emp.ID);
                     GetAllEmployee();
+                    this.Cursor = Cursors.Default;   
                     
                 }
 
@@ -98,13 +90,17 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
    
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             FrmAddEmployee add = new FrmAddEmployee();
             add.ShowDialog();
+            this.Cursor = Cursors.Default;
         }
 
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             GetAllEmployee();
+            this.Cursor = Cursors.Default;
         }
 
         private void FrmEmployeeMng_Activated(object sender, EventArgs e)

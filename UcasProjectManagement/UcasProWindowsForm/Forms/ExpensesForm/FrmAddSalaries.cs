@@ -26,15 +26,17 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             ///GetAllContractsProjectID
             this.EmployeeComboBox.AutoFilter = true;
             this.EmployeeComboBox.ValueMember = "ID";
-            this.EmployeeComboBox.DisplayMember = "EmployeeName";
+            this.EmployeeComboBox.DisplayMember = "Employee.EmployeeName";
 
-
+            
             FilterDescriptor filter = new FilterDescriptor();
             filter.PropertyName = this.EmployeeComboBox.DisplayMember;
             filter.Operator = FilterOperator.Contains;
             this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-            EmployeeComboBox.DataSource = ContractCmd.GetAllContractsForComboBox(InformationsClass.ProjID);
+            EmployeeComboBox.DataSource = ContractCmd.GetAllContractsByproID(InformationsClass.ProjID);
+           
 
+            
         }
         private void FrmAddSalaries_Load(object sender, EventArgs e)
         {

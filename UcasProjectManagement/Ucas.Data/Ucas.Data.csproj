@@ -63,16 +63,6 @@
     <Compile Include="CommandClass\ContractCmd.cs" />
     <Compile Include="CommandClass\EmployeeCmd.cs" />
     <Compile Include="CommandClass\PeremissionsSystemCmd.cs" />
-    <Compile Include="Special Classes\InformationsClass.cs" />
-    <Compile Include="CommandClass\ProjectControlCmd.cs" />
-    <Compile Include="CommandClass\ProjectExpensesCmd.cs" />
-    <Compile Include="CommandClass\ProjectProfileCmd.cs" />
-    <Compile Include="CommandClass\SalariesCmd.cs" />
-    <Compile Include="CommandClass\SubActivityCmd.cs" />
-    <Compile Include="CommandClass\SuppliersCmd.cs" />
-    <Compile Include="CommandClass\TheDonorsCmd.cs" />
-    <Compile Include="CommandClass\TheDonorsProjectCmd.cs" />
-    <Compile Include="CommandClass\UsersCmd.cs" />
     <Compile Include="Contract.cs">
       <DependentUpon>UcasPro.tt</DependentUpon>
     </Compile>
@@ -97,6 +87,16 @@
     <Compile Include="ProjectSubActivity.cs">
       <DependentUpon>UcasPro.tt</DependentUpon>
     </Compile>
+    <Compile Include="Special Classes\InformationsClass.cs" />
+    <Compile Include="CommandClass\ProjectControlCmd.cs" />
+    <Compile Include="CommandClass\ProjectExpensesCmd.cs" />
+    <Compile Include="CommandClass\ProjectProfileCmd.cs" />
+    <Compile Include="CommandClass\SalariesCmd.cs" />
+    <Compile Include="CommandClass\SubActivityCmd.cs" />
+    <Compile Include="CommandClass\SuppliersCmd.cs" />
+    <Compile Include="CommandClass\TheDonorsCmd.cs" />
+    <Compile Include="CommandClass\TheDonorsProjectCmd.cs" />
+    <Compile Include="CommandClass\UsersCmd.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Special Classes\AlertsClass.cs" />
     <Compile Include="Supplier.cs">

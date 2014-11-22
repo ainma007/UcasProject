@@ -14,8 +14,8 @@ namespace Ucas.Data.CommandClass
             try
             {
                 db = new UcasProEntities();
-                db.Configuration.ProxyCreationEnabled = false;
-                db.Configuration.LazyLoadingEnabled = false;
+                //db.Configuration.ProxyCreationEnabled = false;
+                //db.Configuration.LazyLoadingEnabled = false;
                 db.Employees.Add(emp);
                 db.SaveChanges();
                 return true;

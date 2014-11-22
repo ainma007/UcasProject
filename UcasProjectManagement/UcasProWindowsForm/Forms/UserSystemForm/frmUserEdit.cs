@@ -44,7 +44,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
             this.PasswordTextBox.Text = TragetUser.Password;
             var q = TragetUser.UserPermessions;
 
-            radGridView1.Rows.Clear();
+          
 
             var xData = UsersCmd.GetAllSystemPermession();
             foreach (var item in xData )

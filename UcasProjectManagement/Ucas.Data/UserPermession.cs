@@ -16,11 +16,9 @@ namespace Ucas.Data
     {
         public int ID { get; set; }
         public Nullable<int> UserID { get; set; }
-        public int PermessioID { get; set; }
+        public Nullable<int> PermessioID { get; set; }
         public string PermessionValue { get; set; }
-        public Nullable<int> projectID { get; set; }
     
-        public virtual ProjectProfile ProjectProfile { get; set; }
         public virtual SystemPermession SystemPermession { get; set; }
         public virtual UserTb UserTb { get; set; }
     }

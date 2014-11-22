@@ -31,6 +31,7 @@
     <Property Name="SelaryAmount" Type="float" />
     <Property Name="Status" Type="nchar" MaxLength="10" />
     <Property Name="ProjectProfile_ID" Type="int" Nullable="false" />
+    <Property Name="TotalSalary" Type="float" />
   </EntityType>
   <EntityType Name="Employees">
     <Key>
@@ -144,7 +145,7 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
-  <EntityType Name="SystemPermession">
+  <EntityType Name="SystemPermessions">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
@@ -173,15 +174,14 @@
     <Property Name="DonorsID" Type="int" Nullable="false" />
     <Property Name="TotalCost" Type="float" />
   </EntityType>
-  <EntityType Name="UserPermession">
+  <EntityType Name="UserPermessions">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserID" Type="int" />
-    <Property Name="PermessioID" Type="int" Nullable="false" />
+    <Property Name="PermessioID" Type="int" />
     <Property Name="PermessionValue" Type="nvarchar" MaxLength="50" />
-    <Property Name="projectID" Type="int" />
   </EntityType>
   <EntityType Name="UserTbs">
     <Key>
@@ -397,38 +397,26 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_UserPermession_ProjectProfiles">
-    <End Role="ProjectProfiles" Type="Self.ProjectProfiles" Multiplicity="0..1" />
-    <End Role="UserPermession" Type="Self.UserPermession" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ProjectProfiles">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="UserPermession">
-        <PropertyRef Name="projectID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_UserPermession_SystemPermession">
-    <End Role="SystemPermession" Type="Self.SystemPermession" Multiplicity="1" />
-    <End Role="UserPermession" Type="Self.UserPermession" Multiplicity="*" />
+    <End Role="SystemPermessions" Type="Self.SystemPermessions" Multiplicity="0..1" />
+    <End Role="UserPermessions" Type="Self.UserPermessions" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="SystemPermession">
+      <Principal Role="SystemPermessions">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="UserPermession">
+      <Dependent Role="UserPermessions">
         <PropertyRef Name="PermessioID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_UserPermession_UserTbs">
     <End Role="UserTbs" Type="Self.UserTbs" Multiplicity="0..1" />
-    <End Role="UserPermession" Type="Self.UserPermession" Multiplicity="*" />
+    <End Role="UserPermessions" Type="Self.UserPermessions" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserTbs">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="UserPermession">
+      <Dependent Role="UserPermessions">
         <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>
@@ -458,10 +446,10 @@
     <EntitySet Name="ProjectSubActivities" EntityType="Self.ProjectSubActivities" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="SystemPermession" EntityType="Self.SystemPermession" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SystemPermessions" EntityType="Self.SystemPermessions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TheDonors" EntityType="Self.TheDonors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TheDonorsProjects" EntityType="Self.TheDonorsProjects" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="UserPermession" EntityType="Self.UserPermession" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserPermessions" EntityType="Self.UserPermessions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserTbs" EntityType="Self.UserTbs" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_AmountsReceived_TheFinancerProjects" Association="Self.FK_AmountsReceived_TheFinancerProjects">
       <End Role="TheDonorsProjects" EntitySet="TheDonorsProjects" />
@@ -531,17 +519,13 @@
       <End Role="TheDonors" EntitySet="TheDonors" />
       <End Role="TheDonorsProjects" EntitySet="TheDonorsProjects" />
     </AssociationSet>
-    <AssociationSet Name="FK_UserPermession_ProjectProfiles" Association="Self.FK_UserPermession_ProjectProfiles">
-      <End Role="ProjectProfiles" EntitySet="ProjectProfiles" />
-      <End Role="UserPermession" EntitySet="UserPermession" />
-    </AssociationSet>
     <AssociationSet Name="FK_UserPermession_SystemPermession" Association="Self.FK_UserPermession_SystemPermession">
-      <End Role="SystemPermession" EntitySet="SystemPermession" />
-      <End Role="UserPermession" EntitySet="UserPermession" />
+      <End Role="SystemPermessions" EntitySet="SystemPermessions" />
+      <End Role="UserPermessions" EntitySet="UserPermessions" />
     </AssociationSet>
     <AssociationSet Name="FK_UserPermession_UserTbs" Association="Self.FK_UserPermession_UserTbs">
       <End Role="UserTbs" EntitySet="UserTbs" />
-      <End Role="UserPermession" EntitySet="UserPermession" />
+      <End Role="UserPermessions" EntitySet="UserPermessions" />
     </AssociationSet>
     <AssociationSet Name="FK_UserTb_Employees" Association="Self.FK_UserTb_Employees">
       <End Role="Employees" EntitySet="Employees" />

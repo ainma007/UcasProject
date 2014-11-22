@@ -86,10 +86,6 @@
       <End Role="ProjectProfile" EntitySet="ProjectProfiles" />
       <End Role="TheDonorsProject" EntitySet="TheDonorsProjects" />
     </AssociationSet>
-    <AssociationSet Name="FK_UserPermession_ProjectProfiles" Association="UcasProModel.FK_UserPermession_ProjectProfiles">
-      <End Role="ProjectProfile" EntitySet="ProjectProfiles" />
-      <End Role="UserPermession" EntitySet="UserPermessions" />
-    </AssociationSet>
     <AssociationSet Name="FK_UserPermession_SystemPermession" Association="UcasProModel.FK_UserPermession_SystemPermession">
       <End Role="SystemPermession" EntitySet="SystemPermessions" />
       <End Role="UserPermession" EntitySet="UserPermessions" />
@@ -150,6 +146,7 @@
     <NavigationProperty Name="Employee" Relationship="UcasProModel.FK_Contracts_Employees" FromRole="Contract" ToRole="Employee" />
     <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_Contracts_ProjectProfiles" FromRole="Contract" ToRole="ProjectProfile" />
     <NavigationProperty Name="Monthlysalaries" Relationship="UcasProModel.FK_Salaries_Contracts" FromRole="Contract" ToRole="Monthlysalary" />
+    <Property Name="TotalSalary" Type="Double" />
   </EntityType>
   <EntityType Name="Employee">
     <Key>
@@ -245,7 +242,6 @@
     <NavigationProperty Name="ProjectExpenses" Relationship="UcasProModel.FK_ProjectExpenses_ProjectProfiles" FromRole="ProjectProfile" ToRole="ProjectExpens" />
     <NavigationProperty Name="ProjectSubActivities" Relationship="UcasProModel.FK_ProjectSubActivities_ProjectProfiles" FromRole="ProjectProfile" ToRole="ProjectSubActivity" />
     <NavigationProperty Name="TheDonorsProjects" Relationship="UcasProModel.FK_TheFinancerProject_ProjectProfiles" FromRole="ProjectProfile" ToRole="TheDonorsProject" />
-    <NavigationProperty Name="UserPermessions" Relationship="UcasProModel.FK_UserPermession_ProjectProfiles" FromRole="ProjectProfile" ToRole="UserPermession" />
   </EntityType>
   <EntityType Name="ProjectSubActivity">
     <Key>
@@ -318,10 +314,8 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="UserID" Type="Int32" />
-    <Property Name="PermessioID" Type="Int32" Nullable="false" />
+    <Property Name="PermessioID" Type="Int32" />
     <Property Name="PermessionValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="projectID" Type="Int32" />
-    <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_UserPermession_ProjectProfiles" FromRole="UserPermession" ToRole="ProjectProfile" />
     <NavigationProperty Name="SystemPermession" Relationship="UcasProModel.FK_UserPermession_SystemPermession" FromRole="UserPermession" ToRole="SystemPermession" />
     <NavigationProperty Name="UserTb" Relationship="UcasProModel.FK_UserPermession_UserTbs" FromRole="UserPermession" ToRole="UserTb" />
   </EntityType>
@@ -542,20 +536,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_UserPermession_ProjectProfiles">
-    <End Type="UcasProModel.ProjectProfile" Role="ProjectProfile" Multiplicity="0..1" />
-    <End Type="UcasProModel.UserPermession" Role="UserPermession" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ProjectProfile">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="UserPermession">
-        <PropertyRef Name="projectID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_UserPermession_SystemPermession">
-    <End Type="UcasProModel.SystemPermession" Role="SystemPermession" Multiplicity="1" />
+    <End Type="UcasProModel.SystemPermession" Role="SystemPermession" Multiplicity="0..1" />
     <End Type="UcasProModel.UserPermession" Role="UserPermession" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="SystemPermession">

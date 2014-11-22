@@ -37,10 +37,11 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            #region "  CheckFillTextBox "
             if (EmployeeComboBox.SelectedValue == null)
             {
                 EmployeeComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
-
+                errorProvider1.SetError(this.EmployeeComboBox, "من فضلك ادخل اسم الموظف");
                 EmployeeComboBox.Focus();
 
                 return;
@@ -48,12 +49,30 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             else
             {
                 EmployeeComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+
+            if (TotaltextBox.Text == "")
+            {
+
+                TotaltextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.TotaltextBox, "من فضلك ادخل قيمة العقد");
+
+                TotaltextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                TotaltextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
 
             if (SalaryTextBox.Text == "")
             {
 
                 SalaryTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.SalaryTextBox, "من فضلك ادخل قيمة الراتب");
 
                 SalaryTextBox.Focus();
 
@@ -62,7 +81,12 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             else
             {
                 SalaryTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
+
+            #endregion
+
+            this.Cursor = Cursors.WaitCursor;
             Contract tb = new Contract()
             {
                 Employee_ID=int.Parse(EmployeeComboBox.SelectedValue.ToString()),
@@ -70,10 +94,12 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                 StartDate=DateTime.Parse( StartDateTimePicker.Value.Date.ToShortDateString()),
                 EndDate=DateTime.Parse( EndDateTimePicker.Value.Date.ToShortDateString()),
                 SelaryAmount=Convert.ToDouble(SalaryTextBox.Text),
+                 TotalSalary=Convert.ToDouble(TotaltextBox.Text),
                 Status="فعال",
 
             };
             ContractCmd.NewContract(tb);
+            this.Cursor = Cursors.WaitCursor;
             RadMessageBox.Show("تمت الاضافة");
             ClearTxt();
         }
@@ -103,6 +129,11 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             {
                 e.Handled = true;
             }
+        }
+
+        private void radGroupBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

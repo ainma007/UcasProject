@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 11/01/2014 10:43:59
+-- Date Created: 11/21/2014 00:31:17
 -- Generated from EDMX file: C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\UcasPro.edmx
 -- --------------------------------------------------
 
@@ -38,12 +38,6 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_UserTb_Employees]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[UserTbs] DROP CONSTRAINT [FK_UserTb_Employees];
 GO
-IF OBJECT_ID(N'[dbo].[FK_PeremissionsTb_GroupsTb]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PeremissionsTbs] DROP CONSTRAINT [FK_PeremissionsTb_GroupsTb];
-GO
-IF OBJECT_ID(N'[dbo].[FK_UserTb_GroupsTbs]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[UserTbs] DROP CONSTRAINT [FK_UserTb_GroupsTbs];
-GO
 IF OBJECT_ID(N'[dbo].[FK_Monthlysalaries_ProjectProfiles]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Monthlysalaries] DROP CONSTRAINT [FK_Monthlysalaries_ProjectProfiles];
 GO
@@ -74,8 +68,14 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_TheFinancerProject_ProjectProfiles]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[TheDonorsProjects] DROP CONSTRAINT [FK_TheFinancerProject_ProjectProfiles];
 GO
+IF OBJECT_ID(N'[dbo].[FK_UserPermession_SystemPermession]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserPermessions] DROP CONSTRAINT [FK_UserPermession_SystemPermession];
+GO
 IF OBJECT_ID(N'[dbo].[FK_TheFinancerProject_Thefinanciers]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[TheDonorsProjects] DROP CONSTRAINT [FK_TheFinancerProject_Thefinanciers];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserPermession_UserTbs]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserPermessions] DROP CONSTRAINT [FK_UserPermession_UserTbs];
 GO
 
 -- --------------------------------------------------
@@ -97,14 +97,8 @@ GO
 IF OBJECT_ID(N'[dbo].[Employees]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Employees];
 GO
-IF OBJECT_ID(N'[dbo].[GroupsTbs]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[GroupsTbs];
-GO
 IF OBJECT_ID(N'[dbo].[Monthlysalaries]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Monthlysalaries];
-GO
-IF OBJECT_ID(N'[dbo].[PeremissionsTbs]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[PeremissionsTbs];
 GO
 IF OBJECT_ID(N'[dbo].[ProjectActivities]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ProjectActivities];
@@ -124,11 +118,17 @@ GO
 IF OBJECT_ID(N'[dbo].[Suppliers]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Suppliers];
 GO
+IF OBJECT_ID(N'[dbo].[SystemPermessions]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SystemPermessions];
+GO
 IF OBJECT_ID(N'[dbo].[TheDonors]', 'U') IS NOT NULL
     DROP TABLE [dbo].[TheDonors];
 GO
 IF OBJECT_ID(N'[dbo].[TheDonorsProjects]', 'U') IS NOT NULL
     DROP TABLE [dbo].[TheDonorsProjects];
+GO
+IF OBJECT_ID(N'[dbo].[UserPermessions]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserPermessions];
 GO
 IF OBJECT_ID(N'[dbo].[UserTbs]', 'U') IS NOT NULL
     DROP TABLE [dbo].[UserTbs];
@@ -176,7 +176,8 @@ CREATE TABLE [dbo].[Contracts] (
     [EndDate] datetime  NULL,
     [SelaryAmount] float  NULL,
     [Status] nchar(10)  NULL,
-    [ProjectProfile_ID] int  NOT NULL
+    [ProjectProfile_ID] int  NOT NULL,
+    [TotalSalary] nvarchar(max)  NULL
 );
 GO
 
@@ -193,14 +194,6 @@ CREATE TABLE [dbo].[Employees] (
 );
 GO
 
--- Creating table 'GroupsTbs'
-CREATE TABLE [dbo].[GroupsTbs] (
-    [ID] int IDENTITY(1,1) NOT NULL,
-    [GroupName] nvarchar(50)  NULL,
-    [Description] nvarchar(max)  NULL
-);
-GO
-
 -- Creating table 'Monthlysalaries'
 CREATE TABLE [dbo].[Monthlysalaries] (
     [ID] int IDENTITY(1,1) NOT NULL,
@@ -212,27 +205,6 @@ CREATE TABLE [dbo].[Monthlysalaries] (
 );
 GO
 
--- Creating table 'PeremissionsTbs'
-CREATE TABLE [dbo].[PeremissionsTbs] (
-    [ID] int IDENTITY(1,1) NOT NULL,
-    [GroupID] int  NULL,
-    [UpDateUser] int  NULL,
-    [AddProject] int  NULL,
-    [DisplayExpenses] int  NULL,
-    [CanPrint] int  NULL,
-    [AddEmployee] int  NULL,
-    [AddSuppliers] int  NULL,
-    [AddFinncers] int  NULL,
-    [EditEmployee] int  NULL,
-    [DeleteEmployee] int  NULL,
-    [EditFinncers] int  NULL,
-    [DeleteFinncers] int  NULL,
-    [EditSuppliers] int  NULL,
-    [DeleteSuppliers] int  NULL,
-    [EditProject] int  NOT NULL
-);
-GO
-
 -- Creating table 'ProjectActivities'
 CREATE TABLE [dbo].[ProjectActivities] (
     [ID] int IDENTITY(1,1) NOT NULL,
@@ -241,7 +213,7 @@ CREATE TABLE [dbo].[ProjectActivities] (
     [StartDate] datetime  NULL,
     [EndDate] datetime  NULL,
     [Status] nvarchar(max)  NULL,
-    [Progress] int  NULL,
+    [Progress] float  NULL,
     [TotalCost] float  NULL,
     [ProjectProfile_ID] int  NOT NULL
 );
@@ -278,7 +250,7 @@ CREATE TABLE [dbo].[ProjectProfiles] (
     [StartDate] datetime  NULL,
     [EndDate] datetime  NULL,
     [Status] nvarchar(max)  NULL,
-    [progress] int  NULL,
+    [progress] float  NULL,
     [TotalCost] float  NULL,
     [Coin] nvarchar(50)  NULL
 );
@@ -292,7 +264,7 @@ CREATE TABLE [dbo].[ProjectSubActivities] (
     [Startdate] datetime  NULL,
     [enddate] datetime  NULL,
     [Status] nvarchar(max)  NULL,
-    [Progress] int  NULL,
+    [Progress] float  NULL,
     [TotalCost] float  NULL,
     [ProjectActivity_ID] int  NULL,
     [ProjectProfile_ID] int  NULL
@@ -308,6 +280,14 @@ CREATE TABLE [dbo].[Suppliers] (
     [Fax] nvarchar(max)  NULL,
     [Email] nvarchar(max)  NULL,
     [Adderss] nvarchar(max)  NULL
+);
+GO
+
+-- Creating table 'SystemPermessions'
+CREATE TABLE [dbo].[SystemPermessions] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [PermessionName] varchar(50)  NULL,
+    [Desription] nvarchar(50)  NULL
 );
 GO
 
@@ -332,12 +312,20 @@ CREATE TABLE [dbo].[TheDonorsProjects] (
 );
 GO
 
+-- Creating table 'UserPermessions'
+CREATE TABLE [dbo].[UserPermessions] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [UserID] int  NULL,
+    [PermessioID] int  NULL,
+    [PermessionValue] nvarchar(50)  NULL
+);
+GO
+
 -- Creating table 'UserTbs'
 CREATE TABLE [dbo].[UserTbs] (
     [ID] int IDENTITY(1,1) NOT NULL,
     [UserName] nvarchar(max)  NULL,
     [Password] nvarchar(max)  NULL,
-    [Group_ID] int  NULL,
     [Employee_ID] int  NULL,
     [TypeUser] nvarchar(max)  NOT NULL
 );
@@ -377,21 +365,9 @@ ADD CONSTRAINT [PK_Employees]
     PRIMARY KEY CLUSTERED ([ID] ASC);
 GO
 
--- Creating primary key on [ID] in table 'GroupsTbs'
-ALTER TABLE [dbo].[GroupsTbs]
-ADD CONSTRAINT [PK_GroupsTbs]
-    PRIMARY KEY CLUSTERED ([ID] ASC);
-GO
-
 -- Creating primary key on [ID] in table 'Monthlysalaries'
 ALTER TABLE [dbo].[Monthlysalaries]
 ADD CONSTRAINT [PK_Monthlysalaries]
-    PRIMARY KEY CLUSTERED ([ID] ASC);
-GO
-
--- Creating primary key on [ID] in table 'PeremissionsTbs'
-ALTER TABLE [dbo].[PeremissionsTbs]
-ADD CONSTRAINT [PK_PeremissionsTbs]
     PRIMARY KEY CLUSTERED ([ID] ASC);
 GO
 
@@ -431,6 +407,12 @@ ADD CONSTRAINT [PK_Suppliers]
     PRIMARY KEY CLUSTERED ([ID] ASC);
 GO
 
+-- Creating primary key on [ID] in table 'SystemPermessions'
+ALTER TABLE [dbo].[SystemPermessions]
+ADD CONSTRAINT [PK_SystemPermessions]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
 -- Creating primary key on [ID] in table 'TheDonors'
 ALTER TABLE [dbo].[TheDonors]
 ADD CONSTRAINT [PK_TheDonors]
@@ -440,6 +422,12 @@ GO
 -- Creating primary key on [ID] in table 'TheDonorsProjects'
 ALTER TABLE [dbo].[TheDonorsProjects]
 ADD CONSTRAINT [PK_TheDonorsProjects]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'UserPermessions'
+ALTER TABLE [dbo].[UserPermessions]
+ADD CONSTRAINT [PK_UserPermessions]
     PRIMARY KEY CLUSTERED ([ID] ASC);
 GO
 
@@ -549,34 +537,6 @@ ADD CONSTRAINT [FK_UserTb_Employees]
 CREATE INDEX [IX_FK_UserTb_Employees]
 ON [dbo].[UserTbs]
     ([Employee_ID]);
-GO
-
--- Creating foreign key on [GroupID] in table 'PeremissionsTbs'
-ALTER TABLE [dbo].[PeremissionsTbs]
-ADD CONSTRAINT [FK_PeremissionsTb_GroupsTb]
-    FOREIGN KEY ([GroupID])
-    REFERENCES [dbo].[GroupsTbs]
-        ([ID])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_PeremissionsTb_GroupsTb'
-CREATE INDEX [IX_FK_PeremissionsTb_GroupsTb]
-ON [dbo].[PeremissionsTbs]
-    ([GroupID]);
-GO
-
--- Creating foreign key on [Group_ID] in table 'UserTbs'
-ALTER TABLE [dbo].[UserTbs]
-ADD CONSTRAINT [FK_UserTb_GroupsTbs]
-    FOREIGN KEY ([Group_ID])
-    REFERENCES [dbo].[GroupsTbs]
-        ([ID])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_UserTb_GroupsTbs'
-CREATE INDEX [IX_FK_UserTb_GroupsTbs]
-ON [dbo].[UserTbs]
-    ([Group_ID]);
 GO
 
 -- Creating foreign key on [ProjectProfile_ID] in table 'Monthlysalaries'
@@ -719,6 +679,20 @@ ON [dbo].[TheDonorsProjects]
     ([ProjectID]);
 GO
 
+-- Creating foreign key on [PermessioID] in table 'UserPermessions'
+ALTER TABLE [dbo].[UserPermessions]
+ADD CONSTRAINT [FK_UserPermession_SystemPermession]
+    FOREIGN KEY ([PermessioID])
+    REFERENCES [dbo].[SystemPermessions]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserPermession_SystemPermession'
+CREATE INDEX [IX_FK_UserPermession_SystemPermession]
+ON [dbo].[UserPermessions]
+    ([PermessioID]);
+GO
+
 -- Creating foreign key on [DonorsID] in table 'TheDonorsProjects'
 ALTER TABLE [dbo].[TheDonorsProjects]
 ADD CONSTRAINT [FK_TheFinancerProject_Thefinanciers]
@@ -731,6 +705,20 @@ ADD CONSTRAINT [FK_TheFinancerProject_Thefinanciers]
 CREATE INDEX [IX_FK_TheFinancerProject_Thefinanciers]
 ON [dbo].[TheDonorsProjects]
     ([DonorsID]);
+GO
+
+-- Creating foreign key on [UserID] in table 'UserPermessions'
+ALTER TABLE [dbo].[UserPermessions]
+ADD CONSTRAINT [FK_UserPermession_UserTbs]
+    FOREIGN KEY ([UserID])
+    REFERENCES [dbo].[UserTbs]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserPermession_UserTbs'
+CREATE INDEX [IX_FK_UserPermession_UserTbs]
+ON [dbo].[UserPermessions]
+    ([UserID]);
 GO
 
 -- --------------------------------------------------

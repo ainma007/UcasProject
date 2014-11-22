@@ -22,11 +22,12 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            #region "  CheckFillTextBox "
             if (employeeNameTextBox.Text == "")
             {
 
                   employeeNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
-               
+                  errorProvider1.SetError(this.employeeNameTextBox, "من فضلك ادخل اسم الموظف");
                 employeeNameTextBox.Focus();
                
                 return;
@@ -34,30 +35,33 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             else
             {
                 employeeNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
 
 
 
-            if (GenderDropDownList.SelectedItem == null)
+            if (GenderDropDownList.Text == "")
             {
-                //GenderDropDownList.BackColor = System.Drawing.Color.Red;
+               
                   GenderDropDownList.DropDownListElement.TextBox.BackColor = Color.OrangeRed;
-               // GenderDropDownList.DropDownListElement.TextBox.Fill.BackColor = Color.OrangeRed;
-
-
-                GenderDropDownList.Focus();
+                  errorProvider1.SetError(this.GenderDropDownList, "من فضلك ادخل الجنس");
+                 
+                 GenderDropDownList.Focus();
 
                 return;
             }
             else
             {
                 GenderDropDownList.DropDownListElement.TextBox.BackColor = Color.White;
+                errorProvider1.Clear();
             }
+            #endregion
 
+            this.Cursor = Cursors.WaitCursor;
             Employee emp = new Employee()
             {
                 EmployeeName= employeeNameTextBox.Text,
-                EmployeeGender=GenderDropDownList.SelectedItem.ToString(),
+                EmployeeGender=GenderDropDownList.Text.ToString(),
                 EmployeejobNumber=EmployeejobNumberTextBox.Text,
                 EmployeeNationalNumber=EmployeeNationalNumberTextBox4.Text,
                 Email=EmailTextBox.Text,
@@ -68,8 +72,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
             };
             EmployeeCmd.addEmployee(emp);
-
-
+            this.Cursor = Cursors.WaitCursor;
             RadMessageBox.Show("تمت الاضافة");
             ClearTxt();
         }
@@ -88,7 +91,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
         private void FrmAddEmployee_Load(object sender, EventArgs e)
         {
-            Xperemissions();
+           
             //=========================
         }
         #region "   Activate Peremissions     "

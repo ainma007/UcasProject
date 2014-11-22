@@ -37,7 +37,7 @@ namespace Ucas.Data.CommandClass
                 db.Configuration.ProxyCreationEnabled = false;
                 var q = db.Contracts.Where(p => p.ID == Ct.ID).SingleOrDefault();
                 q.Employee_ID = Ct.Employee_ID;
-              //  q.ProjectProfile_ID = Ct.ProjectProfile_ID;
+                q.TotalSalary = Ct.TotalSalary;
                 q.SelaryAmount = Ct.SelaryAmount;
                 q.StartDate = Ct.StartDate;
                 q.EndDate = Ct.EndDate;
@@ -74,20 +74,31 @@ namespace Ucas.Data.CommandClass
             }
         }
 
-        public static IEnumerable GetAllContractsBypro(int ProId)
+        public static List<Contract> GetAllContractsByproID(int ProID)
         {
             db = new UcasProEntities();
-            var q = (from i in db.Contracts
-                     join emp in db.Employees on i.Employee_ID equals emp.ID
-                     where i.ProjectProfile_ID == ProId
-
-
-
-
-                     select new { i.ID, emp.EmployeeName, i.StartDate,i.EndDate,i.SelaryAmount,i.Status,i.ProjectProfile_ID }).ToList();
-            return q;
-
+            
+            var LST = (from c in db.Contracts
+                       where c.ProjectProfile_ID == ProID
+                       select c).ToList();
+            return LST;
         }
+
+
+        //public static IEnumerable GetAllContractsBypro(int ProId)
+        //{
+        //    db = new UcasProEntities();
+        //    var q = (from i in db.Contracts
+        //             join emp in db.Employees on i.Employee_ID equals emp.ID
+        //             where i.ProjectProfile_ID == ProId
+
+
+
+
+        //             select new { i.ID, emp.EmployeeName, i.StartDate, i.EndDate, i.SelaryAmount, i.Status, i.ProjectProfile_ID }).ToList();
+        //    return q;
+
+        //}
 
 
         public static IEnumerable GetAllContractsForComboBox(int ProId)
