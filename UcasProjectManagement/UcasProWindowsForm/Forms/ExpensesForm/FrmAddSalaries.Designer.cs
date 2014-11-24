@@ -48,7 +48,6 @@
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.EmployeeComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.contractBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ReleaseDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
             this.FromonthDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
@@ -57,6 +56,7 @@
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.AddBtn1 = new Telerik.WinControls.UI.RadButton();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).BeginInit();
@@ -76,7 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReleaseDateTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FromonthDateTimePicker)).BeginInit();
@@ -84,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SalaryTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -253,7 +253,6 @@
             // 
             // EmployeeComboBox
             // 
-            this.EmployeeComboBox.DataSource = this.contractBindingSource;
             this.EmployeeComboBox.DisplayMember = "EmployeeName";
             // 
             // EmployeeComboBox.NestedRadGridView
@@ -306,7 +305,6 @@
             gridViewDecimalColumn2,
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2});
-            this.EmployeeComboBox.EditorControl.MasterTemplate.DataSource = this.contractBindingSource;
             this.EmployeeComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
             sortDescriptor1.PropertyName = "ID";
@@ -326,10 +324,6 @@
             this.EmployeeComboBox.TabStop = false;
             this.EmployeeComboBox.Text = "اختر الموظف";
             this.EmployeeComboBox.ThemeName = "TelerikMetro";
-            // 
-            // contractBindingSource
-            // 
-            this.contractBindingSource.DataSource = typeof(Ucas.Data.Contract);
             // 
             // ReleaseDateTimePicker
             // 
@@ -418,6 +412,10 @@
             this.AddBtn1.ThemeName = "TelerikMetro";
             this.AddBtn1.Click += new System.EventHandler(this.AddBtn1_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FrmAddSalaries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,7 +457,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReleaseDateTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FromonthDateTimePicker)).EndInit();
@@ -467,6 +464,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SalaryTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -496,6 +494,6 @@
         private Telerik.WinControls.UI.RadDateTimePicker ReleaseDateTimePicker;
         private Telerik.WinControls.UI.RadDateTimePicker FromonthDateTimePicker;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
-        private System.Windows.Forms.BindingSource contractBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

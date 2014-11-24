@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
@@ -39,6 +40,7 @@
             this.DateOfProecssPicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.DonorsComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).BeginInit();
@@ -47,6 +49,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DonorsComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsComboBox.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -190,6 +193,11 @@
             this.DonorsComboBox.TabStop = false;
             this.DonorsComboBox.ThemeName = "TelerikMetro";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
+            // 
             // FrmAddAmount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,6 +228,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DonorsComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -236,5 +245,6 @@
         private System.Windows.Forms.Label label2;
         private Telerik.WinControls.UI.RadDateTimePicker DateOfProecssPicker;
         private Telerik.WinControls.UI.RadTextBox CostTextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

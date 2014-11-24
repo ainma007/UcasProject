@@ -22,18 +22,18 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         UcasProEntities db = new UcasProEntities();
         private void AdActivitesBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             FrmAddActivities AddActivfrm = new FrmAddActivities();
             AddActivfrm.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
         }
 
         private void AddSupActivitesBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             FrmAddSubActivities AddSub = new FrmAddSubActivities();
             AddSub.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -45,12 +45,15 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
             GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("TotalCost", "اجمالي الانشطة = {0}", GridAggregateFunction.Sum);
             GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight });
+            this.ActivitiesGridView.SummaryRowsBottom.Clear();
             this.ActivitiesGridView.SummaryRowsBottom.Add(summaryRowItem);
 
 
             GridViewSummaryItem summaryItemFreight1 = new GridViewSummaryItem("SubTotalCost", "الاجمالي  = {0}", GridAggregateFunction.Sum);
             GridViewSummaryRowItem summaryRowItem1 = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight1 });
+            this.gridViewTemplate2.SummaryRowsBottom.Clear();
             this.gridViewTemplate2.SummaryRowsBottom.Add(summaryRowItem1);
+            
             foreach (var item in ActivitiesGridView.Rows)
             {
                 
@@ -145,7 +148,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 EditSubActi.EndDateTimePicker.Text = ActivitiesGridView.CurrentRow.Cells[4].Value.ToString();
                
                 EditSubActi.StatusDropDownList.Text = ActivitiesGridView.CurrentRow.Cells[5].Value.ToString();
-               EditSubActi.ProgressEditor.Value = int.Parse(ActivitiesGridView.CurrentRow.Cells[6].Value.ToString());
+                EditSubActi.ProgressEditor.Value = int.Parse(ActivitiesGridView.CurrentRow.Cells[6].Value.ToString());
                 EditSubActi.TotalCostTextBox.Text = ActivitiesGridView.CurrentRow.Cells[7].Value.ToString();
                 EditSubActi.ActivitiesColumnComboBox.Text = ActivitiesGridView.CurrentRow.Cells[9].Value.ToString();
                 EditSubActi.ShowDialog();
@@ -225,6 +228,21 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         private void radRibbonBar1_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void FrmAllActivitesMange_Activated(object sender, EventArgs e)
+        {
+            Operation.BeginOperation(this);
+
+            FrmAllActivitesMange_Load(sender, e);
+            Operation.EndOperation(this);
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            Operation.BeginOperation(this);
+            FrmAllActivitesMange_Load(sender, e);
+            Operation.EndOperation(this);
         }
     }
 }

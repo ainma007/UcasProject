@@ -46,26 +46,29 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            #region "  CheckFillTextBox "
+
             if (ActivitiesColumnComboBox.SelectedValue == null)
             {
-                //GenderDropDownList.BackColor = System.Drawing.Color.Red;
+
                 ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
-                // GenderDropDownList.DropDownListElement.TextBox.Fill.BackColor = Color.OrangeRed;
-
-
+                errorProvider1.SetError(this.ActivitiesColumnComboBox, "من فضلك ادخل النشاط الرئيسي");
                 ActivitiesColumnComboBox.Focus();
+
 
                 return;
             }
             else
             {
                 ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
             }
 
             if (SubActivitiesNameTextBox.Text == "")
             {
 
                 SubActivitiesNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.SubActivitiesNameTextBox, "من فضلك ادخل اسم النشاط");
 
                 SubActivitiesNameTextBox.Focus();
 
@@ -74,7 +77,25 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             else
             {
                 SubActivitiesNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
+
+            if (TotalCostTextBox.Text == "")
+            {
+
+                TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.TotalCostTextBox, "من فضلك ادخل المبلغ");
+
+                TotalCostTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+            #endregion
 
             if (TotalCostTextBox.Text == "")
             {

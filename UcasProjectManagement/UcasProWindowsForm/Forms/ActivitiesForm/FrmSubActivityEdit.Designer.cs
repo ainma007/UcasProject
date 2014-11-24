@@ -54,6 +54,7 @@
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.SubActivitiesNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
@@ -77,6 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesNameTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -202,7 +204,7 @@
             this.ActivitiesColumnComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ActivitiesColumnComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // ActivitiesColumnComboBox.NestedRadGridView
+            // 
             // 
             this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -371,6 +373,11 @@
             this.SubActivitiesNameTextBox.TabIndex = 1;
             this.SubActivitiesNameTextBox.ThemeName = "TelerikMetro";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
+            // 
             // FrmSubActivityEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,6 +423,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesNameTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -444,5 +452,6 @@
         public Telerik.WinControls.UI.RadSpinEditor ProgressEditor;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private Telerik.WinControls.UI.RadLabel radLabel9;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -115,43 +115,42 @@ namespace Ucas.Data.CommandClass
             return LST;
         }
 
-        public static List<ProjectExpens> GetAllExpensesBySupplier(int SupplID)
+        public static List<ProjectExpens> GetAllExpensesByProject(int ProId)
         {
             db = new UcasProEntities();
-            db.Configuration.LazyLoadingEnabled = false;
-            db.Configuration.ProxyCreationEnabled = false;
-            var LST = (from p in db.ProjectExpenses
-                       orderby p.DateofProcess ascending 
-                       where p.Supplier_ID  == SupplID
-                       select p).ToList();
-            return LST;
-        }
-
-
-        public static List<ProjectExpens> GetAllExpensesByProject(int ProID)
-        {
-            db = new UcasProEntities();
-            //db.Configuration.LazyLoadingEnabled = false;
-            //db.Configuration.ProxyCreationEnabled = false;
+            
             var LST = (from p in db.ProjectExpenses
                        orderby p.DateofProcess ascending
-                       where p.ProjectProfile_ID == ProID
+                       where p.ProjectProfile_ID == ProId
                        select p).ToList();
             return LST;
         }
-        public static IEnumerable ExpensesByProjectID(int ProID)
-        {
-            db = new UcasProEntities();
-            var q = (from i in db.ProjectExpenses
-                     join subA in db.ProjectSubActivities on i.ProjectSubActivity_ID equals subA.ID
-                     join supplier in db.Suppliers on i.Supplier_ID equals supplier.ID
 
-                     where i.ProjectProfile_ID == ProID
 
-                     select new { i.ID, i.ExpensesName, i.BillNumber, i.DateofProcess,i.RequiarAmount, i.CashingNumber, subA.SubActivityName, supplier.Name, i.ProjectSubActivity_ID,i.Supplier_ID }).ToList();
-            return q;
+        //public static List<ProjectExpens> GetAllExpensesByProject(int ProID)
+        //{
+        //    db = new UcasProEntities();
+        //    db.Configuration.LazyLoadingEnabled = false;
+        //    db.Configuration.ProxyCreationEnabled = false;
+        //    var LST = (from p in db.ProjectExpenses
+        //               orderby p.DateofProcess ascending
+        //               where p.ProjectProfile_ID == ProID
+        //               select p).ToList();
+        //    return LST;
+        //}
+        //public static IEnumerable ExpensesByProjectID(int ProID)
+        //{
+        //    db = new UcasProEntities();
+        //    var q = (from i in db.ProjectExpenses
+        //             join subA in db.ProjectSubActivities on i.ProjectSubActivity_ID equals subA.ID
+        //             join supplier in db.Suppliers on i.Supplier_ID equals supplier.ID
 
-        }
+        //             where i.ProjectProfile_ID == ProID
+
+        //             select new { i.ID, i.ExpensesName, i.BillNumber, i.DateofProcess,i.RequiarAmount, i.CashingNumber, subA.SubActivityName, supplier.Name, i.ProjectSubActivity_ID,i.Supplier_ID }).ToList();
+        //    return q;
+
+        //}
 
         }
     }

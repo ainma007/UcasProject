@@ -197,3 +197,4 @@ C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindows
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\RdlCompile.compiled
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.exe
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.pdb
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\DevComponents.DotNetBar2.dll

@@ -37,7 +37,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void FrmSalariesManage_Load(object sender, EventArgs e)
         {
-            SalaryGridView.DataSource = SalariesCmd.GetAllSalaryBypro(InformationsClass.ProjID);
+            SalaryGridView.DataSource = SalariesCmd.GetSalaryBySelectedprotID(InformationsClass.ProjID);
             for (int i = 1; i <= SalaryGridView.Rows.Count; i++)
             {
                 SalaryGridView.Rows[i - 1].Cells[0].Value = i.ToString();
@@ -50,26 +50,25 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         {
             var col = SalaryGridView.CurrentColumn.Index;
 
-            if (col == 6)
+            if (col == 7)
             {
-                FrmSalaryMang EditSalary = new FrmSalaryMang();
-                EditSalary.FillCombo();
-                EditSalary.XSalaryID = int.Parse(SalaryGridView.CurrentRow.Cells[1].Value.ToString());
-                EditSalary.ContractComboBox.Text = SalaryGridView.CurrentRow.Cells[2].Value.ToString();
-                EditSalary.SalaryTextBox.Text = SalaryGridView.CurrentRow.Cells[3].Value.ToString();
-                EditSalary.FromonthDateTimePicker.Text = SalaryGridView.CurrentRow.Cells[4].Value.ToString();
-                EditSalary.ReleaseDateTimePicker.Text = SalaryGridView.CurrentRow.Cells[5].Value.ToString();
-
-
-                EditSalary.ShowDialog();
+                //
+                this.Cursor = Cursors.WaitCursor;
+                FrmSalaryMang frm = new FrmSalaryMang();
+                Ucas.Data.Monthlysalary salary = (Ucas.Data.Monthlysalary)SalaryGridView.CurrentRow.DataBoundItem;
+                frm.Tragetsalary = salary;
+                frm.FillCombo();
+                frm.ShowDialog();
+                this.Cursor = Cursors.Default;
+               
                 return;
 
             }
 
-            if (col == 7)
+            if (col == 8)
             {
 
-                if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
 
                     SalariesCmd.DeleteSalary(int.Parse(SalaryGridView.CurrentRow.Cells[1].Value.ToString()));
@@ -85,21 +84,30 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             this.Cursor = Cursors.WaitCursor;
             
             List<SalaryReportObj> ls = new List<SalaryReportObj>();
-            var q = ProjectProfileCmd.GetProjectData(InformationsClass.ProjID);
+            int counter = 0;
             foreach (GridViewRowInfo item in SalaryGridView.ChildRows)
             {
-                ls.Add(new SalaryReportObj() { SalarysID = int.Parse(item.Cells[0].Value .ToString()),
-                 coin=  q[0].Coin,
-                
-                  EmployeeName=item.Cells[2].Value.ToString(),
-                ProjectName=q[0].ProjectName,
-                SalaryAmount=double.Parse( item.Cells[3].Value.ToString()),
-                SalaryForMonth=DateTime.Parse( item.Cells[4].Value.ToString()),
-                SalaryIssueDate=DateTime.Parse( item.Cells[5].Value.ToString())});
+                counter++;
+                ls.Add(new SalaryReportObj() { SalarysID = counter,
+                 coin = item.Cells["Coin"].Value.ToString(),
+                 //coin=  q[0].Coin,
+                 EmployeejobNumber = item.Cells["EmployeejobNumber"].Value.ToString(),
+                 EmployeeName = item.Cells["EmployeeName"].Value.ToString(),
+                 //ProjectName=q[0].ProjectName,
+                 ProjectName = item.Cells["ProjectName"].Value.ToString(),
+                SalaryAmount = double.Parse(item.Cells["Amount"].Value.ToString()),
+                SalaryForMonth = DateTime.Parse(item.Cells["Formonth"].Value.ToString()),
+                SalaryIssueDate = DateTime.Parse(item.Cells["IssueDate"].Value.ToString())
+                });
             }
             Reports.ReportCommand.SalaryReportCmd cmd = new Reports.ReportCommand.SalaryReportCmd();
             cmd.ShowReport(ls);
             this.Cursor = Cursors.Default;
+        }
+
+        private void FrmSalariesManage_Activated(object sender, EventArgs e)
+        {
+            FrmSalariesManage_Load(sender, e);
         }
     }
 }

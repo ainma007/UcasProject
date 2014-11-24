@@ -81,41 +81,39 @@ namespace Ucas.Data.CommandClass
             db.Configuration.ProxyCreationEnabled = false;
             return db.Monthlysalaries.ToList();
         }
-        public static List<Monthlysalary> GetSalaryBySelectedContractID(int ContID) {
-            db = new UcasProEntities();
-            db.Configuration.LazyLoadingEnabled = false;
-            db.Configuration.ProxyCreationEnabled = false;
-            var LST = (from c in db.Monthlysalaries
-                       where c.ContractID == ContID 
-                       select c).ToList();
-            return LST;
-        }
+        //public static List<Monthlysalary> GetSalaryBySelectedContractID(int ContID) {
+        //    db = new UcasProEntities();
+            
+        //    var LST = (from c in db.Monthlysalaries
+        //               where c.ContractID == ContID 
+        //               select c).ToList();
+        //    return LST;
+        //}
         public static List<Monthlysalary> GetSalaryBySelectedprotID(int ProId)
         {
             db = new UcasProEntities();
-            //db.Configuration.LazyLoadingEnabled = false;
-            //db.Configuration.ProxyCreationEnabled = false;
+           
             var LST = (from c in db.Monthlysalaries
                        where c.ProjectProfile_ID == ProId
                        select c).ToList();
             return LST;
         }
 
-        public static IEnumerable GetAllSalaryBypro(int ProId)
-        {
-            db = new UcasProEntities();
-            var q = (from i in db.Monthlysalaries
-                     join Cont in db.Contracts on i.ContractID equals Cont.ID
-                     join emp in db.Employees on Cont.Employee_ID equals emp.ID
-                     where i.ProjectProfile_ID == ProId
+        //public static IEnumerable GetAllSalaryBypro(int ProId)
+        //{
+        //    db = new UcasProEntities();
+        //    var q = (from i in db.Monthlysalaries
+        //             join Cont in db.Contracts on i.ContractID equals Cont.ID
+        //             join emp in db.Employees on Cont.Employee_ID equals emp.ID
+        //             where i.ProjectProfile_ID == ProId
 
 
 
 
-                     select new { i.ID, emp.EmployeeName, i.IssueDate, i.Formonth, i.Amount, i.ContractID, i.ProjectProfile_ID }).ToList();
-            return q;
+        //             select new { i.ID, emp.EmployeeName, i.IssueDate, i.Formonth, i.Amount, i.ContractID, i.ProjectProfile_ID }).ToList();
+        //    return q;
 
-        }
+        //}
 
         public static double GetTotalSalaryByProject(int ProID)
         {

@@ -8,29 +8,7 @@ namespace Ucas.Data.CommandClass
     public    class InformationsClass
     {
 
-    #region "   List Of Peremissions           "
-      public static int _GroupID;
-
-      public static int _AddUser;
-      public static int _UpDateUser;
-      public static int _DeleteUser;
-
-      public static int _AddProject;
-      public static int _DisplayExpenses;
-      public static int _CanPrint;
-
-      public static int _AddEmployee;
-      public static int _DeleteEmployee;
-      public static int _EditEmployee;
-
-
-      public static int _AddSuppliers;
-      public static int _EditSuppliers;
-      public static int _DeleteSuppliers;
-
-      public static int _AddFinncers;
-      public static int _EditFinncers;
-      public static int _DeleteFinncers;
+    
         //==============================
       public static int ProjID;
         //=============================
@@ -39,8 +17,7 @@ namespace Ucas.Data.CommandClass
       static UcasProEntities db = new UcasProEntities();
      
 
-      #endregion 
-
+   
       #region "  {Current User's  Data }       "
       //   --- 
       public static int xCurrentUserID;

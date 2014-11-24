@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>16.98624cm</Width>
+              <Width>16.77457cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -25,7 +25,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!EmployeeName.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -33,7 +35,7 @@
                           </Paragraphs>
                           <rd:DefaultName>EmployeeName</rd:DefaultName>
                           <Top>0.37042cm</Top>
-                          <Left>10.64569cm</Left>
+                          <Left>10.7427cm</Left>
                           <Height>0.6cm</Height>
                           <Width>4.21979cm</Width>
                           <Style>
@@ -88,19 +90,35 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Salarys ID</Value>
-                                                <Style />
+                                                <Value>الرقم</Value>
+                                                <Style>
+                                                  <FontWeight>Bold</FontWeight>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox8</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <TopBorder>
+                                            <Color>Black</Color>
+                                          </TopBorder>
+                                          <BottomBorder>
+                                            <Color>Black</Color>
+                                          </BottomBorder>
+                                          <LeftBorder>
+                                            <Color>Black</Color>
+                                          </LeftBorder>
+                                          <RightBorder>
+                                            <Color>Black</Color>
+                                          </RightBorder>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -118,19 +136,35 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Salary Amount</Value>
-                                                <Style />
+                                                <Value>الملبلغ </Value>
+                                                <Style>
+                                                  <FontWeight>Bold</FontWeight>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox3</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <TopBorder>
+                                            <Color>Black</Color>
+                                          </TopBorder>
+                                          <BottomBorder>
+                                            <Color>Black</Color>
+                                          </BottomBorder>
+                                          <LeftBorder>
+                                            <Color>Black</Color>
+                                          </LeftBorder>
+                                          <RightBorder>
+                                            <Color>Black</Color>
+                                          </RightBorder>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -148,19 +182,35 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Salary For Month</Value>
-                                                <Style />
+                                                <Value>مستحق لشهر</Value>
+                                                <Style>
+                                                  <FontWeight>Bold</FontWeight>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox5</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <TopBorder>
+                                            <Color>Black</Color>
+                                          </TopBorder>
+                                          <BottomBorder>
+                                            <Color>Black</Color>
+                                          </BottomBorder>
+                                          <LeftBorder>
+                                            <Color>Black</Color>
+                                          </LeftBorder>
+                                          <RightBorder>
+                                            <Color>Black</Color>
+                                          </RightBorder>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -178,19 +228,35 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Salary Issue Date</Value>
-                                                <Style />
+                                                <Value>تاريخ الاصدار</Value>
+                                                <Style>
+                                                  <FontWeight>Bold</FontWeight>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox7</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <TopBorder>
+                                            <Color>Black</Color>
+                                          </TopBorder>
+                                          <BottomBorder>
+                                            <Color>Black</Color>
+                                          </BottomBorder>
+                                          <LeftBorder>
+                                            <Color>Black</Color>
+                                          </LeftBorder>
+                                          <RightBorder>
+                                            <Color>Black</Color>
+                                          </RightBorder>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -223,9 +289,20 @@
                                         <rd:DefaultName>SalarysID</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <TopBorder>
+                                            <Color>Black</Color>
+                                          </TopBorder>
+                                          <BottomBorder>
+                                            <Color>Black</Color>
+                                          </BottomBorder>
+                                          <LeftBorder>
+                                            <Color>Black</Color>
+                                          </LeftBorder>
+                                          <RightBorder>
+                                            <Color>Black</Color>
+                                          </RightBorder>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -253,9 +330,20 @@
                                         <rd:DefaultName>SalaryAmount</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <TopBorder>
+                                            <Color>Black</Color>
+                                          </TopBorder>
+                                          <BottomBorder>
+                                            <Color>Black</Color>
+                                          </BottomBorder>
+                                          <LeftBorder>
+                                            <Color>Black</Color>
+                                          </LeftBorder>
+                                          <RightBorder>
+                                            <Color>Black</Color>
+                                          </RightBorder>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -274,7 +362,9 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!SalaryForMonth.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <Format>d</Format>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
@@ -283,9 +373,20 @@
                                         <rd:DefaultName>SalaryForMonth</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <TopBorder>
+                                            <Color>Black</Color>
+                                          </TopBorder>
+                                          <BottomBorder>
+                                            <Color>Black</Color>
+                                          </BottomBorder>
+                                          <LeftBorder>
+                                            <Color>Black</Color>
+                                          </LeftBorder>
+                                          <RightBorder>
+                                            <Color>Black</Color>
+                                          </RightBorder>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -304,7 +405,9 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!SalaryIssueDate.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <Format>d</Format>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
@@ -313,9 +416,20 @@
                                         <rd:DefaultName>SalaryIssueDate</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <TopBorder>
+                                            <Color>Black</Color>
+                                          </TopBorder>
+                                          <BottomBorder>
+                                            <Color>Black</Color>
+                                          </BottomBorder>
+                                          <LeftBorder>
+                                            <Color>Black</Color>
+                                          </LeftBorder>
+                                          <RightBorder>
+                                            <Color>Black</Color>
+                                          </RightBorder>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -339,7 +453,9 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>اجمالي الراتب المدفوع</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontWeight>Bold</FontWeight>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
@@ -373,7 +489,7 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Sum(Fields!SalaryAmount.Value, "DataSet1").ToString() +""+ Fields!coin.Value</Value>
+                                                <Value>=Sum(Fields!SalaryAmount.Value).ToString() +""+ Fields!coin.Value</Value>
                                                 <Style />
                                               </TextRun>
                                             </TextRuns>
@@ -388,6 +504,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -424,10 +541,10 @@
                           </TablixRowHierarchy>
                           <LayoutDirection>RTL</LayoutDirection>
                           <DataSetName>DataSet1</DataSetName>
-                          <Top>1.56104cm</Top>
-                          <Left>0.47625cm</Left>
+                          <Top>1.14681cm</Top>
+                          <Left>0.47626cm</Left>
                           <Height>1.8cm</Height>
-                          <Width>16.24541cm</Width>
+                          <Width>16.2454cm</Width>
                           <ZIndex>1</ZIndex>
                           <Style>
                             <Border>
@@ -443,7 +560,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>اسم الموظف:</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -473,6 +592,7 @@
                             <RightBorder>
                               <Color>Black</Color>
                             </RightBorder>
+                            <BackgroundColor>Silver</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -487,8 +607,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!EmployeeName.Value</Value>
-                                  <Style />
+                                  <Value>=Fields!EmployeejobNumber.Value</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -496,7 +618,7 @@
                           </Paragraphs>
                           <rd:DefaultName>EmployeeName</rd:DefaultName>
                           <Top>0.37042cm</Top>
-                          <Left>4.14042cm</Left>
+                          <Left>4.02576cm</Left>
                           <Height>0.6cm</Height>
                           <Width>4.21979cm</Width>
                           <ZIndex>3</ZIndex>
@@ -531,7 +653,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>الرقم الوظيفي:</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -541,9 +665,9 @@
                           </Paragraphs>
                           <rd:DefaultName>Textbox1</rd:DefaultName>
                           <Top>0.37042cm</Top>
-                          <Left>8.45722cm</Left>
+                          <Left>8.24555cm</Left>
                           <Height>0.6cm</Height>
-                          <Width>1.75917cm</Width>
+                          <Width>1.97084cm</Width>
                           <ZIndex>4</ZIndex>
                           <Style>
                             <Border>
@@ -561,6 +685,7 @@
                             <RightBorder>
                               <Color>Black</Color>
                             </RightBorder>
+                            <BackgroundColor>Silver</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -600,9 +725,9 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>1.63724cm</Top>
-        <Left>0.68474cm</Left>
+        <Left>0.63183cm</Left>
         <Height>3.57188cm</Height>
-        <Width>16.98624cm</Width>
+        <Width>16.77457cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -617,7 +742,10 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!ProjectName.Value, "DataSet1")</Value>
-                <Style />
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -626,9 +754,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ProjectName</rd:DefaultName>
-        <Top>0.54335cm</Top>
-        <Left>10.4573cm</Left>
-        <Height>0.6cm</Height>
+        <Top>0.41106cm</Top>
+        <Left>10.21036cm</Left>
+        <Height>0.73229cm</Height>
         <Width>4.77542cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
@@ -662,7 +790,10 @@
             <TextRuns>
               <TextRun>
                 <Value>اسم المشروع:</Value>
-                <Style />
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -671,10 +802,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.54335cm</Top>
-        <Left>15.17098cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Top>0.41106cm</Top>
+        <Left>15.02106cm</Left>
+        <Height>0.73229cm</Height>
+        <Width>2.33243cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -692,6 +823,7 @@
           <RightBorder>
             <Color>Black</Color>
           </RightBorder>
+          <BackgroundColor>LightGrey</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -706,8 +838,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!SalaryAmount.Value, "DataSet1").ToString() +" "+ Fields!coin.Value</Value>
-                <Style />
+                <Value>=Sum(Fields!SalaryAmount.Value).ToString() +""+ Fields!coin.Value</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -717,7 +851,7 @@
         </Paragraphs>
         <rd:DefaultName>ProjectName</rd:DefaultName>
         <Top>5.5076cm</Top>
-        <Left>10.83654cm</Left>
+        <Left>10.51905cm</Left>
         <Height>0.6cm</Height>
         <Width>4.77542cm</Width>
         <ZIndex>3</ZIndex>
@@ -740,7 +874,9 @@
             <TextRuns>
               <TextRun>
                 <Value>اجمالي الرواتب:</Value>
-                <Style />
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -750,7 +886,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>5.5076cm</Top>
-        <Left>15.64723cm</Left>
+        <Left>15.32974cm</Left>
         <Height>0.6cm</Height>
         <Width>2.02375cm</Width>
         <ZIndex>4</ZIndex>
@@ -758,6 +894,7 @@
           <Border>
             <Style>None</Style>
           </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -793,10 +930,10 @@
     </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <LeftMargin>0.5cm</LeftMargin>
+    <RightMargin>0.5cm</RightMargin>
+    <TopMargin>0.5cm</TopMargin>
+    <BottomMargin>0.5cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
@@ -819,6 +956,10 @@
       <Fields>
         <Field Name="coin">
           <DataField>coin</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmployeejobNumber">
+          <DataField>EmployeejobNumber</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="EmployeeName">

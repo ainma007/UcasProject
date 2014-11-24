@@ -28,11 +28,12 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-         
+            #region "  CheckFillTextBox "
             if (ActivitiesNameTextBox.Text == "")
             {
 
                 ActivitiesNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.ActivitiesNameTextBox, "من فضلك ادخل النشاط");
 
                 ActivitiesNameTextBox.Focus();
 
@@ -41,12 +42,14 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             else
             {
                 ActivitiesNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
 
             if (TotalCostTextBox.Text == "")
             {
 
                 TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.TotalCostTextBox, "من فضلك ادخل المبلغ");
 
                 TotalCostTextBox.Focus();
 
@@ -55,15 +58,15 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             else
             {
                 TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
-
-           
-
-            if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+            #endregion
+            
+              if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
-                    this.Cursor = Cursors.WaitCursor;
+                    Operation.BeginOperation(this);
                     ProjectActivity tb = new ProjectActivity()
                     {
 
@@ -79,13 +82,13 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
                     };
                     ActivityCmd.EditActivity(tb);
-                    this.Cursor = Cursors.Default;
+                    Operation.EndOperation(this);
                     RadMessageBox.Show("تمت عملية التعديل");
                     this.Close();
                 }
                 catch (Xprema.XpremaException ex)
                 {
-                    this.Cursor = Cursors.Default;
+                    Operation.EndOperation(this);
                     RadMessageBox.Show(ex.OtherDescription);
                    
 

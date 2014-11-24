@@ -123,7 +123,7 @@
   <metadata name="projectActivityBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>139, 20</value>
   </metadata>
-  <data name="gridViewRelation2.ChildColumnNames" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="gridViewRelation1.ChildColumnNames" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAElTeXN0ZW0sIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0
         cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAvU3lzdGVtLkNvbGxlY3Rpb25z
@@ -133,7 +133,7 @@
         aXZpdHlfSUQNAws=
 </value>
   </data>
-  <data name="gridViewRelation2.ParentColumnNames" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="gridViewRelation1.ParentColumnNames" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAElTeXN0ZW0sIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0
         cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAvU3lzdGVtLkNvbGxlY3Rpb25z
@@ -143,15 +143,6 @@
 </value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="radRibbonBar1.StartButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAYAAAB2HjRBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAALNJREFUOE+NkeENQiEMhBnBERzBkRzFTRzBERjBERzBn/wAgnd97Ut9lsglBCj3
-        HSUkaoxx6r3n1tqTaykGgudeSnnDc5ECFmdCfkQBBmJ+7AG11hcPaCAUBRxvxHzFGHKzOJxotgC33lpV
-        Rdwuu232jKloJkTYt/tXBvq2lwKOoJZ/vygSTJlDt19iXQPi9zNZDTctibCXr+GspVgwSABb1f0aaILR
-        AvLGLYImAPaECZjSB56hKtx0sdEUAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="AdActivitesBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABsAAAAdCAYAAABbjRdIAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -193,13 +184,19 @@
         AABJRU5ErkJggg==
 </value>
   </data>
+  <data name="radRibbonBar1.StartButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAYAAAB2HjRBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAALNJREFUOE+NkeENQiEMhBnBERzBkRzFTRzBERjBERzBn/wAgnd97Ut9lsglBCj3
+        HSUkaoxx6r3n1tqTaykGgudeSnnDc5ECFmdCfkQBBmJ+7AG11hcPaCAUBRxvxHzFGHKzOJxotgC33lpV
+        Rdwuu232jKloJkTYt/tXBvq2lwKOoJZ/vygSTJlDt19iXQPi9zNZDTctibCXr+GspVgwSABb1f0aaILR
+        AvLGLYImAPaECZjSB56hKtx0sdEUAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>103</value>
   </metadata>
   <metadata name="telerikMetroTheme1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>10, 19</value>
-  </metadata>
-  <metadata name="office2013LightTheme1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>633, 17</value>
   </metadata>
 </root>

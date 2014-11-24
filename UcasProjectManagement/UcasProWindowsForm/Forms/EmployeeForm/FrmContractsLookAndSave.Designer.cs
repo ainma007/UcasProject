@@ -98,7 +98,7 @@
             // radLabel2
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel2.Location = new System.Drawing.Point(304, 120);
+            this.radLabel2.Location = new System.Drawing.Point(305, 120);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(58, 18);
             this.radLabel2.TabIndex = 17;
@@ -118,7 +118,7 @@
             // TotaltextBox
             // 
             this.TotaltextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TotaltextBox.Location = new System.Drawing.Point(204, 119);
+            this.TotaltextBox.Location = new System.Drawing.Point(202, 119);
             this.TotaltextBox.Name = "TotaltextBox";
             this.TotaltextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TotaltextBox.Size = new System.Drawing.Size(96, 22);
@@ -140,9 +140,9 @@
             radListDataItem2.TextWrap = true;
             this.StatusDropDownList.Items.Add(radListDataItem1);
             this.StatusDropDownList.Items.Add(radListDataItem2);
-            this.StatusDropDownList.Location = new System.Drawing.Point(204, 176);
+            this.StatusDropDownList.Location = new System.Drawing.Point(201, 176);
             this.StatusDropDownList.Name = "StatusDropDownList";
-            this.StatusDropDownList.Size = new System.Drawing.Size(96, 19);
+            this.StatusDropDownList.Size = new System.Drawing.Size(94, 19);
             this.StatusDropDownList.TabIndex = 4;
             this.StatusDropDownList.ThemeName = "TelerikMetro";
             // 
@@ -162,7 +162,7 @@
             // radLabel6
             // 
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel6.Location = new System.Drawing.Point(301, 147);
+            this.radLabel6.Location = new System.Drawing.Point(302, 147);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(73, 18);
             this.radLabel6.TabIndex = 15;
@@ -172,10 +172,10 @@
             // SalaryTextBox
             // 
             this.SalaryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SalaryTextBox.Location = new System.Drawing.Point(204, 147);
+            this.SalaryTextBox.Location = new System.Drawing.Point(202, 147);
             this.SalaryTextBox.Name = "SalaryTextBox";
             this.SalaryTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.SalaryTextBox.Size = new System.Drawing.Size(96, 22);
+            this.SalaryTextBox.Size = new System.Drawing.Size(94, 22);
             this.SalaryTextBox.TabIndex = 3;
             this.SalaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.SalaryTextBox.ThemeName = "TelerikMetro";
@@ -186,7 +186,7 @@
             this.EndDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.EndDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.EndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.EndDateTimePicker.Location = new System.Drawing.Point(201, 91);
+            this.EndDateTimePicker.Location = new System.Drawing.Point(202, 91);
             this.EndDateTimePicker.Name = "EndDateTimePicker";
             this.EndDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.EndDateTimePicker.Size = new System.Drawing.Size(96, 22);
@@ -199,7 +199,7 @@
             // radLabel4
             // 
             this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel4.Location = new System.Drawing.Point(301, 91);
+            this.radLabel4.Location = new System.Drawing.Point(302, 91);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(65, 18);
             this.radLabel4.TabIndex = 14;
@@ -211,7 +211,7 @@
             this.StartDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.StartDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.StartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StartDateTimePicker.Location = new System.Drawing.Point(201, 61);
+            this.StartDateTimePicker.Location = new System.Drawing.Point(202, 61);
             this.StartDateTimePicker.Name = "StartDateTimePicker";
             this.StartDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartDateTimePicker.Size = new System.Drawing.Size(96, 22);
@@ -224,7 +224,7 @@
             // radLabel3
             // 
             this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel3.Location = new System.Drawing.Point(303, 63);
+            this.radLabel3.Location = new System.Drawing.Point(304, 63);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(55, 18);
             this.radLabel3.TabIndex = 13;
@@ -235,7 +235,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(298, 32);
+            this.label1.Location = new System.Drawing.Point(299, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 1;
@@ -254,7 +254,7 @@
             this.EmployeeComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.EmployeeComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // EmployeeComboBox.NestedRadGridView
             // 
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -297,7 +297,7 @@
             this.EmployeeComboBox.EditorControl.TabIndex = 0;
             this.EmployeeComboBox.Location = new System.Drawing.Point(12, 27);
             this.EmployeeComboBox.Name = "EmployeeComboBox";
-            this.EmployeeComboBox.Size = new System.Drawing.Size(285, 24);
+            this.EmployeeComboBox.Size = new System.Drawing.Size(286, 24);
             this.EmployeeComboBox.TabIndex = 0;
             this.EmployeeComboBox.TabStop = false;
             this.EmployeeComboBox.ThemeName = "TelerikMetro";
@@ -305,6 +305,7 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
             // 
             // FrmContractsLookAndSave
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.ActivitiesDescriptionTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
@@ -41,6 +42,7 @@
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.ActivitiesNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ActivitiesDescriptionTextBox)).BeginInit();
@@ -54,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActivitiesNameTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -204,6 +207,11 @@
             this.ActivitiesNameTextBox.TabIndex = 0;
             this.ActivitiesNameTextBox.ThemeName = "TelerikMetro";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
+            // 
             // FrmAddActivities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,6 +247,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActivitiesNameTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -259,5 +268,6 @@
         private Telerik.WinControls.UI.RadTextBox ActivitiesNameTextBox;
         private Telerik.WinControls.UI.RadTextBox ActivitiesDescriptionTextBox;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

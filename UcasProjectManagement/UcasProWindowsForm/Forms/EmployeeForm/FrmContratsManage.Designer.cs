@@ -50,6 +50,8 @@
             this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
             this.ContractsGridView = new Telerik.WinControls.UI.RadGridView();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
+            this.radRibbonBarGroup2 = new Telerik.WinControls.UI.RadRibbonBarGroup();
+            this.Reportbtn = new Telerik.WinControls.UI.RadButtonElement();
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContractsGridView)).BeginInit();
@@ -75,7 +77,8 @@
             this.ribbonTab1.AccessibleName = "العمليات";
             this.ribbonTab1.IsSelected = true;
             this.ribbonTab1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radRibbonBarGroup1});
+            this.radRibbonBarGroup1,
+            this.radRibbonBarGroup2});
             this.ribbonTab1.Name = "ribbonTab1";
             this.ribbonTab1.Text = "العمليات";
             this.ribbonTab1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
@@ -235,6 +238,26 @@
             this.ContractsGridView.ThemeName = "TelerikMetro";
             this.ContractsGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.radGridView1_CommandCellClick);
             // 
+            // radRibbonBarGroup2
+            // 
+            this.radRibbonBarGroup2.AccessibleDescription = "التقارير";
+            this.radRibbonBarGroup2.AccessibleName = "التقارير";
+            this.radRibbonBarGroup2.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.Reportbtn});
+            this.radRibbonBarGroup2.Name = "radRibbonBarGroup2";
+            this.radRibbonBarGroup2.Text = "التقارير";
+            this.radRibbonBarGroup2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // Reportbtn
+            // 
+            this.Reportbtn.AccessibleDescription = "طباعة تقرير";
+            this.Reportbtn.AccessibleName = "طباعة تقرير";
+            this.Reportbtn.Image = global::UcasProWindowsForm.Properties.Resources.Print;
+            this.Reportbtn.Name = "Reportbtn";
+            this.Reportbtn.Text = "طباعة تقرير";
+            this.Reportbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Reportbtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
             // FrmContratsManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,5 +304,7 @@
         private Telerik.WinControls.UI.RadGridView ContractsGridView;
         private Telerik.WinControls.UI.RadStatusStrip radStatusStrip1;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
+        private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup2;
+        private Telerik.WinControls.UI.RadButtonElement Reportbtn;
     }
 }

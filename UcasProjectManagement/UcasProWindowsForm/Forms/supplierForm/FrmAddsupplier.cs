@@ -21,7 +21,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void FrmAddsupplier_Load(object sender, EventArgs e)
         {
-            xPeremissions();
+          
         }
 
         private void radGroupBox1_Click(object sender, EventArgs e)
@@ -70,18 +70,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
 
 
-        void xPeremissions()
-        {
-            try
-            {
-                if (InformationsClass._AddSuppliers == 0) { AddBtn.Enabled = false; }
-            }
-            catch (Exception)
-            {
-                
-                throw;
-            }
-        }
+        
 
         private void PhoneNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {

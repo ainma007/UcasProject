@@ -39,12 +39,16 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            #region "  CheckFillTextBox "
+          
+
+
             if (DonorsComboBox.SelectedValue == null)
             {
 
                 DonorsComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
 
-
+                errorProvider1.SetError(this.DonorsComboBox, "من فضلك ادخل الممول");
 
                 DonorsComboBox.Focus();
 
@@ -53,12 +57,15 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
             else
             {
                 DonorsComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
             }
 
             if (CostTextBox.Text == "")
             {
 
               CostTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+              errorProvider1.SetError(this.CostTextBox, "من فضلك ادخل المبلغ");
+
 
                CostTextBox.Focus();
 
@@ -67,7 +74,10 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
             else
             {
             CostTextBox.TextBoxElement.Fill.BackColor = Color.White;
+            errorProvider1.Clear();
             }
+
+            #endregion
             AmountsReceived tb = new AmountsReceived()
             {
                 ProjectProfile_ID=InformationsClass.ProjID,

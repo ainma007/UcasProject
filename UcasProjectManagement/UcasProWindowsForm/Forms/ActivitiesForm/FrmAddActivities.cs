@@ -21,11 +21,12 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-
+            #region "  CheckFillTextBox "
             if (ActivitiesNameTextBox.Text == "")
             {
 
                 ActivitiesNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.ActivitiesNameTextBox, "من فضلك ادخل النشاط");
 
                 ActivitiesNameTextBox.Focus();
 
@@ -34,11 +35,14 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             else
             {
                 ActivitiesNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
+
             if (TotalCostTextBox.Text == "")
             {
 
                 TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.TotalCostTextBox, "من فضلك ادخل المبلغ");
 
                 TotalCostTextBox.Focus();
 
@@ -47,9 +51,12 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             else
             {
                 TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
+            #endregion
 
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
+            
             try
             {
                 ProjectActivity tb = new ProjectActivity()
@@ -67,13 +74,13 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 };
 
                 ActivityCmd.NewActivity(tb);
-                this.Cursor = Cursors.Default;
+                Operation.EndOperation(this);
                 MessageBox.Show("تمت عملية الاضافة");
                 ClearTxt();
             }
             catch (Xprema.XpremaException ex)
             {
-                this.Cursor = Cursors.Default;
+                Operation.EndOperation(this);
                 RadMessageBox.Show(ex.OtherDescription);
 
             }

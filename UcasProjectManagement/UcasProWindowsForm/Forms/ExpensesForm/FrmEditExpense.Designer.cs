@@ -48,10 +48,9 @@
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.ExpensesNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.SupplierComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SubActivtiesComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.projectSubActivityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
@@ -70,11 +69,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.SupplierComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SupplierComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SupplierComboBox.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivtiesComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivtiesComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivtiesComboBox.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectSubActivityBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -248,7 +246,6 @@
             // SupplierComboBox
             // 
             this.SupplierComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SupplierComboBox.DataSource = this.supplierBindingSource;
             this.SupplierComboBox.DisplayMember = "Name";
             // 
             // SupplierComboBox.NestedRadGridView
@@ -284,7 +281,6 @@
             this.SupplierComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1});
-            this.SupplierComboBox.EditorControl.MasterTemplate.DataSource = this.supplierBindingSource;
             this.SupplierComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.SupplierComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
             this.SupplierComboBox.EditorControl.Name = "NestedRadGridView";
@@ -300,14 +296,9 @@
             this.SupplierComboBox.TabStop = false;
             this.SupplierComboBox.ThemeName = "TelerikMetro";
             // 
-            // supplierBindingSource
-            // 
-            this.supplierBindingSource.DataSource = typeof(Ucas.Data.Supplier);
-            // 
             // SubActivtiesComboBox
             // 
             this.SubActivtiesComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SubActivtiesComboBox.DataSource = this.projectSubActivityBindingSource;
             // 
             // SubActivtiesComboBox.NestedRadGridView
             // 
@@ -342,7 +333,6 @@
             this.SubActivtiesComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn2,
             gridViewTextBoxColumn2});
-            this.SubActivtiesComboBox.EditorControl.MasterTemplate.DataSource = this.projectSubActivityBindingSource;
             this.SubActivtiesComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.SubActivtiesComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
             this.SubActivtiesComboBox.EditorControl.Name = "NestedRadGridView";
@@ -358,9 +348,9 @@
             this.SubActivtiesComboBox.TabStop = false;
             this.SubActivtiesComboBox.ThemeName = "TelerikMetro";
             // 
-            // projectSubActivityBindingSource
+            // errorProvider1
             // 
-            this.projectSubActivityBindingSource.DataSource = typeof(Ucas.Data.ProjectSubActivity);
+            this.errorProvider1.ContainerControl = this;
             // 
             // FrmEditExpense
             // 
@@ -401,11 +391,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.SupplierComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SupplierComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SupplierComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivtiesComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivtiesComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivtiesComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectSubActivityBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -430,7 +419,6 @@
         public Telerik.WinControls.UI.RadDateTimePicker DateOfProecssPicker;
         public Telerik.WinControls.UI.RadTextBox CashingNumberTextBox;
         public Telerik.WinControls.UI.RadTextBox ExpensesNameTextBox;
-        private System.Windows.Forms.BindingSource supplierBindingSource;
-        private System.Windows.Forms.BindingSource projectSubActivityBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

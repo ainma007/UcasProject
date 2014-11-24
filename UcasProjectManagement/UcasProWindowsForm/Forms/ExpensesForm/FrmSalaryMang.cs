@@ -21,6 +21,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         }
 
         public int XSalaryID { get; set; }
+        public Ucas.Data.Monthlysalary Tragetsalary { get; set; }
+        Monthlysalary db = new Monthlysalary();
         public void FillCombo()
         {
             ///GetAllContractsProjectID
@@ -38,7 +40,14 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         }
         private void FrmSalaryMang_Load(object sender, EventArgs e)
         {
-
+            db = new Monthlysalary();
+            XSalaryID = Tragetsalary.ID;
+            ContractComboBox.Text = Tragetsalary.Contract.Employee.EmployeeName;
+            SalaryTextBox.Text = Tragetsalary.Amount.ToString();
+            FromonthDateTimePicker.Text=Tragetsalary.Formonth.ToString();
+            ReleaseDateTimePicker.Text = Tragetsalary.IssueDate.ToString();
+            
+            
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)

@@ -23,6 +23,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         }
         private void FillComboBox()
         {
+            this.Cursor = Cursors.WaitCursor;
             ///تعبئة النشاطات الفرعية
             this.SubActivtiesComboBox.AutoFilter = true;
             this.SubActivtiesComboBox.ValueMember = "ID";
@@ -46,6 +47,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             filter2.Operator = FilterOperator.Contains;
             this.SupplierComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter2);
             SupplierComboBox.DataSource = SuppliersCmd.GetAll();
+            this.Cursor = Cursors.Default;
+
             
         }
         private void FrmAddExpenses_Load(object sender, EventArgs e)
@@ -59,10 +62,13 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
      
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            
+            #region "  CheckFillTextBox "
             if (SubActivtiesComboBox.SelectedValue == null)
             {
 
                 SubActivtiesComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.SubActivtiesComboBox, "من فضلك ادخل النشاط");
                 SubActivtiesComboBox.Focus();
 
                 return;
@@ -70,12 +76,14 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             else
             {
                 SubActivtiesComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
             }
             ///
             if (ExpensesNameTextBox.Text == "")
             {
 
                 ExpensesNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.ExpensesNameTextBox, "من فضلك ادخل المصروف");
 
                 ExpensesNameTextBox.Focus();
 
@@ -84,6 +92,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             else
             {
                 ExpensesNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
 
             ///
@@ -91,6 +100,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             {
 
                 RequiarAmountTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.RequiarAmountTextBox, "من فضلك ادخل المبلغ");
+
 
                 RequiarAmountTextBox.Focus();
 
@@ -99,11 +110,16 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             else
             {
                 RequiarAmountTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
+
+              #endregion
+
+            Operation.BeginOperation(this);
            
             try
             {
-                this.Cursor = Cursors.WaitCursor;
+               
                 ProjectExpens tb = new ProjectExpens
                 {
                     ProjectProfile_ID = InformationsClass.ProjID,
@@ -120,9 +136,10 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 };
 
                 ProjectExpensesCmd.NewProjectExpens(tb);
-
+                Operation.EndOperation(this);
+              
                 RadMessageBox.Show("تمت علمية الاضافة");
-                this.Cursor = Cursors.Default;
+               
                 ClearTxt();
             }
             catch (Xprema.XpremaException ex)

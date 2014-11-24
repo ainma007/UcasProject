@@ -24,12 +24,13 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
             GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("RequiarAmount", "المجموع الكلي = {0}", GridAggregateFunction.Sum);
             GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight });
+            this.ExpensesGridView.SummaryRowsBottom.Clear();
             this.ExpensesGridView.SummaryRowsBottom.Add(summaryRowItem);
         }
         private void FrmManageExpenses_Load(object sender, EventArgs e)
         {
             ExpensesGridView.MasterView.TableHeaderRow.MaxHeight = 50;
-          ExpensesGridView.DataSource  = ProjectExpensesCmd.ExpensesByProjectID(InformationsClass.ProjID);
+          ExpensesGridView.DataSource  = ProjectExpensesCmd.GetAllExpensesByProject(InformationsClass.ProjID);
 
           for (int i = 1; i <= ExpensesGridView .Rows .Count ; i++)
           {
@@ -47,18 +48,15 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             if (col == 9)
             {
               
-                FrmEditExpense EditExpense = new FrmEditExpense();
-                EditExpense.FillComboBox();
-                EditExpense.XExpID = int.Parse(ExpensesGridView.CurrentRow.Cells[1].Value.ToString());
-                EditExpense.ExpensesNameTextBox.Text = ExpensesGridView.CurrentRow.Cells[2].Value.ToString();
-                EditExpense.DateOfProecssPicker.Text = ExpensesGridView.CurrentRow.Cells[3].Value.ToString();
-                EditExpense.BillTextBox.Text = ExpensesGridView.CurrentRow.Cells[4].Value.ToString();
-                EditExpense.RequiarAmountTextBox.Text = ExpensesGridView.CurrentRow.Cells[5].Value.ToString();
-                EditExpense.CashingNumberTextBox.Text = ExpensesGridView.CurrentRow.Cells[6].Value.ToString();
-                EditExpense.SupplierComboBox.Text = ExpensesGridView.CurrentRow.Cells[7].Value.ToString();
-                EditExpense.SubActivtiesComboBox.Text = ExpensesGridView.CurrentRow.Cells[8].Value.ToString();
-
-                EditExpense.ShowDialog();
+                
+                
+                this.Cursor = Cursors.WaitCursor;
+                FrmEditExpense frm = new FrmEditExpense();
+                Ucas.Data.ProjectExpens Expenses = (Ucas.Data.ProjectExpens)ExpensesGridView.CurrentRow.DataBoundItem;
+                frm.TragetExpens = Expenses;
+                frm.FillComboBox();
+                frm.ShowDialog();
+                this.Cursor = Cursors.Default;         
                 return;
 
             }
@@ -83,6 +81,16 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         {
             FrmAddExpenses frm = new FrmAddExpenses();
             frm.ShowDialog();
+        }
+
+        private void RefrechBtn_Click(object sender, EventArgs e)
+        {
+            FrmManageExpenses_Load(sender, e);
+        }
+
+        private void FrmManageExpenses_Activated(object sender, EventArgs e)
+        {
+            FrmManageExpenses_Load(sender, e);
         }
     }
 }

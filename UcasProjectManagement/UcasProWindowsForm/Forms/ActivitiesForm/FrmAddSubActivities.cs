@@ -44,23 +44,30 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
+
+            #region "  CheckFillTextBox "
+
             if (ActivitiesColumnComboBox.SelectedValue == null)
             {
-              
+
                 ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
-                 ActivitiesColumnComboBox.Focus();
+                errorProvider1.SetError(this.ActivitiesColumnComboBox, "من فضلك ادخل النشاط الرئيسي");
+                ActivitiesColumnComboBox.Focus();
+
 
                 return;
             }
             else
             {
                 ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
             }
 
             if (SubActivitiesNameTextBox.Text == "")
             {
 
                 SubActivitiesNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.SubActivitiesNameTextBox, "من فضلك ادخل اسم النشاط");
 
                 SubActivitiesNameTextBox.Focus();
 
@@ -69,12 +76,14 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             else
             {
                 SubActivitiesNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
 
             if (TotalCostTextBox.Text == "")
             {
 
                 TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.TotalCostTextBox, "من فضلك ادخل المبلغ");
 
                 TotalCostTextBox.Focus();
 
@@ -83,7 +92,10 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             else
             {
                 TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
+            #endregion
+            
 
             this.Cursor = Cursors.WaitCursor;
             try
@@ -105,7 +117,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 };
                 SubActivityCmd.NewSubActivity(tb);
                 this.Cursor = Cursors.Default;
-                MessageBox.Show("Saved...");
+                RadMessageBox.Show(OperationX.SaveMessagedone);
                 ClearTxt();
             }
             catch (Xprema.XpremaException ex)

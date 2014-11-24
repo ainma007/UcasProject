@@ -9,6 +9,7 @@ namespace UcasProWindowsForm.Reports.ReportObj
     {
         public int SalarysID { get; set; }
         public string EmployeeName { get; set; }
+        public string EmployeejobNumber { get; set; }
         public double SalaryAmount { get; set; }
         public DateTime SalaryIssueDate { get; set; }
         public DateTime SalaryForMonth { get; set; }

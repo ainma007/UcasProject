@@ -94,21 +94,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
            
             //=========================
         }
-        #region "   Activate Peremissions     "
-        void Xperemissions()
-        {
-            try
-            {
-                if (InformationsClass._AddEmployee == 0) { AddBtn.Enabled = false; }
-            }
-            catch (Exception)
-            {
-                
-                throw;
-            }
-        }
-        #endregion 
-
+      
         private void EmployeejobNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);

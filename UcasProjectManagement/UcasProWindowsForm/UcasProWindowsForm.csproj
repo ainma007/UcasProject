@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>..\..\..\BylsanSystem\Solution1\Bylsan System\Lib\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
@@ -299,6 +302,7 @@
     <Compile Include="Forms\UserSystemForm\frmUserManage.Designer.cs">
       <DependentUpon>frmUserManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Operation.cs" />
     <Compile Include="OperationX.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Reports\frmReportViewer.cs">
