@@ -65,11 +65,11 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         {
             projectActivityBindingSource.DataSource = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
             projectSubActivityBindingSource.DataSource = SubActivityCmd.GetAllSubActivities();
-            for (int i = 1; i <= ActivitiesGridView.Rows.Count; i++)
-            {
-                ActivitiesGridView.Rows[i - 1].Cells["Num"].Value = i.ToString();
+            //for (int i = 1; i <= ActivitiesGridView.Rows.Count; i++)
+            //{
+            //    ActivitiesGridView.Rows[i - 1].Cells["Num"].Value = i.ToString();
                 
-            }
+            //}
 
 
             //for (int i = 1; i <= gridViewTemplate2.Rows.Count; i++)
@@ -80,22 +80,11 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             TotalActivites();
 
 
-            ActivitiesGridView.RowFormatting += ActivitiesGridView_RowFormatting;
-            ActivitiesGridView.ViewRowFormatting += ActivitiesGridView_ViewRowFormatting;
+            
             
         }
 
-        void ActivitiesGridView_ViewRowFormatting(object sender, RowFormattingEventArgs e)
-        {
-           
-           
-         }
-
-        void ActivitiesGridView_RowFormatting(object sender, RowFormattingEventArgs e)
-        {
-            
-        }
-
+        
         private void ActivitiesGridView_CommandCellClick(object sender, EventArgs e)
         {
 
@@ -232,10 +221,10 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void FrmAllActivitesMange_Activated(object sender, EventArgs e)
         {
-            Operation.BeginOperation(this);
+            //Operation.BeginOperation(this);
 
-            FrmAllActivitesMange_Load(sender, e);
-            Operation.EndOperation(this);
+            //FrmAllActivitesMange_Load(sender, e);
+            //Operation.EndOperation(this);
         }
 
         private void RefreshBtn_Click(object sender, EventArgs e)

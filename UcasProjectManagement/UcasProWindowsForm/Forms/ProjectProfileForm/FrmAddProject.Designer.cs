@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
@@ -46,6 +47,7 @@
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.StartDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.ProjectNameTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectDescriptionTextBox)).BeginInit();
@@ -61,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StartDateTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectNameTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,7 +92,6 @@
             this.radGroupBox1.TabIndex = 0;
             this.radGroupBox1.Text = "بيانات الاضافة";
             this.radGroupBox1.ThemeName = "TelerikMetro";
-            this.radGroupBox1.Click += new System.EventHandler(this.radGroupBox1_Click);
             // 
             // ProjectDescriptionTextBox
             // 
@@ -115,7 +117,6 @@
             // 
             // CoineDropDownList
             // 
-            this.CoineDropDownList.AllowShowFocusCues = false;
             this.CoineDropDownList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CoineDropDownList.AutoCompleteDisplayMember = null;
             this.CoineDropDownList.AutoCompleteValueMember = null;
@@ -123,19 +124,15 @@
             radListDataItem1.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem1.Text = "شيكل";
             radListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem1.TextWrap = true;
             radListDataItem2.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem2.Text = "دولار";
             radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem2.TextWrap = true;
             radListDataItem3.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem3.Text = "دينار اردني";
             radListDataItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem3.TextWrap = true;
             radListDataItem4.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem4.Text = "يورو";
             radListDataItem4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem4.TextWrap = true;
             this.CoineDropDownList.Items.Add(radListDataItem1);
             this.CoineDropDownList.Items.Add(radListDataItem2);
             this.CoineDropDownList.Items.Add(radListDataItem3);
@@ -265,6 +262,11 @@
             this.ProjectNameTextBox.TabIndex = 0;
             this.ProjectNameTextBox.ThemeName = "TelerikMetro";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
+            // 
             // FrmAddProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,6 +304,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StartDateTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectNameTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -323,5 +326,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel7;
         private Telerik.WinControls.UI.RadDropDownList CoineDropDownList;
         private Telerik.WinControls.UI.RadTextBox ProjectDescriptionTextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

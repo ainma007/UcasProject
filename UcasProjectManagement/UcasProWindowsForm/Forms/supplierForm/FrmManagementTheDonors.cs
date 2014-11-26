@@ -25,55 +25,15 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
             theDonorsBindingSource.DataSource = TheDonorCmd.GetAllDonors();
         }
-        
 
-       
+
+
         private void FrmManagementFinanciers_Load(object sender, EventArgs e)
         {
             GetAllFinanciers();
-          
+
         }
 
-        private void radGridView1_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
-        {
-          
-        }
-
-        private void FinanciersGridView_CommandCellClick(object sender, EventArgs e)
-        {
-            try{  
-        var col = DonersGridView.CurrentColumn.Index;
-        if (col == 7)
-        {
-            FrmDonorsEdit frm = new FrmDonorsEdit();
-            frm.XDonorsId = int.Parse(DonersGridView.CurrentRow.Cells[0].Value.ToString());
-            frm.TheDonorsNameTextBox.Text = DonersGridView.CurrentRow.Cells[1].Value.ToString();
-            frm.AgentNameTextBox.Text = DonersGridView.CurrentRow.Cells[2].Value.ToString();
-            frm.PhoneNumberTextBox.Text = DonersGridView.CurrentRow.Cells[3].Value.ToString();
-            frm.faxTextBox4.Text = DonersGridView.CurrentRow.Cells[4].Value.ToString();
-            frm.EmailTextBox.Text = DonersGridView.CurrentRow.Cells[5].Value.ToString();
-            frm.AdressTextBox.Text = DonersGridView.CurrentRow.Cells[6].Value.ToString();
-            frm.ShowDialog();
-            
-        }
-        if (col == 8) { if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
-                    {
-                       
-                       TheDonorCmd.DeleteDonor(int.Parse(DonersGridView.CurrentRow.Cells[0].Value.ToString()));
-                       RadMessageBox.Show(OperationX.DeletedMessage);
-                     
-                      
-                    }
-
-            }
-            }
-           
-         catch (Exception)
-            {
-
-                return;
-            }
-        }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
@@ -92,7 +52,45 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         }
 
+        private void DonersGridView_CommandCellClick(object sender, EventArgs e)
+        {
+
+            var col = DonersGridView.CurrentColumn.Index;
+            if (col == 7)
+            {
+                this.Cursor = Cursors.WaitCursor;
+                FrmDonorsEdit frm = new FrmDonorsEdit();
+                Ucas.Data.TheDonor db = (Ucas.Data.TheDonor)DonersGridView.CurrentRow.DataBoundItem;
+                frm.TragetDoner = db;
+                frm.ShowDialog();
+                this.Cursor = Cursors.Default;
+
+
+            }
+
+            if (col == 8)
+            {
+                if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        this.Cursor = Cursors.WaitCursor;
+                        TheDonorCmd.DeleteDonor(int.Parse(DonersGridView.CurrentRow.Cells[0].Value.ToString()));
+                        RadMessageBox.Show(OperationX.DeletedMessage);
+                        this.Cursor = Cursors.Default;
+                    }
+                    catch (Exception)
+                    {
+                        
+                        return;
+                    }
+                   
+                }
+
+            }
+
         }
 
 
     }
+}

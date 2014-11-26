@@ -23,14 +23,14 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         {
             this.DonorsComboBox.AutoFilter = true;
             this.DonorsComboBox.ValueMember = "ID";
-            this.DonorsComboBox.DisplayMember = "Name";
+            this.DonorsComboBox.DisplayMember = "TheDonor.Name";
 
 
             FilterDescriptor filter = new FilterDescriptor();
             filter.PropertyName = this.DonorsComboBox.DisplayMember;
             filter.Operator = FilterOperator.Contains;
             this.DonorsComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-            DonorsComboBox.DataSource = TheDonorsProjectCmd.GetAllDonorsForAmountsBypro(InformationsClass.ProjID);
+            DonorsComboBox.DataSource = TheDonorsProjectCmd.GetAllDonorsByproID(InformationsClass.ProjID);
 
         }
         private void saveBtn_Click(object sender, EventArgs e)

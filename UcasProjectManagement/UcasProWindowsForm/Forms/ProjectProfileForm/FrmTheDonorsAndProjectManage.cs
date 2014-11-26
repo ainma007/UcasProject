@@ -32,7 +32,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void FrmTheDonorsAndProjectManage_Load(object sender, EventArgs e)
         {
-            radGridView1.DataSource = TheDonorsProjectCmd.GetAllDonorsBypro(InformationsClass.ProjID);
+            radGridView1.DataSource = TheDonorsProjectCmd.GetAllDonorsByproID(InformationsClass.ProjID);
         }
 
         private void radGridView1_CommandCellClick(object sender, EventArgs e)
@@ -41,11 +41,9 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             if (col == 3)
             {
                 FrmTheDonorsAndProjectEdit frm = new FrmTheDonorsAndProjectEdit();
-                frm.fillDonorsCombo();
-                frm.XDonrPro = int.Parse(radGridView1.CurrentRow.Cells[0].Value.ToString());
-                frm.DonorsColumnComboBox.Text = radGridView1.CurrentRow.Cells[1].Value.ToString();
-                frm.CostTextBox.Text = radGridView1.CurrentRow.Cells[2].Value.ToString();
 
+                Ucas.Data.TheDonorsProject db = (Ucas.Data.TheDonorsProject)radGridView1.CurrentRow.DataBoundItem;
+                frm.TragetTheDonorsProject = db;
                 frm.ShowDialog();
             }
             if (col == 4)
@@ -54,6 +52,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 {
                     TheDonorsProjectCmd.DeleteDonorsProject(int.Parse(radGridView1.CurrentRow.Cells[0].Value.ToString()));
                     RadMessageBox.Show(OperationX.DeletedMessage);
+                  
                 }
             }
         }

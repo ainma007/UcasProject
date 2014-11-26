@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
@@ -38,6 +39,7 @@
             this.CostTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.DonorsColumnComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
@@ -47,6 +49,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DonorsColumnComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsColumnComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsColumnComboBox.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +75,7 @@
             // 
             this.SaveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveBtn.Image = global::UcasProWindowsForm.Properties.Resources.SaveChang;
-            this.SaveBtn.Location = new System.Drawing.Point(228, 121);
+            this.SaveBtn.Location = new System.Drawing.Point(235, 121);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(127, 44);
             this.SaveBtn.TabIndex = 7;
@@ -170,6 +173,11 @@
             this.DonorsColumnComboBox.TabStop = false;
             this.DonorsColumnComboBox.ThemeName = "TelerikMetro";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
+            // 
             // FrmTheDonorsAndProjectEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,6 +208,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DonorsColumnComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsColumnComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsColumnComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -214,5 +223,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel1;
         public Telerik.WinControls.UI.RadMultiColumnComboBox DonorsColumnComboBox;
         public Telerik.WinControls.UI.RadTextBox CostTextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

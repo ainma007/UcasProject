@@ -25,6 +25,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
             GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("Amount", "المجموع الكلي = {0}", GridAggregateFunction.Sum);
             GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight });
+            summaryRowItem.Clear();
             this.SalaryGridView.SummaryRowsBottom.Add(summaryRowItem);
 
 
@@ -37,20 +38,21 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void FrmSalariesManage_Load(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
+            
+
             SalaryGridView.DataSource = SalariesCmd.GetSalaryBySelectedprotID(InformationsClass.ProjID);
-            for (int i = 1; i <= SalaryGridView.Rows.Count; i++)
-            {
-                SalaryGridView.Rows[i - 1].Cells[0].Value = i.ToString();
-            }
+           
 
             TotalExpenses();
+            this.Cursor = Cursors.Default;
         }
 
         private void SalaryGridView_CommandCellClick(object sender, EventArgs e)
         {
             var col = SalaryGridView.CurrentColumn.Index;
 
-            if (col == 7)
+            if (col == 8)
             {
                 //
                 this.Cursor = Cursors.WaitCursor;
@@ -65,7 +67,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
             }
 
-            if (col == 8)
+            if (col == 9)
             {
 
                 if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
@@ -107,7 +109,9 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void FrmSalariesManage_Activated(object sender, EventArgs e)
         {
-            FrmSalariesManage_Load(sender, e);
+         //   FrmSalariesManage_Load(sender, e);
         }
+
+       
     }
 }

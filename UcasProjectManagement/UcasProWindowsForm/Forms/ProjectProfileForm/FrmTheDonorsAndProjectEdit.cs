@@ -20,6 +20,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             RadMessageBox.SetThemeName("TelerikMetro");
         }
         public int XDonrPro { get; set; }
+        public Ucas.Data.TheDonorsProject TragetTheDonorsProject { get; set; }
         public void fillDonorsCombo()
         {
             this.DonorsColumnComboBox.AutoFilter = true;
@@ -38,16 +39,23 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         }
         private void FrmTheDonorsAndProjectEdit_Load(object sender, EventArgs e)
-        {
 
-           
+
+        {
+            fillDonorsCombo();
+            XDonrPro = TragetTheDonorsProject.ID;
+            DonorsColumnComboBox.Text = TragetTheDonorsProject.TheDonor.Name;
+            CostTextBox.Text = TragetTheDonorsProject.TotalCost.ToString();
+
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            #region "  CheckFillTextBox "
             if (DonorsColumnComboBox.SelectedValue == null)
             {
                 DonorsColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.DonorsColumnComboBox, "من فضلك ادخل اسم الممول");
 
                 DonorsColumnComboBox.Focus();
 
@@ -57,8 +65,31 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             {
                 DonorsColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
             }
+
+            if (CostTextBox.Text == "")
+            {
+
+                CostTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.CostTextBox, "من فضلك ادخل  الميزانية");
+
+                CostTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+
+                CostTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+
+
+            #endregion
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
+                Operation.BeginOperation(this);
+                
+
                 TheDonorsProject tb = new TheDonorsProject()
                 {
                     ID = XDonrPro,
@@ -69,7 +100,9 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 };
 
                 TheDonorsProjectCmd.EditTheDonorsProject(tb);
+                Operation.EndOperation(this);
                 MessageBox.Show("تمت العملية بنجاح");
+                this.Close();
             }
         }
 

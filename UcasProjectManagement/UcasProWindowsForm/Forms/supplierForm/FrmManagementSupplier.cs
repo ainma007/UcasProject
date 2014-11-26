@@ -48,22 +48,20 @@ namespace UcasProWindowsForm.Forms.supplierForm
         var col = radGridView1.CurrentColumn.Index;
         if (col == 7)
         {
+            this.Cursor = Cursors.WaitCursor;
             FrmEditsupplier frm = new FrmEditsupplier();
-            frm.XSupID = int.Parse(radGridView1.CurrentRow.Cells[0].Value.ToString());
-            frm.NameTextBox.Text = radGridView1.CurrentRow.Cells[1].Value.ToString();
-            frm.SuppliersNaturalTextBox.Text = radGridView1.CurrentRow.Cells[2].Value.ToString();
-            frm.PhoneNumberTextBox.Text = radGridView1.CurrentRow.Cells[3].Value.ToString();
-            frm.faxTextBox4.Text = radGridView1.CurrentRow.Cells[4].Value.ToString();
-            frm.EmailTextBox.Text = radGridView1.CurrentRow.Cells[5].Value.ToString();
-            frm.AdressTextBox.Text = radGridView1.CurrentRow.Cells[6].Value.ToString();
+            Ucas.Data.Supplier db = (Ucas.Data.Supplier)radGridView1.CurrentRow.DataBoundItem;
+            frm.TragetDSupplier = db;
             frm.ShowDialog();
+            this.Cursor = Cursors.Default;
            
         }
         if (col == 8) { if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                     {
-                      
+                        this.Cursor = Cursors.WaitCursor;
                         SuppliersCmd.DeleteSupplier(int.Parse(radGridView1.CurrentRow.Cells[0].Value.ToString()));
                         GetAllsupplier();
+                        this.Cursor = Cursors.Default;
                      
                     }
 

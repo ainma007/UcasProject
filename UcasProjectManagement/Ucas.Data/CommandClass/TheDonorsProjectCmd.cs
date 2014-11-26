@@ -32,29 +32,18 @@ namespace Ucas.Data.CommandClass
             return q;
 
         }
-        #region " { Get Current Project's Donors Only } "
-        public static List<TheDonorsProject> GetAllDonorsOfSelectedProject(int ProjId)
+
+        public static List<TheDonorsProject> GetAllDonorsByproID(int ProID)
         {
-            try
-            {
-                if (ProjId != 0)
-                {
-                    var CurrentFinanciers = (from Pro in db.TheDonorsProjects
-                                             where Pro.ProjectID == ProjId
-                                             select Pro).ToList();
-                    return CurrentFinanciers;
-                }
-                return null;
+            db = new UcasProEntities();
 
-            }
-            catch (Exception)
-            {
+            var LST = (from c in db.TheDonorsProjects
+                       where c.ProjectID == ProID
+                       select c).ToList();
+            return LST;
 
-                return null;
-            }
+
         }
-        # endregion
-
         public static bool AddTheTheDonorsProject(TheDonorsProject tb)
         {
             db = new UcasProEntities();

@@ -124,7 +124,6 @@
             // 
             // StatusDropDownList
             // 
-            this.StatusDropDownList.AllowShowFocusCues = false;
             this.StatusDropDownList.AutoCompleteDisplayMember = null;
             this.StatusDropDownList.AutoCompleteValueMember = null;
             this.StatusDropDownList.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
@@ -132,11 +131,9 @@
             radListDataItem1.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem1.Text = "فعال";
             radListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem1.TextWrap = true;
             radListDataItem2.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem2.Text = "غير فعال";
             radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem2.TextWrap = true;
             this.StatusDropDownList.Items.Add(radListDataItem1);
             this.StatusDropDownList.Items.Add(radListDataItem2);
             this.StatusDropDownList.Location = new System.Drawing.Point(118, 204);

@@ -19,14 +19,16 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             InitializeComponent();
         }
         public int XProID { get; set; }
+        public Ucas.Data.ProjectProfile TragetProject { get; set; }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            #region "  CheckFillTextBox "
 
             if (ProjectNameTextBox.Text == "")
             {
 
                 ProjectNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
-
+                errorProvider1.SetError(this.ProjectNameTextBox, "من فضلك ادخل اسم المشروع");
                 ProjectNameTextBox.Focus();
 
                 return;
@@ -34,12 +36,14 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             else
             {
                 ProjectNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
 
             if (TotalCostTextBox.Text == "")
             {
 
                 TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.TotalCostTextBox, "من فضلك ادخل  الميزانية");
 
                 TotalCostTextBox.Focus();
 
@@ -48,10 +52,33 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             else
             {
                 TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
+
+            if (CoineDropDownList.SelectedItem == null)
+            {
+
+                CoineDropDownList.DropDownListElement.TextBox.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.CoineDropDownList, "من فضلك ادخل  العملة");
+
+
+                CoineDropDownList.Focus();
+
+                return;
+            }
+            else
+            {
+                CoineDropDownList.DropDownListElement.TextBox.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+
+            #endregion
 
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
+                Operation.BeginOperation(this);
+               
+
                 ProjectProfile pro = new ProjectProfile()
                 {
                     ID = XProID,
@@ -62,14 +89,16 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                     TotalCost = Double.Parse(TotalCostTextBox.Text),
                     Status = StatusDownList.Text,
 
-                    Coin = CoineDropDownList.SelectedItem.ToString()
+                    Coin = CoineDropDownList.Text.ToString()
 
 
 
 
                 };
                 ProjectProfileCmd.EditProjectProfile(pro);
+                Operation.EndOperation(this);
                 MessageBox.Show("تمت العلمية بنجاح");
+                this.Close();
             }
         }
 
@@ -87,6 +116,18 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             {
                 e.Handled = true;
             }
+        }
+
+        private void FrmEditProject_Load(object sender, EventArgs e)
+        {
+                   XProID=TragetProject.ID;
+                   ProjectNameTextBox.Text=TragetProject.ProjectName;
+                   ProjectDescriptionTextBox.Text=TragetProject.ProjectDescription;
+                   StartDateTimePicker.Text=TragetProject.StartDate.ToString();
+                   EndDateTimePicker.Text=TragetProject.EndDate.ToString();
+                   TotalCostTextBox.Text=TragetProject.TotalCost.ToString();
+                   StatusDownList.Text=TragetProject.Status.ToString();
+                   CoineDropDownList.Text = TragetProject.Coin;
         }
     }
 }

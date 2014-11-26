@@ -118,28 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="radButtonElement1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABsAAAAdCAYAAABbjRdIAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGGSURBVEhLxZXR
-        cYMwEET5ySSflOASXEJKcAmUkBJSgkughJRACSkhJbgDfKvoGGm9gIQ84483iNNxqzudRPf2/tEb3xV8
-        Rvp5nrsaIIYAcwUu+mtUCbaIYVwl2CoGRhVY8QwxUCSoxKYV/gzMKzGwK8hiCOjdxrjf1ThFW4YSSDlS
-        RqAyn5RAispMdhf5Sfgb5siercLBmaNllHBw5qViW92oyErLwRmVGVobtj3gl35n8bSI89Iy3pTTGubv
-        ZUSM3QtZZYabXLU+A7+bcTb8n5juIcbZIlrLeDEgljUKsfyGWsTCxWtPBEvtg/FFtnCVtYghIwTO7HEB
-        OBaZ3bgcFQuNZE/sXTa3ITaWimFv0sN8jkF9HmULc9GOhnHf0YDPVCrGHXpNxEJH4l1hc17qYjG+VYYY
-        iJvDzMGOjDK78VMihpVzGYGfrcx/Q2wozUyBbCGIxaR2dCkWl9pwDvsWMaACQzxdwLKnEOMDWEO4HQyI
-        PhyDaFuaxzuG96OGkwfDWNn/mbs7iNowT47E8rUAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="radRibbonBar1.StartButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAYAAAB2HjRBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAALNJREFUOE+NkeENQiEMhBnBERzBkRzFTRzBERjBERzBn/wAgnd97Ut9lsglBCj3
-        HSUkaoxx6r3n1tqTaykGgudeSnnDc5ECFmdCfkQBBmJ+7AG11hcPaCAUBRxvxHzFGHKzOJxotgC33lpV
-        Rdwuu232jKloJkTYt/tXBvq2lwKOoJZ/vygSTJlDt19iXQPi9zNZDTctibCXr+GspVgwSABb1f0aaILR
-        AvLGLYImAPaECZjSB56hKtx0sdEUAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="gridViewCommandColumn1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -220,5 +198,8 @@
   </metadata>
   <metadata name="telerikMetroTheme1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>-4, 15</value>
+  </metadata>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>122, 56</value>
   </metadata>
 </root>

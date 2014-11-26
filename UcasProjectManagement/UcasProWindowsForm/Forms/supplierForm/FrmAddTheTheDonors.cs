@@ -22,22 +22,26 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-             if (TheDonorsNameTextBox.Text == "")
+            #region "  CheckFillTextBox "
+            if (TheDonorsNameTextBox.Text == "")
             {
                 TheDonorsNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.TheDonorsNameTextBox, "من فضلك ادخل اسم الممول");
 
-               
+
                 TheDonorsNameTextBox.Focus();
-               
+
                 return;
             }
             else
             {
                 TheDonorsNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
+            #endregion
 
-
-
+            Operation.BeginOperation(this);
+          
 
              TheDonor Donrs=new TheDonor()
             {
@@ -48,13 +52,12 @@ namespace UcasProWindowsForm.Forms.supplierForm
                 Fax=faxTextBox4.Text,
                 Adderss=AdressTextBox.Text,
 
-
-
             };
              TheDonorCmd.AddDonor(Donrs);
-         
 
+             Operation.EndOperation(this);
              RadMessageBox.Show(this, OperationX.AddMessageDone, "Done", MessageBoxButtons.OK, RadMessageIcon.Info);
+            
              ClearText();
         }
 

@@ -23,19 +23,16 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
         }
       
         
-        private void radGroupBox1_Click(object sender, EventArgs e)
+     
+              private void AddBtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void AddBtn_Click(object sender, EventArgs e)
-        {
+            #region "  CheckFillTextBox "
 
             if (ProjectNameTextBox.Text == "")
             {
 
                 ProjectNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
-
+                errorProvider1.SetError(this.ProjectNameTextBox, "من فضلك ادخل اسم المشروع");
                 ProjectNameTextBox.Focus();
 
                 return;
@@ -43,12 +40,14 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             else
             {
                 ProjectNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
 
             if (TotalCostTextBox.Text == "")
             {
 
                 TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.TotalCostTextBox, "من فضلك ادخل  الميزانية");
 
                 TotalCostTextBox.Focus();
 
@@ -56,14 +55,16 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             }
             else
             {
+
                 TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
 
             if (CoineDropDownList.SelectedItem == null)
             {
-                //GenderDropDownList.BackColor = System.Drawing.Color.Red;
+               
                 CoineDropDownList.DropDownListElement.TextBox.BackColor = Color.OrangeRed;
-                // GenderDropDownList.DropDownListElement.TextBox.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.CoineDropDownList, "من فضلك ادخل  العملة");
 
 
                 CoineDropDownList.Focus();
@@ -73,7 +74,14 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             else
             {
                 CoineDropDownList.DropDownListElement.TextBox.BackColor = Color.White;
+                errorProvider1.Clear();
             }
+
+            #endregion
+
+            Operation.BeginOperation(this);
+            
+
             ProjectProfile pro = new ProjectProfile()
             {
                 
@@ -91,8 +99,11 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
             };
             ProjectProfileCmd.AddNewProject(pro);
+            Operation.EndOperation(this);
+
+            RadMessageBox.Show("تمت العلمية بنجاح");
             ClearText();
-            MessageBox.Show("تمت العلمية بنجاح");
+           
         }
 
         private void ClearText()

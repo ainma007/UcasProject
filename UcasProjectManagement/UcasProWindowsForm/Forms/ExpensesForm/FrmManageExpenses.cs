@@ -90,7 +90,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void FrmManageExpenses_Activated(object sender, EventArgs e)
         {
-            FrmManageExpenses_Load(sender, e);
+          //  FrmManageExpenses_Load(sender, e);
         }
     }
 }

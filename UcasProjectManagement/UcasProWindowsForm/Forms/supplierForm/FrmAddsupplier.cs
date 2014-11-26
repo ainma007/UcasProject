@@ -31,22 +31,29 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-             if (NameTextBox.Text == "")
+            #region "  CheckFillTextBox "
+            if (NameTextBox.Text == "")
             {
                 NameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.NameTextBox, "من فضلك ادخل اسم المورد");
 
-               
                 NameTextBox.Focus();
-               
+
                 return;
             }
             else
             {
                 NameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
+            #endregion
 
 
 
+
+
+            Operation.BeginOperation(this);
+           
 
             Supplier Sup=new Supplier()
             {
@@ -61,7 +68,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
             };
              SuppliersCmd.newSupplier(Sup);
-           
+             Operation.EndOperation(this);
 
           RadMessageBox.Show(this, OperationX.AddMessageDone, "Done", MessageBoxButtons.OK, RadMessageIcon.Info);
           clearText();

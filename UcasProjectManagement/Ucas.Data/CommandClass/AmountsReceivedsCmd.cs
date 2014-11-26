@@ -80,32 +80,41 @@ namespace Ucas.Data.CommandClass
             return db.AmountsReceiveds.ToList();
         }
 
-        public static List<AmountsReceived> GetAllAmountsReceivedByTheFinancierPrjectID(int F_PID)
+        //public static List<AmountsReceived> GetAllAmountsReceivedByTheFinancierPrjectID(int F_PID)
+        //{
+        //    db = new UcasProEntities();
+        //    db.Configuration.LazyLoadingEnabled = false;
+        //    db.Configuration.ProxyCreationEnabled = false;
+        //    var LST = ( from f in db.AmountsReceiveds 
+        //                orderby f.Date ascending 
+        //                    where f.TheDonorsProjectID == F_PID 
+        //                    select f).ToList();
+        //    return LST;
+        //}
+
+        public static List<AmountsReceived> GetAllAmountsReceivedBypro(int ProId)
         {
             db = new UcasProEntities();
-            db.Configuration.LazyLoadingEnabled = false;
-            db.Configuration.ProxyCreationEnabled = false;
-            var LST = ( from f in db.AmountsReceiveds 
-                        orderby f.Date ascending 
-                            where f.TheDonorsProjectID == F_PID 
-                            select f).ToList();
+            var LST = (from f in db.AmountsReceiveds
+            where f.ProjectProfile_ID == ProId
+            select f).ToList();
             return LST;
         }
-        public static IEnumerable GetAllAmountsReceivedBypro(int ProId)
-        {
-            db = new UcasProEntities();
-            var q = (from i in db.AmountsReceiveds
-                     join Dpro in db.TheDonorsProjects on i.TheDonorsProjectID equals Dpro.ID
-                     join donrs in db.TheDonors on Dpro.DonorsID equals donrs.ID
-                     where i.ProjectProfile_ID == ProId
+        //public static IEnumerable GetAllAmountsReceivedBypro(int ProId)
+        //{
+        //    db = new UcasProEntities();
+        //    var q = (from i in db.AmountsReceiveds
+        //             join Dpro in db.TheDonorsProjects on i.TheDonorsProjectID equals Dpro.ID
+        //             join donrs in db.TheDonors on Dpro.DonorsID equals donrs.ID
+        //             where i.ProjectProfile_ID == ProId
 
 
 
 
-                     select new { i.ID, donrs.Name, i.Date, i.Cost}).ToList();
-            return q;
+        //             select new { i.ID, donrs.Name, i.Date, i.Cost }).ToList();
+        //    return q;
 
-        }
+        //}
         public static double GetTotalAmountsByProject(int ProID)
         {
             db = new UcasProEntities();

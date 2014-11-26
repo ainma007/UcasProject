@@ -19,12 +19,14 @@ namespace UcasProWindowsForm.Forms.supplierForm
             RadMessageBox.SetThemeName("telerikMetroBlueTheme");
         }
         public int XDonorsId { get; set; }
+        public Ucas.Data.TheDonor TragetDoner { get; set; }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-
+            #region "  CheckFillTextBox "
             if (TheDonorsNameTextBox.Text == "")
             {
                 TheDonorsNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.TheDonorsNameTextBox, "من فضلك ادخل اسم الممول");
 
 
                 TheDonorsNameTextBox.Focus();
@@ -34,11 +36,14 @@ namespace UcasProWindowsForm.Forms.supplierForm
             else
             {
                 TheDonorsNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
-
+            #endregion
 
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
+                Operation.BeginOperation(this);
+              
 
                 TheDonor Donrs = new TheDonor()
                 {
@@ -54,7 +59,9 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
                 };
                 TheDonorCmd.EditDonor(Donrs);
+                Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone);
+                this.Close();
             }
         }
 
@@ -66,6 +73,18 @@ namespace UcasProWindowsForm.Forms.supplierForm
         private void faxTextBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void FrmDonorsEdit_Load(object sender, EventArgs e)
+        {
+            XDonorsId = TragetDoner.ID;
+            TheDonorsNameTextBox.Text = TragetDoner.Name;
+            AgentNameTextBox.Text = TragetDoner.agentName;
+            EmailTextBox.Text = TragetDoner.Email;
+            PhoneNumberTextBox.Text = TragetDoner.PhoneNumber;
+            AdressTextBox.Text = TragetDoner.Adderss;
+            faxTextBox4.Text = TragetDoner.Fax;
+
         }
     }
 }

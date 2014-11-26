@@ -106,7 +106,7 @@
             gridViewTextBoxColumn1.Name = "ID";
             gridViewTextBoxColumn1.Width = 100;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "Name";
+            gridViewTextBoxColumn2.FieldName = "TheDonor.Name";
             gridViewTextBoxColumn2.HeaderText = "اختر الممول";
             gridViewTextBoxColumn2.Name = "Name";
             gridViewTextBoxColumn2.Width = 220;

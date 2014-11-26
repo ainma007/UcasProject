@@ -147,9 +147,9 @@
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(218, 121);
+            this.AddBtn.Location = new System.Drawing.Point(223, 121);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(136, 50);
+            this.AddBtn.Size = new System.Drawing.Size(131, 53);
             this.AddBtn.TabIndex = 3;
             this.AddBtn.Text = "اضافة المستخدم";
             this.AddBtn.ThemeName = "TelerikMetro";

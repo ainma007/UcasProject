@@ -22,6 +22,10 @@ namespace UcasProWindowsForm.Forms.MainForm
         }
         private void fillDonorsCombo()
         {
+            this.Cursor = Cursors.WaitCursor;
+           
+
+
             this.DonorsColumnComboBox.AutoFilter = true;
             this.DonorsColumnComboBox.ValueMember = "ID";
             this.DonorsColumnComboBox.DisplayMember = "Name";
@@ -34,15 +38,17 @@ namespace UcasProWindowsForm.Forms.MainForm
 
 
             DonorsColumnComboBox.DataSource = TheDonorCmd.GetAllDonors();
+            this.Cursor = Cursors.Default;
 
 
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
-
+            #region "  CheckFillTextBox "
             if (DonorsColumnComboBox.SelectedValue == null)
             {
                 DonorsColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.DonorsColumnComboBox, "من فضلك ادخل اسم الممول");
 
                 DonorsColumnComboBox.Focus();
 
@@ -52,6 +58,31 @@ namespace UcasProWindowsForm.Forms.MainForm
             {
                 DonorsColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
             }
+
+            if (CostTextBox.Text == "")
+            {
+
+                CostTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.CostTextBox, "من فضلك ادخل  الميزانية");
+
+                CostTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+
+                CostTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+
+
+            #endregion
+
+            Operation.BeginOperation(this);
+           
+
+           
             TheDonorsProject tb = new TheDonorsProject()
             {
 
@@ -62,7 +93,12 @@ namespace UcasProWindowsForm.Forms.MainForm
             };
 
             TheDonorsProjectCmd.AddTheTheDonorsProject(tb);
+            Operation.EndOperation(this);
             MessageBox.Show("تمت العملية بنجاح");
+            DonorsColumnComboBox.ResetText();
+            CostTextBox.Clear();
+            DonorsColumnComboBox.Focus();
+
            
         }
 

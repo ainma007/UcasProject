@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmployeeMng));
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn1 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
@@ -39,115 +38,38 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmployeeMng));
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
-            this.radRibbonBar1 = new Telerik.WinControls.UI.RadRibbonBar();
-            this.ribbonTab1 = new Telerik.WinControls.UI.RibbonTab();
-            this.radRibbonBarGroup1 = new Telerik.WinControls.UI.RadRibbonBarGroup();
-            this.AddBtn = new Telerik.WinControls.UI.RadButtonElement();
-            this.RefreshBtn = new Telerik.WinControls.UI.RadButtonElement();
-            this.radRibbonBarGroup2 = new Telerik.WinControls.UI.RadRibbonBarGroup();
-            this.ReportBtn = new Telerik.WinControls.UI.RadButtonElement();
-            this.radRibbonFormBehavior1 = new Telerik.WinControls.UI.RadRibbonFormBehavior();
             this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
             this.EmployeeGridView = new Telerik.WinControls.UI.RadGridView();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
-            ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).BeginInit();
+            this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
+            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.AddBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.PrintBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeGridView.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
+            this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // radRibbonBar1
-            // 
-            this.radRibbonBar1.CommandTabs.AddRange(new Telerik.WinControls.RadItem[] {
-            this.ribbonTab1});
-            this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
-            this.radRibbonBar1.Name = "radRibbonBar1";
-            this.radRibbonBar1.Size = new System.Drawing.Size(1122, 154);
-            this.radRibbonBar1.StartButtonImage = ((System.Drawing.Image)(resources.GetObject("radRibbonBar1.StartButtonImage")));
-            this.radRibbonBar1.TabIndex = 0;
-            this.radRibbonBar1.Text = "ادارة بيانات الموظفين";
-            this.radRibbonBar1.ThemeName = "TelerikMetro";
-            // 
-            // ribbonTab1
-            // 
-            this.ribbonTab1.AccessibleDescription = "العمليات";
-            this.ribbonTab1.AccessibleName = "العمليات";
-            this.ribbonTab1.IsSelected = true;
-            this.ribbonTab1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radRibbonBarGroup1,
-            this.radRibbonBarGroup2});
-            this.ribbonTab1.Name = "ribbonTab1";
-            this.ribbonTab1.Text = "العمليات";
-            this.ribbonTab1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // radRibbonBarGroup1
-            // 
-            this.radRibbonBarGroup1.AccessibleDescription = "العمليات";
-            this.radRibbonBarGroup1.AccessibleName = "العمليات";
-            this.radRibbonBarGroup1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.AddBtn,
-            this.RefreshBtn});
-            this.radRibbonBarGroup1.Name = "radRibbonBarGroup1";
-            this.radRibbonBarGroup1.Text = "العمليات";
-            this.radRibbonBarGroup1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // AddBtn
-            // 
-            this.AddBtn.AccessibleDescription = "اضافة موظف جديد";
-            this.AddBtn.AccessibleName = "اضافة موظف جديد";
-            this.AddBtn.Image = global::UcasProWindowsForm.Properties.Resources.AddEmp;
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Text = "اضافة موظف جديد";
-            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
-            // 
-            // RefreshBtn
-            // 
-            this.RefreshBtn.AccessibleDescription = "تحديث السجلات";
-            this.RefreshBtn.AccessibleName = "تحديث السجلات";
-            this.RefreshBtn.Image = global::UcasProWindowsForm.Properties.Resources.Refrech;
-            this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Text = "تحديث السجلات";
-            this.RefreshBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.RefreshBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
-            // 
-            // radRibbonBarGroup2
-            // 
-            this.radRibbonBarGroup2.AccessibleDescription = "التقارير";
-            this.radRibbonBarGroup2.AccessibleName = "التقارير";
-            this.radRibbonBarGroup2.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.ReportBtn});
-            this.radRibbonBarGroup2.Name = "radRibbonBarGroup2";
-            this.radRibbonBarGroup2.Text = "التقارير";
-            this.radRibbonBarGroup2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // ReportBtn
-            // 
-            this.ReportBtn.AccessibleDescription = "عرض تقرير";
-            this.ReportBtn.AccessibleName = "عرض تقرير";
-            this.ReportBtn.Image = global::UcasProWindowsForm.Properties.Resources.Print;
-            this.ReportBtn.Name = "ReportBtn";
-            this.ReportBtn.Text = "طباعة تقرير";
-            this.ReportBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ReportBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.ReportBtn.Click += new System.EventHandler(this.ReportBtn_Click);
-            // 
-            // radRibbonFormBehavior1
-            // 
-            this.radRibbonFormBehavior1.Form = this;
-            // 
             // radStatusStrip1
             // 
-            this.radStatusStrip1.Location = new System.Drawing.Point(0, 765);
+            this.radStatusStrip1.Location = new System.Drawing.Point(0, 800);
             this.radStatusStrip1.Name = "radStatusStrip1";
-            this.radStatusStrip1.Size = new System.Drawing.Size(1122, 25);
+            this.radStatusStrip1.Size = new System.Drawing.Size(1148, 25);
             this.radStatusStrip1.TabIndex = 2;
             this.radStatusStrip1.Text = "radStatusStrip1";
             this.radStatusStrip1.ThemeName = "TelerikMetro";
@@ -160,7 +82,7 @@
             this.EmployeeGridView.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.EmployeeGridView.ForeColor = System.Drawing.SystemColors.ControlText;
             this.EmployeeGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.EmployeeGridView.Location = new System.Drawing.Point(0, 154);
+            this.EmployeeGridView.Location = new System.Drawing.Point(2, 18);
             // 
             // EmployeeGridView
             // 
@@ -176,65 +98,65 @@
             gridViewDecimalColumn1.Name = "ID";
             gridViewDecimalColumn1.ReadOnly = true;
             gridViewDecimalColumn1.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewDecimalColumn1.Width = 122;
+            gridViewDecimalColumn1.Width = 124;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "EmployeeName";
             gridViewTextBoxColumn1.HeaderText = "اسم الموظف";
             gridViewTextBoxColumn1.IsAutoGenerated = true;
             gridViewTextBoxColumn1.Name = "EmployeeName";
             gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn1.Width = 160;
+            gridViewTextBoxColumn1.Width = 163;
             gridViewComboBoxColumn1.EnableExpressionEditor = false;
             gridViewComboBoxColumn1.FieldName = "EmployeeGender";
             gridViewComboBoxColumn1.HeaderText = "الجنس";
             gridViewComboBoxColumn1.Name = "EmployeeGender";
             gridViewComboBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewComboBoxColumn1.Width = 85;
+            gridViewComboBoxColumn1.Width = 87;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "EmployeejobNumber";
             gridViewTextBoxColumn2.HeaderText = "الرقم الوظيفي";
             gridViewTextBoxColumn2.IsAutoGenerated = true;
             gridViewTextBoxColumn2.Name = "EmployeejobNumber";
             gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn2.Width = 136;
+            gridViewTextBoxColumn2.Width = 139;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "PhoneNumber";
             gridViewTextBoxColumn3.HeaderText = "رقم الهاتف";
             gridViewTextBoxColumn3.IsAutoGenerated = true;
             gridViewTextBoxColumn3.Name = "PhoneNumber";
             gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn3.Width = 102;
+            gridViewTextBoxColumn3.Width = 104;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "Mobilenumber";
             gridViewTextBoxColumn4.HeaderText = "رقم الجوال";
             gridViewTextBoxColumn4.IsAutoGenerated = true;
             gridViewTextBoxColumn4.Name = "Mobilenumber";
             gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn4.Width = 102;
+            gridViewTextBoxColumn4.Width = 104;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.FieldName = "Email";
             gridViewTextBoxColumn5.HeaderText = "البريد الالكتروني";
             gridViewTextBoxColumn5.IsAutoGenerated = true;
             gridViewTextBoxColumn5.Name = "Email";
             gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn5.Width = 104;
+            gridViewTextBoxColumn5.Width = 106;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.FieldName = "EmployeeNationalNumber";
             gridViewTextBoxColumn6.HeaderText = "رقم الهوية";
             gridViewTextBoxColumn6.IsAutoGenerated = true;
             gridViewTextBoxColumn6.Name = "EmployeeNationalNumber";
             gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn6.Width = 160;
+            gridViewTextBoxColumn6.Width = 163;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "حفظ";
             gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
             gridViewCommandColumn1.Name = "EditBtn";
-            gridViewCommandColumn1.Width = 60;
+            gridViewCommandColumn1.Width = 61;
             gridViewCommandColumn2.EnableExpressionEditor = false;
             gridViewCommandColumn2.HeaderText = "حذف";
             gridViewCommandColumn2.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn2.Image")));
             gridViewCommandColumn2.Name = "deltebtn";
-            gridViewCommandColumn2.Width = 80;
+            gridViewCommandColumn2.Width = 82;
             this.EmployeeGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
@@ -253,7 +175,7 @@
             this.EmployeeGridView.Name = "EmployeeGridView";
             this.EmployeeGridView.ReadOnly = true;
             this.EmployeeGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.EmployeeGridView.Size = new System.Drawing.Size(1122, 611);
+            this.EmployeeGridView.Size = new System.Drawing.Size(1144, 741);
             this.EmployeeGridView.TabIndex = 3;
             this.EmployeeGridView.Text = "radGridView1";
             this.EmployeeGridView.ThemeName = "TelerikMetro";
@@ -265,16 +187,88 @@
             // 
             this.employeeBindingSource.DataSource = typeof(Ucas.Data.Employee);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddBtn,
+            this.toolStripSeparator1,
+            this.toolStripButton2,
+            this.toolStripSeparator2,
+            this.PrintBtn,
+            this.toolStripSeparator3});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1148, 39);
+            this.toolStrip1.TabIndex = 4;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // AddBtn
+            // 
+            this.AddBtn.Image = global::UcasProWindowsForm.Properties.Resources.Add1;
+            this.AddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(106, 36);
+            this.AddBtn.Text = "اضافة موظف";
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = global::UcasProWindowsForm.Properties.Resources.Refrech;
+            this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(117, 36);
+            this.toolStripButton2.Text = "تحديث السجلات";
+            this.toolStripButton2.Click += new System.EventHandler(this.RefreshBtn_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            // 
+            // PrintBtn
+            // 
+            this.PrintBtn.Image = global::UcasProWindowsForm.Properties.Resources.Print;
+            this.PrintBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.PrintBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.PrintBtn.Name = "PrintBtn";
+            this.PrintBtn.Size = new System.Drawing.Size(99, 36);
+            this.PrintBtn.Text = "طباعة تقرير";
+            this.PrintBtn.Click += new System.EventHandler(this.ReportBtn_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
+            // 
+            // radGroupBox1
+            // 
+            this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.EmployeeGridView);
+            this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
+            this.radGroupBox1.HeaderText = "بيانات الموظفين";
+            this.radGroupBox1.Location = new System.Drawing.Point(0, 39);
+            this.radGroupBox1.Name = "radGroupBox1";
+            this.radGroupBox1.Size = new System.Drawing.Size(1148, 761);
+            this.radGroupBox1.TabIndex = 5;
+            this.radGroupBox1.Text = "بيانات الموظفين";
+            this.radGroupBox1.ThemeName = "TelerikMetro";
+            // 
             // FrmEmployeeMng
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1122, 790);
-            this.Controls.Add(this.EmployeeGridView);
+            this.ClientSize = new System.Drawing.Size(1148, 825);
+            this.Controls.Add(this.radGroupBox1);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.radStatusStrip1);
-            this.Controls.Add(this.radRibbonBar1);
-            this.FormBehavior = this.radRibbonFormBehavior1;
-            this.IconScaling = Telerik.WinControls.Enumerations.ImageScaling.None;
             this.Name = "FrmEmployeeMng";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
@@ -282,16 +276,19 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ادارة بيانات الموظفين";
+            this.Text = "radRibbonBar1";
             this.ThemeName = "TelerikMetro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.FrmEmployeeMng_Activated);
             this.Load += new System.EventHandler(this.FrmEmployeeMng_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeGridView.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
+            this.radGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -300,17 +297,19 @@
 
         #endregion
 
-        private Telerik.WinControls.UI.RadRibbonBar radRibbonBar1;
-        private Telerik.WinControls.UI.RadRibbonFormBehavior radRibbonFormBehavior1;
         private Telerik.WinControls.UI.RadGridView EmployeeGridView;
         private System.Windows.Forms.BindingSource employeeBindingSource;
         private Telerik.WinControls.UI.RadStatusStrip radStatusStrip1;
-        private Telerik.WinControls.UI.RibbonTab ribbonTab1;
-        private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup1;
-        private Telerik.WinControls.UI.RadButtonElement AddBtn;
-        private Telerik.WinControls.UI.RadButtonElement RefreshBtn;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
-        private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup2;
-        private Telerik.WinControls.UI.RadButtonElement ReportBtn;
+        private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
+        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton AddBtn;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton PrintBtn;
+        private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }

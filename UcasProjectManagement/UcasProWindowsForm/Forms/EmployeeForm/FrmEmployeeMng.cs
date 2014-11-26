@@ -90,10 +90,10 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
    
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            
             FrmAddEmployee add = new FrmAddEmployee();
             add.ShowDialog();
-            this.Cursor = Cursors.Default;
+          
         }
 
         private void RefreshBtn_Click(object sender, EventArgs e)
@@ -120,6 +120,16 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             Reports.ReportCommand.EmployeeReportCmd cmd = new Reports.ReportCommand.EmployeeReportCmd();
             cmd.GetAllEmployee();
             this.Cursor = Cursors.Default;
+
+        }
+
+        private void radRibbonBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radRibbonBar1_Click_1(object sender, EventArgs e)
+        {
 
         }
 }

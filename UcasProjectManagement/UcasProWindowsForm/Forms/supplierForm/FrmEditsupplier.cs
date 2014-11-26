@@ -18,13 +18,14 @@ namespace UcasProWindowsForm.Forms.supplierForm
             InitializeComponent();
         }
         public int XSupID { get; set; }
+        public Ucas.Data.Supplier TragetDSupplier { get; set; }
         private void saveBtn_Click(object sender, EventArgs e)
         {
-
+            #region "  CheckFillTextBox "
             if (NameTextBox.Text == "")
             {
                 NameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
-
+                errorProvider1.SetError(this.NameTextBox, "من فضلك ادخل اسم المورد");
 
                 NameTextBox.Focus();
 
@@ -33,9 +34,14 @@ namespace UcasProWindowsForm.Forms.supplierForm
             else
             {
                 NameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
+            #endregion
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
+                Operation.BeginOperation(this);
+               
+
                 Supplier Sup = new Supplier()
                 {
                     ID = XSupID,
@@ -50,7 +56,9 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
                 };
                 SuppliersCmd.EditSupplier(Sup);
+                Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone);
+                this.Close();
             }
         }
 
@@ -62,6 +70,17 @@ namespace UcasProWindowsForm.Forms.supplierForm
         private void faxTextBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void FrmEditsupplier_Load(object sender, EventArgs e)
+        {
+            XSupID = TragetDSupplier.ID;
+            NameTextBox.Text = TragetDSupplier.Name;
+            SuppliersNaturalTextBox.Text = TragetDSupplier.SuppliersNatural;
+            EmailTextBox.Text = TragetDSupplier.Email;
+            PhoneNumberTextBox.Text = TragetDSupplier.PhoneNumber;
+            AdressTextBox.Text = TragetDSupplier.Adderss;
+            faxTextBox4.Text = TragetDSupplier.Fax;
         }
     }
 }

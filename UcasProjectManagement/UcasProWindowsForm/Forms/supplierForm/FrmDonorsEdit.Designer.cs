@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
@@ -43,6 +44,7 @@
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.TheDonorsNameTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
@@ -58,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TheDonorsNameTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,6 +145,7 @@
             this.faxTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.faxTextBox4.Location = new System.Drawing.Point(78, 116);
             this.faxTextBox4.Name = "faxTextBox4";
+            this.faxTextBox4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.faxTextBox4.Size = new System.Drawing.Size(193, 22);
             this.faxTextBox4.TabIndex = 27;
             this.faxTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -164,6 +168,7 @@
             this.EmailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.EmailTextBox.Location = new System.Drawing.Point(12, 143);
             this.EmailTextBox.Name = "EmailTextBox";
+            this.EmailTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.EmailTextBox.Size = new System.Drawing.Size(259, 22);
             this.EmailTextBox.TabIndex = 28;
             this.EmailTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -185,6 +190,7 @@
             this.PhoneNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PhoneNumberTextBox.Location = new System.Drawing.Point(78, 89);
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
+            this.PhoneNumberTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(193, 22);
             this.PhoneNumberTextBox.TabIndex = 26;
             this.PhoneNumberTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -223,6 +229,11 @@
             this.TheDonorsNameTextBox.TabIndex = 23;
             this.TheDonorsNameTextBox.ThemeName = "TelerikMetro";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
+            // 
             // FrmDonorsEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,6 +254,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعديل بيانات ممول";
             this.ThemeName = "TelerikMetro";
+            this.Load += new System.EventHandler(this.FrmDonorsEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
@@ -259,6 +271,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TheDonorsNameTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -281,5 +294,6 @@
         public Telerik.WinControls.UI.RadTextBox EmailTextBox;
         public Telerik.WinControls.UI.RadTextBox PhoneNumberTextBox;
         public Telerik.WinControls.UI.RadTextBox TheDonorsNameTextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

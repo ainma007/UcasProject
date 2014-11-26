@@ -80,12 +80,7 @@ namespace UcasProWindowsForm.Forms.MainForm
             chart1.ChartAreas[0].ShadowColor = Color.Red;
 
         ///    chart1.ChartAreas[0].Area3DStyle.Enable3D = true;
-           
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void ProjectManageBtn_Click(object sender, EventArgs e)
@@ -131,10 +126,10 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void SalaryBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+          //  this.Cursor = Cursors.WaitCursor;
             FrmSalariesManage frm = new FrmSalariesManage();
             frm.ShowDialog();
-            this.Cursor = Cursors.Default;
+          //  this.Cursor = Cursors.Default;
         }
 
         private void AmountRrecvBtn_Click(object sender, EventArgs e)

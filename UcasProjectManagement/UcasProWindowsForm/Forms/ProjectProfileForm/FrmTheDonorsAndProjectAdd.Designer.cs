@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -38,6 +39,7 @@
             this.CostTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DonorsColumnComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsColumnComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsColumnComboBox.EditorControl.MasterTemplate)).BeginInit();
@@ -47,6 +49,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,9 +144,9 @@
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel2.Location = new System.Drawing.Point(304, 68);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(44, 16);
+            this.radLabel2.Size = new System.Drawing.Size(71, 16);
             this.radLabel2.TabIndex = 2;
-            this.radLabel2.Text = "الدفعات:";
+            this.radLabel2.Text = "المبلغ الممول:";
             this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel2.ThemeName = "TelerikMetro";
             // 
@@ -169,6 +172,11 @@
             this.radLabel1.Text = "اسم الممول:";
             this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel1.ThemeName = "TelerikMetro";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
             // 
             // FrmTheDonorsAndProjectAdd
             // 
@@ -201,6 +209,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -215,5 +224,6 @@
         private Telerik.WinControls.UI.RadTextBox CostTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

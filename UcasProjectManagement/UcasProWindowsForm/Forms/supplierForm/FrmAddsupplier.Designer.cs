@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.AdressTextBox = new Telerik.WinControls.UI.RadTextBox();
@@ -43,6 +44,7 @@
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.NameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -58,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SuppliersNaturalTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NameTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +85,7 @@
             this.radGroupBox1.HeaderText = "اضافة مورد";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(354, 264);
+            this.radGroupBox1.Size = new System.Drawing.Size(362, 264);
             this.radGroupBox1.TabIndex = 3;
             this.radGroupBox1.Text = "اضافة مورد";
             this.radGroupBox1.ThemeName = "TelerikMetro";
@@ -91,7 +94,7 @@
             // radLabel2
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel2.Location = new System.Drawing.Point(269, 165);
+            this.radLabel2.Location = new System.Drawing.Point(277, 165);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(40, 16);
             this.radLabel2.TabIndex = 20;
@@ -102,16 +105,16 @@
             // AdressTextBox
             // 
             this.AdressTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AdressTextBox.Location = new System.Drawing.Point(5, 165);
+            this.AdressTextBox.Location = new System.Drawing.Point(20, 165);
             this.AdressTextBox.Name = "AdressTextBox";
-            this.AdressTextBox.Size = new System.Drawing.Size(258, 22);
+            this.AdressTextBox.Size = new System.Drawing.Size(251, 22);
             this.AdressTextBox.TabIndex = 6;
             this.AdressTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel7
             // 
             this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel7.Location = new System.Drawing.Point(269, 111);
+            this.radLabel7.Location = new System.Drawing.Point(277, 111);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(63, 16);
             this.radLabel7.TabIndex = 18;
@@ -122,7 +125,7 @@
             // faxTextBox4
             // 
             this.faxTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.faxTextBox4.Location = new System.Drawing.Point(70, 111);
+            this.faxTextBox4.Location = new System.Drawing.Point(78, 111);
             this.faxTextBox4.Name = "faxTextBox4";
             this.faxTextBox4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.faxTextBox4.Size = new System.Drawing.Size(193, 22);
@@ -134,7 +137,7 @@
             // radLabel5
             // 
             this.radLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel5.Location = new System.Drawing.Point(269, 138);
+            this.radLabel5.Location = new System.Drawing.Point(277, 138);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(82, 16);
             this.radLabel5.TabIndex = 16;
@@ -145,10 +148,10 @@
             // EmailTextBox
             // 
             this.EmailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmailTextBox.Location = new System.Drawing.Point(5, 138);
+            this.EmailTextBox.Location = new System.Drawing.Point(20, 138);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.EmailTextBox.Size = new System.Drawing.Size(258, 22);
+            this.EmailTextBox.Size = new System.Drawing.Size(251, 22);
             this.EmailTextBox.TabIndex = 5;
             this.EmailTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.EmailTextBox.ThemeName = "TelerikMetro";
@@ -156,7 +159,7 @@
             // radLabel3
             // 
             this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel3.Location = new System.Drawing.Point(269, 84);
+            this.radLabel3.Location = new System.Drawing.Point(277, 84);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(57, 16);
             this.radLabel3.TabIndex = 12;
@@ -167,7 +170,7 @@
             // PhoneNumberTextBox
             // 
             this.PhoneNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PhoneNumberTextBox.Location = new System.Drawing.Point(70, 84);
+            this.PhoneNumberTextBox.Location = new System.Drawing.Point(78, 84);
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(193, 22);
@@ -180,7 +183,7 @@
             // 
             this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AddBtn.Image = global::UcasProWindowsForm.Properties.Resources.addadd;
-            this.AddBtn.Location = new System.Drawing.Point(205, 207);
+            this.AddBtn.Location = new System.Drawing.Point(213, 207);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(127, 44);
             this.AddBtn.TabIndex = 8;
@@ -192,7 +195,7 @@
             // radLabel6
             // 
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel6.Location = new System.Drawing.Point(269, 54);
+            this.radLabel6.Location = new System.Drawing.Point(277, 54);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(70, 16);
             this.radLabel6.TabIndex = 9;
@@ -203,7 +206,7 @@
             // SuppliersNaturalTextBox
             // 
             this.SuppliersNaturalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SuppliersNaturalTextBox.Location = new System.Drawing.Point(70, 54);
+            this.SuppliersNaturalTextBox.Location = new System.Drawing.Point(78, 54);
             this.SuppliersNaturalTextBox.Name = "SuppliersNaturalTextBox";
             this.SuppliersNaturalTextBox.Size = new System.Drawing.Size(193, 22);
             this.SuppliersNaturalTextBox.TabIndex = 1;
@@ -212,7 +215,7 @@
             // radLabel1
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel1.Location = new System.Drawing.Point(269, 27);
+            this.radLabel1.Location = new System.Drawing.Point(277, 27);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(61, 16);
             this.radLabel1.TabIndex = 1;
@@ -223,22 +226,27 @@
             // NameTextBox
             // 
             this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.NameTextBox.Location = new System.Drawing.Point(5, 27);
+            this.NameTextBox.Location = new System.Drawing.Point(20, 27);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(258, 22);
+            this.NameTextBox.Size = new System.Drawing.Size(251, 22);
             this.NameTextBox.TabIndex = 0;
             this.NameTextBox.ThemeName = "TelerikMetro";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
             // 
             // FrmAddsupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 264);
+            this.ClientSize = new System.Drawing.Size(362, 264);
             this.Controls.Add(this.radGroupBox1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(362, 299);
+            this.MaximumSize = new System.Drawing.Size(370, 299);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(362, 299);
+            this.MinimumSize = new System.Drawing.Size(370, 299);
             this.Name = "FrmAddsupplier";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
@@ -266,6 +274,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SuppliersNaturalTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NameTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -288,5 +297,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadTextBox AdressTextBox;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -22,62 +22,28 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void FrmProjectManage_Load(object sender, EventArgs e)
         {
-            FillCombo();
+           
             GetAllProject();
            
         }
-        private void FillCombo()
-        {
-
-            string[] s = { "شيكل", "دينار اردني", "دولار امريكي", "يورو" };
-
-            //--- Get Coloumn From Grid
-            GridViewComboBoxColumn Col = (GridViewComboBoxColumn)radGridView1.Columns["Coin"];
-            Col.DataSource = s;
-
-
-            // Create Sourrce Here
-            string[] s1 = { "فعال", "غير فعال" };
-
-            //--- Get Coloumn From Grid
-            GridViewComboBoxColumn Col2 = (GridViewComboBoxColumn)radGridView1.Columns["Status"];
-            Col2.DataSource = s1;
-        }
-        
+       
         private void GetAllProject()
         {
             ProjectbindingSource.DataSource = ProjectProfileCmd.GetAllProjects();
 
         }
-        private void radRibbonBar1_Click(object sender, EventArgs e)
-        {
-            ////Clear Old Data
-            //db.ProjectProfiles = null;
-            
-            ////Load New Data
-            //db.ProjectProfiles.AddRange(ls);
-            //db.SaveChanges();
-        }
-
-        private void radButtonElement2_Click(object sender, EventArgs e)
-        {
-        
-        }
+   
+   
 
         private void MasterTemplate_CommandCellClick(object sender, EventArgs e)
         {
-            var col = radGridView1.CurrentColumn.Index;
+            var col = ProjectProfileGridView.CurrentColumn.Index;
             if (col == 9)
             {
                 FrmEditProject frm = new FrmEditProject();
-                frm.XProID =int.Parse( radGridView1.CurrentRow.Cells[0].Value.ToString());
-                frm.ProjectNameTextBox.Text = radGridView1.CurrentRow.Cells[1].Value.ToString();
-                frm.ProjectDescriptionTextBox.Text = radGridView1.CurrentRow.Cells[2].Value.ToString();
-                frm.StartDateTimePicker.Text = radGridView1.CurrentRow.Cells[3].Value.ToString();
-                frm.EndDateTimePicker.Text = radGridView1.CurrentRow.Cells[4].Value.ToString();
-                frm.TotalCostTextBox.Text = radGridView1.CurrentRow.Cells[5].Value.ToString();
-                frm.CoineDropDownList.Text = radGridView1.CurrentRow.Cells[6].Value.ToString();
-                frm.StatusDownList.Text = radGridView1.CurrentRow.Cells[8].Value.ToString();
+
+                Ucas.Data.ProjectProfile db = (Ucas.Data.ProjectProfile)ProjectProfileGridView.CurrentRow.DataBoundItem;
+                frm.TragetProject = db;
                 frm.ShowDialog();
             }
 
@@ -94,26 +60,15 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 }
             }
 
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            FrmAddProject frm = new FrmAddProject();
+            frm.ShowDialog();
+        }
+
        
 
-        private void MasterTemplate_CellClick(object sender, GridViewCellEventArgs e)
-        {
-            
-            
-           
-        }
 
-        private void MasterTemplate_CellDoubleClick(object sender, GridViewCellEventArgs e)
-        {
-               
-
-
-      }
-
-        private void MasterTemplate_ValueChanged(object sender, EventArgs e)
-        {
-           
-        }
         }
     }
 
