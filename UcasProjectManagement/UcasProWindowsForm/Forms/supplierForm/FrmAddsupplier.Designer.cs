@@ -253,7 +253,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.RootElement.MaxSize = new System.Drawing.Size(362, 299);
+            this.RootElement.MaxSize = new System.Drawing.Size(370, 299);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اضافة مورد";
             this.ThemeName = "TelerikMetro";

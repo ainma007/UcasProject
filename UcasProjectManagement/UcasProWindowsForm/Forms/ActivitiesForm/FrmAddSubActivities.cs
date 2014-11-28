@@ -95,9 +95,11 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 errorProvider1.Clear();
             }
             #endregion
-            
 
-            this.Cursor = Cursors.WaitCursor;
+
+            Operation.BeginOperation(this);
+           
+
             try
             {
                 ProjectSubActivity tb = new ProjectSubActivity()
@@ -116,14 +118,14 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
                 };
                 SubActivityCmd.NewSubActivity(tb);
-                this.Cursor = Cursors.Default;
-                RadMessageBox.Show(OperationX.SaveMessagedone);
+                Operation.EndOperation(this);
+                RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
                 ClearTxt();
             }
             catch (Xprema.XpremaException ex)
             {
-                this.Cursor = Cursors.Default;
-                RadMessageBox.Show(ex.OtherDescription);
+                Operation.EndOperation(this);
+                RadMessageBox.Show(this, ex.OtherDescription, "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
 
             }
 

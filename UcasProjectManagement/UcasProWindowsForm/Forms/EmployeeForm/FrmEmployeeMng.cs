@@ -21,36 +21,51 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         }
         public void GetAllEmployee()
         {
-            employeeBindingSource.DataSource = EmployeeCmd.GetAll();
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                toolStripStatusLabel1.Text = "يرجى الانتظار ... ";
+
+            });
+            Operation.BeginOperation(this);
+            try
+            {
+                Application.DoEvents();
+                employeeBindingSource.DataSource = EmployeeCmd.GetAll();
+
+
+                Application.DoEvents();
+            }
+
+            catch (System.InvalidOperationException ex)
+            {
+
+                Application.DoEvents();
+                employeeBindingSource.DataSource = EmployeeCmd.GetAll();
+                Application.DoEvents();
+            }
+
+            Operation.EndOperation(this);
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                toolStripStatusLabel1.Text = " ";
+
+            });
+          
         }
 
-        private void FillCombo()
-        {
-
-
-            // Create Sourrce Here
-            string[] s1 = { "ذكر", " أنثى" };
-
-            //--- Get Coloumn From Grid
-            GridViewComboBoxColumn Col2 = (GridViewComboBoxColumn)EmployeeGridView.Columns["EmployeeGender"];
-            Col2.DataSource = s1;
-        }
+        
 
        
         private void FrmEmployeeMng_Load(object sender, EventArgs e)
         {
             GetAllEmployee();
-            FillCombo();
-            
-        }
-
-        private void EmployeeGridView_CellDoubleClick(object sender, GridViewCellEventArgs e)
-        {
-            
-          
            
-
+            
         }
+
+        
 
         private void EmployeeGridView_CommandCellClick(object sender, EventArgs e)
         {

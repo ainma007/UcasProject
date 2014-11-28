@@ -363,7 +363,7 @@
                                               <TextRun>
                                                 <Value>=Fields!SalaryForMonth.Value</Value>
                                                 <Style>
-                                                  <Format>d</Format>
+                                                  <Format>dd/MM/yyyy</Format>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -406,7 +406,7 @@
                                               <TextRun>
                                                 <Value>=Fields!SalaryIssueDate.Value</Value>
                                                 <Style>
-                                                  <Format>d</Format>
+                                                  <Format>dd/MM/yyyy</Format>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>

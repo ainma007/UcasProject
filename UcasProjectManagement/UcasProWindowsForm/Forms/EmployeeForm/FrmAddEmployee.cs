@@ -55,9 +55,26 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                 GenderDropDownList.DropDownListElement.TextBox.BackColor = Color.White;
                 errorProvider1.Clear();
             }
+
+            if (EmployeejobNumberTextBox.Text == "")
+            {
+
+                EmployeejobNumberTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.EmployeejobNumberTextBox, "من فضلك ادخل اسم الموظف");
+                EmployeejobNumberTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                EmployeejobNumberTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
             #endregion
 
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
+            
+
             Employee emp = new Employee()
             {
                 EmployeeName= employeeNameTextBox.Text,
@@ -72,8 +89,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
             };
             EmployeeCmd.addEmployee(emp);
-            this.Cursor = Cursors.WaitCursor;
-            RadMessageBox.Show("تمت الاضافة");
+            Operation.EndOperation(this);
+            RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
             ClearTxt();
         }
 

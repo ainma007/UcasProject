@@ -23,6 +23,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
 
             GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("Cost", "المجموع الكلي   = {0}", GridAggregateFunction.Sum);
             GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight });
+            this.radGridView1.SummaryRowsBottom.Clear();
             this.radGridView1.SummaryRowsBottom.Add(summaryRowItem);
             ///
 
@@ -67,12 +68,55 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
 
         private void FrmMangeAmount_Load(object sender, EventArgs e)
         {
-            radGridView1.DataSource = AmountsReceivedsCmd.GetAllAmountsReceivedBypro(InformationsClass.ProjID);
-            for (int i = 1; i <= radGridView1.Rows.Count; i++)
+            LodingAmount();
+        }
+
+        private void LodingAmount()
+        {
+            statusStrip1.Invoke((MethodInvoker)delegate
             {
-                radGridView1.Rows[i - 1].Cells["Num"].Value = i.ToString();
+
+                toolStripStatusLabel1.Text = "يرجى الانتظار ... ";
+
+            });
+            Operation.BeginOperation(this);
+            try
+            {
+                Application.DoEvents();
+                radGridView1.DataSource = AmountsReceivedsCmd.GetAllAmountsReceivedBypro(InformationsClass.ProjID);
+                for (int i = 1; i <= radGridView1.Rows.Count; i++)
+                {
+                    radGridView1.Rows[i - 1].Cells["Num"].Value = i.ToString();
+                }
+                TotalAmount();
+                Application.DoEvents();
             }
-            TotalAmount();
+
+            catch (System.InvalidOperationException ex)
+            {
+
+                Application.DoEvents();
+                radGridView1.DataSource = AmountsReceivedsCmd.GetAllAmountsReceivedBypro(InformationsClass.ProjID);
+                for (int i = 1; i <= radGridView1.Rows.Count; i++)
+                {
+                    radGridView1.Rows[i - 1].Cells["Num"].Value = i.ToString();
+                }
+                TotalAmount();
+                Application.DoEvents();
+            }
+
+            Operation.EndOperation(this);
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                toolStripStatusLabel1.Text = " ";
+
+            });
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            FrmMangeAmount_Load(sender, e);
         }
     }
 }

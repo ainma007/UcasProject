@@ -78,6 +78,8 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
             }
 
             #endregion
+            Operation.BeginOperation(this);
+           
             AmountsReceived tb = new AmountsReceived()
             {
                 ProjectProfile_ID=InformationsClass.ProjID,
@@ -90,7 +92,9 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
             };
 
             AmountsReceivedsCmd.NewAmountsReceived(tb);
-            RadMessageBox.Show("Done");
+            Operation.EndOperation(this);
+
+            RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
             ClearTextBox();
         }
 

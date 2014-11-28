@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
@@ -43,32 +40,75 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         private void TotalActivites()
         {
 
-            GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("TotalCost", "اجمالي الانشطة = {0}", GridAggregateFunction.Sum);
-            GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight });
-            this.ActivitiesGridView.SummaryRowsBottom.Clear();
-            this.ActivitiesGridView.SummaryRowsBottom.Add(summaryRowItem);
+
+
+
+            //GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("ActivityTotalCost", "الاجمالي العام = {0}", GridAggregateFunction.Sum);
+            //GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight });
+            //this.ActivitiesGridView.SummaryRowsBottom.Clear();
+            //this.ActivitiesGridView.SummaryRowsBottom.Add(summaryRowItem);
 
 
             GridViewSummaryItem summaryItemFreight1 = new GridViewSummaryItem("SubTotalCost", "الاجمالي  = {0}", GridAggregateFunction.Sum);
             GridViewSummaryRowItem summaryRowItem1 = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight1 });
             this.gridViewTemplate2.SummaryRowsBottom.Clear();
             this.gridViewTemplate2.SummaryRowsBottom.Add(summaryRowItem1);
+          
             
-            foreach (var item in ActivitiesGridView.Rows)
-            {
-                
-            }
+          
             ///
          
         }
+
+        private void Loadactivites()
+            
+        {
+            
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                toolStripStatusLabel1.Text = "يرجى الانتظار ... ";
+               
+            });
+            Operation.BeginOperation(this);
+            try
+            {
+                Application.DoEvents();
+                projectActivityBindingSource.DataSource = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
+                projectSubActivityBindingSource.DataSource = SubActivityCmd.GetAllSubActivities();
+                ActivitiesGridView.MasterTemplate.ExpandAll();
+                TotalActivites();
+                Application.DoEvents();
+            }
+            catch (System.InvalidOperationException ex)
+            {
+
+                Application.DoEvents();
+                projectActivityBindingSource.DataSource = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
+                projectSubActivityBindingSource.DataSource = SubActivityCmd.GetAllSubActivities();
+                ActivitiesGridView.MasterTemplate.ExpandAll();
+                TotalActivites();
+                Application.DoEvents();
+            }
+
+            Operation.EndOperation(this);
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                toolStripStatusLabel1.Text = " ";
+              
+            });
+        }
         private void FrmAllActivitesMange_Load(object sender, EventArgs e)
         {
-            projectActivityBindingSource.DataSource = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
-            projectSubActivityBindingSource.DataSource = SubActivityCmd.GetAllSubActivities();
+            //this.Cursor = Cursors.WaitCursor;
+            //projectActivityBindingSource.DataSource = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
+            //this.Cursor = Cursors.Default;
+            //projectSubActivityBindingSource.DataSource = SubActivityCmd.GetAllSubActivities();
             //for (int i = 1; i <= ActivitiesGridView.Rows.Count; i++)
             //{
             //    ActivitiesGridView.Rows[i - 1].Cells["Num"].Value = i.ToString();
-                
+
             //}
 
 
@@ -76,11 +116,10 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             //{
             //    gridViewTemplate2.Rows[i - 1].Cells["Num1"].Value = i.ToString();
             //}
-            ActivitiesGridView.MasterTemplate.ExpandAll();
-            TotalActivites();
-
-
-            
+          
+            //this.Cursor = Cursors.Default;
+            Loadactivites();
+           
             
         }
 
@@ -93,17 +132,12 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             if (col2 == 9)
             {
 
+               
                 this.Cursor = Cursors.WaitCursor;
-                FrmActivitiesEdit EditActi = new FrmActivitiesEdit();
-                EditActi.xID = int.Parse(ActivitiesGridView.CurrentRow.Cells[1].Value.ToString());
-                EditActi.ActivitiesNameTextBox.Text = ActivitiesGridView.CurrentRow.Cells[2].Value.ToString();
-                EditActi.ActivitiesDescriptionTextBox.Text = ActivitiesGridView.CurrentRow.Cells[3].Value.ToString();
-                EditActi.StartDateTimePicker.Text = ActivitiesGridView.CurrentRow.Cells[4].Value.ToString();
-                EditActi.EndDateTimePicker.Text = ActivitiesGridView.CurrentRow.Cells[5].Value.ToString();
-                EditActi.TotalCostTextBox.Text = ActivitiesGridView.CurrentRow.Cells[8].Value.ToString();
-                EditActi.StatusDropDownList.Text = ActivitiesGridView.CurrentRow.Cells[6].Value.ToString();
-
-                EditActi.ShowDialog();
+                FrmActivitiesEdit frm = new FrmActivitiesEdit();
+                Ucas.Data.ProjectActivity DB = (Ucas.Data.ProjectActivity)ActivitiesGridView.CurrentRow.DataBoundItem;
+                frm.TragetActivity = DB;
+                frm.ShowDialog();
                 this.Cursor = Cursors.Default;
                 return;
 
@@ -126,21 +160,14 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             var col = gridViewTemplate2.CurrentColumn.Index;
             if (col == 8)
             {
+
+                FrmSubActivityEdit frm = new FrmSubActivityEdit();
+                Ucas.Data.ProjectSubActivity DB = (Ucas.Data.ProjectSubActivity)ActivitiesGridView.CurrentRow.DataBoundItem;
+                frm.TragetSUBActivity = DB;
+                frm.FillActivty();
+                frm.ShowDialog();
+                
                
-                FrmSubActivityEdit EditSubActi = new FrmSubActivityEdit();
-                 
-                EditSubActi.FillActivty();
-                EditSubActi.SubXid = int.Parse(ActivitiesGridView.CurrentRow.Cells[0].Value.ToString());
-                EditSubActi.SubActivitiesNameTextBox.Text = ActivitiesGridView.CurrentRow.Cells[1].Value.ToString();
-                EditSubActi.SubActivitiesDescriptionTextBox.Text = ActivitiesGridView.CurrentRow.Cells[2].Value.ToString();
-                EditSubActi.StartDateTimePicker.Text = ActivitiesGridView.CurrentRow.Cells[3].Value.ToString();
-                EditSubActi.EndDateTimePicker.Text = ActivitiesGridView.CurrentRow.Cells[4].Value.ToString();
-               
-                EditSubActi.StatusDropDownList.Text = ActivitiesGridView.CurrentRow.Cells[5].Value.ToString();
-                EditSubActi.ProgressEditor.Value = int.Parse(ActivitiesGridView.CurrentRow.Cells[6].Value.ToString());
-                EditSubActi.TotalCostTextBox.Text = ActivitiesGridView.CurrentRow.Cells[7].Value.ToString();
-                EditSubActi.ActivitiesColumnComboBox.Text = ActivitiesGridView.CurrentRow.Cells[9].Value.ToString();
-                EditSubActi.ShowDialog();
                 return;
             }
 
@@ -158,19 +185,19 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void ActivitiesGridView_CellFormatting(object sender, CellFormattingEventArgs e)
         {
-            Font newFont = new Font("Arial", 12f, FontStyle.Bold);
+          //  Font newFont = new Font("Arial", 12f, FontStyle.Bold);
 
             if (e.CellElement.ColumnInfo.Name == "ActivityName") 
             {
                 e.CellElement.ForeColor = Color.DeepSkyBlue;
-                e.CellElement.Font = newFont;
+           //     e.CellElement.Font = newFont;
                 
             }
            
 
            if (e.CellElement.ColumnInfo.Name == "ActivityDescription"){
                e.CellElement.ForeColor = Color.DeepSkyBlue;
-               e.CellElement.Font = newFont;
+           //    e.CellElement.Font = newFont;
 
            }
 
@@ -178,7 +205,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
            if (e.CellElement.ColumnInfo.Name == "ActivityStartDate")
            {
                e.CellElement.ForeColor = Color.DeepSkyBlue;
-               e.CellElement.Font = newFont;
+           //    e.CellElement.Font = newFont;
 
            }
 
@@ -186,28 +213,28 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
            if (e.CellElement.ColumnInfo.Name == "ActivityEndDate")
            {
                e.CellElement.ForeColor = Color.DeepSkyBlue;
-               e.CellElement.Font = newFont;
+           //    e.CellElement.Font = newFont;
 
            }
             //
            if (e.CellElement.ColumnInfo.Name == "ActivityStatus")
            {
                e.CellElement.ForeColor = Color.DeepSkyBlue;
-               e.CellElement.Font = newFont;
+            //   e.CellElement.Font = newFont;
 
            }
             //
            if (e.CellElement.ColumnInfo.Name == "ActivityProgress")
            {
                e.CellElement.ForeColor = Color.DeepSkyBlue;
-               e.CellElement.Font = newFont;
+             //  e.CellElement.Font = newFont;
 
            }
 
            if (e.CellElement.ColumnInfo.Name == "ActivityProgress")
            {
                e.CellElement.ForeColor = Color.DeepSkyBlue;
-               e.CellElement.Font = newFont;
+             //  e.CellElement.Font = newFont;
 
            }
           
@@ -229,9 +256,14 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
-            Operation.BeginOperation(this);
+            this.Cursor = Cursors.WaitCursor;
             FrmAllActivitesMange_Load(sender, e);
-            Operation.EndOperation(this);
+            this.Cursor = Cursors.Default;
+        }
+
+        private void radStatusStrip1_StatusBarClick(object sender, RadStatusBarClickEventArgs args)
+        {
+
         }
     }
 }

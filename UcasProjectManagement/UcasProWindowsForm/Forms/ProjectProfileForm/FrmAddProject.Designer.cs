@@ -121,16 +121,12 @@
             this.CoineDropDownList.AutoCompleteDisplayMember = null;
             this.CoineDropDownList.AutoCompleteValueMember = null;
             this.CoineDropDownList.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem1.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem1.Text = "شيكل";
             radListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem2.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem2.Text = "دولار";
             radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem3.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem3.Text = "دينار اردني";
             radListDataItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            radListDataItem4.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem4.Text = "يورو";
             radListDataItem4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.CoineDropDownList.Items.Add(radListDataItem1);

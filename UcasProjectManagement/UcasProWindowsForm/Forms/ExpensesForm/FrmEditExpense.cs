@@ -119,11 +119,13 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             }
 
               #endregion
-            if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+            if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
-                    this.Cursor = Cursors.WaitCursor;
+                    Operation.BeginOperation(this);
+                   
+
                     ProjectExpens tb = new ProjectExpens
                     {
                          
@@ -139,14 +141,14 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
                     };
                     ProjectExpensesCmd.EditProjectExpens(tb);
-                    RadMessageBox.Show("تمت عملية التعديل");
+                    RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
                     
                     this.Cursor = Cursors.Default;
                     this.Close();
                 }
                 catch (Xprema.XpremaException ex)
                 {
-                    this.Cursor = Cursors.Default;
+                    Operation.EndOperation(this);
                     RadMessageBox.Show(ex.OtherDescription);
 
                 }

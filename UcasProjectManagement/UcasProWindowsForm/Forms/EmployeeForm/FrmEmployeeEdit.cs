@@ -73,10 +73,28 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                 GenderDropDownList.DropDownListElement.TextBox.BackColor = Color.White;
                 errorProvider1.Clear();
             }
-            #endregion
-            if (RadMessageBox.Show(this, OperationX.SaveMessage, "SaveMessage", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+
+            if (EmployeejobNumberTextBox.Text == "")
             {
-                this.Cursor = Cursors.WaitCursor;
+
+                EmployeejobNumberTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.EmployeejobNumberTextBox, "من فضلك ادخل اسم الموظف");
+                EmployeejobNumberTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                EmployeejobNumberTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+            #endregion
+            if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+
+            {
+                Operation.BeginOperation(this);
+               
+
                 Employee db = new Employee()
                 {
                     ID = XIDEmployee,
@@ -90,8 +108,9 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
                 };
                 EmployeeCmd.EditEmployee(db);
-                this.Cursor = Cursors.Default;
-                RadMessageBox.Show("تمت عملية الحفظ");
+                Operation.EndOperation(this);
+                RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                this.Close();
 
             }
         }

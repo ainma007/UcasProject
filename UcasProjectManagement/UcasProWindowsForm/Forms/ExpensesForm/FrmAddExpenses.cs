@@ -137,8 +137,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
                 ProjectExpensesCmd.NewProjectExpens(tb);
                 Operation.EndOperation(this);
-              
-                RadMessageBox.Show("تمت علمية الاضافة");
+
+                RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
                
                 ClearTxt();
             }

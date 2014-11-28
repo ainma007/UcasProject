@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -41,7 +42,8 @@
             this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
             this.SalaryTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
-            this.ContractComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.EmployeeComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
@@ -52,9 +54,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ContractComboBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ContractComboBox.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ContractComboBox.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +72,7 @@
             this.radGroupBox1.Controls.Add(this.radLabel10);
             this.radGroupBox1.Controls.Add(this.SalaryTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel9);
-            this.radGroupBox1.Controls.Add(this.ContractComboBox);
+            this.radGroupBox1.Controls.Add(this.EmployeeComboBox);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGroupBox1.HeaderText = "بيانات الراتب";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
@@ -173,25 +176,25 @@
             this.radLabel9.Text = "مستحقة لشهر:";
             this.radLabel9.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
-            // ContractComboBox
+            // EmployeeComboBox
             // 
-            this.ContractComboBox.DisplayMember = "Status";
+            this.EmployeeComboBox.DisplayMember = "Status";
             // 
-            // ContractComboBox.NestedRadGridView
+            // EmployeeComboBox.NestedRadGridView
             // 
-            this.ContractComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.ContractComboBox.EditorControl.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ContractComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.ContractComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ContractComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ContractComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
+            this.EmployeeComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.EmployeeComboBox.EditorControl.Cursor = System.Windows.Forms.Cursors.Default;
+            this.EmployeeComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.EmployeeComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.EmployeeComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.EmployeeComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
             // 
             // 
-            this.ContractComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.ContractComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.ContractComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.ContractComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.EmployeeComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.EmployeeComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.EmployeeComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.EmployeeComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "ID";
             gridViewTextBoxColumn1.HeaderText = "ID";
@@ -210,24 +213,29 @@
             gridViewTextBoxColumn3.Name = "EmployeejobNumber";
             gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn3.Width = 99;
-            this.ContractComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            this.EmployeeComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3});
-            this.ContractComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.ContractComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.ContractComboBox.EditorControl.Name = "NestedRadGridView";
-            this.ContractComboBox.EditorControl.ReadOnly = true;
-            this.ContractComboBox.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ContractComboBox.EditorControl.ShowGroupPanel = false;
-            this.ContractComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.ContractComboBox.EditorControl.TabIndex = 0;
-            this.ContractComboBox.Location = new System.Drawing.Point(23, 38);
-            this.ContractComboBox.Name = "ContractComboBox";
-            this.ContractComboBox.Size = new System.Drawing.Size(253, 20);
-            this.ContractComboBox.TabIndex = 0;
-            this.ContractComboBox.TabStop = false;
-            this.ContractComboBox.ThemeName = "TelerikMetro";
+            this.EmployeeComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.EmployeeComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.EmployeeComboBox.EditorControl.Name = "NestedRadGridView";
+            this.EmployeeComboBox.EditorControl.ReadOnly = true;
+            this.EmployeeComboBox.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.EmployeeComboBox.EditorControl.ShowGroupPanel = false;
+            this.EmployeeComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.EmployeeComboBox.EditorControl.TabIndex = 0;
+            this.EmployeeComboBox.Location = new System.Drawing.Point(23, 38);
+            this.EmployeeComboBox.Name = "EmployeeComboBox";
+            this.EmployeeComboBox.Size = new System.Drawing.Size(253, 20);
+            this.EmployeeComboBox.TabIndex = 0;
+            this.EmployeeComboBox.TabStop = false;
+            this.EmployeeComboBox.ThemeName = "TelerikMetro";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
             // 
             // FrmSalaryMang
             // 
@@ -255,9 +263,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ContractComboBox.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ContractComboBox.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ContractComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -272,9 +281,10 @@
         private Telerik.WinControls.UI.RadLabel radLabel12;
         private Telerik.WinControls.UI.RadLabel radLabel10;
         private Telerik.WinControls.UI.RadLabel radLabel9;
-        public Telerik.WinControls.UI.RadMultiColumnComboBox ContractComboBox;
+        public Telerik.WinControls.UI.RadMultiColumnComboBox EmployeeComboBox;
         public Telerik.WinControls.UI.RadDateTimePicker ReleaseDateTimePicker;
         public Telerik.WinControls.UI.RadDateTimePicker FromonthDateTimePicker;
         public Telerik.WinControls.UI.RadTextBox SalaryTextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

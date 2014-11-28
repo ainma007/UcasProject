@@ -40,7 +40,8 @@ namespace UcasProWindowsForm.Forms.supplierForm
             }
             #endregion
 
-            if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+            if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+
             {
                 Operation.BeginOperation(this);
               
@@ -60,7 +61,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
                 };
                 TheDonorCmd.EditDonor(Donrs);
                 Operation.EndOperation(this);
-                RadMessageBox.Show(OperationX.SaveMessagedone);
+                RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
                 this.Close();
             }
         }

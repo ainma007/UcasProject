@@ -75,13 +75,13 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
                 ActivityCmd.NewActivity(tb);
                 Operation.EndOperation(this);
-                MessageBox.Show("تمت عملية الاضافة");
+                RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
                 ClearTxt();
             }
             catch (Xprema.XpremaException ex)
             {
                 Operation.EndOperation(this);
-                RadMessageBox.Show(ex.OtherDescription);
+                RadMessageBox.Show(this,ex.OtherDescription,"خطأ",MessageBoxButtons.OK,RadMessageIcon.Error);
 
             }
         }

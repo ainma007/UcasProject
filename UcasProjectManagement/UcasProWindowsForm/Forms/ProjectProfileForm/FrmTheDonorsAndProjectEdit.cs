@@ -101,7 +101,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
                 TheDonorsProjectCmd.EditTheDonorsProject(tb);
                 Operation.EndOperation(this);
-                MessageBox.Show("تمت العملية بنجاح");
+                RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
                 this.Close();
             }
         }

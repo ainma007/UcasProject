@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Ucas.Data.CommandClass;
@@ -28,8 +23,37 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         }
         private void FillData()
         {
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
 
-            ContractsGridView.DataSource = ContractCmd.GetAllContractsByproID(InformationsClass.ProjID);
+                toolStripStatusLabel1.Text = "يرجى الانتظار ... ";
+
+            });
+            Operation.BeginOperation(this);
+            try
+            {
+                Application.DoEvents();
+                ContractsGridView.DataSource = ContractCmd.GetAllContractsByproID(InformationsClass.ProjID);
+
+                Application.DoEvents();
+            }
+
+            catch (System.InvalidOperationException ex)
+            {
+
+                Application.DoEvents();
+                ContractsGridView.DataSource = ContractCmd.GetAllContractsByproID(InformationsClass.ProjID);
+                Application.DoEvents();
+            }
+
+            Operation.EndOperation(this);
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                toolStripStatusLabel1.Text = " ";
+
+            });
+           
 
         }
         private void FrmContratsManage_Load(object sender, EventArgs e)
@@ -48,13 +72,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
                 Ucas.Data.Contract db = (Ucas.Data.Contract)ContractsGridView.CurrentRow.DataBoundItem;
                 frm.TragetContract = db;
-                frm.GetEmplyeeCombo();
-                //frmsave.myContractId = int.Parse(radGridView1.CurrentRow.Cells["ID"].Value.ToString());
-                //frmsave.EmployeeComboBox.Text = radGridView1.CurrentRow.Cells[1].Value.ToString();
-                //frmsave.StartDateTimePicker.Text = radGridView1.CurrentRow.Cells[2].Value.ToString();
-                //frmsave.EndDateTimePicker.Text = radGridView1.CurrentRow.Cells[3].Value.ToString();
-                //frmsave.SalaryTextBox.Text = radGridView1.CurrentRow.Cells[4].Value.ToString();
-                //frmsave.StatusDropDownList.Text = radGridView1.CurrentRow.Cells[5].Value.ToString();
+             //   frm.GetEmplyeeCombo();
+               
                                                
                 frm.ShowDialog();
                 this.Cursor = Cursors.Default; 
@@ -80,9 +99,9 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
         private void FrmContratsManage_Activated(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
-            FrmContratsManage_Load(sender, e);
-            this.Cursor = Cursors.Default; 
+           // this.Cursor = Cursors.WaitCursor;
+           //// FrmContratsManage_Load(sender, e);
+           // this.Cursor = Cursors.Default; 
         }
     }
 }

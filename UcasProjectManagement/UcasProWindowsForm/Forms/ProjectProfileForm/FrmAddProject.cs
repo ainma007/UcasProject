@@ -60,7 +60,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 errorProvider1.Clear();
             }
 
-            if (CoineDropDownList.SelectedItem == null)
+            if (CoineDropDownList.Text == null)
             {
                
                 CoineDropDownList.DropDownListElement.TextBox.BackColor = Color.OrangeRed;
@@ -101,7 +101,8 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             ProjectProfileCmd.AddNewProject(pro);
             Operation.EndOperation(this);
 
-            RadMessageBox.Show("تمت العلمية بنجاح");
+            RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+
             ClearText();
            
         }

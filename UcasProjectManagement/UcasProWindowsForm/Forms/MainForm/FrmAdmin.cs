@@ -27,6 +27,8 @@ namespace UcasProWindowsForm.Forms.MainForm
         }
         ProjectProfileCmd cmd = new ProjectProfileCmd();
         private void FrmAdmin_Load(object sender, EventArgs e)
+
+
         {
             projectProfileBindingSource.DataSource = ProjectProfileCmd.GetAllProjects();
            
@@ -120,22 +122,11 @@ namespace UcasProWindowsForm.Forms.MainForm
         private void radGridView1_CommandCellClick(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
-            FrmMainUserPro user = new FrmMainUserPro();
-            int XProId = int.Parse(radGridView1.CurrentRow.Cells[0].Value.ToString());
-            var ListData = ProjectProfileCmd.GetProjectData(XProId);
-            
-            foreach (var item in ListData)
-            {
-                InformationsClass.ProjID = item.ID;
-                user.radTextBox1.Text = item.ProjectName;
-                user.DescTextBox.Text = item.ProjectDescription;
-                user.StartDateTextBox.Text = item.StartDate.ToString();
-                user.EndDateTextBox.Text = item.EndDate.ToString();
-                user.radTextBox2.Text = item.TotalCost.ToString();
-                user.radTextBox3.Text = item.Coin.ToString();
-
-            }
-            user.ShowDialog();
+            FrmMainUserPro frm = new FrmMainUserPro();
+            Ucas.Data.ProjectProfile db = (Ucas.Data.ProjectProfile)radGridView1.CurrentRow.DataBoundItem;
+            frm.TragetProject = db;
+            frm.ShowDialog();
+           
 
             this.Cursor = Cursors.Default;
         }

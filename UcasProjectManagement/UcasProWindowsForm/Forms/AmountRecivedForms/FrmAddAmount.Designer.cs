@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.CostTextBox = new Telerik.WinControls.UI.RadTextBox();
@@ -160,24 +160,23 @@
             this.DonorsComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.DonorsComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.DonorsComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "ID";
-            gridViewTextBoxColumn3.HeaderText = "ID";
-            gridViewTextBoxColumn3.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn3.IsVisible = false;
-            gridViewTextBoxColumn3.Name = "ID";
-            gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn3.Width = 55;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "TheDonor.Name";
-            gridViewTextBoxColumn4.HeaderText = "اختر الممول";
-            gridViewTextBoxColumn4.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn4.Name = "Name";
-            gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn4.Width = 220;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "ID";
+            gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn1.Width = 55;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "TheDonor.Name";
+            gridViewTextBoxColumn2.HeaderText = "اختر الممول";
+            gridViewTextBoxColumn2.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            gridViewTextBoxColumn2.Name = "Name";
+            gridViewTextBoxColumn2.Width = 220;
             this.DonorsComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2});
             this.DonorsComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.DonorsComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
             this.DonorsComboBox.EditorControl.Name = "NestedRadGridView";

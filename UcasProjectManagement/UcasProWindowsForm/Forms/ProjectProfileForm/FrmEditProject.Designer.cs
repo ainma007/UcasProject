@@ -120,9 +120,7 @@
             this.StatusDownList.AutoCompleteValueMember = null;
             this.StatusDownList.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             radListDataItem1.Text = "فعال";
-            radListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem2.Text = "غير فعال";
-            radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem2.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.StatusDownList.Items.Add(radListDataItem1);
             this.StatusDownList.Items.Add(radListDataItem2);
@@ -162,16 +160,12 @@
             this.CoineDropDownList.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             radListDataItem3.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem3.Text = "شيكل";
-            radListDataItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem4.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem4.Text = "دولار";
-            radListDataItem4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem5.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem5.Text = "دينار اردني";
-            radListDataItem5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem6.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem6.Text = "يورو";
-            radListDataItem6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.CoineDropDownList.Items.Add(radListDataItem3);
             this.CoineDropDownList.Items.Add(radListDataItem4);
             this.CoineDropDownList.Items.Add(radListDataItem5);

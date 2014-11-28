@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
-using Ucas.Data;
 using Ucas.Data.CommandClass;
 using UcasProWindowsForm.Reports.ReportObj;
 
@@ -23,29 +18,63 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         private void TotalExpenses()
         {
 
-            GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("Amount", "المجموع الكلي = {0}", GridAggregateFunction.Sum);
+            GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("Amount", "الاجمالي = {0}", GridAggregateFunction.Sum);
             GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight });
-            summaryRowItem.Clear();
+            this.SalaryGridView.SummaryRowsBottom.Clear();
             this.SalaryGridView.SummaryRowsBottom.Add(summaryRowItem);
-
+            
 
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             FrmAddSalaries Addfrm = new FrmAddSalaries();
             Addfrm.ShowDialog();
+            this.Cursor = Cursors.Default;
         }
 
         private void FrmSalariesManage_Load(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+
+
+            FillSalaryData();
+             TotalExpenses();
             
+        }
 
-            SalaryGridView.DataSource = SalariesCmd.GetSalaryBySelectedprotID(InformationsClass.ProjID);
+        private void FillSalaryData()
+        {
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                toolStripStatusLabel1.Text = "يرجى الانتظار ... ";
+
+            });
+            Operation.BeginOperation(this);
+            try
+            {
+                Application.DoEvents();
+                SalaryGridView.DataSource = SalariesCmd.GetSalaryBySelectedprotID(InformationsClass.ProjID);
+                 Application.DoEvents();
+            }
+
+            catch (System.InvalidOperationException ex)
+            {
+
+                Application.DoEvents();
+                SalaryGridView.DataSource = SalariesCmd.GetSalaryBySelectedprotID(InformationsClass.ProjID);
+            
+                Application.DoEvents();
+            }
+
+            Operation.EndOperation(this);
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                toolStripStatusLabel1.Text = " ";
+
+            });
            
-
-            TotalExpenses();
-            this.Cursor = Cursors.Default;
         }
 
         private void SalaryGridView_CommandCellClick(object sender, EventArgs e)
@@ -87,10 +116,11 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             
             List<SalaryReportObj> ls = new List<SalaryReportObj>();
             int counter = 0;
+        //    ls.Add(new SalaryReportObj() {  SalarysID = counter});
             foreach (GridViewRowInfo item in SalaryGridView.ChildRows)
             {
                 counter++;
-                ls.Add(new SalaryReportObj() { SalarysID = counter,
+                ls.Add(new SalaryReportObj() {SalarysID=counter,
                  coin = item.Cells["Coin"].Value.ToString(),
                  //coin=  q[0].Coin,
                  EmployeejobNumber = item.Cells["EmployeejobNumber"].Value.ToString(),
@@ -108,8 +138,15 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         }
 
         private void FrmSalariesManage_Activated(object sender, EventArgs e)
+        { 
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
         {
-         //   FrmSalariesManage_Load(sender, e);
+            this.Cursor = Cursors.WaitCursor;
+            FrmSalariesManage_Load(sender, e);
+            this.Cursor = Cursors.Default;
+
         }
 
        

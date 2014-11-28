@@ -56,7 +56,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
              TheDonorCmd.AddDonor(Donrs);
 
              Operation.EndOperation(this);
-             RadMessageBox.Show(this, OperationX.AddMessageDone, "Done", MessageBoxButtons.OK, RadMessageIcon.Info);
+             RadMessageBox.Show(this, OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
             
              ClearText();
         }

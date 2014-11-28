@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
@@ -72,9 +68,12 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             }
 
             #endregion
-              if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+            if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+
                         {
-                            this.Cursor = Cursors.WaitCursor;
+                            Operation.BeginOperation(this);
+                           
+
 
                             Contract tb = new Contract()
                             {
@@ -88,9 +87,9 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
                             };
                             ContractCmd.EditContract(tb);
-                            this.Cursor = Cursors.Default;
+                            Operation.EndOperation(this);
 
-                            RadMessageBox.Show("تمت عملية التعديل");
+                            RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
                               
                             this.Close();
                         }
@@ -108,15 +107,45 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             filter.PropertyName = this.EmployeeComboBox.DisplayMember;
             filter.Operator = FilterOperator.Contains;
             this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
 
+                toolStripStatusLabel1.Text = "يرجى الانتظار ... ";
 
-            EmployeeComboBox.DataSource = EmployeeCmd.GetAll();
+            });
+            Operation.BeginOperation(this);
+            try
+            {
+                Application.DoEvents();
+                EmployeeComboBox.DataSource = EmployeeCmd.GetAll();
+
+                Application.DoEvents();
+            }
+
+            catch (System.InvalidOperationException ex)
+            {
+
+                Application.DoEvents();
+                EmployeeComboBox.DataSource = EmployeeCmd.GetAll(); 
+                Application.DoEvents();
+            }
+
+            Operation.EndOperation(this);
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                toolStripStatusLabel1.Text = " ";
+
+            });
+
+           
 
         }
         
         private void FrmContractsLookAndSave_Load(object sender, EventArgs e)
         {
             db = new Contract();
+            GetEmplyeeCombo();
             myContractId = TragetContract.ID;
             this.EmployeeComboBox.Text = TragetContract.Employee.EmployeeName;
             this.StartDateTimePicker.Text = TragetContract.StartDate.ToString();

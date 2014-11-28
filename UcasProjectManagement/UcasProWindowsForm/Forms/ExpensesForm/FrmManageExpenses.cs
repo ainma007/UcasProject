@@ -29,17 +29,63 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         }
         private void FrmManageExpenses_Load(object sender, EventArgs e)
         {
-            ExpensesGridView.MasterView.TableHeaderRow.MaxHeight = 50;
-          ExpensesGridView.DataSource  = ProjectExpensesCmd.GetAllExpensesByProject(InformationsClass.ProjID);
 
-          for (int i = 1; i <= ExpensesGridView .Rows .Count ; i++)
-          {
-              ExpensesGridView.Rows[i-1].Cells["Num"].Value = i.ToString();
-          }
 
-          TotalExpenses();
-         
+            FillExpensesData();
+            TotalExpenses();
         }
+
+        private void FillExpensesData()
+        {
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                toolStripStatusLabel1.Text = "يرجى الانتظار ... ";
+
+            });
+            Operation.BeginOperation(this);
+            try
+            {
+                Application.DoEvents();
+                ExpensesGridView.DataSource = ProjectExpensesCmd.GetAllExpensesByProject(InformationsClass.ProjID);
+
+                for (int i = 1; i <= ExpensesGridView.Rows.Count; i++)
+                {
+                    ExpensesGridView.Rows[i - 1].Cells["Num"].Value = i.ToString();
+                }
+
+               
+
+
+                Application.DoEvents();
+            }
+
+            catch (System.InvalidOperationException ex)
+            {
+
+                Application.DoEvents();
+                ExpensesGridView.DataSource = ProjectExpensesCmd.GetAllExpensesByProject(InformationsClass.ProjID);
+
+                for (int i = 1; i <= ExpensesGridView.Rows.Count; i++)
+                {
+                    ExpensesGridView.Rows[i - 1].Cells["Num"].Value = i.ToString();
+                }
+
+                
+                Application.DoEvents();
+            }
+
+            Operation.EndOperation(this);
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                toolStripStatusLabel1.Text = " ";
+
+            });
+            
+
+        }
+      
 
         private void ExpensesGridView_CommandCellClick(object sender, EventArgs e)
         {
@@ -79,13 +125,17 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             FrmAddExpenses frm = new FrmAddExpenses();
             frm.ShowDialog();
+            this.Cursor = Cursors.Default;
         }
 
         private void RefrechBtn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             FrmManageExpenses_Load(sender, e);
+            this.Cursor = Cursors.Default;
         }
 
         private void FrmManageExpenses_Activated(object sender, EventArgs e)

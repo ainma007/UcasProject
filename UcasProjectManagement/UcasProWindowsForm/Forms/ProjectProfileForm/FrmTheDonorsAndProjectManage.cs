@@ -26,8 +26,12 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void AddDonorsBtn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
+            
             FrmTheDonorsAndProjectAdd frm = new FrmTheDonorsAndProjectAdd();
             frm.ShowDialog();
+            this.Cursor = Cursors.Default;
+
         }
 
         private void FrmTheDonorsAndProjectManage_Load(object sender, EventArgs e)
@@ -55,6 +59,14 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                   
                 }
             }
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            FrmTheDonorsAndProjectManage_Load(sender, e);
+            this.Cursor = Cursors.Default;
+
         }
     }
 }

@@ -55,7 +55,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 errorProvider1.Clear();
             }
 
-            if (CoineDropDownList.SelectedItem == null)
+            if (CoineDropDownList.Text == null)
             {
 
                 CoineDropDownList.DropDownListElement.TextBox.BackColor = Color.OrangeRed;
@@ -74,7 +74,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
             #endregion
 
-            if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+            if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
                 Operation.BeginOperation(this);
                
@@ -97,7 +97,9 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 };
                 ProjectProfileCmd.EditProjectProfile(pro);
                 Operation.EndOperation(this);
-                MessageBox.Show("تمت العلمية بنجاح");
+                RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+               
+
                 this.Close();
             }
         }

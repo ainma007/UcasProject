@@ -308,7 +308,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!SalarysID.Value</Value>
+                              <Value>=CountRows()</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>

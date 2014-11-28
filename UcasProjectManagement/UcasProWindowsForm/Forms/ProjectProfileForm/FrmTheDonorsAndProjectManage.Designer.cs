@@ -83,6 +83,7 @@
             this.RefreshBtn.Name = "RefreshBtn";
             this.RefreshBtn.Size = new System.Drawing.Size(117, 36);
             this.RefreshBtn.Text = "تحديث السجلات";
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // toolStripSeparator2
             // 
@@ -116,7 +117,6 @@
             gridViewTextBoxColumn2.FieldName = "TheDonor.Name";
             gridViewTextBoxColumn2.HeaderText = "الممول";
             gridViewTextBoxColumn2.Name = "Name";
-            gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             gridViewTextBoxColumn2.Width = 400;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "TotalCost";
@@ -151,6 +151,7 @@
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.ReadOnly = true;
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.radGridView1.ShowGroupPanel = false;
             this.radGridView1.Size = new System.Drawing.Size(688, 401);
             this.radGridView1.TabIndex = 8;
             this.radGridView1.Text = "radGridView1";
@@ -174,6 +175,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(696, 475);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ممولين المشروع";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmTheDonorsAndProjectManage_Load);

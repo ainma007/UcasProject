@@ -94,7 +94,7 @@ namespace UcasProWindowsForm.Forms.MainForm
 
             TheDonorsProjectCmd.AddTheTheDonorsProject(tb);
             Operation.EndOperation(this);
-            MessageBox.Show("تمت العملية بنجاح");
+            RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
             DonorsColumnComboBox.ResetText();
             CostTextBox.Clear();
             DonorsColumnComboBox.Focus();

@@ -415,6 +415,7 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
             // 
             // FrmAddSalaries
             // 

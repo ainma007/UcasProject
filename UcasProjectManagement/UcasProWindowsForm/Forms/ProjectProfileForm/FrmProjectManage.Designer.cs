@@ -240,6 +240,7 @@
             this.RefreshBtn.Name = "RefreshBtn";
             this.RefreshBtn.Size = new System.Drawing.Size(117, 36);
             this.RefreshBtn.Text = "تحديث السجلات";
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // toolStripSeparator2
             // 
@@ -274,6 +275,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ادارة المشاريع";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmProjectManage_Load);

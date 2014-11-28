@@ -20,6 +20,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             RadMessageBox.SetThemeName("TelerikMetro");
         }
         public int SubXid { get; set; }
+        public ProjectSubActivity TragetSUBActivity { get; set; }
         public void FillActivty()
         {
 
@@ -40,6 +41,15 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         }
         private void FrmSubActivityEdit_Load(object sender, EventArgs e)
         {
+            SubXid = TragetSUBActivity.ID;
+            ActivitiesColumnComboBox.Text=TragetSUBActivity.ProjectActivity.ActivityName;
+            SubActivitiesNameTextBox.Text = TragetSUBActivity.SubActivityName;
+            SubActivitiesDescriptionTextBox.Text = TragetSUBActivity.Description;
+            StartDateTimePicker.Text = TragetSUBActivity.Startdate.ToString();
+            EndDateTimePicker.Text = TragetSUBActivity.enddate.ToString();
+            StatusDropDownList.Text = TragetSUBActivity.Status;
+            TotalCostTextBox.Text = TragetSUBActivity.TotalCost.ToString();
+            ProgressEditor.Value = int.Parse(TragetSUBActivity.Progress.ToString());
             ProgressEditor.Maximum = 100;
             ProgressEditor.Minimum = 0;
         }
@@ -97,24 +107,13 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             }
             #endregion
 
-            if (TotalCostTextBox.Text == "")
-            {
-
-                TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
-
-                TotalCostTextBox.Focus();
-
-                return;
-            }
-            else
-            {
-                TotalCostTextBox.TextBoxElement.Fill.BackColor = Color.White;
-            }
-         if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+            if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
          {
              try
              {
-                 this.Cursor = Cursors.WaitCursor;
+                 Operation.BeginOperation(this);
+             
+
                  ProjectSubActivity tb = new ProjectSubActivity()
 
                  {
@@ -127,19 +126,20 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                      TotalCost = Convert.ToDouble(TotalCostTextBox.Text),
                      Progress = int.Parse(ProgressEditor.Value.ToString()),
                      Status = StatusDropDownList.Text,
+                     
 
 
 
 
                  };
                  SubActivityCmd.EditSubActivity(tb);
-                 this.Cursor = Cursors.Default;
-                 MessageBox.Show("تمت عملية التعديل");
+                 Operation.EndOperation(this);
+                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
              }
              catch (Xprema.XpremaException ex)
              {
 
-                 RadMessageBox.Show(ex.OtherDescription);
+                 RadMessageBox.Show(this, ex.OtherDescription, "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
                 
              }
          }

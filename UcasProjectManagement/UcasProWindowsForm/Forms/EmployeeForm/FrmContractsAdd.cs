@@ -86,7 +86,9 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
             #endregion
 
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
+            
+
             Contract tb = new Contract()
             {
                 Employee_ID=int.Parse(EmployeeComboBox.SelectedValue.ToString()),
@@ -99,8 +101,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
             };
             ContractCmd.NewContract(tb);
-            this.Cursor = Cursors.WaitCursor;
-            RadMessageBox.Show("تمت الاضافة");
+            Operation.EndOperation(this);
+            RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
             ClearTxt();
         }
         private void ClearTxt()

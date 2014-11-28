@@ -45,10 +45,12 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void AddBtn1_Click(object sender, EventArgs e)
         {
+            #region "  CheckFillTextBox "
             if (EmployeeComboBox.SelectedValue == null)
             {
 
                 EmployeeComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.EmployeeComboBox, "من فضلك ادخل الموظف");
                 EmployeeComboBox.Focus();
 
                 return;
@@ -56,13 +58,14 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             else
             {
                 EmployeeComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
             }
             ///
             if (SalaryTextBox.Text == "")
             {
 
                 SalaryTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
-
+                errorProvider1.SetError(this.SalaryTextBox, "من فضلك ادخل قيمة الراتب");
                 SalaryTextBox.Focus();
 
                 return;
@@ -70,7 +73,13 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             else
             {
                 SalaryTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
+            #endregion
+
+            Operation.BeginOperation(this);
+         
+
             Monthlysalary tb = new Monthlysalary
             {
                 ProjectProfile_ID= InformationsClass.ProjID,
@@ -81,7 +90,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
             };
             SalariesCmd.NewSalary(tb);
-            RadMessageBox.Show("تمت عملية الاضافة");
+            Operation.EndOperation(this);
+            RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
             ClearText();
         }
 

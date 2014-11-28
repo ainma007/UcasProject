@@ -35,26 +35,33 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         }
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            #region "  CheckFillTextBox "
+
+
+
             if (DonorsComboBox.SelectedValue == null)
             {
 
                 DonorsComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
 
+                errorProvider1.SetError(this.DonorsComboBox, "من فضلك ادخل الممول");
 
-
-                GroupBox.Focus();
+                DonorsComboBox.Focus();
 
                 return;
             }
             else
             {
                 DonorsComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
             }
 
             if (CostTextBox.Text == "")
             {
 
                 CostTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.CostTextBox, "من فضلك ادخل المبلغ");
+
 
                 CostTextBox.Focus();
 
@@ -63,9 +70,15 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
             else
             {
                 CostTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
             }
-            if (RadMessageBox.Show(this, OperationX.SaveMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+
+            #endregion
+            if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
+                Operation.BeginOperation(this);
+              
+
                 AmountsReceived tb = new AmountsReceived()
                 {
                     ID = XAmountID,
@@ -78,7 +91,9 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
                 };
 
                 AmountsReceivedsCmd.EditAmountsReceived(tb);
-                RadMessageBox.Show("Done");
+                Operation.EndOperation(this);
+                RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                this.Close();
             }
         }
         private void FrmEditAmount_Load(object sender, EventArgs e)

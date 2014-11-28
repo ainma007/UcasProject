@@ -15,6 +15,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
     {
           
         public int xID { get; set; }
+        public ProjectActivity TragetActivity { get; set; }
         public FrmActivitiesEdit()
         {
             InitializeComponent();
@@ -23,6 +24,13 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void FrmActivitiesEdit_Load(object sender, EventArgs e)
         {
+            xID=TragetActivity.ID;
+            ActivitiesNameTextBox.Text = TragetActivity.ActivityName;
+            ActivitiesDescriptionTextBox.Text = TragetActivity.Description;
+            StartDateTimePicker.Text = TragetActivity.StartDate.ToString();
+            EndDateTimePicker.Text = TragetActivity.EndDate.ToString();
+            StatusDropDownList.Text = TragetActivity.Status;
+            TotalCostTextBox.Text = TragetActivity.TotalCost.ToString();
 
         }
 
@@ -83,13 +91,13 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                     };
                     ActivityCmd.EditActivity(tb);
                     Operation.EndOperation(this);
-                    RadMessageBox.Show("تمت عملية التعديل");
+                    RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK,RadMessageIcon.Info);
                     this.Close();
                 }
                 catch (Xprema.XpremaException ex)
                 {
                     Operation.EndOperation(this);
-                    RadMessageBox.Show(ex.OtherDescription);
+                    RadMessageBox.Show(this,ex.OtherDescription,"",MessageBoxButtons.OK,RadMessageIcon.Error);
                    
 
                 }

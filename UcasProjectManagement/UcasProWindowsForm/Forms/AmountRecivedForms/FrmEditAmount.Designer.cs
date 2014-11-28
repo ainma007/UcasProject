@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
@@ -39,6 +40,7 @@
             this.DateOfProecssPicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.CostTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GroupBox)).BeginInit();
             this.GroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.saveBtn)).BeginInit();
@@ -47,6 +49,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DonorsComboBox.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateOfProecssPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,6 +111,7 @@
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "TheDonor.Name";
             gridViewTextBoxColumn2.HeaderText = "اختر الممول";
+            gridViewTextBoxColumn2.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             gridViewTextBoxColumn2.Name = "Name";
             gridViewTextBoxColumn2.Width = 220;
             this.DonorsComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
@@ -185,6 +189,10 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "الممول:";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FrmEditAmount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,6 +223,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DonorsComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateOfProecssPicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -231,5 +240,6 @@
         public Telerik.WinControls.UI.RadMultiColumnComboBox DonorsComboBox;
         public Telerik.WinControls.UI.RadDateTimePicker DateOfProecssPicker;
         public Telerik.WinControls.UI.RadTextBox CostTextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

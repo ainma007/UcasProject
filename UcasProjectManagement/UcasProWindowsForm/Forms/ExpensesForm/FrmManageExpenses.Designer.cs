@@ -51,9 +51,12 @@
             this.PrintBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.ExpensesGridView = new Telerik.WinControls.UI.RadGridView();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExpensesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExpensesGridView.MasterTemplate)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,6 +131,8 @@
             // 
             // ExpensesGridView
             // 
+            this.ExpensesGridView.MasterTemplate.AllowAddNewRow = false;
+            this.ExpensesGridView.MasterTemplate.AllowColumnReorder = false;
             this.ExpensesGridView.MasterTemplate.AllowSearchRow = true;
             this.ExpensesGridView.MasterTemplate.AutoGenerateColumns = false;
             this.ExpensesGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
@@ -240,18 +245,36 @@
             gridViewDecimalColumn3,
             gridViewDecimalColumn4});
             this.ExpensesGridView.Name = "ExpensesGridView";
+            this.ExpensesGridView.ReadOnly = true;
             this.ExpensesGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ExpensesGridView.Size = new System.Drawing.Size(1238, 786);
+            this.ExpensesGridView.Size = new System.Drawing.Size(1238, 539);
             this.ExpensesGridView.TabIndex = 7;
             this.ExpensesGridView.Text = "radGridView1";
             this.ExpensesGridView.ThemeName = "TelerikMetro";
             this.ExpensesGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.ExpensesGridView_CommandCellClick);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 556);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1238, 22);
+            this.statusStrip1.TabIndex = 8;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(12, 17);
+            this.toolStripStatusLabel1.Text = "-";
+            // 
             // FrmManageExpenses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1238, 825);
+            this.ClientSize = new System.Drawing.Size(1238, 578);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ExpensesGridView);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FrmManageExpenses";
@@ -260,6 +283,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ادارة المصروفات";
             this.ThemeName = "TelerikMetro";
             this.Activated += new System.EventHandler(this.FrmManageExpenses_Activated);
@@ -268,6 +292,8 @@
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExpensesGridView.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExpensesGridView)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -285,5 +311,7 @@
         private System.Windows.Forms.ToolStripButton PrintBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private Telerik.WinControls.UI.RadGridView ExpensesGridView;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
