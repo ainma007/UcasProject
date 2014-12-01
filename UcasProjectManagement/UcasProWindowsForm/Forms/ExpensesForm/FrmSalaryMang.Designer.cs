@@ -202,15 +202,15 @@
             gridViewTextBoxColumn1.Name = "ID";
             gridViewTextBoxColumn1.Width = 57;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "EmployeeName";
+            gridViewTextBoxColumn2.FieldName = "Employee.EmployeeName";
             gridViewTextBoxColumn2.HeaderText = "اسم الموظف";
-            gridViewTextBoxColumn2.Name = "EmployeeName";
+            gridViewTextBoxColumn2.Name = "Employee.EmployeeName";
             gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             gridViewTextBoxColumn2.Width = 122;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "EmployeejobNumber";
+            gridViewTextBoxColumn3.FieldName = "Employee.EmployeejobNumber";
             gridViewTextBoxColumn3.HeaderText = "الرقم الوظيفي";
-            gridViewTextBoxColumn3.Name = "EmployeejobNumber";
+            gridViewTextBoxColumn3.Name = "Employee.EmployeejobNumber";
             gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn3.Width = 99;
             this.EmployeeComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {

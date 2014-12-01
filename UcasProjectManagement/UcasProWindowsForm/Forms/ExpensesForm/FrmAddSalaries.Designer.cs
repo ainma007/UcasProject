@@ -230,6 +230,7 @@
             this.radGroupBox1.Controls.Add(this.radLabel9);
             this.radGroupBox1.Controls.Add(this.AddBtn1);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.radGroupBox1.HeaderText = "بيانات الادخال";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
@@ -272,7 +273,6 @@
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowSearchRow = true;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn1.DataType = typeof(int);
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "ID";
             gridViewDecimalColumn1.HeaderText = "ID";
@@ -281,7 +281,6 @@
             gridViewDecimalColumn1.Name = "ID";
             gridViewDecimalColumn1.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
             gridViewDecimalColumn1.Width = 46;
-            gridViewDecimalColumn2.DataType = typeof(int);
             gridViewDecimalColumn2.EnableExpressionEditor = false;
             gridViewDecimalColumn2.FieldName = "Employee_ID";
             gridViewDecimalColumn2.HeaderText = "Employee_ID";
@@ -292,13 +291,13 @@
             gridViewTextBoxColumn1.FieldName = "Employee.EmployeeName";
             gridViewTextBoxColumn1.HeaderText = "الموظف";
             gridViewTextBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn1.Name = "EmployeeName";
+            gridViewTextBoxColumn1.Name = "Employee.EmployeeName";
             gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             gridViewTextBoxColumn1.Width = 115;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "Employee.EmployeejobNumber";
             gridViewTextBoxColumn2.HeaderText = "الرقم الوظيفي";
-            gridViewTextBoxColumn2.Name = "EmployeejobNumber";
+            gridViewTextBoxColumn2.Name = "Employee.EmployeejobNumber";
             gridViewTextBoxColumn2.Width = 106;
             this.EmployeeComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,

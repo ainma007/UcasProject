@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
@@ -24,34 +25,25 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             statusStrip1.Invoke((MethodInvoker)delegate
             {
 
-                toolStripStatusLabel1.Text = "يرجى الانتظار ... ";
+                StatusLabel1.Text = "جاري الانتظار.... ";
 
             });
             Operation.BeginOperation(this);
-            try
-            {
+          
                 Application.DoEvents();
-                employeeBindingSource.DataSource = EmployeeCmd.GetAll();
-
-
+               var q = EmployeeCmd.GetAll();
                 Application.DoEvents();
-            }
-
-            catch (System.InvalidOperationException ex)
-            {
-
-                Application.DoEvents();
-                employeeBindingSource.DataSource = EmployeeCmd.GetAll();
-                Application.DoEvents();
-            }
-
+           
             Operation.EndOperation(this);
             statusStrip1.Invoke((MethodInvoker)delegate
             {
 
-                toolStripStatusLabel1.Text = " ";
+                EmployeeGridView.DataSource = q;
+                StatusLabel1.Text = "";
 
             });
+        
+            
           
         }
 
@@ -60,8 +52,9 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
        
         private void FrmEmployeeMng_Load(object sender, EventArgs e)
         {
-            GetAllEmployee();
-           
+            Thread th = new Thread(GetAllEmployee);
+          //  GetAllEmployee();
+             th.Start();
             
         }
 
@@ -84,13 +77,15 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
             if (col == 9)
             {
-                if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                if (RadMessageBox.Show(this, OperationX.DeleteMessage, "حذف السجلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
-                    this.Cursor = Cursors.WaitCursor;
-                    Employee emp = employeeBindingSource.Current as Employee;
-                    EmployeeCmd.DeleteEmployee(emp.ID);
-                    GetAllEmployee();
-                    this.Cursor = Cursors.Default;   
+                    Operation.BeginOperation(this);                          
+                    EmployeeCmd.DeleteEmployee(int.Parse(EmployeeGridView.CurrentRow.Cells[0].Value.ToString()));
+                    Operation.EndOperation(this);
+                    FrmEmployeeMng_Load(sender,e);
+                   
+                    RadMessageBox.Show(OperationX.DeletedMessage, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    
                     
                 }
 

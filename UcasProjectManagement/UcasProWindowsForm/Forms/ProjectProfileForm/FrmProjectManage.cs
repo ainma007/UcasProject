@@ -29,8 +29,27 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
        
         private void GetAllProject()
         {
-            ProjectbindingSource.DataSource = ProjectProfileCmd.GetAllProjects();
+            
+           
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
 
+                StatusLabel1.Text = "جاري الانتظار.... ";
+
+            });
+            Operation.BeginOperation(this);
+
+            Application.DoEvents();
+            var q = ProjectProfileCmd.GetAllProjects(); ;
+            Application.DoEvents();
+
+            Operation.EndOperation(this);
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+                ProjectProfileGridView.DataSource = q;
+                StatusLabel1.Text = "";
+
+            });
         }
    
    
@@ -56,13 +75,15 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                     if (RadMessageBox.Show(this, OperationX.DeleteMessage, "حذف سجل", MessageBoxButtons.YesNo, RadMessageIcon.Info) == DialogResult.Yes)
                     {
                         Operation.BeginOperation(this);
-                        
 
-                        ProjectProfile cp = ProjectbindingSource.Current as ProjectProfile;
-                        ProjectProfileCmd.DeleteProjectProfile(cp.ID);
-                        GetAllProject();
-                        Operation.EndOperation(this);
-                        RadMessageBox.Show(OperationX.DeletedMessage, "نجاح العملية", MessageBoxButtons.OK);
+                        if (ProjectProfileCmd.DeleteProjectProfile(int.Parse(ProjectProfileGridView.CurrentRow.Cells[0].Value.ToString())))
+                        {
+                             Operation.EndOperation(this);
+                             FrmProjectManage_Load(sender, e);
+                             RadMessageBox.Show(OperationX.DeletedMessage, "نجاح العملية", MessageBoxButtons.OK,RadMessageIcon.Info);
+                           
+                        }
+                       
                     }
                     
 

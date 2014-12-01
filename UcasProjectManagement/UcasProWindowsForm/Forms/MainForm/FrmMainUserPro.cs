@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Telerik.Charting;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Ucas.Data.CommandClass;
@@ -11,6 +10,7 @@ using UcasProWindowsForm.Forms.AmountRecivedForms;
 using UcasProWindowsForm.Forms.EmployeeForm;
 using UcasProWindowsForm.Forms.ExpensesForm;
 using UcasProWindowsForm.Forms.ProjectProfileForm;
+using UcasProWindowsForm.Reports.ReportObj;
 namespace UcasProWindowsForm.Forms.MainForm
 {
     public partial class FrmMainUserPro : Telerik.WinControls.UI.RadForm
@@ -22,6 +22,7 @@ namespace UcasProWindowsForm.Forms.MainForm
         }
         ProjectProfile db = new ProjectProfile();
         public ProjectProfile TragetProject { get; set; }
+        public string ProjectName { get; set; }
 
 
         public string Progress { get; set; }
@@ -32,17 +33,16 @@ namespace UcasProWindowsForm.Forms.MainForm
             var ListData = ProjectProfileCmd.GetProjectData(InformationsClass.ProjID);
             foreach (var item in ListData)
             {
-               
-                this.radTextBox1.Text = item.ProjectName;
+
+               this.ProjectNameTextBox.Text = item.ProjectName;
                 this.DescTextBox.Text = item.ProjectDescription;
                 this.StartDateTextBox.Text = item.StartDate.ToString();
                 this.EndDateTextBox.Text = item.EndDate.ToString();
-                this.radTextBox2.Text = item.TotalCost.ToString();
-                this.radTextBox3.Text = item.Coin.ToString();
-
+                this.CostTextBox.Text = item.TotalCost.ToString();
+                this.CoinTextBox.Text = item.Coin.ToString();
                 this.Progress = item.progress.ToString();
 
-
+                 
             }
             var TotalExpenses = ProjectExpensesCmd.GetTotalExpensesByProject(InformationsClass.ProjID).ToString();
             this.TotalExpensesTextBox.Text = TotalExpenses;
@@ -175,6 +175,14 @@ namespace UcasProWindowsForm.Forms.MainForm
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
             FrmMainUserPro_Load(sender, e);
+        }
+
+        private void ProjectRbtBtn_Click(object sender, EventArgs e)
+        {
+
+            Reports.ReportCommand.ProjectReportCmd cmd = new Reports.ReportCommand.ProjectReportCmd();
+            cmd.GetByProjectId(InformationsClass.ProjID);
+            
         }
     }
 }

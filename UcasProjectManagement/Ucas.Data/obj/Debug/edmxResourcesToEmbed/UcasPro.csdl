@@ -143,10 +143,10 @@
     <Property Name="SelaryAmount" Type="Double" />
     <Property Name="Status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="ProjectProfile_ID" Type="Int32" Nullable="false" />
+    <Property Name="TotalSalary" Type="Double" />
     <NavigationProperty Name="Employee" Relationship="UcasProModel.FK_Contracts_Employees" FromRole="Contract" ToRole="Employee" />
     <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_Contracts_ProjectProfiles" FromRole="Contract" ToRole="ProjectProfile" />
     <NavigationProperty Name="Monthlysalaries" Relationship="UcasProModel.FK_Salaries_Contracts" FromRole="Contract" ToRole="Monthlysalary" />
-    <Property Name="TotalSalary" Type="Double" />
   </EntityType>
   <EntityType Name="Employee">
     <Key>
@@ -327,7 +327,7 @@
     <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Employee_ID" Type="Int32" />
-    <Property Name="TypeUser" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TypeUser" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Employee" Relationship="UcasProModel.FK_UserTb_Employees" FromRole="UserTb" ToRole="Employee" />
     <NavigationProperty Name="ProjectControls" Relationship="UcasProModel.FK_ProjectControls_UserTb" FromRole="UserTb" ToRole="ProjectControl" />
     <NavigationProperty Name="UserPermessions" Relationship="UcasProModel.FK_UserPermession_UserTbs" FromRole="UserTb" ToRole="UserPermession" />

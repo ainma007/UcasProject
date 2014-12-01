@@ -35,7 +35,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             filter.PropertyName = this.EmployeeComboBox.DisplayMember;
             filter.Operator = FilterOperator.Contains;
             this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-            EmployeeComboBox.DataSource = ContractCmd.GetAllContractsForComboBox(InformationsClass.ProjID);
+            EmployeeComboBox.DataSource = ContractCmd.GetAllContractsByproID(InformationsClass.ProjID);
 
         }
         private void FrmSalaryMang_Load(object sender, EventArgs e)

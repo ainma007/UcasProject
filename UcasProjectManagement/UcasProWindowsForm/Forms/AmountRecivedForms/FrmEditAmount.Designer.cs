@@ -112,7 +112,7 @@
             gridViewTextBoxColumn2.FieldName = "TheDonor.Name";
             gridViewTextBoxColumn2.HeaderText = "اختر الممول";
             gridViewTextBoxColumn2.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            gridViewTextBoxColumn2.Name = "Name";
+            gridViewTextBoxColumn2.Name = "TheDonor.Name";
             gridViewTextBoxColumn2.Width = 220;
             this.DonorsComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,

@@ -13,7 +13,10 @@ namespace Ucas.Data.CommandClass
        public static List<UserTb> GetAllUsers()
        {
            db = new UcasProEntities();
-           return db.UserTbs.ToList();
+           var lst = (from p in db.UserTbs
+
+                      select p).ToList();
+           return lst;
        }
      
        public static bool EditUser(UserTb tb)

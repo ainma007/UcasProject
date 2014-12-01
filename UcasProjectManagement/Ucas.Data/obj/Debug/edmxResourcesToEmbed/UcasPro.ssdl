@@ -191,7 +191,7 @@
     <Property Name="UserName" Type="nvarchar(max)" />
     <Property Name="Password" Type="nvarchar(max)" />
     <Property Name="Employee_ID" Type="int" />
-    <Property Name="TypeUser" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TypeUser" Type="nvarchar(max)" />
   </EntityType>
   <Association Name="FK_AmountsReceived_TheFinancerProjects">
     <End Role="TheDonorsProjects" Type="Self.TheDonorsProjects" Multiplicity="0..1" />

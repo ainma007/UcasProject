@@ -38,8 +38,7 @@
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManagementSupplier));
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
-            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
+            this.supplierGridView = new Telerik.WinControls.UI.RadGridView();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.AddBtn = new System.Windows.Forms.ToolStripButton();
@@ -48,42 +47,35 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.PrintBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.StatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierGridView.MasterTemplate)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // radStatusStrip1
+            // supplierGridView
             // 
-            this.radStatusStrip1.Location = new System.Drawing.Point(0, 800);
-            this.radStatusStrip1.Name = "radStatusStrip1";
-            this.radStatusStrip1.Size = new System.Drawing.Size(1062, 25);
-            this.radStatusStrip1.TabIndex = 1;
-            this.radStatusStrip1.Text = "radStatusStrip1";
-            this.radStatusStrip1.ThemeName = "TelerikMetro";
+            this.supplierGridView.BackColor = System.Drawing.Color.White;
+            this.supplierGridView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.supplierGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.supplierGridView.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.supplierGridView.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.supplierGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.supplierGridView.Location = new System.Drawing.Point(2, 18);
             // 
-            // radGridView1
+            // supplierGridView
             // 
-            this.radGridView1.BackColor = System.Drawing.Color.White;
-            this.radGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.radGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGridView1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.radGridView1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radGridView1.Location = new System.Drawing.Point(2, 18);
-            // 
-            // radGridView1
-            // 
-            this.radGridView1.MasterTemplate.AllowAddNewRow = false;
-            this.radGridView1.MasterTemplate.AllowColumnReorder = false;
-            this.radGridView1.MasterTemplate.AllowSearchRow = true;
-            this.radGridView1.MasterTemplate.AutoGenerateColumns = false;
-            this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.supplierGridView.MasterTemplate.AllowAddNewRow = false;
+            this.supplierGridView.MasterTemplate.AllowColumnReorder = false;
+            this.supplierGridView.MasterTemplate.AllowSearchRow = true;
+            this.supplierGridView.MasterTemplate.AutoGenerateColumns = false;
+            this.supplierGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "ID";
             gridViewDecimalColumn1.HeaderText = "الرقم";
@@ -96,14 +88,12 @@
             gridViewTextBoxColumn1.HeaderText = "اسم المورد";
             gridViewTextBoxColumn1.IsAutoGenerated = true;
             gridViewTextBoxColumn1.Name = "Name";
-            gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             gridViewTextBoxColumn1.Width = 158;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "SuppliersNatural";
             gridViewTextBoxColumn2.HeaderText = "طبيعة العمل";
             gridViewTextBoxColumn2.IsAutoGenerated = true;
             gridViewTextBoxColumn2.Name = "SuppliersNatural";
-            gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             gridViewTextBoxColumn2.Width = 158;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.ExcelExportFormatString = "int";
@@ -133,7 +123,6 @@
             gridViewTextBoxColumn6.HeaderText = "العنوان";
             gridViewTextBoxColumn6.IsAutoGenerated = true;
             gridViewTextBoxColumn6.Name = "Adderss";
-            gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             gridViewTextBoxColumn6.Width = 165;
             gridViewCommandColumn1.DefaultText = "Save";
             gridViewCommandColumn1.EnableExpressionEditor = false;
@@ -152,7 +141,7 @@
             gridViewCommandColumn2.Name = "DelteBtn";
             gridViewCommandColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewCommandColumn2.Width = 45;
-            this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            this.supplierGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -162,16 +151,18 @@
             gridViewTextBoxColumn6,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
-            this.radGridView1.MasterTemplate.EnableFiltering = true;
-            this.radGridView1.Name = "radGridView1";
-            this.radGridView1.ReadOnly = true;
-            this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radGridView1.Size = new System.Drawing.Size(1058, 741);
-            this.radGridView1.TabIndex = 2;
-            this.radGridView1.Text = "radGridView1";
-            this.radGridView1.ThemeName = "TelerikMetro";
-            this.radGridView1.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.MasterTemplate_CellDoubleClick);
-            this.radGridView1.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.MasterTemplate_CommandCellClick);
+            this.supplierGridView.MasterTemplate.EnablePaging = true;
+            this.supplierGridView.MasterTemplate.SearchRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
+            this.supplierGridView.Name = "supplierGridView";
+            this.supplierGridView.ReadOnly = true;
+            this.supplierGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.supplierGridView.ShowGroupPanel = false;
+            this.supplierGridView.Size = new System.Drawing.Size(1058, 744);
+            this.supplierGridView.TabIndex = 2;
+            this.supplierGridView.Text = "radGridView1";
+            this.supplierGridView.ThemeName = "TelerikMetro";
+            this.supplierGridView.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.MasterTemplate_CellDoubleClick);
+            this.supplierGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.MasterTemplate_CommandCellClick);
             // 
             // toolStrip1
             // 
@@ -232,17 +223,33 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 803);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1062, 22);
+            this.statusStrip1.TabIndex = 8;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // StatusLabel1
+            // 
+            this.StatusLabel1.Name = "StatusLabel1";
+            this.StatusLabel1.Size = new System.Drawing.Size(12, 17);
+            this.StatusLabel1.Text = "-";
+            // 
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox1.Controls.Add(this.radGridView1);
+            this.radGroupBox1.Controls.Add(this.supplierGridView);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.radGroupBox1.HeaderText = "سجلات الموردين";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 39);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(1062, 761);
-            this.radGroupBox1.TabIndex = 6;
+            this.radGroupBox1.Size = new System.Drawing.Size(1062, 764);
+            this.radGroupBox1.TabIndex = 9;
             this.radGroupBox1.Text = "سجلات الموردين";
             this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
@@ -252,8 +259,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 825);
             this.Controls.Add(this.radGroupBox1);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.radStatusStrip1);
             this.Name = "FrmManagementSupplier";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
@@ -265,11 +272,12 @@
             this.ThemeName = "TelerikMetro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmManagementSupplier_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierGridView.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierGridView)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -280,8 +288,7 @@
 
         #endregion
 
-        private Telerik.WinControls.UI.RadStatusStrip radStatusStrip1;
-        private Telerik.WinControls.UI.RadGridView radGridView1;
+        private Telerik.WinControls.UI.RadGridView supplierGridView;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton AddBtn;
@@ -290,6 +297,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton PrintBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel StatusLabel1;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
     }
 }

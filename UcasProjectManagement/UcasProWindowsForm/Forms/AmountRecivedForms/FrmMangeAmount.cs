@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
@@ -68,50 +69,35 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
 
         private void FrmMangeAmount_Load(object sender, EventArgs e)
         {
-            LodingAmount();
+            Thread th = new Thread(LodingAmount);
+            th.Start();
+            //LodingAmount();
+           
         }
 
         private void LodingAmount()
         {
+
             statusStrip1.Invoke((MethodInvoker)delegate
             {
 
-                toolStripStatusLabel1.Text = "يرجى الانتظار ... ";
+                StatusLabel1.Text = "جاري الانتظار.... ";
 
             });
             Operation.BeginOperation(this);
-            try
-            {
-                Application.DoEvents();
-                radGridView1.DataSource = AmountsReceivedsCmd.GetAllAmountsReceivedBypro(InformationsClass.ProjID);
-                for (int i = 1; i <= radGridView1.Rows.Count; i++)
-                {
-                    radGridView1.Rows[i - 1].Cells["Num"].Value = i.ToString();
-                }
-                TotalAmount();
-                Application.DoEvents();
-            }
 
-            catch (System.InvalidOperationException ex)
-            {
-
-                Application.DoEvents();
-                radGridView1.DataSource = AmountsReceivedsCmd.GetAllAmountsReceivedBypro(InformationsClass.ProjID);
-                for (int i = 1; i <= radGridView1.Rows.Count; i++)
-                {
-                    radGridView1.Rows[i - 1].Cells["Num"].Value = i.ToString();
-                }
-                TotalAmount();
-                Application.DoEvents();
-            }
+            Application.DoEvents();
+            var q = AmountsReceivedsCmd.GetAllAmountsReceivedBypro(InformationsClass.ProjID);
+            Application.DoEvents();
 
             Operation.EndOperation(this);
             statusStrip1.Invoke((MethodInvoker)delegate
             {
-
-                toolStripStatusLabel1.Text = " ";
+                radGridView1.DataSource = q;
+                StatusLabel1.Text = "";
 
             });
+           
         }
 
         private void RefreshBtn_Click(object sender, EventArgs e)

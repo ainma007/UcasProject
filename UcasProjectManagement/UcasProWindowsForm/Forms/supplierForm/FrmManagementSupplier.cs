@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Ucas.Data;
@@ -22,8 +23,27 @@ namespace UcasProWindowsForm.Forms.supplierForm
         UcasProEntities cmd = new UcasProEntities();
         private void GetAllsupplier()
         {
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
 
-            radGridView1.DataSource = SuppliersCmd.GetAll();
+                StatusLabel1.Text = "جاري الانتظار.... ";
+
+            });
+            Operation.BeginOperation(this);
+
+            Application.DoEvents();
+            var q = SuppliersCmd.GetAll();
+            Application.DoEvents();
+
+            Operation.EndOperation(this);
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                supplierGridView.DataSource = q;
+                StatusLabel1.Text = "";
+
+            });
+            
         }
 
     
@@ -33,9 +53,12 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void FrmManagementSupplier_Load(object sender, EventArgs e)
         {
-            GetAllsupplier();
+            Thread th = new Thread(GetAllsupplier);
+            th.Start();
+
+           // GetAllsupplier();
            
-            RadMessageBox.SetThemeName("TelerikMetro");
+            
         }
         
         
@@ -45,12 +68,12 @@ namespace UcasProWindowsForm.Forms.supplierForm
         private void MasterTemplate_CommandCellClick(object sender, EventArgs e)
         {
           try{  
-        var col = radGridView1.CurrentColumn.Index;
+        var col = supplierGridView.CurrentColumn.Index;
         if (col == 7)
         {
             this.Cursor = Cursors.WaitCursor;
             FrmEditsupplier frm = new FrmEditsupplier();
-            Ucas.Data.Supplier db = (Ucas.Data.Supplier)radGridView1.CurrentRow.DataBoundItem;
+            Ucas.Data.Supplier db = (Ucas.Data.Supplier)supplierGridView.CurrentRow.DataBoundItem;
             frm.TragetDSupplier = db;
             frm.ShowDialog();
             this.Cursor = Cursors.Default;
@@ -59,7 +82,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
         if (col == 8) { if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                     {
                         this.Cursor = Cursors.WaitCursor;
-                        SuppliersCmd.DeleteSupplier(int.Parse(radGridView1.CurrentRow.Cells[0].Value.ToString()));
+                        SuppliersCmd.DeleteSupplier(int.Parse(supplierGridView.CurrentRow.Cells[0].Value.ToString()));
                         GetAllsupplier();
                         this.Cursor = Cursors.Default;
                      

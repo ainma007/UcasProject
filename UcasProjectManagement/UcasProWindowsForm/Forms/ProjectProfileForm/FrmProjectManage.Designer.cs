@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -42,180 +41,38 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProjectManage));
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
-            this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
-            this.ProjectProfileGridView = new Telerik.WinControls.UI.RadGridView();
-            this.ProjectbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridViewTemplate1 = new Telerik.WinControls.UI.GridViewTemplate();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.AddBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.ProjectProfileGridView = new Telerik.WinControls.UI.RadGridView();
+            this.gridViewTemplate1 = new Telerik.WinControls.UI.GridViewTemplate();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
+            this.StatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectProfileGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectProfileGridView.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProjectbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewTemplate1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // radStatusStrip1
+            // toolStripSeparator4
             // 
-            this.radStatusStrip1.Location = new System.Drawing.Point(0, 519);
-            this.radStatusStrip1.Name = "radStatusStrip1";
-            this.radStatusStrip1.Size = new System.Drawing.Size(1106, 25);
-            this.radStatusStrip1.TabIndex = 1;
-            this.radStatusStrip1.Text = "radStatusStrip1";
-            this.radStatusStrip1.ThemeName = "TelerikMetro";
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
             // 
-            // ProjectProfileGridView
+            // toolStripSeparator3
             // 
-            this.ProjectProfileGridView.BackColor = System.Drawing.SystemColors.Control;
-            this.ProjectProfileGridView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ProjectProfileGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectProfileGridView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ProjectProfileGridView.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ProjectProfileGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ProjectProfileGridView.Location = new System.Drawing.Point(2, 18);
-            // 
-            // ProjectProfileGridView
-            // 
-            this.ProjectProfileGridView.MasterTemplate.AllowAddNewRow = false;
-            this.ProjectProfileGridView.MasterTemplate.AllowColumnReorder = false;
-            this.ProjectProfileGridView.MasterTemplate.AutoGenerateColumns = false;
-            this.ProjectProfileGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn1.DataType = typeof(int);
-            gridViewDecimalColumn1.EnableExpressionEditor = false;
-            gridViewDecimalColumn1.FieldName = "ID";
-            gridViewDecimalColumn1.HeaderText = "ID";
-            gridViewDecimalColumn1.IsAutoGenerated = true;
-            gridViewDecimalColumn1.Name = "ID";
-            gridViewDecimalColumn1.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewDecimalColumn1.Width = 52;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "ProjectName";
-            gridViewTextBoxColumn1.HeaderText = "المشروع";
-            gridViewTextBoxColumn1.IsAutoGenerated = true;
-            gridViewTextBoxColumn1.Name = "ProjectName";
-            gridViewTextBoxColumn1.Width = 166;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "ProjectDescription";
-            gridViewTextBoxColumn2.HeaderText = "وصف المشروع";
-            gridViewTextBoxColumn2.IsAutoGenerated = true;
-            gridViewTextBoxColumn2.Name = "ProjectDescription";
-            gridViewTextBoxColumn2.Width = 152;
-            gridViewDateTimeColumn1.DataType = typeof(System.Nullable<System.DateTime>);
-            gridViewDateTimeColumn1.EnableExpressionEditor = false;
-            gridViewDateTimeColumn1.FieldName = "StartDate";
-            gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            gridViewDateTimeColumn1.HeaderText = "تاريخ البداية";
-            gridViewDateTimeColumn1.IsAutoGenerated = true;
-            gridViewDateTimeColumn1.Name = "StartDate";
-            gridViewDateTimeColumn1.Width = 102;
-            gridViewDateTimeColumn2.DataType = typeof(System.Nullable<System.DateTime>);
-            gridViewDateTimeColumn2.EnableExpressionEditor = false;
-            gridViewDateTimeColumn2.FieldName = "EndDate";
-            gridViewDateTimeColumn2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            gridViewDateTimeColumn2.HeaderText = "تاريخ النهاية";
-            gridViewDateTimeColumn2.IsAutoGenerated = true;
-            gridViewDateTimeColumn2.Name = "EndDate";
-            gridViewDateTimeColumn2.Width = 102;
-            gridViewDecimalColumn2.DataType = typeof(System.Nullable<double>);
-            gridViewDecimalColumn2.EnableExpressionEditor = false;
-            gridViewDecimalColumn2.FieldName = "TotalCost";
-            gridViewDecimalColumn2.HeaderText = "المبلغ الكلي للمشروع";
-            gridViewDecimalColumn2.IsAutoGenerated = true;
-            gridViewDecimalColumn2.Name = "TotalCost";
-            gridViewDecimalColumn2.Width = 102;
-            gridViewComboBoxColumn1.EnableExpressionEditor = false;
-            gridViewComboBoxColumn1.FieldName = "Coin";
-            gridViewComboBoxColumn1.HeaderText = "العملة";
-            gridViewComboBoxColumn1.Name = "Coin";
-            gridViewComboBoxColumn1.Width = 102;
-            gridViewDecimalColumn3.DataType = typeof(System.Nullable<double>);
-            gridViewDecimalColumn3.EnableExpressionEditor = false;
-            gridViewDecimalColumn3.FieldName = "progress";
-            gridViewDecimalColumn3.HeaderText = "نسبة الانجاز";
-            gridViewDecimalColumn3.IsAutoGenerated = true;
-            gridViewDecimalColumn3.Name = "progress";
-            gridViewDecimalColumn3.Width = 102;
-            gridViewComboBoxColumn2.EnableExpressionEditor = false;
-            gridViewComboBoxColumn2.FieldName = "Status";
-            gridViewComboBoxColumn2.HeaderText = "الحالة";
-            gridViewComboBoxColumn2.Name = "Status";
-            gridViewComboBoxColumn2.Width = 101;
-            gridViewCommandColumn1.EnableExpressionEditor = true;
-            gridViewCommandColumn1.HeaderText = "تعديل";
-            gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
-            gridViewCommandColumn1.MaxWidth = 45;
-            gridViewCommandColumn1.MinWidth = 45;
-            gridViewCommandColumn1.Name = "EditBtn";
-            gridViewCommandColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewCommandColumn1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            gridViewCommandColumn1.UseDefaultText = true;
-            gridViewCommandColumn1.Width = 45;
-            gridViewCommandColumn2.EnableExpressionEditor = false;
-            gridViewCommandColumn2.HeaderText = "حذف";
-            gridViewCommandColumn2.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn2.Image")));
-            gridViewCommandColumn2.MaxWidth = 45;
-            gridViewCommandColumn2.MinWidth = 45;
-            gridViewCommandColumn2.Name = "DeltBtn";
-            gridViewCommandColumn2.Width = 45;
-            this.ProjectProfileGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn1,
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewDateTimeColumn1,
-            gridViewDateTimeColumn2,
-            gridViewDecimalColumn2,
-            gridViewComboBoxColumn1,
-            gridViewDecimalColumn3,
-            gridViewComboBoxColumn2,
-            gridViewCommandColumn1,
-            gridViewCommandColumn2});
-            this.ProjectProfileGridView.MasterTemplate.DataSource = this.ProjectbindingSource;
-            this.ProjectProfileGridView.MasterTemplate.EnableFiltering = true;
-            this.ProjectProfileGridView.MasterTemplate.MultiSelect = true;
-            sortDescriptor1.PropertyName = "ID";
-            this.ProjectProfileGridView.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor1});
-            this.ProjectProfileGridView.MasterTemplate.Templates.AddRange(new Telerik.WinControls.UI.GridViewTemplate[] {
-            this.gridViewTemplate1});
-            this.ProjectProfileGridView.Name = "ProjectProfileGridView";
-            this.ProjectProfileGridView.ReadOnly = true;
-            this.ProjectProfileGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ProjectProfileGridView.Size = new System.Drawing.Size(1102, 460);
-            this.ProjectProfileGridView.TabIndex = 2;
-            this.ProjectProfileGridView.ThemeName = "TelerikMetro";
-            this.ProjectProfileGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.MasterTemplate_CommandCellClick);
-            // 
-            // ProjectbindingSource
-            // 
-            this.ProjectbindingSource.DataSource = typeof(Ucas.Data.ProjectProfile);
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = this.ProjectbindingSource;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddBtn,
-            this.toolStripSeparator1,
-            this.RefreshBtn,
-            this.toolStripSeparator2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1106, 39);
-            this.toolStrip1.TabIndex = 6;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
             // 
             // AddBtn
             // 
@@ -247,6 +104,160 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator4,
+            this.toolStripSeparator3,
+            this.AddBtn,
+            this.toolStripSeparator1,
+            this.RefreshBtn,
+            this.toolStripSeparator2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1106, 39);
+            this.toolStrip1.TabIndex = 6;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // ProjectProfileGridView
+            // 
+            this.ProjectProfileGridView.BackColor = System.Drawing.SystemColors.Control;
+            this.ProjectProfileGridView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ProjectProfileGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProjectProfileGridView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ProjectProfileGridView.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ProjectProfileGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ProjectProfileGridView.Location = new System.Drawing.Point(2, 18);
+            // 
+            // ProjectProfileGridView
+            // 
+            this.ProjectProfileGridView.MasterTemplate.AllowAddNewRow = false;
+            this.ProjectProfileGridView.MasterTemplate.AllowColumnReorder = false;
+            this.ProjectProfileGridView.MasterTemplate.AllowSearchRow = true;
+            this.ProjectProfileGridView.MasterTemplate.AutoGenerateColumns = false;
+            this.ProjectProfileGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.ProjectProfileGridView.MasterTemplate.ChildViewTabsPosition = Telerik.WinControls.UI.TabPositions.Bottom;
+            gridViewDecimalColumn1.DataType = typeof(int);
+            gridViewDecimalColumn1.EnableExpressionEditor = false;
+            gridViewDecimalColumn1.FieldName = "ID";
+            gridViewDecimalColumn1.HeaderText = "ID";
+            gridViewDecimalColumn1.IsAutoGenerated = true;
+            gridViewDecimalColumn1.Name = "ID";
+            gridViewDecimalColumn1.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
+            gridViewDecimalColumn1.Width = 53;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ProjectName";
+            gridViewTextBoxColumn1.HeaderText = "المشروع";
+            gridViewTextBoxColumn1.IsAutoGenerated = true;
+            gridViewTextBoxColumn1.Name = "ProjectName";
+            gridViewTextBoxColumn1.Width = 166;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "ProjectDescription";
+            gridViewTextBoxColumn2.HeaderText = "وصف المشروع";
+            gridViewTextBoxColumn2.IsAutoGenerated = true;
+            gridViewTextBoxColumn2.Name = "ProjectDescription";
+            gridViewTextBoxColumn2.Width = 153;
+            gridViewDateTimeColumn1.DataType = typeof(System.Nullable<System.DateTime>);
+            gridViewDateTimeColumn1.EnableExpressionEditor = false;
+            gridViewDateTimeColumn1.FieldName = "StartDate";
+            gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            gridViewDateTimeColumn1.HeaderText = "تاريخ البداية";
+            gridViewDateTimeColumn1.IsAutoGenerated = true;
+            gridViewDateTimeColumn1.Name = "StartDate";
+            gridViewDateTimeColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDateTimeColumn1.Width = 102;
+            gridViewDateTimeColumn2.DataType = typeof(System.Nullable<System.DateTime>);
+            gridViewDateTimeColumn2.EnableExpressionEditor = false;
+            gridViewDateTimeColumn2.FieldName = "EndDate";
+            gridViewDateTimeColumn2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            gridViewDateTimeColumn2.HeaderText = "تاريخ النهاية";
+            gridViewDateTimeColumn2.IsAutoGenerated = true;
+            gridViewDateTimeColumn2.Name = "EndDate";
+            gridViewDateTimeColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDateTimeColumn2.Width = 102;
+            gridViewDecimalColumn2.DataType = typeof(System.Nullable<double>);
+            gridViewDecimalColumn2.EnableExpressionEditor = false;
+            gridViewDecimalColumn2.FieldName = "TotalCost";
+            gridViewDecimalColumn2.HeaderText = "المبلغ الكلي للمشروع";
+            gridViewDecimalColumn2.IsAutoGenerated = true;
+            gridViewDecimalColumn2.Name = "TotalCost";
+            gridViewDecimalColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn2.Width = 102;
+            gridViewComboBoxColumn1.EnableExpressionEditor = false;
+            gridViewComboBoxColumn1.FieldName = "Coin";
+            gridViewComboBoxColumn1.HeaderText = "العملة";
+            gridViewComboBoxColumn1.Name = "Coin";
+            gridViewComboBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewComboBoxColumn1.Width = 102;
+            gridViewDecimalColumn3.DataType = typeof(System.Nullable<double>);
+            gridViewDecimalColumn3.EnableExpressionEditor = false;
+            gridViewDecimalColumn3.FieldName = "progress";
+            gridViewDecimalColumn3.HeaderText = "نسبة الانجاز";
+            gridViewDecimalColumn3.IsAutoGenerated = true;
+            gridViewDecimalColumn3.Name = "progress";
+            gridViewDecimalColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn3.Width = 102;
+            gridViewComboBoxColumn2.EnableExpressionEditor = false;
+            gridViewComboBoxColumn2.FieldName = "Status";
+            gridViewComboBoxColumn2.HeaderText = "الحالة";
+            gridViewComboBoxColumn2.Name = "Status";
+            gridViewComboBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewComboBoxColumn2.Width = 99;
+            gridViewCommandColumn1.EnableExpressionEditor = true;
+            gridViewCommandColumn1.HeaderText = "تعديل";
+            gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
+            gridViewCommandColumn1.MaxWidth = 45;
+            gridViewCommandColumn1.MinWidth = 45;
+            gridViewCommandColumn1.Name = "EditBtn";
+            gridViewCommandColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewCommandColumn1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            gridViewCommandColumn1.UseDefaultText = true;
+            gridViewCommandColumn1.Width = 45;
+            gridViewCommandColumn2.EnableExpressionEditor = false;
+            gridViewCommandColumn2.HeaderText = "حذف";
+            gridViewCommandColumn2.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn2.Image")));
+            gridViewCommandColumn2.MaxWidth = 45;
+            gridViewCommandColumn2.MinWidth = 45;
+            gridViewCommandColumn2.Name = "DeltBtn";
+            gridViewCommandColumn2.Width = 45;
+            this.ProjectProfileGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewDecimalColumn1,
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewDateTimeColumn1,
+            gridViewDateTimeColumn2,
+            gridViewDecimalColumn2,
+            gridViewComboBoxColumn1,
+            gridViewDecimalColumn3,
+            gridViewComboBoxColumn2,
+            gridViewCommandColumn1,
+            gridViewCommandColumn2});
+            this.ProjectProfileGridView.MasterTemplate.EnablePaging = true;
+            this.ProjectProfileGridView.MasterTemplate.MultiSelect = true;
+            this.ProjectProfileGridView.MasterTemplate.SearchRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
+            sortDescriptor1.PropertyName = "ID";
+            this.ProjectProfileGridView.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
+            sortDescriptor1});
+            this.ProjectProfileGridView.MasterTemplate.Templates.AddRange(new Telerik.WinControls.UI.GridViewTemplate[] {
+            this.gridViewTemplate1});
+            this.ProjectProfileGridView.Name = "ProjectProfileGridView";
+            this.ProjectProfileGridView.ReadOnly = true;
+            this.ProjectProfileGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ProjectProfileGridView.Size = new System.Drawing.Size(1102, 463);
+            this.ProjectProfileGridView.TabIndex = 2;
+            this.ProjectProfileGridView.ThemeName = "TelerikMetro";
+            this.ProjectProfileGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.MasterTemplate_CommandCellClick);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 522);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1106, 22);
+            this.statusStrip1.TabIndex = 11;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
@@ -256,10 +267,16 @@
             this.radGroupBox1.HeaderText = "سجلات المشاريع";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 39);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(1106, 480);
-            this.radGroupBox1.TabIndex = 7;
+            this.radGroupBox1.Size = new System.Drawing.Size(1106, 483);
+            this.radGroupBox1.TabIndex = 12;
             this.radGroupBox1.Text = "سجلات المشاريع";
             this.radGroupBox1.ThemeName = "TelerikMetro";
+            // 
+            // StatusLabel1
+            // 
+            this.StatusLabel1.Name = "StatusLabel1";
+            this.StatusLabel1.Size = new System.Drawing.Size(12, 17);
+            this.StatusLabel1.Text = "-";
             // 
             // FrmProjectManage
             // 
@@ -267,8 +284,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1106, 544);
             this.Controls.Add(this.radGroupBox1);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.radStatusStrip1);
             this.Name = "FrmProjectManage";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
@@ -279,14 +296,13 @@
             this.Text = "ادارة المشاريع";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmProjectManage_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProjectProfileGridView.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProjectProfileGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProjectbindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewTemplate1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectProfileGridView.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectProfileGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewTemplate1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -297,17 +313,18 @@
 
         #endregion
 
-        private Telerik.WinControls.UI.RadStatusStrip radStatusStrip1;
-        private Telerik.WinControls.UI.RadGridView ProjectProfileGridView;
-        private System.Windows.Forms.BindingSource ProjectbindingSource;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private Telerik.WinControls.UI.GridViewTemplate gridViewTemplate1;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton AddBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton RefreshBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private Telerik.WinControls.UI.RadGridView ProjectProfileGridView;
+        private Telerik.WinControls.UI.GridViewTemplate gridViewTemplate1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
+        private System.Windows.Forms.ToolStripStatusLabel StatusLabel1;
     }
 }

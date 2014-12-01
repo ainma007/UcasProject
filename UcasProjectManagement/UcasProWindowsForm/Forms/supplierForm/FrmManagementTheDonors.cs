@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Ucas.Data;
@@ -22,15 +23,35 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void GetAllFinanciers()
         {
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
 
-            theDonorsBindingSource.DataSource = TheDonorCmd.GetAllDonors();
+                StatusLabel1.Text = "جاري الانتظار.... ";
+
+            });
+            Operation.BeginOperation(this);
+
+            Application.DoEvents();
+            var q = TheDonorCmd.GetAllDonors();
+            Application.DoEvents();
+
+            Operation.EndOperation(this);
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+                DonersGridView.DataSource = q;
+                StatusLabel1.Text = "";
+
+            });
+           
         }
 
 
 
         private void FrmManagementFinanciers_Load(object sender, EventArgs e)
         {
-            GetAllFinanciers();
+            Thread th = new Thread(GetAllFinanciers);
+            th.Start();
+          //  GetAllFinanciers();
 
         }
 

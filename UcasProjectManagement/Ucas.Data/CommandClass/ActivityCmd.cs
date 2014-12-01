@@ -93,7 +93,6 @@ namespace Ucas.Data.CommandClass
             db.Configuration.LazyLoadingEnabled = false;
             db.Configuration.ProxyCreationEnabled = false;
             var LST = (from p in db.ProjectActivities
-                       orderby p.StartDate ascending 
                        where p.ProjectProfile_ID == ProID
                        select p).ToList();
             return LST; ;

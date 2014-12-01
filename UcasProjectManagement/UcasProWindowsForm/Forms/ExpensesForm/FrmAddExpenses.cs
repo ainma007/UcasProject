@@ -144,7 +144,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             }
             catch (Xprema.XpremaException ex)
             {
-                this.Cursor = Cursors.Default;
+                Operation.EndOperation(this);
                 RadMessageBox.Show(ex.OtherDescription);
 
             }

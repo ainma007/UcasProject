@@ -130,10 +130,8 @@
             this.StatusDropDownList.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             radListDataItem1.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem1.Text = "فعال";
-            radListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem2.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem2.Text = "غير فعال";
-            radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.StatusDropDownList.Items.Add(radListDataItem1);
             this.StatusDropDownList.Items.Add(radListDataItem2);
             this.StatusDropDownList.Location = new System.Drawing.Point(118, 204);

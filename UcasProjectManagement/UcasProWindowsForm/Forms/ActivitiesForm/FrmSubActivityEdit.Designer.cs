@@ -130,10 +130,8 @@
             this.StatusDropDownList.AutoCompleteValueMember = null;
             radListDataItem1.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem1.Text = "فعال";
-            radListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem2.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem2.Text = "غير فعال";
-            radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.StatusDropDownList.Items.Add(radListDataItem1);
             this.StatusDropDownList.Items.Add(radListDataItem2);
             this.StatusDropDownList.Location = new System.Drawing.Point(74, 243);

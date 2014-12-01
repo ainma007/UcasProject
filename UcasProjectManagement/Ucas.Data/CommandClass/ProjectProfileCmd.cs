@@ -15,7 +15,7 @@ namespace Ucas.Data.CommandClass
             {
                    db = new UcasProEntities();
             var lst = (from p in db.ProjectProfiles
-                       orderby p.StartDate  ascending 
+                      
                        select p).ToList();
             return lst;
             }

@@ -61,14 +61,8 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.WinControls, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.ChartView, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.GridView, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.RichTextBox, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.Themes.Office2013Light, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.Themes.TelerikMetro, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.Themes.TelerikMetroBlue, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.UI, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="TelerikCommon, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Xprema">
@@ -292,6 +286,12 @@
     <Compile Include="Forms\UserSystemForm\FrmAddUserToProject.Designer.cs">
       <DependentUpon>FrmAddUserToProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UserSystemForm\FrmEditUserToProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserSystemForm\FrmEditUserToProject.Designer.cs">
+      <DependentUpon>FrmEditUserToProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserSystemForm\frmUserEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,6 +303,12 @@
     </Compile>
     <Compile Include="Forms\UserSystemForm\frmUserManage.Designer.cs">
       <DependentUpon>frmUserManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserSystemForm\FrmUserProjectManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserSystemForm\FrmUserProjectManage.Designer.cs">
+      <DependentUpon>FrmUserProjectManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Operation.cs" />
     <Compile Include="OperationX.cs" />
@@ -316,11 +322,13 @@
     <Compile Include="Reports\ReportCommand\DonorsReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\EmployeeReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\ExpensessReportCmd.cs" />
+    <Compile Include="Reports\ReportCommand\ProjectReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\SalaryReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\SupplierReportCmd.cs" />
     <Compile Include="Reports\ReportObj\DonaorReportObj.cs" />
     <Compile Include="Reports\ReportObj\EmployeeReportObj.cs" />
     <Compile Include="Reports\ReportObj\ExpensessReportObj.cs" />
+    <Compile Include="Reports\ReportObj\ProjectReportObj.cs" />
     <Compile Include="Reports\ReportObj\SalaryReportObj.cs" />
     <Compile Include="Reports\ReportObj\SupplierReportObj.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -431,11 +439,17 @@
     <EmbeddedResource Include="Forms\UserSystemForm\FrmAddUserToProject.resx">
       <DependentUpon>FrmAddUserToProject.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserSystemForm\FrmEditUserToProject.resx">
+      <DependentUpon>FrmEditUserToProject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserSystemForm\frmUserEdit.resx">
       <DependentUpon>frmUserEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserSystemForm\frmUserManage.resx">
       <DependentUpon>frmUserManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserSystemForm\FrmUserProjectManage.resx">
+      <DependentUpon>FrmUserProjectManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -453,6 +467,7 @@
     <EmbeddedResource Include="Reports\rptDonor.rdlc" />
     <EmbeddedResource Include="Reports\rptEmolyee.rdlc" />
     <EmbeddedResource Include="Reports\rptExpensess.rdlc" />
+    <EmbeddedResource Include="Reports\rptProject.rdlc" />
     <EmbeddedResource Include="Reports\rptSalary.rdlc" />
     <EmbeddedResource Include="Reports\rptSalaryGroupby.rdlc" />
     <EmbeddedResource Include="Reports\rptSupplier.rdlc" />
@@ -464,9 +479,7 @@
     <None Include="Properties\DataSources\Ucas.Data.Attachment.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.Contract.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.Employee.datasource" />
-    <None Include="Properties\DataSources\Ucas.Data.GroupsTb.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.Monthlysalary.datasource" />
-    <None Include="Properties\DataSources\Ucas.Data.PeremissionsTb.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.ProjectActivity.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.ProjectControl.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.ProjectExpens.datasource" />
@@ -481,6 +494,7 @@
     <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.DonaorReportObj.datasource" />
     <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.EmployeeReportObj.datasource" />
     <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.ExpensessReportObj.datasource" />
+    <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.ProjectReportObj.datasource" />
     <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.SalaryReportObj.datasource" />
     <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.SupplierReportObj.datasource" />
     <None Include="Properties\Settings.settings">
@@ -527,6 +541,7 @@
     <None Include="Resources\AddEmp.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\7.png" />
     <Content Include="Resources\Add.png" />
     <Content Include="Resources\Print.png" />
     <Content Include="Resources\Refrech.png" />

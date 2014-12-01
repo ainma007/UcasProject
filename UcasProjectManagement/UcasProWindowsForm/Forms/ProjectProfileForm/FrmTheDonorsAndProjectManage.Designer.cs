@@ -148,6 +148,7 @@
             gridViewTextBoxColumn3,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
+            this.radGridView1.MasterTemplate.SearchRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.ReadOnly = true;
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

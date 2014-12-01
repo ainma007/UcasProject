@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.employeeNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
@@ -36,13 +39,15 @@
             this.PasswordTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.btnOky = new Telerik.WinControls.UI.RadButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.radGroupBox2 = new Telerik.WinControls.UI.RadGroupBox();
+            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
+            this.label1 = new System.Windows.Forms.Label();
+            this.radDropDownList1 = new Telerik.WinControls.UI.RadDropDownList();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-            this.radGroupBox2 = new Telerik.WinControls.UI.RadGroupBox();
-            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeNameTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -55,13 +60,14 @@
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
             this.radGroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radLabel1
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel1.Location = new System.Drawing.Point(564, 28);
+            this.radLabel1.Location = new System.Drawing.Point(342, 28);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(70, 18);
             this.radLabel1.TabIndex = 3;
@@ -72,7 +78,7 @@
             // employeeNameTextBox
             // 
             this.employeeNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.employeeNameTextBox.Location = new System.Drawing.Point(300, 26);
+            this.employeeNameTextBox.Location = new System.Drawing.Point(78, 26);
             this.employeeNameTextBox.Name = "employeeNameTextBox";
             this.employeeNameTextBox.ReadOnly = true;
             this.employeeNameTextBox.Size = new System.Drawing.Size(258, 22);
@@ -83,7 +89,7 @@
             // radLabel2
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel2.Location = new System.Drawing.Point(564, 70);
+            this.radLabel2.Location = new System.Drawing.Point(342, 61);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(76, 18);
             this.radLabel2.TabIndex = 5;
@@ -94,7 +100,7 @@
             // UserNameTextBox
             // 
             this.UserNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UserNameTextBox.Location = new System.Drawing.Point(300, 68);
+            this.UserNameTextBox.Location = new System.Drawing.Point(78, 59);
             this.UserNameTextBox.Name = "UserNameTextBox";
             this.UserNameTextBox.Size = new System.Drawing.Size(258, 22);
             this.UserNameTextBox.TabIndex = 4;
@@ -103,7 +109,7 @@
             // radLabel3
             // 
             this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel3.Location = new System.Drawing.Point(233, 69);
+            this.radLabel3.Location = new System.Drawing.Point(342, 93);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(61, 18);
             this.radLabel3.TabIndex = 7;
@@ -114,10 +120,10 @@
             // PasswordTextBox
             // 
             this.PasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PasswordTextBox.Location = new System.Drawing.Point(10, 67);
+            this.PasswordTextBox.Location = new System.Drawing.Point(78, 91);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
-            this.PasswordTextBox.Size = new System.Drawing.Size(217, 22);
+            this.PasswordTextBox.Size = new System.Drawing.Size(258, 22);
             this.PasswordTextBox.TabIndex = 6;
             this.PasswordTextBox.ThemeName = "TelerikMetro";
             // 
@@ -125,7 +131,7 @@
             // 
             this.btnOky.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOky.Image = global::UcasProWindowsForm.Properties.Resources.SaveChang;
-            this.btnOky.Location = new System.Drawing.Point(500, 482);
+            this.btnOky.Location = new System.Drawing.Point(273, 467);
             this.btnOky.Name = "btnOky";
             this.btnOky.Size = new System.Drawing.Size(146, 37);
             this.btnOky.TabIndex = 9;
@@ -151,36 +157,15 @@
             this.dataGridView1.Location = new System.Drawing.Point(2, 18);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(644, 328);
+            this.dataGridView1.Size = new System.Drawing.Size(422, 274);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "الرقم";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "الصلاحيه";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "الوصف";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "مفعلة أو غير مفعلة";
-            this.Column4.Name = "Column4";
             // 
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.radDropDownList1);
+            this.radGroupBox1.Controls.Add(this.label1);
             this.radGroupBox1.Controls.Add(this.PasswordTextBox);
             this.radGroupBox1.Controls.Add(this.employeeNameTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel1);
@@ -191,7 +176,7 @@
             this.radGroupBox1.HeaderText = "بيانات المستخدم";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(648, 118);
+            this.radGroupBox1.Size = new System.Drawing.Size(426, 158);
             this.radGroupBox1.TabIndex = 12;
             this.radGroupBox1.Text = "بيانات المستخدم";
             this.radGroupBox1.ThemeName = "TelerikMetro";
@@ -202,17 +187,69 @@
             this.radGroupBox2.Controls.Add(this.dataGridView1);
             this.radGroupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.radGroupBox2.HeaderText = "";
-            this.radGroupBox2.Location = new System.Drawing.Point(0, 118);
+            this.radGroupBox2.Location = new System.Drawing.Point(0, 158);
             this.radGroupBox2.Name = "radGroupBox2";
-            this.radGroupBox2.Size = new System.Drawing.Size(648, 348);
+            this.radGroupBox2.Size = new System.Drawing.Size(426, 294);
             this.radGroupBox2.TabIndex = 13;
             this.radGroupBox2.ThemeName = "TelerikMetro";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(340, 131);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "النوع:";
+            // 
+            // radDropDownList1
+            // 
+            this.radDropDownList1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            radListDataItem1.Text = "ADMIN";
+            radListDataItem2.Text = "USER";
+            radListDataItem3.Text = "Inefficient";
+            this.radDropDownList1.Items.Add(radListDataItem1);
+            this.radDropDownList1.Items.Add(radListDataItem2);
+            this.radDropDownList1.Items.Add(radListDataItem3);
+            this.radDropDownList1.Location = new System.Drawing.Point(200, 128);
+            this.radDropDownList1.Name = "radDropDownList1";
+            this.radDropDownList1.Size = new System.Drawing.Size(136, 19);
+            this.radDropDownList1.TabIndex = 9;
+            this.radDropDownList1.ThemeName = "TelerikMetro";
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 75.56384F;
+            this.Column1.HeaderText = "الرقم";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 148.294F;
+            this.Column2.HeaderText = "الصلاحيه";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "الوصف";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Visible = false;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 76.14214F;
+            this.Column4.HeaderText = "التفعيل";
+            this.Column4.Name = "Column4";
             // 
             // frmUserEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 526);
+            this.ClientSize = new System.Drawing.Size(426, 521);
             this.Controls.Add(this.radGroupBox2);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.btnOky);
@@ -239,6 +276,7 @@
             this.radGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).EndInit();
             this.radGroupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -254,12 +292,14 @@
         public Telerik.WinControls.UI.RadTextBox UserNameTextBox;
         public Telerik.WinControls.UI.RadTextBox PasswordTextBox;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
+        private Telerik.WinControls.UI.RadGroupBox radGroupBox2;
+        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column4;
-        private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
-        private Telerik.WinControls.UI.RadGroupBox radGroupBox2;
-        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
+        private Telerik.WinControls.UI.RadDropDownList radDropDownList1;
+        private System.Windows.Forms.Label label1;
     }
 }

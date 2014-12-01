@@ -147,6 +147,25 @@ namespace UcasProWindowsForm.Forms.MainForm
             frm.ShowDialog();
         }
 
+        private void AddUserToProjectBtn_Click(object sender, EventArgs e)
+        {
+            FrmAddUserToProject frm = new FrmAddUserToProject();
+            frm.ShowDialog();
+        }
+
+        private void UserProjectManageBtn_Click(object sender, EventArgs e)
+        {
+            FrmUserProjectManage frm = new FrmUserProjectManage();
+            frm.ShowDialog();
+        }
+
+        private void UserMangBtn_Click_1(object sender, EventArgs e)
+        {
+            frmUserManage FRM = new frmUserManage();
+            FRM.ShowDialog();
+
+        }
+
        
     }
 }

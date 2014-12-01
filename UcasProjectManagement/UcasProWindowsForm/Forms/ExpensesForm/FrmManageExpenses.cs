@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
@@ -30,56 +31,36 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         private void FrmManageExpenses_Load(object sender, EventArgs e)
         {
 
-
-            FillExpensesData();
+            Thread th = new Thread(FillExpensesData);
+            th.Start();
+           // FillExpensesData();
             TotalExpenses();
         }
 
         private void FillExpensesData()
         {
+
             statusStrip1.Invoke((MethodInvoker)delegate
             {
 
-                toolStripStatusLabel1.Text = "يرجى الانتظار ... ";
+                StatusLabel1.Text = "جاري الانتظار.... ";
 
             });
             Operation.BeginOperation(this);
-            try
-            {
-                Application.DoEvents();
-                ExpensesGridView.DataSource = ProjectExpensesCmd.GetAllExpensesByProject(InformationsClass.ProjID);
 
-                for (int i = 1; i <= ExpensesGridView.Rows.Count; i++)
-                {
-                    ExpensesGridView.Rows[i - 1].Cells["Num"].Value = i.ToString();
-                }
-
-               
-
-
-                Application.DoEvents();
-            }
-
-            catch (System.InvalidOperationException ex)
-            {
-
-                Application.DoEvents();
-                ExpensesGridView.DataSource = ProjectExpensesCmd.GetAllExpensesByProject(InformationsClass.ProjID);
-
-                for (int i = 1; i <= ExpensesGridView.Rows.Count; i++)
-                {
-                    ExpensesGridView.Rows[i - 1].Cells["Num"].Value = i.ToString();
-                }
-
-                
-                Application.DoEvents();
-            }
+            Application.DoEvents();
+            var q = ProjectExpensesCmd.GetAllExpensesByProject(InformationsClass.ProjID);
+            Application.DoEvents();
 
             Operation.EndOperation(this);
             statusStrip1.Invoke((MethodInvoker)delegate
             {
-
-                toolStripStatusLabel1.Text = " ";
+                ExpensesGridView.DataSource = q;
+                for (int i = 1; i <= ExpensesGridView.Rows.Count; i++)
+                {
+                    ExpensesGridView.Rows[i - 1].Cells["Num"].Value = i.ToString();
+                }
+                StatusLabel1.Text = "";
 
             });
             

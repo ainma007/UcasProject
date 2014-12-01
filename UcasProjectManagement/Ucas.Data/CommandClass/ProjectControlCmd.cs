@@ -34,7 +34,7 @@ namespace Ucas.Data.CommandClass
                db = new UcasProEntities();
                db.Configuration.LazyLoadingEnabled = false;
                db.Configuration.ProxyCreationEnabled = false;
-               var q = db.ProjectControls.Where(p => p.UserID == tb.UserID).SingleOrDefault();
+               var q = db.ProjectControls.Where(p => p.ID == tb.ID).SingleOrDefault();
                q.UserID = tb.UserID;
                q.ProjectID = tb.ProjectID;
                q.Status = tb.Status;

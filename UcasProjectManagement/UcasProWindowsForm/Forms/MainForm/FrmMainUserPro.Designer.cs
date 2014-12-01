@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainUserPro));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -54,7 +54,7 @@
             this.SalaryBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.FinanAddBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProjectRbtBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.FinanMangBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,17 +63,19 @@
             this.تقريررواتبالموظفينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تقريرالمبالغالمستملةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-            this.radTextBox3 = new Telerik.WinControls.UI.RadTextBox();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.CoinTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
-            this.radTextBox2 = new Telerik.WinControls.UI.RadTextBox();
+            this.CostTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.EndDateTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.StartDateTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.DescTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
+            this.ProjectNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radGroupBox2 = new Telerik.WinControls.UI.RadGroupBox();
@@ -87,22 +89,21 @@
             this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel14 = new Telerik.WinControls.UI.RadLabel();
             this.radGroupBox3 = new Telerik.WinControls.UI.RadGroupBox();
-            this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CoinTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EndDateTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StartDateTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DescTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectNameTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
@@ -117,7 +118,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -263,7 +263,7 @@
             this.toolStripDropDownButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.BackgroundImage")));
             this.toolStripDropDownButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FinanAddBtn,
+            this.ProjectRbtBtn,
             this.FinanMangBtn,
             this.toolStripSeparator2,
             this.toolStripMenuItem2,
@@ -278,13 +278,14 @@
             this.toolStripDropDownButton2.Size = new System.Drawing.Size(124, 34);
             this.toolStripDropDownButton2.Text = "التقارير المشروع";
             // 
-            // FinanAddBtn
+            // ProjectRbtBtn
             // 
-            this.FinanAddBtn.Image = ((System.Drawing.Image)(resources.GetObject("FinanAddBtn.Image")));
-            this.FinanAddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.FinanAddBtn.Name = "FinanAddBtn";
-            this.FinanAddBtn.Size = new System.Drawing.Size(198, 38);
-            this.FinanAddBtn.Text = "تقرير المشروع";
+            this.ProjectRbtBtn.Image = ((System.Drawing.Image)(resources.GetObject("ProjectRbtBtn.Image")));
+            this.ProjectRbtBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ProjectRbtBtn.Name = "ProjectRbtBtn";
+            this.ProjectRbtBtn.Size = new System.Drawing.Size(198, 38);
+            this.ProjectRbtBtn.Text = "تقرير المشروع";
+            this.ProjectRbtBtn.Click += new System.EventHandler(this.ProjectRbtBtn_Click);
             // 
             // FinanMangBtn
             // 
@@ -337,20 +338,30 @@
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 37);
             // 
+            // RefreshBtn
+            // 
+            this.RefreshBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.RefreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("RefreshBtn.Image")));
+            this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Size = new System.Drawing.Size(23, 34);
+            this.RefreshBtn.Text = "تحديث البيانات";
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
+            // 
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox1.Controls.Add(this.chart2);
-            this.radGroupBox1.Controls.Add(this.radTextBox3);
+            this.radGroupBox1.Controls.Add(this.CoinTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel6);
-            this.radGroupBox1.Controls.Add(this.radTextBox2);
+            this.radGroupBox1.Controls.Add(this.CostTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel5);
             this.radGroupBox1.Controls.Add(this.EndDateTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel4);
             this.radGroupBox1.Controls.Add(this.StartDateTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel2);
             this.radGroupBox1.Controls.Add(this.DescTextBox);
-            this.radGroupBox1.Controls.Add(this.radTextBox1);
+            this.radGroupBox1.Controls.Add(this.ProjectNameTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel3);
             this.radGroupBox1.Controls.Add(this.radLabel1);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -363,15 +374,45 @@
             this.radGroupBox1.Text = "موجز للمشروع";
             this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
-            // radTextBox3
+            // chart2
             // 
-            this.radTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radTextBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox3.Location = new System.Drawing.Point(515, 152);
-            this.radTextBox3.Name = "radTextBox3";
-            this.radTextBox3.Size = new System.Drawing.Size(225, 25);
-            this.radTextBox3.TabIndex = 12;
-            this.radTextBox3.ThemeName = "TelerikMetro";
+            this.chart2.BorderlineColor = System.Drawing.Color.Black;
+            this.chart2.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDot;
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
+            this.chart2.Location = new System.Drawing.Point(12, 9);
+            this.chart2.Name = "chart2";
+            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.MarkerBorderColor = System.Drawing.Color.Black;
+            series1.Name = "Series1";
+            series1.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.Yes;
+            series1.SmartLabelStyle.CalloutLineAnchorCapStyle = System.Windows.Forms.DataVisualization.Charting.LineAnchorCapStyle.Diamond;
+            series1.SmartLabelStyle.CalloutStyle = System.Windows.Forms.DataVisualization.Charting.LabelCalloutStyle.Box;
+            this.chart2.Series.Add(series1);
+            this.chart2.Size = new System.Drawing.Size(482, 213);
+            this.chart2.TabIndex = 14;
+            this.chart2.Text = "chart2";
+            title1.BackColor = System.Drawing.Color.Snow;
+            title1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.ForeColor = System.Drawing.Color.LimeGreen;
+            title1.Name = "Title1";
+            title1.Text = "نسبة انجاز المشروع";
+            this.chart2.Titles.Add(title1);
+            // 
+            // CoinTextBox
+            // 
+            this.CoinTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CoinTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CoinTextBox.Location = new System.Drawing.Point(515, 152);
+            this.CoinTextBox.Name = "CoinTextBox";
+            this.CoinTextBox.Size = new System.Drawing.Size(225, 25);
+            this.CoinTextBox.TabIndex = 12;
+            this.CoinTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel6
             // 
@@ -385,17 +426,17 @@
             this.radLabel6.Text = "العملة:";
             this.radLabel6.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
-            // radTextBox2
+            // CostTextBox
             // 
-            this.radTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radTextBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox2.Location = new System.Drawing.Point(515, 120);
-            this.radTextBox2.Name = "radTextBox2";
-            this.radTextBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radTextBox2.Size = new System.Drawing.Size(225, 25);
-            this.radTextBox2.TabIndex = 10;
-            this.radTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.radTextBox2.ThemeName = "TelerikMetro";
+            this.CostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CostTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CostTextBox.Location = new System.Drawing.Point(515, 120);
+            this.CostTextBox.Name = "CostTextBox";
+            this.CostTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.CostTextBox.Size = new System.Drawing.Size(225, 25);
+            this.CostTextBox.TabIndex = 10;
+            this.CostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.CostTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel5
             // 
@@ -469,15 +510,15 @@
             this.DescTextBox.TabIndex = 4;
             this.DescTextBox.ThemeName = "TelerikMetro";
             // 
-            // radTextBox1
+            // ProjectNameTextBox
             // 
-            this.radTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radTextBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox1.Location = new System.Drawing.Point(849, 62);
-            this.radTextBox1.Name = "radTextBox1";
-            this.radTextBox1.Size = new System.Drawing.Size(241, 25);
-            this.radTextBox1.TabIndex = 3;
-            this.radTextBox1.ThemeName = "TelerikMetro";
+            this.ProjectNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProjectNameTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectNameTextBox.Location = new System.Drawing.Point(849, 62);
+            this.ProjectNameTextBox.Name = "ProjectNameTextBox";
+            this.ProjectNameTextBox.Size = new System.Drawing.Size(241, 25);
+            this.ProjectNameTextBox.TabIndex = 3;
+            this.ProjectNameTextBox.ThemeName = "TelerikMetro";
             // 
             // radLabel3
             // 
@@ -666,46 +707,6 @@
             this.radGroupBox3.Text = "ملخص أنشطة المشروع";
             this.radGroupBox3.ThemeName = "TelerikMetro";
             // 
-            // RefreshBtn
-            // 
-            this.RefreshBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.RefreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("RefreshBtn.Image")));
-            this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(23, 34);
-            this.RefreshBtn.Text = "تحديث البيانات";
-            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
-            // 
-            // chart2
-            // 
-            this.chart2.BorderlineColor = System.Drawing.Color.Black;
-            this.chart2.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDot;
-            chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(12, 9);
-            this.chart2.Name = "chart2";
-            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.MarkerBorderColor = System.Drawing.Color.Black;
-            series1.Name = "Series1";
-            series1.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.Yes;
-            series1.SmartLabelStyle.CalloutLineAnchorCapStyle = System.Windows.Forms.DataVisualization.Charting.LineAnchorCapStyle.Diamond;
-            series1.SmartLabelStyle.CalloutStyle = System.Windows.Forms.DataVisualization.Charting.LabelCalloutStyle.Box;
-            this.chart2.Series.Add(series1);
-            this.chart2.Size = new System.Drawing.Size(482, 213);
-            this.chart2.TabIndex = 14;
-            this.chart2.Text = "chart2";
-            title1.BackColor = System.Drawing.Color.Snow;
-            title1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.ForeColor = System.Drawing.Color.LimeGreen;
-            title1.Name = "Title1";
-            title1.Text = "نسبة انجاز المشروع";
-            this.chart2.Titles.Add(title1);
-            // 
             // FrmMainUserPro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -734,16 +735,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CoinTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EndDateTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StartDateTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DescTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectNameTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).EndInit();
@@ -759,7 +761,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -780,7 +781,7 @@
         private System.Windows.Forms.ToolStripMenuItem ExpensesBTn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
-        private System.Windows.Forms.ToolStripMenuItem FinanAddBtn;
+        private System.Windows.Forms.ToolStripMenuItem ProjectRbtBtn;
         private System.Windows.Forms.ToolStripMenuItem FinanMangBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
@@ -795,16 +796,16 @@
         private System.Windows.Forms.ToolStripMenuItem تقريررواتبالموظفينToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem تقريرالمبالغالمستملةToolStripMenuItem;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
-        public Telerik.WinControls.UI.RadTextBox radTextBox3;
+        public Telerik.WinControls.UI.RadTextBox CoinTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel6;
-        public Telerik.WinControls.UI.RadTextBox radTextBox2;
+        public Telerik.WinControls.UI.RadTextBox CostTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel5;
         public Telerik.WinControls.UI.RadTextBox EndDateTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel4;
         public Telerik.WinControls.UI.RadTextBox StartDateTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel2;
         public Telerik.WinControls.UI.RadTextBox DescTextBox;
-        public Telerik.WinControls.UI.RadTextBox radTextBox1;
+        public Telerik.WinControls.UI.RadTextBox ProjectNameTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox2;

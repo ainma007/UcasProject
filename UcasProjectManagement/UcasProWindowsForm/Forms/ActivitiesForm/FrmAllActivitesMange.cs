@@ -43,10 +43,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
 
 
-            //GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("ActivityTotalCost", "الاجمالي العام = {0}", GridAggregateFunction.Sum);
-            //GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight });
-            //this.ActivitiesGridView.SummaryRowsBottom.Clear();
-            //this.ActivitiesGridView.SummaryRowsBottom.Add(summaryRowItem);
+           
 
 
             GridViewSummaryItem summaryItemFreight1 = new GridViewSummaryItem("SubTotalCost", "الاجمالي  = {0}", GridAggregateFunction.Sum);
@@ -71,54 +68,31 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                
             });
             Operation.BeginOperation(this);
-            try
-            {
+           
                 Application.DoEvents();
-                projectActivityBindingSource.DataSource = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
-                projectSubActivityBindingSource.DataSource = SubActivityCmd.GetAllSubActivities();
-                ActivitiesGridView.MasterTemplate.ExpandAll();
-                TotalActivites();
+                var q = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
+                var q1 = SubActivityCmd.GetAllSubActivitiesByProjectID(InformationsClass.ProjID);
+                                                     
                 Application.DoEvents();
-            }
-            catch (System.InvalidOperationException ex)
-            {
-
-                Application.DoEvents();
-                projectActivityBindingSource.DataSource = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
-                projectSubActivityBindingSource.DataSource = SubActivityCmd.GetAllSubActivities();
-                ActivitiesGridView.MasterTemplate.ExpandAll();
-                TotalActivites();
-                Application.DoEvents();
-            }
+           
+           
 
             Operation.EndOperation(this);
             statusStrip1.Invoke((MethodInvoker)delegate
             {
-
+                projectActivityBindingSource.DataSource = q;
+                projectSubActivityBindingSource.DataSource = q1;
+                ActivitiesGridView.MasterTemplate.ExpandAll();
+                TotalActivites();
                 toolStripStatusLabel1.Text = " ";
               
             });
         }
         private void FrmAllActivitesMange_Load(object sender, EventArgs e)
         {
-            //this.Cursor = Cursors.WaitCursor;
-            //projectActivityBindingSource.DataSource = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
-            //this.Cursor = Cursors.Default;
-            //projectSubActivityBindingSource.DataSource = SubActivityCmd.GetAllSubActivities();
-            //for (int i = 1; i <= ActivitiesGridView.Rows.Count; i++)
-            //{
-            //    ActivitiesGridView.Rows[i - 1].Cells["Num"].Value = i.ToString();
-
-            //}
-
-
-            //for (int i = 1; i <= gridViewTemplate2.Rows.Count; i++)
-            //{
-            //    gridViewTemplate2.Rows[i - 1].Cells["Num1"].Value = i.ToString();
-            //}
-          
-            //this.Cursor = Cursors.Default;
-            Loadactivites();
+            Thread th = new Thread(Loadactivites);
+            th.Start();
+           
            
             
         }
@@ -132,13 +106,15 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             if (col2 == 9)
             {
 
+
+                Operation.BeginOperation(this);
                
-                this.Cursor = Cursors.WaitCursor;
+
                 FrmActivitiesEdit frm = new FrmActivitiesEdit();
                 Ucas.Data.ProjectActivity DB = (Ucas.Data.ProjectActivity)ActivitiesGridView.CurrentRow.DataBoundItem;
                 frm.TragetActivity = DB;
                 frm.ShowDialog();
-                this.Cursor = Cursors.Default;
+                Operation.EndOperation(this);
                 return;
 
             }
@@ -147,12 +123,26 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             if (col2 == 10) 
             {
                 this.Cursor = Cursors.WaitCursor;
-               
-                ActivityCmd.DeleteActivity(int.Parse(ActivitiesGridView.CurrentRow.Cells[0].Value.ToString()));
-                this.Cursor = Cursors.Default;
-                MessageBox.Show("تمت علمية الحذف");
+                if (RadMessageBox.Show(this, OperationX.DeletedMessage, "حذف سجل", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                {
 
-                return;
+                if(    ActivityCmd.DeleteActivity(int.Parse(ActivitiesGridView.CurrentRow.Cells[1].Value.ToString())))
+                {
+
+                    this.Cursor = Cursors.Default;
+                    MessageBox.Show("تمت علمية الحذف");
+
+                    return;
+                }
+
+                else
+                {
+
+                    RadMessageBox.Show("لا يمكن حذف السجل");
+                }
+                    
+                }
+                
                 
             }
 
@@ -160,13 +150,15 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             var col = gridViewTemplate2.CurrentColumn.Index;
             if (col == 8)
             {
+                Operation.BeginOperation(this);
+               
 
                 FrmSubActivityEdit frm = new FrmSubActivityEdit();
                 Ucas.Data.ProjectSubActivity DB = (Ucas.Data.ProjectSubActivity)ActivitiesGridView.CurrentRow.DataBoundItem;
                 frm.TragetSUBActivity = DB;
                 frm.FillActivty();
                 frm.ShowDialog();
-                
+                Operation.EndOperation(this);
                
                 return;
             }
@@ -185,60 +177,73 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void ActivitiesGridView_CellFormatting(object sender, CellFormattingEventArgs e)
         {
-          //  Font newFont = new Font("Arial", 12f, FontStyle.Bold);
+            Font newFont = new Font("Tahoma", 10f, FontStyle.Bold);
 
-            if (e.CellElement.ColumnInfo.Name == "ActivityName") 
+            if (e.CellElement.ColumnInfo.Name == "ActivityName")
             {
                 e.CellElement.ForeColor = Color.DeepSkyBlue;
-           //     e.CellElement.Font = newFont;
-                
+                e.CellElement.Font = newFont;
+
             }
-           
-
-           if (e.CellElement.ColumnInfo.Name == "ActivityDescription"){
-               e.CellElement.ForeColor = Color.DeepSkyBlue;
-           //    e.CellElement.Font = newFont;
-
-           }
 
 
-           if (e.CellElement.ColumnInfo.Name == "ActivityStartDate")
-           {
-               e.CellElement.ForeColor = Color.DeepSkyBlue;
-           //    e.CellElement.Font = newFont;
+            if (e.CellElement.ColumnInfo.Name == "ActivityDescription")
+            {
+                e.CellElement.ForeColor = Color.DeepSkyBlue;
+                e.CellElement.Font = newFont;
 
-           }
+            }
+
+
+            if (e.CellElement.ColumnInfo.Name == "ActivityStartDate")
+            {
+                e.CellElement.ForeColor = Color.DeepSkyBlue;
+                e.CellElement.Font = newFont;
+
+            }
 
             //
-           if (e.CellElement.ColumnInfo.Name == "ActivityEndDate")
-           {
-               e.CellElement.ForeColor = Color.DeepSkyBlue;
-           //    e.CellElement.Font = newFont;
+            if (e.CellElement.ColumnInfo.Name == "ActivityEndDate")
+            {
+                e.CellElement.ForeColor = Color.DeepSkyBlue;
+                e.CellElement.Font = newFont;
 
-           }
+            }
             //
-           if (e.CellElement.ColumnInfo.Name == "ActivityStatus")
-           {
-               e.CellElement.ForeColor = Color.DeepSkyBlue;
-            //   e.CellElement.Font = newFont;
+            if (e.CellElement.ColumnInfo.Name == "ActivityStatus")
+            {
+                e.CellElement.ForeColor = Color.DeepSkyBlue;
+                e.CellElement.Font = newFont;
 
-           }
+            }
             //
-           if (e.CellElement.ColumnInfo.Name == "ActivityProgress")
-           {
-               e.CellElement.ForeColor = Color.DeepSkyBlue;
-             //  e.CellElement.Font = newFont;
+            if (e.CellElement.ColumnInfo.Name == "ActivityProgress")
+            {
+                e.CellElement.ForeColor = Color.DeepSkyBlue;
+                e.CellElement.Font = newFont;
 
-           }
+            }
+             if (e.CellElement.ColumnInfo.Name == "ActivityStatus"){
+                string title = e.CellElement.RowInfo.Cells[6].Value.ToString();
+                if (title == "غير فعال")
+                {
 
-           if (e.CellElement.ColumnInfo.Name == "ActivityProgress")
-           {
-               e.CellElement.ForeColor = Color.DeepSkyBlue;
-             //  e.CellElement.Font = newFont;
+                    e.CellElement.ForeColor = Color.Red;
+                    e.CellElement.Font = newFont;
+                }
+                else
+                {
+                    e.CellElement.ForeColor = Color.DeepSkyBlue;
+                    e.CellElement.Font = newFont;
+                }
+        }
 
-           }
-          
-            
+            if (e.CellElement.ColumnInfo.Name == "ActivityTotalCost")
+            {
+                e.CellElement.ForeColor = Color.DeepSkyBlue;
+                e.CellElement.Font = newFont;
+
+            }
         }
 
         private void radRibbonBar1_Click(object sender, EventArgs e)

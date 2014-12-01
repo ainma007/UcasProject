@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
@@ -36,9 +37,9 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         private void FrmSalariesManage_Load(object sender, EventArgs e)
         {
 
-
-            FillSalaryData();
-             TotalExpenses();
+            Thread th = new Thread(FillSalaryData);
+            th.Start();
+            TotalExpenses();
             
         }
 
@@ -47,33 +48,23 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             statusStrip1.Invoke((MethodInvoker)delegate
             {
 
-                toolStripStatusLabel1.Text = "يرجى الانتظار ... ";
+                StatusLabel1.Text = "جاري الانتظار.... ";
 
             });
             Operation.BeginOperation(this);
-            try
-            {
-                Application.DoEvents();
-                SalaryGridView.DataSource = SalariesCmd.GetSalaryBySelectedprotID(InformationsClass.ProjID);
-                 Application.DoEvents();
-            }
 
-            catch (System.InvalidOperationException ex)
-            {
-
-                Application.DoEvents();
-                SalaryGridView.DataSource = SalariesCmd.GetSalaryBySelectedprotID(InformationsClass.ProjID);
-            
-                Application.DoEvents();
-            }
+            Application.DoEvents();
+            var q = SalariesCmd.GetSalaryBySelectedprotID(InformationsClass.ProjID);
+            Application.DoEvents();
 
             Operation.EndOperation(this);
             statusStrip1.Invoke((MethodInvoker)delegate
             {
-
-                toolStripStatusLabel1.Text = " ";
+                SalaryGridView.DataSource = q;
+                StatusLabel1.Text = "";
 
             });
+          
            
         }
 
