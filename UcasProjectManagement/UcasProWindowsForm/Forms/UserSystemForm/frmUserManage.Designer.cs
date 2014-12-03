@@ -45,10 +45,11 @@
             // 
             this.UserGridView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
             this.UserGridView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.UserGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserGridView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.UserGridView.ForeColor = System.Drawing.Color.Black;
             this.UserGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.UserGridView.Location = new System.Drawing.Point(12, 12);
+            this.UserGridView.Location = new System.Drawing.Point(0, 0);
             // 
             // UserGridView
             // 
@@ -58,31 +59,31 @@
             gridViewTextBoxColumn1.HeaderText = "ID";
             gridViewTextBoxColumn1.Name = "ID";
             gridViewTextBoxColumn1.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn1.Width = 62;
+            gridViewTextBoxColumn1.Width = 64;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "Employee.EmployeeName";
             gridViewTextBoxColumn2.HeaderText = "EmployeeName";
             gridViewTextBoxColumn2.Name = "EmployeeName";
-            gridViewTextBoxColumn2.Width = 164;
+            gridViewTextBoxColumn2.Width = 170;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "UserName";
             gridViewTextBoxColumn3.HeaderText = "UserName";
             gridViewTextBoxColumn3.Name = "UserName";
-            gridViewTextBoxColumn3.Width = 159;
+            gridViewTextBoxColumn3.Width = 165;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "Password";
             gridViewTextBoxColumn4.HeaderText = "Password";
             gridViewTextBoxColumn4.Name = "Password";
-            gridViewTextBoxColumn4.Width = 187;
+            gridViewTextBoxColumn4.Width = 194;
             gridViewComboBoxColumn1.EnableExpressionEditor = false;
             gridViewComboBoxColumn1.FieldName = "TypeUser";
             gridViewComboBoxColumn1.HeaderText = "TypeUser";
             gridViewComboBoxColumn1.Name = "TypeUser";
-            gridViewComboBoxColumn1.Width = 102;
+            gridViewComboBoxColumn1.Width = 106;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Savebtn";
             gridViewCommandColumn1.Name = "Savebtn";
-            gridViewCommandColumn1.Width = 65;
+            gridViewCommandColumn1.Width = 66;
             this.UserGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -95,7 +96,7 @@
             sortDescriptor1});
             this.UserGridView.Name = "UserGridView";
             this.UserGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.UserGridView.Size = new System.Drawing.Size(754, 243);
+            this.UserGridView.Size = new System.Drawing.Size(780, 482);
             this.UserGridView.TabIndex = 1;
             this.UserGridView.Text = "radGridView2";
             this.UserGridView.ThemeName = "TelerikMetro";

@@ -84,7 +84,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                     Operation.BeginOperation(this);
                     if (ContractCmd.DeleteContract(int.Parse(ContractsGridView.CurrentRow.Cells[0].Value.ToString())))
                     {
-                        MessageBox.Show(OperationX.DeletedMessage);
+                        Operation.ShowToustOk(OperationX.DeletedMessage, this);
+
                         Operation.EndOperation(this);
                         FrmContratsManage_Load(sender, e);
                         return;

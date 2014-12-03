@@ -194,6 +194,7 @@
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.EmployeeComboBox.EditorControl.MasterTemplate.AllowSearchRow = true;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "ID";
@@ -204,8 +205,8 @@
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "Employee.EmployeeName";
             gridViewTextBoxColumn2.HeaderText = "اسم الموظف";
+            gridViewTextBoxColumn2.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             gridViewTextBoxColumn2.Name = "Employee.EmployeeName";
-            gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             gridViewTextBoxColumn2.Width = 122;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "Employee.EmployeejobNumber";

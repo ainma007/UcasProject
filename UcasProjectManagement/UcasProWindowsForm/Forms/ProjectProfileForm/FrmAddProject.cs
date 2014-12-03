@@ -101,7 +101,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             ProjectProfileCmd.AddNewProject(pro);
             Operation.EndOperation(this);
 
-            RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+            Operation.ShowToustOk(OperationX.AddMessageDone, this);
 
             ClearText();
            

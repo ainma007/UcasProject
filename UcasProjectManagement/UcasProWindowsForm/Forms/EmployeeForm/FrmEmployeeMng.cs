@@ -79,12 +79,25 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             {
                 if (RadMessageBox.Show(this, OperationX.DeleteMessage, "حذف السجلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
-                    Operation.BeginOperation(this);                          
-                    EmployeeCmd.DeleteEmployee(int.Parse(EmployeeGridView.CurrentRow.Cells[0].Value.ToString()));
-                    Operation.EndOperation(this);
-                    FrmEmployeeMng_Load(sender, e);
-                    Operation.ShowToustOk(OperationX.DeletedMessage, this);
+                    Operation.BeginOperation(this);
+                    if (EmployeeCmd.DeleteEmployee(int.Parse(EmployeeGridView.CurrentRow.Cells[0].Value.ToString())))
+                    {
+                        Operation.EndOperation(this);
+                        Operation.ShowToustOk(OperationX.DeletedMessage, this);
 
+                        FrmEmployeeMng_Load(sender, e);
+                      
+
+
+                    }
+
+                    else
+                    {
+                        Operation.EndOperation(this);
+                        RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+
+                    }
                 }
 
 

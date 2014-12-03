@@ -20,32 +20,57 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         }
         public int ProjectControlID { get; set; }
         public Ucas.Data.ProjectControl TragetProjectControl { get; set; }
-      public  void FillComboBox()
-        {
+        private void FillComboBox()
+        {  ///GetActivityByProjectID
+            ///
+            Operation.BeginOperation(this);
 
-            ///GetActivityByProjectID
-            this.UserListComboBox.AutoFilter = true;
-            this.UserListComboBox.ValueMember = "ID";
-            this.UserListComboBox.DisplayMember = "Employee.EmployeeName";
+            this.Invoke((MethodInvoker)delegate
+            {
+                //User
+                this.UserListComboBox.AutoFilter = true;
+                this.UserListComboBox.ValueMember = "ID";
+                this.UserListComboBox.DisplayMember = "Employee.EmployeeName";
+
+                ///
+                //project
+                this.ProjectCombo.AutoFilter = true;
+                this.ProjectCombo.ValueMember = "ID";
+                this.ProjectCombo.DisplayMember = "ProjectName";
+            });
+
+            var q = UsersCmd.GetAllUsers();
+            var q1 = ProjectProfileCmd.GetAllProjects();
+            this.Invoke((MethodInvoker)delegate
+            {
+                //FillUser
+                UserListComboBox.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.UserListComboBox.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.UserListComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+
+                ///
+                //// fill ProjectCombo
+                ProjectCombo.DataSource = q1;
+                FilterDescriptor filter1 = new FilterDescriptor();
+                filter1.PropertyName = this.ProjectCombo.DisplayMember;
+                filter1.Operator = FilterOperator.Contains;
+                this.ProjectCombo.EditorControl.MasterTemplate.FilterDescriptors.Add(filter1);
 
 
-            FilterDescriptor filter = new FilterDescriptor();
-            filter.PropertyName = this.UserListComboBox.DisplayMember;
-            filter.Operator = FilterOperator.Contains;
-            this.UserListComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-            UserListComboBox.DataSource = UsersCmd.GetAllUsers();
-          
+            });
+            Operation.EndOperation(this);
 
-           //// fill ProjectCombo
-           this.ProjectCombo.AutoFilter = true;
-           this.ProjectCombo.ValueMember = "ID";
-           this.ProjectCombo.DisplayMember = "ProjectName";
 
-           FilterDescriptor filter1 = new FilterDescriptor();
-           filter1.PropertyName = this.ProjectCombo.DisplayMember;
-           filter1.Operator = FilterOperator.Contains;
-           this.ProjectCombo.EditorControl.MasterTemplate.FilterDescriptors.Add(filter1);
-           ProjectCombo.DataSource = ProjectProfileCmd.GetAllProjects();
+
+
+
+
+
+
+
+
 
 
 
@@ -63,6 +88,8 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         {
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
+                Operation.BeginOperation(this);
+                
 
                 ProjectControl tb = new ProjectControl
                 {
@@ -72,7 +99,9 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                     Status = StatusDropDownList.Text
                 };
                 ProjectControlCmd.EditProControl(tb);
+                Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK,RadMessageIcon.Info);
+              
                 this.Close();
             }
            

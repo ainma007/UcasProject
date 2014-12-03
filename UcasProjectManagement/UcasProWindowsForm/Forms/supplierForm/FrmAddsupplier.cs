@@ -70,7 +70,8 @@ namespace UcasProWindowsForm.Forms.supplierForm
              SuppliersCmd.newSupplier(Sup);
              Operation.EndOperation(this);
 
-             RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+             Operation.ShowToustOk(OperationX.AddMessageDone, this);
+
           clearText();
         }
 

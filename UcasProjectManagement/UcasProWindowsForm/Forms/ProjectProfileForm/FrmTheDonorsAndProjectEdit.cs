@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
@@ -21,20 +22,35 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
         }
         public int XDonrPro { get; set; }
         public Ucas.Data.TheDonorsProject TragetTheDonorsProject { get; set; }
-        public void fillDonorsCombo()
+        private void fillDonorsCombo()
         {
-            this.DonorsColumnComboBox.AutoFilter = true;
-            this.DonorsColumnComboBox.ValueMember = "ID";
-            this.DonorsColumnComboBox.DisplayMember = "Name";
+
+            Operation.BeginOperation(this);
+
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.DonorsColumnComboBox.AutoFilter = true;
+                this.DonorsColumnComboBox.ValueMember = "ID";
+                this.DonorsColumnComboBox.DisplayMember = "Name";
+            });
+            var q = TheDonorCmd.GetAllDonors();
+            this.Invoke((MethodInvoker)delegate
+            {
+                DonorsColumnComboBox.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.DonorsColumnComboBox.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.DonorsColumnComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+
+            });
+            Operation.EndOperation(this);
 
 
-            FilterDescriptor filter = new FilterDescriptor();
-            filter.PropertyName = this.DonorsColumnComboBox.DisplayMember;
-            filter.Operator = FilterOperator.Contains;
-            this.DonorsColumnComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
 
 
-            DonorsColumnComboBox.DataSource = TheDonorCmd.GetAllDonors();
+
+
+
 
 
         }
@@ -42,7 +58,8 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
 
         {
-            fillDonorsCombo();
+            Thread th = new Thread(fillDonorsCombo);
+            th.Start();
             XDonrPro = TragetTheDonorsProject.ID;
             DonorsColumnComboBox.Text = TragetTheDonorsProject.TheDonor.Name;
             CostTextBox.Text = TragetTheDonorsProject.TotalCost.ToString();

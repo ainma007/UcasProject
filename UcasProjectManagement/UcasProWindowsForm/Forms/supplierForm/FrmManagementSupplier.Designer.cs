@@ -161,7 +161,6 @@
             this.supplierGridView.TabIndex = 2;
             this.supplierGridView.Text = "radGridView1";
             this.supplierGridView.ThemeName = "TelerikMetro";
-            this.supplierGridView.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.MasterTemplate_CellDoubleClick);
             this.supplierGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.MasterTemplate_CommandCellClick);
             // 
             // toolStrip1

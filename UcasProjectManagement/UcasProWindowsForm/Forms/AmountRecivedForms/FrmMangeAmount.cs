@@ -58,7 +58,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
                     Operation.BeginOperation(this);
                    
 
-                    AmountsReceivedsCmd.DeleteAmountsReceived(int.Parse(radGridView1.CurrentRow.Cells[0].Value.ToString()));
+                    AmountsReceivedsCmd.DeleteAmountsReceived(int.Parse(radGridView1.CurrentRow.Cells[1].Value.ToString()));
                     radGridView1.DataSource = AmountsReceivedsCmd.GetAllAmountsReceivedBypro(InformationsClass.ProjID);
                     Operation.ShowToustOk(OperationX.DeletedMessage, this);
                     Operation.EndOperation(this);

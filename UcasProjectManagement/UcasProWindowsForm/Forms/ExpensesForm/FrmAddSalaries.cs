@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
@@ -24,23 +25,41 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         private void FillCombo()
         {
             ///GetAllContractsProjectID
-            this.EmployeeComboBox.AutoFilter = true;
-            this.EmployeeComboBox.ValueMember = "ID";
-            this.EmployeeComboBox.DisplayMember = "Employee.EmployeeName";
+            ///
+
+            Operation.BeginOperation(this);
+
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.EmployeeComboBox.AutoFilter = true;
+                this.EmployeeComboBox.ValueMember = "ID";
+                this.EmployeeComboBox.DisplayMember = "Employee.EmployeeName";
+            });
+            var q = ContractCmd.GetAllContractsByproID(InformationsClass.ProjID);
+            this.Invoke((MethodInvoker)delegate
+            {
+                EmployeeComboBox.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.EmployeeComboBox.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+               
+
+            });
+            Operation.EndOperation(this);
+            
 
             
-            FilterDescriptor filter = new FilterDescriptor();
-            filter.PropertyName = this.EmployeeComboBox.DisplayMember;
-            filter.Operator = FilterOperator.Contains;
-            this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-            EmployeeComboBox.DataSource = ContractCmd.GetAllContractsByproID(InformationsClass.ProjID);
+           
            
 
             
         }
         private void FrmAddSalaries_Load(object sender, EventArgs e)
         {
-            FillCombo();
+            Thread th = new Thread(FillCombo);
+            th.Start();
+         
         }
 
         private void AddBtn1_Click(object sender, EventArgs e)

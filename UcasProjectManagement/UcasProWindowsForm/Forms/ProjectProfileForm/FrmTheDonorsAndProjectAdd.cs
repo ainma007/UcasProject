@@ -9,6 +9,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.Data;
 using Ucas.Data.CommandClass;
 using Ucas.Data;
+using System.Threading;
 
 
 namespace UcasProWindowsForm.Forms.MainForm
@@ -22,24 +23,34 @@ namespace UcasProWindowsForm.Forms.MainForm
         }
         private void fillDonorsCombo()
         {
-            this.Cursor = Cursors.WaitCursor;
+
+            Operation.BeginOperation(this);
+
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.DonorsColumnComboBox.AutoFilter = true;
+                this.DonorsColumnComboBox.ValueMember = "ID";
+                this.DonorsColumnComboBox.DisplayMember = "Name";
+            });
+            var q = TheDonorCmd.GetAllDonors();
+            this.Invoke((MethodInvoker)delegate
+            {
+                DonorsColumnComboBox.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.DonorsColumnComboBox.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.DonorsColumnComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+
+            });
+            Operation.EndOperation(this);
            
 
 
-            this.DonorsColumnComboBox.AutoFilter = true;
-            this.DonorsColumnComboBox.ValueMember = "ID";
-            this.DonorsColumnComboBox.DisplayMember = "Name";
+            
 
 
-            FilterDescriptor filter = new FilterDescriptor();
-            filter.PropertyName = this.DonorsColumnComboBox.DisplayMember;
-            filter.Operator = FilterOperator.Contains;
-            this.DonorsColumnComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-
-
-            DonorsColumnComboBox.DataSource = TheDonorCmd.GetAllDonors();
-            this.Cursor = Cursors.Default;
-
+           
+           
 
         }
         private void AddBtn_Click(object sender, EventArgs e)
@@ -104,7 +115,8 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void FrmTheDonorsAndProjectAdd_Load(object sender, EventArgs e)
         {
-            fillDonorsCombo();
+            Thread th = new Thread(fillDonorsCombo);
+            th.Start();
         }
 
         private void CostTextBox_KeyPress(object sender, KeyPressEventArgs e)

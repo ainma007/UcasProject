@@ -74,16 +74,16 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
             if (col == 9)
             {
-              
-                
-                
-                this.Cursor = Cursors.WaitCursor;
+
+
+
+                Operation.BeginOperation(this);
                 FrmEditExpense frm = new FrmEditExpense();
                 Ucas.Data.ProjectExpens Expenses = (Ucas.Data.ProjectExpens)ExpensesGridView.CurrentRow.DataBoundItem;
                 frm.TragetExpens = Expenses;
-                frm.FillComboBox();
+              
                 frm.ShowDialog();
-                this.Cursor = Cursors.Default;         
+                Operation.EndOperation(this);      
                 return;
 
             }
@@ -95,10 +95,22 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 {
                     if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                     {
-                       // ProjectExpens tb = projectExpensBindingSource.Current as ProjectExpens;
-                        ProjectExpensesCmd.DeleteProjectExpens(int.Parse(ExpensesGridView.CurrentRow.Cells[1].Value.ToString()));
-                        RadMessageBox.Show("تمت علمية الحذف");
-                        return;
+
+                        if (ProjectExpensesCmd.DeleteProjectExpens(int.Parse(ExpensesGridView.CurrentRow.Cells[1].Value.ToString())))
+                        {
+                            Operation.BeginOperation(this);
+                            Operation.ShowToustOk(OperationX.DeletedMessage, this);
+                            FrmManageExpenses_Load(sender, e);
+                            Operation.EndOperation(this);
+                            return;
+                        }
+                        else
+                        {
+                            Operation.EndOperation(this);
+                            RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+                        }
+                        
                     }
                 }
             }
@@ -114,9 +126,9 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void RefrechBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+          
             FrmManageExpenses_Load(sender, e);
-            this.Cursor = Cursors.Default;
+           
         }
 
         private void FrmManageExpenses_Activated(object sender, EventArgs e)

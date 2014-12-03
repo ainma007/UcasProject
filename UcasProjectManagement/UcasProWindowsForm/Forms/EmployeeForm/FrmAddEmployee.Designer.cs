@@ -121,9 +121,7 @@
             this.GenderDropDownList.AutoCompleteValueMember = null;
             this.GenderDropDownList.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             radListDataItem1.Text = "ذكر";
-            radListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             radListDataItem2.Text = "انثى";
-            radListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.GenderDropDownList.Items.Add(radListDataItem1);
             this.GenderDropDownList.Items.Add(radListDataItem2);
             this.GenderDropDownList.Location = new System.Drawing.Point(190, 57);

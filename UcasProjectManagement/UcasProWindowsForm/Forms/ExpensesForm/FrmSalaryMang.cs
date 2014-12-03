@@ -9,6 +9,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.Data;
 using Ucas.Data.CommandClass;
 using Ucas.Data;
+using System.Threading;
 
 namespace UcasProWindowsForm.Forms.ExpensesForm
 {
@@ -23,24 +24,43 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         public int XSalaryID { get; set; }
         public Ucas.Data.Monthlysalary Tragetsalary { get; set; }
         Monthlysalary db = new Monthlysalary();
-        public void FillCombo()
+        private void FillCombo()
         {
             ///GetAllContractsProjectID
-            this.EmployeeComboBox.AutoFilter = true;
-            this.EmployeeComboBox.ValueMember = "ID";
-            this.EmployeeComboBox.DisplayMember = "EmployeeName";
+            ///
+
+            Operation.BeginOperation(this);
+
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.EmployeeComboBox.AutoFilter = true;
+                this.EmployeeComboBox.ValueMember = "ID";
+                this.EmployeeComboBox.DisplayMember = "Employee.EmployeeName";
+            });
+            var q = ContractCmd.GetAllContractsByproID(InformationsClass.ProjID);
+            this.Invoke((MethodInvoker)delegate
+            {
+                EmployeeComboBox.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.EmployeeComboBox.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
 
 
-            FilterDescriptor filter = new FilterDescriptor();
-            filter.PropertyName = this.EmployeeComboBox.DisplayMember;
-            filter.Operator = FilterOperator.Contains;
-            this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-            EmployeeComboBox.DataSource = ContractCmd.GetAllContractsByproID(InformationsClass.ProjID);
+            });
+            Operation.EndOperation(this);
+
+
+
+
+
+
 
         }
         private void FrmSalaryMang_Load(object sender, EventArgs e)
         {
-            db = new Monthlysalary();
+            Thread th = new Thread(FillCombo);
+            th.Start();
             XSalaryID = Tragetsalary.ID;
             EmployeeComboBox.Text = Tragetsalary.Contract.Employee.EmployeeName;
             SalaryTextBox.Text = Tragetsalary.Amount.ToString();

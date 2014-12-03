@@ -66,10 +66,10 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void ReportBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             DonorsReportCmd cmd = new DonorsReportCmd();
             cmd.GetAllDonor();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
 
         }
 
@@ -79,12 +79,12 @@ namespace UcasProWindowsForm.Forms.supplierForm
             var col = DonersGridView.CurrentColumn.Index;
             if (col == 7)
             {
-                this.Cursor = Cursors.WaitCursor;
+                Operation.BeginOperation(this);
                 FrmDonorsEdit frm = new FrmDonorsEdit();
                 Ucas.Data.TheDonor db = (Ucas.Data.TheDonor)DonersGridView.CurrentRow.DataBoundItem;
                 frm.TragetDoner = db;
                 frm.ShowDialog();
-                this.Cursor = Cursors.Default;
+                Operation.EndOperation(this);
 
 
             }
@@ -95,10 +95,26 @@ namespace UcasProWindowsForm.Forms.supplierForm
                 {
                     try
                     {
-                        this.Cursor = Cursors.WaitCursor;
-                        TheDonorCmd.DeleteDonor(int.Parse(DonersGridView.CurrentRow.Cells[0].Value.ToString()));
-                        RadMessageBox.Show(OperationX.DeletedMessage);
-                        this.Cursor = Cursors.Default;
+                        Operation.BeginOperation(this);
+                      
+
+                        if (TheDonorCmd.DeleteDonor(int.Parse(DonersGridView.CurrentRow.Cells[0].Value.ToString())))
+                        {
+                           
+                            Operation.ShowToustOk(OperationX.DeletedMessage, this);
+                            Operation.BeginOperation(this);
+                            FrmManagementFinanciers_Load(sender, e);
+
+
+                        }
+                        else
+                        {
+                            Operation.BeginOperation(this);
+                            RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+                        }
+
+                        Operation.EndOperation(this);
                     }
                     catch (Exception)
                     {

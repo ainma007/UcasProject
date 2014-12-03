@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows.Forms;
 using Ucas.Data.CommandClass;
 
@@ -13,25 +14,32 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
         private void FrmUserProjectManage_Load(object sender, EventArgs e)
         {
-            FillData();
+            Thread th = new Thread(FillData);
+            th.Start();
+           
           
         }
 
         private void FillData()
         {
+            Operation.BeginOperation(this);
             statusStrip1.Invoke((MethodInvoker)delegate
             {
                 toolStripStatusLabel1.Text = "يرجى الانتظار ... ";
             });
 
-            Operation.BeginOperation(this);
-            ProjectControlGridView.DataSource = ProjectControlCmd.GetAllProControls();
+            Application.DoEvents();
+            var q = ProjectControlCmd.GetAllProControls();
+            Application.DoEvents();
+           
 
-            Operation.EndOperation(this);
+         
             statusStrip1.Invoke((MethodInvoker)delegate
             {
+                ProjectControlGridView.DataSource = q;
                 toolStripStatusLabel1.Text = "";
             });
+            Operation.EndOperation(this);
         }
 
         private void ProjectControlGridView_CommandCellClick(object sender, EventArgs e)
@@ -39,13 +47,14 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
             var col = ProjectControlGridView.CurrentColumn.Index;
             if (col == 4)
             {
-                this.Cursor = Cursors.WaitCursor;
+                Operation.BeginOperation(this);
+               
+
                 FrmEditUserToProject frm = new FrmEditUserToProject();
-                frm.FillComboBox();
                 Ucas.Data.ProjectControl tb = (Ucas.Data.ProjectControl)ProjectControlGridView.CurrentRow.DataBoundItem;
                 frm.TragetProjectControl = tb;
                 frm.ShowDialog();
-                this.Cursor = Cursors.Default;
+                Operation.EndOperation(this);
 
 
             }

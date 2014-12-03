@@ -101,22 +101,25 @@
             this.UserListComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.UserListComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.UserListComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.UserListComboBox.EditorControl.MasterTemplate.AllowSearchRow = true;
             this.UserListComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
+            this.UserListComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.DataType = typeof(int);
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "ID";
             gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.IsVisible = false;
             gridViewTextBoxColumn1.Name = "ID";
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "Employee.EmployeeName";
             gridViewTextBoxColumn2.HeaderText = "اسم الموظف";
             gridViewTextBoxColumn2.Name = "Employee.EmployeeName";
-            gridViewTextBoxColumn2.Width = 165;
+            gridViewTextBoxColumn2.Width = 136;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "Employee.EmployeejobNumber";
             gridViewTextBoxColumn3.HeaderText = "الرقم الوظيفي";
             gridViewTextBoxColumn3.Name = "Employee.EmployeejobNumber";
-            gridViewTextBoxColumn3.Width = 204;
+            gridViewTextBoxColumn3.Width = 85;
             this.UserListComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -212,15 +215,17 @@
             this.ProjectCombo.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.ProjectCombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.ProjectCombo.EditorControl.MasterTemplate.AutoGenerateColumns = false;
+            this.ProjectCombo.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "ID";
             gridViewTextBoxColumn4.HeaderText = "ID";
+            gridViewTextBoxColumn4.IsVisible = false;
             gridViewTextBoxColumn4.Name = "ID";
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.FieldName = "ProjectName";
             gridViewTextBoxColumn5.HeaderText = "اسم المشروع";
             gridViewTextBoxColumn5.Name = "ProjectName";
-            gridViewTextBoxColumn5.Width = 196;
+            gridViewTextBoxColumn5.Width = 220;
             this.ProjectCombo.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn4,
             gridViewTextBoxColumn5});

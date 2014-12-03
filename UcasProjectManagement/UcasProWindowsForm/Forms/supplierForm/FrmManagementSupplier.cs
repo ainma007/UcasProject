@@ -71,20 +71,32 @@ namespace UcasProWindowsForm.Forms.supplierForm
         var col = supplierGridView.CurrentColumn.Index;
         if (col == 7)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
+            
+
             FrmEditsupplier frm = new FrmEditsupplier();
             Ucas.Data.Supplier db = (Ucas.Data.Supplier)supplierGridView.CurrentRow.DataBoundItem;
             frm.TragetDSupplier = db;
             frm.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
            
         }
         if (col == 8) { if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                     {
-                        this.Cursor = Cursors.WaitCursor;
-                        SuppliersCmd.DeleteSupplier(int.Parse(supplierGridView.CurrentRow.Cells[0].Value.ToString()));
-                        GetAllsupplier();
-                        this.Cursor = Cursors.Default;
+                        Operation.BeginOperation(this);
+                        if (SuppliersCmd.DeleteSupplier(int.Parse(supplierGridView.CurrentRow.Cells[0].Value.ToString())))
+                        {
+                            Operation.EndOperation(this);
+                            Operation.ShowToustOk(OperationX.DeletedMessage, this);
+
+                            FrmManagementSupplier_Load(sender, e);
+                        }
+                        else
+                        {
+                            Operation.EndOperation(this);
+                            RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+                        }
+                       
                      
                     }
 
@@ -100,24 +112,25 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
      
 
-        private void MasterTemplate_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
-        {
-          
-            
-        }
+      
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
+           
+
             FrmAddsupplier frm = new FrmAddsupplier();
             frm.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
         }
 
         private void ReportviewBtn_Click(object sender, EventArgs e)
         {
+            Operation.BeginOperation(this);
+            
             SupplierReportCmd cmd = new SupplierReportCmd();
             cmd.GetAllSupplier();
+            Operation.EndOperation(this);
         }
     }
 }

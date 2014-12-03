@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
@@ -23,37 +24,44 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         }
         private void FillComboBox()
         {
-            this.Cursor = Cursors.WaitCursor;
-            ///تعبئة النشاطات الفرعية
-            this.SubActivtiesComboBox.AutoFilter = true;
-            this.SubActivtiesComboBox.ValueMember = "ID";
-            this.SubActivtiesComboBox.DisplayMember = "SubActivityName";
+            Operation.BeginOperation(this);
 
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.SubActivtiesComboBox.AutoFilter = true;
+                this.SubActivtiesComboBox.ValueMember = "ID";
+                this.SubActivtiesComboBox.DisplayMember = "SubActivityName";
+                ///
+                this.SupplierComboBox.AutoFilter = true;
+                this.SupplierComboBox.ValueMember = "ID";
+                this.SupplierComboBox.DisplayMember = "Name";
 
-            FilterDescriptor filter = new FilterDescriptor();
-            filter.PropertyName = this.SubActivtiesComboBox.DisplayMember;
-            filter.Operator = FilterOperator.Contains;
-            this.SubActivtiesComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-            SubActivtiesComboBox.DataSource = SubActivityCmd.GetAllSubActivitiesByProjectID(InformationsClass.ProjID);
-            
-            //تعبئة الموردين
-            this.SupplierComboBox.AutoFilter = true;
-            this.SupplierComboBox.ValueMember = "ID";
-            this.SupplierComboBox.DisplayMember = "Name";
-
-
-            FilterDescriptor filter2 = new FilterDescriptor();
-            filter2.PropertyName = this.SupplierComboBox.DisplayMember;
-            filter2.Operator = FilterOperator.Contains;
-            this.SupplierComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter2);
-            SupplierComboBox.DataSource = SuppliersCmd.GetAll();
-            this.Cursor = Cursors.Default;
-
-            
+            });
+            var q = SubActivityCmd.GetAllSubActivitiesByProjectID(InformationsClass.ProjID);
+            var q1 = SuppliersCmd.GetAll();
+            this.Invoke((MethodInvoker)delegate
+            {  ///تعبئة النشاطات الفرعية
+                SubActivtiesComboBox.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.SubActivtiesComboBox.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.SubActivtiesComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+                //تعبئة الموردين
+                SupplierComboBox.DataSource = q1;
+                FilterDescriptor filter2 = new FilterDescriptor();
+                filter2.PropertyName = this.SupplierComboBox.DisplayMember;
+                filter2.Operator = FilterOperator.Contains;
+                this.SupplierComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter2);
+            });
+            Operation.EndOperation(this);
+          
+   
         }
         private void FrmAddExpenses_Load(object sender, EventArgs e)
         {
-            FillComboBox();
+            Thread th = new Thread(FillComboBox);
+            th.Start();
+          //  FillComboBox();
           
         }
 
@@ -145,7 +153,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             catch (Xprema.XpremaException ex)
             {
                 Operation.EndOperation(this);
-                RadMessageBox.Show(ex.OtherDescription);
+                RadMessageBox.Show(ex.OtherDescription,"خطأ",MessageBoxButtons.OK,RadMessageIcon.Error);
 
             }
         }

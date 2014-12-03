@@ -75,13 +75,12 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             if (col == 8)
             {
                 //
-                this.Cursor = Cursors.WaitCursor;
+                Operation.BeginOperation(this);
                 FrmSalaryMang frm = new FrmSalaryMang();
                 Ucas.Data.Monthlysalary salary = (Ucas.Data.Monthlysalary)SalaryGridView.CurrentRow.DataBoundItem;
                 frm.Tragetsalary = salary;
-                frm.FillCombo();
                 frm.ShowDialog();
-                this.Cursor = Cursors.Default;
+                Operation.EndOperation(this);
                
                 return;
 
@@ -93,9 +92,20 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
 
-                    SalariesCmd.DeleteSalary(int.Parse(SalaryGridView.CurrentRow.Cells[1].Value.ToString()));
-                    RadMessageBox.Show("تمت علمية الحذف");
-                    return;
+                    if (SalariesCmd.DeleteSalary(int.Parse(SalaryGridView.CurrentRow.Cells[1].Value.ToString())))
+                    {
+                        Operation.BeginOperation(this);
+                        Operation.ShowToustOk(OperationX.DeletedMessage, this);
+                        Operation.EndOperation(this);
+                        return;
+
+                    }
+                    else
+                    {
+                       Operation.EndOperation(this);
+                       RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+                    }
+                    
                 }
 
             }
@@ -103,7 +113,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void PrintDraftBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             
             List<SalaryReportObj> ls = new List<SalaryReportObj>();
             int counter = 0;
@@ -125,7 +135,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             }
             Reports.ReportCommand.SalaryReportCmd cmd = new Reports.ReportCommand.SalaryReportCmd();
             cmd.ShowReport(ls);
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
         }
 
         private void FrmSalariesManage_Activated(object sender, EventArgs e)
@@ -134,9 +144,9 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+          
             FrmSalariesManage_Load(sender, e);
-            this.Cursor = Cursors.Default;
+           
 
         }
 

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
@@ -22,8 +23,9 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void FrmProjectManage_Load(object sender, EventArgs e)
         {
+            Thread th = new Thread(GetAllProject);
+            th.Start();
            
-            GetAllProject();
            
         }
        
@@ -59,15 +61,15 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             var col = ProjectProfileGridView.CurrentColumn.Index;
             if (col == 9)
             {
-                this.Cursor = Cursors.WaitCursor;
-              
+                Operation.BeginOperation(this);
+               
 
                 FrmEditProject frm = new FrmEditProject();
 
                 Ucas.Data.ProjectProfile db = (Ucas.Data.ProjectProfile)ProjectProfileGridView.CurrentRow.DataBoundItem;
                 frm.TragetProject = db;
                 frm.ShowDialog();
-                this.Cursor = Cursors.Default;
+                Operation.EndOperation(this);
             }
 
                 if (col == 10)
@@ -80,8 +82,15 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                         {
                              Operation.EndOperation(this);
                              FrmProjectManage_Load(sender, e);
-                             RadMessageBox.Show(OperationX.DeletedMessage, "نجاح العملية", MessageBoxButtons.OK,RadMessageIcon.Info);
+                             Operation.ShowToustOk(OperationX.DeletedMessage, this);
                            
+                        }
+                        else
+                        {
+                            Operation.EndOperation(this);
+                            RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+
                         }
                        
                     }
@@ -92,19 +101,17 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
-            
-
+            Operation.BeginOperation(this);
             FrmAddProject frm = new FrmAddProject();
             frm.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
         }
 
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+          
             FrmProjectManage_Load(sender, e);
-            this.Cursor = Cursors.Default;
+          
 
         }
 

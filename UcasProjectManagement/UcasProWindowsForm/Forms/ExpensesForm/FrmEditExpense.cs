@@ -9,6 +9,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.Data;
 using Ucas.Data.CommandClass;
 using Ucas.Data;
+using System.Threading;
 
 namespace UcasProWindowsForm.Forms.ExpensesForm
 {
@@ -22,39 +23,45 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         public int XExpID { get; set; }
         ProjectExpens db = new ProjectExpens();
         public Ucas.Data.ProjectExpens TragetExpens { get; set; }
-        public void FillComboBox()
+        private void FillComboBox()
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
 
-            ///تعبئة النشاطات الفرعية
-            this.SubActivtiesComboBox.AutoFilter = true;
-            this.SubActivtiesComboBox.ValueMember = "ID";
-            this.SubActivtiesComboBox.DisplayMember = "SubActivityName";
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.SubActivtiesComboBox.AutoFilter = true;
+                this.SubActivtiesComboBox.ValueMember = "ID";
+                this.SubActivtiesComboBox.DisplayMember = "SubActivityName";
+                ///
+                this.SupplierComboBox.AutoFilter = true;
+                this.SupplierComboBox.ValueMember = "ID";
+                this.SupplierComboBox.DisplayMember = "Name";
 
+            });
+            var q = SubActivityCmd.GetAllSubActivitiesByProjectID(InformationsClass.ProjID);
+            var q1 = SuppliersCmd.GetAll();
+            this.Invoke((MethodInvoker)delegate
+            {  ///تعبئة النشاطات الفرعية
+                SubActivtiesComboBox.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.SubActivtiesComboBox.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.SubActivtiesComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+                //تعبئة الموردين
+                SupplierComboBox.DataSource = q1;
+                FilterDescriptor filter2 = new FilterDescriptor();
+                filter2.PropertyName = this.SupplierComboBox.DisplayMember;
+                filter2.Operator = FilterOperator.Contains;
+                this.SupplierComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter2);
+            });
+            Operation.EndOperation(this);
 
-            FilterDescriptor filter = new FilterDescriptor();
-            filter.PropertyName = this.SubActivtiesComboBox.DisplayMember;
-            filter.Operator = FilterOperator.Contains;
-            this.SubActivtiesComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-            SubActivtiesComboBox.DataSource = SubActivityCmd.GetAllSubActivitiesByProjectID(InformationsClass.ProjID);
-
-            //تعبئة الموردين
-            this.SupplierComboBox.AutoFilter = true;
-            this.SupplierComboBox.ValueMember = "ID";
-            this.SupplierComboBox.DisplayMember = "Name";
-
-
-            FilterDescriptor filter2 = new FilterDescriptor();
-            filter2.PropertyName = this.SupplierComboBox.DisplayMember;
-            filter2.Operator = FilterOperator.Contains;
-            this.SupplierComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter2);
-            SupplierComboBox.DataSource = SuppliersCmd.GetAll();
-            this.Cursor = Cursors.Default;
 
         }
         private void FrmEditExpense_Load(object sender, EventArgs e)
         {
-            db = new ProjectExpens();
+            Thread th = new Thread(FillComboBox);
+            th.Start();
             XExpID = TragetExpens.ID;
             SubActivtiesComboBox.Text = TragetExpens.ProjectSubActivity.SubActivityName;
             ExpensesNameTextBox.Text = TragetExpens.ExpensesName;
@@ -141,15 +148,16 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
                     };
                     ProjectExpensesCmd.EditProjectExpens(tb);
+                    Operation.EndOperation(this);
                     RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
-                    
-                    this.Cursor = Cursors.Default;
+
+                   
                     this.Close();
                 }
                 catch (Xprema.XpremaException ex)
                 {
                     Operation.EndOperation(this);
-                    RadMessageBox.Show(ex.OtherDescription);
+                    RadMessageBox.Show(ex.OtherDescription, "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
 
                 }
             }

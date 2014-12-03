@@ -290,14 +290,14 @@
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "Employee.EmployeeName";
             gridViewTextBoxColumn1.HeaderText = "الموظف";
-            gridViewTextBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             gridViewTextBoxColumn1.Name = "Employee.EmployeeName";
-            gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             gridViewTextBoxColumn1.Width = 115;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "Employee.EmployeejobNumber";
             gridViewTextBoxColumn2.HeaderText = "الرقم الوظيفي";
             gridViewTextBoxColumn2.Name = "Employee.EmployeejobNumber";
+            gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn2.Width = 106;
             this.EmployeeComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
