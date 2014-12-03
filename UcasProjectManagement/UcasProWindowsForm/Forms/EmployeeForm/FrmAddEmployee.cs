@@ -90,7 +90,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             };
             EmployeeCmd.addEmployee(emp);
             Operation.EndOperation(this);
-            RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+            Operation.ShowToustOk(OperationX.AddMessageDone, this);
+
             ClearTxt();
         }
 

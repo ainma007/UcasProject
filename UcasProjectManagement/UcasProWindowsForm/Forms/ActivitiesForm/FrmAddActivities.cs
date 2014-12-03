@@ -75,7 +75,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
                 ActivityCmd.NewActivity(tb);
                 Operation.EndOperation(this);
-                RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                Operation.ShowToustOk(OperationX.AddMessageDone, this);
                 ClearTxt();
             }
             catch (Xprema.XpremaException ex)

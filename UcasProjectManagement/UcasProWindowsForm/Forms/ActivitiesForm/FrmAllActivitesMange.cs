@@ -33,17 +33,9 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             Operation.EndOperation(this);
         }
 
-        private void SaveBtn_Click(object sender, EventArgs e)
-        {
-          
-        }
+        
         private void TotalActivites()
         {
-
-
-
-
-           
 
 
             GridViewSummaryItem summaryItemFreight1 = new GridViewSummaryItem("SubTotalCost", "الاجمالي  = {0}", GridAggregateFunction.Sum);
@@ -122,23 +114,24 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                         
             if (col2 == 10) 
             {
-                this.Cursor = Cursors.WaitCursor;
+                
                 if (RadMessageBox.Show(this, OperationX.DeletedMessage, "حذف سجل", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
-
+                    Operation.BeginOperation(this);
                 if(    ActivityCmd.DeleteActivity(int.Parse(ActivitiesGridView.CurrentRow.Cells[1].Value.ToString())))
                 {
 
-                    this.Cursor = Cursors.Default;
-                    MessageBox.Show("تمت علمية الحذف");
+                    Operation.EndOperation(this);
+                    Operation.ShowToustOk("تمت عملية الحذف", this);
 
                     return;
                 }
 
                 else
                 {
+                    Operation.EndOperation(this);
 
-                    RadMessageBox.Show("لا يمكن حذف السجل");
+                    RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
                 }
                     
                 }
@@ -156,7 +149,6 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 FrmSubActivityEdit frm = new FrmSubActivityEdit();
                 Ucas.Data.ProjectSubActivity DB = (Ucas.Data.ProjectSubActivity)ActivitiesGridView.CurrentRow.DataBoundItem;
                 frm.TragetSUBActivity = DB;
-                frm.FillActivty();
                 frm.ShowDialog();
                 Operation.EndOperation(this);
                
@@ -167,11 +159,25 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             if (col == 9)
                 
             {
+                if (RadMessageBox.Show(this, OperationX.DeletedMessage, "حذف سجل", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                {
+                    Operation.BeginOperation(this);
+                    ProjectSubActivity tb = projectSubActivityBindingSource.Current as ProjectSubActivity;
+                    if (SubActivityCmd.DeleteSubActivity(tb.ID))
+                    {
+                        Operation.EndOperation(this);
+                        FrmAllActivitesMange_Load(sender, e);
+                        Operation.ShowToustOk("تمت عملية الحذف", this);
+                        return;
+                    }
+                    else
+                    {
+                        RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+                    }
+                }
+               
                 
-                ProjectSubActivity tb = projectSubActivityBindingSource.Current as ProjectSubActivity;
-                SubActivityCmd.DeleteSubActivity(tb.ID);
-                MessageBox.Show("تمت علمية الحذف");
-                return;
             }
         }
 
@@ -246,29 +252,19 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             }
         }
 
-        private void radRibbonBar1_Click(object sender, EventArgs e)
+       
+        private void FrmAllActivitesMange_Activated(object sender, EventArgs e)
         {
             
         }
 
-        private void FrmAllActivitesMange_Activated(object sender, EventArgs e)
-        {
-            //Operation.BeginOperation(this);
-
-            //FrmAllActivitesMange_Load(sender, e);
-            //Operation.EndOperation(this);
-        }
-
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            
             FrmAllActivitesMange_Load(sender, e);
-            this.Cursor = Cursors.Default;
+          
         }
 
-        private void radStatusStrip1_StatusBarClick(object sender, RadStatusBarClickEventArgs args)
-        {
-
-        }
+     
     }
 }

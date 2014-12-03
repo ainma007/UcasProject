@@ -18,18 +18,34 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         {
             InitializeComponent();
         }
+       
         private void FillCombo()
         {
-            this.DonorsComboBox.AutoFilter = true;
-            this.DonorsComboBox.ValueMember = "ID";
-            this.DonorsComboBox.DisplayMember = "TheDonor.Name";
+          
+            Operation.BeginOperation(this);
+           
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.DonorsComboBox.AutoFilter = true;
+                this.DonorsComboBox.ValueMember = "ID";
+                this.DonorsComboBox.DisplayMember = "TheDonor.Name";
+            });
 
 
-            FilterDescriptor filter = new FilterDescriptor();
-            filter.PropertyName = this.DonorsComboBox.DisplayMember;
-            filter.Operator = FilterOperator.Contains;
-            this.DonorsComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-            DonorsComboBox.DataSource = TheDonorsProjectCmd.GetAllDonorsByproID(InformationsClass.ProjID);
+            var q =TheDonorsProjectCmd.GetAllDonorsByproID(InformationsClass.ProjID);
+            this.Invoke((MethodInvoker)delegate
+            {
+                DonorsComboBox.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.DonorsComboBox.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.DonorsComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+               
+
+
+
+            });
+            Operation.EndOperation(this);
 
         }
         private void FrmAddAmount_Load(object sender, EventArgs e)
@@ -39,7 +55,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            #region "  CheckFillTextBox "
+             #region "  CheckFillTextBox "
           
 
 
@@ -92,6 +108,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
             };
 
             AmountsReceivedsCmd.NewAmountsReceived(tb);
+            Operation.ShowToustOk(OperationX.AddMessageDone, this);
             Operation.EndOperation(this);
 
             RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);

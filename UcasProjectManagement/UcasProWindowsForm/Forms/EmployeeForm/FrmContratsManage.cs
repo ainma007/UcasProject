@@ -19,27 +19,33 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
      
         private void FrmContratsManage_Load(object sender, EventArgs e)
         {
+            Thread th = new Thread(FillData);
+            th.Start();
 
-            FillData(); 
         }
         private void FillData()
         {
-
+            Operation.BeginOperation(this);
             statusStrip1.Invoke((MethodInvoker)delegate
             {
                 toolStripStatusLabel1.Text = "يرجى الانتظار ... ";
             });
 
-            Operation.BeginOperation(this);
-            ContractsGridView.DataSource = ContractCmd.GetAllContractsByproID(InformationsClass.ProjID);
            
-            Operation.EndOperation(this);
+            Application.DoEvents();
+            var q = ContractCmd.GetAllContractsByproID(InformationsClass.ProjID);
+            Application.DoEvents();
+
+           
+           
+           
             statusStrip1.Invoke((MethodInvoker)delegate
             {
+                ContractsGridView.DataSource = q;
                 toolStripStatusLabel1.Text = "";
             });
-          
 
+            Operation.EndOperation(this);
 
         }
         private void AddBtn_Click(object sender, EventArgs e)
@@ -56,7 +62,9 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
             if (col == 8)
             {
-                this.Cursor = Cursors.WaitCursor;
+                Operation.BeginOperation(this);
+               
+
                 FrmContractsLookAndSave frm = new FrmContractsLookAndSave();
 
                 Ucas.Data.Contract db = (Ucas.Data.Contract)ContractsGridView.CurrentRow.DataBoundItem;
@@ -65,7 +73,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                
                                                
                 frm.ShowDialog();
-                this.Cursor = Cursors.Default; 
+                Operation.EndOperation(this);
                 return;
             }
 
@@ -73,10 +81,23 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             {
                 if (RadMessageBox.Show(this, OperationX.DeleteMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
+                    Operation.BeginOperation(this);
+                    if (ContractCmd.DeleteContract(int.Parse(ContractsGridView.CurrentRow.Cells[0].Value.ToString())))
+                    {
+                        MessageBox.Show(OperationX.DeletedMessage);
+                        Operation.EndOperation(this);
+                        FrmContratsManage_Load(sender, e);
+                        return;
 
-                    ContractCmd.DeleteContract(int.Parse(ContractsGridView.CurrentRow.Cells[0].Value.ToString()));
-                    MessageBox.Show(OperationX.DeletedMessage);
-                    return;
+                    }
+                    else
+                    {
+                        Operation.EndOperation(this);
+                        RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+
+                    }
+                   
                 }
                
             }

@@ -65,12 +65,12 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             var col = EmployeeGridView.CurrentColumn.Index;
             if (col == 8)
             {
-                this.Cursor = Cursors.WaitCursor;
+                Operation.BeginOperation(this);
                 FrmEmployeeEdit frm = new FrmEmployeeEdit();
                 Ucas.Data.Employee emp = (Ucas.Data.Employee)EmployeeGridView.CurrentRow.DataBoundItem;
                 frm.TragetEmployee = emp;
                 frm.ShowDialog();
-                this.Cursor = Cursors.Default;     
+                Operation.EndOperation(this);    
               
               
             }
@@ -82,11 +82,9 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                     Operation.BeginOperation(this);                          
                     EmployeeCmd.DeleteEmployee(int.Parse(EmployeeGridView.CurrentRow.Cells[0].Value.ToString()));
                     Operation.EndOperation(this);
-                    FrmEmployeeMng_Load(sender,e);
-                   
-                    RadMessageBox.Show(OperationX.DeletedMessage, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
-                    
-                    
+                    FrmEmployeeMng_Load(sender, e);
+                    Operation.ShowToustOk(OperationX.DeletedMessage, this);
+
                 }
 
 

@@ -41,28 +41,34 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
 
             if (col == 5)
             {
+                Operation.BeginOperation(this);
                 FrmEditAmount EditAmount = new FrmEditAmount();
-                EditAmount.FillCombo();
-                EditAmount.XAmountID = int.Parse(radGridView1.CurrentRow.Cells[1].Value.ToString());
-                EditAmount.DonorsComboBox.Text = radGridView1.CurrentRow.Cells[2].Value.ToString();
-                EditAmount.DateOfProecssPicker.Text = radGridView1.CurrentRow.Cells[3].Value.ToString();
-                EditAmount.CostTextBox.Text = radGridView1.CurrentRow.Cells[4].Value.ToString();
-
-
-
+                Ucas.Data.AmountsReceived db = (Ucas.Data.AmountsReceived)radGridView1.CurrentRow.DataBoundItem;
+                EditAmount.TragetAmountsReceived = db;
                 EditAmount.ShowDialog();
+                Operation.EndOperation(this);
                 return;
 
             }
             if (col == 6)
             {
 
-                if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                if (RadMessageBox.Show(this, OperationX.DeleteMessage, "حذف السجل", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
+                    Operation.BeginOperation(this);
+                   
+
                     AmountsReceivedsCmd.DeleteAmountsReceived(int.Parse(radGridView1.CurrentRow.Cells[0].Value.ToString()));
                     radGridView1.DataSource = AmountsReceivedsCmd.GetAllAmountsReceivedBypro(InformationsClass.ProjID);
+                    Operation.ShowToustOk(OperationX.DeletedMessage, this);
+                    Operation.EndOperation(this);
+                    FrmMangeAmount_Load(sender, e);
                     return;
 
+                }
+                else
+                {
+                    RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
                 }
             }
         }
@@ -71,7 +77,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         {
             Thread th = new Thread(LodingAmount);
             th.Start();
-            //LodingAmount();
+           
            
         }
 
@@ -94,6 +100,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
             statusStrip1.Invoke((MethodInvoker)delegate
             {
                 radGridView1.DataSource = q;
+                TotalAmount();
                 StatusLabel1.Text = "";
 
             });

@@ -9,6 +9,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.Data;
 using Ucas.Data.CommandClass;
 using Ucas.Data;
+using System.Threading;
 
 namespace UcasProWindowsForm.Forms.EmployeeForm
 {
@@ -22,18 +23,30 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
          ///GetAllEmployeeCombo
         private void FillEmployeeCombo()
         {
+            Operation.BeginOperation(this);
 
-            this.EmployeeComboBox.AutoFilter = true;
-            this.EmployeeComboBox.ValueMember = "ID";
-            this.EmployeeComboBox.DisplayMember = "EmployeeName";
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.EmployeeComboBox.AutoFilter = true;
+                this.EmployeeComboBox.ValueMember = "ID";
+                this.EmployeeComboBox.DisplayMember = "EmployeeName";
+            });
+            var q = EmployeeCmd.GetAll();
+            this.Invoke((MethodInvoker)delegate
+            {
+                EmployeeComboBox.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.EmployeeComboBox.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+
+            });
+            Operation.EndOperation(this);
+
+          
+
+
             
-            FilterDescriptor filter = new FilterDescriptor();
-            filter.PropertyName = this.EmployeeComboBox.DisplayMember;
-            filter.Operator = FilterOperator.Contains;
-            this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-
-
-            EmployeeComboBox.DataSource = EmployeeCmd.GetAll();
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
@@ -102,7 +115,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             };
             ContractCmd.NewContract(tb);
             Operation.EndOperation(this);
-            RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+            Operation.ShowToustOk(OperationX.AddMessageDone, this);
+
             ClearTxt();
         }
         private void ClearTxt()
@@ -114,7 +128,9 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         }
         private void FrmContractsAdd_Load(object sender, EventArgs e)
         {
-            FillEmployeeCombo();
+            Thread th = new Thread(FillEmployeeCombo);
+            th.Start();
+            
         }
 
         private void SalaryTextBox_KeyPress(object sender, KeyPressEventArgs e)

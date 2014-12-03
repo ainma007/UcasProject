@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
@@ -19,18 +20,34 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
             InitializeComponent();
         }
         public int XAmountID { get; set; }
-        public void FillCombo()
+        public AmountsReceived TragetAmountsReceived { get; set; }
+        private void FillCombo()
         {
-            this.DonorsComboBox.AutoFilter = true;
-            this.DonorsComboBox.ValueMember = "ID";
-            this.DonorsComboBox.DisplayMember = "TheDonor.Name";
+
+            Operation.BeginOperation(this);
+          
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.DonorsComboBox.AutoFilter = true;
+                this.DonorsComboBox.ValueMember = "ID";
+                this.DonorsComboBox.DisplayMember = "TheDonor.Name";
+            });
 
 
-            FilterDescriptor filter = new FilterDescriptor();
-            filter.PropertyName = this.DonorsComboBox.DisplayMember;
-            filter.Operator = FilterOperator.Contains;
-            this.DonorsComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-            DonorsComboBox.DataSource = TheDonorsProjectCmd.GetAllDonorsByproID(InformationsClass.ProjID);
+            var q = TheDonorsProjectCmd.GetAllDonorsByproID(InformationsClass.ProjID);
+            this.Invoke((MethodInvoker)delegate
+            {
+                DonorsComboBox.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.DonorsComboBox.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.DonorsComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+
+
+
+
+            });
+            Operation.EndOperation(this);
 
         }
         private void saveBtn_Click(object sender, EventArgs e)
@@ -98,7 +115,13 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         }
         private void FrmEditAmount_Load(object sender, EventArgs e)
         {
-
+            Thread th = new Thread(FillCombo);
+            th.Start();
+           // FillCombo();
+            XAmountID = TragetAmountsReceived.ID;
+            DonorsComboBox.Text = TragetAmountsReceived.TheDonorsProject.TheDonor.Name;
+            DateOfProecssPicker.Text = TragetAmountsReceived.Date.ToString();
+            CostTextBox.Text = TragetAmountsReceived.Cost.ToString();
         }
 
         private void CostTextBox_KeyPress(object sender, KeyPressEventArgs e)

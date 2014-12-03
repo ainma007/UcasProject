@@ -19,23 +19,40 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             InitializeComponent();
             RadMessageBox.SetThemeName("TelerikMetro");
         }
-        private void FillActivty()
+        public void FillActivty()
         {
 
-
+            Operation.BeginOperation(this);
             ///GetActivityByProjectID
-            this.ActivitiesColumnComboBox.AutoFilter = true;
-            this.ActivitiesColumnComboBox.ValueMember = "ID";
-            this.ActivitiesColumnComboBox.DisplayMember = "ActivityName";
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.ActivitiesColumnComboBox.AutoFilter = true;
+                this.ActivitiesColumnComboBox.ValueMember = "ID";
+                this.ActivitiesColumnComboBox.DisplayMember = "ActivityName";
+            });
 
 
-            FilterDescriptor filter = new FilterDescriptor();
-            filter.PropertyName = this.ActivitiesColumnComboBox.DisplayMember;
-            filter.Operator = FilterOperator.Contains;
-            this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+            var q = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
 
 
-            ActivitiesColumnComboBox.DataSource = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
+
+            this.Invoke((MethodInvoker)delegate
+            {
+                ActivitiesColumnComboBox.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.ActivitiesColumnComboBox.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+
+
+
+            });
+
+            Operation.EndOperation(this);
+
+
+
+
         }
         private void FrmAddSubActivities_Load(object sender, EventArgs e)
         {
@@ -119,7 +136,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 };
                 SubActivityCmd.NewSubActivity(tb);
                 Operation.EndOperation(this);
-                RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                Operation.ShowToustOk(OperationX.AddMessageDone, this);
                 ClearTxt();
             }
             catch (Xprema.XpremaException ex)

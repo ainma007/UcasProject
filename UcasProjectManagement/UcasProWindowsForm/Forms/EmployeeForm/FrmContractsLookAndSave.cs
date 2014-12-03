@@ -5,6 +5,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.Data;
 using Ucas.Data.CommandClass;
 using Ucas.Data;
+using System.Threading;
 
 namespace UcasProWindowsForm.Forms.EmployeeForm
 {
@@ -94,58 +95,40 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                             this.Close();
                         }
         }
-            
-        public void GetEmplyeeCombo()
+
+        private void FillEmployeeCombo()
         {
-            ///GetAllEmployeeCombo
-            this.EmployeeComboBox.AutoFilter = true;
-            this.EmployeeComboBox.ValueMember = "ID";
-            this.EmployeeComboBox.DisplayMember = "EmployeeName";
-
-
-            FilterDescriptor filter = new FilterDescriptor();
-            filter.PropertyName = this.EmployeeComboBox.DisplayMember;
-            filter.Operator = FilterOperator.Contains;
-            this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-            statusStrip1.Invoke((MethodInvoker)delegate
-            {
-
-                toolStripStatusLabel1.Text = "يرجى الانتظار ... ";
-
-            });
             Operation.BeginOperation(this);
-            try
+
+            this.Invoke((MethodInvoker)delegate
             {
-                Application.DoEvents();
-                EmployeeComboBox.DataSource = EmployeeCmd.GetAll();
-
-                Application.DoEvents();
-            }
-
-            catch (System.InvalidOperationException ex)
+                this.EmployeeComboBox.AutoFilter = true;
+                this.EmployeeComboBox.ValueMember = "ID";
+                this.EmployeeComboBox.DisplayMember = "EmployeeName";
+            });
+            var q = EmployeeCmd.GetAll();
+            this.Invoke((MethodInvoker)delegate
             {
-
-                Application.DoEvents();
-                EmployeeComboBox.DataSource = EmployeeCmd.GetAll(); 
-                Application.DoEvents();
-            }
-
-            Operation.EndOperation(this);
-            statusStrip1.Invoke((MethodInvoker)delegate
-            {
-
-                toolStripStatusLabel1.Text = " ";
+                EmployeeComboBox.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.EmployeeComboBox.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
 
             });
+            Operation.EndOperation(this);
 
-           
+
+
+
 
         }
         
         private void FrmContractsLookAndSave_Load(object sender, EventArgs e)
         {
-            db = new Contract();
-            GetEmplyeeCombo();
+
+            Thread th = new Thread(FillEmployeeCombo);
+            th.Start();
             myContractId = TragetContract.ID;
             this.EmployeeComboBox.Text = TragetContract.Employee.EmployeeName;
             this.StartDateTimePicker.Text = TragetContract.StartDate.ToString();
