@@ -38,53 +38,49 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void ProjectAddBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this); 
             FrmAddProject AddPro = new FrmAddProject();
             AddPro.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
         }
 
-        private void GroupMangBtn_Click(object sender, EventArgs e)
-        {
-          
-
-        }
+       
 
     
 
         private void EmployeeAddBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             FrmAddEmployee addempfrm = new FrmAddEmployee();
             addempfrm.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
 
         }
 
         private void ProjectMangBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             FrmProjectManage ProMang = new FrmProjectManage();
             ProMang.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
 
         }
 
         private void SuppAddBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             FrmAddsupplier addSup = new FrmAddsupplier();
             addSup.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
 
         }
 
         private void FinanAddBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             FrmAddTheTheDonors finadd = new FrmAddTheTheDonors();
             finadd.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
 
         }
 
@@ -95,74 +91,83 @@ namespace UcasProWindowsForm.Forms.MainForm
           //  FrmAdmin_Load(sender, e);
         }
 
-        private void GroupAddBtn_Click(object sender, EventArgs e)
-        {
-           
-
-        }
+      
 
         private void FinanMangBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             FrmManagementTheDonors finamang = new FrmManagementTheDonors();
             finamang.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
 
         }
 
         private void EmployeeMangBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             FrmEmployeeMng empmang = new FrmEmployeeMng();
             empmang.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
 
         }
 
         private void radGridView1_CommandCellClick(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             FrmMainUserPro frm = new FrmMainUserPro();
             Ucas.Data.ProjectProfile db = (Ucas.Data.ProjectProfile)radGridView1.CurrentRow.DataBoundItem;
             frm.TragetProject = db;
             frm.ShowDialog();
-           
 
-            this.Cursor = Cursors.Default;
+
+            Operation.EndOperation(this);
+            this.Hide();
         }
 
      
 
         private void SupmanageBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             FrmManagementSupplier MangSup = new FrmManagementSupplier();
             MangSup.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
         }
 
         private void UserMangBtn_Click(object sender, EventArgs e)
         {
+            Operation.BeginOperation(this);
+
             frmUserManage frm = new frmUserManage();
             frm.ShowDialog();
+            Operation.EndOperation(this);
         }
 
         private void AddUserToProjectBtn_Click(object sender, EventArgs e)
         {
+            Operation.BeginOperation(this);
+
             FrmAddUserToProject frm = new FrmAddUserToProject();
             frm.ShowDialog();
+            Operation.EndOperation(this);
         }
 
         private void UserProjectManageBtn_Click(object sender, EventArgs e)
         {
+            Operation.BeginOperation(this);
+
             FrmUserProjectManage frm = new FrmUserProjectManage();
             frm.ShowDialog();
+            Operation.EndOperation(this);
         }
 
         private void UserMangBtn_Click_1(object sender, EventArgs e)
         {
+            Operation.BeginOperation(this);
+
             frmUserManage FRM = new frmUserManage();
             FRM.ShowDialog();
+            Operation.EndOperation(this);
 
         }
 

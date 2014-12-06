@@ -157,7 +157,7 @@
             this.supplierGridView.ReadOnly = true;
             this.supplierGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.supplierGridView.ShowGroupPanel = false;
-            this.supplierGridView.Size = new System.Drawing.Size(1058, 744);
+            this.supplierGridView.Size = new System.Drawing.Size(1058, 420);
             this.supplierGridView.TabIndex = 2;
             this.supplierGridView.Text = "radGridView1";
             this.supplierGridView.ThemeName = "TelerikMetro";
@@ -227,7 +227,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 803);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 479);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1062, 22);
             this.statusStrip1.TabIndex = 8;
@@ -248,7 +248,7 @@
             this.radGroupBox1.HeaderText = "سجلات الموردين";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 39);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(1062, 764);
+            this.radGroupBox1.Size = new System.Drawing.Size(1062, 440);
             this.radGroupBox1.TabIndex = 9;
             this.radGroupBox1.Text = "سجلات الموردين";
             this.radGroupBox1.ThemeName = "TelerikMetro";
@@ -257,7 +257,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1062, 825);
+            this.ClientSize = new System.Drawing.Size(1062, 501);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
@@ -270,7 +270,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ادارة الموردين";
             this.ThemeName = "TelerikMetro";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmManagementSupplier_Load);
             ((System.ComponentModel.ISupportInitialize)(this.supplierGridView.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierGridView)).EndInit();
