@@ -111,10 +111,12 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
    
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            
+            Operation.BeginOperation(this);
+          
+
             FrmAddEmployee add = new FrmAddEmployee();
             add.ShowDialog();
-          
+            Operation.EndOperation(this);
         }
 
         private void RefreshBtn_Click(object sender, EventArgs e)

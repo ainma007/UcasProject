@@ -61,7 +61,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         {
             Thread th = new Thread(FillComboBox);
             th.Start();
-          //  FillComboBox();
+            Coinlabel.Text = InformationsClass.Coin;
           
         }
 

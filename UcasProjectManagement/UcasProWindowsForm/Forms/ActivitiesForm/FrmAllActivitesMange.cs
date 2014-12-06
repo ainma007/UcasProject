@@ -38,7 +38,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         {
 
 
-            GridViewSummaryItem summaryItemFreight1 = new GridViewSummaryItem("SubTotalCost", "الاجمالي  = {0}", GridAggregateFunction.Sum);
+            GridViewSummaryItem summaryItemFreight1 = new GridViewSummaryItem("SubTotalCost", "الاجمالي={0}"+InformationsClass.Coin+"", GridAggregateFunction.Sum);
             GridViewSummaryRowItem summaryRowItem1 = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight1 });
             this.gridViewTemplate2.SummaryRowsBottom.Clear();
             this.gridViewTemplate2.SummaryRowsBottom.Add(summaryRowItem1);
@@ -46,7 +46,10 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             
           
             ///
-         
+            GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("ActivityTotalCost", "الاجمالي العام={0}" + InformationsClass.Coin + "", GridAggregateFunction.Sum);
+            GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight });
+            this.ActivitiesGridView.SummaryRowsBottom.Clear();
+            this.ActivitiesGridView.SummaryRowsBottom.Add(summaryRowItem);
         }
 
         private void Loadactivites()

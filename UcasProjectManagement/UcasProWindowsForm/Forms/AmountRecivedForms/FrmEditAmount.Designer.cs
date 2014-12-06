@@ -33,6 +33,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.GroupBox = new Telerik.WinControls.UI.RadGroupBox();
+            this.Coinlabel = new System.Windows.Forms.Label();
             this.saveBtn = new Telerik.WinControls.UI.RadButton();
             this.DonorsComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,6 +57,7 @@
             // GroupBox
             // 
             this.GroupBox.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.GroupBox.Controls.Add(this.Coinlabel);
             this.GroupBox.Controls.Add(this.saveBtn);
             this.GroupBox.Controls.Add(this.DonorsComboBox);
             this.GroupBox.Controls.Add(this.label3);
@@ -71,6 +73,15 @@
             this.GroupBox.TabIndex = 0;
             this.GroupBox.Text = "بيانات الدفعة";
             this.GroupBox.ThemeName = "TelerikMetro";
+            // 
+            // Coinlabel
+            // 
+            this.Coinlabel.ForeColor = System.Drawing.Color.Green;
+            this.Coinlabel.Location = new System.Drawing.Point(49, 93);
+            this.Coinlabel.Name = "Coinlabel";
+            this.Coinlabel.Size = new System.Drawing.Size(100, 19);
+            this.Coinlabel.TabIndex = 2;
+            this.Coinlabel.Text = "-";
             // 
             // saveBtn
             // 
@@ -157,10 +168,10 @@
             this.DateOfProecssPicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DateOfProecssPicker.CustomFormat = "dd/MM/yyyy";
             this.DateOfProecssPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateOfProecssPicker.Location = new System.Drawing.Point(142, 53);
+            this.DateOfProecssPicker.Location = new System.Drawing.Point(154, 53);
             this.DateOfProecssPicker.Name = "DateOfProecssPicker";
             this.DateOfProecssPicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DateOfProecssPicker.Size = new System.Drawing.Size(93, 22);
+            this.DateOfProecssPicker.Size = new System.Drawing.Size(81, 22);
             this.DateOfProecssPicker.TabIndex = 8;
             this.DateOfProecssPicker.TabStop = false;
             this.DateOfProecssPicker.Text = "15/09/2014";
@@ -170,10 +181,10 @@
             // CostTextBox
             // 
             this.CostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CostTextBox.Location = new System.Drawing.Point(124, 91);
+            this.CostTextBox.Location = new System.Drawing.Point(154, 90);
             this.CostTextBox.Name = "CostTextBox";
             this.CostTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.CostTextBox.Size = new System.Drawing.Size(111, 22);
+            this.CostTextBox.Size = new System.Drawing.Size(81, 22);
             this.CostTextBox.TabIndex = 7;
             this.CostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.CostTextBox.ThemeName = "TelerikMetro";
@@ -241,5 +252,6 @@
         public Telerik.WinControls.UI.RadDateTimePicker DateOfProecssPicker;
         public Telerik.WinControls.UI.RadTextBox CostTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label Coinlabel;
     }
 }

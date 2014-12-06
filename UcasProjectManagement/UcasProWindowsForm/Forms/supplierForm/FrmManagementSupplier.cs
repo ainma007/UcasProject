@@ -132,5 +132,10 @@ namespace UcasProWindowsForm.Forms.supplierForm
             cmd.GetAllSupplier();
             Operation.EndOperation(this);
         }
+
+        private void Refreshbtn_Click(object sender, EventArgs e)
+        {
+            FrmManagementSupplier_Load(sender, e);
+        }
     }
 }

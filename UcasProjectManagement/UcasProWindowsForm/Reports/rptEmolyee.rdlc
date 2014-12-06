@@ -31,6 +31,7 @@
           <Border>
             <Style>None</Style>
           </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -507,7 +508,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -825,7 +826,7 @@
         <Top>2.35162cm</Top>
         <Left>0.42078cm</Left>
         <Height>1.2cm</Height>
-        <Width>20.74838cm</Width>
+        <Width>20.74837cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>

@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
 using Ucas.Data.CommandClass;
 
 namespace UcasProWindowsForm.Forms.EmployeeForm
@@ -23,6 +24,16 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             th.Start();
 
         }
+        private void TotalAmount()
+        {
+            GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("TotalSalary", "الاجمالي={0}" + InformationsClass.Coin + " ", GridAggregateFunction.Sum);
+
+            GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight });
+            this.ContractsGridView.SummaryRowsBottom.Clear();
+            this.ContractsGridView.SummaryRowsBottom.Add(summaryRowItem);
+            ///
+
+        }
         private void FillData()
         {
             Operation.BeginOperation(this);
@@ -42,6 +53,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             statusStrip1.Invoke((MethodInvoker)delegate
             {
                 ContractsGridView.DataSource = q;
+                TotalAmount();
                 toolStripStatusLabel1.Text = "";
             });
 
@@ -50,10 +62,12 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
+           
+
             FrmContractsAdd Addfrm = new FrmContractsAdd();
             Addfrm.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
 
         }
         private void radGridView1_CommandCellClick(object sender, EventArgs e)

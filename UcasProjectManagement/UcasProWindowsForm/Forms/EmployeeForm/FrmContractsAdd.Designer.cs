@@ -33,6 +33,8 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.Coinlabel2 = new System.Windows.Forms.Label();
+            this.Coinlabel = new System.Windows.Forms.Label();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.EmployeeComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.TotaltextBox = new Telerik.WinControls.UI.RadTextBox();
@@ -68,6 +70,8 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.Coinlabel2);
+            this.radGroupBox1.Controls.Add(this.Coinlabel);
             this.radGroupBox1.Controls.Add(this.radLabel2);
             this.radGroupBox1.Controls.Add(this.EmployeeComboBox);
             this.radGroupBox1.Controls.Add(this.TotaltextBox);
@@ -88,6 +92,24 @@
             this.radGroupBox1.Text = "بيانات الاضافة";
             this.radGroupBox1.ThemeName = "TelerikMetro";
             this.radGroupBox1.Click += new System.EventHandler(this.radGroupBox1_Click);
+            // 
+            // Coinlabel2
+            // 
+            this.Coinlabel2.ForeColor = System.Drawing.Color.Green;
+            this.Coinlabel2.Location = new System.Drawing.Point(80, 158);
+            this.Coinlabel2.Name = "Coinlabel2";
+            this.Coinlabel2.Size = new System.Drawing.Size(100, 19);
+            this.Coinlabel2.TabIndex = 14;
+            this.Coinlabel2.Text = "-";
+            // 
+            // Coinlabel
+            // 
+            this.Coinlabel.ForeColor = System.Drawing.Color.Green;
+            this.Coinlabel.Location = new System.Drawing.Point(80, 124);
+            this.Coinlabel.Name = "Coinlabel";
+            this.Coinlabel.Size = new System.Drawing.Size(100, 19);
+            this.Coinlabel.TabIndex = 13;
+            this.Coinlabel.Text = "-";
             // 
             // radLabel2
             // 
@@ -164,10 +186,10 @@
             // TotaltextBox
             // 
             this.TotaltextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TotaltextBox.Location = new System.Drawing.Point(167, 123);
+            this.TotaltextBox.Location = new System.Drawing.Point(183, 123);
             this.TotaltextBox.Name = "TotaltextBox";
             this.TotaltextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TotaltextBox.Size = new System.Drawing.Size(97, 22);
+            this.TotaltextBox.Size = new System.Drawing.Size(81, 22);
             this.TotaltextBox.TabIndex = 3;
             this.TotaltextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TotaltextBox.ThemeName = "TelerikMetro";
@@ -198,10 +220,10 @@
             // SalaryTextBox
             // 
             this.SalaryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SalaryTextBox.Location = new System.Drawing.Point(166, 155);
+            this.SalaryTextBox.Location = new System.Drawing.Point(183, 155);
             this.SalaryTextBox.Name = "SalaryTextBox";
             this.SalaryTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.SalaryTextBox.Size = new System.Drawing.Size(97, 22);
+            this.SalaryTextBox.Size = new System.Drawing.Size(81, 22);
             this.SalaryTextBox.TabIndex = 4;
             this.SalaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.SalaryTextBox.ThemeName = "TelerikMetro";
@@ -331,5 +353,7 @@
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadTextBox TotaltextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label Coinlabel2;
+        private System.Windows.Forms.Label Coinlabel;
     }
 }

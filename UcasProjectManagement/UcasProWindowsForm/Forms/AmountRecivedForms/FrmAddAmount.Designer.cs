@@ -33,6 +33,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.Coinlabel = new System.Windows.Forms.Label();
             this.CostTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,6 +57,7 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.Coinlabel);
             this.radGroupBox1.Controls.Add(this.CostTextBox);
             this.radGroupBox1.Controls.Add(this.AddBtn);
             this.radGroupBox1.Controls.Add(this.label3);
@@ -72,12 +74,21 @@
             this.radGroupBox1.Text = "ادخال بيانات دفعة";
             this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
+            // Coinlabel
+            // 
+            this.Coinlabel.ForeColor = System.Drawing.Color.Green;
+            this.Coinlabel.Location = new System.Drawing.Point(64, 104);
+            this.Coinlabel.Name = "Coinlabel";
+            this.Coinlabel.Size = new System.Drawing.Size(100, 19);
+            this.Coinlabel.TabIndex = 1;
+            this.Coinlabel.Text = "-";
+            // 
             // CostTextBox
             // 
-            this.CostTextBox.Location = new System.Drawing.Point(127, 103);
+            this.CostTextBox.Location = new System.Drawing.Point(169, 103);
             this.CostTextBox.Name = "CostTextBox";
             this.CostTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.CostTextBox.Size = new System.Drawing.Size(123, 22);
+            this.CostTextBox.Size = new System.Drawing.Size(81, 22);
             this.CostTextBox.TabIndex = 2;
             this.CostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.CostTextBox.ThemeName = "TelerikMetro";
@@ -245,5 +256,6 @@
         private Telerik.WinControls.UI.RadDateTimePicker DateOfProecssPicker;
         private Telerik.WinControls.UI.RadTextBox CostTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label Coinlabel;
     }
 }

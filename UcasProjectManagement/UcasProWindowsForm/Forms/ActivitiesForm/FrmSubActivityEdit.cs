@@ -59,6 +59,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         {
             Thread th = new Thread(FillActivty);
             th.Start();
+            Coinlabel.Text = InformationsClass.Coin;
             SubXid = TragetSUBActivity.ID;
             ActivitiesColumnComboBox.Text=TragetSUBActivity.ProjectActivity.ActivityName;
             SubActivitiesNameTextBox.Text = TragetSUBActivity.SubActivityName;

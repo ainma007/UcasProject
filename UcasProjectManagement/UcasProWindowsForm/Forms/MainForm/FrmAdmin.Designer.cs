@@ -144,11 +144,11 @@
             // toolStripDropDownButton1
             // 
             this.toolStripDropDownButton1.BackColor = System.Drawing.Color.White;
-            this.toolStripDropDownButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.BackgroundImage")));
+            this.toolStripDropDownButton1.BackgroundImage = global::UcasProWindowsForm.Properties.Resources.Green;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ProjectAddBtn,
             this.ProjectMangBtn});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.Image = global::UcasProWindowsForm.Properties.Resources.Projects;
             this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -157,7 +157,7 @@
             // 
             // ProjectAddBtn
             // 
-            this.ProjectAddBtn.Image = ((System.Drawing.Image)(resources.GetObject("ProjectAddBtn.Image")));
+            this.ProjectAddBtn.Image = global::UcasProWindowsForm.Properties.Resources.AddPro;
             this.ProjectAddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ProjectAddBtn.Name = "ProjectAddBtn";
             this.ProjectAddBtn.Size = new System.Drawing.Size(156, 38);
@@ -166,7 +166,7 @@
             // 
             // ProjectMangBtn
             // 
-            this.ProjectMangBtn.Image = ((System.Drawing.Image)(resources.GetObject("ProjectMangBtn.Image")));
+            this.ProjectMangBtn.Image = global::UcasProWindowsForm.Properties.Resources.EditPro;
             this.ProjectMangBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ProjectMangBtn.Name = "ProjectMangBtn";
             this.ProjectMangBtn.Size = new System.Drawing.Size(156, 38);
@@ -181,16 +181,16 @@
             // EmployeeAddBtn
             // 
             this.EmployeeAddBtn.BackColor = System.Drawing.Color.White;
-            this.EmployeeAddBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("EmployeeAddBtn.BackgroundImage")));
+            this.EmployeeAddBtn.BackgroundImage = global::UcasProWindowsForm.Properties.Resources.Orange;
             this.EmployeeAddBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.EmployeeAddBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.EmployeeMangBtn});
-            this.EmployeeAddBtn.Image = ((System.Drawing.Image)(resources.GetObject("EmployeeAddBtn.Image")));
+            this.EmployeeAddBtn.Image = global::UcasProWindowsForm.Properties.Resources.Emplyee;
             this.EmployeeAddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.EmployeeAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.EmployeeAddBtn.Name = "EmployeeAddBtn";
-            this.EmployeeAddBtn.Size = new System.Drawing.Size(94, 34);
+            this.EmployeeAddBtn.Size = new System.Drawing.Size(92, 34);
             this.EmployeeAddBtn.Text = "الموظفين";
             // 
             // toolStripMenuItem1
@@ -219,7 +219,7 @@
             // toolStripDropDownButton2
             // 
             this.toolStripDropDownButton2.BackColor = System.Drawing.Color.White;
-            this.toolStripDropDownButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.BackgroundImage")));
+            this.toolStripDropDownButton2.BackgroundImage = global::UcasProWindowsForm.Properties.Resources.blue;
             this.toolStripDropDownButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FinanAddBtn,
@@ -227,7 +227,7 @@
             this.toolStripSeparator2,
             this.toolStripMenuItem2,
             this.toolStripMenuItem3});
-            this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
+            this.toolStripDropDownButton2.Image = global::UcasProWindowsForm.Properties.Resources.Supplier;
             this.toolStripDropDownButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
@@ -236,42 +236,42 @@
             // 
             // FinanAddBtn
             // 
-            this.FinanAddBtn.Image = ((System.Drawing.Image)(resources.GetObject("FinanAddBtn.Image")));
+            this.FinanAddBtn.Image = global::UcasProWindowsForm.Properties.Resources.Donorsadd;
             this.FinanAddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.FinanAddBtn.Name = "FinanAddBtn";
-            this.FinanAddBtn.Size = new System.Drawing.Size(158, 38);
+            this.FinanAddBtn.Size = new System.Drawing.Size(168, 38);
             this.FinanAddBtn.Text = "اضافة ممول";
             this.FinanAddBtn.Click += new System.EventHandler(this.FinanAddBtn_Click);
             // 
             // FinanMangBtn
             // 
-            this.FinanMangBtn.Image = ((System.Drawing.Image)(resources.GetObject("FinanMangBtn.Image")));
+            this.FinanMangBtn.Image = global::UcasProWindowsForm.Properties.Resources.Donors;
             this.FinanMangBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.FinanMangBtn.Name = "FinanMangBtn";
-            this.FinanMangBtn.Size = new System.Drawing.Size(158, 38);
+            this.FinanMangBtn.Size = new System.Drawing.Size(168, 38);
             this.FinanMangBtn.Text = "ادارة الممولين";
             this.FinanMangBtn.Click += new System.EventHandler(this.FinanMangBtn_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(155, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(165, 6);
             // 
             // toolStripMenuItem2
             // 
-            this.toolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem2.Image")));
+            this.toolStripMenuItem2.Image = global::UcasProWindowsForm.Properties.Resources.AddSupp;
             this.toolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(158, 38);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(168, 38);
             this.toolStripMenuItem2.Text = "اضافة مورد";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.SuppAddBtn_Click);
             // 
             // toolStripMenuItem3
             // 
-            this.toolStripMenuItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem3.Image")));
+            this.toolStripMenuItem3.Image = global::UcasProWindowsForm.Properties.Resources.EditSupp;
             this.toolStripMenuItem3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(158, 38);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(168, 38);
             this.toolStripMenuItem3.Text = "ادارة الموردين";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.SupmanageBtn_Click);
             // 

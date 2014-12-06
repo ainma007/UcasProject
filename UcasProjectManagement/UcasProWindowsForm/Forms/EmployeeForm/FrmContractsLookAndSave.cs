@@ -129,6 +129,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
             Thread th = new Thread(FillEmployeeCombo);
             th.Start();
+            Coinlabel.Text = InformationsClass.Coin;
+            Coinlabel2.Text = InformationsClass.Coin;
             myContractId = TragetContract.ID;
             this.EmployeeComboBox.Text = TragetContract.Employee.EmployeeName;
             this.StartDateTimePicker.Text = TragetContract.StartDate.ToString();

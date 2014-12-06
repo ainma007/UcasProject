@@ -33,6 +33,7 @@
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.Coinlabel = new System.Windows.Forms.Label();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.StatusDropDownList = new Telerik.WinControls.UI.RadDropDownList();
@@ -70,6 +71,7 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.Coinlabel);
             this.radGroupBox1.Controls.Add(this.radLabel5);
             this.radGroupBox1.Controls.Add(this.SaveBtn);
             this.radGroupBox1.Controls.Add(this.StatusDropDownList);
@@ -94,6 +96,15 @@
             this.radGroupBox1.TabIndex = 0;
             this.radGroupBox1.Text = "بيانات التعديل";
             this.radGroupBox1.ThemeName = "TelerikMetro";
+            // 
+            // Coinlabel
+            // 
+            this.Coinlabel.ForeColor = System.Drawing.Color.Green;
+            this.Coinlabel.Location = new System.Drawing.Point(69, 176);
+            this.Coinlabel.Name = "Coinlabel";
+            this.Coinlabel.Size = new System.Drawing.Size(100, 19);
+            this.Coinlabel.TabIndex = 21;
+            this.Coinlabel.Text = "-";
             // 
             // radLabel5
             // 
@@ -167,10 +178,10 @@
             // 
             this.TotalCostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TotalCostTextBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalCostTextBox.Location = new System.Drawing.Point(118, 176);
+            this.TotalCostTextBox.Location = new System.Drawing.Point(173, 176);
             this.TotalCostTextBox.Name = "TotalCostTextBox";
             this.TotalCostTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TotalCostTextBox.Size = new System.Drawing.Size(136, 21);
+            this.TotalCostTextBox.Size = new System.Drawing.Size(81, 21);
             this.TotalCostTextBox.TabIndex = 5;
             this.TotalCostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TotalCostTextBox.ThemeName = "TelerikMetro";
@@ -328,5 +339,6 @@
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private Telerik.WinControls.UI.RadLabel radLabel5;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label Coinlabel;
     }
 }

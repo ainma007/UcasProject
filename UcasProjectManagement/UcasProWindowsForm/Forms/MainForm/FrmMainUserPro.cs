@@ -11,6 +11,8 @@ using UcasProWindowsForm.Forms.EmployeeForm;
 using UcasProWindowsForm.Forms.ExpensesForm;
 using UcasProWindowsForm.Forms.ProjectProfileForm;
 using UcasProWindowsForm.Reports.ReportObj;
+using System.Threading;
+using UcasProWindowsForm.Reports.ReportCommand;
 namespace UcasProWindowsForm.Forms.MainForm
 {
     public partial class FrmMainUserPro : Telerik.WinControls.UI.RadForm
@@ -26,66 +28,124 @@ namespace UcasProWindowsForm.Forms.MainForm
 
 
         public string Progress { get; set; }
+        DateTime date = DateTime.Now;
+        private void fillData()
+        {
+            
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                StatusLabel1.Text = "جاري الانتظار.... ";
+
+            });
+            Operation.BeginOperation(this);
+
+            Application.DoEvents();
+            InformationsClass.ProjID = TragetProject.ID;
+            var ListData = ProjectProfileCmd.GetProjectData(InformationsClass.ProjID);
+// Acount
+            var TotalExpenses = ProjectExpensesCmd.GetTotalExpensesByProject(InformationsClass.ProjID).ToString();
+            var TotalSalary = SalariesCmd.GetTotalSalaryByProject(InformationsClass.ProjID).ToString();
+            var TotalAmountRecv = AmountsReceivedsCmd.GetTotalAmountsByProject(InformationsClass.ProjID).ToString();
+            // GetSubActivety
+            var q = SubActivityCmd.GetAllSubActivitiesByMonth(InformationsClass.ProjID);
+            //
+            Application.DoEvents();
+
+            Operation.EndOperation(this);
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+               
+
+                foreach (var item in ListData)
+                {
+
+                    this.ProjectNameTextBox.Text = item.ProjectName;
+                    this.DescTextBox.Text = item.ProjectDescription;
+                    this.StartDateTextBox.Text = item.StartDate.ToString();
+                    this.EndDateTextBox.Text = item.EndDate.ToString();
+                    this.CostTextBox.Text = item.TotalCost.ToString();
+                    this.CoinTextBox.Text = item.Coin.ToString();
+                    InformationsClass.Coin = item.Coin;
+                    this.Progress = item.progress.ToString();
+                    this.StatustextBox.Text = item.Status;
+
+
+                }
+                ////AcounttextFill
+                this.TotalExpensesTextBox.Text = TotalExpenses;
+                this.TotalSalayTextBox.Text = TotalSalary;
+                this.AmountRecvTextBox.Text = TotalAmountRecv;
+                decimal val1 = Convert.ToDecimal(TotalExpensesTextBox.Text);
+                decimal val2 = Convert.ToDecimal(TotalSalayTextBox.Text);
+
+                decimal val3 = val1 + val2;
+                decimal val4 = Convert.ToDecimal(AmountRecvTextBox.Text);
+                RemainingTextBox.Text = (val4 - val3).ToString();
+                chart1.Series[0].Points.Clear();
+                chart1.Titles.Clear();
+                chart1.Series[0].Points.AddXY("اجمالي الايرادات", val4);
+                chart1.Series[0].Points.AddXY("اجمالي المصاريف", val1);
+                chart1.Series[0].Points.AddXY("اجمالي الرواتب", val2);
+                chart1.Series[0].Points.AddXY("المتبقي من الرصيد", RemainingTextBox.Text);
+                chart1.Titles.Add("مخطط موجز الحسابات للمشروع");
+                chart1.Series[0].Points[0].Color = Color.YellowGreen;
+                chart1.Series[0].Points[1].Color = Color.Red;
+                chart1.Series[0].Points[2].Color = Color.Red;
+                chart1.Series[0].Points[3].Color = Color.YellowGreen;
+
+
+                decimal Residual = 100 - decimal.Parse(Progress);
+                chart2.Series[0].Points.Clear();
+
+                chart2.Series[0].Points.AddXY("نسبة الانجاز", Progress);
+                chart2.Series[0].Points.AddXY("المتبقى", Residual);
+                chart2.Series[0].IsValueShownAsLabel = true;
+
+                chart2.Series[0].Points[0].Color = Color.SkyBlue;
+                chart2.Series[0].Points[1].Color = Color.Crimson;
+                //// SubActivty 
+                radGridView1.DataSource = q;
+
+
+                label1.Text = InformationsClass.Coin;
+                label2.Text = InformationsClass.Coin;
+                label3.Text = InformationsClass.Coin;
+                label4.Text = InformationsClass.Coin;
+
+                StatusLabel1.Text = "";
+               
+            });
+
+
+        }
         private void FrmMainUserPro_Load(object sender, EventArgs e)
         {
             db = new ProjectProfile();
-            InformationsClass.ProjID = TragetProject.ID;
-            var ListData = ProjectProfileCmd.GetProjectData(InformationsClass.ProjID);
-            foreach (var item in ListData)
-            {
+           
+            
+            Thread th = new Thread(fillData);
+            th.Start();
 
-               this.ProjectNameTextBox.Text = item.ProjectName;
-                this.DescTextBox.Text = item.ProjectDescription;
-                this.StartDateTextBox.Text = item.StartDate.ToString();
-                this.EndDateTextBox.Text = item.EndDate.ToString();
-                this.CostTextBox.Text = item.TotalCost.ToString();
-                this.CoinTextBox.Text = item.Coin.ToString();
-                this.Progress = item.progress.ToString();
 
-                 
-            }
-            var TotalExpenses = ProjectExpensesCmd.GetTotalExpensesByProject(InformationsClass.ProjID).ToString();
-            this.TotalExpensesTextBox.Text = TotalExpenses;
+           
+           
 
             //
-            var TotalSalary = SalariesCmd.GetTotalSalaryByProject(InformationsClass.ProjID).ToString();
-            this.TotalSalayTextBox.Text = TotalSalary;
-            //
-
-            var TotalAmountRecv = AmountsReceivedsCmd.GetTotalAmountsByProject(InformationsClass.ProjID).ToString();
-            this.AmountRecvTextBox.Text = TotalAmountRecv;
-
-            decimal val1 = Convert.ToDecimal(TotalExpensesTextBox.Text);
-            decimal val2 = Convert.ToDecimal(TotalSalayTextBox.Text);
+           
           
-            decimal val3 = val1 + val2;
-            decimal val4 = Convert.ToDecimal(AmountRecvTextBox.Text);
-            RemainingTextBox.Text = (val4 - val3).ToString();
+            //
+
+           
+            
+
+           
 
          
-            chart1.Series[0].Points.Clear();
-            chart1.Titles.Clear();
-            chart1.Series[0].Points.AddXY("اجمالي الايرادات", val4);
-            chart1.Series[0].Points.AddXY("اجمالي المصاريف", val1);
-            chart1.Series[0].Points.AddXY("اجمالي الرواتب",val2);
-            chart1.Series[0].Points.AddXY("المتبقي من الرصيد",RemainingTextBox.Text);
-            chart1.Titles.Add("مخطط موجز الحسابات للمشروع");
-            chart1.Series[0].Points[0].Color = Color.YellowGreen;
-            chart1.Series[0].Points[1].Color = Color.Red;
-            chart1.Series[0].Points[2].Color = Color.Red;
-            chart1.Series[0].Points[3].Color = Color.YellowGreen;
-            
-            
-            decimal Residual = 100 -decimal.Parse(Progress);
-            chart2.Series[0].Points.Clear();
-            
-            chart2.Series[0].Points.AddXY("نسبة الانجاز", Progress);
-            chart2.Series[0].Points.AddXY("المتبقى", Residual);
-            chart2.Series[0].IsValueShownAsLabel = true;
-            
-            chart2.Series[0].Points[0].Color = Color.SkyBlue;
-            chart2.Series[0].Points[1].Color = Color.Crimson;
+           
 
+            
         }
 
         private void ProjectManageBtn_Click(object sender, EventArgs e)
@@ -167,7 +227,7 @@ namespace UcasProWindowsForm.Forms.MainForm
         {
             this.Cursor = Cursors.WaitCursor;
 
-            Reports.ReportCommand.SalaryReportCmd cmd = new Reports.ReportCommand.SalaryReportCmd();
+            SalaryReportCmd cmd = new SalaryReportCmd();
             cmd.GetByProjectId(InformationsClass.ProjID);
             this.Cursor = Cursors.Default;
         }
@@ -180,9 +240,23 @@ namespace UcasProWindowsForm.Forms.MainForm
         private void ProjectRbtBtn_Click(object sender, EventArgs e)
         {
 
-            Reports.ReportCommand.ProjectReportCmd cmd = new Reports.ReportCommand.ProjectReportCmd();
+            ProjectReportCmd cmd = new ProjectReportCmd();
             cmd.GetByProjectId(InformationsClass.ProjID);
             
+        }
+
+        private void EditProjectBtn_Click(object sender, EventArgs e)
+        {
+            frmUserEditProject frm = new frmUserEditProject();
+            frm.ProId = InformationsClass.ProjID;
+            frm.ProjectNameTextBox .Text= ProjectNameTextBox.Text;
+            frm.ProjectDescriptionTextBox.Text = DescTextBox.Text;
+            frm.StartDateTimePicker.Text = StartDateTextBox.Text;
+            frm.EndDateTimePicker.Text = EndDateTextBox.Text;
+            frm.CoineDropDownList.Text = CoinTextBox.Text;
+            frm.TotalCostTextBox.Text = CostTextBox.Text;
+            frm.StatustextBox.Text = StatustextBox.Text;
+            frm.ShowDialog();
         }
     }
 }

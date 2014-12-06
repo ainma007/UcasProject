@@ -104,7 +104,7 @@
             this.ProjectCombo.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ProjectCombo.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // ProjectCombo.NestedRadGridView
             // 
             this.ProjectCombo.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.ProjectCombo.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -143,11 +143,13 @@
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(223, 121);
+            this.AddBtn.Image = global::UcasProWindowsForm.Properties.Resources.addadd;
+            this.AddBtn.Location = new System.Drawing.Point(223, 130);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(131, 53);
+            this.AddBtn.Size = new System.Drawing.Size(131, 37);
             this.AddBtn.TabIndex = 3;
             this.AddBtn.Text = "اضافة المستخدم";
+            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AddBtn.ThemeName = "TelerikMetro";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
@@ -200,7 +202,7 @@
             this.UserListComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.UserListComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // UserListComboBox.NestedRadGridView
             // 
             this.UserListComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.UserListComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;

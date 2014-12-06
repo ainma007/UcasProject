@@ -43,7 +43,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.AddBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.Refreshbtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.PrintBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -168,7 +168,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddBtn,
             this.toolStripSeparator1,
-            this.toolStripButton2,
+            this.Refreshbtn,
             this.toolStripSeparator2,
             this.PrintBtn,
             this.toolStripSeparator3});
@@ -193,14 +193,15 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
-            // toolStripButton2
+            // Refreshbtn
             // 
-            this.toolStripButton2.Image = global::UcasProWindowsForm.Properties.Resources.Refrech;
-            this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(117, 36);
-            this.toolStripButton2.Text = "تحديث السجلات";
+            this.Refreshbtn.Image = global::UcasProWindowsForm.Properties.Resources.Refrech;
+            this.Refreshbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.Refreshbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Refreshbtn.Name = "Refreshbtn";
+            this.Refreshbtn.Size = new System.Drawing.Size(117, 36);
+            this.Refreshbtn.Text = "تحديث السجلات";
+            this.Refreshbtn.Click += new System.EventHandler(this.Refreshbtn_Click);
             // 
             // toolStripSeparator2
             // 
@@ -292,7 +293,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton AddBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton Refreshbtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton PrintBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;

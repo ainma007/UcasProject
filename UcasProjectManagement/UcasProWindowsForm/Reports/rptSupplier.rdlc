@@ -6,25 +6,25 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.25646cm</Width>
+              <Width>1.32782cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.24083cm</Width>
+              <Width>3.31219cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.63229cm</Width>
+              <Width>2.70365cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.97083cm</Width>
+              <Width>2.33323cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.91792cm</Width>
+              <Width>2.33904cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.97625cm</Width>
+              <Width>3.14765cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.61667cm</Width>
+              <Width>4.68803cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -721,21 +721,57 @@
         </TablixRowHierarchy>
         <LayoutDirection>RTL</LayoutDirection>
         <DataSetName>SupplierDataSet</DataSetName>
-        <Top>2.24578cm</Top>
-        <Left>0.3175cm</Left>
+        <Top>1.9812cm</Top>
+        <Left>0.02646cm</Left>
         <Height>1.2cm</Height>
-        <Width>18.61125cm</Width>
+        <Width>19.85162cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox25">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>تقرير بأسماء الموردين</Value>
+                <Style>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox25</rd:DefaultName>
+        <Top>0.41438cm</Top>
+        <Left>5.46112cm</Left>
+        <Height>0.9175cm</Height>
+        <Width>9.72313cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>8.6281in</Width>
+  <Width>7.90935in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -759,7 +795,7 @@
     </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>0.5cm</LeftMargin>
+    <LeftMargin>0.3cm</LeftMargin>
     <RightMargin>0.5cm</RightMargin>
     <TopMargin>0.5cm</TopMargin>
     <BottomMargin>0.5cm</BottomMargin>

@@ -44,6 +44,7 @@
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.EmployeeComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Coinlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
@@ -64,6 +65,7 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.Coinlabel);
             this.radGroupBox1.Controls.Add(this.SaveBtn);
             this.radGroupBox1.Controls.Add(this.radLabel4);
             this.radGroupBox1.Controls.Add(this.ReleaseDateTimePicker);
@@ -147,7 +149,7 @@
             // radLabel10
             // 
             this.radLabel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel10.Location = new System.Drawing.Point(278, 68);
+            this.radLabel10.Location = new System.Drawing.Point(278, 66);
             this.radLabel10.Name = "radLabel10";
             this.radLabel10.Size = new System.Drawing.Size(36, 18);
             this.radLabel10.TabIndex = 18;
@@ -157,10 +159,10 @@
             // SalaryTextBox
             // 
             this.SalaryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SalaryTextBox.Location = new System.Drawing.Point(151, 66);
+            this.SalaryTextBox.Location = new System.Drawing.Point(195, 65);
             this.SalaryTextBox.Name = "SalaryTextBox";
             this.SalaryTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.SalaryTextBox.Size = new System.Drawing.Size(125, 22);
+            this.SalaryTextBox.Size = new System.Drawing.Size(81, 22);
             this.SalaryTextBox.TabIndex = 1;
             this.SalaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.SalaryTextBox.ThemeName = "TelerikMetro";
@@ -189,7 +191,7 @@
             this.EmployeeComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.EmployeeComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // EmployeeComboBox.NestedRadGridView
             // 
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -238,6 +240,15 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.RightToLeft = true;
             // 
+            // Coinlabel
+            // 
+            this.Coinlabel.ForeColor = System.Drawing.Color.Green;
+            this.Coinlabel.Location = new System.Drawing.Point(92, 66);
+            this.Coinlabel.Name = "Coinlabel";
+            this.Coinlabel.Size = new System.Drawing.Size(100, 19);
+            this.Coinlabel.TabIndex = 21;
+            this.Coinlabel.Text = "-";
+            // 
             // FrmSalaryMang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,6 +261,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعديل بيانات راتب";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmSalaryMang_Load);
@@ -287,5 +299,6 @@
         public Telerik.WinControls.UI.RadDateTimePicker FromonthDateTimePicker;
         public Telerik.WinControls.UI.RadTextBox SalaryTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label Coinlabel;
     }
 }

@@ -100,6 +100,17 @@ namespace Ucas.Data.CommandClass
          
         }
 
+      
+        public static List<ProjectSubActivity> GetAllSubActivitiesByMonth(int ProId)
+        {
+          db = new UcasProEntities();
+          var LST = (from A in db.ProjectSubActivities
+                     where A.ProjectProfile_ID == ProId && A.Startdate.Value.Month == DateTime.Now.Month 
+         select A).ToList();
+          return LST;
+
+        }
+
         public static List<ProjectSubActivity> GetAllSubActivitiesByProjectID(int ProID)
         {
             db = new UcasProEntities();

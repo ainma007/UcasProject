@@ -11,6 +11,7 @@ namespace Ucas.Data.CommandClass
     
         //==============================
       public static int ProjID;
+      public static string Coin;
         //=============================
       public static int AdminID;
 

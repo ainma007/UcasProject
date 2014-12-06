@@ -21,8 +21,8 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         }
         private void TotalAmount()
         {
-
-            GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("Cost", "المجموع الكلي   = {0}", GridAggregateFunction.Sum);
+            GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("Cost", "الاجمالي={0}" + InformationsClass.Coin + " ", GridAggregateFunction.Sum);
+            
             GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight });
             this.radGridView1.SummaryRowsBottom.Clear();
             this.radGridView1.SummaryRowsBottom.Add(summaryRowItem);
@@ -31,8 +31,12 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            Operation.BeginOperation(this);
+          
+
             FrmAddAmount Frm = new FrmAddAmount();
             Frm.ShowDialog();
+            Operation.EndOperation(this);
         }
 
         private void radGridView1_CommandCellClick(object sender, EventArgs e)

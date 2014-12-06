@@ -22,8 +22,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         }
         private void TotalExpenses()
         {
-
-            GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("RequiarAmount", "المجموع الكلي = {0}", GridAggregateFunction.Sum);
+            GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("RequiarAmount", "الاجمالي={0}" + InformationsClass.Coin + " ", GridAggregateFunction.Sum);
             GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem(new GridViewSummaryItem[] { summaryItemFreight });
             this.ExpensesGridView.SummaryRowsBottom.Clear();
             this.ExpensesGridView.SummaryRowsBottom.Add(summaryRowItem);
@@ -118,10 +117,10 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             FrmAddExpenses frm = new FrmAddExpenses();
             frm.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
         }
 
         private void RefrechBtn_Click(object sender, EventArgs e)

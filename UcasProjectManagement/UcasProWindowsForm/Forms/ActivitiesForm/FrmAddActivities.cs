@@ -95,7 +95,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         }
         private void FrmAddActivities_Load(object sender, EventArgs e)
         {
-
+            Coinlabel.Text = InformationsClass.Coin;
         }
 
         private void TotalCostTextBox_KeyPress(object sender, KeyPressEventArgs e)

@@ -9,20 +9,37 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
                 <Value>=First(Fields!ProjectName.Value, "DataSet1")</Value>
-                <Style />
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Center</TextAlign>
+              <TextAlign>Right</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ProjectName</rd:DefaultName>
-        <Top>0.44662cm</Top>
-        <Left>12.1412cm</Left>
-        <Height>0.6cm</Height>
-        <Width>5.14583cm</Width>
+        <Top>2.03412cm</Top>
+        <Left>9.54828cm</Left>
+        <Height>0.99688cm</Height>
+        <Width>8.55896cm</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -41,28 +58,33 @@
             <TextRuns>
               <TextRun>
                 <Value>اسم المشروع:</Value>
-                <Style />
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Center</TextAlign>
+              <TextAlign>Right</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.44662cm</Top>
-        <Left>17.39287cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Top>2.03412cm</Top>
+        <Left>18.02786cm</Left>
+        <Height>0.99688cm</Height>
+        <Width>2.42063cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
           </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
+          <Direction>RTL</Direction>
         </Style>
       </Textbox>
       <Tablix Name="Tablix1">
@@ -103,7 +125,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Expensess ID</Value>
+                              <Value>الرقم</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -137,7 +159,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Expensess Name</Value>
+                              <Value>اسم المصروف</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -171,7 +193,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Expensses Cost</Value>
+                              <Value>المبلغ</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -205,7 +227,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Date Ofs</Value>
+                              <Value>تاريخ العملية</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -239,7 +261,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Bill Serial Number</Value>
+                              <Value>رقم الفاتورة</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -273,7 +295,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cashing Number</Value>
+                              <Value>رقم سند الصرف</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -307,7 +329,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Sub Activity Name</Value>
+                              <Value>تابعة لنشاط </Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -661,7 +683,7 @@
         </TablixRowHierarchy>
         <LayoutDirection>RTL</LayoutDirection>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.92828cm</Top>
+        <Top>3.51578cm</Top>
         <Left>0.8712cm</Left>
         <Height>1.8cm</Height>
         <Width>19.89479cm</Width>
@@ -672,8 +694,41 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>تقرير بمصروفات المشروع</Value>
+                <Style>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>0.3937cm</Top>
+        <Left>8.02125cm</Left>
+        <Height>0.89104cm</Height>
+        <Width>6.23062cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>Silver</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>2.625in</Height>
     <Style />
   </Body>
   <Width>8.64409in</Width>

@@ -59,7 +59,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         {
             Thread th = new Thread(FillCombo);
             th.Start();
-         
+            Coinlabel.Text = InformationsClass.Coin;
         }
 
         private void AddBtn1_Click(object sender, EventArgs e)

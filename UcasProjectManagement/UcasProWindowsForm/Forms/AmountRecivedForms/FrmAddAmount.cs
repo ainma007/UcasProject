@@ -51,6 +51,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         private void FrmAddAmount_Load(object sender, EventArgs e)
         {
             FillCombo();
+            Coinlabel.Text = InformationsClass.Coin;
         }
 
         private void AddBtn_Click(object sender, EventArgs e)

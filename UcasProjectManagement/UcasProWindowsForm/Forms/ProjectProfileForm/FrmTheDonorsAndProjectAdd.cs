@@ -117,6 +117,7 @@ namespace UcasProWindowsForm.Forms.MainForm
         {
             Thread th = new Thread(fillDonorsCombo);
             th.Start();
+            Coinlabel.Text = InformationsClass.Coin;
         }
 
         private void CostTextBox_KeyPress(object sender, KeyPressEventArgs e)

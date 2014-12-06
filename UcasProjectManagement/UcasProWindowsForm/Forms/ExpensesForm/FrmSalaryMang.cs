@@ -61,6 +61,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         {
             Thread th = new Thread(FillCombo);
             th.Start();
+            Coinlabel.Text = InformationsClass.Coin;
             XSalaryID = Tragetsalary.ID;
             EmployeeComboBox.Text = Tragetsalary.Contract.Employee.EmployeeName;
             SalaryTextBox.Text = Tragetsalary.Amount.ToString();

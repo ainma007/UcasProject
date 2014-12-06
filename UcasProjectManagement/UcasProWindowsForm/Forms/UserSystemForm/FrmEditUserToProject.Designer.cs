@@ -147,7 +147,7 @@
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Image = global::UcasProWindowsForm.Properties.Resources.addadd;
+            this.SaveBtn.Image = global::UcasProWindowsForm.Properties.Resources.SaveChang;
             this.SaveBtn.Location = new System.Drawing.Point(198, 144);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(143, 41);

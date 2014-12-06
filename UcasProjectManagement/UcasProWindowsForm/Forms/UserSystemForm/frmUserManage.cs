@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Ucas.Data;
@@ -25,7 +26,34 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
         private void frmUserManage_Load(object sender, EventArgs e)
         {
-            UserGridView.DataSource = UsersCmd.GetAllUsers();
+            Thread th = new Thread(fillData);
+            th.Start();
+           
+        }
+
+        private void fillData()
+        {
+
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                StatusLabel1.Text = "جاري الانتظار.... ";
+
+            });
+            Operation.BeginOperation(this);
+
+            Application.DoEvents();
+            var q = UsersCmd.GetAllUsers();
+            Application.DoEvents();
+
+            Operation.EndOperation(this);
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                UserGridView.DataSource = q;
+                StatusLabel1.Text = "";
+
+            });
         }
 
         private void UserGridView_CommandCellClick(object sender, EventArgs e)
@@ -37,10 +65,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                  frmUserEdit frm= new frmUserEdit();
                  Ucas.Data.UserTb usr =( Ucas.Data.UserTb) UserGridView.CurrentRow.DataBoundItem;
                  frm.TragetUser = usr;
-                 //frm.XUserId = int.Parse(UserGridView.CurrentRow.Cells[0].Value.ToString());
-                 //frm.employeeNameTextBox.Text = UserGridView.CurrentRow.Cells[1].Value.ToString();
-                 //frm.UserNameTextBox.Text = UserGridView.CurrentRow.Cells[2].Value.ToString();
-                 //frm.PasswordTextBox.Text = UserGridView.CurrentRow.Cells[3].Value.ToString();
+                 
                  frm.ShowDialog();
                  frm.Dispose();
              }

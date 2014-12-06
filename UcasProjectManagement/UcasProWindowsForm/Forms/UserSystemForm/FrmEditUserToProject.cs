@@ -9,6 +9,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.Data;
 using Ucas.Data.CommandClass;
 using Ucas.Data;
+using System.Threading;
 
 namespace UcasProWindowsForm.Forms.UserSystemForm
 {
@@ -77,7 +78,8 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         }
         private void FrmEditUserToProject_Load(object sender, EventArgs e)
         {
-            FillComboBox();
+            Thread th = new Thread(FillComboBox);
+            th.Start();
             ProjectControlID = TragetProjectControl.ID;
             UserListComboBox.Text = TragetProjectControl.UserTb.Employee.EmployeeName.ToString();
             ProjectCombo.Text = TragetProjectControl.ProjectProfile.ProjectName;

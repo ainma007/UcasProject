@@ -130,7 +130,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         {
             Thread th = new Thread(FillEmployeeCombo);
             th.Start();
-            
+            Coinlabel.Text = InformationsClass.Coin;
+            Coinlabel2.Text = InformationsClass.Coin;
         }
 
         private void SalaryTextBox_KeyPress(object sender, KeyPressEventArgs e)

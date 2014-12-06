@@ -60,6 +60,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
         {
             Thread th = new Thread(fillDonorsCombo);
             th.Start();
+            Coinlabel.Text = InformationsClass.Coin;
             XDonrPro = TragetTheDonorsProject.ID;
             DonorsColumnComboBox.Text = TragetTheDonorsProject.TheDonor.Name;
             CostTextBox.Text = TragetTheDonorsProject.TotalCost.ToString();

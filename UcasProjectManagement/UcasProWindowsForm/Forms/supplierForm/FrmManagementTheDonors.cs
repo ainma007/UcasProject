@@ -58,10 +58,12 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
+            
+
             FrmAddTheTheDonors frm = new FrmAddTheTheDonors();
             frm.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
         }
 
         private void ReportBtn_Click(object sender, EventArgs e)
@@ -126,6 +128,11 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
             }
 
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            FrmManagementFinanciers_Load(sender, e);
         }
 
 

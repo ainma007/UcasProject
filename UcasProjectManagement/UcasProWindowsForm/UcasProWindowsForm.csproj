@@ -244,6 +244,12 @@
     <Compile Include="Forms\ProjectProfileForm\FrmTheDonorsAndProjectManage.Designer.cs">
       <DependentUpon>FrmTheDonorsAndProjectManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ProjectProfileForm\frmUserEditProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProjectProfileForm\frmUserEditProject.Designer.cs">
+      <DependentUpon>frmUserEditProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\supplierForm\FrmAddsupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -418,6 +424,9 @@
     <EmbeddedResource Include="Forms\ProjectProfileForm\FrmTheDonorsAndProjectManage.resx">
       <DependentUpon>FrmTheDonorsAndProjectManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectProfileForm\frmUserEditProject.resx">
+      <DependentUpon>frmUserEditProject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\supplierForm\FrmAddsupplier.resx">
       <DependentUpon>FrmAddsupplier.cs</DependentUpon>
     </EmbeddedResource>
@@ -541,9 +550,28 @@
     <None Include="Resources\AddEmp.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Supplier.png" />
+    <None Include="Resources\slary.png" />
     <None Include="Resources\7.png" />
+    <None Include="Resources\Acti.png" />
     <Content Include="Resources\Add.png" />
+    <None Include="Resources\Cost.png" />
+    <None Include="Resources\Amount.png" />
+    <None Include="Resources\Expen.png" />
+    <None Include="Resources\EditPro.png" />
+    <None Include="Resources\Attach.png" />
+    <None Include="Resources\Donors.png" />
+    <None Include="Resources\Contract.png" />
+    <None Include="Resources\Green.png" />
+    <None Include="Resources\Orange.png" />
+    <None Include="Resources\blue.png" />
+    <None Include="Resources\AddPro.png" />
+    <None Include="Resources\Emplyee.png" />
+    <None Include="Resources\Donorsadd.png" />
+    <None Include="Resources\EditSupp.png" />
+    <None Include="Resources\AddSupp.png" />
     <Content Include="Resources\Print.png" />
+    <None Include="Resources\Projects.png" />
     <Content Include="Resources\Refrech.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

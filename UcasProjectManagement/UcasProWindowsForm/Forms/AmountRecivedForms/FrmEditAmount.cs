@@ -117,8 +117,8 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         {
             Thread th = new Thread(FillCombo);
             th.Start();
-           // FillCombo();
-            XAmountID = TragetAmountsReceived.ID;
+            Coinlabel.Text = InformationsClass.Coin;
+             XAmountID = TragetAmountsReceived.ID;
             DonorsComboBox.Text = TragetAmountsReceived.TheDonorsProject.TheDonor.Name;
             DateOfProecssPicker.Text = TragetAmountsReceived.Date.ToString();
             CostTextBox.Text = TragetAmountsReceived.Cost.ToString();

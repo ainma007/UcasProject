@@ -62,6 +62,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         {
             Thread th = new Thread(FillComboBox);
             th.Start();
+            Coinlabel.Text = InformationsClass.Coin;
             XExpID = TragetExpens.ID;
             SubActivtiesComboBox.Text = TragetExpens.ProjectSubActivity.SubActivityName;
             ExpensesNameTextBox.Text = TragetExpens.ExpensesName;

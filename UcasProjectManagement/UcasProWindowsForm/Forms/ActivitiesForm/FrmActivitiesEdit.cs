@@ -24,6 +24,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void FrmActivitiesEdit_Load(object sender, EventArgs e)
         {
+            Coinlabel.Text = InformationsClass.Coin;
             xID=TragetActivity.ID;
             ActivitiesNameTextBox.Text = TragetActivity.ActivityName;
             ActivitiesDescriptionTextBox.Text = TragetActivity.Description;
