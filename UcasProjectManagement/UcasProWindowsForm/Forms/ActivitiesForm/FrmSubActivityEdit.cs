@@ -38,14 +38,26 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             
 
         
-          this.Invoke((MethodInvoker)delegate {
+             this.Invoke((MethodInvoker)delegate {
             ActivitiesColumnComboBox.DataSource = q;
             FilterDescriptor filter = new FilterDescriptor();
             filter.PropertyName = this.ActivitiesColumnComboBox.DisplayMember;
             filter.Operator = FilterOperator.Contains;
             this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
 
-
+           
+            Coinlabel.Text = InformationsClass.Coin;
+            SubXid = TragetSUBActivity.ID;
+            ActivitiesColumnComboBox.Text = TragetSUBActivity.ProjectActivity.ActivityName;
+            SubActivitiesNameTextBox.Text = TragetSUBActivity.SubActivityName;
+            SubActivitiesDescriptionTextBox.Text = TragetSUBActivity.Description;
+            StartDateTimePicker.Text = TragetSUBActivity.Startdate.ToString();
+            EndDateTimePicker.Text = TragetSUBActivity.enddate.ToString();
+            StatusDropDownList.Text = TragetSUBActivity.Status;
+            TotalCostTextBox.Text = TragetSUBActivity.TotalCost.ToString();
+            ProgressEditor.Value = int.Parse(TragetSUBActivity.Progress.ToString());
+            ProgressEditor.Maximum = 100;
+            ProgressEditor.Minimum = 0;
           
           });
 
@@ -59,18 +71,6 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         {
             Thread th = new Thread(FillActivty);
             th.Start();
-            Coinlabel.Text = InformationsClass.Coin;
-            SubXid = TragetSUBActivity.ID;
-            ActivitiesColumnComboBox.Text=TragetSUBActivity.ProjectActivity.ActivityName;
-            SubActivitiesNameTextBox.Text = TragetSUBActivity.SubActivityName;
-            SubActivitiesDescriptionTextBox.Text = TragetSUBActivity.Description;
-            StartDateTimePicker.Text = TragetSUBActivity.Startdate.ToString();
-            EndDateTimePicker.Text = TragetSUBActivity.enddate.ToString();
-            StatusDropDownList.Text = TragetSUBActivity.Status;
-            TotalCostTextBox.Text = TragetSUBActivity.TotalCost.ToString();
-            ProgressEditor.Value = int.Parse(TragetSUBActivity.Progress.ToString());
-            ProgressEditor.Maximum = 100;
-            ProgressEditor.Minimum = 0;
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)

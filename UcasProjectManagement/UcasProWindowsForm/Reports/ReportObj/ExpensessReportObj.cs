@@ -17,6 +17,7 @@ namespace UcasProWindowsForm.Reports.ReportObj
         public string  ProjectName { get; set; }
         public DateTime   DateOfs { get; set; }
         public string  coin { get; set; }
+        public string SupplierName { get; set; }
 
     }
 }

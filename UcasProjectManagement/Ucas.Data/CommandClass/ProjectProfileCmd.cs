@@ -19,10 +19,15 @@ namespace Ucas.Data.CommandClass
                        select p).ToList();
             return lst;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                
-                throw new Exception() ;
+
+                Xprema.XpremaException e = new Xprema.XpremaException();
+                e.CodeNumber = 6;
+                e.OtherDescription = ex.InnerException.InnerException.Message;
+                e.UserDescription = "Error in Add";
+                e.UserDescriptionArabic = "خطاء في اضافة البيانات";
+                throw e;
             }
         }
 
@@ -50,6 +55,7 @@ namespace Ucas.Data.CommandClass
                 q.EndDate = ptb.EndDate;
                 q.Status = ptb.Status;
                 q.Coin = ptb.Coin;
+                q.TotalCost = ptb.TotalCost;
                
                 db.SaveChanges();
                 return true;
@@ -59,7 +65,12 @@ namespace Ucas.Data.CommandClass
             {
 
 
-                return false;
+                Xprema.XpremaException e = new Xprema.XpremaException();
+                e.CodeNumber = 6;
+                e.OtherDescription = ex.InnerException.InnerException.Message;
+                e.UserDescription = "Error in Add";
+                e.UserDescriptionArabic = "خطاء في اضافة البيانات";
+                throw e;
             }
         }
 

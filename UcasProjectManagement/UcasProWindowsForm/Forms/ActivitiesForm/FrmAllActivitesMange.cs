@@ -186,11 +186,11 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void ActivitiesGridView_CellFormatting(object sender, CellFormattingEventArgs e)
         {
-            Font newFont = new Font("Tahoma", 10f, FontStyle.Bold);
+            Font newFont = new Font("Times New Roman", 12f, FontStyle.Bold);
 
             if (e.CellElement.ColumnInfo.Name == "ActivityName")
             {
-                e.CellElement.ForeColor = Color.DeepSkyBlue;
+                e.CellElement.ForeColor = Color.DarkSlateBlue;
                 e.CellElement.Font = newFont;
 
             }
@@ -198,7 +198,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
             if (e.CellElement.ColumnInfo.Name == "ActivityDescription")
             {
-                e.CellElement.ForeColor = Color.DeepSkyBlue;
+                e.CellElement.ForeColor = Color.DarkSlateBlue;
                 e.CellElement.Font = newFont;
 
             }
@@ -206,7 +206,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
             if (e.CellElement.ColumnInfo.Name == "ActivityStartDate")
             {
-                e.CellElement.ForeColor = Color.DeepSkyBlue;
+                e.CellElement.ForeColor = Color.DarkSlateBlue;
                 e.CellElement.Font = newFont;
 
             }
@@ -214,21 +214,21 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             //
             if (e.CellElement.ColumnInfo.Name == "ActivityEndDate")
             {
-                e.CellElement.ForeColor = Color.DeepSkyBlue;
+                e.CellElement.ForeColor = Color.DarkSlateBlue;
                 e.CellElement.Font = newFont;
 
             }
             //
             if (e.CellElement.ColumnInfo.Name == "ActivityStatus")
             {
-                e.CellElement.ForeColor = Color.DeepSkyBlue;
+                e.CellElement.ForeColor = Color.DarkSlateBlue;
                 e.CellElement.Font = newFont;
 
             }
             //
             if (e.CellElement.ColumnInfo.Name == "ActivityProgress")
             {
-                e.CellElement.ForeColor = Color.DeepSkyBlue;
+                e.CellElement.ForeColor = Color.DarkSlateBlue;
                 e.CellElement.Font = newFont;
 
             }
@@ -242,14 +242,14 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 }
                 else
                 {
-                    e.CellElement.ForeColor = Color.DeepSkyBlue;
+                    e.CellElement.ForeColor = Color.DarkSlateBlue;
                     e.CellElement.Font = newFont;
                 }
         }
 
             if (e.CellElement.ColumnInfo.Name == "ActivityTotalCost")
             {
-                e.CellElement.ForeColor = Color.DeepSkyBlue;
+                e.CellElement.ForeColor = Color.DarkSlateBlue;
                 e.CellElement.Font = newFont;
 
             }
@@ -266,6 +266,11 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             
             FrmAllActivitesMange_Load(sender, e);
           
+        }
+
+        private void PrintBtn_Click(object sender, EventArgs e)
+        {
+            this.ActivitiesGridView.PrintPreview();
         }
 
      

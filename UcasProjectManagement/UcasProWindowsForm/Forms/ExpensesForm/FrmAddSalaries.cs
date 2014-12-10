@@ -95,26 +95,33 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 errorProvider1.Clear();
             }
             #endregion
-
-            Operation.BeginOperation(this);
-         
-
-            Monthlysalary tb = new Monthlysalary
+            try
             {
-                ProjectProfile_ID= InformationsClass.ProjID,
-                ContractID=int.Parse(EmployeeComboBox.SelectedValue.ToString()),
-                Formonth = FromonthDateTimePicker.Value.Date,
-                IssueDate = ReleaseDateTimePicker.Value.Date,
-                Amount = Convert.ToDouble(SalaryTextBox.Text)
+                Operation.BeginOperation(this);
 
-            };
-            SalariesCmd.NewSalary(tb);
-            Operation.EndOperation(this);
-            RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
-            ClearText();
+
+                Monthlysalary tb = new Monthlysalary
+                {
+                    ProjectProfile_ID = InformationsClass.ProjID,
+                    ContractID = int.Parse(EmployeeComboBox.SelectedValue.ToString()),
+                    Formonth = FromonthDateTimePicker.Value.Date,
+                    IssueDate = ReleaseDateTimePicker.Value.Date,
+                    Amount = Convert.ToDouble(SalaryTextBox.Text)
+
+                };
+                SalariesCmd.NewSalary(tb);
+                Operation.EndOperation(this);
+                RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                ClearText();
+            }
+
+            catch (Xprema.XpremaException ex)
+            {
+                Operation.EndOperation(this);
+                RadMessageBox.Show(ex.OtherDescription, "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+            }
         }
-
-
         private void ClearText()
         {
             EmployeeComboBox.ResetText();

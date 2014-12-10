@@ -74,24 +74,27 @@ namespace UcasProWindowsForm.Forms.MainForm
 
                 }
                 ////AcounttextFill
-                this.TotalExpensesTextBox.Text = TotalExpenses;
-                this.TotalSalayTextBox.Text = TotalSalary;
-                this.AmountRecvTextBox.Text = TotalAmountRecv;
-                decimal val1 = Convert.ToDecimal(TotalExpensesTextBox.Text);
-                decimal val2 = Convert.ToDecimal(TotalSalayTextBox.Text);
+               
+            //    decimal val4 = decimal.Parse(AmountRecvTextBox.Text);
 
-                decimal val3 = val1 + val2;
-                decimal val4 = Convert.ToDecimal(AmountRecvTextBox.Text);
-                RemainingTextBox.Text = (val4 - val3).ToString();
+                 decimal Salary = decimal.Parse(TotalSalary);
+                 decimal Expenses = decimal.Parse(TotalExpenses);
+                 decimal AmountRecv = decimal.Parse(TotalAmountRecv);
+                 decimal TotalExp = Salary + Expenses;
+
+                ////
+                 this.TotalExpensesTextBox.Text = TotalExp.ToString();
+                 this.AmountRecvTextBox.Text = AmountRecv.ToString();
+                 RemainingTextBox.Text = (AmountRecv - TotalExp).ToString();
                 chart1.Series[0].Points.Clear();
                 chart1.Titles.Clear();
-                chart1.Series[0].Points.AddXY("اجمالي الايرادات", val4);
-                chart1.Series[0].Points.AddXY("اجمالي المصاريف", val1);
-                chart1.Series[0].Points.AddXY("اجمالي الرواتب", val2);
+                chart1.Series[0].Points.AddXY("موازنة المشروع", CostTextBox.Text);
+                chart1.Series[0].Points.AddXY("اجمالي المبالغ المستلمة ", AmountRecv);
+                chart1.Series[0].Points.AddXY("اجمالي المصاريف", TotalExp);
                 chart1.Series[0].Points.AddXY("المتبقي من الرصيد", RemainingTextBox.Text);
                 chart1.Titles.Add("مخطط موجز الحسابات للمشروع");
-                chart1.Series[0].Points[0].Color = Color.YellowGreen;
-                chart1.Series[0].Points[1].Color = Color.Red;
+                chart1.Series[0].Points[0].Color = Color.Blue;
+                chart1.Series[0].Points[1].Color = Color.YellowGreen;
                 chart1.Series[0].Points[2].Color = Color.Red;
                 chart1.Series[0].Points[3].Color = Color.YellowGreen;
 
@@ -111,7 +114,7 @@ namespace UcasProWindowsForm.Forms.MainForm
 
                 label1.Text = InformationsClass.Coin;
                 label2.Text = InformationsClass.Coin;
-                label3.Text = InformationsClass.Coin;
+               
                 label4.Text = InformationsClass.Coin;
 
                 StatusLabel1.Text = "";
@@ -199,10 +202,10 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void AmountRrecvBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             FrmMangeAmount frm = new FrmMangeAmount();
             frm.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
         }
 
         private void Expenseslbl_Click(object sender, EventArgs e)
@@ -217,19 +220,18 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void Expenses_Rbt_btn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             Reports.ReportCommand.ExpensessReportCmd cmd = new Reports.ReportCommand.ExpensessReportCmd();
             cmd.GetByProjectId(InformationsClass.ProjID);
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
         }
 
         private void Salary_rbt_btn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
-
-            SalaryReportCmd cmd = new SalaryReportCmd();
+            Operation.BeginOperation(this);
+             SalaryReportCmd cmd = new SalaryReportCmd();
             cmd.GetByProjectId(InformationsClass.ProjID);
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
         }
 
         private void RefreshBtn_Click(object sender, EventArgs e)
@@ -239,10 +241,13 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void ProjectRbtBtn_Click(object sender, EventArgs e)
         {
+            Operation.BeginOperation(this);
 
             ProjectReportCmd cmd = new ProjectReportCmd();
+           
             cmd.GetByProjectId(InformationsClass.ProjID);
-            
+            Operation.EndOperation(this);
+
         }
 
         private void EditProjectBtn_Click(object sender, EventArgs e)
@@ -257,6 +262,24 @@ namespace UcasProWindowsForm.Forms.MainForm
             frm.TotalCostTextBox.Text = CostTextBox.Text;
             frm.StatustextBox.Text = StatustextBox.Text;
             frm.ShowDialog();
+        }
+
+        private void ContractRbtBtn_Click(object sender, EventArgs e)
+        {
+            Operation.BeginOperation(this);
+
+            ContractReportCmd cmd = new ContractReportCmd();
+
+            cmd.GetRptContractByProjectId(InformationsClass.ProjID);
+            Operation.EndOperation(this);
+        }
+
+        private void AmountRecvRptBtn_Click(object sender, EventArgs e)
+        {
+            Operation.BeginOperation(this);
+            AmountRecvReportCmd cmd = new AmountRecvReportCmd();
+            cmd.GetRptAmountRecvByProjectId(InformationsClass.ProjID);
+            Operation.EndOperation(this);
         }
     }
 }

@@ -509,6 +509,7 @@
             this.PrintBtn.Name = "PrintBtn";
             this.PrintBtn.Size = new System.Drawing.Size(99, 36);
             this.PrintBtn.Text = "طباعة تقرير";
+            this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
             // 
             // toolStripSeparator3
             // 
@@ -572,6 +573,7 @@
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "FrmAllActivitesMange";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 

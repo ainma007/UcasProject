@@ -68,11 +68,11 @@
             this.ProjectRbtBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.FinanMangBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContractRbtBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.تقريررواتبالموظفينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.تقريرالمبالغالمستملةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExpensessRbtBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.SalaryRbtBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.AmountRecvRptBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
@@ -93,14 +93,11 @@
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radGroupBox2 = new Telerik.WinControls.UI.RadGroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.RemainingTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.TotalSalayTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.TotalExpensesTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
             this.AmountRecvTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
@@ -132,9 +129,7 @@
             this.radGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RemainingTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TotalSalayTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalExpensesTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountRecvTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
@@ -306,11 +301,11 @@
             this.ProjectRbtBtn,
             this.FinanMangBtn,
             this.toolStripSeparator2,
-            this.toolStripMenuItem2,
+            this.ContractRbtBtn,
             this.toolStripSeparator8,
-            this.toolStripMenuItem3,
-            this.تقريررواتبالموظفينToolStripMenuItem,
-            this.تقريرالمبالغالمستملةToolStripMenuItem});
+            this.ExpensessRbtBtn,
+            this.SalaryRbtBtn,
+            this.AmountRecvRptBtn});
             this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
             this.toolStripDropDownButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -320,58 +315,58 @@
             // 
             // ProjectRbtBtn
             // 
-            this.ProjectRbtBtn.Image = ((System.Drawing.Image)(resources.GetObject("ProjectRbtBtn.Image")));
             this.ProjectRbtBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ProjectRbtBtn.Name = "ProjectRbtBtn";
-            this.ProjectRbtBtn.Size = new System.Drawing.Size(198, 38);
+            this.ProjectRbtBtn.Size = new System.Drawing.Size(182, 22);
             this.ProjectRbtBtn.Text = "تقرير المشروع";
             this.ProjectRbtBtn.Click += new System.EventHandler(this.ProjectRbtBtn_Click);
             // 
             // FinanMangBtn
             // 
-            this.FinanMangBtn.Image = ((System.Drawing.Image)(resources.GetObject("FinanMangBtn.Image")));
             this.FinanMangBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.FinanMangBtn.Name = "FinanMangBtn";
-            this.FinanMangBtn.Size = new System.Drawing.Size(198, 38);
+            this.FinanMangBtn.Size = new System.Drawing.Size(182, 22);
             this.FinanMangBtn.Text = "تقرير الانشطة";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(195, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(179, 6);
             // 
-            // toolStripMenuItem2
+            // ContractRbtBtn
             // 
-            this.toolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem2.Image")));
-            this.toolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(198, 38);
-            this.toolStripMenuItem2.Text = "تقرير عقود المشروع";
+            this.ContractRbtBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ContractRbtBtn.Name = "ContractRbtBtn";
+            this.ContractRbtBtn.Size = new System.Drawing.Size(182, 22);
+            this.ContractRbtBtn.Text = "تقرير عقود المشروع";
+            this.ContractRbtBtn.Click += new System.EventHandler(this.ContractRbtBtn_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(195, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(179, 6);
             // 
-            // toolStripMenuItem3
+            // ExpensessRbtBtn
             // 
-            this.toolStripMenuItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem3.Image")));
-            this.toolStripMenuItem3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(198, 38);
-            this.toolStripMenuItem3.Text = "تقرير المصروفات";
+            this.ExpensessRbtBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ExpensessRbtBtn.Name = "ExpensessRbtBtn";
+            this.ExpensessRbtBtn.Size = new System.Drawing.Size(182, 22);
+            this.ExpensessRbtBtn.Text = "تقرير المصروفات";
+            this.ExpensessRbtBtn.Click += new System.EventHandler(this.Expenses_Rbt_btn_Click);
             // 
-            // تقريررواتبالموظفينToolStripMenuItem
+            // SalaryRbtBtn
             // 
-            this.تقريررواتبالموظفينToolStripMenuItem.Name = "تقريررواتبالموظفينToolStripMenuItem";
-            this.تقريررواتبالموظفينToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
-            this.تقريررواتبالموظفينToolStripMenuItem.Text = "تقرير رواتب الموظفين";
+            this.SalaryRbtBtn.Name = "SalaryRbtBtn";
+            this.SalaryRbtBtn.Size = new System.Drawing.Size(182, 22);
+            this.SalaryRbtBtn.Text = "تقرير رواتب الموظفين";
+            this.SalaryRbtBtn.Click += new System.EventHandler(this.Salary_rbt_btn_Click);
             // 
-            // تقريرالمبالغالمستملةToolStripMenuItem
+            // AmountRecvRptBtn
             // 
-            this.تقريرالمبالغالمستملةToolStripMenuItem.Name = "تقريرالمبالغالمستملةToolStripMenuItem";
-            this.تقريرالمبالغالمستملةToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
-            this.تقريرالمبالغالمستملةToolStripMenuItem.Text = "تقرير المبالغ المستملة";
+            this.AmountRecvRptBtn.Name = "AmountRecvRptBtn";
+            this.AmountRecvRptBtn.Size = new System.Drawing.Size(182, 22);
+            this.AmountRecvRptBtn.Text = "تقرير المبالغ المستملة";
+            this.AmountRecvRptBtn.Click += new System.EventHandler(this.AmountRecvRptBtn_Click);
             // 
             // toolStripSeparator5
             // 
@@ -619,14 +614,11 @@
             // 
             this.radGroupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox2.Controls.Add(this.label4);
-            this.radGroupBox2.Controls.Add(this.label3);
             this.radGroupBox2.Controls.Add(this.label2);
             this.radGroupBox2.Controls.Add(this.label1);
             this.radGroupBox2.Controls.Add(this.chart1);
             this.radGroupBox2.Controls.Add(this.RemainingTextBox);
-            this.radGroupBox2.Controls.Add(this.TotalSalayTextBox);
             this.radGroupBox2.Controls.Add(this.TotalExpensesTextBox);
-            this.radGroupBox2.Controls.Add(this.radLabel9);
             this.radGroupBox2.Controls.Add(this.radLabel8);
             this.radGroupBox2.Controls.Add(this.AmountRecvTextBox);
             this.radGroupBox2.Controls.Add(this.radLabel13);
@@ -645,29 +637,18 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Green;
-            this.label4.Location = new System.Drawing.Point(853, 144);
+            this.label4.Location = new System.Drawing.Point(834, 123);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 21);
             this.label4.TabIndex = 22;
             this.label4.Text = "-";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Green;
-            this.label3.Location = new System.Drawing.Point(853, 111);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 21);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "-";
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Green;
-            this.label2.Location = new System.Drawing.Point(853, 78);
+            this.label2.Location = new System.Drawing.Point(834, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 21);
             this.label2.TabIndex = 20;
@@ -678,7 +659,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Green;
-            this.label1.Location = new System.Drawing.Point(853, 43);
+            this.label1.Location = new System.Drawing.Point(834, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 21);
             this.label1.TabIndex = 10;
@@ -717,7 +698,7 @@
             this.RemainingTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RemainingTextBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RemainingTextBox.ForeColor = System.Drawing.Color.Purple;
-            this.RemainingTextBox.Location = new System.Drawing.Point(937, 144);
+            this.RemainingTextBox.Location = new System.Drawing.Point(918, 123);
             this.RemainingTextBox.Name = "RemainingTextBox";
             this.RemainingTextBox.ReadOnly = true;
             this.RemainingTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -726,26 +707,12 @@
             this.RemainingTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.RemainingTextBox.ThemeName = "TelerikMetro";
             // 
-            // TotalSalayTextBox
-            // 
-            this.TotalSalayTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TotalSalayTextBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalSalayTextBox.ForeColor = System.Drawing.Color.Red;
-            this.TotalSalayTextBox.Location = new System.Drawing.Point(937, 111);
-            this.TotalSalayTextBox.Name = "TotalSalayTextBox";
-            this.TotalSalayTextBox.ReadOnly = true;
-            this.TotalSalayTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TotalSalayTextBox.Size = new System.Drawing.Size(132, 21);
-            this.TotalSalayTextBox.TabIndex = 17;
-            this.TotalSalayTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.TotalSalayTextBox.ThemeName = "TelerikMetro";
-            // 
             // TotalExpensesTextBox
             // 
             this.TotalExpensesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TotalExpensesTextBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalExpensesTextBox.ForeColor = System.Drawing.Color.Red;
-            this.TotalExpensesTextBox.Location = new System.Drawing.Point(937, 77);
+            this.TotalExpensesTextBox.Location = new System.Drawing.Point(918, 85);
             this.TotalExpensesTextBox.Name = "TotalExpensesTextBox";
             this.TotalExpensesTextBox.ReadOnly = true;
             this.TotalExpensesTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -755,24 +722,12 @@
             this.TotalExpensesTextBox.ThemeName = "TelerikMetro";
             this.TotalExpensesTextBox.UseGenericBorderPaint = true;
             // 
-            // radLabel9
-            // 
-            this.radLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel9.ForeColor = System.Drawing.Color.Red;
-            this.radLabel9.Location = new System.Drawing.Point(1075, 113);
-            this.radLabel9.Name = "radLabel9";
-            this.radLabel9.Size = new System.Drawing.Size(94, 22);
-            this.radLabel9.TabIndex = 16;
-            this.radLabel9.Text = "اجمالي الرواتب:";
-            this.radLabel9.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            // 
             // radLabel8
             // 
             this.radLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel8.ForeColor = System.Drawing.Color.Blue;
-            this.radLabel8.Location = new System.Drawing.Point(1075, 144);
+            this.radLabel8.Location = new System.Drawing.Point(1056, 123);
             this.radLabel8.Name = "radLabel8";
             this.radLabel8.Size = new System.Drawing.Size(112, 22);
             this.radLabel8.TabIndex = 13;
@@ -784,7 +739,7 @@
             this.AmountRecvTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AmountRecvTextBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AmountRecvTextBox.ForeColor = System.Drawing.Color.Blue;
-            this.AmountRecvTextBox.Location = new System.Drawing.Point(937, 43);
+            this.AmountRecvTextBox.Location = new System.Drawing.Point(918, 43);
             this.AmountRecvTextBox.Name = "AmountRecvTextBox";
             this.AmountRecvTextBox.ReadOnly = true;
             this.AmountRecvTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -798,7 +753,7 @@
             this.radLabel13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel13.ForeColor = System.Drawing.Color.Red;
-            this.radLabel13.Location = new System.Drawing.Point(1075, 77);
+            this.radLabel13.Location = new System.Drawing.Point(1056, 85);
             this.radLabel13.Name = "radLabel13";
             this.radLabel13.Size = new System.Drawing.Size(115, 22);
             this.radLabel13.TabIndex = 2;
@@ -810,11 +765,11 @@
             this.radLabel14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel14.ForeColor = System.Drawing.Color.Green;
-            this.radLabel14.Location = new System.Drawing.Point(1082, 45);
+            this.radLabel14.Location = new System.Drawing.Point(1063, 45);
             this.radLabel14.Name = "radLabel14";
-            this.radLabel14.Size = new System.Drawing.Size(95, 22);
+            this.radLabel14.Size = new System.Drawing.Size(138, 22);
             this.radLabel14.TabIndex = 0;
-            this.radLabel14.Text = "إجمالي الايرادات";
+            this.radLabel14.Text = "اجمالي المبالغ المستملة:";
             this.radLabel14.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
             // radGridView1
@@ -998,9 +953,7 @@
             this.radGroupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RemainingTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TotalSalayTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalExpensesTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountRecvTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
@@ -1034,8 +987,8 @@
         private System.Windows.Forms.ToolStripMenuItem ProjectRbtBtn;
         private System.Windows.Forms.ToolStripMenuItem FinanMangBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem ContractRbtBtn;
+        private System.Windows.Forms.ToolStripMenuItem ExpensessRbtBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem TheDonorsAndProjectManageBtn;
@@ -1043,8 +996,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem SalaryBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        private System.Windows.Forms.ToolStripMenuItem تقريررواتبالموظفينToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem تقريرالمبالغالمستملةToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SalaryRbtBtn;
+        private System.Windows.Forms.ToolStripMenuItem AmountRecvRptBtn;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         public Telerik.WinControls.UI.RadTextBox CoinTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel6;
@@ -1061,9 +1014,7 @@
         private Telerik.WinControls.UI.RadGroupBox radGroupBox2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         public Telerik.WinControls.UI.RadTextBox RemainingTextBox;
-        public Telerik.WinControls.UI.RadTextBox TotalSalayTextBox;
         public Telerik.WinControls.UI.RadTextBox TotalExpensesTextBox;
-        private Telerik.WinControls.UI.RadLabel radLabel9;
         private Telerik.WinControls.UI.RadLabel radLabel8;
         public Telerik.WinControls.UI.RadTextBox AmountRecvTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel13;
@@ -1071,7 +1022,6 @@
         private System.Windows.Forms.ToolStripButton RefreshBtn;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Telerik.WinControls.UI.RadGridView radGridView1;

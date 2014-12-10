@@ -104,27 +104,36 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 errorProvider1.Clear();
             }
             #endregion
-            if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
-
+           
+                if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                { 
+                    try
             {
-                Operation.BeginOperation(this);
-                Monthlysalary tb = new Monthlysalary()
-                {
-                    ID = XSalaryID,
-                    ContractID = int.Parse(EmployeeComboBox.SelectedValue.ToString()),
-                    Amount = Convert.ToDouble(SalaryTextBox.Text),
-                    Formonth = FromonthDateTimePicker.Value.Date,
-                    IssueDate = ReleaseDateTimePicker.Value.Date,
+                    Operation.BeginOperation(this);
+                    Monthlysalary tb = new Monthlysalary()
+                    {
+                        ID = XSalaryID,
+                        ContractID = int.Parse(EmployeeComboBox.SelectedValue.ToString()),
+                        Amount = Convert.ToDouble(SalaryTextBox.Text),
+                        Formonth = FromonthDateTimePicker.Value.Date,
+                        IssueDate = ReleaseDateTimePicker.Value.Date,
 
 
-                };
-                SalariesCmd.EditSalary(tb);
-                Operation.EndOperation(this);
-                RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
-                this.Close();
+                    };
+                    SalariesCmd.EditSalary(tb);
+                    Operation.EndOperation(this);
+                    RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    this.Close();
             }
-        }
+                    catch (Xprema.XpremaException ex)
+                    {
+                        Operation.EndOperation(this);
+                        RadMessageBox.Show(ex.OtherDescription, "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
 
+                    }
+            }
+           
+        }
         private void SalaryTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;

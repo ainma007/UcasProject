@@ -70,8 +70,9 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
             #endregion
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
-
+                
                         {
+                            try { 
                             Operation.BeginOperation(this);
                            
 
@@ -94,6 +95,14 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                               
                             this.Close();
                         }
+                            catch (Xprema.XpremaException ex)
+                            {
+                                Operation.EndOperation(this);
+                                RadMessageBox.Show(ex.OtherDescription, "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+                            }
+        }
+            
         }
 
         private void FillEmployeeCombo()

@@ -30,7 +30,8 @@ namespace UcasProWindowsForm.Forms.MainForm
 
 
         {
-            projectProfileBindingSource.DataSource = ProjectProfileCmd.GetAllProjects();
+
+            radGridView1.DataSource = ProjectProfileCmd.GetAllProjects();
            
         }
 

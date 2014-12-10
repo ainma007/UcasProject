@@ -6,7 +6,6 @@ using Microsoft.Reporting.WinForms;
 using UcasProWindowsForm.Reports.ReportObj;
 using UcasProWindowsForm.Reports;
 using Ucas.Data.CommandClass;
-using UcasProWindowsForm.Reports.ReportObj;
 namespace UcasProWindowsForm.Reports.ReportCommand
   
 {
@@ -33,7 +32,8 @@ namespace UcasProWindowsForm.Reports.ReportCommand
                    Bill_SerialNumber = item.BillNumber,
                    CashingNumber = item.CashingNumber,
                    SubActivityName = item.ProjectSubActivity.SubActivityName,
-                   coin=item.ProjectProfile.Coin
+                   coin=item.ProjectProfile.Coin,
+                   SupplierName=item.Supplier.Name
                }); 
            }
            rs.Name = "DataSet1";
@@ -45,6 +45,19 @@ namespace UcasProWindowsForm.Reports.ReportCommand
            frm.ShowDialog();
 
 
+       }
+
+
+       public void ShowReportByGrid(List<ExpensessReportObj> ls)
+       {
+           ReportDataSource rs = new ReportDataSource();
+           rs.Name = "DataSet1";
+           rs.Value = ls;
+           frmReportViewer frm = new frmReportViewer();
+           frm.reportViewer1.LocalReport.DataSources.Clear();
+           frm.reportViewer1.LocalReport.DataSources.Add(rs);
+           frm.reportViewer1.LocalReport.ReportEmbeddedResource = "UcasProWindowsForm.Reports.rptExpensess.rdlc";
+           frm.ShowDialog();
        }
     }
 }

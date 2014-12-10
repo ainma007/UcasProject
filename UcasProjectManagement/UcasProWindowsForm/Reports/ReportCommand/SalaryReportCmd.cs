@@ -32,15 +32,16 @@ namespace UcasProWindowsForm.Reports.ReportCommand
                    SalaryIssueDate = item.IssueDate.Value,
                    SalaryForMonth = item.Formonth.Value,
                    coin=item.ProjectProfile.Coin,
+                   EmployeejobNumber=item.Contract.Employee.EmployeeName
                   
                }); 
            }
-           rs.Name = "SalaryDataSet";
+           rs.Name = "DataSet1";
            rs.Value = ls;
            frmReportViewer frm = new frmReportViewer();
            frm.reportViewer1.LocalReport.DataSources.Clear();
            frm.reportViewer1.LocalReport.DataSources.Add(rs);
-           frm.reportViewer1.LocalReport.ReportEmbeddedResource = "UcasProWindowsForm.Reports.rptSalary.rdlc";
+           frm.reportViewer1.LocalReport.ReportEmbeddedResource = "UcasProWindowsForm.Reports.rptSalaryGroupby.rdlc";
            frm.ShowDialog();
 
 

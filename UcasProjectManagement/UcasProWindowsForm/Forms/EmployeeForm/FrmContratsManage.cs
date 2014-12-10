@@ -119,7 +119,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         }
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
-            FillData();
+            FrmContratsManage_Load(sender, e);
         }
 
         private void FrmContratsManage_Activated(object sender, EventArgs e)

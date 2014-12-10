@@ -60,11 +60,11 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.WinControls, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.GridView, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.Themes.TelerikMetro, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.UI, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="TelerikCommon, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls, Version=2014.3.1202.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2014.3.1202.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetro, Version=2014.3.1202.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2014.3.1202.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2014.3.1202.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Xprema">
       <HintPath>..\..\..\..\..\Desktop\Rec\xprema frame work\Debug\Xprema.dll</HintPath>
     </Reference>
@@ -325,12 +325,16 @@
     <Compile Include="Reports\frmReportViewer.Designer.cs">
       <DependentUpon>frmReportViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ReportCommand\AmountRecvReportCmd.cs" />
+    <Compile Include="Reports\ReportCommand\ContractReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\DonorsReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\EmployeeReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\ExpensessReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\ProjectReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\SalaryReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\SupplierReportCmd.cs" />
+    <Compile Include="Reports\ReportObj\AmountRecvtReportObj.cs" />
+    <Compile Include="Reports\ReportObj\ContractReportObj.cs" />
     <Compile Include="Reports\ReportObj\DonaorReportObj.cs" />
     <Compile Include="Reports\ReportObj\EmployeeReportObj.cs" />
     <Compile Include="Reports\ReportObj\ExpensessReportObj.cs" />
@@ -473,6 +477,8 @@
     <EmbeddedResource Include="Reports\frmReportViewer.resx">
       <DependentUpon>frmReportViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptAmountsReceived.rdlc" />
+    <EmbeddedResource Include="Reports\rptContract.rdlc" />
     <EmbeddedResource Include="Reports\rptDonor.rdlc" />
     <EmbeddedResource Include="Reports\rptEmolyee.rdlc" />
     <EmbeddedResource Include="Reports\rptExpensess.rdlc" />
@@ -500,6 +506,8 @@
     <None Include="Properties\DataSources\Ucas.Data.TheDonorsProject.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.UcasProEntities.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.UserTb.datasource" />
+    <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.AmountRecvtReportObj.datasource" />
+    <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.ContractReportObj.datasource" />
     <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.DonaorReportObj.datasource" />
     <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.EmployeeReportObj.datasource" />
     <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.ExpensessReportObj.datasource" />

@@ -98,26 +98,36 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             }
 
             #endregion
-
-            Operation.BeginOperation(this);
-            
-
-            Contract tb = new Contract()
+            try
             {
-                Employee_ID=int.Parse(EmployeeComboBox.SelectedValue.ToString()),
-                ProjectProfile_ID = InformationsClass.ProjID,
-                StartDate=DateTime.Parse( StartDateTimePicker.Value.Date.ToShortDateString()),
-                EndDate=DateTime.Parse( EndDateTimePicker.Value.Date.ToShortDateString()),
-                SelaryAmount=Convert.ToDouble(SalaryTextBox.Text),
-                 TotalSalary=Convert.ToDouble(TotaltextBox.Text),
-                Status="فعال",
 
-            };
-            ContractCmd.NewContract(tb);
-            Operation.EndOperation(this);
-            Operation.ShowToustOk(OperationX.AddMessageDone, this);
 
-            ClearTxt();
+                Operation.BeginOperation(this);
+
+
+                Contract tb = new Contract()
+                {
+                    Employee_ID = int.Parse(EmployeeComboBox.SelectedValue.ToString()),
+                    ProjectProfile_ID = InformationsClass.ProjID,
+                    StartDate = DateTime.Parse(StartDateTimePicker.Value.Date.ToShortDateString()),
+                    EndDate = DateTime.Parse(EndDateTimePicker.Value.Date.ToShortDateString()),
+                    SelaryAmount = Convert.ToDouble(SalaryTextBox.Text),
+                    TotalSalary = Convert.ToDouble(TotaltextBox.Text),
+                    Status = "فعال",
+
+                };
+                ContractCmd.NewContract(tb);
+                Operation.EndOperation(this);
+                Operation.ShowToustOk(OperationX.AddMessageDone, this);
+
+                ClearTxt();
+            }
+            catch (Xprema.XpremaException ex)
+            {
+                Operation.EndOperation(this);
+                RadMessageBox.Show(ex.OtherDescription, "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+            }
         }
         private void ClearTxt()
         {

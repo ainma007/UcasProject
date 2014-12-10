@@ -10,6 +10,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
+using UcasProWindowsForm.Reports.ReportObj;
 
 namespace UcasProWindowsForm.Forms.ExpensesForm
 {
@@ -133,6 +134,34 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         private void FrmManageExpenses_Activated(object sender, EventArgs e)
         {
           //  FrmManageExpenses_Load(sender, e);
+        }
+
+        private void PrintBtn_Click(object sender, EventArgs e)
+        {
+            Operation.BeginOperation(this);
+
+            List<ExpensessReportObj> ls = new List<ExpensessReportObj>();
+            int counter = 0;
+            foreach (GridViewRowInfo item in ExpensesGridView.ChildRows)
+            {
+                counter++;
+                ls.Add(new ExpensessReportObj()
+                {
+                    ExpensessID = counter,
+                    coin = item.Cells["Coin"].Value.ToString(),
+                    ProjectName = item.Cells["ProjectName"].Value.ToString(),
+                    ExpensessName = item.Cells["ExpensesName"].Value.ToString(),
+                    DateOfs = DateTime.Parse(item.Cells["DateofProcess"].Value.ToString()),
+                    Bill_SerialNumber = item.Cells["BillNumber"].Value.ToString(),
+                    ExpenssesCost= double.Parse(item.Cells["RequiarAmount"].Value.ToString()),
+                    CashingNumber = item.Cells["CashingNumber"].Value.ToString(),
+                    SupplierName = item.Cells["SupplierName"].Value.ToString(),
+                    SubActivityName = item.Cells["ProjectSubActivity"].Value.ToString(),
+                });
+            }
+            Reports.ReportCommand.ExpensessReportCmd cmd = new Reports.ReportCommand.ExpensessReportCmd();
+            cmd.ShowReportByGrid(ls);
+            Operation.EndOperation(this);
         }
     }
 }
