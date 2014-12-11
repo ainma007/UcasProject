@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
@@ -19,12 +15,13 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         {
             InitializeComponent();
         }
+        Thread th;
         public int XAmountID { get; set; }
         public AmountsReceived TragetAmountsReceived { get; set; }
         private void FillCombo()
         {
 
-            Operation.BeginOperation(this);
+           
           
             this.Invoke((MethodInvoker)delegate
             {
@@ -33,8 +30,9 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
                 this.DonorsComboBox.DisplayMember = "TheDonor.Name";
             });
 
-
+            Operation.BeginOperation(this);
             var q = TheDonorsProjectCmd.GetAllDonorsByproID(InformationsClass.ProjID);
+            Operation.EndOperation(this);
             this.Invoke((MethodInvoker)delegate
             {
                 DonorsComboBox.DataSource = q;
@@ -47,7 +45,8 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
 
 
             });
-            Operation.EndOperation(this);
+            th.Abort();
+         
 
         }
         private void saveBtn_Click(object sender, EventArgs e)
@@ -115,7 +114,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         }
         private void FrmEditAmount_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(FillCombo);
+            th = new Thread(FillCombo);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
              XAmountID = TragetAmountsReceived.ID;

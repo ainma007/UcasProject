@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
@@ -20,25 +15,23 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             RadMessageBox.SetThemeName("TelerikMetro");
         }
 
-        private void radGridView1_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
-        {
-           
-        }
 
+        Thread th;
         private void AddDonorsBtn_Click(object sender, EventArgs e)
         {
             Operation.BeginOperation(this);
             FrmTheDonorsAndProjectAdd frm = new FrmTheDonorsAndProjectAdd();
             frm.ShowDialog();
             Operation.EndOperation(this);
-
+            FrmTheDonorsAndProjectManage_Load(null, null);
         }
 
         private void FrmTheDonorsAndProjectManage_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(FillData);
+            Operation.BeginOperation(this);
+            th = new Thread(FillData);
             th.Start();
-            
+            Operation.EndOperation(this);
          
         }
 
@@ -64,6 +57,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 StatusLabel1.Text = "";
 
             });
+            th.Abort();
         }
 
         private void radGridView1_CommandCellClick(object sender, EventArgs e)
@@ -77,6 +71,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 frm.TragetTheDonorsProject = db;
                 Operation.EndOperation(this);
                 frm.ShowDialog();
+                FrmTheDonorsAndProjectManage_Load(null, null);
             }
             if (col == 4)
             {
@@ -87,10 +82,10 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
                     if (TheDonorsProjectCmd.DeleteDonorsProject(int.Parse(radGridView1.CurrentRow.Cells[0].Value.ToString())))
                     {
-
+                        FrmTheDonorsAndProjectManage_Load(null, null);
                         Operation.ShowToustOk(OperationX.DeletedMessage, this);
                         Operation.EndOperation(this);
-                        FrmTheDonorsAndProjectManage_Load(sender, e);
+                     
                     }
 
                     else
@@ -105,8 +100,8 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
-            
-            FrmTheDonorsAndProjectManage_Load(sender, e);
+
+            FrmTheDonorsAndProjectManage_Load(null, null);
            
 
         }

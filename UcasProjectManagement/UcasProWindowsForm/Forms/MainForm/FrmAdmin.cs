@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
-using Telerik.WinControls.UI;
 using Ucas.Data.CommandClass;
 using UcasProWindowsForm.Forms.EmployeeForm;
 using UcasProWindowsForm.Forms.ProjectProfileForm;
@@ -22,18 +17,46 @@ namespace UcasProWindowsForm.Forms.MainForm
         public FrmAdmin()
         {
             InitializeComponent();
+          
             RadMessageBox.SetThemeName("TelerikMetro");
            
         }
-        ProjectProfileCmd cmd = new ProjectProfileCmd();
+
+        Thread th;
+        private void GetAllProject()
+        {
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                StatusLabel1.Text = "جاري الانتظار.... ";
+
+            });
+            Operation.BeginOperation(this);
+
+            Application.DoEvents();
+            var q = ProjectProfileCmd.GetAllProjects();
+            Application.DoEvents();
+
+            Operation.EndOperation(this);
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+                radGridView1.DataSource = q;
+                StatusLabel1.Text = "";
+
+            });
+            th.Abort();
+
+        } 
+      
         private void FrmAdmin_Load(object sender, EventArgs e)
 
 
         {
-
-            radGridView1.DataSource = ProjectProfileCmd.GetAllProjects();
-           
-        }
+            Operation.BeginOperation(this);
+            th = new Thread(GetAllProject);
+            th.Start();
+            Operation.EndOperation(this);
+        } 
 
 
 
@@ -43,6 +66,7 @@ namespace UcasProWindowsForm.Forms.MainForm
             FrmAddProject AddPro = new FrmAddProject();
             AddPro.ShowDialog();
             Operation.EndOperation(this);
+            FrmAdmin_Load(null, null);
         }
 
        
@@ -64,6 +88,7 @@ namespace UcasProWindowsForm.Forms.MainForm
             FrmProjectManage ProMang = new FrmProjectManage();
             ProMang.ShowDialog();
             Operation.EndOperation(this);
+            FrmAdmin_Load(null, null);
 
         }
 
@@ -89,7 +114,7 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void FrmAdmin_Activated(object sender, EventArgs e)
         {
-          //  FrmAdmin_Load(sender, e);
+         
         }
 
       
@@ -123,6 +148,7 @@ namespace UcasProWindowsForm.Forms.MainForm
 
             Operation.EndOperation(this);
             this.Hide();
+            FrmAdmin_Load(null, null);
         }
 
      

@@ -291,7 +291,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ادارة المصروفات";
             this.ThemeName = "TelerikMetro";
-            this.Activated += new System.EventHandler(this.FrmManageExpenses_Activated);
             this.Load += new System.EventHandler(this.FrmManageExpenses_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

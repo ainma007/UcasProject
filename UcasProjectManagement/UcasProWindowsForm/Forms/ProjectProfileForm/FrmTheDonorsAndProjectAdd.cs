@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
@@ -21,6 +17,7 @@ namespace UcasProWindowsForm.Forms.MainForm
             InitializeComponent();
             RadMessageBox.SetThemeName("TelerikMetro");
         }
+        Thread th;
         private void fillDonorsCombo()
         {
 
@@ -43,8 +40,8 @@ namespace UcasProWindowsForm.Forms.MainForm
 
             });
             Operation.EndOperation(this);
-           
 
+            th.Abort();
 
             
 
@@ -115,9 +112,11 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void FrmTheDonorsAndProjectAdd_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(fillDonorsCombo);
+            Operation.BeginOperation(this);
+            th = new Thread(fillDonorsCombo);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
+            Operation.EndOperation(this);
         }
 
         private void CostTextBox_KeyPress(object sender, KeyPressEventArgs e)

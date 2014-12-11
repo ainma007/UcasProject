@@ -170,18 +170,20 @@
   </data>
   <data name="gridViewCommandColumn1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACcAAAAPCAYAAABnXNZuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGySURBVEhLzdVvLgNBHMbxPYIj9AjeSfzpzO62XdsKgqQS
-        CRIJoqFKxJ+iFdJKSThCjyBRiq3OsC1vHcER9gY/zzASr+gb7JN838z2xSfpTmt0uoJgXdsPZnFT2q8b
-        0qacMIMszvTj/xlQkd1Hs5p/sGgbbQGmcOviPa4/9rdTqAJQ+48W7aFQ4NTXd+ibxQOfBUXfpFDgzoAq
-        t1nxyI8GRy2TAKSfcGvCfskKS640LJlpxOUSWkDzaK6RkDNeQk6jKZS++WgMDeuSyEWJuistZNZcGb1y
-        q6zuRDTLME6AqvgDwXGbU6nFqXNcjFbRSjNGy804Ld3HaREBR8DRrJcg4GjKc2jyzqE0mrh1aPR2kEbQ
-        0M0guQg4iiHz2qUo6qslg95asts4bbPqyROjSptRWHD910nquUxx47Q1EIQX98xmQ4tTKz+zSKUVlWHB
-        4X2TPV8vhVrZZ7wEZKe4nIitZvFzosqoPJsv6OY8h8/ogONp3Xjd4SO6FHJ0NsIt5UxdhO92CCRw8icc
-        +p9/CLUCkPvSkqHEfS7v2zwPZChxn9sRrHtL2OfrgK4J60If/9IM4w0X8O4SyjzqFQAAAABJRU5ErkJg
-        gg==
+        iVBORw0KGgoAAAANSUhEUgAAACcAAAAPCAYAAABnXNZuAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAbJJREFUSEvN1W8uA0EcxvE9giP0CN5J/OnM7rZd2wqCpBIJEgmioUrEn6IV0kpJ
+        OEKPIFGKrc6wLW8dwRH2Bj/PMBKv6Bvsk3zfzPbFJ+lOa3S6gmBd2w9mcVParxvSppwwgyzO9OP/GVCR
+        3Uezmn+waBttAaZw6+I9rj/2t1OoAlD7jxbtoVDg1Nd36JvFA58FRd+kUODOgCq3WfHIjwZHLZMApJ9w
+        a8J+yQpLrjQsmWnE5RJaQPNorpGQM15CTqMplL75aAwN65LIRYm6Ky1k1lwZvXKrrO5ENMswToCq+APB
+        cZtTqcWpc1yMVtFKM0bLzTgt3cdpEQFHwNGslyDgaMpzaPLOoTSauHVo9HaQRtDQzSC5CDiKIfPapSjq
+        qyWD3lqy2zhts+rJE6NKm1FYcP3XSeq5THHjtDUQhBf3zGZDi1MrP7NIpRWVYcHhfZM9Xy+FWtlnvARk
+        p7iciK1m8XOiyqg8my/o5jyHz+iA42ndeN3hI7oUcnQ2wi3lTF2E73YIJHDyJxz6n38ItQKQ+9KSocR9
+        Lu/bPA9kKHGf2xGse0vY5+uArgnrQh//0gzjDRfw7hLKPOoVAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>38</value>
   </metadata>

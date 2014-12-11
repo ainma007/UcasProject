@@ -17,6 +17,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             InitializeComponent();
             RadMessageBox.SetThemeName("TelerikMetro");
         }
+        Thread th;
         public int myContractId { get; set; }
         Contract db = new Contract();
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -107,7 +108,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
         private void FillEmployeeCombo()
         {
-            Operation.BeginOperation(this);
+            
 
             this.Invoke((MethodInvoker)delegate
             {
@@ -115,7 +116,9 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                 this.EmployeeComboBox.ValueMember = "ID";
                 this.EmployeeComboBox.DisplayMember = "EmployeeName";
             });
+            Operation.BeginOperation(this);
             var q = EmployeeCmd.GetAll();
+            Operation.EndOperation(this);
             this.Invoke((MethodInvoker)delegate
             {
                 EmployeeComboBox.DataSource = q;
@@ -125,9 +128,9 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                 this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
 
             });
-            Operation.EndOperation(this);
 
 
+            th.Abort();
 
 
 
@@ -136,7 +139,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         private void FrmContractsLookAndSave_Load(object sender, EventArgs e)
         {
 
-            Thread th = new Thread(FillEmployeeCombo);
+            th = new Thread(FillEmployeeCombo);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
             Coinlabel2.Text = InformationsClass.Coin;

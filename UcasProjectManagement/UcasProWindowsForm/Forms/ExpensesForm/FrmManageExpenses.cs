@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
-using Ucas.Data;
 using Ucas.Data.CommandClass;
 using UcasProWindowsForm.Reports.ReportObj;
 
@@ -21,6 +16,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             InitializeComponent();
             RadMessageBox.SetThemeName("TelerikMetro");
         }
+        Thread th;
         private void TotalExpenses()
         {
             GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("RequiarAmount", "الاجمالي={0}" + InformationsClass.Coin + " ", GridAggregateFunction.Sum);
@@ -30,11 +26,11 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         }
         private void FrmManageExpenses_Load(object sender, EventArgs e)
         {
-
-            Thread th = new Thread(FillExpensesData);
+            Operation.BeginOperation(this);
+            th = new Thread(FillExpensesData);
             th.Start();
-           // FillExpensesData();
-            TotalExpenses();
+            Operation.EndOperation(this);
+           
         }
 
         private void FillExpensesData()
@@ -52,7 +48,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             var q = ProjectExpensesCmd.GetAllExpensesByProject(InformationsClass.ProjID);
             Application.DoEvents();
 
-            Operation.EndOperation(this);
+          
             statusStrip1.Invoke((MethodInvoker)delegate
             {
                 ExpensesGridView.DataSource = q;
@@ -61,10 +57,10 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                     ExpensesGridView.Rows[i - 1].Cells["Num"].Value = i.ToString();
                 }
                 StatusLabel1.Text = "";
-
+                TotalExpenses();
             });
-            
-
+            Operation.EndOperation(this);
+            th.Abort();
         }
       
 
@@ -83,9 +79,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 frm.TragetExpens = Expenses;
               
                 frm.ShowDialog();
-                Operation.EndOperation(this);      
-                return;
-
+                Operation.EndOperation(this);
+                FrmManageExpenses_Load(null, null);
             }
 
 
@@ -102,7 +97,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                             Operation.ShowToustOk(OperationX.DeletedMessage, this);
                             FrmManageExpenses_Load(sender, e);
                             Operation.EndOperation(this);
-                            return;
+                            FrmManageExpenses_Load(null, null);
                         }
                         else
                         {
@@ -122,19 +117,17 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             FrmAddExpenses frm = new FrmAddExpenses();
             frm.ShowDialog();
             Operation.EndOperation(this);
+            FrmManageExpenses_Load(null, null);
         }
 
         private void RefrechBtn_Click(object sender, EventArgs e)
         {
-          
-            FrmManageExpenses_Load(sender, e);
+
+            FrmManageExpenses_Load(null, null);
            
         }
 
-        private void FrmManageExpenses_Activated(object sender, EventArgs e)
-        {
-          //  FrmManageExpenses_Load(sender, e);
-        }
+      
 
         private void PrintBtn_Click(object sender, EventArgs e)
         {

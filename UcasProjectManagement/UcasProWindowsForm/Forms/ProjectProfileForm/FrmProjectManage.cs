@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
-using Telerik.WinControls.UI;
-using Ucas.Data;
 using Ucas.Data.CommandClass;
 
 namespace UcasProWindowsForm.Forms.ProjectProfileForm
@@ -20,13 +13,14 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             InitializeComponent();
             RadMessageBox.SetThemeName("TelerikMetro");
         }
-
+        Thread th;
         private void FrmProjectManage_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(GetAllProject);
+            Operation.BeginOperation(this);
+            th = new Thread(GetAllProject);
             th.Start();
-           
-           
+
+            Operation.EndOperation(this);
         }
        
         private void GetAllProject()
@@ -52,6 +46,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 StatusLabel1.Text = "";
 
             });
+            th.Abort();
         }
    
    
@@ -70,6 +65,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 frm.TragetProject = db;
                 frm.ShowDialog();
                 Operation.EndOperation(this);
+                this.FrmProjectManage_Load(null, null);
             }
 
                 if (col == 10)
@@ -81,8 +77,10 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                         if (ProjectProfileCmd.DeleteProjectProfile(int.Parse(ProjectProfileGridView.CurrentRow.Cells[0].Value.ToString())))
                         {
                              Operation.EndOperation(this);
-                             FrmProjectManage_Load(sender, e);
+                             this.FrmProjectManage_Load(null, null);
                              Operation.ShowToustOk(OperationX.DeletedMessage, this);
+                            
+
                            
                         }
                         else
@@ -105,12 +103,13 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             FrmAddProject frm = new FrmAddProject();
             frm.ShowDialog();
             Operation.EndOperation(this);
+            this.FrmProjectManage_Load(null, null);
         }
 
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
-          
-            FrmProjectManage_Load(sender, e);
+
+            this.FrmProjectManage_Load(null, null);
           
 
         }

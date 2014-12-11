@@ -15,12 +15,12 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             RadMessageBox.SetThemeName("TelerikMetro");
         }
         public int GetContractsID { get; set; }
-       
-       
+
+        Thread th;
      
         private void FrmContratsManage_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(FillData);
+            th = new Thread(FillData);
             th.Start();
 
         }
@@ -58,6 +58,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             });
 
             Operation.EndOperation(this);
+            th.Abort();
 
         }
         private void AddBtn_Click(object sender, EventArgs e)
@@ -68,6 +69,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             FrmContractsAdd Addfrm = new FrmContractsAdd();
             Addfrm.ShowDialog();
             Operation.EndOperation(this);
+            FrmContratsManage_Load(null, null);
 
         }
         private void radGridView1_CommandCellClick(object sender, EventArgs e)
@@ -88,12 +90,12 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                                                
                 frm.ShowDialog();
                 Operation.EndOperation(this);
-                return;
+                FrmContratsManage_Load(null, null);
             }
 
             if (col == 9)
             {
-                if (RadMessageBox.Show(this, OperationX.DeleteMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                if (RadMessageBox.Show(this, OperationX.DeleteMessage, "حذف", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
                     Operation.BeginOperation(this);
                     if (ContractCmd.DeleteContract(int.Parse(ContractsGridView.CurrentRow.Cells[0].Value.ToString())))
@@ -101,7 +103,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                         Operation.ShowToustOk(OperationX.DeletedMessage, this);
 
                         Operation.EndOperation(this);
-                        FrmContratsManage_Load(sender, e);
+                        FrmContratsManage_Load(null, null);
                         return;
 
                     }
@@ -119,7 +121,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         }
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
-            FrmContratsManage_Load(sender, e);
+            FrmContratsManage_Load(null, null);
         }
 
         private void FrmContratsManage_Activated(object sender, EventArgs e)

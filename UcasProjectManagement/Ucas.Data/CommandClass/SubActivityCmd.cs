@@ -105,7 +105,7 @@ namespace Ucas.Data.CommandClass
         {
           db = new UcasProEntities();
           var LST = (from A in db.ProjectSubActivities
-                     where A.ProjectProfile_ID == ProId && A.Startdate.Value.Month == DateTime.Now.Month 
+                     where A.ProjectProfile_ID == ProId && A.Progress!=100 && A.Status=="فعال"
          select A).ToList();
           return LST;
 

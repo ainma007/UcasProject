@@ -11,6 +11,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 {
     public partial class FrmAllActivitesMange : Telerik.WinControls.UI.RadForm
     {
+        Thread th;
         public FrmAllActivitesMange()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             FrmAddActivities AddActivfrm = new FrmAddActivities();
             AddActivfrm.ShowDialog();
             Operation.EndOperation(this);
+            this.FrmAllActivitesMange_Load(null, null);
         }
 
         private void AddSupActivitesBtn_Click(object sender, EventArgs e)
@@ -31,6 +33,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             FrmAddSubActivities AddSub = new FrmAddSubActivities();
             AddSub.ShowDialog();
             Operation.EndOperation(this);
+            this.FrmAllActivitesMange_Load(null, null);
         }
 
         
@@ -82,10 +85,11 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 toolStripStatusLabel1.Text = " ";
               
             });
+            th.Abort();
         }
         private void FrmAllActivitesMange_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(Loadactivites);
+            th = new Thread(Loadactivites);
             th.Start();
            
            
@@ -110,8 +114,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 frm.TragetActivity = DB;
                 frm.ShowDialog();
                 Operation.EndOperation(this);
-                return;
-
+                this.FrmAllActivitesMange_Load(null, null);
             }
 
                         
@@ -125,7 +128,9 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 {
 
                     Operation.EndOperation(this);
+                    this.FrmAllActivitesMange_Load(null, null);
                     Operation.ShowToustOk("تمت عملية الحذف", this);
+                   
 
                     return;
                 }
@@ -154,6 +159,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 frm.TragetSUBActivity = DB;
                 frm.ShowDialog();
                 Operation.EndOperation(this);
+                this.FrmAllActivitesMange_Load(null, null);
                
                 return;
             }
@@ -169,12 +175,12 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                     if (SubActivityCmd.DeleteSubActivity(tb.ID))
                     {
                         Operation.EndOperation(this);
-                        FrmAllActivitesMange_Load(sender, e);
                         Operation.ShowToustOk("تمت عملية الحذف", this);
-                        return;
+                        this.FrmAllActivitesMange_Load(null, null);
                     }
                     else
                     {
+                        Operation.EndOperation(this);
                         RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
 
                     }

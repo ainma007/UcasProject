@@ -13,7 +13,7 @@ namespace Ucas.Data.CommandClass
         {
             try
             {
-                   db = new UcasProEntities();
+            db = new UcasProEntities();
             var lst = (from p in db.ProjectProfiles
                       
                        select p).ToList();
@@ -25,8 +25,8 @@ namespace Ucas.Data.CommandClass
                 Xprema.XpremaException e = new Xprema.XpremaException();
                 e.CodeNumber = 6;
                 e.OtherDescription = ex.InnerException.InnerException.Message;
-                e.UserDescription = "Error in Add";
-                e.UserDescriptionArabic = "خطاء في اضافة البيانات";
+                e.UserDescription = "Error ";
+                e.UserDescriptionArabic = "خطاء ";
                 throw e;
             }
         }
@@ -34,10 +34,24 @@ namespace Ucas.Data.CommandClass
       
       public static bool AddNewProject(ProjectProfile tb)
         {
-            db = new UcasProEntities();
+            try
+            {
+                 db = new UcasProEntities();
             db.ProjectProfiles.Add(tb);
             db.SaveChanges();
             return true;
+            }
+            catch (Exception ex)
+            {
+                
+                  Xprema.XpremaException e = new Xprema.XpremaException();
+                e.CodeNumber = 6;
+                e.OtherDescription = ex.InnerException.InnerException.Message;
+                e.UserDescription = "Error in Add";
+                e.UserDescriptionArabic = "خطاء في اضافة البيانات";
+                throw e;
+            }
+           
         }
 
       public static bool EditProjectProfile(ProjectProfile ptb)

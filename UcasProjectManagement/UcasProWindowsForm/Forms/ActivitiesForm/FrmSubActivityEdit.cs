@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
@@ -20,6 +16,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             InitializeComponent();
             RadMessageBox.SetThemeName("TelerikMetro");
         }
+        Thread th;
         public int SubXid { get; set; }
         public ProjectSubActivity TragetSUBActivity { get; set; }
         public void FillActivty()
@@ -62,14 +59,14 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
           });
 
           Operation.EndOperation(this);
-          
 
+          th.Abort();
 
            
         }
         private void FrmSubActivityEdit_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(FillActivty);
+            th = new Thread(FillActivty);
             th.Start();
         }
 

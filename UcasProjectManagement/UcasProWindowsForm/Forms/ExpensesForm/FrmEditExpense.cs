@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
@@ -21,8 +17,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             RadMessageBox.SetThemeName("TelerikMetro");
         }
         public int XExpID { get; set; }
-        ProjectExpens db = new ProjectExpens();
         public Ucas.Data.ProjectExpens TragetExpens { get; set; }
+        Thread th;
         private void FillComboBox()
         {
             Operation.BeginOperation(this);
@@ -56,11 +52,11 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             });
             Operation.EndOperation(this);
 
-
+            th.Abort();
         }
         private void FrmEditExpense_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(FillComboBox);
+            th = new Thread(FillComboBox);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
             XExpID = TragetExpens.ID;

@@ -175,7 +175,6 @@
             this.EmployeeGridView.Text = "radGridView1";
             this.EmployeeGridView.ThemeName = "TelerikMetro";
             this.EmployeeGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.EmployeeGridView_CommandCellClick);
-            this.EmployeeGridView.Click += new System.EventHandler(this.EmployeeGridView_Click);
             // 
             // toolStrip1
             // 
@@ -285,7 +284,6 @@
             this.Text = "radRibbonBar1";
             this.ThemeName = "TelerikMetro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Activated += new System.EventHandler(this.FrmEmployeeMng_Activated);
             this.Load += new System.EventHandler(this.FrmEmployeeMng_Load);
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeGridView.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeGridView)).EndInit();

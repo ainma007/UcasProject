@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using Telerik.WinControls;
 using Telerik.WinControls.Data;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
@@ -19,6 +13,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         {
             InitializeComponent();
         }
+        Thread th;
         private void FillComboBox()
         {  ///GetActivityByProjectID
            ///
@@ -60,7 +55,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
             });
             Operation.EndOperation(this);
-
+            th.Abort();
 
 
           
@@ -96,9 +91,9 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
         private void FrmAddUserToProject_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(FillComboBox);
+            th = new Thread(FillComboBox);
             th.Start();
-          //  FillComboBox();
+          
         }
     }
 }

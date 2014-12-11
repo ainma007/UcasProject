@@ -277,6 +277,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعديل بيانات موظف";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmEmployeeEdit_Load);

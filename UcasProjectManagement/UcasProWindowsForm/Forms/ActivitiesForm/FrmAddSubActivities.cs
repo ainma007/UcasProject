@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
@@ -20,6 +16,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             InitializeComponent();
             RadMessageBox.SetThemeName("TelerikMetro");
         }
+        Thread th;
         public void FillActivty()
         {
 
@@ -50,17 +47,19 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             });
 
             Operation.EndOperation(this);
-
+            th.Abort();
 
 
 
         }
         private void FrmAddSubActivities_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(FillActivty);
+            th = new Thread(FillActivty);
 
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
+            StartDateTimePicker.Value = DateTime.Now;
+            EndDateTimePicker.Value = DateTime.Now;
         }
 
         private void AddBtn_Click(object sender, EventArgs e)

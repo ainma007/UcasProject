@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
@@ -142,6 +138,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
             Coinlabel2.Text = InformationsClass.Coin;
+            StartDateTimePicker.Value = DateTime.Now;
+            EndDateTimePicker.Value = DateTime.Now;
         }
 
         private void SalaryTextBox_KeyPress(object sender, KeyPressEventArgs e)

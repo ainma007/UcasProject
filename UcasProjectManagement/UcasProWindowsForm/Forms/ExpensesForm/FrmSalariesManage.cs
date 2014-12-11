@@ -16,6 +16,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             InitializeComponent();
             RadMessageBox.SetThemeName("TelerikMetro");
         }
+        Thread th;
         private void TotalExpenses()
         {
             GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("Amount", "الاجمالي={0}" + InformationsClass.Coin + " ", GridAggregateFunction.Sum);
@@ -32,15 +33,17 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             FrmAddSalaries Addfrm = new FrmAddSalaries();
             Addfrm.ShowDialog();
             Operation.EndOperation(this);
+            FrmSalariesManage_Load(null, null);
         }
 
         private void FrmSalariesManage_Load(object sender, EventArgs e)
         {
+            Operation.BeginOperation(this);
 
-            Thread th = new Thread(FillSalaryData);
+            th = new Thread(FillSalaryData);
             th.Start();
-            TotalExpenses();
-            
+           
+            Operation.EndOperation(this);
         }
 
         private void FillSalaryData()
@@ -61,11 +64,12 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             statusStrip1.Invoke((MethodInvoker)delegate
             {
                 SalaryGridView.DataSource = q;
+                TotalExpenses();
                 StatusLabel1.Text = "";
 
             });
-          
-           
+
+            th.Abort();
         }
 
         private void SalaryGridView_CommandCellClick(object sender, EventArgs e)
@@ -81,8 +85,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 frm.Tragetsalary = salary;
                 frm.ShowDialog();
                 Operation.EndOperation(this);
-               
-                return;
+
+                FrmSalariesManage_Load(null, null);
 
             }
 
@@ -96,8 +100,9 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                     {
                         Operation.BeginOperation(this);
                         Operation.ShowToustOk(OperationX.DeletedMessage, this);
+                        FrmSalariesManage_Load(null, null);
                         Operation.EndOperation(this);
-                        return;
+                       
 
                     }
                     else
@@ -123,10 +128,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 counter++;
                 ls.Add(new SalaryReportObj() {SalarysID=counter,
                  coin = item.Cells["Coin"].Value.ToString(),
-                 //coin=  q[0].Coin,
                  EmployeejobNumber = item.Cells["EmployeejobNumber"].Value.ToString(),
                  EmployeeName = item.Cells["EmployeeName"].Value.ToString(),
-                 //ProjectName=q[0].ProjectName,
                  ProjectName = item.Cells["ProjectName"].Value.ToString(),
                 SalaryAmount = double.Parse(item.Cells["Amount"].Value.ToString()),
                 SalaryForMonth = DateTime.Parse(item.Cells["Formonth"].Value.ToString()),
@@ -144,8 +147,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-          
-            FrmSalariesManage_Load(sender, e);
+
+            FrmSalariesManage_Load(null, null);
            
 
         }

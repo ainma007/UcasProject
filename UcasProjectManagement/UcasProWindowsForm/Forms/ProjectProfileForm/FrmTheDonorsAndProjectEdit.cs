@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
@@ -20,6 +16,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             InitializeComponent();
             RadMessageBox.SetThemeName("TelerikMetro");
         }
+        Thread th;
         public int XDonrPro { get; set; }
         public Ucas.Data.TheDonorsProject TragetTheDonorsProject { get; set; }
         private void fillDonorsCombo()
@@ -45,7 +42,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             });
             Operation.EndOperation(this);
 
-
+            th.Abort();
 
 
 
@@ -58,7 +55,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
 
         {
-            Thread th = new Thread(fillDonorsCombo);
+            th = new Thread(fillDonorsCombo);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
             XDonrPro = TragetTheDonorsProject.ID;

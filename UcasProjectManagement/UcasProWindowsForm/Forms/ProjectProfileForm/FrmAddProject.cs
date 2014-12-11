@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Ucas.Data;
@@ -121,7 +117,8 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void FrmAddProject_Load(object sender, EventArgs e)
         {
-
+            StartDateTimePicker.Value = DateTime.Now;
+            EndDateTimePicker.Value = DateTime.Now;
         }
 
         private void TotalCostTextBox_KeyPress(object sender, KeyPressEventArgs e)

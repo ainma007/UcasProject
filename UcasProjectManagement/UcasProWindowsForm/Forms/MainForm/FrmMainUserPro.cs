@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Telerik.WinControls;
-using Telerik.WinControls.UI;
 using Ucas.Data.CommandClass;
 using Ucas.Data;
 using UcasProWindowsForm.Forms.ActivitiesForm;
@@ -10,7 +9,6 @@ using UcasProWindowsForm.Forms.AmountRecivedForms;
 using UcasProWindowsForm.Forms.EmployeeForm;
 using UcasProWindowsForm.Forms.ExpensesForm;
 using UcasProWindowsForm.Forms.ProjectProfileForm;
-using UcasProWindowsForm.Reports.ReportObj;
 using System.Threading;
 using UcasProWindowsForm.Reports.ReportCommand;
 namespace UcasProWindowsForm.Forms.MainForm
@@ -20,8 +18,13 @@ namespace UcasProWindowsForm.Forms.MainForm
         public FrmMainUserPro()
         {
             InitializeComponent();
+           
             RadMessageBox.SetThemeName("TelerikMetro");
         }
+
+
+        Thread th;
+       
         ProjectProfile db = new ProjectProfile();
         public ProjectProfile TragetProject { get; set; }
         public string ProjectName { get; set; }
@@ -120,51 +123,30 @@ namespace UcasProWindowsForm.Forms.MainForm
                 StatusLabel1.Text = "";
                
             });
-
+            th.Abort();
 
         }
         private void FrmMainUserPro_Load(object sender, EventArgs e)
         {
-            db = new ProjectProfile();
-           
-            
-            Thread th = new Thread(fillData);
+            th = new Thread(fillData);
             th.Start();
-
-
-           
-           
-
-            //
-           
-          
-            //
-
-           
-            
-
-           
-
-         
-           
-
-            
+ 
         }
 
         private void ProjectManageBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             FrmTheDonorsAndProjectManage frm =new FrmTheDonorsAndProjectManage();
             frm.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
         }
 
         private void ContractsBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             FrmContratsManage ContrMng = new FrmContratsManage();
             ContrMng.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
         }
 
         private void FrmMainUserPro_FormClosed(object sender, FormClosedEventArgs e)
@@ -178,26 +160,30 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void ActivitesBtn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             FrmAllActivitesMange Activfrm = new FrmAllActivitesMange();
             Activfrm.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.BeginOperation(this);
+
+            this.FrmMainUserPro_Load(null, null);
         }
 
         private void ExpensesBTn_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this);
             FrmManageExpenses frm = new FrmManageExpenses();
             frm.ShowDialog();
-            this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
+            this.FrmMainUserPro_Load(null, null);
         }
 
         private void SalaryBtn_Click(object sender, EventArgs e)
         {
-           this.Cursor = Cursors.WaitCursor;
+            Operation.BeginOperation(this); 
             FrmSalariesManage frm = new FrmSalariesManage();
             frm.ShowDialog();
-           this.Cursor = Cursors.Default;
+            Operation.EndOperation(this);
+            this.FrmMainUserPro_Load(null, null);
         }
 
         private void AmountRrecvBtn_Click(object sender, EventArgs e)
@@ -206,6 +192,7 @@ namespace UcasProWindowsForm.Forms.MainForm
             FrmMangeAmount frm = new FrmMangeAmount();
             frm.ShowDialog();
             Operation.EndOperation(this);
+            this.FrmMainUserPro_Load(null, null);
         }
 
         private void Expenseslbl_Click(object sender, EventArgs e)
@@ -252,6 +239,7 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void EditProjectBtn_Click(object sender, EventArgs e)
         {
+            Operation.BeginOperation(this);
             frmUserEditProject frm = new frmUserEditProject();
             frm.ProId = InformationsClass.ProjID;
             frm.ProjectNameTextBox .Text= ProjectNameTextBox.Text;
@@ -262,6 +250,8 @@ namespace UcasProWindowsForm.Forms.MainForm
             frm.TotalCostTextBox.Text = CostTextBox.Text;
             frm.StatustextBox.Text = StatustextBox.Text;
             frm.ShowDialog();
+            Operation.EndOperation(this);
+            this.FrmMainUserPro_Load(null, null);
         }
 
         private void ContractRbtBtn_Click(object sender, EventArgs e)

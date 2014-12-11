@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
-using UcasProWindowsForm.Reports.ReportObj;
 
 namespace UcasProWindowsForm.Forms.ExpensesForm
 {
@@ -21,7 +16,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             InitializeComponent();
             RadMessageBox.SetThemeName("TelerikMetro");
         }
-
+        Thread th;
         private void FillCombo()
         {
             ///GetAllContractsProjectID
@@ -47,9 +42,9 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
             });
             Operation.EndOperation(this);
-            
 
-            
+
+            th.Abort();
            
            
 
@@ -57,9 +52,13 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         }
         private void FrmAddSalaries_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(FillCombo);
+            th = new Thread(FillCombo);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
+            FormonthDateTimePicker.Value = DateTime.Now;
+            ReleaseDateTimePicker.Value = DateTime.Now;
+           
+            
         }
 
         private void AddBtn1_Click(object sender, EventArgs e)
@@ -104,7 +103,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 {
                     ProjectProfile_ID = InformationsClass.ProjID,
                     ContractID = int.Parse(EmployeeComboBox.SelectedValue.ToString()),
-                    Formonth = FromonthDateTimePicker.Value.Date,
+                    Formonth = FormonthDateTimePicker.Value.Date,
                     IssueDate = ReleaseDateTimePicker.Value.Date,
                     Amount = Convert.ToDouble(SalaryTextBox.Text)
 

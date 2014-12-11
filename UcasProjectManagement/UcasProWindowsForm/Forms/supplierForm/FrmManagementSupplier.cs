@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
-using Ucas.Data;
 using Ucas.Data.CommandClass;
 using UcasProWindowsForm.Reports.ReportCommand;
 
@@ -20,7 +14,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
             InitializeComponent();
             RadMessageBox.SetThemeName("TelerikMetro");
         }
-        UcasProEntities cmd = new UcasProEntities();
+        Thread th;
         private void GetAllsupplier()
         {
             statusStrip1.Invoke((MethodInvoker)delegate
@@ -43,7 +37,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
                 StatusLabel1.Text = "";
 
             });
-            
+            th.Abort();
         }
 
     
@@ -53,10 +47,11 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void FrmManagementSupplier_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(GetAllsupplier);
+            Operation.BeginOperation(this);
+            th = new Thread(GetAllsupplier);
             th.Start();
 
-           // GetAllsupplier();
+            Operation.EndOperation(this);
            
             
         }
@@ -79,6 +74,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
             frm.TragetDSupplier = db;
             frm.ShowDialog();
             Operation.EndOperation(this);
+            FrmManagementSupplier_Load(null, null);
            
         }
         if (col == 8) { if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
@@ -87,9 +83,10 @@ namespace UcasProWindowsForm.Forms.supplierForm
                         if (SuppliersCmd.DeleteSupplier(int.Parse(supplierGridView.CurrentRow.Cells[0].Value.ToString())))
                         {
                             Operation.EndOperation(this);
+                            FrmManagementSupplier_Load(null, null);
                             Operation.ShowToustOk(OperationX.DeletedMessage, this);
 
-                            FrmManagementSupplier_Load(sender, e);
+                          
                         }
                         else
                         {
@@ -122,6 +119,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
             FrmAddsupplier frm = new FrmAddsupplier();
             frm.ShowDialog();
             Operation.EndOperation(this);
+            FrmManagementSupplier_Load(null, null);
         }
 
         private void ReportviewBtn_Click(object sender, EventArgs e)
@@ -135,7 +133,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void Refreshbtn_Click(object sender, EventArgs e)
         {
-            FrmManagementSupplier_Load(sender, e);
+            FrmManagementSupplier_Load(null, null);
         }
     }
 }

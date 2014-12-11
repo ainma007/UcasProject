@@ -13,8 +13,7 @@ namespace Ucas.Data.CommandClass
         public static double GetTotalExpensesByProject(int ProID)
         {
             db = new UcasProEntities();
-            db.Configuration.LazyLoadingEnabled = false;
-            db.Configuration.ProxyCreationEnabled = false;
+            
             var LST = (from p in db.ProjectExpenses
                        
                        where p.ProjectProfile_ID == ProID

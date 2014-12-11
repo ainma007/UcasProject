@@ -11,10 +11,10 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         {
             InitializeComponent();
         }
-
+        Thread th;
         private void FrmUserProjectManage_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(FillData);
+            th = new Thread(FillData);
             th.Start();
            
           
@@ -40,6 +40,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                 toolStripStatusLabel1.Text = "";
             });
             Operation.EndOperation(this);
+            th.Abort(); 
         }
 
         private void ProjectControlGridView_CommandCellClick(object sender, EventArgs e)
@@ -55,7 +56,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                 frm.TragetProjectControl = tb;
                 frm.ShowDialog();
                 Operation.EndOperation(this);
-
+                FrmUserProjectManage_Load(null, null);
 
             }
         }

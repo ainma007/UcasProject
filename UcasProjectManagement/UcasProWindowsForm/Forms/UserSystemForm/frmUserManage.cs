@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using Telerik.WinControls;
-using Ucas.Data;
 using Ucas.Data.CommandClass;
 
 namespace UcasProWindowsForm.Forms.UserSystemForm
@@ -19,16 +12,14 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
             InitializeComponent();
         }
 
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
+        Thread th;
         private void frmUserManage_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(fillData);
+            Operation.BeginOperation(this);
+            th = new Thread(fillData);
             th.Start();
-           
+            Operation.EndOperation(this);
         }
 
         private void fillData()
@@ -54,6 +45,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                 StatusLabel1.Text = "";
 
             });
+            th.Abort();
         }
 
         private void UserGridView_CommandCellClick(object sender, EventArgs e)
@@ -62,12 +54,14 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
              if (col2 == 5)
              {
+                 Operation.BeginOperation(this);
                  frmUserEdit frm= new frmUserEdit();
                  Ucas.Data.UserTb usr =( Ucas.Data.UserTb) UserGridView.CurrentRow.DataBoundItem;
                  frm.TragetUser = usr;
                  
                  frm.ShowDialog();
-                 frm.Dispose();
+                 Operation.EndOperation(this);
+                 frmUserManage_Load(null, null);
              }
         }
 

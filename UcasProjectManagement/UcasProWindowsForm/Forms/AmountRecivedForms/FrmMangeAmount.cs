@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
-using Ucas.Data;
 using Ucas.Data.CommandClass;
 
 namespace UcasProWindowsForm.Forms.AmountRecivedForms
@@ -19,6 +13,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         {
             InitializeComponent();
         }
+        Thread th;
         private void TotalAmount()
         {
             GridViewSummaryItem summaryItemFreight = new GridViewSummaryItem("Cost", "الاجمالي={0}" + InformationsClass.Coin + " ", GridAggregateFunction.Sum);
@@ -37,6 +32,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
             FrmAddAmount Frm = new FrmAddAmount();
             Frm.ShowDialog();
             Operation.EndOperation(this);
+            this.FrmMangeAmount_Load(null, null);
         }
 
         private void radGridView1_CommandCellClick(object sender, EventArgs e)
@@ -51,7 +47,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
                 EditAmount.TragetAmountsReceived = db;
                 EditAmount.ShowDialog();
                 Operation.EndOperation(this);
-                return;
+                this.FrmMangeAmount_Load(null, null);
 
             }
             if (col == 6)
@@ -66,12 +62,12 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
                     radGridView1.DataSource = AmountsReceivedsCmd.GetAllAmountsReceivedBypro(InformationsClass.ProjID);
                     Operation.ShowToustOk(OperationX.DeletedMessage, this);
                     Operation.EndOperation(this);
-                    FrmMangeAmount_Load(sender, e);
-                    return;
+                    this.FrmMangeAmount_Load(null, null);
 
                 }
                 else
                 {
+                    Operation.EndOperation(this);
                     RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
                 }
             }
@@ -79,7 +75,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
 
         private void FrmMangeAmount_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(LodingAmount);
+            th = new Thread(LodingAmount);
             th.Start();
            
            
@@ -108,12 +104,12 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
                 StatusLabel1.Text = "";
 
             });
-           
+            th.Abort();
         }
 
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
-            FrmMangeAmount_Load(sender, e);
+            this.FrmMangeAmount_Load(null, null);
         }
     }
 }

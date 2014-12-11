@@ -51,7 +51,7 @@
             this.EmployeeComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.ReleaseDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
-            this.FromonthDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.FormonthDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
             this.SalaryTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
@@ -79,7 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReleaseDateTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FromonthDateTimePicker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FormonthDateTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
@@ -226,7 +226,7 @@
             this.radGroupBox1.Controls.Add(this.EmployeeComboBox);
             this.radGroupBox1.Controls.Add(this.ReleaseDateTimePicker);
             this.radGroupBox1.Controls.Add(this.radLabel12);
-            this.radGroupBox1.Controls.Add(this.FromonthDateTimePicker);
+            this.radGroupBox1.Controls.Add(this.FormonthDateTimePicker);
             this.radGroupBox1.Controls.Add(this.radLabel10);
             this.radGroupBox1.Controls.Add(this.SalaryTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel9);
@@ -361,20 +361,20 @@
             this.radLabel12.Text = "اسم الموظف:";
             this.radLabel12.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
-            // FromonthDateTimePicker
+            // FormonthDateTimePicker
             // 
-            this.FromonthDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FromonthDateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.FromonthDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FromonthDateTimePicker.Location = new System.Drawing.Point(185, 89);
-            this.FromonthDateTimePicker.Name = "FromonthDateTimePicker";
-            this.FromonthDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.FromonthDateTimePicker.Size = new System.Drawing.Size(100, 22);
-            this.FromonthDateTimePicker.TabIndex = 3;
-            this.FromonthDateTimePicker.TabStop = false;
-            this.FromonthDateTimePicker.Text = "15/09/2014";
-            this.FromonthDateTimePicker.ThemeName = "TelerikMetro";
-            this.FromonthDateTimePicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
+            this.FormonthDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FormonthDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FormonthDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FormonthDateTimePicker.Location = new System.Drawing.Point(185, 89);
+            this.FormonthDateTimePicker.Name = "FormonthDateTimePicker";
+            this.FormonthDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.FormonthDateTimePicker.Size = new System.Drawing.Size(100, 22);
+            this.FormonthDateTimePicker.TabIndex = 3;
+            this.FormonthDateTimePicker.TabStop = false;
+            this.FormonthDateTimePicker.Text = "15/09/2014";
+            this.FormonthDateTimePicker.ThemeName = "TelerikMetro";
+            this.FormonthDateTimePicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
             // 
             // radLabel10
             // 
@@ -470,7 +470,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReleaseDateTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FromonthDateTimePicker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FormonthDateTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
@@ -503,7 +503,7 @@
         private Telerik.WinControls.UI.RadLabel radLabel4;
         private Telerik.WinControls.UI.RadMultiColumnComboBox EmployeeComboBox;
         private Telerik.WinControls.UI.RadDateTimePicker ReleaseDateTimePicker;
-        private Telerik.WinControls.UI.RadDateTimePicker FromonthDateTimePicker;
+        private Telerik.WinControls.UI.RadDateTimePicker FormonthDateTimePicker;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label Coinlabel;

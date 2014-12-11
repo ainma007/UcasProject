@@ -118,9 +118,7 @@ namespace Ucas.Data.CommandClass
         public static double GetTotalAmountsByProject(int ProID)
         {
             db = new UcasProEntities();
-            db.Configuration.LazyLoadingEnabled = false;
-            db.Configuration.ProxyCreationEnabled = false;
-            var LST = (from p in db.AmountsReceiveds
+                       var LST = (from p in db.AmountsReceiveds
 
                        where p.ProjectProfile_ID == ProID
                        select p.Cost).ToList();

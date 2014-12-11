@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
-using Ucas.Data;
 using Ucas.Data.CommandClass;
 using UcasProWindowsForm.Reports.ReportCommand;
 
@@ -20,7 +14,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
             InitializeComponent();
             RadMessageBox.SetThemeName("TelerikMetro");
         }
-
+        Thread th;
         private void GetAllFinanciers()
         {
             statusStrip1.Invoke((MethodInvoker)delegate
@@ -42,6 +36,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
                 StatusLabel1.Text = "";
 
             });
+            th.Abort();
            
         }
 
@@ -49,9 +44,10 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void FrmManagementFinanciers_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(GetAllFinanciers);
+            Operation.BeginOperation(this);
+            th = new Thread(GetAllFinanciers);
             th.Start();
-          //  GetAllFinanciers();
+            Operation.EndOperation(this);
 
         }
 
@@ -64,6 +60,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
             FrmAddTheTheDonors frm = new FrmAddTheTheDonors();
             frm.ShowDialog();
             Operation.EndOperation(this);
+            FrmManagementFinanciers_Load(null, null);
         }
 
         private void ReportBtn_Click(object sender, EventArgs e)
@@ -72,6 +69,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
             DonorsReportCmd cmd = new DonorsReportCmd();
             cmd.GetAllDonor();
             Operation.EndOperation(this);
+           
 
         }
 
@@ -88,6 +86,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
                 frm.ShowDialog();
                 Operation.EndOperation(this);
 
+                FrmManagementFinanciers_Load(null, null);
 
             }
 
@@ -102,10 +101,11 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
                         if (TheDonorCmd.DeleteDonor(int.Parse(DonersGridView.CurrentRow.Cells[0].Value.ToString())))
                         {
-                           
+                            
+                            FrmManagementFinanciers_Load(null, null);
                             Operation.ShowToustOk(OperationX.DeletedMessage, this);
                             Operation.BeginOperation(this);
-                            FrmManagementFinanciers_Load(sender, e);
+                        
 
 
                         }
@@ -132,7 +132,8 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
-            FrmManagementFinanciers_Load(sender, e);
+            FrmManagementFinanciers_Load(null, null);
+
         }
 
 

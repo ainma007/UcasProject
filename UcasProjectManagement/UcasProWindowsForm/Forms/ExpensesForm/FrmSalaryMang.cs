@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
@@ -23,7 +19,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         public int XSalaryID { get; set; }
         public Ucas.Data.Monthlysalary Tragetsalary { get; set; }
-        Monthlysalary db = new Monthlysalary();
+        Thread th;
         private void FillCombo()
         {
             ///GetAllContractsProjectID
@@ -49,7 +45,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
             });
             Operation.EndOperation(this);
-
+            th.Abort();
 
 
 
@@ -59,7 +55,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         }
         private void FrmSalaryMang_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(FillCombo);
+            th = new Thread(FillCombo);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
             XSalaryID = Tragetsalary.ID;

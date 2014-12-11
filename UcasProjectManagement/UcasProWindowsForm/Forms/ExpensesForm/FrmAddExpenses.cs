@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
-using Ucas.Data.Special_Classes;
 
 namespace UcasProWindowsForm.Forms.ExpensesForm
 {
@@ -22,6 +17,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             RadMessageBox.SetThemeName("TelerikMetro");
       
         }
+        Thread th;
         private void FillComboBox()
         {
             Operation.BeginOperation(this);
@@ -54,14 +50,17 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 this.SupplierComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter2);
             });
             Operation.EndOperation(this);
-          
+            th.Abort();
    
         }
         private void FrmAddExpenses_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(FillComboBox);
+            th = new Thread(FillComboBox);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
+            DateOfProecssPicker.Value = DateTime.Now;
+          
+            
           
         }
 
