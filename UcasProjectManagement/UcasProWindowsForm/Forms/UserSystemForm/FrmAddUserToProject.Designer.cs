@@ -104,7 +104,7 @@
             this.ProjectCombo.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ProjectCombo.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // ProjectCombo.NestedRadGridView
+            // 
             // 
             this.ProjectCombo.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.ProjectCombo.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -202,7 +202,7 @@
             this.UserListComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.UserListComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // UserListComboBox.NestedRadGridView
+            // 
             // 
             this.UserListComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.UserListComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -265,8 +265,10 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اضافة مستخدم لمشروع";
             this.ThemeName = "TelerikMetro";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAddUserToProject_FormClosed);
             this.Load += new System.EventHandler(this.FrmAddUserToProject_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox2.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox2.EditorControl)).EndInit();

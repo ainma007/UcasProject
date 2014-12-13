@@ -256,6 +256,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اضافة ممول";
             this.ThemeName = "TelerikMetro";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAddTheTheDonors_FormClosed);
             this.Load += new System.EventHandler(this.FrmAddTheTheDonors_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);

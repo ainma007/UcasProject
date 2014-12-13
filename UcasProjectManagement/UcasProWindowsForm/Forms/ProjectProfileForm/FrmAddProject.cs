@@ -136,5 +136,11 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 e.Handled = true;
             }
         }
+
+        private void FrmAddProject_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           
+            this.Dispose();
+        }
     }
 }

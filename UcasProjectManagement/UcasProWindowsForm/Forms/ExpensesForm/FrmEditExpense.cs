@@ -49,8 +49,19 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 filter2.PropertyName = this.SupplierComboBox.DisplayMember;
                 filter2.Operator = FilterOperator.Contains;
                 this.SupplierComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter2);
+                ////////FillText
+                XExpID = TragetExpens.ID;
+                SubActivtiesComboBox.Text = TragetExpens.ProjectSubActivity.SubActivityName;
+                ExpensesNameTextBox.Text = TragetExpens.ExpensesName;
+                BillTextBox.Text = TragetExpens.BillNumber;
+                CashingNumberTextBox.Text = TragetExpens.CashingNumber;
+                DateOfProecssPicker.Text = TragetExpens.DateofProcess.ToString();
+                RequiarAmountTextBox.Text = TragetExpens.RequiarAmount.ToString();
+                SupplierComboBox.Text = TragetExpens.Supplier.Name;
             });
             Operation.EndOperation(this);
+           
+          
 
             th.Abort();
         }
@@ -59,14 +70,6 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             th = new Thread(FillComboBox);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
-            XExpID = TragetExpens.ID;
-            SubActivtiesComboBox.Text = TragetExpens.ProjectSubActivity.SubActivityName;
-            ExpensesNameTextBox.Text = TragetExpens.ExpensesName;
-            BillTextBox.Text = TragetExpens.BillNumber;
-            CashingNumberTextBox.Text = TragetExpens.CashingNumber;
-            DateOfProecssPicker.Text = TragetExpens.DateofProcess.ToString();
-            RequiarAmountTextBox.Text = TragetExpens.RequiarAmount.ToString();
-            SupplierComboBox.Text = TragetExpens.Supplier.Name;
 
         }
 
@@ -148,7 +151,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                     Operation.EndOperation(this);
                     RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
 
-                   
+                    this.Dispose();
                     this.Close();
                 }
                 catch (Xprema.XpremaException ex)
@@ -174,6 +177,11 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             {
                 e.Handled = true;
             }
+        }
+
+        private void FrmEditExpense_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

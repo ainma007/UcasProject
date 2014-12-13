@@ -255,6 +255,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعديل بيانات مورد";
             this.ThemeName = "TelerikMetro";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmEditsupplier_FormClosed);
             this.Load += new System.EventHandler(this.FrmEditsupplier_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);

@@ -11,16 +11,16 @@
         <EntityTypeShape EntityType="UcasProModel.Employee" Width="1.5" PointX="3.75" PointY="1.125" />
         <EntityTypeShape EntityType="UcasProModel.Monthlysalary" Width="1.5" PointX="8.25" PointY="8.625" />
         <EntityTypeShape EntityType="UcasProModel.ProjectActivity" Width="1.5" PointX="3" PointY="11.375" />
-        <EntityTypeShape EntityType="UcasProModel.ProjectControl" Width="1.5" PointX="3" PointY="8.5" />
+        <EntityTypeShape EntityType="UcasProModel.ProjectControl" Width="1.5" PointX="13" PointY="8.625" />
         <EntityTypeShape EntityType="UcasProModel.ProjectExpens" Width="1.5" PointX="7.5" PointY="11.875" />
-        <EntityTypeShape EntityType="UcasProModel.ProjectProfile" Width="1.5" PointX="0.75" PointY="9.25" />
+        <EntityTypeShape EntityType="UcasProModel.ProjectProfile" Width="1.5" PointX="10.75" PointY="5.5" />
         <EntityTypeShape EntityType="UcasProModel.ProjectSubActivity" Width="1.5" PointX="5.25" PointY="10.125" />
         <EntityTypeShape EntityType="UcasProModel.Supplier" Width="1.5" PointX="5.25" PointY="15.25" />
         <EntityTypeShape EntityType="UcasProModel.SystemPermession" Width="1.5" PointX="3.75" PointY="18.625" />
         <EntityTypeShape EntityType="UcasProModel.TheDonor" Width="1.5" PointX="0.75" PointY="15.25" />
         <EntityTypeShape EntityType="UcasProModel.TheDonorsProject" Width="1.5" PointX="3" PointY="15.375" />
         <EntityTypeShape EntityType="UcasProModel.UserPermession" Width="1.5" PointX="6" PointY="2.5" />
-        <EntityTypeShape EntityType="UcasProModel.UserTb" Width="1.5" PointX="0.75" PointY="5.25" />
+        <EntityTypeShape EntityType="UcasProModel.UserTb" Width="1.5" PointX="13" PointY="5.125" />
         <AssociationConnector Association="UcasProModel.FK_AmountsReceived_TheFinancerProjects" />
         <AssociationConnector Association="UcasProModel.FK_AmountsReceiveds_ProjectProfiles" />
         <AssociationConnector Association="UcasProModel.FK_Attachments_ProjectProfiles" />

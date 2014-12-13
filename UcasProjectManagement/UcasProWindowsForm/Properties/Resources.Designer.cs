@@ -63,6 +63,16 @@ namespace UcasProWindowsForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1418514813_Download {
+            get {
+                object obj = ResourceManager.GetObject("1418514813_Download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _7 {
             get {
                 object obj = ResourceManager.GetObject("7", resourceCulture);
@@ -276,6 +286,16 @@ namespace UcasProWindowsForm.Properties {
         internal static System.Drawing.Bitmap Green {
             get {
                 object obj = ResourceManager.GetObject("Green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap metro_loading {
+            get {
+                object obj = ResourceManager.GetObject("metro-loading", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

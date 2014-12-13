@@ -11,6 +11,7 @@
     <AssemblyName>Ucas.Data</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
@@ -69,6 +72,7 @@
     <Compile Include="Employee.cs">
       <DependentUpon>UcasPro.tt</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Monthlysalary.cs">
       <DependentUpon>UcasPro.tt</DependentUpon>
     </Compile>
@@ -140,11 +144,11 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
     <EntityDeploy Include="UcasPro.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>UcasPro.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="packages.config" />
     <None Include="UcasPro.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>UcasPro.edmx</DependentUpon>
@@ -164,7 +168,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Special Classes\ReadMe.txt" />
-    <Content Include="UcasPro.edmx.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

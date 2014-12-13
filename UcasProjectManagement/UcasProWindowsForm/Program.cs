@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using UcasProWindowsForm.Forms;
 using UcasProWindowsForm.Forms.ExpensesForm;
 using UcasProWindowsForm.Forms.MainForm;
 using UcasProWindowsForm.Forms.ProjectProfileForm;
@@ -27,7 +28,10 @@ namespace UcasProWindowsForm
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
            // Application.Run(new FrmLogin ());
-            Application.Run(new  FrmAdmin  ());
+           // Application.Run(new FrmLogin());
+           // Operation.BeginOperation(new FrmAdmin());
+
+            Application.Run(new frmLoader());
         }
     }
 }

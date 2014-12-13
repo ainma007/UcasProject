@@ -269,14 +269,22 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
-            
+            this.Cursor = Cursors.WaitCursor;
+           
+
             FrmAllActivitesMange_Load(sender, e);
+            this.Cursor = Cursors.Default;
           
         }
 
         private void PrintBtn_Click(object sender, EventArgs e)
         {
             this.ActivitiesGridView.PrintPreview();
+        }
+
+        private void FrmAllActivitesMange_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
 
      

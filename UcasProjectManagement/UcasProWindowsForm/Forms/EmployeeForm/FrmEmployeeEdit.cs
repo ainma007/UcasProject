@@ -106,9 +106,15 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                 EmployeeCmd.EditEmployee(db);
                 Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                this.Dispose();
                 this.Close();
 
             }
+        }
+
+        private void FrmEmployeeEdit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

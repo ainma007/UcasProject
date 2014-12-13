@@ -151,6 +151,7 @@
             gridViewTextBoxColumn6,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
+            this.supplierGridView.MasterTemplate.EnableFiltering = true;
             this.supplierGridView.MasterTemplate.EnablePaging = true;
             this.supplierGridView.MasterTemplate.SearchRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.supplierGridView.Name = "supplierGridView";
@@ -270,6 +271,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ادارة الموردين";
             this.ThemeName = "TelerikMetro";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmManagementSupplier_FormClosed);
             this.Load += new System.EventHandler(this.FrmManagementSupplier_Load);
             ((System.ComponentModel.ISupportInitialize)(this.supplierGridView.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierGridView)).EndInit();

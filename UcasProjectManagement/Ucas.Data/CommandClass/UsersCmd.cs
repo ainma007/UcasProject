@@ -18,15 +18,27 @@ namespace Ucas.Data.CommandClass
                       select p).ToList();
            return lst;
        }
-     
+       public static bool NewUser(UserTb tb)
+       {
+
+           db = new UcasProEntities();
+
+           db.UserTbs.Add(tb);
+           db.SaveChanges();
+           return true;
+
+       }
+       
        public static bool EditUser(UserTb tb)
        {
            try
            {
                db = new UcasProEntities();
                var q = db.UserTbs.Where(p => p.ID == tb.ID).SingleOrDefault();
+               q.ID = tb.ID;
                q.UserName = tb.UserName;
                q.Password = tb.Password;
+               q.TypeUser = tb.TypeUser;
               
              
              
@@ -35,10 +47,10 @@ namespace Ucas.Data.CommandClass
                }
               
          
-           catch (Exception)
+           catch (Exception ex)
            {
 
-               return false;
+               throw ex;
            }
        }
 
@@ -74,15 +86,7 @@ namespace Ucas.Data.CommandClass
            return XlAST;
        }
 
-       public static int GetCurrentUserIDByNameAndPass(string nam, string pass)
-       {
-           db = new UcasProEntities();
-           db.Configuration.ProxyCreationEnabled = false;
-           db.Configuration.LazyLoadingEnabled = false;
-           var lst = (from u in db.UserTbs where u.UserName == nam && u.Password == pass select u.ID).Single();
-           return lst;
-       }
-
+      
        public static List<UserTb> GetLoginUserDataByID(int XID)
        {
            db = new UcasProEntities();
@@ -114,7 +118,7 @@ namespace Ucas.Data.CommandClass
                var q = db.UserTbs.Where(p => p.UserName == usr && p.Password == pwd).ToList();
                if (q.Count == 0 || q.Count == -1)
                {
-                   return new UserTb();
+                   return null;
                }
                else
                {
@@ -125,7 +129,7 @@ namespace Ucas.Data.CommandClass
            catch (Exception e)
            {
                
-               throw e;
+               throw ;
            }
        }
 

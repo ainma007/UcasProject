@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
 using Ucas.Data.CommandClass;
 using UcasProWindowsForm.Reports.ReportCommand;
+using UcasProWindowsForm.Reports.ReportObj;
 
 namespace UcasProWindowsForm.Forms.supplierForm
 {
@@ -47,11 +50,11 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void FrmManagementSupplier_Load(object sender, EventArgs e)
         {
-            Operation.BeginOperation(this);
+           
             th = new Thread(GetAllsupplier);
             th.Start();
 
-            Operation.EndOperation(this);
+          
            
             
         }
@@ -125,15 +128,43 @@ namespace UcasProWindowsForm.Forms.supplierForm
         private void ReportviewBtn_Click(object sender, EventArgs e)
         {
             Operation.BeginOperation(this);
-            
-            SupplierReportCmd cmd = new SupplierReportCmd();
-            cmd.GetAllSupplier();
+
+            List<SupplierReportObj> ls = new List<SupplierReportObj>();
+            int counter = 0;
+            //    ls.Add(new SalaryReportObj() {  SalarysID = counter});
+            foreach (GridViewRowInfo item in supplierGridView.ChildRows)
+            {
+                counter++;
+                ls.Add(new SupplierReportObj()
+                {
+                    SupplierID = counter,
+                    SupplierName = item.Cells["Name"].Value.ToString(),
+                    Address = item.Cells["Adderss"].Value.ToString(),
+                    SuppliersNatural = item.Cells["SuppliersNatural"].Value.ToString(),
+                    Faxnumber = item.Cells["Fax"].Value.ToString(),
+                    Email = item.Cells["Email"].Value.ToString(),
+                    PhoneNumber = item.Cells["PhoneNumber"].Value.ToString(),
+                  
+
+                });
+            }
+            Reports.ReportCommand.SupplierReportCmd cmd = new Reports.ReportCommand.SupplierReportCmd();
+            cmd.ShowSuppReportByGrid(ls);
             Operation.EndOperation(this);
         }
 
         private void Refreshbtn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
+
             FrmManagementSupplier_Load(null, null);
+            this.Cursor = Cursors.Default;
+
+        }
+
+        private void FrmManagementSupplier_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

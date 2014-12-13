@@ -7,6 +7,8 @@ using UcasProWindowsForm.Forms.EmployeeForm;
 using UcasProWindowsForm.Forms.ProjectProfileForm;
 using UcasProWindowsForm.Forms.supplierForm;
 using UcasProWindowsForm.Forms.UserSystemForm;
+using System.Data.Linq;
+using System.Linq;
 
 
 
@@ -23,7 +25,7 @@ namespace UcasProWindowsForm.Forms.MainForm
         }
 
         Thread th;
-        private void GetAllProject()
+        private void GetAllProjectAdmin()
         {
             statusStrip1.Invoke((MethodInvoker)delegate
             {
@@ -46,16 +48,68 @@ namespace UcasProWindowsForm.Forms.MainForm
             });
             th.Abort();
 
-        } 
-      
-        private void FrmAdmin_Load(object sender, EventArgs e)
-
-
+        }
+        private void GetAllProjectUser()
         {
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                StatusLabel1.Text = "جاري الانتظار.... ";
+
+            });
             Operation.BeginOperation(this);
-            th = new Thread(GetAllProject);
-            th.Start();
+
+            Application.DoEvents();
+            var q = ProjectControlCmd.GetAllCurrentUserProjects();
+            Application.DoEvents();
+
             Operation.EndOperation(this);
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+                radGridView1.DataSource = q;
+                StatusLabel1.Text = "";
+
+            });
+            th.Abort();
+
+        } 
+        private void FrmAdmin_Load(object sender, EventArgs e)
+        {
+     //       var  = ( from u in ProjectControlCmd.ge)
+            switch (InformationsClass .XUserType)
+            {
+
+
+                case "مدير":
+                       th = new Thread(GetAllProjectAdmin);
+                       th.Start();
+                       InformationsClass.Coordinator = 1;
+                       InformationsClass.Accountant = 1;
+                    break;
+
+                case "منسق":
+
+                    th = new Thread(GetAllProjectUser);
+                       th.Start();
+                    InformationsClass.Coordinator = 1;
+                    InformationsClass.Accountant = 0;
+                    break;
+
+                case "محاسب":
+
+                    th = new Thread(GetAllProjectUser);
+                    th.Start();
+                    InformationsClass.Coordinator = 0;
+                    InformationsClass.Accountant = 1;
+                    break;
+
+
+                //case "غير فعال":
+
+
+                //    break;
+            }  
+         
         } 
 
 
@@ -139,15 +193,43 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void radGridView1_CommandCellClick(object sender, EventArgs e)
         {
-            Operation.BeginOperation(this);
+           
             FrmMainUserPro frm = new FrmMainUserPro();
             Ucas.Data.ProjectProfile db = (Ucas.Data.ProjectProfile)radGridView1.CurrentRow.DataBoundItem;
-            frm.TragetProject = db;
-            frm.ShowDialog();
+            if (InformationsClass.XUserType=="مدير")
+            {
+                Operation.BeginOperation(this);
+                frm.TragetProject = db;
+                this.Hide();
+                frm.ShowDialog();
+                Operation.EndOperation(this);
+                return;
+            }
+            var c = db.ProjectControls.Where(p => p.ProjectID == db.ID).Take(1).SingleOrDefault();
+            if (c.Status=="غير فعال")
+            {
+                // message not have permession
+                Operation.EndOperation(this);
+                RadMessageBox.Show("غير مصرح لك بالدخول");
+               
+                return;
+
+            }
+            else
+            {
+                Operation.BeginOperation(this);
+                frm.TragetProject = db;
+                this.Dispose();
+                this.Hide();
+                frm.ShowDialog();
+               
+                Operation.EndOperation(this);
+            }
+           
 
 
-            Operation.EndOperation(this);
-            this.Hide();
+        
+           
             FrmAdmin_Load(null, null);
         }
 
@@ -196,6 +278,11 @@ namespace UcasProWindowsForm.Forms.MainForm
             FRM.ShowDialog();
             Operation.EndOperation(this);
 
+        }
+
+        private void FrmAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
        

@@ -94,8 +94,8 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 ProjectProfileCmd.EditProjectProfile(pro);
                 Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
-               
 
+                this.Dispose();
                 this.Close();
             }
         }
@@ -126,6 +126,11 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                    TotalCostTextBox.Text=TragetProject.TotalCost.ToString();
                    StatusDownList.Text=TragetProject.Status.ToString();
                    CoineDropDownList.Text = TragetProject.Coin;
+        }
+
+        private void FrmEditProject_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

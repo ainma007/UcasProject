@@ -585,6 +585,7 @@
             this.ThemeName = "TelerikMetro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.FrmAllActivitesMange_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAllActivitesMange_FormClosed);
             this.Load += new System.EventHandler(this.FrmAllActivitesMange_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewTemplate2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectSubActivityBindingSource)).EndInit();

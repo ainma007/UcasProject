@@ -36,6 +36,8 @@
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMangeAmount));
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -121,6 +123,18 @@
             gridViewCommandColumn2.MinWidth = 45;
             gridViewCommandColumn2.Name = "DelColm";
             gridViewCommandColumn2.Width = 45;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "ProjectProfile.ProjectName";
+            gridViewTextBoxColumn3.HeaderText = "column1";
+            gridViewTextBoxColumn3.IsVisible = false;
+            gridViewTextBoxColumn3.Name = "ProjectName";
+            gridViewTextBoxColumn3.Width = 39;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "ProjectProfile.Coin";
+            gridViewTextBoxColumn4.HeaderText = "column2";
+            gridViewTextBoxColumn4.IsVisible = false;
+            gridViewTextBoxColumn4.Name = "Coin";
+            gridViewTextBoxColumn4.Width = 49;
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewDecimalColumn1,
@@ -128,7 +142,9 @@
             gridViewDateTimeColumn1,
             gridViewDecimalColumn2,
             gridViewCommandColumn1,
-            gridViewCommandColumn2});
+            gridViewCommandColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4});
             this.radGridView1.MasterTemplate.EnableFiltering = true;
             this.radGridView1.MasterTemplate.EnablePaging = true;
             this.radGridView1.MasterTemplate.SearchRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
@@ -194,6 +210,7 @@
             this.PrintBtn.Name = "PrintBtn";
             this.PrintBtn.Size = new System.Drawing.Size(99, 36);
             this.PrintBtn.Text = "طباعة تقرير";
+            this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
             // 
             // toolStripSeparator3
             // 
@@ -251,6 +268,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ادارة المبالغ المستملة من الممولين";
             this.ThemeName = "TelerikMetro";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMangeAmount_FormClosed);
             this.Load += new System.EventHandler(this.FrmMangeAmount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();

@@ -93,6 +93,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                             Operation.EndOperation(this);
 
                             RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                            this.Dispose();
                               
                             this.Close();
                         }
@@ -126,9 +127,17 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                 filter.PropertyName = this.EmployeeComboBox.DisplayMember;
                 filter.Operator = FilterOperator.Contains;
                 this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-
+                myContractId = TragetContract.ID;
+                this.EmployeeComboBox.Text = TragetContract.Employee.EmployeeName;
+                this.StartDateTimePicker.Text = TragetContract.StartDate.ToString();
+                this.EndDateTimePicker.Text = TragetContract.EndDate.ToString();
+                SalaryTextBox.Text = TragetContract.SelaryAmount.ToString();
+                this.TotaltextBox.Text = TragetContract.TotalSalary.ToString();
+                this.StatusDropDownList.Text = TragetContract.Status.ToString();
             });
-
+            //fillText
+            
+            
 
             th.Abort();
 
@@ -143,13 +152,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
             Coinlabel2.Text = InformationsClass.Coin;
-            myContractId = TragetContract.ID;
-            this.EmployeeComboBox.Text = TragetContract.Employee.EmployeeName;
-            this.StartDateTimePicker.Text = TragetContract.StartDate.ToString();
-            this.EndDateTimePicker.Text = TragetContract.EndDate.ToString();
-            SalaryTextBox.Text = TragetContract.SelaryAmount.ToString();
-            this.TotaltextBox.Text = TragetContract.TotalSalary.ToString();
-            this.StatusDropDownList.Text = TragetContract.Status.ToString();
+            
         }
 
         private void SalaryTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -166,6 +169,11 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             {
                 e.Handled = true;
             }
+        }
+
+        private void FrmContractsLookAndSave_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

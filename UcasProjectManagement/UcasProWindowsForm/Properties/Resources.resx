@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="EditSupp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditSupp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Supplier" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Supplier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,11 +136,11 @@
   <data name="editColm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editColm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AddEmp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddEmp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Donors" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Donors.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="metro-loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\metro-loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,8 +154,11 @@
   <data name="blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Projects" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Projects.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AddEmp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddEmp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditPro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditPro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Attach" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Attach.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,14 +196,17 @@
   <data name="Cost" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Projects" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Projects.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Refrech1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Refrech1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DeletColm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DeletColm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EditPro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditPro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AddSupp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddSupp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,10 +214,7 @@
   <data name="Add1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EditSupp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditSupp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AddSupp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddSupp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1418514813_Download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1418514813_Download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

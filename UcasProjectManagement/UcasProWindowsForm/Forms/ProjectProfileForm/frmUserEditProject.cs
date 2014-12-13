@@ -101,7 +101,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
 
-
+                this.Dispose();
                 this.Close();
             }
         }
@@ -120,6 +120,11 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             {
                 e.Handled = true;
             }
+        }
+
+        private void frmUserEditProject_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

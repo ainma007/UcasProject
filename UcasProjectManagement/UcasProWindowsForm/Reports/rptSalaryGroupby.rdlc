@@ -279,7 +279,7 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!SalarysID.Value</Value>
+                                                <Value>=RowNumber(Nothing)</Value>
                                                 <Style />
                                               </TextRun>
                                             </TextRuns>
@@ -309,6 +309,7 @@
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
+                                      <rd:Selected>true</rd:Selected>
                                     </CellContents>
                                   </TablixCell>
                                   <TablixCell>

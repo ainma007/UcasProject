@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.Coinlabel = new System.Windows.Forms.Label();
             this.ActivitiesDescriptionTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
@@ -43,7 +44,6 @@
             this.ActivitiesNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Coinlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ActivitiesDescriptionTextBox)).BeginInit();
@@ -84,6 +84,15 @@
             this.radGroupBox1.TabIndex = 1;
             this.radGroupBox1.Text = "بيانات الادخال";
             this.radGroupBox1.ThemeName = "TelerikMetro";
+            // 
+            // Coinlabel
+            // 
+            this.Coinlabel.ForeColor = System.Drawing.Color.Green;
+            this.Coinlabel.Location = new System.Drawing.Point(71, 173);
+            this.Coinlabel.Name = "Coinlabel";
+            this.Coinlabel.Size = new System.Drawing.Size(100, 19);
+            this.Coinlabel.TabIndex = 10;
+            this.Coinlabel.Text = "-";
             // 
             // ActivitiesDescriptionTextBox
             // 
@@ -214,15 +223,6 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.RightToLeft = true;
             // 
-            // Coinlabel
-            // 
-            this.Coinlabel.ForeColor = System.Drawing.Color.Green;
-            this.Coinlabel.Location = new System.Drawing.Point(71, 173);
-            this.Coinlabel.Name = "Coinlabel";
-            this.Coinlabel.Size = new System.Drawing.Size(100, 19);
-            this.Coinlabel.TabIndex = 10;
-            this.Coinlabel.Text = "-";
-            // 
             // FrmAddActivities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,6 +243,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اضافة نشاط رئيسي";
             this.ThemeName = "TelerikMetro";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAddActivities_FormClosed);
             this.Load += new System.EventHandler(this.FrmAddActivities_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);

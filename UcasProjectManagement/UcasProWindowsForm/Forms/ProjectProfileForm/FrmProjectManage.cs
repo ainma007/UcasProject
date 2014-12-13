@@ -16,12 +16,11 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
         Thread th;
         private void FrmProjectManage_Load(object sender, EventArgs e)
         {
-            Operation.BeginOperation(this);
+            
             th = new Thread(GetAllProject);
             th.Start();
 
-            Operation.EndOperation(this);
-        }
+       }
        
         private void GetAllProject()
         {
@@ -108,10 +107,18 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
-
-            this.FrmProjectManage_Load(null, null);
+            this.Cursor = Cursors.WaitCursor;
           
 
+            this.FrmProjectManage_Load(null, null);
+            this.Cursor = Cursors.Default;
+          
+
+        }
+
+        private void FrmProjectManage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
 
        

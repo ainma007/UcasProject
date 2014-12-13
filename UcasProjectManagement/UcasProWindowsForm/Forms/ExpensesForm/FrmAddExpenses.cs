@@ -181,6 +181,11 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 e.Handled = true;
             }
         }
+
+        private void FrmAddExpenses_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+        }
       
 
     }

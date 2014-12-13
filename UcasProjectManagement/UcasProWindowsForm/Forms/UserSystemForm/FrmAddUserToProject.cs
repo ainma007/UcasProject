@@ -95,5 +95,10 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
             th.Start();
           
         }
+
+        private void FrmAddUserToProject_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

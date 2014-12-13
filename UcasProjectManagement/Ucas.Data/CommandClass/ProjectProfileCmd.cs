@@ -14,7 +14,7 @@ namespace Ucas.Data.CommandClass
             try
             {
             db = new UcasProEntities();
-            var lst = (from p in db.ProjectProfiles
+            var lst = (from p in db.ProjectProfiles 
                       
                        select p).ToList();
             return lst;

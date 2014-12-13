@@ -9,6 +9,8 @@ namespace Ucas.Data.CommandClass
     public class ProjectControlCmd
     {
         static UcasProEntities db = new UcasProEntities();
+
+        #region  "  ^^^^ Main "
         public static List<ProjectControl> GetAllProControls()
         {
                db = new UcasProEntities();
@@ -75,16 +77,43 @@ namespace Ucas.Data.CommandClass
         public static string GetStatusByID(int xid) {
 
             db = new UcasProEntities();
-            db.Configuration.ProxyCreationEnabled = false;
-            db.Configuration.LazyLoadingEnabled = false;
             string  xxx = (from u in db.ProjectControls
-                       where u.UserID == xid
-                       select u.Status)
+            where u.UserID == xid
+            select u.Status)
 
                             .Single();
             return xxx;  
         
         }
+        #endregion
+
+
+
+        #region  "  ^^^^ Project Profile & Control "
+        //= ProjectID == جلب جميع المشاريع التابعه لليوزر الحالي ID
+        public static List<ProjectProfile> GetAllCurrentUserProjects()
+        {
+            db = new UcasProEntities();
+            var getallproject = new object ();
+            
+           // var q = (from i in db.ProjectControls where i.UserID == InformationsClass.xCurrentUserID select i).ToList();
+            var q = db.UserTbs.Where(p => p.ID == InformationsClass.xCurrentUserID).Take(1).SingleOrDefault();
+            var cn = q.ProjectControls.ToList();
+            List<ProjectProfile> ls = new List<ProjectProfile>();
+            foreach (var item in cn)
+            {
+                ls.Add(item.ProjectProfile);
+            }
+            return ls;
+      
+        }
+
+       
+
+        #endregion 
+
+
+
 
 
         public static int ChkProjectIDByUserID(int xid)
@@ -92,9 +121,7 @@ namespace Ucas.Data.CommandClass
             try
             {
                      db = new UcasProEntities();
-            db.Configuration.ProxyCreationEnabled = false;
-            db.Configuration.LazyLoadingEnabled = false;
-            int  xGetHim = (from u in db.ProjectControls
+                       int  xGetHim = (from u in db.ProjectControls
                         where u.UserID == xid
                           select u.ID)
                           .SingleOrDefault();

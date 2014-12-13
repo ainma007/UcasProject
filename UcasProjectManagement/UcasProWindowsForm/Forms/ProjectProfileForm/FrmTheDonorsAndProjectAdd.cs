@@ -134,5 +134,10 @@ namespace UcasProWindowsForm.Forms.MainForm
                 e.Handled = true;
             }
         }
+
+        private void FrmTheDonorsAndProjectAdd_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

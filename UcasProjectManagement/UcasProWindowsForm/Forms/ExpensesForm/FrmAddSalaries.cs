@@ -148,5 +148,10 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         {
 
         }
+
+        private void FrmAddSalaries_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

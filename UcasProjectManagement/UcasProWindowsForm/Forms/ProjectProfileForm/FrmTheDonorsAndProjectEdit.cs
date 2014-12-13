@@ -38,7 +38,9 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 filter.PropertyName = this.DonorsColumnComboBox.DisplayMember;
                 filter.Operator = FilterOperator.Contains;
                 this.DonorsColumnComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-
+                XDonrPro = TragetTheDonorsProject.ID;
+                DonorsColumnComboBox.Text = TragetTheDonorsProject.TheDonor.Name;
+                CostTextBox.Text = TragetTheDonorsProject.TotalCost.ToString();
             });
             Operation.EndOperation(this);
 
@@ -58,9 +60,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             th = new Thread(fillDonorsCombo);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
-            XDonrPro = TragetTheDonorsProject.ID;
-            DonorsColumnComboBox.Text = TragetTheDonorsProject.TheDonor.Name;
-            CostTextBox.Text = TragetTheDonorsProject.TotalCost.ToString();
+           
 
         }
 
@@ -117,6 +117,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 TheDonorsProjectCmd.EditTheDonorsProject(tb);
                 Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                this.Dispose();
                 this.Close();
             }
         }
@@ -140,6 +141,11 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             {
                 e.Handled = true;
             }
+        }
+
+        private void FrmTheDonorsAndProjectEdit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Ucas.Data.CommandClass
 {
-   public class AttachmentsClass
+   public class AttachmentsClass :IDisposable
     {
 
         static UcasProEntities db = new UcasProEntities();
@@ -79,5 +79,26 @@ namespace Ucas.Data.CommandClass
             db.Configuration.ProxyCreationEnabled = false;
             return db.Attachments.ToList();
         }
+
+
+        bool disposed = false;
+
+        // Public implementation of Dispose pattern callable by consumers. 
+        public  void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+     
+  protected virtual void Dispose(bool disposing)
+   {
+      if (disposed)
+         return; 
+
+     
+      disposed = true;
+   }
+        }
+    
     }
-}

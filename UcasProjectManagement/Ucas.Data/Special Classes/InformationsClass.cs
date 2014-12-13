@@ -7,13 +7,16 @@ namespace Ucas.Data.CommandClass
 {
     public    class InformationsClass
     {
-
+     
     
         //==============================
       public static int ProjID;
       public static string Coin;
         //=============================
       public static int AdminID;
+
+      public static int Coordinator;
+      public static int Accountant;
 
       static UcasProEntities db = new UcasProEntities();
      
@@ -24,8 +27,12 @@ namespace Ucas.Data.CommandClass
       public static int xCurrentUserID;
       public static string xCurrentUserName;
       public static  string xCurrentUserPass;
+      public static string XUserType; 
         
       #endregion 
+     
+     
+
 
     }
 }

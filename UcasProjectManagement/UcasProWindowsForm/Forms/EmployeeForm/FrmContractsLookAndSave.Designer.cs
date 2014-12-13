@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.Coinlabel2 = new System.Windows.Forms.Label();
+            this.Coinlabel = new System.Windows.Forms.Label();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.TotaltextBox = new Telerik.WinControls.UI.RadTextBox();
@@ -52,8 +54,6 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.Coinlabel2 = new System.Windows.Forms.Label();
-            this.Coinlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -102,6 +102,24 @@
             this.radGroupBox1.Text = "بيانات التعديل";
             this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
+            // Coinlabel2
+            // 
+            this.Coinlabel2.ForeColor = System.Drawing.Color.Green;
+            this.Coinlabel2.Location = new System.Drawing.Point(112, 142);
+            this.Coinlabel2.Name = "Coinlabel2";
+            this.Coinlabel2.Size = new System.Drawing.Size(100, 19);
+            this.Coinlabel2.TabIndex = 19;
+            this.Coinlabel2.Text = "-";
+            // 
+            // Coinlabel
+            // 
+            this.Coinlabel.ForeColor = System.Drawing.Color.Green;
+            this.Coinlabel.Location = new System.Drawing.Point(113, 114);
+            this.Coinlabel.Name = "Coinlabel";
+            this.Coinlabel.Size = new System.Drawing.Size(100, 19);
+            this.Coinlabel.TabIndex = 18;
+            this.Coinlabel.Text = "-";
+            // 
             // radLabel2
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -138,10 +156,10 @@
             this.StatusDropDownList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.StatusDropDownList.AutoCompleteDisplayMember = null;
             this.StatusDropDownList.AutoCompleteValueMember = null;
-            radListDataItem3.Text = "فعال";
-            radListDataItem4.Text = "غير فعال";
-            this.StatusDropDownList.Items.Add(radListDataItem3);
-            this.StatusDropDownList.Items.Add(radListDataItem4);
+            radListDataItem1.Text = "فعال";
+            radListDataItem2.Text = "غير فعال";
+            this.StatusDropDownList.Items.Add(radListDataItem1);
+            this.StatusDropDownList.Items.Add(radListDataItem2);
             this.StatusDropDownList.Location = new System.Drawing.Point(201, 170);
             this.StatusDropDownList.Name = "StatusDropDownList";
             this.StatusDropDownList.Size = new System.Drawing.Size(94, 19);
@@ -256,7 +274,7 @@
             this.EmployeeComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.EmployeeComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // EmployeeComboBox.NestedRadGridView
+            // 
             // 
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -264,30 +282,30 @@
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowSearchRow = true;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn2.EnableExpressionEditor = false;
-            gridViewDecimalColumn2.FieldName = "ID";
-            gridViewDecimalColumn2.HeaderText = "ID";
-            gridViewDecimalColumn2.IsAutoGenerated = true;
-            gridViewDecimalColumn2.IsVisible = false;
-            gridViewDecimalColumn2.Name = "ID";
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "EmployeeName";
-            gridViewTextBoxColumn3.HeaderText = "اسم الموظف";
-            gridViewTextBoxColumn3.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            gridViewTextBoxColumn3.IsAutoGenerated = true;
-            gridViewTextBoxColumn3.Name = "EmployeeName";
-            gridViewTextBoxColumn3.Width = 132;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "EmployeejobNumber";
-            gridViewTextBoxColumn4.HeaderText = "الرقم الوظيفي";
-            gridViewTextBoxColumn4.IsAutoGenerated = true;
-            gridViewTextBoxColumn4.Name = "EmployeejobNumber";
-            gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn4.Width = 89;
+            gridViewDecimalColumn1.EnableExpressionEditor = false;
+            gridViewDecimalColumn1.FieldName = "ID";
+            gridViewDecimalColumn1.HeaderText = "ID";
+            gridViewDecimalColumn1.IsAutoGenerated = true;
+            gridViewDecimalColumn1.IsVisible = false;
+            gridViewDecimalColumn1.Name = "ID";
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "EmployeeName";
+            gridViewTextBoxColumn1.HeaderText = "اسم الموظف";
+            gridViewTextBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            gridViewTextBoxColumn1.IsAutoGenerated = true;
+            gridViewTextBoxColumn1.Name = "EmployeeName";
+            gridViewTextBoxColumn1.Width = 132;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "EmployeejobNumber";
+            gridViewTextBoxColumn2.HeaderText = "الرقم الوظيفي";
+            gridViewTextBoxColumn2.IsAutoGenerated = true;
+            gridViewTextBoxColumn2.Name = "EmployeejobNumber";
+            gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn2.Width = 89;
             this.EmployeeComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4});
+            gridViewDecimalColumn1,
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2});
             this.EmployeeComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
             this.EmployeeComboBox.EditorControl.Name = "NestedRadGridView";
@@ -324,24 +342,6 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(12, 17);
             this.toolStripStatusLabel1.Text = "-";
             // 
-            // Coinlabel2
-            // 
-            this.Coinlabel2.ForeColor = System.Drawing.Color.Green;
-            this.Coinlabel2.Location = new System.Drawing.Point(112, 142);
-            this.Coinlabel2.Name = "Coinlabel2";
-            this.Coinlabel2.Size = new System.Drawing.Size(100, 19);
-            this.Coinlabel2.TabIndex = 19;
-            this.Coinlabel2.Text = "-";
-            // 
-            // Coinlabel
-            // 
-            this.Coinlabel.ForeColor = System.Drawing.Color.Green;
-            this.Coinlabel.Location = new System.Drawing.Point(113, 114);
-            this.Coinlabel.Name = "Coinlabel";
-            this.Coinlabel.Size = new System.Drawing.Size(100, 19);
-            this.Coinlabel.TabIndex = 18;
-            this.Coinlabel.Text = "-";
-            // 
             // FrmContractsLookAndSave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,6 +363,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعديل بيانات عقد";
             this.ThemeName = "TelerikMetro";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmContractsLookAndSave_FormClosed);
             this.Load += new System.EventHandler(this.FrmContractsLookAndSave_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);

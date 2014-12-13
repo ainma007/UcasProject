@@ -148,6 +148,11 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
                           
 
         }
+
+        private void FrmAddAmount_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+        }
        
 
       

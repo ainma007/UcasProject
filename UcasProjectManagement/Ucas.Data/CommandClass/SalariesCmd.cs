@@ -16,8 +16,7 @@ namespace Ucas.Data.CommandClass
             try
             {
                 db = new UcasProEntities();
-                db.Configuration.ProxyCreationEnabled = false;
-                db.Configuration.LazyLoadingEnabled = false;
+                
                 db.Monthlysalaries.Add(tb);
                 db.SaveChanges();
                 return true;

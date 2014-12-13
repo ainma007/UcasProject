@@ -268,6 +268,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmManagementFinanciers";
             this.ThemeName = "TelerikMetro";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmManagementTheDonors_FormClosed);
             this.Load += new System.EventHandler(this.FrmManagementFinanciers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DonersGridView.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonersGridView)).EndInit();

@@ -32,8 +32,7 @@ namespace Ucas.Data.CommandClass
             try
             {
                 db = new UcasProEntities();
-                db.Configuration.LazyLoadingEnabled = false;
-                db.Configuration.ProxyCreationEnabled = false;
+              
                 var q = db.Employees.Where(p => p.ID == emp.ID).SingleOrDefault();
                 q.EmployeeName = emp.EmployeeName;
                 q.EmployeejobNumber = emp.EmployeejobNumber;
@@ -59,8 +58,7 @@ namespace Ucas.Data.CommandClass
             try
             {
                 db = new UcasProEntities();
-                db.Configuration.LazyLoadingEnabled = false;
-                db.Configuration.ProxyCreationEnabled = false;
+                
                 var q = db.Employees.Where(p => p.ID == ID).SingleOrDefault();
                 db.Employees.Remove(q);
                 db.SaveChanges();
@@ -73,6 +71,13 @@ namespace Ucas.Data.CommandClass
             }
         }
 
+        public static int GetLastId()
+        {
+            db = new UcasProEntities();
+
+            int  q = (from i in db.Employees select i.ID).Max();
+            return q;
+        }
         public static List<Employee> GetAll()
         {
             db = new UcasProEntities();

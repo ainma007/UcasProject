@@ -58,6 +58,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
                 TheDonorCmd.EditDonor(Donrs);
                 Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                this.Dispose();
                 this.Close();
             }
         }
@@ -82,6 +83,11 @@ namespace UcasProWindowsForm.Forms.supplierForm
             AdressTextBox.Text = TragetDoner.Adderss;
             faxTextBox4.Text = TragetDoner.Fax;
 
+        }
+
+        private void FrmDonorsEdit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

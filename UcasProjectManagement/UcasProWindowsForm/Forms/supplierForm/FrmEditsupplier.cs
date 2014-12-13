@@ -54,6 +54,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
                 SuppliersCmd.EditSupplier(Sup);
                 Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK,RadMessageIcon.Info);
+                this.Dispose();
                 this.Close();
             }
         }
@@ -77,6 +78,11 @@ namespace UcasProWindowsForm.Forms.supplierForm
             PhoneNumberTextBox.Text = TragetDSupplier.PhoneNumber;
             AdressTextBox.Text = TragetDSupplier.Adderss;
             faxTextBox4.Text = TragetDSupplier.Fax;
+        }
+
+        private void FrmEditsupplier_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

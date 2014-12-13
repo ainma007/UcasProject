@@ -43,5 +43,16 @@ namespace UcasProWindowsForm.Reports.ReportCommand
             frm.ShowDialog();
 
         }
+        public void ShowSuppReportByGrid(List<SupplierReportObj> ls)
+        {
+            ReportDataSource rs = new ReportDataSource();
+            rs.Name = "SupplierDataSet";
+            rs.Value = ls;
+            frmReportViewer frm = new frmReportViewer();
+            frm.reportViewer1.LocalReport.DataSources.Clear();
+            frm.reportViewer1.LocalReport.DataSources.Add(rs);
+            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "UcasProWindowsForm.Reports.rptSupplier.rdlc";
+            frm.ShowDialog();
+        }
     }
 }

@@ -44,5 +44,17 @@ namespace UcasProWindowsForm.Reports.ReportCommand
 
 
        }
+
+       public void ShowEmpReportByGrid(List<EmployeeReportObj> ls)
+       {
+           ReportDataSource rs = new ReportDataSource();
+           rs.Name = "EmplyeeDataSet";
+           rs.Value = ls;
+           frmReportViewer frm = new frmReportViewer();
+           frm.reportViewer1.LocalReport.DataSources.Clear();
+           frm.reportViewer1.LocalReport.DataSources.Add(rs);
+           frm.reportViewer1.LocalReport.ReportEmbeddedResource = "UcasProWindowsForm.Reports.rptEmolyee.rdlc";
+           frm.ShowDialog();
+       }
     }
 }

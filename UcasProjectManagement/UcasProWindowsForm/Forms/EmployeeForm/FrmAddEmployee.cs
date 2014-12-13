@@ -84,12 +84,37 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
             };
             EmployeeCmd.addEmployee(emp);
+           
+          
             Operation.EndOperation(this);
             Operation.ShowToustOk(OperationX.AddMessageDone, this);
-
+            // ===============
+            AddUser();
+            //================
             ClearTxt();
         }
+        #region "   GetRandomNumber  "
 
+        private static readonly Random GetRandom = new Random();
+        private static readonly object syncLock = new object();
+        public static int GetRandomNumber(int MaxNumber)
+        {
+            lock (syncLock) { return GetRandom.Next(MaxNumber); }
+
+        }
+
+        #endregion 
+        void AddUser()
+        {
+            UserTb tb = new UserTb() {
+                Employee_ID = EmployeeCmd.GetLastId(),
+                UserName = employeeNameTextBox.Text,
+                Password= GetRandomNumber (0123456789).ToString(),
+                TypeUser="غير فعال",
+            };
+
+            UsersCmd.NewUser(tb);
+        }
         private void ClearTxt()
         {
             employeeNameTextBox.Clear();
@@ -126,6 +151,11 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         private void EmployeeNationalNumberTextBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void FrmAddEmployee_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
 
     }

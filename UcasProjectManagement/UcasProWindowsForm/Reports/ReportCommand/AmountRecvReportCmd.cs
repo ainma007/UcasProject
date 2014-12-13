@@ -44,5 +44,17 @@ namespace UcasProWindowsForm.Reports.ReportCommand
 
        }
 
+         public void ShowReportByGrid(List<AmountRecvtReportObj> ls)
+         {
+             ReportDataSource rs = new ReportDataSource();
+             rs.Name = "AmountsReceivedDataSet";
+             rs.Value = ls;
+             frmReportViewer frm = new frmReportViewer();
+             frm.reportViewer1.LocalReport.DataSources.Clear();
+             frm.reportViewer1.LocalReport.DataSources.Add(rs);
+             frm.reportViewer1.LocalReport.ReportEmbeddedResource = "UcasProWindowsForm.Reports.rptAmountsReceived.rdlc";
+             frm.ShowDialog();
+         }
+
     }
 }

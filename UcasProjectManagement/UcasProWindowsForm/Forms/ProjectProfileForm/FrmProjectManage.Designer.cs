@@ -157,6 +157,7 @@
             gridViewTextBoxColumn2.Name = "ProjectDescription";
             gridViewTextBoxColumn2.Width = 153;
             gridViewDateTimeColumn1.EnableExpressionEditor = false;
+            gridViewDateTimeColumn1.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.MediumTime;
             gridViewDateTimeColumn1.FieldName = "StartDate";
             gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             gridViewDateTimeColumn1.HeaderText = "تاريخ البداية";
@@ -165,6 +166,7 @@
             gridViewDateTimeColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewDateTimeColumn1.Width = 102;
             gridViewDateTimeColumn2.EnableExpressionEditor = false;
+            gridViewDateTimeColumn2.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.MediumTime;
             gridViewDateTimeColumn2.FieldName = "EndDate";
             gridViewDateTimeColumn2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             gridViewDateTimeColumn2.HeaderText = "تاريخ النهاية";
@@ -290,6 +292,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ادارة المشاريع";
             this.ThemeName = "TelerikMetro";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmProjectManage_FormClosed);
             this.Load += new System.EventHandler(this.FrmProjectManage_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

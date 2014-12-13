@@ -66,8 +66,8 @@
             this.UserMangBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.StatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
@@ -420,6 +420,12 @@
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // StatusLabel1
+            // 
+            this.StatusLabel1.Name = "StatusLabel1";
+            this.StatusLabel1.Size = new System.Drawing.Size(12, 17);
+            this.StatusLabel1.Text = "-";
+            // 
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
@@ -434,12 +440,6 @@
             this.radGroupBox1.TabIndex = 8;
             this.radGroupBox1.Text = "قائمة المشاريع";
             this.radGroupBox1.ThemeName = "TelerikMetro";
-            // 
-            // StatusLabel1
-            // 
-            this.StatusLabel1.Name = "StatusLabel1";
-            this.StatusLabel1.Size = new System.Drawing.Size(12, 17);
-            this.StatusLabel1.Text = "-";
             // 
             // FrmAdmin
             // 
@@ -460,6 +460,7 @@
             this.ThemeName = "TelerikMetro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.FrmAdmin_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAdmin_FormClosed);
             this.Load += new System.EventHandler(this.FrmAdmin_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

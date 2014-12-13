@@ -28,10 +28,10 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void FrmTheDonorsAndProjectManage_Load(object sender, EventArgs e)
         {
-            Operation.BeginOperation(this);
+           
             th = new Thread(FillData);
             th.Start();
-            Operation.EndOperation(this);
+           
          
         }
 
@@ -100,10 +100,16 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
 
             FrmTheDonorsAndProjectManage_Load(null, null);
-           
+            this.Cursor = Cursors.Default;
 
+        }
+
+        private void FrmTheDonorsAndProjectManage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

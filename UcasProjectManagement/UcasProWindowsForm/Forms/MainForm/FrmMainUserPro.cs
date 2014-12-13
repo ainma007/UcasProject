@@ -11,6 +11,7 @@ using UcasProWindowsForm.Forms.ExpensesForm;
 using UcasProWindowsForm.Forms.ProjectProfileForm;
 using System.Threading;
 using UcasProWindowsForm.Reports.ReportCommand;
+using UcasProWindowsForm.Forms.Attachments;
 namespace UcasProWindowsForm.Forms.MainForm
 {
     public partial class FrmMainUserPro : Telerik.WinControls.UI.RadForm
@@ -76,11 +77,12 @@ namespace UcasProWindowsForm.Forms.MainForm
 
 
                 }
-                ////AcounttextFill
-               
-            //    decimal val4 = decimal.Parse(AmountRecvTextBox.Text);
 
-                 decimal Salary = decimal.Parse(TotalSalary);
+                #region "  Fill Charts "
+               
+
+
+                decimal Salary = decimal.Parse(TotalSalary);
                  decimal Expenses = decimal.Parse(TotalExpenses);
                  decimal AmountRecv = decimal.Parse(TotalAmountRecv);
                  decimal TotalExp = Salary + Expenses;
@@ -112,6 +114,8 @@ namespace UcasProWindowsForm.Forms.MainForm
                 chart2.Series[0].Points[0].Color = Color.SkyBlue;
                 chart2.Series[0].Points[1].Color = Color.Crimson;
                 //// SubActivty 
+                #endregion
+
                 radGridView1.DataSource = q;
 
 
@@ -151,10 +155,10 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void FrmMainUserPro_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            FrmAdmin myForm = (FrmAdmin)Application.OpenForms["FrmAdmin"];
+            myForm.Show();
+            this.Close();
             this.Dispose();
-            
-
            
         }
 
@@ -270,6 +274,18 @@ namespace UcasProWindowsForm.Forms.MainForm
             AmountRecvReportCmd cmd = new AmountRecvReportCmd();
             cmd.GetRptAmountRecvByProjectId(InformationsClass.ProjID);
             Operation.EndOperation(this);
+        }
+
+        private void AttatchmentBtn_Click(object sender, EventArgs e)
+        {
+            FrmAttachemntsShow frm = new FrmAttachemntsShow();
+            frm.ShowDialog();
+        }
+
+        private void FinanMangBtn_Click(object sender, EventArgs e)
+        {
+            AcrivitiesRecvReportCmd cmd = new AcrivitiesRecvReportCmd();
+            cmd.GetRptAcrivitiesByProjectId(InformationsClass.ProjID);
         }
     }
 }

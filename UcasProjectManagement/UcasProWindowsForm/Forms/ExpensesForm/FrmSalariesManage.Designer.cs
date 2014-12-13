@@ -264,6 +264,7 @@
             this.Text = "ادارة الرواتب";
             this.ThemeName = "TelerikMetro";
             this.Activated += new System.EventHandler(this.FrmSalariesManage_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmSalariesManage_FormClosed);
             this.Load += new System.EventHandler(this.FrmSalariesManage_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

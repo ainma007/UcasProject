@@ -55,7 +55,10 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                 filter1.Operator = FilterOperator.Contains;
                 this.ProjectCombo.EditorControl.MasterTemplate.FilterDescriptors.Add(filter1);
 
-
+                ProjectControlID = TragetProjectControl.ID;
+                UserListComboBox.Text = TragetProjectControl.UserTb.Employee.EmployeeName.ToString();
+                ProjectCombo.Text = TragetProjectControl.ProjectProfile.ProjectName;
+                StatusDropDownList.Text = TragetProjectControl.Status;
             });
             Operation.EndOperation(this);
 
@@ -76,10 +79,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         {
             th = new Thread(FillComboBox);
             th.Start();
-            ProjectControlID = TragetProjectControl.ID;
-            UserListComboBox.Text = TragetProjectControl.UserTb.Employee.EmployeeName.ToString();
-            ProjectCombo.Text = TragetProjectControl.ProjectProfile.ProjectName;
-            StatusDropDownList.Text = TragetProjectControl.Status;
+            
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -99,11 +99,16 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                 ProjectControlCmd.EditProControl(tb);
                 Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK,RadMessageIcon.Info);
-              
+                this.Dispose();
                 this.Close();
             }
            
 
+        }
+
+        private void FrmEditUserToProject_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

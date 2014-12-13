@@ -16,6 +16,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         public FrmActivitiesEdit()
         {
             InitializeComponent();
+          
             RadMessageBox.SetThemeName("TelerikMetro");
         }
 
@@ -94,6 +95,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                    
                     Operation.EndOperation(this);
                     RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    this.Dispose();
                     this.Close();
                 }
                 catch (Xprema.XpremaException ex)
@@ -121,6 +123,11 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             {
                 e.Handled = true;
             }
+        }
+
+        private void FrmActivitiesEdit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
            
     }

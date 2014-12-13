@@ -111,5 +111,10 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 e.Handled = true;
             }
         }
+
+        private void FrmAddActivities_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

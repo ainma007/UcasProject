@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Ucas.Data.CommandClass;
+using UcasProWindowsForm.Reports.ReportObj;
 
 namespace UcasProWindowsForm.Forms.AmountRecivedForms
 {
@@ -12,6 +14,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         public FrmMangeAmount()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         Thread th;
         private void TotalAmount()
@@ -109,7 +112,41 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
 
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             this.FrmMangeAmount_Load(null, null);
+            this.Cursor = Cursors.Default;
         }
+
+        private void PrintBtn_Click(object sender, EventArgs e)
+        {
+            Operation.BeginOperation(this);
+
+            List<AmountRecvtReportObj> ls = new List<AmountRecvtReportObj>();
+            int counter = 0;
+            //    ls.Add(new SalaryReportObj() {  SalarysID = counter});
+            foreach (GridViewRowInfo item in radGridView1.ChildRows)
+            {
+                counter++;
+                ls.Add(new AmountRecvtReportObj()
+                {
+
+                    DonerName = item.Cells["DonorName"].Value.ToString(),
+                    Date =DateTime.Parse (item.Cells["Date"].Value.ToString()),
+                    Cost =double.Parse(item.Cells["Cost"].Value.ToString()),
+                    ProjectName = item.Cells["ProjectName"].Value.ToString(),
+                    Coin = item.Cells["Coin"].Value.ToString(),
+                  
+                });
+            }
+            Reports.ReportCommand.AmountRecvReportCmd cmd = new Reports.ReportCommand.AmountRecvReportCmd();
+            cmd.ShowReportByGrid(ls);
+            Operation.EndOperation(this);
+        }
+
+        private void FrmMangeAmount_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+        } 
+       
     }
 }

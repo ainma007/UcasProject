@@ -40,8 +40,13 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
                 filter.PropertyName = this.DonorsComboBox.DisplayMember;
                 filter.Operator = FilterOperator.Contains;
                 this.DonorsComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+                //FillText
 
-
+               
+                XAmountID = TragetAmountsReceived.ID;
+                DonorsComboBox.Text = TragetAmountsReceived.TheDonorsProject.TheDonor.Name;
+                DateOfProecssPicker.Text = TragetAmountsReceived.Date.ToString();
+                CostTextBox.Text = TragetAmountsReceived.Cost.ToString();
 
 
             });
@@ -109,6 +114,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
                 AmountsReceivedsCmd.EditAmountsReceived(tb);
                 Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                this.Dispose();
                 this.Close();
             }
         }
@@ -117,10 +123,6 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
             th = new Thread(FillCombo);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
-             XAmountID = TragetAmountsReceived.ID;
-            DonorsComboBox.Text = TragetAmountsReceived.TheDonorsProject.TheDonor.Name;
-            DateOfProecssPicker.Text = TragetAmountsReceived.Date.ToString();
-            CostTextBox.Text = TragetAmountsReceived.Cost.ToString();
         }
 
         private void CostTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -137,6 +139,11 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
             {
                 e.Handled = true;
             }
+        }
+
+        private void FrmEditAmount_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

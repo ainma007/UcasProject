@@ -41,10 +41,15 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 filter.PropertyName = this.EmployeeComboBox.DisplayMember;
                 filter.Operator = FilterOperator.Contains;
                 this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-
-
+                //FillText
+                XSalaryID = Tragetsalary.ID;
+                EmployeeComboBox.Text = Tragetsalary.Contract.Employee.EmployeeName;
+                SalaryTextBox.Text = Tragetsalary.Amount.ToString();
+                FromonthDateTimePicker.Text = Tragetsalary.Formonth.ToString();
+                ReleaseDateTimePicker.Text = Tragetsalary.IssueDate.ToString();
             });
             Operation.EndOperation(this);
+          
             th.Abort();
 
 
@@ -58,11 +63,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             th = new Thread(FillCombo);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
-            XSalaryID = Tragetsalary.ID;
-            EmployeeComboBox.Text = Tragetsalary.Contract.Employee.EmployeeName;
-            SalaryTextBox.Text = Tragetsalary.Amount.ToString();
-            FromonthDateTimePicker.Text=Tragetsalary.Formonth.ToString();
-            ReleaseDateTimePicker.Text = Tragetsalary.IssueDate.ToString();
+            
             
             
         }
@@ -119,7 +120,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                     SalariesCmd.EditSalary(tb);
                     Operation.EndOperation(this);
                     RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
-                    this.Close();
+                    this.Dispose();
+                        this.Close();
             }
                     catch (Xprema.XpremaException ex)
                     {
@@ -144,6 +146,11 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             {
                 e.Handled = true;
             }
+        }
+
+        private void FrmSalaryMang_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

@@ -43,5 +43,16 @@ namespace UcasProWindowsForm.Reports.ReportCommand
             frm.ShowDialog();
 
         }
+        public void ShowEmpReportByGrid(List<DonaorReportObj> ls)
+        {
+            ReportDataSource rs = new ReportDataSource();
+            rs.Name = "DonorDataSet";
+            rs.Value = ls;
+            frmReportViewer frm = new frmReportViewer();
+            frm.reportViewer1.LocalReport.DataSources.Clear();
+            frm.reportViewer1.LocalReport.DataSources.Add(rs);
+            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "UcasProWindowsForm.Reports.rptDonor.rdlc";
+            frm.ShowDialog();
+        }
     }
 }

@@ -87,6 +87,11 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
 
         }
+
+        private void FrmAddTheTheDonors_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+        }
         }
     }
 

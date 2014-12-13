@@ -26,10 +26,10 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         }
         private void FrmManageExpenses_Load(object sender, EventArgs e)
         {
-            Operation.BeginOperation(this);
+           
             th = new Thread(FillExpensesData);
             th.Start();
-            Operation.EndOperation(this);
+           
            
         }
 
@@ -122,8 +122,10 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void RefrechBtn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
 
             FrmManageExpenses_Load(null, null);
+            this.Cursor = Cursors.Default;
            
         }
 
@@ -155,6 +157,11 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             Reports.ReportCommand.ExpensessReportCmd cmd = new Reports.ReportCommand.ExpensessReportCmd();
             cmd.ShowReportByGrid(ls);
             Operation.EndOperation(this);
+        }
+
+        private void FrmManageExpenses_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

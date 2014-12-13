@@ -16,10 +16,10 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         Thread th;
         private void frmUserManage_Load(object sender, EventArgs e)
         {
-            Operation.BeginOperation(this);
+           
             th = new Thread(fillData);
             th.Start();
-            Operation.EndOperation(this);
+           
         }
 
         private void fillData()
@@ -68,6 +68,11 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         private void UserGridView_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmUserManage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

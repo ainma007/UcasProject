@@ -153,6 +153,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                  RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK,RadMessageIcon.Info);
 
                  Operation.EndOperation(this);
+                 this.Dispose();
                  this.Close();
              }
              catch (Xprema.XpremaException ex)
@@ -179,6 +180,11 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             {
                 e.Handled = true;
             }
+        }
+
+        private void FrmSubActivityEdit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
            
     }

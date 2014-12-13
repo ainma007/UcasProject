@@ -74,7 +74,6 @@
             this.SalaryRbtBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.AmountRecvRptBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.StatustextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
@@ -151,8 +150,7 @@
             this.EmployeeAddBtn,
             this.toolStripSeparator3,
             this.toolStripDropDownButton2,
-            this.toolStripSeparator5,
-            this.RefreshBtn});
+            this.toolStripSeparator5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1206, 37);
@@ -232,6 +230,7 @@
             this.AttatchmentBtn.Name = "AttatchmentBtn";
             this.AttatchmentBtn.Size = new System.Drawing.Size(200, 38);
             this.AttatchmentBtn.Text = "أرشيف المشروع";
+            this.AttatchmentBtn.Click += new System.EventHandler(this.AttatchmentBtn_Click);
             // 
             // toolStripSeparator1
             // 
@@ -327,6 +326,7 @@
             this.FinanMangBtn.Name = "FinanMangBtn";
             this.FinanMangBtn.Size = new System.Drawing.Size(182, 22);
             this.FinanMangBtn.Text = "تقرير الانشطة";
+            this.FinanMangBtn.Click += new System.EventHandler(this.FinanMangBtn_Click);
             // 
             // toolStripSeparator2
             // 
@@ -372,16 +372,6 @@
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 37);
-            // 
-            // RefreshBtn
-            // 
-            this.RefreshBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.RefreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("RefreshBtn.Image")));
-            this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(23, 34);
-            this.RefreshBtn.Text = "تحديث البيانات";
-            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // radGroupBox1
             // 
@@ -1019,7 +1009,6 @@
         public Telerik.WinControls.UI.RadTextBox AmountRecvTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel13;
         private Telerik.WinControls.UI.RadLabel radLabel14;
-        private System.Windows.Forms.ToolStripButton RefreshBtn;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;

@@ -187,6 +187,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmUserProjectManage";
             this.ThemeName = "TelerikMetro";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmUserProjectManage_FormClosed);
             this.Load += new System.EventHandler(this.FrmUserProjectManage_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

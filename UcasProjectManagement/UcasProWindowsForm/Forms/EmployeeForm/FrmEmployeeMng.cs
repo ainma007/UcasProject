@@ -10,6 +10,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
+using UcasProWindowsForm.Reports.ReportObj;
 
 namespace UcasProWindowsForm.Forms.EmployeeForm
 {
@@ -132,11 +133,36 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
         private void ReportBtn_Click(object sender, EventArgs e)
         {
+
             Operation.BeginOperation(this);
 
+            List<EmployeeReportObj> ls = new List<EmployeeReportObj>();
+            int counter = 0;
+            //    ls.Add(new SalaryReportObj() {  SalarysID = counter});
+            foreach (GridViewRowInfo item in EmployeeGridView.ChildRows)
+            {
+                counter++;
+                ls.Add(new EmployeeReportObj()
+                {
+                    EmoloyeeID=counter,
+                    employeeName = item.Cells["EmployeeName"].Value.ToString(),
+                    EmployeejobNumber = item.Cells["EmployeejobNumber"].Value.ToString(),
+                    EmployeeNationalNumber = item.Cells["EmployeeNationalNumber"].Value.ToString(),
+                    Email = item.Cells["Email"].Value.ToString(),
+                    PhoneNumber = item.Cells["PhoneNumber"].Value.ToString(),
+                    Mobilenumber = item.Cells["Mobilenumber"].Value.ToString(),
+                    EmployeeGender = item.Cells["EmployeeGender"].Value.ToString(),
+
+                });
+            }
             Reports.ReportCommand.EmployeeReportCmd cmd = new Reports.ReportCommand.EmployeeReportCmd();
-            cmd.GetAllEmployee();
+            cmd.ShowEmpReportByGrid(ls);
             Operation.EndOperation(this);
+        }
+
+        private void FrmEmployeeMng_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
 
 

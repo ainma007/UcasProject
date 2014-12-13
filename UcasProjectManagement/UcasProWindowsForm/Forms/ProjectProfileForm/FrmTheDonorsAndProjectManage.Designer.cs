@@ -216,6 +216,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ممولين المشروع";
             this.ThemeName = "TelerikMetro";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmTheDonorsAndProjectManage_FormClosed);
             this.Load += new System.EventHandler(this.FrmTheDonorsAndProjectManage_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

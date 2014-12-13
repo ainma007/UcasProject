@@ -280,6 +280,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعديل بيانات موظف";
             this.ThemeName = "TelerikMetro";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmEmployeeEdit_FormClosed);
             this.Load += new System.EventHandler(this.FrmEmployeeEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeNationalNumberTextBox4)).EndInit();

@@ -224,6 +224,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعديل بيانات دفعة";
             this.ThemeName = "TelerikMetro";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmEditAmount_FormClosed);
             this.Load += new System.EventHandler(this.FrmEditAmount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GroupBox)).EndInit();
             this.GroupBox.ResumeLayout(false);

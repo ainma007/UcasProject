@@ -34,6 +34,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.Coinlabel = new System.Windows.Forms.Label();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.ReleaseDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
@@ -44,7 +45,6 @@
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.EmployeeComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Coinlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
@@ -83,6 +83,15 @@
             this.radGroupBox1.TabIndex = 0;
             this.radGroupBox1.Text = "بيانات الراتب";
             this.radGroupBox1.ThemeName = "TelerikMetro";
+            // 
+            // Coinlabel
+            // 
+            this.Coinlabel.ForeColor = System.Drawing.Color.Green;
+            this.Coinlabel.Location = new System.Drawing.Point(92, 66);
+            this.Coinlabel.Name = "Coinlabel";
+            this.Coinlabel.Size = new System.Drawing.Size(100, 19);
+            this.Coinlabel.TabIndex = 21;
+            this.Coinlabel.Text = "-";
             // 
             // SaveBtn
             // 
@@ -191,7 +200,7 @@
             this.EmployeeComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.EmployeeComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // EmployeeComboBox.NestedRadGridView
+            // 
             // 
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -240,15 +249,6 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.RightToLeft = true;
             // 
-            // Coinlabel
-            // 
-            this.Coinlabel.ForeColor = System.Drawing.Color.Green;
-            this.Coinlabel.Location = new System.Drawing.Point(92, 66);
-            this.Coinlabel.Name = "Coinlabel";
-            this.Coinlabel.Size = new System.Drawing.Size(100, 19);
-            this.Coinlabel.TabIndex = 21;
-            this.Coinlabel.Text = "-";
-            // 
             // FrmSalaryMang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,6 +264,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعديل بيانات راتب";
             this.ThemeName = "TelerikMetro";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmSalaryMang_FormClosed);
             this.Load += new System.EventHandler(this.FrmSalaryMang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);

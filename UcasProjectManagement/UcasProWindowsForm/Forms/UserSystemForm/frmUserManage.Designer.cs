@@ -34,12 +34,13 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn1 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserManage));
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             this.UserGridView = new Telerik.WinControls.UI.RadGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.StatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
-            this.StatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.UserGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserGridView.MasterTemplate)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -73,26 +74,30 @@
             gridViewTextBoxColumn2.FieldName = "Employee.EmployeeName";
             gridViewTextBoxColumn2.HeaderText = "اسم الموظف";
             gridViewTextBoxColumn2.Name = "EmployeeName";
-            gridViewTextBoxColumn2.Width = 148;
+            gridViewTextBoxColumn2.Width = 150;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "UserName";
             gridViewTextBoxColumn3.HeaderText = "اسم المستخدم";
             gridViewTextBoxColumn3.Name = "UserName";
-            gridViewTextBoxColumn3.Width = 191;
+            gridViewTextBoxColumn3.Width = 194;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "Password";
             gridViewTextBoxColumn4.HeaderText = "كلمة المرور";
             gridViewTextBoxColumn4.Name = "Password";
-            gridViewTextBoxColumn4.Width = 223;
+            gridViewTextBoxColumn4.Width = 227;
             gridViewComboBoxColumn1.EnableExpressionEditor = false;
             gridViewComboBoxColumn1.FieldName = "TypeUser";
             gridViewComboBoxColumn1.HeaderText = "نوع المستخدم";
             gridViewComboBoxColumn1.Name = "TypeUser";
-            gridViewComboBoxColumn1.Width = 123;
+            gridViewComboBoxColumn1.Width = 144;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "تعديل ";
+            gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
+            gridViewCommandColumn1.ImageLayout = System.Windows.Forms.ImageLayout.Center;
+            gridViewCommandColumn1.MaxWidth = 45;
+            gridViewCommandColumn1.MinWidth = 45;
             gridViewCommandColumn1.Name = "Savebtn";
-            gridViewCommandColumn1.Width = 75;
+            gridViewCommandColumn1.Width = 45;
             this.UserGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -123,6 +128,12 @@
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // StatusLabel1
+            // 
+            this.StatusLabel1.Name = "StatusLabel1";
+            this.StatusLabel1.Size = new System.Drawing.Size(12, 17);
+            this.StatusLabel1.Text = "-";
+            // 
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
@@ -136,12 +147,6 @@
             this.radGroupBox1.Text = "سجل المستخدمين";
             this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
-            // StatusLabel1
-            // 
-            this.StatusLabel1.Name = "StatusLabel1";
-            this.StatusLabel1.Size = new System.Drawing.Size(12, 17);
-            this.StatusLabel1.Text = "-";
-            // 
             // frmUserManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,14 +154,20 @@
             this.ClientSize = new System.Drawing.Size(780, 482);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.statusStrip1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(788, 517);
+            this.MinimumSize = new System.Drawing.Size(788, 517);
             this.Name = "frmUserManage";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(788, 517);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "igrdj";
             this.ThemeName = "TelerikMetro";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmUserManage_FormClosed);
             this.Load += new System.EventHandler(this.frmUserManage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UserGridView.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserGridView)).EndInit();

@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
 using Ucas.Data.CommandClass;
 using UcasProWindowsForm.Reports.ReportCommand;
+using UcasProWindowsForm.Reports.ReportObj;
 
 namespace UcasProWindowsForm.Forms.supplierForm
 {
@@ -44,10 +47,10 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void FrmManagementFinanciers_Load(object sender, EventArgs e)
         {
-            Operation.BeginOperation(this);
+           
             th = new Thread(GetAllFinanciers);
             th.Start();
-            Operation.EndOperation(this);
+           
 
         }
 
@@ -66,8 +69,28 @@ namespace UcasProWindowsForm.Forms.supplierForm
         private void ReportBtn_Click(object sender, EventArgs e)
         {
             Operation.BeginOperation(this);
-            DonorsReportCmd cmd = new DonorsReportCmd();
-            cmd.GetAllDonor();
+
+            List<DonaorReportObj> ls = new List<DonaorReportObj>();
+            int counter = 0;
+          
+            foreach (GridViewRowInfo item in DonersGridView.ChildRows)
+            {
+                counter++;
+                ls.Add(new DonaorReportObj()
+                {
+                    DonorID = counter,
+                    DonorName = item.Cells["Name"].Value.ToString(),
+                    DonorAddress = item.Cells["Adderss"].Value.ToString(),
+                    DonorAgentname = item.Cells["agentName"].Value.ToString(),
+                    DonorFaxnumber = item.Cells["Fax"].Value.ToString(),
+                    DonorEmail = item.Cells["Email"].Value.ToString(),
+                    DonorPhoneNumber = item.Cells["PhoneNumber"].Value.ToString(),
+
+
+                });
+            }
+            Reports.ReportCommand.DonorsReportCmd cmd = new Reports.ReportCommand.DonorsReportCmd();
+            cmd.ShowEmpReportByGrid(ls);
             Operation.EndOperation(this);
            
 
@@ -132,8 +155,16 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
-            FrmManagementFinanciers_Load(null, null);
+            this.Cursor = Cursors.WaitCursor;
 
+            FrmManagementFinanciers_Load(null, null);
+            this.Cursor = Cursors.Default;
+
+        }
+
+        private void FrmManagementTheDonors_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
 
 

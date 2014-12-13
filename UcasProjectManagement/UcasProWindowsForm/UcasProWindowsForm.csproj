@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UcasProWindowsForm</RootNamespace>
     <AssemblyName>UcasProWindowsForm</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2">
@@ -124,6 +127,18 @@
     <Compile Include="Forms\AmountRecivedForms\FrmMangeAmount.Designer.cs">
       <DependentUpon>FrmMangeAmount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Attachments\FrmAddAttachments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Attachments\FrmAddAttachments.Designer.cs">
+      <DependentUpon>FrmAddAttachments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Attachments\FrmAttachemntsShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Attachments\FrmAttachemntsShow.Designer.cs">
+      <DependentUpon>FrmAttachemntsShow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EmployeeForm\FrmAddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,11 +211,29 @@
     <Compile Include="Forms\ExpensesForm\FrmSalaryMang.Designer.cs">
       <DependentUpon>FrmSalaryMang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmbackg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmbackg.Designer.cs">
+      <DependentUpon>frmbackg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLoader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLoader.Designer.cs">
+      <DependentUpon>frmLoader.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm\FrmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MainForm\FrmAdmin.Designer.cs">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm\FrmMainUserPro.cs">
       <SubType>Form</SubType>
@@ -319,12 +352,14 @@
     <Compile Include="Operation.cs" />
     <Compile Include="OperationX.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\frmReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\frmReportViewer.Designer.cs">
       <DependentUpon>frmReportViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ReportCommand\AcrivitiesRecvReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\AmountRecvReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\ContractReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\DonorsReportCmd.cs" />
@@ -333,6 +368,7 @@
     <Compile Include="Reports\ReportCommand\ProjectReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\SalaryReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\SupplierReportCmd.cs" />
+    <Compile Include="Reports\ReportObj\ActivitesRecvtReportObj.cs" />
     <Compile Include="Reports\ReportObj\AmountRecvtReportObj.cs" />
     <Compile Include="Reports\ReportObj\ContractReportObj.cs" />
     <Compile Include="Reports\ReportObj\DonaorReportObj.cs" />
@@ -367,6 +403,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AmountRecivedForms\FrmMangeAmount.resx">
       <DependentUpon>FrmMangeAmount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Attachments\FrmAddAttachments.resx">
+      <DependentUpon>FrmAddAttachments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Attachments\FrmAttachemntsShow.resx">
+      <DependentUpon>FrmAttachemntsShow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeForm\FrmAddEmployee.resx">
       <DependentUpon>FrmAddEmployee.cs</DependentUpon>
@@ -404,8 +446,17 @@
     <EmbeddedResource Include="Forms\ExpensesForm\FrmSalaryMang.resx">
       <DependentUpon>FrmSalaryMang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmbackg.resx">
+      <DependentUpon>frmbackg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLoader.resx">
+      <DependentUpon>frmLoader.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm\FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm\FrmMainUserPro.resx">
       <DependentUpon>FrmMainUserPro.cs</DependentUpon>
@@ -477,6 +528,8 @@
     <EmbeddedResource Include="Reports\frmReportViewer.resx">
       <DependentUpon>frmReportViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\rptActivties.rdlc" />
     <EmbeddedResource Include="Reports\rptAmountsReceived.rdlc" />
     <EmbeddedResource Include="Reports\rptContract.rdlc" />
     <EmbeddedResource Include="Reports\rptDonor.rdlc" />
@@ -506,6 +559,8 @@
     <None Include="Properties\DataSources\Ucas.Data.TheDonorsProject.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.UcasProEntities.datasource" />
     <None Include="Properties\DataSources\Ucas.Data.UserTb.datasource" />
+    <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.ActivitesRecvtReportObj.datasource" />
+    <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.ActivitesRecvtReportObj1.datasource" />
     <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.AmountRecvtReportObj.datasource" />
     <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.ContractReportObj.datasource" />
     <None Include="Properties\DataSources\UcasProWindowsForm.Reports.ReportObj.DonaorReportObj.datasource" />
@@ -562,6 +617,7 @@
     <None Include="Resources\slary.png" />
     <None Include="Resources\7.png" />
     <None Include="Resources\Acti.png" />
+    <None Include="Resources\1418514813_Download.png" />
     <Content Include="Resources\Add.png" />
     <None Include="Resources\Cost.png" />
     <None Include="Resources\Amount.png" />
@@ -578,6 +634,7 @@
     <None Include="Resources\Donorsadd.png" />
     <None Include="Resources\EditSupp.png" />
     <None Include="Resources\AddSupp.png" />
+    <None Include="Resources\metro-loading.gif" />
     <Content Include="Resources\Print.png" />
     <None Include="Resources\Projects.png" />
     <Content Include="Resources\Refrech.png" />

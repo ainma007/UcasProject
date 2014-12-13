@@ -36,28 +36,33 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         }
         private void FillData()
         {
-            Operation.BeginOperation(this);
-            statusStrip1.Invoke((MethodInvoker)delegate
+
+            progressBar1.Invoke((MethodInvoker)delegate
             {
+                
                 toolStripStatusLabel1.Text = "يرجى الانتظار ... ";
+                progressBar1.Visible = true;
+                
             });
 
-           
+            Operation.BeginOperation(this);
             Application.DoEvents();
             var q = ContractCmd.GetAllContractsByproID(InformationsClass.ProjID);
             Application.DoEvents();
 
-           
-           
-           
-            statusStrip1.Invoke((MethodInvoker)delegate
+            Operation.EndOperation(this);
+
+
+            progressBar1.Invoke((MethodInvoker)delegate
             {
+                progressBar1.Value = 70;
                 ContractsGridView.DataSource = q;
                 TotalAmount();
                 toolStripStatusLabel1.Text = "";
+                progressBar1.Visible = false;
             });
 
-            Operation.EndOperation(this);
+            
             th.Abort();
 
         }
@@ -121,14 +126,19 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         }
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             FrmContratsManage_Load(null, null);
+            this.Cursor = Cursors.Default; 
         }
 
         private void FrmContratsManage_Activated(object sender, EventArgs e)
         {
-           // this.Cursor = Cursors.WaitCursor;
-           //// FrmContratsManage_Load(sender, e);
-           // this.Cursor = Cursors.Default; 
+           
+        }
+
+        private void FrmContratsManage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
