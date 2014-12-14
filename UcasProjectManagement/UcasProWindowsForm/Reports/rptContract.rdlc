@@ -375,7 +375,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ContractID.Value</Value>
+                              <Value>=RowNumber(Nothing)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -774,7 +774,6 @@
                       </Style>
                     </Textbox>
                     <ColSpan>2</ColSpan>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
@@ -839,7 +838,9 @@
               <TextRun>
                 <Value>تقرير عقود الموظفين</Value>
                 <Style>
-                  <FontSize>24pt</FontSize>
+                  <FontFamily>Simplified Arabic</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -850,15 +851,15 @@
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
         <Top>0.31433cm</Top>
-        <Left>5.42078cm</Left>
-        <Height>1.10271cm</Height>
-        <Width>8.18854cm</Width>
+        <Left>5.84411cm</Left>
+        <Height>0.97042cm</Height>
+        <Width>7.02848cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>LightGrey</BackgroundColor>
+          <BackgroundColor>WhiteSmoke</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>

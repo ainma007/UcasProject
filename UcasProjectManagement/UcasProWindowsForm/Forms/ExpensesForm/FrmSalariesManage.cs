@@ -29,6 +29,12 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            if (InformationsClass.Accountant == 0)
+            {
+                RadMessageBox.Show("غير مصرحة لك الصلاحية", "", MessageBoxButtons.OK, RadMessageIcon.Info);
+                return;
+
+            }
             Operation.BeginOperation(this);
             FrmAddSalaries Addfrm = new FrmAddSalaries();
             Addfrm.ShowDialog();
@@ -74,6 +80,12 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void SalaryGridView_CommandCellClick(object sender, EventArgs e)
         {
+            if (InformationsClass.Accountant == 0)
+            {
+                RadMessageBox.Show("غير مصرحة لك الصلاحية", "", MessageBoxButtons.OK, RadMessageIcon.Info);
+                return;
+
+            }
             var col = SalaryGridView.CurrentColumn.Index;
 
             if (col == 8)

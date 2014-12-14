@@ -68,6 +68,12 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            if (InformationsClass.Coordinator == 0)
+            {
+                RadMessageBox.Show("غير مصرحة لك الصلاحية", "", MessageBoxButtons.OK, RadMessageIcon.Info);
+                return;
+
+            }
             Operation.BeginOperation(this);
            
 
@@ -79,6 +85,12 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         }
         private void radGridView1_CommandCellClick(object sender, EventArgs e)
         {
+            if (InformationsClass.Coordinator == 0)
+            {
+                RadMessageBox.Show("غير مصرحة لك الصلاحية", "", MessageBoxButtons.OK, RadMessageIcon.Info);
+                return;
+
+            }
             var col = ContractsGridView.CurrentColumn.Index;
 
             if (col == 8)

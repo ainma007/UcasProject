@@ -59,7 +59,7 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.UserstoolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.AddUserToProjectBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.UserProjectManageBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
@@ -68,6 +68,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.UserNameEditBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
@@ -94,7 +96,7 @@
             this.toolStripDropDownButton2,
             this.toolStripSeparator5,
             this.toolStripSeparator4,
-            this.toolStripDropDownButton3});
+            this.UserstoolStripDropDownButton3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1540, 37);
@@ -245,45 +247,47 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 37);
             // 
-            // toolStripDropDownButton3
+            // UserstoolStripDropDownButton3
             // 
-            this.toolStripDropDownButton3.BackgroundImage = global::UcasProWindowsForm.Properties.Resources._7;
-            this.toolStripDropDownButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UserstoolStripDropDownButton3.BackgroundImage = global::UcasProWindowsForm.Properties.Resources._7;
+            this.UserstoolStripDropDownButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UserstoolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UserNameEditBtn,
+            this.toolStripSeparator7,
             this.AddUserToProjectBtn,
             this.UserProjectManageBtn,
             this.toolStripSeparator6,
             this.UserMangBtn});
-            this.toolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton3.Image")));
-            this.toolStripDropDownButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
-            this.toolStripDropDownButton3.Size = new System.Drawing.Size(137, 34);
-            this.toolStripDropDownButton3.Text = "ادارة المستخدمين";
+            this.UserstoolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("UserstoolStripDropDownButton3.Image")));
+            this.UserstoolStripDropDownButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.UserstoolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.UserstoolStripDropDownButton3.Name = "UserstoolStripDropDownButton3";
+            this.UserstoolStripDropDownButton3.Size = new System.Drawing.Size(137, 34);
+            this.UserstoolStripDropDownButton3.Text = "ادارة المستخدمين";
             // 
             // AddUserToProjectBtn
             // 
             this.AddUserToProjectBtn.Name = "AddUserToProjectBtn";
-            this.AddUserToProjectBtn.Size = new System.Drawing.Size(206, 22);
+            this.AddUserToProjectBtn.Size = new System.Drawing.Size(232, 22);
             this.AddUserToProjectBtn.Text = "اضافة مستخدم لمشروع";
             this.AddUserToProjectBtn.Click += new System.EventHandler(this.AddUserToProjectBtn_Click);
             // 
             // UserProjectManageBtn
             // 
             this.UserProjectManageBtn.Name = "UserProjectManageBtn";
-            this.UserProjectManageBtn.Size = new System.Drawing.Size(206, 22);
+            this.UserProjectManageBtn.Size = new System.Drawing.Size(232, 22);
             this.UserProjectManageBtn.Text = "ادارة مستخدمين المشروع";
             this.UserProjectManageBtn.Click += new System.EventHandler(this.UserProjectManageBtn_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(203, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(229, 6);
             // 
             // UserMangBtn
             // 
             this.UserMangBtn.Name = "UserMangBtn";
-            this.UserMangBtn.Size = new System.Drawing.Size(206, 22);
+            this.UserMangBtn.Size = new System.Drawing.Size(232, 22);
             this.UserMangBtn.Text = "ادارة صلاحيات المستخدمين";
             this.UserMangBtn.Click += new System.EventHandler(this.UserMangBtn_Click_1);
             // 
@@ -441,6 +445,18 @@
             this.radGroupBox1.Text = "قائمة المشاريع";
             this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
+            // UserNameEditBtn
+            // 
+            this.UserNameEditBtn.Name = "UserNameEditBtn";
+            this.UserNameEditBtn.Size = new System.Drawing.Size(232, 22);
+            this.UserNameEditBtn.Text = "تغير اسم المستخدم وكلمة المرور";
+            this.UserNameEditBtn.Click += new System.EventHandler(this.UserNameEditBtn_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(229, 6);
+            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -498,7 +514,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
+        private System.Windows.Forms.ToolStripDropDownButton UserstoolStripDropDownButton3;
         private System.Windows.Forms.ToolStripMenuItem AddUserToProjectBtn;
         private System.Windows.Forms.ToolStripMenuItem UserProjectManageBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
@@ -506,5 +522,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel1;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
+        private System.Windows.Forms.ToolStripMenuItem UserNameEditBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     }
 }

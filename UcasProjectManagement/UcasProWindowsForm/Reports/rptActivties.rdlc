@@ -1669,7 +1669,7 @@
               <TextRun>
                 <Value>تقرير انشطة المشروع</Value>
                 <Style>
-                  <FontFamily>times New Roman</FontFamily>
+                  <FontFamily>Simplified Arabic</FontFamily>
                   <FontSize>16pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -1683,7 +1683,7 @@
         <rd:DefaultName>Textbox37</rd:DefaultName>
         <Top>0.17639cm</Top>
         <Left>11.29983cm</Left>
-        <Height>0.84777cm</Height>
+        <Height>1.07621cm</Height>
         <Width>7.76694cm</Width>
         <ZIndex>5</ZIndex>
         <Style>

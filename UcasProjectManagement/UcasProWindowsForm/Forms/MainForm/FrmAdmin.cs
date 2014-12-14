@@ -85,6 +85,7 @@ namespace UcasProWindowsForm.Forms.MainForm
                        th.Start();
                        InformationsClass.Coordinator = 1;
                        InformationsClass.Accountant = 1;
+                       
                     break;
 
                 case "منسق":
@@ -93,6 +94,10 @@ namespace UcasProWindowsForm.Forms.MainForm
                        th.Start();
                     InformationsClass.Coordinator = 1;
                     InformationsClass.Accountant = 0;
+                    toolStripDropDownButton1.Visible = false;
+                    UserMangBtn.Visible = false;
+                    UserProjectManageBtn.Visible = false;
+                    AddUserToProjectBtn.Visible = false;
                     break;
 
                 case "محاسب":
@@ -101,6 +106,10 @@ namespace UcasProWindowsForm.Forms.MainForm
                     th.Start();
                     InformationsClass.Coordinator = 0;
                     InformationsClass.Accountant = 1;
+                    toolStripDropDownButton1.Visible = false;
+                    UserMangBtn.Visible = false;
+                    UserProjectManageBtn.Visible = false;
+                    AddUserToProjectBtn.Visible = false;
                     break;
 
 
@@ -219,7 +228,6 @@ namespace UcasProWindowsForm.Forms.MainForm
             {
                 Operation.BeginOperation(this);
                 frm.TragetProject = db;
-                this.Dispose();
                 this.Hide();
                 frm.ShowDialog();
                
@@ -283,6 +291,12 @@ namespace UcasProWindowsForm.Forms.MainForm
         private void FrmAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void UserNameEditBtn_Click(object sender, EventArgs e)
+        {
+            FrmEditUserNameAndPassword frm = new FrmEditUserNameAndPassword();
+            frm.ShowDialog();
         }
 
        

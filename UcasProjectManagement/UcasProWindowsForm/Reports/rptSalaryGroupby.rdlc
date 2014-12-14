@@ -309,7 +309,6 @@
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
-                                      <rd:Selected>true</rd:Selected>
                                     </CellContents>
                                   </TablixCell>
                                   <TablixCell>
@@ -725,7 +724,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.63724cm</Top>
+        <Top>3.22474cm</Top>
         <Left>0.63183cm</Left>
         <Height>3.57188cm</Height>
         <Width>16.77457cm</Width>
@@ -755,7 +754,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ProjectName</rd:DefaultName>
-        <Top>0.41106cm</Top>
+        <Top>1.99856cm</Top>
         <Left>10.21036cm</Left>
         <Height>0.73229cm</Height>
         <Width>4.77542cm</Width>
@@ -803,7 +802,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.41106cm</Top>
+        <Top>1.99856cm</Top>
         <Left>15.02106cm</Left>
         <Height>0.73229cm</Height>
         <Width>2.33243cm</Width>
@@ -851,7 +850,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ProjectName</rd:DefaultName>
-        <Top>5.5076cm</Top>
+        <Top>7.0951cm</Top>
         <Left>10.51905cm</Left>
         <Height>0.6cm</Height>
         <Width>4.77542cm</Width>
@@ -886,7 +885,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>5.5076cm</Top>
+        <Top>7.0951cm</Top>
         <Left>15.32974cm</Left>
         <Height>0.6cm</Height>
         <Width>2.02375cm</Width>
@@ -903,8 +902,44 @@
           <Direction>RTL</Direction>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox25">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>تقرير صرف رواتب </Value>
+                <Style>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox25</rd:DefaultName>
+        <Top>0.31963cm</Top>
+        <Left>4.02259cm</Left>
+        <Height>0.9175cm</Height>
+        <Width>9.72313cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>WhiteSmoke</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>2.53125in</Height>
+    <Height>3.15457in</Height>
     <Style />
   </Body>
   <Width>7.32328in</Width>

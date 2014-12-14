@@ -24,7 +24,7 @@
         <rd:DefaultName>ProjectName</rd:DefaultName>
         <Top>2.03412cm</Top>
         <Left>10.13035cm</Left>
-        <Height>0.99688cm</Height>
+        <Height>0.7323cm</Height>
         <Width>7.23604cm</Width>
         <Style>
           <Border>
@@ -58,7 +58,7 @@
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>2.03412cm</Top>
         <Left>17.24292cm</Left>
-        <Height>0.99688cm</Height>
+        <Height>0.7323cm</Height>
         <Width>2.46472cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
@@ -391,7 +391,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ExpensessID.Value</Value>
+                              <Value>=RowNumber(Nothing)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -793,24 +793,28 @@
               <TextRun>
                 <Value>تقرير بمصروفات المشروع</Value>
                 <Style>
-                  <FontSize>18pt</FontSize>
+                  <FontFamily>Simplified Arabic</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
         <Top>0.3937cm</Top>
-        <Left>8.02125cm</Left>
-        <Height>0.89104cm</Height>
+        <Left>6.91cm</Left>
+        <Height>1.07625cm</Height>
         <Width>6.23062cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>Silver</BackgroundColor>
+          <BackgroundColor>WhiteSmoke</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>

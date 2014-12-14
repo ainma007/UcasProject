@@ -66,6 +66,12 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void ExpensesGridView_CommandCellClick(object sender, EventArgs e)
         {
+            if (InformationsClass.Accountant == 0)
+            {
+                RadMessageBox.Show("غير مصرحة لك الصلاحية", "", MessageBoxButtons.OK, RadMessageIcon.Info);
+                return;
+
+            }
             var col = ExpensesGridView.CurrentColumn.Index;
 
             if (col == 9)
@@ -113,6 +119,12 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            if (InformationsClass.Accountant == 0)
+            {
+                RadMessageBox.Show("غير مصرحة لك الصلاحية", "", MessageBoxButtons.OK, RadMessageIcon.Info);
+                return;
+
+            }
             Operation.BeginOperation(this);
             FrmAddExpenses frm = new FrmAddExpenses();
             frm.ShowDialog();

@@ -29,6 +29,12 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            if (InformationsClass.Accountant == 0)
+            {
+                RadMessageBox.Show("غير مصرحة لك الصلاحية", "", MessageBoxButtons.OK, RadMessageIcon.Info);
+                return;
+
+            }
             Operation.BeginOperation(this);
           
 
@@ -40,6 +46,12 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
 
         private void radGridView1_CommandCellClick(object sender, EventArgs e)
         {
+            if (InformationsClass.Accountant == 0)
+            {
+                RadMessageBox.Show("غير مصرحة لك الصلاحية", "", MessageBoxButtons.OK, RadMessageIcon.Info);
+                return;
+
+            }
             var col = radGridView1.CurrentColumn.Index;
 
             if (col == 5)
@@ -122,11 +134,11 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
             Operation.BeginOperation(this);
 
             List<AmountRecvtReportObj> ls = new List<AmountRecvtReportObj>();
-            int counter = 0;
+          
             //    ls.Add(new SalaryReportObj() {  SalarysID = counter});
             foreach (GridViewRowInfo item in radGridView1.ChildRows)
             {
-                counter++;
+               
                 ls.Add(new AmountRecvtReportObj()
                 {
 

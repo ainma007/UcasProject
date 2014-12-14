@@ -19,6 +19,12 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
         Thread th;
         private void AddDonorsBtn_Click(object sender, EventArgs e)
         {
+            if (InformationsClass.Coordinator == 0)
+            {
+                RadMessageBox.Show("غير مصرحة لك الصلاحية", "", MessageBoxButtons.OK, RadMessageIcon.Info);
+                return;
+
+            }
             Operation.BeginOperation(this);
             FrmTheDonorsAndProjectAdd frm = new FrmTheDonorsAndProjectAdd();
             frm.ShowDialog();
@@ -62,6 +68,12 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void radGridView1_CommandCellClick(object sender, EventArgs e)
         {
+            if (InformationsClass.Coordinator == 0)
+            {
+                RadMessageBox.Show("غير مصرحة لك الصلاحية", "", MessageBoxButtons.OK, RadMessageIcon.Info);
+                return;
+
+            }
             var col = radGridView1.CurrentColumn.Index;
             if (col == 3)
             {

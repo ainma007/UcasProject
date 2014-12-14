@@ -374,7 +374,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!DonorID.Value</Value>
+                              <Value>=RowNumber(Nothing)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -744,7 +744,7 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>LightGrey</BackgroundColor>
+          <BackgroundColor>WhiteSmoke</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>

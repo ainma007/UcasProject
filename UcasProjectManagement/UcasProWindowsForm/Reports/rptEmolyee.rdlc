@@ -12,7 +12,7 @@
                 <Value>تقرير بكافة الموظفين</Value>
                 <Style>
                   <FontFamily>Simplified Arabic</FontFamily>
-                  <FontSize>18pt</FontSize>
+                  <FontSize>16pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -31,7 +31,7 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>LightGrey</BackgroundColor>
+          <BackgroundColor>WhiteSmoke</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -460,7 +460,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!EmoloyeeID.Value</Value>
+                              <Value>=RowNumber(Nothing)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>

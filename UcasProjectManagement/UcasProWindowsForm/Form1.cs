@@ -30,6 +30,11 @@ namespace UcasProWindowsForm
           
            
         }
+
+        private void radButtonElement1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }

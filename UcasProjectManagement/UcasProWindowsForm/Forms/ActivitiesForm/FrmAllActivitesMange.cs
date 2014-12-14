@@ -20,6 +20,12 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         UcasProEntities db = new UcasProEntities();
         private void AdActivitesBtn_Click(object sender, EventArgs e)
         {
+            if (InformationsClass.Coordinator == 0)
+            {
+                RadMessageBox.Show("غير مصرحة لك الصلاحية","",MessageBoxButtons.OK,RadMessageIcon.Info);
+                return;
+
+            }
             Operation.BeginOperation(this);
             FrmAddActivities AddActivfrm = new FrmAddActivities();
             AddActivfrm.ShowDialog();
@@ -29,6 +35,12 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void AddSupActivitesBtn_Click(object sender, EventArgs e)
         {
+            if (InformationsClass.Coordinator == 0)
+            {
+                RadMessageBox.Show("غير مصرحة لك الصلاحية", "", MessageBoxButtons.OK, RadMessageIcon.Info);
+                return;
+
+            }
             Operation.BeginOperation(this);
             FrmAddSubActivities AddSub = new FrmAddSubActivities();
             AddSub.ShowDialog();
@@ -99,7 +111,11 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         
         private void ActivitiesGridView_CommandCellClick(object sender, EventArgs e)
         {
-
+            if (InformationsClass.Coordinator == 0)
+            {
+                RadMessageBox.Show("غير مصرحة لك الصلاحية", "", MessageBoxButtons.OK, RadMessageIcon.Info);
+                return;
+            }
             var col2 = ActivitiesGridView.CurrentColumn.Index;
 
             if (col2 == 9)

@@ -325,6 +325,12 @@
     <Compile Include="Forms\UserSystemForm\FrmAddUserToProject.Designer.cs">
       <DependentUpon>FrmAddUserToProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UserSystemForm\FrmEditUserNameAndPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserSystemForm\FrmEditUserNameAndPassword.Designer.cs">
+      <DependentUpon>FrmEditUserNameAndPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserSystemForm\FrmEditUserToProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -503,6 +509,9 @@
     <EmbeddedResource Include="Forms\UserSystemForm\FrmAddUserToProject.resx">
       <DependentUpon>FrmAddUserToProject.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserSystemForm\FrmEditUserNameAndPassword.resx">
+      <DependentUpon>FrmEditUserNameAndPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserSystemForm\FrmEditUserToProject.resx">
       <DependentUpon>FrmEditUserToProject.cs</DependentUpon>
     </EmbeddedResource>
@@ -528,7 +537,6 @@
     <EmbeddedResource Include="Reports\frmReportViewer.resx">
       <DependentUpon>frmReportViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Report1.rdlc" />
     <EmbeddedResource Include="Reports\rptActivties.rdlc" />
     <EmbeddedResource Include="Reports\rptAmountsReceived.rdlc" />
     <EmbeddedResource Include="Reports\rptContract.rdlc" />
@@ -536,7 +544,6 @@
     <EmbeddedResource Include="Reports\rptEmolyee.rdlc" />
     <EmbeddedResource Include="Reports\rptExpensess.rdlc" />
     <EmbeddedResource Include="Reports\rptProject.rdlc" />
-    <EmbeddedResource Include="Reports\rptSalary.rdlc" />
     <EmbeddedResource Include="Reports\rptSalaryGroupby.rdlc" />
     <EmbeddedResource Include="Reports\rptSupplier.rdlc" />
     <None Include="App.config">

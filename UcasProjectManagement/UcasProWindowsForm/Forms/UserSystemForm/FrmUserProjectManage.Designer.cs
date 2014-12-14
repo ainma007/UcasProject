@@ -117,34 +117,35 @@
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "ID";
             gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.IsVisible = false;
             gridViewTextBoxColumn1.Name = "ID";
             gridViewTextBoxColumn1.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn1.Width = 57;
+            gridViewTextBoxColumn1.Width = 47;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "UserTb.Employee.EmployeeName";
             gridViewTextBoxColumn2.HeaderText = "اسم الموظف";
             gridViewTextBoxColumn2.Name = "EmployeeName";
-            gridViewTextBoxColumn2.Width = 248;
+            gridViewTextBoxColumn2.Width = 268;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "ProjectProfile.ProjectName";
             gridViewTextBoxColumn3.HeaderText = "اسم المشروع";
             gridViewTextBoxColumn3.Name = "ProjectName";
-            gridViewTextBoxColumn3.Width = 220;
+            gridViewTextBoxColumn3.Width = 238;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "Status";
             gridViewTextBoxColumn4.HeaderText = "الحالة";
             gridViewTextBoxColumn4.Name = "Status";
-            gridViewTextBoxColumn4.Width = 103;
+            gridViewTextBoxColumn4.Width = 112;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "تعديل";
             gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
             gridViewCommandColumn1.Name = "EditCol";
-            gridViewCommandColumn1.Width = 52;
+            gridViewCommandColumn1.Width = 57;
             gridViewCommandColumn2.EnableExpressionEditor = false;
             gridViewCommandColumn2.HeaderText = "حذف";
             gridViewCommandColumn2.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn2.Image")));
             gridViewCommandColumn2.Name = "DeleteCol";
-            gridViewCommandColumn2.Width = 57;
+            gridViewCommandColumn2.Width = 61;
             this.ProjectControlGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,

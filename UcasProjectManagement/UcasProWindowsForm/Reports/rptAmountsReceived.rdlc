@@ -21,6 +21,9 @@
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
+                                <Width>1.9469cm</Width>
+                              </TablixColumn>
+                              <TablixColumn>
                                 <Width>4.52516cm</Width>
                               </TablixColumn>
                               <TablixColumn>
@@ -31,6 +34,53 @@
                               <TablixRow>
                                 <Height>0.75312cm</Height>
                                 <TablixCells>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Textbox2">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>الرقم</Value>
+                                                <Style>
+                                                  <FontSize>12pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Textbox2</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <TopBorder>
+                                            <Color>Black</Color>
+                                          </TopBorder>
+                                          <BottomBorder>
+                                            <Color>Black</Color>
+                                          </BottomBorder>
+                                          <LeftBorder>
+                                            <Color>Black</Color>
+                                          </LeftBorder>
+                                          <RightBorder>
+                                            <Color>Black</Color>
+                                          </RightBorder>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
                                   <TablixCell>
                                     <CellContents>
                                       <Textbox Name="Textbox1">
@@ -133,6 +183,40 @@
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
+                                      <Textbox Name="Textbox4">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=RowNumber(Nothing)</Value>
+                                                <Style>
+                                                  <FontWeight>Bold</FontWeight>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Textbox4</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Color>LightGrey</Color>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
                                       <Textbox Name="Date">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
@@ -205,6 +289,40 @@
                               <TablixRow>
                                 <Height>0.75312cm</Height>
                                 <TablixCells>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Textbox5">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value />
+                                                <Style>
+                                                  <FontWeight>Bold</FontWeight>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Textbox5</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Color>LightGrey</Color>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
                                   <TablixCell>
                                     <CellContents>
                                       <Textbox Name="Textbox9">
@@ -281,6 +399,7 @@
                             <TablixMembers>
                               <TablixMember />
                               <TablixMember />
+                              <TablixMember />
                             </TablixMembers>
                           </TablixColumnHierarchy>
                           <TablixRowHierarchy>
@@ -299,9 +418,9 @@
                           <LayoutDirection>RTL</LayoutDirection>
                           <DataSetName>AmountsReceivedDataSet</DataSetName>
                           <Top>1.96283cm</Top>
-                          <Left>9.91085cm</Left>
-                          <Height>2.25935cm</Height>
-                          <Width>8.44179cm</Width>
+                          <Left>7.8934cm</Left>
+                          <Height>2.25936cm</Height>
+                          <Width>10.38868cm</Width>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -431,7 +550,6 @@
                         </Border>
                       </Style>
                     </Rectangle>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -668,7 +786,7 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>LightGrey</BackgroundColor>
+          <BackgroundColor>WhiteSmoke</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>

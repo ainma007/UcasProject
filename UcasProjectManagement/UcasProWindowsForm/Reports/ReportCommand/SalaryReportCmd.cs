@@ -32,7 +32,7 @@ namespace UcasProWindowsForm.Reports.ReportCommand
                    SalaryIssueDate = item.IssueDate.Value,
                    SalaryForMonth = item.Formonth.Value,
                    coin=item.ProjectProfile.Coin,
-                   EmployeejobNumber=item.Contract.Employee.EmployeeName
+                   EmployeejobNumber=item.Contract.Employee.EmployeejobNumber
                   
                }); 
            }

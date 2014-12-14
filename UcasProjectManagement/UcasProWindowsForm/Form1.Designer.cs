@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.SuspendLayout();
             // 
             // Form1
@@ -43,6 +44,8 @@
         }
 
         #endregion
+
+        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
 
        
     }
