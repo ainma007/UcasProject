@@ -109,7 +109,6 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
             //MessageBox.Show(" Changes Was Saved ..");
             //frmUserEdit_Load(sender, e);
             this.Dispose();
-            this.Close();
            
               
         }

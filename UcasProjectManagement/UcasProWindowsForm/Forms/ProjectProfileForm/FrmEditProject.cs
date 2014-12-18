@@ -96,7 +96,6 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
 
                 this.Dispose();
-                this.Close();
             }
         }
 

@@ -103,7 +103,10 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         {
             th = new Thread(Loadactivites);
             th.Start();
-           
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
            
             
         }
@@ -301,6 +304,10 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         private void FrmAllActivitesMange_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Dispose();
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
         }
 
      

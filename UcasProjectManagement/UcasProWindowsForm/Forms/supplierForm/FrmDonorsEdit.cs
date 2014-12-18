@@ -59,7 +59,6 @@ namespace UcasProWindowsForm.Forms.supplierForm
                 Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
                 this.Dispose();
-                this.Close();
             }
         }
 

@@ -154,7 +154,6 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
                  Operation.EndOperation(this);
                  this.Dispose();
-                 this.Close();
              }
              catch (Xprema.XpremaException ex)
              {

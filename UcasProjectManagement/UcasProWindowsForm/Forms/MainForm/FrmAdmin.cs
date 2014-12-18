@@ -85,7 +85,10 @@ namespace UcasProWindowsForm.Forms.MainForm
                        th.Start();
                        InformationsClass.Coordinator = 1;
                        InformationsClass.Accountant = 1;
-                       
+                        GC.SuppressFinalize(th);
+                        GC.Collect();
+                        GC.WaitForFullGCComplete();
+                        GC.WaitForPendingFinalizers(); 
                     break;
 
                 case "منسق":
@@ -117,6 +120,7 @@ namespace UcasProWindowsForm.Forms.MainForm
 
 
                 //    break;
+               
             }  
          
         } 

@@ -28,7 +28,8 @@ namespace Ucas.Data.CommandClass
            return true;
 
        }
-       
+
+       [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2200:RethrowToPreserveStackDetails")]
        public static bool EditUser(UserTb tb)
        {
            try

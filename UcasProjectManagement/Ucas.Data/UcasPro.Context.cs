@@ -12,7 +12,8 @@ namespace Ucas.Data
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Interoperability", "CA1405:ComVisibleTypeBaseTypesShouldBeComVisible")]
     public partial class UcasProEntities : DbContext
     {
         public UcasProEntities()

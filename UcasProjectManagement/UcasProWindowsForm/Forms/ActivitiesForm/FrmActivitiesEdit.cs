@@ -95,8 +95,13 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                    
                     Operation.EndOperation(this);
                     RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    GC.SuppressFinalize(tb);
+                    GC.Collect();
+                    GC.WaitForFullGCComplete();
+                    GC.WaitForPendingFinalizers();
                     this.Dispose();
-                    this.Close();
+
+                  
                 }
                 catch (Xprema.XpremaException ex)
                 {

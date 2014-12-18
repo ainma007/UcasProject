@@ -121,7 +121,6 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                     Operation.EndOperation(this);
                     RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
                     this.Dispose();
-                        this.Close();
             }
                     catch (Xprema.XpremaException ex)
                     {

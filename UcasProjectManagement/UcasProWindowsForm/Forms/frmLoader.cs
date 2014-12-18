@@ -60,13 +60,15 @@ namespace UcasProWindowsForm.Forms
             {
                 FrmLogin frmx = new FrmLogin();
                 frmx.Show();
-               
+                GC.SuppressFinalize(th);
+                GC.Collect();
+                GC.WaitForFullGCComplete();
+                GC.WaitForPendingFinalizers();
                 this.Hide();
                
-                frm.Close();
+                
                 frm.Dispose();
-                      
-
+               
             });
 
 

@@ -115,7 +115,6 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
                 Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
                 this.Dispose();
-                this.Close();
             }
         }
         private void FrmEditAmount_Load(object sender, EventArgs e)

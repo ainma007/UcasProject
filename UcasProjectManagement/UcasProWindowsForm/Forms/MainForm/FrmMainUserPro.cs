@@ -134,6 +134,10 @@ namespace UcasProWindowsForm.Forms.MainForm
         {
             th = new Thread(fillData);
             th.Start();
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
  
         }
 
@@ -157,8 +161,11 @@ namespace UcasProWindowsForm.Forms.MainForm
         {
             FrmAdmin myForm = (FrmAdmin)Application.OpenForms["FrmAdmin"];
             myForm.Show();
-            this.Close();
             this.Dispose();
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
            
         }
 
@@ -168,7 +175,10 @@ namespace UcasProWindowsForm.Forms.MainForm
             FrmAllActivitesMange Activfrm = new FrmAllActivitesMange();
             Activfrm.ShowDialog();
             Operation.BeginOperation(this);
-
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.FrmMainUserPro_Load(null, null);
         }
 
@@ -255,6 +265,10 @@ namespace UcasProWindowsForm.Forms.MainForm
             frm.StatustextBox.Text = StatustextBox.Text;
             frm.ShowDialog();
             Operation.EndOperation(this);
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.FrmMainUserPro_Load(null, null);
         }
 

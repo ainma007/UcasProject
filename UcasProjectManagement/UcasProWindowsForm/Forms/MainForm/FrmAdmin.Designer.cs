@@ -60,6 +60,8 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.UserstoolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.UserNameEditBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.AddUserToProjectBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.UserProjectManageBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
@@ -68,8 +70,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-            this.UserNameEditBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
@@ -105,33 +105,38 @@
             // 
             // toolStripDropDownButton1
             // 
-            this.toolStripDropDownButton1.BackColor = System.Drawing.Color.White;
+            this.toolStripDropDownButton1.BackColor = System.Drawing.Color.Transparent;
             this.toolStripDropDownButton1.BackgroundImage = global::UcasProWindowsForm.Properties.Resources.Green;
+            this.toolStripDropDownButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ProjectAddBtn,
             this.ProjectMangBtn});
+            this.toolStripDropDownButton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripDropDownButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.toolStripDropDownButton1.Image = global::UcasProWindowsForm.Properties.Resources.Projects;
             this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(90, 34);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(96, 34);
             this.toolStripDropDownButton1.Text = "المشاريع";
             // 
             // ProjectAddBtn
             // 
+            this.ProjectAddBtn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProjectAddBtn.Image = global::UcasProWindowsForm.Properties.Resources.AddPro;
             this.ProjectAddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ProjectAddBtn.Name = "ProjectAddBtn";
-            this.ProjectAddBtn.Size = new System.Drawing.Size(156, 38);
+            this.ProjectAddBtn.Size = new System.Drawing.Size(168, 38);
             this.ProjectAddBtn.Text = "اضافة مشروع";
             this.ProjectAddBtn.Click += new System.EventHandler(this.ProjectAddBtn_Click);
             // 
             // ProjectMangBtn
             // 
+            this.ProjectMangBtn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProjectMangBtn.Image = global::UcasProWindowsForm.Properties.Resources.EditPro;
             this.ProjectMangBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ProjectMangBtn.Name = "ProjectMangBtn";
-            this.ProjectMangBtn.Size = new System.Drawing.Size(156, 38);
+            this.ProjectMangBtn.Size = new System.Drawing.Size(168, 38);
             this.ProjectMangBtn.Text = "ادارة المشارع";
             this.ProjectMangBtn.Click += new System.EventHandler(this.ProjectMangBtn_Click);
             // 
@@ -148,28 +153,31 @@
             this.EmployeeAddBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.EmployeeMangBtn});
+            this.EmployeeAddBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmployeeAddBtn.Image = global::UcasProWindowsForm.Properties.Resources.Emplyee;
             this.EmployeeAddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.EmployeeAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.EmployeeAddBtn.Name = "EmployeeAddBtn";
-            this.EmployeeAddBtn.Size = new System.Drawing.Size(92, 34);
+            this.EmployeeAddBtn.Size = new System.Drawing.Size(94, 34);
             this.EmployeeAddBtn.Text = "الموظفين";
             // 
             // toolStripMenuItem1
             // 
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
             this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(163, 32);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(168, 32);
             this.toolStripMenuItem1.Text = "اضافة موظف";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.EmployeeAddBtn_Click);
             // 
             // EmployeeMangBtn
             // 
+            this.EmployeeMangBtn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmployeeMangBtn.Image = ((System.Drawing.Image)(resources.GetObject("EmployeeMangBtn.Image")));
             this.EmployeeMangBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.EmployeeMangBtn.Name = "EmployeeMangBtn";
-            this.EmployeeMangBtn.Size = new System.Drawing.Size(163, 32);
+            this.EmployeeMangBtn.Size = new System.Drawing.Size(168, 32);
             this.EmployeeMangBtn.Text = "ادارة الموظفين";
             this.EmployeeMangBtn.Click += new System.EventHandler(this.EmployeeMangBtn_Click);
             // 
@@ -185,55 +193,60 @@
             this.toolStripDropDownButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FinanAddBtn,
-            this.FinanMangBtn,
             this.toolStripSeparator2,
             this.toolStripMenuItem2,
+            this.FinanMangBtn,
             this.toolStripMenuItem3});
+            this.toolStripDropDownButton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripDropDownButton2.Image = global::UcasProWindowsForm.Properties.Resources.Supplier;
             this.toolStripDropDownButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(89, 34);
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(94, 34);
             this.toolStripDropDownButton2.Text = "الممولين";
             // 
             // FinanAddBtn
             // 
+            this.FinanAddBtn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FinanAddBtn.Image = global::UcasProWindowsForm.Properties.Resources.Donorsadd;
             this.FinanAddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.FinanAddBtn.Name = "FinanAddBtn";
-            this.FinanAddBtn.Size = new System.Drawing.Size(158, 38);
+            this.FinanAddBtn.Size = new System.Drawing.Size(168, 38);
             this.FinanAddBtn.Text = "اضافة ممول";
             this.FinanAddBtn.Click += new System.EventHandler(this.FinanAddBtn_Click);
             // 
             // FinanMangBtn
             // 
+            this.FinanMangBtn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FinanMangBtn.Image = global::UcasProWindowsForm.Properties.Resources.Donors;
             this.FinanMangBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.FinanMangBtn.Name = "FinanMangBtn";
-            this.FinanMangBtn.Size = new System.Drawing.Size(158, 38);
+            this.FinanMangBtn.Size = new System.Drawing.Size(168, 38);
             this.FinanMangBtn.Text = "ادارة الممولين";
             this.FinanMangBtn.Click += new System.EventHandler(this.FinanMangBtn_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(155, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(165, 6);
             // 
             // toolStripMenuItem2
             // 
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem2.Image = global::UcasProWindowsForm.Properties.Resources.AddSupp;
             this.toolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(158, 38);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(168, 38);
             this.toolStripMenuItem2.Text = "اضافة مورد";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.SuppAddBtn_Click);
             // 
             // toolStripMenuItem3
             // 
+            this.toolStripMenuItem3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem3.Image = global::UcasProWindowsForm.Properties.Resources.EditSupp;
             this.toolStripMenuItem3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(158, 38);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(168, 38);
             this.toolStripMenuItem3.Text = "ادارة الموردين";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.SupmanageBtn_Click);
             // 
@@ -258,36 +271,53 @@
             this.UserProjectManageBtn,
             this.toolStripSeparator6,
             this.UserMangBtn});
+            this.UserstoolStripDropDownButton3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserstoolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("UserstoolStripDropDownButton3.Image")));
             this.UserstoolStripDropDownButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.UserstoolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.UserstoolStripDropDownButton3.Name = "UserstoolStripDropDownButton3";
-            this.UserstoolStripDropDownButton3.Size = new System.Drawing.Size(137, 34);
+            this.UserstoolStripDropDownButton3.Size = new System.Drawing.Size(145, 34);
             this.UserstoolStripDropDownButton3.Text = "ادارة المستخدمين";
+            // 
+            // UserNameEditBtn
+            // 
+            this.UserNameEditBtn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserNameEditBtn.Name = "UserNameEditBtn";
+            this.UserNameEditBtn.Size = new System.Drawing.Size(215, 22);
+            this.UserNameEditBtn.Text = "تغير اسم المستخدم وكلمة المرور";
+            this.UserNameEditBtn.Click += new System.EventHandler(this.UserNameEditBtn_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(212, 6);
             // 
             // AddUserToProjectBtn
             // 
+            this.AddUserToProjectBtn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddUserToProjectBtn.Name = "AddUserToProjectBtn";
-            this.AddUserToProjectBtn.Size = new System.Drawing.Size(232, 22);
+            this.AddUserToProjectBtn.Size = new System.Drawing.Size(215, 22);
             this.AddUserToProjectBtn.Text = "اضافة مستخدم لمشروع";
             this.AddUserToProjectBtn.Click += new System.EventHandler(this.AddUserToProjectBtn_Click);
             // 
             // UserProjectManageBtn
             // 
+            this.UserProjectManageBtn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserProjectManageBtn.Name = "UserProjectManageBtn";
-            this.UserProjectManageBtn.Size = new System.Drawing.Size(232, 22);
+            this.UserProjectManageBtn.Size = new System.Drawing.Size(215, 22);
             this.UserProjectManageBtn.Text = "ادارة مستخدمين المشروع";
             this.UserProjectManageBtn.Click += new System.EventHandler(this.UserProjectManageBtn_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(229, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(212, 6);
             // 
             // UserMangBtn
             // 
+            this.UserMangBtn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserMangBtn.Name = "UserMangBtn";
-            this.UserMangBtn.Size = new System.Drawing.Size(232, 22);
+            this.UserMangBtn.Size = new System.Drawing.Size(215, 22);
             this.UserMangBtn.Text = "ادارة صلاحيات المستخدمين";
             this.UserMangBtn.Click += new System.EventHandler(this.UserMangBtn_Click_1);
             // 
@@ -444,18 +474,6 @@
             this.radGroupBox1.TabIndex = 8;
             this.radGroupBox1.Text = "قائمة المشاريع";
             this.radGroupBox1.ThemeName = "TelerikMetro";
-            // 
-            // UserNameEditBtn
-            // 
-            this.UserNameEditBtn.Name = "UserNameEditBtn";
-            this.UserNameEditBtn.Size = new System.Drawing.Size(232, 22);
-            this.UserNameEditBtn.Text = "تغير اسم المستخدم وكلمة المرور";
-            this.UserNameEditBtn.Click += new System.EventHandler(this.UserNameEditBtn_Click);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(229, 6);
             // 
             // FrmAdmin
             // 

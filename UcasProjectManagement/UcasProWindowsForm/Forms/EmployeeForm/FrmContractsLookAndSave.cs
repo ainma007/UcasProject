@@ -95,7 +95,6 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                             RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
                             this.Dispose();
                               
-                            this.Close();
                         }
                             catch (Xprema.XpremaException ex)
                             {
