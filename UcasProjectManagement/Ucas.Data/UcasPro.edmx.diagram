@@ -6,7 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="50202300d4234be69bbade1317c3b003" Name="Diagram1" ZoomLevel="72">
         <EntityTypeShape EntityType="UcasProModel.AmountsReceived" Width="1.5" PointX="3" PointY="5.375" />
-        <EntityTypeShape EntityType="UcasProModel.Attachment" Width="1.5" PointX="3" PointY="25.375" />
         <EntityTypeShape EntityType="UcasProModel.Contract" Width="1.5" PointX="6" PointY="6" />
         <EntityTypeShape EntityType="UcasProModel.Employee" Width="1.5" PointX="3.75" PointY="1.125" />
         <EntityTypeShape EntityType="UcasProModel.Monthlysalary" Width="1.5" PointX="8.25" PointY="8.625" />
@@ -23,7 +22,6 @@
         <EntityTypeShape EntityType="UcasProModel.UserTb" Width="1.5" PointX="13" PointY="5.125" />
         <AssociationConnector Association="UcasProModel.FK_AmountsReceived_TheFinancerProjects" />
         <AssociationConnector Association="UcasProModel.FK_AmountsReceiveds_ProjectProfiles" />
-        <AssociationConnector Association="UcasProModel.FK_Attachments_ProjectProfiles" />
         <AssociationConnector Association="UcasProModel.FK_Contracts_Employees" />
         <AssociationConnector Association="UcasProModel.FK_Contracts_ProjectProfiles" />
         <AssociationConnector Association="UcasProModel.FK_Salaries_Contracts" />
@@ -41,6 +39,8 @@
         <AssociationConnector Association="UcasProModel.FK_UserPermession_SystemPermession" />
         <AssociationConnector Association="UcasProModel.FK_TheFinancerProject_Thefinanciers" />
         <AssociationConnector Association="UcasProModel.FK_UserPermession_UserTbs" />
+        <EntityTypeShape EntityType="UcasProModel.Attachment" Width="1.5" PointX="13" PointY="11.625" />
+        <AssociationConnector Association="UcasProModel.FK_Attachments_ProjectProfiles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

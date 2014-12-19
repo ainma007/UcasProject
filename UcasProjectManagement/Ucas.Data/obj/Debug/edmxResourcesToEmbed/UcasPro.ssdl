@@ -14,10 +14,10 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="fileContent" Type="varbinary(max)" Nullable="false" />
     <Property Name="AttachmentName" Type="nvarchar(max)" />
     <Property Name="CreateDate" Type="datetime" />
-    <Property Name="fileContent" Type="image" />
     <Property Name="ProjectProfile_ID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Contracts">

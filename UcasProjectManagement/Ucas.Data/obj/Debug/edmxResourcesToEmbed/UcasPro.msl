@@ -23,17 +23,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Attachments">
-      <EntityTypeMapping TypeName="UcasProModel.Attachment">
-        <MappingFragment StoreEntitySet="Attachments">
-          <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
-          <ScalarProperty Name="fileContent" ColumnName="fileContent" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-          <ScalarProperty Name="AttachmentName" ColumnName="AttachmentName" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Contracts">
       <EntityTypeMapping TypeName="UcasProModel.Contract">
         <MappingFragment StoreEntitySet="Contracts">
@@ -207,6 +196,17 @@
           <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Attachments">
+      <EntityTypeMapping TypeName="UcasProModel.Attachment">
+        <MappingFragment StoreEntitySet="Attachments">
+          <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="AttachmentName" ColumnName="AttachmentName" />
+          <ScalarProperty Name="fileContent" ColumnName="fileContent" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

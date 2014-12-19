@@ -41,7 +41,10 @@ namespace UcasProWindowsForm.Forms
             });
 
             rpt = new ReportDataSource();
+           
             UcasProEntities db = new UcasProEntities();
+            db.Database.Connection.Open();
+            db.Database.Connection.Close();
             var q = (from i in db.ProjectProfiles select i);
             var q1 = (from i in db.ProjectActivities select i);
             var q2 = (from i in db.ProjectSubActivities select i);
@@ -71,7 +74,7 @@ namespace UcasProWindowsForm.Forms
                
             });
 
-
+            th.Abort();
 
         }
     }

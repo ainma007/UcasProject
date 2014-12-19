@@ -12,8 +12,7 @@ namespace Ucas.Data
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Interoperability", "CA1405:ComVisibleTypeBaseTypesShouldBeComVisible")]
+    
     public partial class UcasProEntities : DbContext
     {
         public UcasProEntities()
@@ -28,7 +27,6 @@ namespace Ucas.Data
     
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<AmountsReceived> AmountsReceiveds { get; set; }
-        public virtual DbSet<Attachment> Attachments { get; set; }
         public virtual DbSet<Contract> Contracts { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Monthlysalary> Monthlysalaries { get; set; }
@@ -43,5 +41,6 @@ namespace Ucas.Data
         public virtual DbSet<TheDonorsProject> TheDonorsProjects { get; set; }
         public virtual DbSet<UserPermession> UserPermessions { get; set; }
         public virtual DbSet<UserTb> UserTbs { get; set; }
+        public virtual DbSet<Attachment> Attachments { get; set; }
     }
 }

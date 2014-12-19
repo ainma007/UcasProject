@@ -17,7 +17,6 @@ namespace Ucas.Data
         public ProjectProfile()
         {
             this.AmountsReceiveds = new HashSet<AmountsReceived>();
-            this.Attachments = new HashSet<Attachment>();
             this.Contracts = new HashSet<Contract>();
             this.Monthlysalaries = new HashSet<Monthlysalary>();
             this.ProjectActivities = new HashSet<ProjectActivity>();
@@ -25,6 +24,7 @@ namespace Ucas.Data
             this.ProjectExpenses = new HashSet<ProjectExpens>();
             this.ProjectSubActivities = new HashSet<ProjectSubActivity>();
             this.TheDonorsProjects = new HashSet<TheDonorsProject>();
+            this.Attachments = new HashSet<Attachment>();
         }
     
         public int ID { get; set; }
@@ -38,7 +38,6 @@ namespace Ucas.Data
         public string Coin { get; set; }
     
         public virtual ICollection<AmountsReceived> AmountsReceiveds { get; set; }
-        public virtual ICollection<Attachment> Attachments { get; set; }
         public virtual ICollection<Contract> Contracts { get; set; }
         public virtual ICollection<Monthlysalary> Monthlysalaries { get; set; }
         public virtual ICollection<ProjectActivity> ProjectActivities { get; set; }
@@ -46,5 +45,6 @@ namespace Ucas.Data
         public virtual ICollection<ProjectExpens> ProjectExpenses { get; set; }
         public virtual ICollection<ProjectSubActivity> ProjectSubActivities { get; set; }
         public virtual ICollection<TheDonorsProject> TheDonorsProjects { get; set; }
+        public virtual ICollection<Attachment> Attachments { get; set; }
     }
 }

@@ -67,8 +67,8 @@ namespace UcasProWindowsForm.Forms.Attachments
 
             });
             img = null;
-            Attachment = null;
-            GC.SuppressFinalize(tb);
+            tb = null;
+           // GC.SuppressFinalize(tb);
             GC.Collect();
             GC.WaitForFullGCComplete();
             GC.WaitForPendingFinalizers();

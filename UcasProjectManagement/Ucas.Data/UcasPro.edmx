@@ -19,10 +19,10 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fileContent" Type="varbinary(max)" Nullable="false" />
           <Property Name="AttachmentName" Type="nvarchar(max)" />
           <Property Name="CreateDate" Type="datetime" />
-          <Property Name="fileContent" Type="image" />
           <Property Name="ProjectProfile_ID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Contracts">
@@ -544,7 +544,6 @@
         <EntityContainer Name="UcasProEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="UcasProModel.sysdiagram" />
           <EntitySet Name="AmountsReceiveds" EntityType="UcasProModel.AmountsReceived" />
-          <EntitySet Name="Attachments" EntityType="UcasProModel.Attachment" />
           <EntitySet Name="Contracts" EntityType="UcasProModel.Contract" />
           <EntitySet Name="Employees" EntityType="UcasProModel.Employee" />
           <EntitySet Name="Monthlysalaries" EntityType="UcasProModel.Monthlysalary" />
@@ -566,10 +565,6 @@
           <AssociationSet Name="FK_AmountsReceiveds_ProjectProfiles" Association="UcasProModel.FK_AmountsReceiveds_ProjectProfiles">
             <End Role="ProjectProfile" EntitySet="ProjectProfiles" />
             <End Role="AmountsReceived" EntitySet="AmountsReceiveds" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Attachments_ProjectProfiles" Association="UcasProModel.FK_Attachments_ProjectProfiles">
-            <End Role="ProjectProfile" EntitySet="ProjectProfiles" />
-            <End Role="Attachment" EntitySet="Attachments" />
           </AssociationSet>
           <AssociationSet Name="FK_Contracts_Employees" Association="UcasProModel.FK_Contracts_Employees">
             <End Role="Employee" EntitySet="Employees" />
@@ -639,6 +634,11 @@
             <End Role="UserTb" EntitySet="UserTbs" />
             <End Role="UserPermession" EntitySet="UserPermessions" />
           </AssociationSet>
+          <EntitySet Name="Attachments" EntityType="UcasProModel.Attachment" />
+          <AssociationSet Name="FK_Attachments_ProjectProfiles" Association="UcasProModel.FK_Attachments_ProjectProfiles">
+            <End Role="ProjectProfile" EntitySet="ProjectProfiles" />
+            <End Role="Attachment" EntitySet="Attachments" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="sysdiagram">
           <Key>
@@ -661,17 +661,6 @@
           <Property Name="ProjectProfile_ID" Type="Int32" />
           <NavigationProperty Name="TheDonorsProject" Relationship="UcasProModel.FK_AmountsReceived_TheFinancerProjects" FromRole="AmountsReceived" ToRole="TheDonorsProject" />
           <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_AmountsReceiveds_ProjectProfiles" FromRole="AmountsReceived" ToRole="ProjectProfile" />
-        </EntityType>
-        <EntityType Name="Attachment">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AttachmentName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CreateDate" Type="DateTime" Precision="3" />
-          <Property Name="fileContent" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="ProjectProfile_ID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_Attachments_ProjectProfiles" FromRole="Attachment" ToRole="ProjectProfile" />
         </EntityType>
         <EntityType Name="Contract">
           <Key>
@@ -775,7 +764,6 @@
           <Property Name="TotalCost" Type="Double" />
           <Property Name="Coin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AmountsReceiveds" Relationship="UcasProModel.FK_AmountsReceiveds_ProjectProfiles" FromRole="ProjectProfile" ToRole="AmountsReceived" />
-          <NavigationProperty Name="Attachments" Relationship="UcasProModel.FK_Attachments_ProjectProfiles" FromRole="ProjectProfile" ToRole="Attachment" />
           <NavigationProperty Name="Contracts" Relationship="UcasProModel.FK_Contracts_ProjectProfiles" FromRole="ProjectProfile" ToRole="Contract" />
           <NavigationProperty Name="Monthlysalaries" Relationship="UcasProModel.FK_Monthlysalaries_ProjectProfiles" FromRole="ProjectProfile" ToRole="Monthlysalary" />
           <NavigationProperty Name="ProjectActivities" Relationship="UcasProModel.FK_ProjectActivities_ProjectProfiles" FromRole="ProjectProfile" ToRole="ProjectActivity" />
@@ -783,6 +771,7 @@
           <NavigationProperty Name="ProjectExpenses" Relationship="UcasProModel.FK_ProjectExpenses_ProjectProfiles" FromRole="ProjectProfile" ToRole="ProjectExpens" />
           <NavigationProperty Name="ProjectSubActivities" Relationship="UcasProModel.FK_ProjectSubActivities_ProjectProfiles" FromRole="ProjectProfile" ToRole="ProjectSubActivity" />
           <NavigationProperty Name="TheDonorsProjects" Relationship="UcasProModel.FK_TheFinancerProject_ProjectProfiles" FromRole="ProjectProfile" ToRole="TheDonorsProject" />
+          <NavigationProperty Name="Attachments" Relationship="UcasProModel.FK_Attachments_ProjectProfiles" FromRole="ProjectProfile" ToRole="Attachment" />
         </EntityType>
         <EntityType Name="ProjectSubActivity">
           <Key>
@@ -893,18 +882,6 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="AmountsReceived">
-              <PropertyRef Name="ProjectProfile_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Attachments_ProjectProfiles">
-          <End Type="UcasProModel.ProjectProfile" Role="ProjectProfile" Multiplicity="1" />
-          <End Type="UcasProModel.Attachment" Role="Attachment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ProjectProfile">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Attachment">
               <PropertyRef Name="ProjectProfile_ID" />
             </Dependent>
           </ReferentialConstraint>
@@ -1113,6 +1090,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Attachment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="fileContent" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="AttachmentName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ProjectProfile_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_Attachments_ProjectProfiles" FromRole="Attachment" ToRole="ProjectProfile" />
+        </EntityType>
+        <Association Name="FK_Attachments_ProjectProfiles">
+          <End Type="UcasProModel.ProjectProfile" Role="ProjectProfile" Multiplicity="1" />
+          <End Type="UcasProModel.Attachment" Role="Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectProfile">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Attachment">
+              <PropertyRef Name="ProjectProfile_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1137,17 +1137,6 @@
                 <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="TheDonorsProjectID" ColumnName="TheDonorsProjectID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Attachments">
-            <EntityTypeMapping TypeName="UcasProModel.Attachment">
-              <MappingFragment StoreEntitySet="Attachments">
-                <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
-                <ScalarProperty Name="fileContent" ColumnName="fileContent" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="AttachmentName" ColumnName="AttachmentName" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1325,6 +1314,17 @@
                 <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Attachments">
+            <EntityTypeMapping TypeName="UcasProModel.Attachment">
+              <MappingFragment StoreEntitySet="Attachments">
+                <ScalarProperty Name="ProjectProfile_ID" ColumnName="ProjectProfile_ID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="AttachmentName" ColumnName="AttachmentName" />
+                <ScalarProperty Name="fileContent" ColumnName="fileContent" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
