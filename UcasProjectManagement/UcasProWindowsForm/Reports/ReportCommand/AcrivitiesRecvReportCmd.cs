@@ -44,7 +44,7 @@ namespace UcasProWindowsForm.Reports.ReportCommand
                   SubCost=item.TotalCost.Value,
                   SubProgress=item.Progress.Value,
                   SubStauts=item.Status,
-
+                 AllTotalActivites = ActivityCmd.GetTotalActivity(InformationsClass.ProjID)
                    
                   
                }); 

@@ -266,7 +266,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmManagementFinanciers";
+            this.Text = "ادرة الممولين";
             this.ThemeName = "TelerikMetro";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmManagementTheDonors_FormClosed);
             this.Load += new System.EventHandler(this.FrmManagementFinanciers_Load);

@@ -14,12 +14,10 @@ namespace Ucas.Data
     
     public partial class Attachment
     {
-        public System.Guid ID { get; set; }
-        public byte[] fileContent { get; set; }
+        public int IDX { get; set; }
         public string AttachmentName { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
         public int ProjectProfile_ID { get; set; }
-    
-        public virtual ProjectProfile ProjectProfile { get; set; }
+        public string FilePathX { get; set; }
     }
 }

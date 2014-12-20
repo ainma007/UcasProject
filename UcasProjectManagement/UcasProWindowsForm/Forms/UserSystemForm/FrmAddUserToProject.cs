@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Windows.Forms;
+using Telerik.WinControls;
 using Telerik.WinControls.Data;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
@@ -12,6 +13,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         public FrmAddUserToProject()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         Thread th;
         private void FillComboBox()
@@ -72,20 +74,29 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         private void AddBtn_Click(object sender, EventArgs e)
         {
             Operation.BeginOperation(this);
-           
 
-            ProjectControl tb = new ProjectControl
+            try
             {
-                UserID = int.Parse(UserListComboBox.SelectedValue.ToString()),
-                ProjectID = int.Parse(ProjectCombo.SelectedValue.ToString()),
-                Status="فعال"
-            };
-            ProjectControlCmd.AddNewProControl(tb);
-            Operation.EndOperation(this);
-            Operation.ShowToustOk(OperationX.AddMessageDone, this);
-            UserListComboBox.ResetText();
-            ProjectCombo.ResetText();
-            UserListComboBox.Focus();
+                ProjectControl tb = new ProjectControl
+                {
+                    UserID = int.Parse(UserListComboBox.SelectedValue.ToString()),
+                    ProjectID = int.Parse(ProjectCombo.SelectedValue.ToString()),
+                    Status = "فعال"
+                };
+                ProjectControlCmd.AddNewProControl(tb);
+                Operation.EndOperation(this);
+                Operation.ShowToustOk(OperationX.AddMessageDone, this);
+                UserListComboBox.ResetText();
+                ProjectCombo.ResetText();
+                UserListComboBox.Focus();
+            }
+            catch (Xprema.XpremaException ex)
+            {
+
+                Operation.EndOperation(this);
+                RadMessageBox.Show(ex.UserDescriptionArabic, "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+          
 
         }
 

@@ -1646,9 +1646,9 @@
         </Paragraphs>
         <rd:DefaultName>ProjectName</rd:DefaultName>
         <Top>1.429cm</Top>
-        <Left>4.09581cm</Left>
+        <Left>8.9906cm</Left>
         <Height>0.84777cm</Height>
-        <Width>8.87089cm</Width>
+        <Width>3.9761cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -1705,7 +1705,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!ActivitesCost.Value, "ActivitiesDataSet")</Value>
+                <Value>=Fields!AllTotalActivites.Value</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
                   <FontSize>14pt</FontSize>
@@ -1713,15 +1713,15 @@
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Right</TextAlign>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ProjectName</rd:DefaultName>
         <Top>6.88521cm</Top>
-        <Left>16.34954cm</Left>
+        <Left>20.9868cm</Left>
         <Height>0.84777cm</Height>
-        <Width>7.64468cm</Width>
+        <Width>3.07798cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -1777,7 +1777,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!SubCost.Value).ToString() +""+ Fields!Coin.Value</Value>
+                <Value>=Sum(Fields!SubCost.Value).ToString()</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
                   <FontSize>14pt</FontSize>
@@ -1785,15 +1785,15 @@
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Right</TextAlign>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ProjectName</rd:DefaultName>
         <Top>6.88521cm</Top>
-        <Left>4.09581cm</Left>
+        <Left>8.7303cm</Left>
         <Height>0.84777cm</Height>
-        <Width>7.94394cm</Width>
+        <Width>3.30946cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -1840,6 +1840,76 @@
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
           <Direction>RTL</Direction>
+        </Style>
+      </Textbox>
+      <Textbox Name="ProjectName5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!Coin.Value</Value>
+                <Style>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>14pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ProjectName</rd:DefaultName>
+        <Top>6.88521cm</Top>
+        <Left>17.48695cm</Left>
+        <Height>0.84777cm</Height>
+        <Width>3.49985cm</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="ProjectName6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!Coin.Value</Value>
+                <Style>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>14pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ProjectName</rd:DefaultName>
+        <Top>6.88521cm</Top>
+        <Left>5.19517cm</Left>
+        <Height>0.84777cm</Height>
+        <Width>3.49985cm</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
     </ReportItems>
@@ -1912,6 +1982,10 @@
         <Field Name="ActivitesName">
           <DataField>ActivitesName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AllTotalActivites">
+          <DataField>AllTotalActivites</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
         <Field Name="Coin">
           <DataField>Coin</DataField>

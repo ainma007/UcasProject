@@ -6,6 +6,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
+using UcasProWindowsForm.Reports.ReportCommand;
 
 namespace UcasProWindowsForm.Forms.ActivitiesForm
 {
@@ -298,7 +299,8 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void PrintBtn_Click(object sender, EventArgs e)
         {
-            this.ActivitiesGridView.PrintPreview();
+            AcrivitiesRecvReportCmd cmd = new AcrivitiesRecvReportCmd();
+            cmd.GetRptAcrivitiesByProjectId(InformationsClass.ProjID);
         }
 
         private void FrmAllActivitesMange_FormClosed(object sender, FormClosedEventArgs e)

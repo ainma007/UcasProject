@@ -14,8 +14,8 @@ namespace Ucas.Data.CommandClass
             try
             {
                 db = new UcasProEntities();
-                db.Configuration.ProxyCreationEnabled = false;
-                db.Configuration.LazyLoadingEnabled = false;
+                //db.Configuration.ProxyCreationEnabled = false;
+               // db.Configuration.LazyLoadingEnabled = false;
                 db.Attachments.Add(tb);
                 db.SaveChanges();
                 return true;
@@ -34,10 +34,10 @@ namespace Ucas.Data.CommandClass
                 db = new UcasProEntities();
                 db.Configuration.LazyLoadingEnabled = false;
                 db.Configuration.ProxyCreationEnabled = false;
-                var q = db.Attachments.Where(p => p.ID == tb.ID).SingleOrDefault();
+                var q = db.Attachments.Where(p => p.IDX == tb.IDX).SingleOrDefault();
                 q.AttachmentName = tb.AttachmentName;
                 q.CreateDate = tb.CreateDate;
-                q.fileContent = tb.fileContent;
+           
                 q.ProjectProfile_ID = tb.ProjectProfile_ID;
 
 

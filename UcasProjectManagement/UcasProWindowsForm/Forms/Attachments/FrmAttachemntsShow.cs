@@ -18,6 +18,7 @@ namespace UcasProWindowsForm.Forms.Attachments
         public FrmAttachemntsShow()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         Thread th;
         private void FrmAttachemntsShow_Load(object sender, EventArgs e)
@@ -93,8 +94,23 @@ namespace UcasProWindowsForm.Forms.Attachments
             });
           
            
-            File.WriteAllBytes(sv.SelectedPath + "\\" + p.AttachmentName, p.fileContent);
-            
+     // 
+            try
+            {
+                File.Copy(p.FilePathX, sv.SelectedPath + "\\" + p.AttachmentName,true);
+            }
+            catch (System.UnauthorizedAccessException ex)
+            {
+                radWaitingBar1.Invoke((MethodInvoker)delegate
+           {
+               toolStripStatusLabel1.Text = "";
+               radWaitingBar1.Visible = false;
+               AttachemntsGridView.Enabled = true;
+               toolStrip1.Enabled = true;
+           });
+                return;
+            }
+           
 
             radWaitingBar1.Invoke((MethodInvoker)delegate
             {
@@ -120,6 +136,11 @@ namespace UcasProWindowsForm.Forms.Attachments
         {
             this.Dispose();
            
+        }
+
+        private void AttachemntsGridView_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

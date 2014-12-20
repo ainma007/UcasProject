@@ -11,7 +11,7 @@ namespace UcasProWindowsForm
    public class Operation
     {
        private static frmLoader load = new frmLoader();
-       private static frmbackg frm = new frmbackg();
+      
 
         public static void ShowToustOk(string msg, Control frm)
         {

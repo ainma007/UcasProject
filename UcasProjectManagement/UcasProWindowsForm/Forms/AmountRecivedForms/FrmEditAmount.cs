@@ -14,6 +14,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         public FrmEditAmount()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         Thread th;
         public int XAmountID { get; set; }

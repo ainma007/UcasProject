@@ -18,6 +18,7 @@ namespace UcasProWindowsForm.Reports.ReportObj
        public double ActivitesCost { get; set; }
        public double Progress { get; set; }
        public string Stauts{get;set;}
+       public double AllTotalActivites { get; set; }
 
        //Sub
 

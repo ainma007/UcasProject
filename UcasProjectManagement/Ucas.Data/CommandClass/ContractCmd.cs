@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -24,13 +25,21 @@ namespace Ucas.Data.CommandClass
             }
             catch (Exception ex)
             {
-
+               
                 Xprema.XpremaException e = new Xprema.XpremaException();
                 e.CodeNumber = 6;
                 e.OtherDescription = ex.InnerException.InnerException.Message;
+                File.WriteAllText("t.txt", ex.InnerException.InnerException.Message);
                 e.UserDescription = "Error in Save Changed";
-                e.UserDescriptionArabic = "خطاء في اضافة البيانات";
-                throw e;
+                if (ex.InnerException.InnerException.Message.Contains("Violation of PRIMARY KEY constraint 'PK_Contracts'. Cannot insert duplicate key in object 'dbo.Contracts'"))
+                {
+                    e.UserDescriptionArabic = "الموظف موجود عقده في المشروع مسبقا";
+
+                }
+                else
+                    e.UserDescriptionArabic = e.OtherDescription;//"خطاء في اضافة البيانات";
+               
+                 throw e;
             }
         }
         public static bool EditContract(Contract Ct)

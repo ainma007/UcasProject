@@ -99,7 +99,23 @@ namespace Ucas.Data.CommandClass
         }
 
         public static List<ProjectActivity> GetAll() { return  db.ProjectActivities.ToList(); }
+        public static double GetTotalActivity(int ProID)
+        {
+            db = new UcasProEntities();
 
+            var LST = (from p in db.ProjectActivities
+
+                       where p.ProjectProfile_ID == ProID
+                       select p.TotalCost).ToList();
+
+            double total = 0;
+            foreach (var Sm in LST) { total += Convert.ToDouble(Sm); }
+
+            return total;
+
+        }
     }
+
+
 
 }

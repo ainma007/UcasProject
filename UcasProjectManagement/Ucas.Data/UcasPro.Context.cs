@@ -12,6 +12,8 @@ namespace Ucas.Data
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class UcasProEntities : DbContext
     {
@@ -27,6 +29,7 @@ namespace Ucas.Data
     
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<AmountsReceived> AmountsReceiveds { get; set; }
+        public virtual DbSet<Attachment> Attachments { get; set; }
         public virtual DbSet<Contract> Contracts { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Monthlysalary> Monthlysalaries { get; set; }
@@ -41,6 +44,26 @@ namespace Ucas.Data
         public virtual DbSet<TheDonorsProject> TheDonorsProjects { get; set; }
         public virtual DbSet<UserPermession> UserPermessions { get; set; }
         public virtual DbSet<UserTb> UserTbs { get; set; }
-        public virtual DbSet<Attachment> Attachments { get; set; }
+    
+        public virtual int AddAttachmeny(string filePathX, string attachmentName, Nullable<System.DateTime> createDate, Nullable<int> projectProfile_ID)
+        {
+            var filePathXParameter = filePathX != null ?
+                new ObjectParameter("FilePathX", filePathX) :
+                new ObjectParameter("FilePathX", typeof(string));
+    
+            var attachmentNameParameter = attachmentName != null ?
+                new ObjectParameter("AttachmentName", attachmentName) :
+                new ObjectParameter("AttachmentName", typeof(string));
+    
+            var createDateParameter = createDate.HasValue ?
+                new ObjectParameter("CreateDate", createDate) :
+                new ObjectParameter("CreateDate", typeof(System.DateTime));
+    
+            var projectProfile_IDParameter = projectProfile_ID.HasValue ?
+                new ObjectParameter("ProjectProfile_ID", projectProfile_ID) :
+                new ObjectParameter("ProjectProfile_ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddAttachmeny", filePathXParameter, attachmentNameParameter, createDateParameter, projectProfile_IDParameter);
+        }
     }
 }

@@ -30,20 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-            this.NewuserNameTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.OldPasswordTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.NewpasswordTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.NewpasswordTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.OldPasswordTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.NewuserNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NewuserNameTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OldPasswordTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NewpasswordTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewpasswordTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OldPasswordTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewuserNameTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -67,47 +67,15 @@
             this.radGroupBox1.TabIndex = 0;
             this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
-            // NewuserNameTextBox
+            // SaveBtn
             // 
-            this.NewuserNameTextBox.Location = new System.Drawing.Point(39, 86);
-            this.NewuserNameTextBox.Name = "NewuserNameTextBox";
-            this.NewuserNameTextBox.Size = new System.Drawing.Size(221, 22);
-            this.NewuserNameTextBox.TabIndex = 0;
-            this.NewuserNameTextBox.ThemeName = "TelerikMetro";
-            // 
-            // OldPasswordTextBox
-            // 
-            this.OldPasswordTextBox.Location = new System.Drawing.Point(39, 31);
-            this.OldPasswordTextBox.Name = "OldPasswordTextBox";
-            this.OldPasswordTextBox.Size = new System.Drawing.Size(221, 22);
-            this.OldPasswordTextBox.TabIndex = 1;
-            this.OldPasswordTextBox.ThemeName = "TelerikMetro";
-            // 
-            // NewpasswordTextBox
-            // 
-            this.NewpasswordTextBox.Location = new System.Drawing.Point(39, 114);
-            this.NewpasswordTextBox.Name = "NewpasswordTextBox";
-            this.NewpasswordTextBox.Size = new System.Drawing.Size(221, 22);
-            this.NewpasswordTextBox.TabIndex = 2;
-            this.NewpasswordTextBox.ThemeName = "TelerikMetro";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(266, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "اسم المستخدم الجديد";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(266, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "كلمة المرور القديمة";
+            this.SaveBtn.Location = new System.Drawing.Point(234, 178);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(128, 36);
+            this.SaveBtn.TabIndex = 6;
+            this.SaveBtn.Text = "حفظ التعديلات";
+            this.SaveBtn.ThemeName = "TelerikMetro";
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // label3
             // 
@@ -118,15 +86,49 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "كلمة المرور الجديدة";
             // 
-            // SaveBtn
+            // label2
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(234, 178);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(128, 36);
-            this.SaveBtn.TabIndex = 6;
-            this.SaveBtn.Text = "حفظ التعديلات";
-            this.SaveBtn.ThemeName = "TelerikMetro";
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(266, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "كلمة المرور القديمة";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(266, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "اسم المستخدم الجديد";
+            // 
+            // NewpasswordTextBox
+            // 
+            this.NewpasswordTextBox.Location = new System.Drawing.Point(39, 114);
+            this.NewpasswordTextBox.Name = "NewpasswordTextBox";
+            this.NewpasswordTextBox.PasswordChar = '*';
+            this.NewpasswordTextBox.Size = new System.Drawing.Size(221, 22);
+            this.NewpasswordTextBox.TabIndex = 2;
+            this.NewpasswordTextBox.ThemeName = "TelerikMetro";
+            // 
+            // OldPasswordTextBox
+            // 
+            this.OldPasswordTextBox.Location = new System.Drawing.Point(39, 31);
+            this.OldPasswordTextBox.Name = "OldPasswordTextBox";
+            this.OldPasswordTextBox.PasswordChar = '*';
+            this.OldPasswordTextBox.Size = new System.Drawing.Size(221, 22);
+            this.OldPasswordTextBox.TabIndex = 1;
+            this.OldPasswordTextBox.ThemeName = "TelerikMetro";
+            // 
+            // NewuserNameTextBox
+            // 
+            this.NewuserNameTextBox.Location = new System.Drawing.Point(39, 86);
+            this.NewuserNameTextBox.Name = "NewuserNameTextBox";
+            this.NewuserNameTextBox.Size = new System.Drawing.Size(221, 22);
+            this.NewuserNameTextBox.TabIndex = 0;
+            this.NewuserNameTextBox.ThemeName = "TelerikMetro";
             // 
             // errorProvider1
             // 
@@ -138,22 +140,27 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 230);
             this.Controls.Add(this.radGroupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(394, 265);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(394, 265);
             this.Name = "FrmEditUserNameAndPassword";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmEditUserNameAndPassword";
+            this.Text = "تعديل كلمة المرور";
             this.ThemeName = "TelerikMetro";
             this.Load += new System.EventHandler(this.FrmEditUserNameAndPassword_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NewuserNameTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OldPasswordTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NewpasswordTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewpasswordTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OldPasswordTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewuserNameTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);

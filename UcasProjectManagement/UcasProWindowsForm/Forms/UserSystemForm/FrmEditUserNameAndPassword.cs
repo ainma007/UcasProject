@@ -16,6 +16,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         public FrmEditUserNameAndPassword()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
        
         private void FrmEditUserNameAndPassword_Load(object sender, EventArgs e)

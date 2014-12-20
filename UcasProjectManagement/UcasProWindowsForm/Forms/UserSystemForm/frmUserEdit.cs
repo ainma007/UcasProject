@@ -19,6 +19,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         public frmUserEdit()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         public Ucas.Data.UserTb TragetUser { get; set; }
        

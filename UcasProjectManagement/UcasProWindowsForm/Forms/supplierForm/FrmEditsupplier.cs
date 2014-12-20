@@ -12,6 +12,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
         public FrmEditsupplier()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         public int XSupID { get; set; }
         public Ucas.Data.Supplier TragetDSupplier { get; set; }

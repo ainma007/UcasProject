@@ -21,11 +21,11 @@ namespace UcasProWindowsForm.Forms
         }
 
         Thread th;
-        frmbackg frm = new frmbackg();
+       
         ReportDataSource rpt = new ReportDataSource();
         private void frmLoader_Load(object sender, EventArgs e)
         {
-            frm.Show();
+            
             Application.DoEvents();
             th = new Thread(Loader);
             th.Start();
@@ -70,7 +70,7 @@ namespace UcasProWindowsForm.Forms
                 this.Hide();
                
                 
-                frm.Dispose();
+               
                
             });
 

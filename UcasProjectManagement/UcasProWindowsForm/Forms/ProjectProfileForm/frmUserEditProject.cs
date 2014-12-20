@@ -16,6 +16,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
         public frmUserEditProject()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         public int ProId { get; set; }
         private void frmUserEditProject_Load(object sender, EventArgs e)

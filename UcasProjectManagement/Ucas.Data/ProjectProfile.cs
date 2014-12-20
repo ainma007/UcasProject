@@ -24,7 +24,6 @@ namespace Ucas.Data
             this.ProjectExpenses = new HashSet<ProjectExpens>();
             this.ProjectSubActivities = new HashSet<ProjectSubActivity>();
             this.TheDonorsProjects = new HashSet<TheDonorsProject>();
-            this.Attachments = new HashSet<Attachment>();
         }
     
         public int ID { get; set; }
@@ -45,6 +44,5 @@ namespace Ucas.Data
         public virtual ICollection<ProjectExpens> ProjectExpenses { get; set; }
         public virtual ICollection<ProjectSubActivity> ProjectSubActivities { get; set; }
         public virtual ICollection<TheDonorsProject> TheDonorsProjects { get; set; }
-        public virtual ICollection<Attachment> Attachments { get; set; }
     }
 }

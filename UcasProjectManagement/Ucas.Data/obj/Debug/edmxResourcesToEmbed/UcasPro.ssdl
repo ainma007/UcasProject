@@ -12,13 +12,13 @@
   </EntityType>
   <EntityType Name="Attachments">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="IDX" />
     </Key>
-    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="fileContent" Type="varbinary(max)" Nullable="false" />
+    <Property Name="IDX" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="AttachmentName" Type="nvarchar(max)" />
     <Property Name="CreateDate" Type="datetime" />
     <Property Name="ProjectProfile_ID" Type="int" Nullable="false" />
+    <Property Name="FilePathX" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="Contracts">
     <Key>
@@ -213,18 +213,6 @@
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="AmountsReceiveds">
-        <PropertyRef Name="ProjectProfile_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Attachments_ProjectProfiles">
-    <End Role="ProjectProfiles" Type="Self.ProjectProfiles" Multiplicity="1" />
-    <End Role="Attachments" Type="Self.Attachments" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ProjectProfiles">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Attachments">
         <PropertyRef Name="ProjectProfile_ID" />
       </Dependent>
     </ReferentialConstraint>
@@ -433,6 +421,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="AddAttachmeny" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FilePathX" Type="nvarchar" Mode="In" />
+    <Parameter Name="AttachmentName" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="CreateDate" Type="datetime" Mode="In" />
+    <Parameter Name="ProjectProfile_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetTotalContracts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+    <Parameter Name="ProjectID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetTotalCostOfActivty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+    <Parameter Name="ProjectID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetTotalCostOfActivtyAndContracts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+    <Parameter Name="ProjectID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetTotalCostOfExpenses" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+    <Parameter Name="SubActivity_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetTotalCostOfSalary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+    <Parameter Name="Contracts_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetTotalCostOfSubActivty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+    <Parameter Name="Activty" Type="int" Mode="In" />
+  </Function>
   <EntityContainer Name="UcasProModelStoreContainer">
     <EntitySet Name="AmountsReceiveds" EntityType="Self.AmountsReceiveds" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Attachments" EntityType="Self.Attachments" Schema="dbo" store:Type="Tables" />
@@ -458,10 +470,6 @@
     <AssociationSet Name="FK_AmountsReceiveds_ProjectProfiles" Association="Self.FK_AmountsReceiveds_ProjectProfiles">
       <End Role="ProjectProfiles" EntitySet="ProjectProfiles" />
       <End Role="AmountsReceiveds" EntitySet="AmountsReceiveds" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Attachments_ProjectProfiles" Association="Self.FK_Attachments_ProjectProfiles">
-      <End Role="ProjectProfiles" EntitySet="ProjectProfiles" />
-      <End Role="Attachments" EntitySet="Attachments" />
     </AssociationSet>
     <AssociationSet Name="FK_Contracts_Employees" Association="Self.FK_Contracts_Employees">
       <End Role="Employees" EntitySet="Employees" />

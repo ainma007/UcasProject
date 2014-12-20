@@ -2,7 +2,14 @@
 <Schema Namespace="UcasProModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="UcasProEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="sysdiagrams" EntityType="UcasProModel.sysdiagram" />
+    <FunctionImport Name="AddAttachmeny">
+      <Parameter Name="FilePathX" Mode="In" Type="String" />
+      <Parameter Name="AttachmentName" Mode="In" Type="String" />
+      <Parameter Name="CreateDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ProjectProfile_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
     <EntitySet Name="AmountsReceiveds" EntityType="UcasProModel.AmountsReceived" />
+    <EntitySet Name="Attachments" EntityType="UcasProModel.Attachment" />
     <EntitySet Name="Contracts" EntityType="UcasProModel.Contract" />
     <EntitySet Name="Employees" EntityType="UcasProModel.Employee" />
     <EntitySet Name="Monthlysalaries" EntityType="UcasProModel.Monthlysalary" />
@@ -93,11 +100,6 @@
       <End Role="UserTb" EntitySet="UserTbs" />
       <End Role="UserPermession" EntitySet="UserPermessions" />
     </AssociationSet>
-    <EntitySet Name="Attachments" EntityType="UcasProModel.Attachment" />
-    <AssociationSet Name="FK_Attachments_ProjectProfiles" Association="UcasProModel.FK_Attachments_ProjectProfiles">
-      <End Role="ProjectProfile" EntitySet="ProjectProfiles" />
-      <End Role="Attachment" EntitySet="Attachments" />
-    </AssociationSet>
   </EntityContainer>
   <EntityType Name="sysdiagram">
     <Key>
@@ -120,6 +122,16 @@
     <Property Name="ProjectProfile_ID" Type="Int32" />
     <NavigationProperty Name="TheDonorsProject" Relationship="UcasProModel.FK_AmountsReceived_TheFinancerProjects" FromRole="AmountsReceived" ToRole="TheDonorsProject" />
     <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_AmountsReceiveds_ProjectProfiles" FromRole="AmountsReceived" ToRole="ProjectProfile" />
+  </EntityType>
+  <EntityType Name="Attachment">
+    <Key>
+      <PropertyRef Name="IDX" />
+    </Key>
+    <Property Name="IDX" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttachmentName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="ProjectProfile_ID" Type="Int32" Nullable="false" />
+    <Property Name="FilePathX" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Contract">
     <Key>
@@ -230,7 +242,6 @@
     <NavigationProperty Name="ProjectExpenses" Relationship="UcasProModel.FK_ProjectExpenses_ProjectProfiles" FromRole="ProjectProfile" ToRole="ProjectExpens" />
     <NavigationProperty Name="ProjectSubActivities" Relationship="UcasProModel.FK_ProjectSubActivities_ProjectProfiles" FromRole="ProjectProfile" ToRole="ProjectSubActivity" />
     <NavigationProperty Name="TheDonorsProjects" Relationship="UcasProModel.FK_TheFinancerProject_ProjectProfiles" FromRole="ProjectProfile" ToRole="TheDonorsProject" />
-    <NavigationProperty Name="Attachments" Relationship="UcasProModel.FK_Attachments_ProjectProfiles" FromRole="ProjectProfile" ToRole="Attachment" />
   </EntityType>
   <EntityType Name="ProjectSubActivity">
     <Key>
@@ -546,29 +557,6 @@
       </Principal>
       <Dependent Role="UserPermession">
         <PropertyRef Name="UserID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="Attachment">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Guid" Nullable="false" />
-    <Property Name="fileContent" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
-    <Property Name="AttachmentName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="CreateDate" Type="DateTime" Precision="3" />
-    <Property Name="ProjectProfile_ID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="ProjectProfile" Relationship="UcasProModel.FK_Attachments_ProjectProfiles" FromRole="Attachment" ToRole="ProjectProfile" />
-  </EntityType>
-  <Association Name="FK_Attachments_ProjectProfiles">
-    <End Type="UcasProModel.ProjectProfile" Role="ProjectProfile" Multiplicity="1" />
-    <End Type="UcasProModel.Attachment" Role="Attachment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ProjectProfile">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Attachment">
-        <PropertyRef Name="ProjectProfile_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Ucas.Data;
@@ -18,6 +20,7 @@ namespace UcasProWindowsForm.Forms.Attachments
         public FrmAddAttachments()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         byte[] img;
 
@@ -26,8 +29,16 @@ namespace UcasProWindowsForm.Forms.Attachments
         private void radButton1_Click(object sender, EventArgs e)
         {
             op = new OpenFileDialog();
-            op.ShowDialog();
-            
+            ;
+            if (op.ShowDialog()==System.Windows.Forms.DialogResult.OK)
+            {
+                radTextBox1.Text = op.FileName;
+            }
+            else
+            {
+
+                radTextBox1.Clear();
+            }
            
            
         }
@@ -39,8 +50,18 @@ namespace UcasProWindowsForm.Forms.Attachments
          
         }
 
+        static async Task<int> Method(SqlConnection conn, SqlCommand cmd)
+        {
+            await conn.OpenAsync();
+            await cmd.ExecuteNonQueryAsync();
+            return 1;
+        }
+
         private void SaveData()
         {
+
+           
+
             radWaitingBar1.Invoke((MethodInvoker)delegate
             {
                 radWaitingBar1.Visible = true;
@@ -48,14 +69,37 @@ namespace UcasProWindowsForm.Forms.Attachments
                 label1.Visible = true;
 
             });
+            //using (SqlConnection conn = new SqlConnection("Data Source=BlackSword\\SQLEXPRESS;Initial Catalog=UcasPro;Integrated Security=True"))
+            //{
+
+
+
+             string str = @"\\BLACKSWORD\UCAttachment\" + InformationsClass.ProjID + "_" + op.SafeFileName;
+             File.Copy(op.FileName, str);
            
+
+            //    SqlCommand command = new SqlCommand("AddAttachmeny", conn);
+            //    command.CommandType = CommandType.StoredProcedure;
+            //    command.Parameters.Clear();
+            //    command.Parameters.AddWithValue("@FilePathX", str);//File.ReadAllBytes(op.FileName));
+            //    command.Parameters.AddWithValue("@AttachmentName", op.SafeFileName);
+            //    command.Parameters.AddWithValue("@CreateDate", DateTime.Now);
+            //    command.Parameters.AddWithValue("@ProjectProfile_ID", InformationsClass.ProjID);
+            //    conn.Open();
+            //    int result = Method(conn, command).Result;
+
+            //    command.ExecuteNonQuery();
+            //    conn.Close();
+
+
+            //}
             Attachment tb = new Attachment
             {
                 ProjectProfile_ID = InformationsClass.ProjID,
                 AttachmentName = op.SafeFileName,
                 CreateDate = DateTime.Now,
-                fileContent = File.ReadAllBytes(op.FileName),
-               
+                FilePathX = str
+
             };
 
             AttachmentsClass.NewAttachment(tb);
@@ -64,11 +108,12 @@ namespace UcasProWindowsForm.Forms.Attachments
                 radWaitingBar1.Visible = false;
                 label1.Visible = false;
                 Operation.ShowToustOk("تمت عملية الرفع",this);
+                radTextBox1.Clear();
 
             });
             img = null;
-            tb = null;
-           // GC.SuppressFinalize(tb);
+           // tb = null;
+            GC.SuppressFinalize(th);
             GC.Collect();
             GC.WaitForFullGCComplete();
             GC.WaitForPendingFinalizers();
@@ -79,6 +124,19 @@ namespace UcasProWindowsForm.Forms.Attachments
         private void FrmAddAttachments_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Dispose();
+            try
+            {
+                if (th.IsAlive)
+                {
+                    th.Abort();
+                }
+            }
+            catch (System.NullReferenceException ex)
+            {
+                
+                return;
+            }
+            
         }
           
     }

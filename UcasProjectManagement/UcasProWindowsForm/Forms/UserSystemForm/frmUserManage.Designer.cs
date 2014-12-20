@@ -165,7 +165,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(788, 517);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "igrdj";
+            this.Text = "ادارة المستخدمين";
             this.ThemeName = "TelerikMetro";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmUserManage_FormClosed);
             this.Load += new System.EventHandler(this.frmUserManage_Load);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Windows.Forms;
+using Telerik.WinControls;
 using Ucas.Data.CommandClass;
 
 namespace UcasProWindowsForm.Forms.UserSystemForm
@@ -10,6 +11,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         public FrmUserProjectManage()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         Thread th;
         private void FrmUserProjectManage_Load(object sender, EventArgs e)

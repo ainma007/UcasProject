@@ -61,7 +61,7 @@
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(251, 77);
+            this.SaveBtn.Location = new System.Drawing.Point(251, 68);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(110, 37);
             this.SaveBtn.TabIndex = 0;
@@ -107,7 +107,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAddAttachments";
+            this.Text = " رفع ملف ";
             this.ThemeName = "TelerikMetro";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAddAttachments_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();

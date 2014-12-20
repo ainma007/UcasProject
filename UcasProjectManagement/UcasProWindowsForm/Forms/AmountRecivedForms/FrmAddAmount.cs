@@ -13,6 +13,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         public FrmAddAmount()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
        
         private void FillCombo()

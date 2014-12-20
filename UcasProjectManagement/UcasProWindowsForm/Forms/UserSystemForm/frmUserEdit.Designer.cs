@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.employeeNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
@@ -157,14 +157,14 @@
             // 
             this.TypeDropDownList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TypeDropDownList.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem1.Text = "مدير";
-            radListDataItem2.Text = "منسق";
-            radListDataItem3.Text = "محاسب";
-            radListDataItem4.Text = "غير فعال";
-            this.TypeDropDownList.Items.Add(radListDataItem1);
-            this.TypeDropDownList.Items.Add(radListDataItem2);
-            this.TypeDropDownList.Items.Add(radListDataItem3);
-            this.TypeDropDownList.Items.Add(radListDataItem4);
+            radListDataItem5.Text = "مدير";
+            radListDataItem6.Text = "منسق";
+            radListDataItem7.Text = "محاسب";
+            radListDataItem8.Text = "غير فعال";
+            this.TypeDropDownList.Items.Add(radListDataItem5);
+            this.TypeDropDownList.Items.Add(radListDataItem6);
+            this.TypeDropDownList.Items.Add(radListDataItem7);
+            this.TypeDropDownList.Items.Add(radListDataItem8);
             this.TypeDropDownList.Location = new System.Drawing.Point(143, 128);
             this.TypeDropDownList.Name = "TypeDropDownList";
             this.TypeDropDownList.Size = new System.Drawing.Size(136, 19);
@@ -187,6 +187,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(369, 237);
             this.Controls.Add(this.radGroupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(377, 272);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(377, 272);
             this.Name = "frmUserEdit";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
@@ -194,7 +198,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmUserEdit";
+            this.Text = "تعديل بيانات مستخدم";
             this.ThemeName = "TelerikMetro";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmUserEdit_FormClosed);
             this.Load += new System.EventHandler(this.frmUserEdit_Load);

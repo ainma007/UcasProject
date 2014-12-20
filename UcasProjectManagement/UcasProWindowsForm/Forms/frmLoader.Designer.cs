@@ -35,17 +35,19 @@
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             this.SuspendLayout();
             // 
             // radWaitingBar1
             // 
-            this.radWaitingBar1.Location = new System.Drawing.Point(62, 128);
+            this.radWaitingBar1.Location = new System.Drawing.Point(59, 181);
             this.radWaitingBar1.Name = "radWaitingBar1";
             this.radWaitingBar1.Size = new System.Drawing.Size(292, 24);
             this.radWaitingBar1.TabIndex = 2;
@@ -57,7 +59,7 @@
             // 
             this.radLabel1.Font = new System.Drawing.Font("Simplified Arabic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel1.ForeColor = System.Drawing.Color.OliveDrab;
-            this.radLabel1.Location = new System.Drawing.Point(130, 174);
+            this.radLabel1.Location = new System.Drawing.Point(133, 144);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.radLabel1.Size = new System.Drawing.Size(139, 31);
@@ -68,18 +70,19 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Simplified Arabic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.ForeColor = System.Drawing.Color.OliveDrab;
-            this.radLabel2.Location = new System.Drawing.Point(24, 21);
+            this.radLabel2.ForeColor = System.Drawing.Color.Black;
+            this.radLabel2.Location = new System.Drawing.Point(160, 21);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radLabel2.Size = new System.Drawing.Size(356, 36);
+            this.radLabel2.Size = new System.Drawing.Size(198, 36);
             this.radLabel2.TabIndex = 4;
-            this.radLabel2.Text = "برنامج ادارة المشاريع الممولة الخاصة بالكلية الجامعية ";
+            this.radLabel2.Text = "الكلية الجامعية للعلوم التطبيقة";
             this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.radLabel3);
             this.radGroupBox1.Controls.Add(this.pictureBox1);
             this.radGroupBox1.Controls.Add(this.radLabel2);
             this.radGroupBox1.Controls.Add(this.radWaitingBar1);
@@ -97,12 +100,24 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(186, 56);
+            this.pictureBox1.Location = new System.Drawing.Point(361, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 63);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            // 
+            // radLabel3
+            // 
+            this.radLabel3.Font = new System.Drawing.Font("Simplified Arabic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel3.ForeColor = System.Drawing.Color.Black;
+            this.radLabel3.Location = new System.Drawing.Point(112, 94);
+            this.radLabel3.Name = "radLabel3";
+            this.radLabel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.radLabel3.Size = new System.Drawing.Size(193, 36);
+            this.radLabel3.TabIndex = 6;
+            this.radLabel3.Text = "برنامج ادارة المشاريع الممولة";
+            this.radLabel3.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
             // frmLoader
             // 
@@ -124,6 +139,7 @@
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -136,6 +152,7 @@
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Telerik.WinControls.UI.RadLabel radLabel3;
 
     }
 }

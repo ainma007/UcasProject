@@ -121,7 +121,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             catch (Xprema.XpremaException ex)
             {
                 Operation.EndOperation(this);
-                RadMessageBox.Show(ex.OtherDescription, "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show(ex.UserDescriptionArabic, "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
 
             }
         }

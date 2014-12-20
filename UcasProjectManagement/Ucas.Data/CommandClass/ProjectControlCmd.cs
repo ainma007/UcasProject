@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Entity;
 using System.Collections;
+using System.IO;
 namespace Ucas.Data.CommandClass
 {
     public class ProjectControlCmd
@@ -22,10 +23,32 @@ namespace Ucas.Data.CommandClass
        
         public static bool AddNewProControl(ProjectControl tb)
            {
-               db = new UcasProEntities();
-               db.ProjectControls.Add(tb);
-               db.SaveChanges();
-               return true;
+               try
+               {
+                   db = new UcasProEntities();
+                   db.ProjectControls.Add(tb);
+                   db.SaveChanges();
+                   return true;
+               }
+               catch (Exception ex)
+               {
+
+                   Xprema.XpremaException e = new Xprema.XpremaException();
+                   e.CodeNumber = 6;
+                   e.OtherDescription = ex.InnerException.InnerException.Message;
+                   File.WriteAllText("t.txt", ex.InnerException.InnerException.Message);
+                   e.UserDescription = "Error in Save Changed";
+                   if (ex.InnerException.InnerException.Message.Contains("Violation of PRIMARY KEY constraint 'PK_ProjectControls'. Cannot insert duplicate key in object 'dbo.ProjectControls'"))
+                   {
+                       e.UserDescriptionArabic = "المستخدم مضاف مسبقا للمشروع";
+
+                   }
+                   else
+                       e.UserDescriptionArabic = e.OtherDescription;//"خطاء في اضافة البيانات";
+
+                   throw e;
+               }
+              
            }
 
         public static bool EditProControl(ProjectControl tb)

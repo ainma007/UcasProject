@@ -76,34 +76,34 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
               
             }
 
-            if (col == 9)
-            {
-                if (RadMessageBox.Show(this, OperationX.DeleteMessage, "حذف السجلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
-                {
-                    Operation.BeginOperation(this);
-                    if (EmployeeCmd.DeleteEmployee(int.Parse(EmployeeGridView.CurrentRow.Cells[0].Value.ToString())))
-                    {
-                        Operation.EndOperation(this);
-                        FrmEmployeeMng_Load(null, null);
-                        Operation.ShowToustOk(OperationX.DeletedMessage, this);
-
-                       
-                      
+            //if (col == 9)
+            //{
+            //    if (RadMessageBox.Show(this, OperationX.DeleteMessage, "حذف السجلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+            //    {
+            //        Operation.BeginOperation(this);
+            //        if (EmployeeCmd.DeleteEmployee(int.Parse(EmployeeGridView.CurrentRow.Cells[0].Value.ToString())))
+            //        {
+            //            Operation.EndOperation(this);
+            //            FrmEmployeeMng_Load(null, null);
+            //            Operation.ShowToustOk(OperationX.DeletedMessage, this);
 
 
-                    }
-
-                    else
-                    {
-                        Operation.EndOperation(this);
-                        RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
 
 
-                    }
-                }
+
+            //        }
+
+            //        else
+            //        {
+            //            Operation.EndOperation(this);
+            //            RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
 
 
-            }
+            //        }
+            //    }
+
+
+            //}
         }
 
     
