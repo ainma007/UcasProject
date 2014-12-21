@@ -303,6 +303,18 @@ namespace UcasProWindowsForm.Forms.MainForm
             frm.ShowDialog();
         }
 
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            FrmAdmin_Load(null, null);
+        }
+
+        private void AboutBtn_ButtonClick(object sender, EventArgs e)
+        {
+            AboutFrm frm = new AboutFrm();
+            frm.ShowDialog();
+
+        }
+
        
     }
 }

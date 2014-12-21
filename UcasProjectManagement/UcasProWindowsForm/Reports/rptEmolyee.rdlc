@@ -823,7 +823,7 @@
         </TablixRowHierarchy>
         <LayoutDirection>RTL</LayoutDirection>
         <DataSetName>EmplyeeDataSet</DataSetName>
-        <Top>2.35162cm</Top>
+        <Top>1.71662cm</Top>
         <Left>0.42078cm</Left>
         <Height>1.2cm</Height>
         <Width>20.74837cm</Width>
@@ -835,7 +835,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.33333in</Height>
     <Style />
   </Body>
   <Width>8.45634in</Width>

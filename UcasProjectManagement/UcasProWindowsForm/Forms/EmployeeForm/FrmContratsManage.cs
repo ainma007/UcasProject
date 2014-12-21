@@ -37,11 +37,11 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         private void FillData()
         {
 
-            progressBar1.Invoke((MethodInvoker)delegate
+            statusStrip1.Invoke((MethodInvoker)delegate
             {
                 
                 toolStripStatusLabel1.Text = "يرجى الانتظار ... ";
-                progressBar1.Visible = true;
+              
                 
             });
 
@@ -53,13 +53,13 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             Operation.EndOperation(this);
 
 
-            progressBar1.Invoke((MethodInvoker)delegate
+            statusStrip1.Invoke((MethodInvoker)delegate
             {
-                progressBar1.Value = 70;
+               
                 ContractsGridView.DataSource = q;
                 TotalAmount();
                 toolStripStatusLabel1.Text = "";
-                progressBar1.Visible = false;
+               
             });
 
             

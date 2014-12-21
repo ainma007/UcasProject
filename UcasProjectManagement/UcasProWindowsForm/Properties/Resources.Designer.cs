@@ -83,6 +83,16 @@ namespace UcasProWindowsForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap About {
+            get {
+                object obj = ResourceManager.GetObject("About", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Acti {
             get {
                 object obj = ResourceManager.GetObject("Acti", resourceCulture);
@@ -273,6 +283,26 @@ namespace UcasProWindowsForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EnterProgram {
+            get {
+                object obj = ResourceManager.GetObject("EnterProgram", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Exit {
+            get {
+                object obj = ResourceManager.GetObject("Exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Expen {
             get {
                 object obj = ResourceManager.GetObject("Expen", resourceCulture);
@@ -286,6 +316,16 @@ namespace UcasProWindowsForm.Properties {
         internal static System.Drawing.Bitmap Green {
             get {
                 object obj = ResourceManager.GetObject("Green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoLog {
+            get {
+                object obj = ResourceManager.GetObject("logoLog", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -316,6 +356,26 @@ namespace UcasProWindowsForm.Properties {
         internal static System.Drawing.Bitmap Print {
             get {
                 object obj = ResourceManager.GetObject("Print", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PrintAllReport {
+            get {
+                object obj = ResourceManager.GetObject("PrintAllReport", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Project1 {
+            get {
+                object obj = ResourceManager.GetObject("Project1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

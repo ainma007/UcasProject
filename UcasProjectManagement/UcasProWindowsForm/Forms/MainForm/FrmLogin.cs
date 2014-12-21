@@ -104,5 +104,23 @@ namespace UcasProWindowsForm.Forms.MainForm
         {
             Application.Exit();
         }
+
+        private void PasswordTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+
+                EnterBtn_Click(sender, e);
+                e.Handled = true;
+
+
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            AboutFrm frm = new AboutFrm();
+            frm.ShowDialog();
+        }
     }
 }

@@ -79,6 +79,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AboutFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutFrm.Designer.cs">
+      <DependentUpon>AboutFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ActivitiesForm\FrmActivitiesEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -380,6 +386,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutFrm.resx">
+      <DependentUpon>AboutFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActivitiesForm\FrmActivitiesEdit.resx">
       <DependentUpon>FrmActivitiesEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -616,6 +625,7 @@
     <None Include="Resources\7.png" />
     <None Include="Resources\Acti.png" />
     <None Include="Resources\1418514813_Download.png" />
+    <None Include="Resources\About.png" />
     <Content Include="Resources\Add.png" />
     <None Include="Resources\Cost.png" />
     <None Include="Resources\Amount.png" />
@@ -633,8 +643,13 @@
     <None Include="Resources\EditSupp.png" />
     <None Include="Resources\AddSupp.png" />
     <None Include="Resources\metro-loading.gif" />
+    <None Include="Resources\EnterProgram.png" />
+    <None Include="Resources\Exit.png" />
+    <None Include="Resources\logoLog.png" />
     <Content Include="Resources\Print.png" />
     <None Include="Resources\Projects.png" />
+    <None Include="Resources\Project1.png" />
+    <None Include="Resources\PrintAllReport.png" />
     <Content Include="Resources\Refrech.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -154,7 +154,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 counter++;
                 ls.Add(new ExpensessReportObj()
                 {
-                    ExpensessID = counter,
+                   // ExpensessID = counter,
                     coin = item.Cells["Coin"].Value.ToString(),
                     ProjectName = item.Cells["ProjectName"].Value.ToString(),
                     ExpensessName = item.Cells["ExpensesName"].Value.ToString(),

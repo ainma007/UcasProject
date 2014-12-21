@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -38,8 +37,9 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "ProjectDataSet";
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "ProjectDataSet";
+            reportDataSource2.Value = null;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
@@ -55,13 +55,15 @@
             this.ClientSize = new System.Drawing.Size(964, 563);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmReportViewer";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmReportViewer";
+            this.Text = "عرض تقرير";
             this.ThemeName = "TelerikMetro";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmReportViewer_Load);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);

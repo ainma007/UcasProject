@@ -49,7 +49,6 @@
             this.PrintBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.ContractsGridView = new Telerik.WinControls.UI.RadGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -124,7 +123,6 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox1.Controls.Add(this.progressBar1);
             this.radGroupBox1.Controls.Add(this.ContractsGridView);
             this.radGroupBox1.Controls.Add(this.statusStrip1);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -136,13 +134,6 @@
             this.radGroupBox1.TabIndex = 6;
             this.radGroupBox1.Text = "سجلات العقود";
             this.radGroupBox1.ThemeName = "TelerikMetro";
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(796, 482);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(192, 19);
-            this.progressBar1.TabIndex = 5;
             // 
             // ContractsGridView
             // 
@@ -320,6 +311,5 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private Telerik.WinControls.UI.RadGridView ContractsGridView;
-        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

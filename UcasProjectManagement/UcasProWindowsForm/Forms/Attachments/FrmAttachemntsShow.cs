@@ -40,7 +40,7 @@ namespace UcasProWindowsForm.Forms.Attachments
             Operation.BeginOperation(this);
 
             Application.DoEvents();
-            var q = AttachmentsClass.GetAllAttachment();
+            var q = AttachmentsClass.GetGetAllAttachmentByproID(InformationsClass.ProjID);
             Application.DoEvents();
 
             Operation.EndOperation(this);
@@ -69,6 +69,7 @@ namespace UcasProWindowsForm.Forms.Attachments
             {
                 th = new Thread(DownData);
                 th.Start();
+                FrmAttachemntsShow_Load(null,null);
 
             }
         }
@@ -129,6 +130,7 @@ namespace UcasProWindowsForm.Forms.Attachments
         {
             FrmAddAttachments frm = new FrmAddAttachments();
             frm.ShowDialog();
+            FrmAttachemntsShow_Load(null, null);
    
         }
 

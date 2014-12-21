@@ -807,7 +807,7 @@
         </TablixRowHierarchy>
         <LayoutDirection>RTL</LayoutDirection>
         <DataSetName>ContractDataSet</DataSetName>
-        <Top>2.32516cm</Top>
+        <Top>1.69016cm</Top>
         <Left>0.55245cm</Left>
         <Height>1.8cm</Height>
         <Width>18.10035cm</Width>
@@ -867,7 +867,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.53125in</Height>
     <Style />
   </Body>
   <Width>7.68018in</Width>

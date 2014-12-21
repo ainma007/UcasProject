@@ -301,5 +301,28 @@ namespace UcasProWindowsForm.Forms.MainForm
             AcrivitiesRecvReportCmd cmd = new AcrivitiesRecvReportCmd();
             cmd.GetRptAcrivitiesByProjectId(InformationsClass.ProjID);
         }
+
+        private void refreshBtn_Click_1(object sender, EventArgs e)
+        {
+            FrmMainUserPro_Load(null, null);
+        }
+
+        private void MasterTemplate_CellFormatting(object sender, Telerik.WinControls.UI.CellFormattingEventArgs e)
+        {
+            if (e.CellElement.ColumnInfo.Name == "enddate")
+            {
+                e.CellElement.ForeColor = Color.Red;
+               
+
+            }
+
+
+            if (e.CellElement.ColumnInfo.Name == "Progress")
+            {
+                e.CellElement.ForeColor = Color.Red;
+               
+
+            }
+        }
     }
 }

@@ -417,7 +417,7 @@
                           </TablixRowHierarchy>
                           <LayoutDirection>RTL</LayoutDirection>
                           <DataSetName>AmountsReceivedDataSet</DataSetName>
-                          <Top>1.96283cm</Top>
+                          <Top>1.67179cm</Top>
                           <Left>7.8934cm</Left>
                           <Height>2.25936cm</Height>
                           <Width>10.38868cm</Width>
@@ -454,7 +454,7 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>DonerName</rd:DefaultName>
-                          <Top>0.57523cm</Top>
+                          <Top>0.28419cm</Top>
                           <Left>7.8934cm</Left>
                           <Height>0.81167cm</Height>
                           <Width>8.17972cm</Width>
@@ -488,7 +488,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>اسم الممول:</Value>
+                                  <Value> اسم الممول:</Value>
                                   <Style>
                                     <FontFamily>Simplified Arabic</FontFamily>
                                     <FontSize>12pt</FontSize>
@@ -502,7 +502,7 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox8</rd:DefaultName>
-                          <Top>0.57523cm</Top>
+                          <Top>0.28419cm</Top>
                           <Left>16.1084cm</Left>
                           <Height>0.81167cm</Height>
                           <Width>2.17368cm</Width>
@@ -573,7 +573,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>AmountsReceivedDataSet</DataSetName>
-        <Top>3.08681cm</Top>
+        <Top>2.76931cm</Top>
         <Left>0.36724cm</Left>
         <Height>5.12092cm</Height>
         <Width>18.91708cm</Width>
@@ -603,8 +603,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>8.44558cm</Top>
-        <Left>16.2728cm</Left>
+        <Top>8.06662cm</Top>
+        <Left>16.83724cm</Left>
         <Height>0.89104cm</Height>
         <Width>2.44708cm</Width>
         <ZIndex>1</ZIndex>
@@ -647,8 +647,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DonerName</rd:DefaultName>
-        <Top>8.44558cm</Top>
-        <Left>12.39844cm</Left>
+        <Top>8.06662cm</Top>
+        <Left>12.96288cm</Left>
         <Height>0.89104cm</Height>
         <Width>3.83908cm</Width>
         <ZIndex>2</ZIndex>
@@ -691,7 +691,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ProjectName</rd:DefaultName>
-        <Top>1.78125cm</Top>
+        <Top>1.46375cm</Top>
         <Left>5.62363cm</Left>
         <Height>0.98806cm</Height>
         <Width>10.34049cm</Width>
@@ -713,7 +713,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>اسم المشروع:</Value>
+                <Value> اسم المشروع:</Value>
                 <Style>
                   <FontFamily>Simplified Arabic</FontFamily>
                   <FontSize>14pt</FontSize>
@@ -727,7 +727,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>1.78125cm</Top>
+        <Top>1.46375cm</Top>
         <Left>15.96412cm</Left>
         <Height>0.98806cm</Height>
         <Width>2.75576cm</Width>

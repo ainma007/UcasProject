@@ -5,8 +5,7 @@ using System.Text;
 
 namespace Ucas.Data.CommandClass
 {
-   public class AttachmentsClass :IDisposable
-    {
+    public class AttachmentsClass{
 
         static UcasProEntities db = new UcasProEntities();
         public static bool NewAttachment(Attachment tb)
@@ -15,7 +14,7 @@ namespace Ucas.Data.CommandClass
             {
                 db = new UcasProEntities();
                 //db.Configuration.ProxyCreationEnabled = false;
-               // db.Configuration.LazyLoadingEnabled = false;
+                // db.Configuration.LazyLoadingEnabled = false;
                 db.Attachments.Add(tb);
                 db.SaveChanges();
                 return true;
@@ -37,7 +36,7 @@ namespace Ucas.Data.CommandClass
                 var q = db.Attachments.Where(p => p.IDX == tb.IDX).SingleOrDefault();
                 q.AttachmentName = tb.AttachmentName;
                 q.CreateDate = tb.CreateDate;
-           
+
                 q.ProjectProfile_ID = tb.ProjectProfile_ID;
 
 
@@ -72,33 +71,24 @@ namespace Ucas.Data.CommandClass
         //    }
         //}
 
-        public static List<Attachment> GetAllAttachment()
+        //public static List<Attachment> GetAllAttachment()
+        //{
+        //    db = new UcasProEntities();
+        //    db.Configuration.LazyLoadingEnabled = false;
+        //    db.Configuration.ProxyCreationEnabled = false;
+        //    return db.Attachments.ToList();
+        //}
+
+          public static List<Attachment> GetGetAllAttachmentByproID(int ProID)
         {
             db = new UcasProEntities();
-            db.Configuration.LazyLoadingEnabled = false;
-            db.Configuration.ProxyCreationEnabled = false;
-            return db.Attachments.ToList();
+            
+            var LST = (from c in db.Attachments
+                       where c.ProjectProfile_ID == ProID
+                       select c).ToList();
+            return LST;
         }
 
-
-        bool disposed = false;
-
-        // Public implementation of Dispose pattern callable by consumers. 
-        public  void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-     
-  protected virtual void Dispose(bool disposing)
-   {
-      if (disposed)
-         return; 
-
-     
-      disposed = true;
-   }
-        }
+    }
     
     }

@@ -1,0 +1,2 @@
+Violation of PRIMARY KEY constraint 'PK_Contracts'. Cannot insert duplicate key in object 'dbo.Contracts'. The duplicate key value is (1, 2005).
+The statement has been terminated.
