@@ -110,7 +110,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 };
                 SalariesCmd.NewSalary(tb);
                 Operation.EndOperation(this);
-                RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                Operation.ShowToustOk(OperationX.AddMessageDone, this);
+
                 ClearText();
             }
 

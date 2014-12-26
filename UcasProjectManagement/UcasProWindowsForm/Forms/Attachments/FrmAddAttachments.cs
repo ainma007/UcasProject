@@ -60,8 +60,6 @@ namespace UcasProWindowsForm.Forms.Attachments
         private void SaveData()
         {
 
-           
-
             radWaitingBar1.Invoke((MethodInvoker)delegate
             {
                 radWaitingBar1.Visible = true;
@@ -69,30 +67,13 @@ namespace UcasProWindowsForm.Forms.Attachments
                 label1.Visible = true;
 
             });
-            //using (SqlConnection conn = new SqlConnection("Data Source=BlackSword\\SQLEXPRESS;Initial Catalog=UcasPro;Integrated Security=True"))
-            //{
-
-
+           
 
              string str = @"\\BLACKSWORD\UCAttachment\" + InformationsClass.ProjID + "_" + op.SafeFileName;
              File.Copy(op.FileName, str);
            
 
-            //    SqlCommand command = new SqlCommand("AddAttachmeny", conn);
-            //    command.CommandType = CommandType.StoredProcedure;
-            //    command.Parameters.Clear();
-            //    command.Parameters.AddWithValue("@FilePathX", str);//File.ReadAllBytes(op.FileName));
-            //    command.Parameters.AddWithValue("@AttachmentName", op.SafeFileName);
-            //    command.Parameters.AddWithValue("@CreateDate", DateTime.Now);
-            //    command.Parameters.AddWithValue("@ProjectProfile_ID", InformationsClass.ProjID);
-            //    conn.Open();
-            //    int result = Method(conn, command).Result;
-
-            //    command.ExecuteNonQuery();
-            //    conn.Close();
-
-
-            //}
+          
             Attachment tb = new Attachment
             {
                 ProjectProfile_ID = InformationsClass.ProjID,
@@ -112,7 +93,7 @@ namespace UcasProWindowsForm.Forms.Attachments
 
             });
             img = null;
-           // tb = null;
+            tb = null;
             GC.SuppressFinalize(th);
             GC.Collect();
             GC.WaitForFullGCComplete();

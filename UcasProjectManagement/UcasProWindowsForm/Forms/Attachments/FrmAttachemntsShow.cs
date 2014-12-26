@@ -69,10 +69,36 @@ namespace UcasProWindowsForm.Forms.Attachments
             {
                 th = new Thread(DownData);
                 th.Start();
-                FrmAttachemntsShow_Load(null,null);
+                FrmAttachemntsShow_Load(null, null);
 
             }
+
+            if (col2 == 4)
+            {
+
+                if (RadMessageBox.Show(this, OperationX.DeletedMessage, "حذف سجل", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                {
+                    Operation.BeginOperation(this);
+                    var obj = (Attachment)AttachemntsGridView.CurrentRow.DataBoundItem;
+                    if (AttachmentsClass.DeleteAttachment(obj.IDX)) 
+                    {
+                        if (File.Exists(obj.FilePathX))
+                        {
+                            File.Delete(obj.FilePathX);
+                            Application.DoEvents();
+                        }
+                        Operation.EndOperation(this);
+                        this.FrmAttachemntsShow_Load(null, null);
+                        Operation.ShowToustOk("تمت عملية الحذف", this);
+
+
+                    }
+
+                }
+            }
         }
+            
+
 
         private void DownData()
         {

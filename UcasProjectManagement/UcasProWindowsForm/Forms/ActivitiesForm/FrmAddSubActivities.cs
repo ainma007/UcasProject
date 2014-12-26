@@ -141,6 +141,10 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 Operation.EndOperation(this);
                 Operation.ShowToustOk(OperationX.AddMessageDone, this);
                 ClearTxt();
+                GC.SuppressFinalize(tb);
+                GC.Collect();
+                GC.WaitForFullGCComplete();
+                GC.WaitForPendingFinalizers();
             }
             catch (Xprema.XpremaException ex)
             {
@@ -179,6 +183,10 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         private void FrmAddSubActivities_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Dispose();
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
         }
     }
 }

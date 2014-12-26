@@ -27,7 +27,7 @@ namespace UcasProWindowsForm.Reports.ReportCommand
                ls.Add(new ActivitesRecvtReportObj()
                {
                
-                 ProjectName=item.ProjectProfile.ProjectName,
+                  ProjectName=item.ProjectProfile.ProjectName,
                   Coin=item.ProjectProfile.Coin,
                   ActivitesName=item.ProjectActivity.ActivityName,
                   ActivitesDec=item.ProjectActivity.Description,
@@ -44,7 +44,8 @@ namespace UcasProWindowsForm.Reports.ReportCommand
                   SubCost=item.TotalCost.Value,
                   SubProgress=item.Progress.Value,
                   SubStauts=item.Status,
-                 AllTotalActivites = ActivityCmd.GetTotalActivity(InformationsClass.ProjID)
+                 AllTotalActivites = ActivityCmd.GetTotalActivity(InformationsClass.ProjID),
+                 TotalExpensess= ProjectExpensesCmd.GetTotalExpensesBySubActivity(item.ID)
                    
                   
                }); 

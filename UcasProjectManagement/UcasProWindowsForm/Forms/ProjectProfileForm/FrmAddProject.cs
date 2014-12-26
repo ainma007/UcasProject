@@ -76,30 +76,40 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             #endregion
 
             Operation.BeginOperation(this);
-            
 
-            ProjectProfile pro = new ProjectProfile()
+            try
             {
-                
-                ProjectName = ProjectNameTextBox.Text,
-                ProjectDescription = ProjectDescriptionTextBox.Text,
-                StartDate = DateTime.Parse(StartDateTimePicker.Value.ToString()),
-                EndDate = DateTime.Parse(EndDateTimePicker.Value.ToString()),
-                TotalCost = Double.Parse(TotalCostTextBox.Text),
-                Status = "فعال",
-                progress = 0,
-                Coin = CoineDropDownList.SelectedItem.ToString()
+                ProjectProfile pro = new ProjectProfile()
+                {
+
+                    ProjectName = ProjectNameTextBox.Text,
+                    ProjectDescription = ProjectDescriptionTextBox.Text,
+                    StartDate = DateTime.Parse(StartDateTimePicker.Value.ToString()),
+                    EndDate = DateTime.Parse(EndDateTimePicker.Value.ToString()),
+                    TotalCost = Double.Parse(TotalCostTextBox.Text),
+                    Status = "فعال",
+                    progress = 0,
+                    Coin = CoineDropDownList.SelectedItem.ToString()
 
 
 
 
-            };
-            ProjectProfileCmd.AddNewProject(pro);
-            Operation.EndOperation(this);
+                };
+                ProjectProfileCmd.AddNewProject(pro);
+                Operation.EndOperation(this);
 
-            Operation.ShowToustOk(OperationX.AddMessageDone, this);
+                Operation.ShowToustOk(OperationX.AddMessageDone, this);
 
-            ClearText();
+                ClearText();
+            }
+            catch (Xprema.XpremaException ex)
+            {
+                Operation.EndOperation(this);
+                RadMessageBox.Show(this, ex.OtherDescription, "", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+
+            }
+          
            
         }
 

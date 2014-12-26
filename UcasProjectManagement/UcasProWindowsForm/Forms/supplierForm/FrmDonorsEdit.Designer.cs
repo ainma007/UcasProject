@@ -112,11 +112,11 @@
             // radLabel2
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel2.Location = new System.Drawing.Point(277, 62);
+            this.radLabel2.Location = new System.Drawing.Point(276, 62);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(62, 16);
+            this.radLabel2.Size = new System.Drawing.Size(89, 16);
             this.radLabel2.TabIndex = 34;
-            this.radLabel2.Text = "اسم الوكيل:";
+            this.radLabel2.Text = "اسم جهة الاتصال:";
             this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel2.ThemeName = "TelerikMetro";
             // 

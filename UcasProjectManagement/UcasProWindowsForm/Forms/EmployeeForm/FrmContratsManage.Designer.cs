@@ -114,6 +114,7 @@
             this.PrintBtn.Name = "PrintBtn";
             this.PrintBtn.Size = new System.Drawing.Size(99, 36);
             this.PrintBtn.Text = "طباعة تقرير";
+            this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
             // 
             // toolStripSeparator3
             // 

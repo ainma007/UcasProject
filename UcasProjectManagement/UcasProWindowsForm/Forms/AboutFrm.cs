@@ -26,5 +26,10 @@ namespace UcasProWindowsForm.Forms
         {
             this.Close();
         }
+
+        private void radButton1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

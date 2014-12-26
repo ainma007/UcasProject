@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Ucas.Data.CommandClass;
+using UcasProWindowsForm.Reports.ReportCommand;
 
 namespace UcasProWindowsForm.Forms.EmployeeForm
 {
@@ -151,6 +152,16 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         private void FrmContratsManage_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Dispose();
+        }
+
+        private void PrintBtn_Click(object sender, EventArgs e)
+        {
+            Operation.BeginOperation(this);
+
+            ContractReportCmd cmd = new ContractReportCmd();
+
+            cmd.GetRptContractByProjectId(InformationsClass.ProjID);
+            Operation.EndOperation(this);
         }
     }
 }

@@ -52,24 +52,24 @@ namespace Ucas.Data.CommandClass
             }
         }
 
-        //public static bool DeleteAttachment(int ID)
-        //{
-        //    try
-        //    {
-        //        db = new UcasProEntities();
-        //        db.Configuration.LazyLoadingEnabled = false;
-        //        db.Configuration.ProxyCreationEnabled = false;
-        //        var q = db.Attachments.Where(p => p.ID == ID).SingleOrDefault();
-        //        db.Attachments.Remove(q);
-        //        db.SaveChanges();
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
+        public static bool DeleteAttachment(int ID)
+        {
+            try
+            {
+                db = new UcasProEntities();
+                db.Configuration.LazyLoadingEnabled = false;
+                db.Configuration.ProxyCreationEnabled = false;
+                var q = db.Attachments.Where(p => p.IDX == ID).SingleOrDefault();
+                db.Attachments.Remove(q);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
 
-        //        return false;
-        //    }
-        //}
+                return false;
+            }
+        }
 
         //public static List<Attachment> GetAllAttachment()
         //{

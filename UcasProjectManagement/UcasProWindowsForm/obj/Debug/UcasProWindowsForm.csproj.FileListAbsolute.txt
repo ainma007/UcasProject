@@ -153,7 +153,6 @@ C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindows
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\Xprema.pdb
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.csprojResolveAssemblyReference.cache
-C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Form1.resources
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ActivitiesForm.FrmActivitiesEdit.resources
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ActivitiesForm.FrmAddActivities.resources
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ActivitiesForm.FrmAddSubActivities.resources

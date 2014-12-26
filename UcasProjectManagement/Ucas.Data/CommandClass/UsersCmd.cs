@@ -116,7 +116,17 @@ namespace Ucas.Data.CommandClass
        {
            try
            {
-               var q = db.UserTbs.Where(p => p.UserName == usr && p.Password == pwd).ToList();
+               if (usr=="")
+               {
+                   return null;
+               }
+               if (pwd=="")
+               {
+                   return null;
+               }
+               db = new UcasProEntities();
+               var q = db.UserTbs.Where(p => p.UserName.Contains(usr) && p.Password.Contains(pwd)).ToList();
+
                if (q.Count == 0 || q.Count == -1)
                {
                    return null;

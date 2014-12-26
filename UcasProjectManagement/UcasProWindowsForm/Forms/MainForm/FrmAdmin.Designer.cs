@@ -46,7 +46,6 @@
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.ProjectAddBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.ProjectMangBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.RefreshBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.EmployeeAddBtn = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +58,6 @@
             this.FinanMangBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.UserstoolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.UserNameEditBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
@@ -67,10 +65,13 @@
             this.UserProjectManageBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.UserMangBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
@@ -96,11 +97,13 @@
             this.toolStripSeparator3,
             this.toolStripDropDownButton2,
             this.toolStripSeparator5,
-            this.toolStripSeparator4,
-            this.UserstoolStripDropDownButton3});
+            this.UserstoolStripDropDownButton3,
+            this.toolStripSeparator8,
+            this.toolStripButton1,
+            this.toolStripSeparator9});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1540, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(1540, 39);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -111,15 +114,14 @@
             this.toolStripDropDownButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ProjectAddBtn,
-            this.ProjectMangBtn,
-            this.RefreshBtn});
+            this.ProjectMangBtn});
             this.toolStripDropDownButton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripDropDownButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.toolStripDropDownButton1.Image = global::UcasProWindowsForm.Properties.Resources.Project1;
             this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(99, 35);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(99, 36);
             this.toolStripDropDownButton1.Text = "المشاريع";
             // 
             // ProjectAddBtn
@@ -128,7 +130,7 @@
             this.ProjectAddBtn.Image = global::UcasProWindowsForm.Properties.Resources.AddPro;
             this.ProjectAddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ProjectAddBtn.Name = "ProjectAddBtn";
-            this.ProjectAddBtn.Size = new System.Drawing.Size(152, 38);
+            this.ProjectAddBtn.Size = new System.Drawing.Size(168, 38);
             this.ProjectAddBtn.Text = "اضافة مشروع";
             this.ProjectAddBtn.Click += new System.EventHandler(this.ProjectAddBtn_Click);
             // 
@@ -138,28 +140,19 @@
             this.ProjectMangBtn.Image = global::UcasProWindowsForm.Properties.Resources.EditPro;
             this.ProjectMangBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ProjectMangBtn.Name = "ProjectMangBtn";
-            this.ProjectMangBtn.Size = new System.Drawing.Size(152, 38);
+            this.ProjectMangBtn.Size = new System.Drawing.Size(168, 38);
             this.ProjectMangBtn.Text = "ادارة المشارع";
             this.ProjectMangBtn.Click += new System.EventHandler(this.ProjectMangBtn_Click);
-            // 
-            // RefreshBtn
-            // 
-            this.RefreshBtn.Image = global::UcasProWindowsForm.Properties.Resources.Refrech;
-            this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(152, 38);
-            this.RefreshBtn.Text = "تحديث";
-            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 38);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
             // EmployeeAddBtn
             // 
             this.EmployeeAddBtn.BackColor = System.Drawing.Color.White;
-            this.EmployeeAddBtn.BackgroundImage = global::UcasProWindowsForm.Properties.Resources.Orange;
+            this.EmployeeAddBtn.BackgroundImage = global::UcasProWindowsForm.Properties.Resources.blue;
             this.EmployeeAddBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.EmployeeAddBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
@@ -169,7 +162,7 @@
             this.EmployeeAddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.EmployeeAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.EmployeeAddBtn.Name = "EmployeeAddBtn";
-            this.EmployeeAddBtn.Size = new System.Drawing.Size(94, 35);
+            this.EmployeeAddBtn.Size = new System.Drawing.Size(94, 36);
             this.EmployeeAddBtn.Text = "الموظفين";
             // 
             // toolStripMenuItem1
@@ -195,12 +188,12 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 38);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripDropDownButton2
             // 
             this.toolStripDropDownButton2.BackColor = System.Drawing.Color.White;
-            this.toolStripDropDownButton2.BackgroundImage = global::UcasProWindowsForm.Properties.Resources.blue;
+            this.toolStripDropDownButton2.BackgroundImage = global::UcasProWindowsForm.Properties.Resources.Orange;
             this.toolStripDropDownButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FinanAddBtn,
@@ -213,7 +206,7 @@
             this.toolStripDropDownButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(152, 35);
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(152, 36);
             this.toolStripDropDownButton2.Text = "الممولين والموردين";
             // 
             // FinanAddBtn
@@ -264,16 +257,11 @@
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 38);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 38);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 39);
             // 
             // UserstoolStripDropDownButton3
             // 
-            this.UserstoolStripDropDownButton3.BackgroundImage = global::UcasProWindowsForm.Properties.Resources._7;
+            this.UserstoolStripDropDownButton3.BackgroundImage = global::UcasProWindowsForm.Properties.Resources._61;
             this.UserstoolStripDropDownButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.UserstoolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.UserNameEditBtn,
@@ -287,7 +275,7 @@
             this.UserstoolStripDropDownButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.UserstoolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.UserstoolStripDropDownButton3.Name = "UserstoolStripDropDownButton3";
-            this.UserstoolStripDropDownButton3.Size = new System.Drawing.Size(145, 35);
+            this.UserstoolStripDropDownButton3.Size = new System.Drawing.Size(145, 36);
             this.UserstoolStripDropDownButton3.Text = "ادارة المستخدمين";
             // 
             // UserNameEditBtn
@@ -331,6 +319,24 @@
             this.UserMangBtn.Size = new System.Drawing.Size(215, 22);
             this.UserMangBtn.Text = "ادارة صلاحيات المستخدمين";
             this.UserMangBtn.Click += new System.EventHandler(this.UserMangBtn_Click_1);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.BackgroundImage = global::UcasProWindowsForm.Properties.Resources.Yalow;
+            this.toolStripButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.toolStripButton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton1.Image = global::UcasProWindowsForm.Properties.Resources.RefreshWhite1;
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(77, 36);
+            this.toolStripButton1.Text = "تحديث ";
+            this.toolStripButton1.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // radGridView1
             // 
@@ -449,7 +455,7 @@
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.ReadOnly = true;
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radGridView1.Size = new System.Drawing.Size(1536, 745);
+            this.radGridView1.Size = new System.Drawing.Size(1536, 744);
             this.radGridView1.TabIndex = 0;
             this.radGridView1.Text = "radGridView1";
             this.radGridView1.ThemeName = "TelerikMetro";
@@ -479,12 +485,17 @@
             this.radGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.radGroupBox1.HeaderAlignment = Telerik.WinControls.UI.HeaderAlignment.Far;
             this.radGroupBox1.HeaderText = "قائمة المشاريع";
-            this.radGroupBox1.Location = new System.Drawing.Point(0, 38);
+            this.radGroupBox1.Location = new System.Drawing.Point(0, 39);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(1540, 765);
+            this.radGroupBox1.Size = new System.Drawing.Size(1540, 764);
             this.radGroupBox1.TabIndex = 8;
             this.radGroupBox1.Text = "قائمة المشاريع";
             this.radGroupBox1.ThemeName = "TelerikMetro";
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 39);
             // 
             // FrmAdmin
             // 
@@ -542,7 +553,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripDropDownButton UserstoolStripDropDownButton3;
         private System.Windows.Forms.ToolStripMenuItem AddUserToProjectBtn;
         private System.Windows.Forms.ToolStripMenuItem UserProjectManageBtn;
@@ -553,6 +563,8 @@
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         private System.Windows.Forms.ToolStripMenuItem UserNameEditBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripMenuItem RefreshBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
     }
 }

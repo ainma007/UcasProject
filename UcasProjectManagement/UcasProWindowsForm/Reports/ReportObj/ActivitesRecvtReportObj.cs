@@ -30,6 +30,10 @@ namespace UcasProWindowsForm.Reports.ReportObj
        public double SubProgress { get; set; }
        public string SubStauts{get;set;}
 
+       //
+
+       public double TotalExpensess { get; set; }
+
        }
     }
 

@@ -48,6 +48,7 @@
             this.StartDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.ProjectNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectDescriptionTextBox)).BeginInit();
@@ -83,12 +84,12 @@
             this.radGroupBox1.Controls.Add(this.radLabel4);
             this.radGroupBox1.Controls.Add(this.StartDateTimePicker);
             this.radGroupBox1.Controls.Add(this.ProjectNameTextBox);
-            this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.radGroupBox1.HeaderText = "بيانات الاضافة";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(338, 282);
+            this.radGroupBox1.Size = new System.Drawing.Size(338, 287);
             this.radGroupBox1.TabIndex = 0;
             this.radGroupBox1.Text = "بيانات الاضافة";
             this.radGroupBox1.ThemeName = "TelerikMetro";
@@ -263,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 282);
+            this.ClientSize = new System.Drawing.Size(338, 287);
             this.Controls.Add(this.radGroupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(346, 317);
@@ -320,5 +321,6 @@
         private Telerik.WinControls.UI.RadDropDownList CoineDropDownList;
         private Telerik.WinControls.UI.RadTextBox ProjectDescriptionTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
     }
 }

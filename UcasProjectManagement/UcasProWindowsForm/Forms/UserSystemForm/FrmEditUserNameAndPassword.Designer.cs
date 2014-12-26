@@ -69,11 +69,13 @@
             // 
             // SaveBtn
             // 
+            this.SaveBtn.Image = global::UcasProWindowsForm.Properties.Resources.SaveChang;
             this.SaveBtn.Location = new System.Drawing.Point(234, 178);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(128, 36);
-            this.SaveBtn.TabIndex = 6;
+            this.SaveBtn.TabIndex = 4;
             this.SaveBtn.Text = "حفظ التعديلات";
+            this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SaveBtn.ThemeName = "TelerikMetro";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
@@ -110,7 +112,7 @@
             this.NewpasswordTextBox.Name = "NewpasswordTextBox";
             this.NewpasswordTextBox.PasswordChar = '*';
             this.NewpasswordTextBox.Size = new System.Drawing.Size(221, 22);
-            this.NewpasswordTextBox.TabIndex = 2;
+            this.NewpasswordTextBox.TabIndex = 3;
             this.NewpasswordTextBox.ThemeName = "TelerikMetro";
             // 
             // OldPasswordTextBox
@@ -127,12 +129,13 @@
             this.NewuserNameTextBox.Location = new System.Drawing.Point(39, 86);
             this.NewuserNameTextBox.Name = "NewuserNameTextBox";
             this.NewuserNameTextBox.Size = new System.Drawing.Size(221, 22);
-            this.NewuserNameTextBox.TabIndex = 0;
+            this.NewuserNameTextBox.TabIndex = 2;
             this.NewuserNameTextBox.ThemeName = "TelerikMetro";
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
             // 
             // FrmEditUserNameAndPassword
             // 
@@ -150,6 +153,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(394, 265);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعديل كلمة المرور";
             this.ThemeName = "TelerikMetro";

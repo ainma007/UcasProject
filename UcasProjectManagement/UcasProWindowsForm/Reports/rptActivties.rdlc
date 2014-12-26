@@ -27,7 +27,7 @@
                                 <Width>5.43603cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>7.48563cm</Width>
+                                <Width>3.31739cm</Width>
                               </TablixColumn>
                               <TablixColumn>
                                 <Width>2.91277cm</Width>
@@ -145,14 +145,14 @@
                                   </TablixCell>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="Textbox17">
+                                      <Textbox Name="Textbox1">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>الوصف</Value>
+                                                <Value>Total Expensess</Value>
                                                 <Style>
                                                   <FontWeight>Bold</FontWeight>
                                                 </Style>
@@ -163,7 +163,7 @@
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>Textbox17</rd:DefaultName>
+                                        <rd:DefaultName>Textbox1</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>Solid</Style>
@@ -520,14 +520,14 @@
                                   </TablixCell>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="SubActivitesDec">
+                                      <Textbox Name="TotalExpensess">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!SubActivitesDec.Value</Value>
+                                                <Value>=Fields!TotalExpensess.Value</Value>
                                                 <Style />
                                               </TextRun>
                                             </TextRuns>
@@ -536,7 +536,7 @@
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>SubActivitesDec</rd:DefaultName>
+                                        <rd:DefaultName>TotalExpensess</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>Solid</Style>
@@ -924,7 +924,7 @@
                           <Top>2.00028cm</Top>
                           <Left>0.43667cm</Left>
                           <Height>1.8cm</Height>
-                          <Width>27.32198cm</Width>
+                          <Width>23.15374cm</Width>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1708,7 +1708,7 @@
                 <Value>=Fields!AllTotalActivites.Value</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
-                  <FontSize>14pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1720,7 +1720,7 @@
         <rd:DefaultName>ProjectName</rd:DefaultName>
         <Top>6.88521cm</Top>
         <Left>20.9868cm</Left>
-        <Height>0.84777cm</Height>
+        <Height>0.55673cm</Height>
         <Width>3.07798cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
@@ -1740,9 +1740,8 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>الاجمالي للانطشة الرئيسية</Value>
+                <Value>الاجمالي للأنشطة الرئيسية</Value>
                 <Style>
-                  <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -1755,7 +1754,7 @@
         <rd:DefaultName>Textbox37</rd:DefaultName>
         <Top>6.88521cm</Top>
         <Left>24.06478cm</Left>
-        <Height>0.84777cm</Height>
+        <Height>0.55673cm</Height>
         <Width>4.18794cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
@@ -1780,7 +1779,7 @@
                 <Value>=Sum(Fields!SubCost.Value).ToString()</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
-                  <FontSize>14pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1791,8 +1790,8 @@
         </Paragraphs>
         <rd:DefaultName>ProjectName</rd:DefaultName>
         <Top>6.88521cm</Top>
-        <Left>8.7303cm</Left>
-        <Height>0.84777cm</Height>
+        <Left>9.94737cm</Left>
+        <Height>0.55673cm</Height>
         <Width>3.30946cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
@@ -1812,9 +1811,8 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>الاجمالي للأنطشة الفرعية</Value>
+                <Value>الاجمالي للأنشطة الفرعية</Value>
                 <Style>
-                  <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -1826,8 +1824,8 @@
         </Paragraphs>
         <rd:DefaultName>Textbox37</rd:DefaultName>
         <Top>6.88521cm</Top>
-        <Left>12.14558cm</Left>
-        <Height>0.84777cm</Height>
+        <Left>13.25683cm</Left>
+        <Height>0.55673cm</Height>
         <Width>3.85341cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
@@ -1852,7 +1850,7 @@
                 <Value>=Fields!Coin.Value</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
-                  <FontSize>14pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1864,7 +1862,7 @@
         <rd:DefaultName>ProjectName</rd:DefaultName>
         <Top>6.88521cm</Top>
         <Left>17.48695cm</Left>
-        <Height>0.84777cm</Height>
+        <Height>0.55673cm</Height>
         <Width>3.49985cm</Width>
         <ZIndex>10</ZIndex>
         <Style>
@@ -1887,7 +1885,7 @@
                 <Value>=Fields!Coin.Value</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
-                  <FontSize>14pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1898,8 +1896,8 @@
         </Paragraphs>
         <rd:DefaultName>ProjectName</rd:DefaultName>
         <Top>6.88521cm</Top>
-        <Left>5.19517cm</Left>
-        <Height>0.84777cm</Height>
+        <Left>6.44752cm</Left>
+        <Height>0.55673cm</Height>
         <Width>3.49985cm</Width>
         <ZIndex>11</ZIndex>
         <Style>
@@ -2038,6 +2036,10 @@
         <Field Name="SubStauts">
           <DataField>SubStauts</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TotalExpensess">
+          <DataField>TotalExpensess</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

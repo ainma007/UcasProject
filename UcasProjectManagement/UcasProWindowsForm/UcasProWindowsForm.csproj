@@ -73,12 +73,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\AboutFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -383,9 +377,6 @@
     <Compile Include="Reports\ReportObj\ProjectReportObj.cs" />
     <Compile Include="Reports\ReportObj\SalaryReportObj.cs" />
     <Compile Include="Reports\ReportObj\SupplierReportObj.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutFrm.resx">
       <DependentUpon>AboutFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -542,7 +533,7 @@
     <EmbeddedResource Include="Reports\rptContract.rdlc" />
     <EmbeddedResource Include="Reports\rptDonor.rdlc" />
     <EmbeddedResource Include="Reports\rptEmolyee.rdlc" />
-    <EmbeddedResource Include="Reports\rptExpensess.rdlc" />
+    <EmbeddedResource Include="Reports\RptExpensesss.rdlc" />
     <EmbeddedResource Include="Reports\rptProject.rdlc" />
     <EmbeddedResource Include="Reports\rptSalaryGroupby.rdlc" />
     <EmbeddedResource Include="Reports\rptSupplier.rdlc" />
@@ -620,12 +611,18 @@
     <None Include="Resources\AddEmp.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\RefreshWhite1.png" />
+    <None Include="Resources\RefreshWhite.png" />
+    <None Include="Resources\Yalow.jpg" />
     <None Include="Resources\Supplier.png" />
     <None Include="Resources\slary.png" />
     <None Include="Resources\7.png" />
     <None Include="Resources\Acti.png" />
     <None Include="Resources\1418514813_Download.png" />
     <None Include="Resources\About.png" />
+    <None Include="Resources\AboutUs.jpg" />
+    <None Include="Resources\6.png" />
+    <None Include="Resources\6.jpg" />
     <Content Include="Resources\Add.png" />
     <None Include="Resources\Cost.png" />
     <None Include="Resources\Amount.png" />

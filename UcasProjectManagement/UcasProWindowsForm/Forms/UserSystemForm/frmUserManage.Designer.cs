@@ -31,7 +31,6 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn1 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserManage));
@@ -62,6 +61,8 @@
             // UserGridView
             // 
             this.UserGridView.MasterTemplate.AllowAddNewRow = false;
+            this.UserGridView.MasterTemplate.AllowSearchRow = true;
+            this.UserGridView.MasterTemplate.AutoGenerateColumns = false;
             this.UserGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "ID";
@@ -74,22 +75,17 @@
             gridViewTextBoxColumn2.FieldName = "Employee.EmployeeName";
             gridViewTextBoxColumn2.HeaderText = "اسم الموظف";
             gridViewTextBoxColumn2.Name = "EmployeeName";
-            gridViewTextBoxColumn2.Width = 150;
+            gridViewTextBoxColumn2.Width = 221;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "UserName";
             gridViewTextBoxColumn3.HeaderText = "اسم المستخدم";
             gridViewTextBoxColumn3.Name = "UserName";
-            gridViewTextBoxColumn3.Width = 194;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "Password";
-            gridViewTextBoxColumn4.HeaderText = "كلمة المرور";
-            gridViewTextBoxColumn4.Name = "Password";
-            gridViewTextBoxColumn4.Width = 227;
+            gridViewTextBoxColumn3.Width = 283;
             gridViewComboBoxColumn1.EnableExpressionEditor = false;
             gridViewComboBoxColumn1.FieldName = "TypeUser";
             gridViewComboBoxColumn1.HeaderText = "نوع المستخدم";
             gridViewComboBoxColumn1.Name = "TypeUser";
-            gridViewComboBoxColumn1.Width = 144;
+            gridViewComboBoxColumn1.Width = 210;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "تعديل ";
             gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
@@ -102,9 +98,9 @@
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
             gridViewComboBoxColumn1,
             gridViewCommandColumn1});
+            this.UserGridView.MasterTemplate.EnableFiltering = true;
             sortDescriptor1.PropertyName = "ID";
             this.UserGridView.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
             sortDescriptor1});

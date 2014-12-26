@@ -42,7 +42,6 @@
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.ActivitiesColumnComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.projectActivityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SubActivitiesDescriptionTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
@@ -67,7 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ActivitiesColumnComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActivitiesColumnComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActivitiesColumnComboBox.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectActivityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesDescriptionTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
@@ -199,7 +197,6 @@
             // ActivitiesColumnComboBox
             // 
             this.ActivitiesColumnComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ActivitiesColumnComboBox.DataSource = this.projectActivityBindingSource;
             // 
             // ActivitiesColumnComboBox.NestedRadGridView
             // 
@@ -233,7 +230,6 @@
             this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1});
-            this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.DataSource = this.projectActivityBindingSource;
             this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
             this.ActivitiesColumnComboBox.EditorControl.Name = "NestedRadGridView";
@@ -418,7 +414,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ActivitiesColumnComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActivitiesColumnComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActivitiesColumnComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectActivityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesDescriptionTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
@@ -440,7 +435,6 @@
 
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         private Telerik.WinControls.UI.RadLabel radLabel5;
-        private System.Windows.Forms.BindingSource projectActivityBindingSource;
         private Telerik.WinControls.UI.RadButton SaveBtn;
         private Telerik.WinControls.UI.RadLabel radLabel6;
         private Telerik.WinControls.UI.RadLabel radLabel4;

@@ -80,29 +80,40 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
-                Operation.BeginOperation(this);
-
-
-                ProjectProfile pro = new ProjectProfile()
+                try
                 {
-                    ID = ProId,
-                    ProjectName = ProjectNameTextBox.Text,
-                    ProjectDescription = ProjectDescriptionTextBox.Text,
-                    StartDate = DateTime.Parse(StartDateTimePicker.Value.ToString()),
-                    EndDate = DateTime.Parse(EndDateTimePicker.Value.ToString()),
-                    TotalCost = Double.Parse(TotalCostTextBox.Text),
-                    Status = StatustextBox.Text,
-                    Coin = CoineDropDownList.Text.ToString()
+                    Operation.BeginOperation(this);
+
+
+                    ProjectProfile pro = new ProjectProfile()
+                    {
+                        ID = ProId,
+                        ProjectName = ProjectNameTextBox.Text,
+                        ProjectDescription = ProjectDescriptionTextBox.Text,
+                        StartDate = DateTime.Parse(StartDateTimePicker.Value.ToString()),
+                        EndDate = DateTime.Parse(EndDateTimePicker.Value.ToString()),
+                        TotalCost = Double.Parse(TotalCostTextBox.Text),
+                        Status = StatustextBox.Text,
+                        Coin = CoineDropDownList.Text.ToString()
 
 
 
 
-                };
-                ProjectProfileCmd.EditProjectProfile(pro);
-                Operation.EndOperation(this);
-                RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    };
+                    ProjectProfileCmd.EditProjectProfile(pro);
+                    Operation.EndOperation(this);
+                    RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
 
-                this.Dispose();
+                    this.Dispose();
+                }
+                catch (Xprema.XpremaException ex)
+                {
+                    Operation.EndOperation(this);
+                    RadMessageBox.Show(this, ex.OtherDescription, "", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+
+                }
+               
             }
         }
 

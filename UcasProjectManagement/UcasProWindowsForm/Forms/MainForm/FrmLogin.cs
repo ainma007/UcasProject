@@ -122,5 +122,11 @@ namespace UcasProWindowsForm.Forms.MainForm
             AboutFrm frm = new AboutFrm();
             frm.ShowDialog();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            AboutFrm frm = new AboutFrm();
+            frm.ShowDialog();
+        }
     }
 }

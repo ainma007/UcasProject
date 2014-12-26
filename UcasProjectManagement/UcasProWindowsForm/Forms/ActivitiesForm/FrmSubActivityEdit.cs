@@ -153,6 +153,11 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                  RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK,RadMessageIcon.Info);
 
                  Operation.EndOperation(this);
+                 GC.SuppressFinalize(th);
+                 GC.SuppressFinalize(tb);
+                 GC.Collect();
+                 GC.WaitForFullGCComplete();
+                 GC.WaitForPendingFinalizers();
                  this.Dispose();
              }
              catch (Xprema.XpremaException ex)
@@ -184,6 +189,10 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         private void FrmSubActivityEdit_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Dispose();
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
         }
            
     }

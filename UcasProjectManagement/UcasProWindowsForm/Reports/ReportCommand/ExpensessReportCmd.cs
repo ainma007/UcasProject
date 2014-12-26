@@ -41,7 +41,7 @@ namespace UcasProWindowsForm.Reports.ReportCommand
            frmReportViewer frm = new frmReportViewer();
            frm.reportViewer1.LocalReport.DataSources.Clear();
            frm.reportViewer1.LocalReport.DataSources.Add(rs);
-           frm.reportViewer1.LocalReport.ReportEmbeddedResource = "UcasProWindowsForm.Reports.rptExpensess.rdlc";
+           frm.reportViewer1.LocalReport.ReportEmbeddedResource = "UcasProWindowsForm.Reports.RptExpensesss.rdlc";
            frm.ShowDialog();
 
 
@@ -56,7 +56,7 @@ namespace UcasProWindowsForm.Reports.ReportCommand
            frmReportViewer frm = new frmReportViewer();
            frm.reportViewer1.LocalReport.DataSources.Clear();
            frm.reportViewer1.LocalReport.DataSources.Add(rs);
-           frm.reportViewer1.LocalReport.ReportEmbeddedResource = "UcasProWindowsForm.Reports.rptExpensess.rdlc";
+           frm.reportViewer1.LocalReport.ReportEmbeddedResource = "UcasProWindowsForm.Reports.RptExpensesss.rdlc";
            frm.ShowDialog();
        }
     }

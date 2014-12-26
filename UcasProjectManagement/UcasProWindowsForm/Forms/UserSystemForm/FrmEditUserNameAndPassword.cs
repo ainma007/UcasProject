@@ -79,7 +79,8 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
             if (OldPasswordTextBox.Text != InformationsClass.xCurrentUserPass)
             {
 
-                RadMessageBox.Show("كلمة المرور خاطئة", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show("كلمة المرور القديمة خاطئة", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+                OldPasswordTextBox.Focus();
 
                 return;
 

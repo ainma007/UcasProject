@@ -73,6 +73,26 @@ namespace UcasProWindowsForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _6 {
+            get {
+                object obj = ResourceManager.GetObject("6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _61 {
+            get {
+                object obj = ResourceManager.GetObject("61", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _7 {
             get {
                 object obj = ResourceManager.GetObject("7", resourceCulture);
@@ -86,6 +106,16 @@ namespace UcasProWindowsForm.Properties {
         internal static System.Drawing.Bitmap About {
             get {
                 object obj = ResourceManager.GetObject("About", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AboutUs {
+            get {
+                object obj = ResourceManager.GetObject("AboutUs", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,6 +443,26 @@ namespace UcasProWindowsForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RefreshWhite {
+            get {
+                object obj = ResourceManager.GetObject("RefreshWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RefreshWhite1 {
+            get {
+                object obj = ResourceManager.GetObject("RefreshWhite1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap reportvew {
             get {
                 object obj = ResourceManager.GetObject("reportvew", resourceCulture);
@@ -446,6 +496,16 @@ namespace UcasProWindowsForm.Properties {
         internal static System.Drawing.Bitmap Supplier {
             get {
                 object obj = ResourceManager.GetObject("Supplier", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Yalow {
+            get {
+                object obj = ResourceManager.GetObject("Yalow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

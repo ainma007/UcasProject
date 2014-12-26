@@ -26,6 +26,22 @@ namespace Ucas.Data.CommandClass
 
         }
 
+        public static double GetTotalExpensesBySubActivity(int SubID)
+        {
+            db = new UcasProEntities();
+
+            var LST = (from p in db.ProjectExpenses
+
+                       where p.ProjectSubActivity_ID == SubID
+                       select p.RequiarAmount).ToList();
+
+            double total = 0;
+            foreach (var Sm in LST) { total += Convert.ToDouble(Sm); }
+
+            return total;
+
+        }
+
         public static bool NewProjectExpens(ProjectExpens tb)
         {
             try
