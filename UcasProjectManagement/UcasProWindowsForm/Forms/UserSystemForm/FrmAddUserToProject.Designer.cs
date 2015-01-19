@@ -226,7 +226,7 @@
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "Employee.EmployeejobNumber";
             gridViewTextBoxColumn4.HeaderText = "الرقم الوظيفي";
-            gridViewTextBoxColumn4.Name = "EmployeejobNumber";
+            gridViewTextBoxColumn4.Name = "Employee.EmployeejobNumber";
             gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn4.Width = 95;
             this.UserListComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {

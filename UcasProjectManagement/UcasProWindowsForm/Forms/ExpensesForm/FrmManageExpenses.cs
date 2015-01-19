@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Ucas.Data.CommandClass;
+using System.Drawing;
 using UcasProWindowsForm.Reports.ReportObj;
 
 namespace UcasProWindowsForm.Forms.ExpensesForm
@@ -26,7 +27,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         }
         private void FrmManageExpenses_Load(object sender, EventArgs e)
         {
-           
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             th = new Thread(FillExpensesData);
             th.Start();
            
@@ -173,6 +175,10 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void FrmManageExpenses_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
         }
     }

@@ -34,6 +34,18 @@ namespace UcasProWindowsForm.Forms.supplierForm
                 TheDonorsNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
                 errorProvider1.Clear();
             }
+            string mail = EmailTextBox.Text;
+
+            if (EmailTextBox.Text != "")
+            {
+                if (mail.IndexOf('@') == -1 || mail.IndexOf('.') == -1)
+                {
+                    errorProvider1.SetError(this.EmailTextBox, "من فضلك بريد صحيح ");
+                    return;
+
+                }
+
+            }
             #endregion
 
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
@@ -42,7 +54,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
                 Operation.BeginOperation(this);
               
 
-                TheDonor Donrs = new TheDonor()
+                TheDonor tb = new TheDonor()
                 {
                     ID = XDonorsId,
                     Name = TheDonorsNameTextBox.Text,
@@ -55,9 +67,13 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
 
                 };
-                TheDonorCmd.EditDonor(Donrs);
+                TheDonorCmd.EditDonor(tb);
                 Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                GC.SuppressFinalize(tb);
+                GC.Collect();
+                GC.WaitForFullGCComplete();
+                GC.WaitForPendingFinalizers();
                 this.Dispose();
             }
         }
@@ -74,6 +90,8 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void FrmDonorsEdit_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             XDonorsId = TragetDoner.ID;
             TheDonorsNameTextBox.Text = TragetDoner.Name;
             AgentNameTextBox.Text = TragetDoner.agentName;

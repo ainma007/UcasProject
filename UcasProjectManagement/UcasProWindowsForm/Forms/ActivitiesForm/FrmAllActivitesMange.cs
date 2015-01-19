@@ -102,6 +102,8 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         }
         private void FrmAllActivitesMange_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             th = new Thread(Loadactivites);
             th.Start();
             GC.SuppressFinalize(th);
@@ -299,8 +301,13 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void PrintBtn_Click(object sender, EventArgs e)
         {
+            Operation.BeginOperation(this);
+
             AcrivitiesRecvReportCmd cmd = new AcrivitiesRecvReportCmd();
             cmd.GetRptAcrivitiesByProjectId(InformationsClass.ProjID);
+            Operation.EndOperation(this);
+
+           
         }
 
         private void FrmAllActivitesMange_FormClosed(object sender, FormClosedEventArgs e)

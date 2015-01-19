@@ -5,6 +5,7 @@ using Telerik.WinControls.Data;
 using Ucas.Data.CommandClass;
 using Ucas.Data;
 using System.Threading;
+using System.Drawing;
 
 namespace UcasProWindowsForm.Forms.UserSystemForm
 {
@@ -14,6 +15,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         {
             InitializeComponent();
             RadMessageBox.SetThemeName("TelerikMetro");
+            
         }
         public int ProjectControlID { get; set; }
         Thread th;
@@ -37,7 +39,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                 this.ProjectCombo.DisplayMember = "ProjectName";
             });
 
-            var q = UsersCmd.GetAllUsers();
+            var q = UsersCmd.GetAllUsersToProjects();
             var q1 = ProjectProfileCmd.GetAllProjects();
             this.Invoke((MethodInvoker)delegate
             {
@@ -78,6 +80,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         }
         private void FrmEditUserToProject_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             th = new Thread(FillComboBox);
             th.Start();
             
@@ -100,6 +103,11 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                 ProjectControlCmd.EditProControl(tb);
                 Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK,RadMessageIcon.Info);
+                GC.SuppressFinalize(th);
+                GC.SuppressFinalize(tb);
+                GC.Collect();
+                GC.WaitForFullGCComplete();
+                GC.WaitForPendingFinalizers();
                 this.Dispose();
             }
            
@@ -108,6 +116,10 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
         private void FrmEditUserToProject_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
         }
     }

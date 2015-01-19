@@ -7,6 +7,7 @@ using Telerik.WinControls.UI;
 using Ucas.Data.CommandClass;
 using UcasProWindowsForm.Reports.ReportCommand;
 using UcasProWindowsForm.Reports.ReportObj;
+using System.Drawing;
 
 namespace UcasProWindowsForm.Forms.supplierForm
 {
@@ -50,7 +51,8 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void FrmManagementSupplier_Load(object sender, EventArgs e)
         {
-           
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             th = new Thread(GetAllsupplier);
             th.Start();
 
@@ -164,6 +166,10 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void FrmManagementSupplier_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
         }
     }

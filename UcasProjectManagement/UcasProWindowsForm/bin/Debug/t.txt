@@ -1,2 +1,2 @@
-Violation of PRIMARY KEY constraint 'PK_Contracts'. Cannot insert duplicate key in object 'dbo.Contracts'. The duplicate key value is (1, 2005).
+Cannot insert duplicate key row in object 'dbo.UserTbs' with unique index 'IX_UserTbs'. The duplicate key value is (A2).
 The statement has been terminated.

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutFrm));
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -50,6 +51,7 @@
             this.radGroupBox1.Size = new System.Drawing.Size(686, 416);
             this.radGroupBox1.TabIndex = 0;
             this.radGroupBox1.ThemeName = "TelerikMetro";
+            this.radGroupBox1.Click += new System.EventHandler(this.radGroupBox1_Click);
             // 
             // radButton1
             // 
@@ -68,7 +70,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::UcasProWindowsForm.Properties.Resources.AboutUs;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(2, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(682, 396);
@@ -88,6 +90,7 @@
             this.Name = "AboutFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AboutFrm";
+            this.Load += new System.EventHandler(this.AboutFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();

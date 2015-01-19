@@ -17,12 +17,15 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             RadMessageBox.SetThemeName("TelerikMetro");
         }
          ///GetAllEmployeeCombo
+        Thread th;
         private void FillEmployeeCombo()
         {
             Operation.BeginOperation(this);
 
             this.Invoke((MethodInvoker)delegate
             {
+                this.EmployeeComboBox.MultiColumnComboBoxElement.DropDownWidth = 500;
+
                 this.EmployeeComboBox.AutoFilter = true;
                 this.EmployeeComboBox.ValueMember = "ID";
                 this.EmployeeComboBox.DisplayMember = "EmployeeName";
@@ -31,16 +34,21 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             this.Invoke((MethodInvoker)delegate
             {
                 EmployeeComboBox.DataSource = q;
-                FilterDescriptor filter = new FilterDescriptor();
-                filter.PropertyName = this.EmployeeComboBox.DisplayMember;
-                filter.Operator = FilterOperator.Contains;
-                this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+                this.EmployeeComboBox.AutoFilter = true;
+                CompositeFilterDescriptor compositeFilter = new CompositeFilterDescriptor();
+                FilterDescriptor empname = new FilterDescriptor("EmployeeName", FilterOperator.Contains, "");
+                FilterDescriptor empNumber = new FilterDescriptor("EmployeejobNumber", FilterOperator.Contains, "");
+                compositeFilter.FilterDescriptors.Add(empname);
+                compositeFilter.FilterDescriptors.Add(empNumber);
+                compositeFilter.LogicalOperator = FilterLogicalOperator.Or;
+
+                this.EmployeeComboBox.EditorControl.FilterDescriptors.Add(compositeFilter);
 
             });
             Operation.EndOperation(this);
 
-          
 
+            th.Abort();
 
             
         }
@@ -115,6 +123,11 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                 ContractCmd.NewContract(tb);
                 Operation.EndOperation(this);
                 Operation.ShowToustOk(OperationX.AddMessageDone, this);
+                GC.SuppressFinalize(tb);
+
+                GC.Collect();
+                GC.WaitForFullGCComplete();
+                GC.WaitForPendingFinalizers();
 
                 ClearTxt();
             }
@@ -134,7 +147,9 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         }
         private void FrmContractsAdd_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(FillEmployeeCombo);
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
+             th = new Thread(FillEmployeeCombo);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
             Coinlabel2.Text = InformationsClass.Coin;
@@ -165,6 +180,11 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
         private void FrmContractsAdd_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GC.SuppressFinalize(th);
+
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
         }
     }

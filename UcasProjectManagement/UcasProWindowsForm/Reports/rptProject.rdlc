@@ -24,9 +24,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
         <Top>1.75244cm</Top>
-        <Left>16.37454cm</Left>
+        <Left>16.19814cm</Left>
         <Height>0.84971cm</Height>
-        <Width>2.12076cm</Width>
+        <Width>2.29716cm</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -63,7 +63,7 @@
         <Top>1.75244cm</Top>
         <Left>8.79771cm</Left>
         <Height>0.84971cm</Height>
-        <Width>7.57683cm</Width>
+        <Width>7.40043cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -172,9 +172,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
         <Top>5.09364cm</Top>
-        <Left>16.37454cm</Left>
+        <Left>15.89829cm</Left>
         <Height>0.74221cm</Height>
-        <Width>2.12076cm</Width>
+        <Width>2.59701cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -248,9 +248,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
         <Top>5.09364cm</Top>
-        <Left>13.60113cm</Left>
+        <Left>13.25245cm</Left>
         <Height>0.74221cm</Height>
-        <Width>2.77341cm</Width>
+        <Width>2.64584cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -285,9 +285,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
         <Top>5.02171cm</Top>
-        <Left>1.68606cm</Left>
+        <Left>2.24015cm</Left>
         <Height>0.74221cm</Height>
-        <Width>2.86159cm</Width>
+        <Width>2.3075cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -703,6 +703,7 @@
       </Textbox>
       <Line Name="Line3">
         <Top>12.90794cm</Top>
+        <Left>0cm</Left>
         <Height>0cm</Height>
         <Width>19.08558cm</Width>
         <ZIndex>19</ZIndex>
@@ -1401,10 +1402,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>6.56495in</Height>
+    <Height>6.48856in</Height>
     <Style />
   </Body>
-  <Width>7.85368in</Width>
+  <Width>7.77624in</Width>
   <Page>
     <PageHeader>
       <Height>2.8462cm</Height>
@@ -1417,7 +1418,7 @@
           <Sizing>Fit</Sizing>
           <Left>0.03528cm</Left>
           <Height>2.82856cm</Height>
-          <Width>19.91306cm</Width>
+          <Width>19.56563cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1432,22 +1433,57 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>3.09562cm</Height>
+      <Height>0.98114cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Image Name="Image2">
-          <Source>Embedded</Source>
-          <Value>فوترالكلية</Value>
-          <Sizing>Fit</Sizing>
-          <Height>3.06035cm</Height>
-          <Width>19.94834cm</Width>
+        <Textbox Name="Textbox3">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>برنامج ادارة المشاريع التنموية</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>0.21167cm</Top>
+          <Left>15.34646cm</Left>
+          <Height>0.6cm</Height>
+          <Width>4.25445cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+            <Direction>RTL</Direction>
           </Style>
-        </Image>
+        </Textbox>
+        <Line Name="Line1">
+          <Top>0.03528cm</Top>
+          <Left>0.03528cm</Left>
+          <Height>0cm</Height>
+          <Width>19.56563cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+              <Width>2pt</Width>
+            </Border>
+          </Style>
+        </Line>
       </ReportItems>
       <Style>
         <Border>

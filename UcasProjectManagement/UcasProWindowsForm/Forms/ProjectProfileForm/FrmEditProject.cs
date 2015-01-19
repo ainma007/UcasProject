@@ -95,6 +95,10 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                     ProjectProfileCmd.EditProjectProfile(pro);
                     Operation.EndOperation(this);
                     RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    GC.SuppressFinalize(pro);
+                    GC.Collect();
+                    GC.WaitForFullGCComplete();
+                    GC.WaitForPendingFinalizers();
 
                     this.Dispose();
                 }
@@ -130,6 +134,8 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void FrmEditProject_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
                    XProID=TragetProject.ID;
                    ProjectNameTextBox.Text=TragetProject.ProjectName;
                    ProjectDescriptionTextBox.Text=TragetProject.ProjectDescription;

@@ -21,7 +21,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
        
         private void FrmEditUserNameAndPassword_Load(object sender, EventArgs e)
         {
-
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -86,7 +86,8 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
             }
              if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
-             { 
+             {
+                 try { 
             UserTb tb = new UserTb
             {
                 ID=InformationsClass.xCurrentUserID,
@@ -101,6 +102,13 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
 
             Application.Restart();
+                 }
+                 catch (Xprema.XpremaException ex)
+                 {
+                     Operation.EndOperation(this);
+                     RadMessageBox.Show(ex.UserDescriptionArabic, "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+                 }
 
         }
         }

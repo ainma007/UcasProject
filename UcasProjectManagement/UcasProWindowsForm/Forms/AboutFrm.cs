@@ -31,5 +31,15 @@ namespace UcasProWindowsForm.Forms
         {
             this.Close();
         }
+
+        private void radGroupBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AboutFrm_Load(object sender, EventArgs e)
+        {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+        }
     }
 }

@@ -32,14 +32,15 @@ namespace UcasProWindowsForm
            // Application.Run(new FrmLogin ());
            // Application.Run(new FrmLogin());
            // Operation.BeginOperation(new FrmAdmin());
+            
 
             Application.Run(new frmLoader());
         }
 
         static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
-            RadMessageBox.Show(e.ToString());
-            Application.Restart();
+            RadMessageBox.Show("خطأ في البرنامج"+e.ToString());
+           // Application.Restart();
         }
     }
 }

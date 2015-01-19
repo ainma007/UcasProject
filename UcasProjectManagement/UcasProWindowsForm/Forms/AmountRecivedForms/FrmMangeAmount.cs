@@ -6,6 +6,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Ucas.Data.CommandClass;
 using UcasProWindowsForm.Reports.ReportObj;
+using System.Drawing;
 
 namespace UcasProWindowsForm.Forms.AmountRecivedForms
 {
@@ -90,6 +91,8 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
 
         private void FrmMangeAmount_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             th = new Thread(LodingAmount);
             th.Start();
            

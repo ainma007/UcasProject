@@ -24,6 +24,10 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
             this.Invoke((MethodInvoker)delegate
             {
+                this.SubActivtiesComboBox.MultiColumnComboBoxElement.DropDownWidth = 500;
+
+                this.SupplierComboBox.MultiColumnComboBoxElement.DropDownWidth = 300;
+
                 this.SubActivtiesComboBox.AutoFilter = true;
                 this.SubActivtiesComboBox.ValueMember = "ID";
                 this.SubActivtiesComboBox.DisplayMember = "SubActivityName";
@@ -55,6 +59,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         }
         private void FrmAddExpenses_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             th = new Thread(FillComboBox);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
@@ -146,14 +152,17 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 Operation.EndOperation(this);
 
                 RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
-               
+                GC.SuppressFinalize(tb);
+
+                GC.Collect();
+                GC.WaitForFullGCComplete();
+                GC.WaitForPendingFinalizers();
                 ClearTxt();
             }
             catch (Xprema.XpremaException ex)
             {
                 Operation.EndOperation(this);
-                RadMessageBox.Show(ex.OtherDescription,"خطأ",MessageBoxButtons.OK,RadMessageIcon.Error);
-
+                Operation.ShowToustOk(OperationX.AddMessageDone, this);
             }
         }
         private void ClearTxt()
@@ -184,6 +193,11 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void FrmAddExpenses_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GC.SuppressFinalize(th);
+
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
         }
       

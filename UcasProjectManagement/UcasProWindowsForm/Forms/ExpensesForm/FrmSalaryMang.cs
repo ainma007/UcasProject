@@ -29,6 +29,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
             this.Invoke((MethodInvoker)delegate
             {
+                this.EmployeeComboBox.MultiColumnComboBoxElement.DropDownWidth = 500;
+
                 this.EmployeeComboBox.AutoFilter = true;
                 this.EmployeeComboBox.ValueMember = "ID";
                 this.EmployeeComboBox.DisplayMember = "Employee.EmployeeName";
@@ -37,10 +39,15 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             this.Invoke((MethodInvoker)delegate
             {
                 EmployeeComboBox.DataSource = q;
-                FilterDescriptor filter = new FilterDescriptor();
-                filter.PropertyName = this.EmployeeComboBox.DisplayMember;
-                filter.Operator = FilterOperator.Contains;
-                this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+                this.EmployeeComboBox.AutoFilter = true;
+                CompositeFilterDescriptor compositeFilter = new CompositeFilterDescriptor();
+                FilterDescriptor empname = new FilterDescriptor("Employee.EmployeeName", FilterOperator.Contains, "");
+                FilterDescriptor empNumber = new FilterDescriptor("Employee.EmployeejobNumber", FilterOperator.Contains, "");
+                compositeFilter.FilterDescriptors.Add(empname);
+                compositeFilter.FilterDescriptors.Add(empNumber);
+                compositeFilter.LogicalOperator = FilterLogicalOperator.Or;
+
+                this.EmployeeComboBox.EditorControl.FilterDescriptors.Add(compositeFilter);
                 //FillText
                 XSalaryID = Tragetsalary.ID;
                 EmployeeComboBox.Text = Tragetsalary.Contract.Employee.EmployeeName;
@@ -60,6 +67,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         }
         private void FrmSalaryMang_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             th = new Thread(FillCombo);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
@@ -120,6 +129,11 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                     SalariesCmd.EditSalary(tb);
                     Operation.EndOperation(this);
                     RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    GC.SuppressFinalize(th);
+                    GC.SuppressFinalize(tb);
+                    GC.Collect();
+                    GC.WaitForFullGCComplete();
+                    GC.WaitForPendingFinalizers();
                     this.Dispose();
             }
                     catch (Xprema.XpremaException ex)

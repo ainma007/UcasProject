@@ -110,6 +110,7 @@
             this.Text = " رفع ملف ";
             this.ThemeName = "TelerikMetro";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAddAttachments_FormClosed);
+            this.Load += new System.EventHandler(this.FrmAddAttachments_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();

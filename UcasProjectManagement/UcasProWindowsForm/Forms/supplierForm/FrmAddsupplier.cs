@@ -16,7 +16,8 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void FrmAddsupplier_Load(object sender, EventArgs e)
         {
-          
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
         }
 
         private void radGroupBox1_Click(object sender, EventArgs e)
@@ -40,6 +41,18 @@ namespace UcasProWindowsForm.Forms.supplierForm
             {
                 NameTextBox.TextBoxElement.Fill.BackColor = Color.White;
                 errorProvider1.Clear();
+            }
+            string mail = EmailTextBox.Text;
+
+            if (EmailTextBox.Text != "")
+            {
+                if (mail.IndexOf('@') == -1 || mail.IndexOf('.') == -1)
+                {
+                    errorProvider1.SetError(this.EmailTextBox, "من فضلك بريد صحيح ");
+                    return;
+
+                }
+
             }
             #endregion
 
@@ -66,6 +79,10 @@ namespace UcasProWindowsForm.Forms.supplierForm
              Operation.EndOperation(this);
 
              Operation.ShowToustOk(OperationX.AddMessageDone, this);
+             GC.SuppressFinalize(Sup);
+             GC.Collect();
+             GC.WaitForFullGCComplete();
+             GC.WaitForPendingFinalizers();
 
           clearText();
         }

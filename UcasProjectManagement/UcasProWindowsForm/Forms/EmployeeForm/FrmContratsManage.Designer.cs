@@ -31,11 +31,11 @@
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn2 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmContratsManage));
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
@@ -72,7 +72,7 @@
             this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1062, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(1165, 39);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -131,7 +131,7 @@
             this.radGroupBox1.HeaderText = "سجلات العقود";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 39);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(1062, 503);
+            this.radGroupBox1.Size = new System.Drawing.Size(1165, 544);
             this.radGroupBox1.TabIndex = 6;
             this.radGroupBox1.Text = "سجلات العقود";
             this.radGroupBox1.ThemeName = "TelerikMetro";
@@ -149,7 +149,6 @@
             // ContractsGridView
             // 
             this.ContractsGridView.MasterTemplate.AllowAddNewRow = false;
-            this.ContractsGridView.MasterTemplate.AllowColumnReorder = false;
             this.ContractsGridView.MasterTemplate.AllowSearchRow = true;
             this.ContractsGridView.MasterTemplate.AutoGenerateColumns = false;
             this.ContractsGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
@@ -166,44 +165,48 @@
             gridViewTextBoxColumn1.HeaderText = "الرقم الوظيفي";
             gridViewTextBoxColumn1.Name = "JobNumber";
             gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn1.Width = 133;
+            gridViewTextBoxColumn1.Width = 122;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "Employee.EmployeeName";
             gridViewTextBoxColumn2.HeaderText = "اسم الموظف";
             gridViewTextBoxColumn2.Name = "EmployeeName";
-            gridViewTextBoxColumn2.Width = 309;
+            gridViewTextBoxColumn2.Width = 326;
+            gridViewDateTimeColumn1.EnableExpressionEditor = false;
+            gridViewDateTimeColumn1.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
+            gridViewDateTimeColumn1.FieldName = "StartDate";
+            gridViewDateTimeColumn1.FilteringMode = Telerik.WinControls.UI.GridViewTimeFilteringMode.Date;
+            gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            gridViewDateTimeColumn1.HeaderText = "تاريخ البداية";
+            gridViewDateTimeColumn1.Name = "StartDate";
+            gridViewDateTimeColumn1.Width = 134;
+            gridViewDateTimeColumn2.EnableExpressionEditor = false;
+            gridViewDateTimeColumn2.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
+            gridViewDateTimeColumn2.FieldName = "EndDate";
+            gridViewDateTimeColumn2.FilteringMode = Telerik.WinControls.UI.GridViewTimeFilteringMode.Date;
+            gridViewDateTimeColumn2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            gridViewDateTimeColumn2.HeaderText = "تاريخ الانتهاء";
+            gridViewDateTimeColumn2.Name = "EndDate";
+            gridViewDateTimeColumn2.Width = 138;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "StartDate";
-            gridViewTextBoxColumn3.HeaderText = "تاريخ البدء";
-            gridViewTextBoxColumn3.Name = "StartDate";
+            gridViewTextBoxColumn3.FieldName = "TotalSalary";
+            gridViewTextBoxColumn3.HeaderText = "اجمالي الراتب";
+            gridViewTextBoxColumn3.Name = "TotalSalary";
             gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn3.Width = 88;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "EndDate";
-            gridViewTextBoxColumn4.HeaderText = "تاريخ الانتهاء";
-            gridViewTextBoxColumn4.Name = "EndDate";
-            gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn4.Width = 112;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "TotalSalary";
-            gridViewTextBoxColumn5.HeaderText = "اجمالي الراتب";
-            gridViewTextBoxColumn5.Name = "TotalSalary";
-            gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn5.Width = 133;
+            gridViewTextBoxColumn3.Width = 145;
             gridViewDecimalColumn2.EnableExpressionEditor = false;
             gridViewDecimalColumn2.FieldName = "SelaryAmount";
             gridViewDecimalColumn2.HeaderText = "الراتب الشهري";
             gridViewDecimalColumn2.IsAutoGenerated = true;
             gridViewDecimalColumn2.Name = "SelaryAmount";
             gridViewDecimalColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn2.Width = 109;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "Status";
-            gridViewTextBoxColumn6.HeaderText = "الحالة";
-            gridViewTextBoxColumn6.IsAutoGenerated = true;
-            gridViewTextBoxColumn6.Name = "Status";
-            gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn6.Width = 72;
+            gridViewDecimalColumn2.Width = 122;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "Status";
+            gridViewTextBoxColumn4.HeaderText = "الحالة";
+            gridViewTextBoxColumn4.IsAutoGenerated = true;
+            gridViewTextBoxColumn4.Name = "Status";
+            gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn4.Width = 72;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "تعديل ";
             gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
@@ -223,13 +226,14 @@
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
+            gridViewDateTimeColumn1,
+            gridViewDateTimeColumn2,
             gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
             gridViewDecimalColumn2,
-            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn4,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
+            this.ContractsGridView.MasterTemplate.EnableFiltering = true;
             this.ContractsGridView.MasterTemplate.EnablePaging = true;
             this.ContractsGridView.MasterTemplate.SearchRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             sortDescriptor1.PropertyName = "ID";
@@ -238,8 +242,7 @@
             this.ContractsGridView.Name = "ContractsGridView";
             this.ContractsGridView.ReadOnly = true;
             this.ContractsGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ContractsGridView.ShowGroupPanel = false;
-            this.ContractsGridView.Size = new System.Drawing.Size(1058, 461);
+            this.ContractsGridView.Size = new System.Drawing.Size(1161, 502);
             this.ContractsGridView.TabIndex = 4;
             this.ContractsGridView.Text = "radGridView1";
             this.ContractsGridView.ThemeName = "TelerikMetro";
@@ -249,9 +252,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(2, 479);
+            this.statusStrip1.Location = new System.Drawing.Point(2, 520);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1058, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1161, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -265,18 +268,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1062, 542);
+            this.ClientSize = new System.Drawing.Size(1165, 583);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.toolStrip1);
-            this.MaximumSize = new System.Drawing.Size(1070, 577);
-            this.MinimumSize = new System.Drawing.Size(1070, 577);
             this.Name = "FrmContratsManage";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.RootElement.MaxSize = new System.Drawing.Size(1070, 577);
+            this.RootElement.MaxSize = new System.Drawing.Size(0, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ادارة عقود العمل";
             this.ThemeName = "TelerikMetro";

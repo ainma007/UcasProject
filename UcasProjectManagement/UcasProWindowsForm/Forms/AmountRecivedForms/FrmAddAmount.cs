@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
@@ -10,6 +11,7 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
 {
     public partial class FrmAddAmount : Telerik.WinControls.UI.RadForm
     {
+        Thread th;
         public FrmAddAmount()
         {
             InitializeComponent();
@@ -23,6 +25,8 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
            
             this.Invoke((MethodInvoker)delegate
             {
+                this.DonorsComboBox.MultiColumnComboBoxElement.DropDownWidth = 300;
+
                 this.DonorsComboBox.AutoFilter = true;
                 this.DonorsComboBox.ValueMember = "ID";
                 this.DonorsComboBox.DisplayMember = "TheDonor.Name";
@@ -43,11 +47,15 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
 
             });
             Operation.EndOperation(this);
+            th.Abort();
 
         }
         private void FrmAddAmount_Load(object sender, EventArgs e)
         {
-            FillCombo();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            th = new Thread(FillCombo);
+            th.Start();
+
             Coinlabel.Text = InformationsClass.Coin;
             DateOfProecssPicker.Value = DateTime.Now;
         }
@@ -110,7 +118,11 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
             Operation.ShowToustOk(OperationX.AddMessageDone, this);
             Operation.EndOperation(this);
 
-            RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+            Operation.ShowToustOk(OperationX.AddMessageDone, this);
+            GC.SuppressFinalize(tb);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             ClearTextBox();
         }
 
@@ -152,6 +164,10 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
 
         private void FrmAddAmount_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
         }
        

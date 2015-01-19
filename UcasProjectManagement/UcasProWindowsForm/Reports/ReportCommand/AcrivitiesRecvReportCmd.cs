@@ -29,6 +29,7 @@ namespace UcasProWindowsForm.Reports.ReportCommand
                
                   ProjectName=item.ProjectProfile.ProjectName,
                   Coin=item.ProjectProfile.Coin,
+                  ActivitesID=item.ProjectActivity.ID,
                   ActivitesName=item.ProjectActivity.ActivityName,
                   ActivitesDec=item.ProjectActivity.Description,
                   StartDate=item.ProjectActivity.StartDate.Value,

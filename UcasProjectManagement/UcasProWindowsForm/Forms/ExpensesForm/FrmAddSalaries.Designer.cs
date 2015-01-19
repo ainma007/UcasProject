@@ -281,7 +281,6 @@
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.EmployeeComboBox.EditorControl.MasterTemplate.AllowSearchRow = true;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewDecimalColumn1.EnableExpressionEditor = false;

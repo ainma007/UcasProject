@@ -112,6 +112,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
             this.Invoke((MethodInvoker)delegate
             {
+                this.EmployeeComboBox.MultiColumnComboBoxElement.DropDownWidth = 500;
+
                 this.EmployeeComboBox.AutoFilter = true;
                 this.EmployeeComboBox.ValueMember = "ID";
                 this.EmployeeComboBox.DisplayMember = "EmployeeName";
@@ -122,10 +124,16 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             this.Invoke((MethodInvoker)delegate
             {
                 EmployeeComboBox.DataSource = q;
-                FilterDescriptor filter = new FilterDescriptor();
-                filter.PropertyName = this.EmployeeComboBox.DisplayMember;
-                filter.Operator = FilterOperator.Contains;
-                this.EmployeeComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+                this.EmployeeComboBox.AutoFilter = true;
+                CompositeFilterDescriptor compositeFilter = new CompositeFilterDescriptor();
+                FilterDescriptor empname = new FilterDescriptor("EmployeeName", FilterOperator.Contains, "");
+                FilterDescriptor empNumber = new FilterDescriptor("EmployeejobNumber", FilterOperator.Contains, "");
+                compositeFilter.FilterDescriptors.Add(empname);
+                compositeFilter.FilterDescriptors.Add(empNumber);
+                compositeFilter.LogicalOperator = FilterLogicalOperator.Or;
+
+                this.EmployeeComboBox.EditorControl.FilterDescriptors.Add(compositeFilter);
+                ///
                 myContractId = TragetContract.ID;
                 this.EmployeeComboBox.Text = TragetContract.Employee.EmployeeName;
                 this.StartDateTimePicker.Text = TragetContract.StartDate.ToString();
@@ -146,6 +154,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         
         private void FrmContractsLookAndSave_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
             th = new Thread(FillEmployeeCombo);
             th.Start();
@@ -172,6 +181,11 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
         private void FrmContractsLookAndSave_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GC.SuppressFinalize(th);
+
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
         }
     }

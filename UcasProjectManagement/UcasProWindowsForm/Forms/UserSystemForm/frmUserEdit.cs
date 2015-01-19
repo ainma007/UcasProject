@@ -28,6 +28,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         private void frmUserEdit_Load(object sender, EventArgs e)
         
        {
+           this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
            // this.Cursor = Cursors.WaitCursor;
            // TragetUser = new UserTb();
 
@@ -69,22 +70,40 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         }
     
         private void btnOky_Click(object sender, EventArgs e)
-        { 
-            if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
-            {
-                Operation.BeginOperation(this);
-            UserTb tb = new UserTb
-            {
-                ID=XUserId,
-                UserName=UserNameTextBox.Text,
-                Password=PasswordTextBox.Text,
-                TypeUser = TypeDropDownList.Text
-
-            };
-            UsersCmd.EditUser(tb);
-            Operation.EndOperation(this);
-            RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+        {
             
+                if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+                    Operation.BeginOperation(this);
+
+
+                    UserTb tb = new UserTb
+                    {
+                        ID = XUserId,
+                        UserName = UserNameTextBox.Text,
+                        Password = PasswordTextBox.Text,
+                        TypeUser = TypeDropDownList.Text
+
+                    };
+                    UsersCmd.EditUser(tb);
+                    Operation.EndOperation(this);
+                    RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    GC.SuppressFinalize(tb);
+                    GC.Collect();
+                    GC.WaitForFullGCComplete();
+                    GC.WaitForPendingFinalizers();
+                    this.Dispose();
+
+                }
+                catch (Xprema.XpremaException ex)
+            {
+                Operation.EndOperation(this);
+                RadMessageBox.Show(ex.UserDescriptionArabic, "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+            }
+               
             
             //string xValue = "";
 
@@ -109,7 +128,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
             //MessageBox.Show(" Changes Was Saved ..");
             //frmUserEdit_Load(sender, e);
-            this.Dispose();
+          
            
               
         }

@@ -26,6 +26,8 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
           
             this.Invoke((MethodInvoker)delegate
             {
+                this.DonorsComboBox.MultiColumnComboBoxElement.DropDownWidth = 300;
+
                 this.DonorsComboBox.AutoFilter = true;
                 this.DonorsComboBox.ValueMember = "ID";
                 this.DonorsComboBox.DisplayMember = "TheDonor.Name";
@@ -115,11 +117,17 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
                 AmountsReceivedsCmd.EditAmountsReceived(tb);
                 Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                GC.SuppressFinalize(tb);
+                GC.Collect();
+                GC.WaitForFullGCComplete();
+                GC.WaitForPendingFinalizers();
                 this.Dispose();
             }
         }
         private void FrmEditAmount_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             th = new Thread(FillCombo);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
@@ -143,6 +151,10 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
 
         private void FrmEditAmount_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
         }
     }

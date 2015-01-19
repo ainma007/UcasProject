@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Data.Entity;
 using System.Collections;
+using System.Windows.Forms;
+using System.IO;
 
 namespace Ucas.Data.CommandClass
 {
@@ -16,6 +18,15 @@ namespace Ucas.Data.CommandClass
            var lst = (from p in db.UserTbs
 
                       select p).ToList();
+           return lst;
+       }
+
+       public static List<UserTb> GetAllUsersToProjects()
+       {
+           db = new UcasProEntities();
+           var lst = (from p in db.UserTbs
+                      where p.TypeUser=="منسق"||p.TypeUser=="محاسب"
+                       select p).ToList();
            return lst;
        }
        public static bool NewUser(UserTb tb)
@@ -51,7 +62,23 @@ namespace Ucas.Data.CommandClass
            catch (Exception ex)
            {
 
-               throw ex;
+             //  throw ex;
+               
+                Xprema.XpremaException e = new Xprema.XpremaException();
+                e.CodeNumber = 6;
+                e.OtherDescription = ex.InnerException.InnerException.Message;
+                File.WriteAllText("t.txt", ex.InnerException.InnerException.Message);
+                e.UserDescription = "Error in Save Changed";
+                if (ex.InnerException.InnerException.Message.Contains("Cannot insert duplicate key row in object 'dbo.UserTbs' with unique index 'IX_UserTbs'"))
+                {
+                    e.UserDescriptionArabic = "اسم المستخدم موجود يرجى تغير الاسم";
+
+                }
+                else
+                    e.UserDescriptionArabic = e.OtherDescription;//"خطاء في اضافة البيانات";
+               
+                 throw e;
+            
            }
        }
 
@@ -81,18 +108,16 @@ namespace Ucas.Data.CommandClass
        {
 
            db = new UcasProEntities();
-           db.Configuration.ProxyCreationEnabled = false;
-           db.Configuration.LazyLoadingEnabled = false;
            int XlAST = (from ueser in db.UserTbs where ueser.ID != 0 select ueser.ID).Max();
            return XlAST;
        }
 
-      
+
+   
        public static List<UserTb> GetLoginUserDataByID(int XID)
        {
            db = new UcasProEntities();
-           db.Configuration.ProxyCreationEnabled = false;
-           db.Configuration.LazyLoadingEnabled = false;
+          
            var lst = (from u in db.UserTbs where u.ID == XID select u).ToList();
            return lst;
        }
@@ -116,28 +141,21 @@ namespace Ucas.Data.CommandClass
        {
            try
            {
-               if (usr=="")
-               {
-                   return null;
-               }
-               if (pwd=="")
-               {
-                   return null;
-               }
+              
                db = new UcasProEntities();
-               var q = db.UserTbs.Where(p => p.UserName.Contains(usr) && p.Password.Contains(pwd)).ToList();
-
+               var q = db.UserTbs.Where(p => p.UserName.ToString() == usr.ToString() && p.Password.ToString() == pwd.ToString()).ToList();
                if (q.Count == 0 || q.Count == -1)
                {
                    return null;
                }
+              
                else
                {
                    return q[0];
                }
 
            }
-           catch (Exception e)
+           catch (Exception ex)
            {
                
                throw ;

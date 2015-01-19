@@ -205,7 +205,6 @@
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.EmployeeComboBox.EditorControl.MasterTemplate.AllowSearchRow = true;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "ID";

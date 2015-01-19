@@ -4,7 +4,10 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Ucas.Data.CommandClass;
+using System.Drawing;
 using UcasProWindowsForm.Reports.ReportCommand;
+
+
 
 namespace UcasProWindowsForm.Forms.EmployeeForm
 {
@@ -21,6 +24,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
      
         private void FrmContratsManage_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             th = new Thread(FillData);
             th.Start();
 
@@ -151,6 +156,11 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
         private void FrmContratsManage_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GC.SuppressFinalize(th);
+
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
         }
 

@@ -9,6 +9,7 @@ using UcasProWindowsForm.Forms.supplierForm;
 using UcasProWindowsForm.Forms.UserSystemForm;
 using System.Data.Linq;
 using System.Linq;
+using System.Drawing;
 
 
 
@@ -75,6 +76,8 @@ namespace UcasProWindowsForm.Forms.MainForm
         } 
         private void FrmAdmin_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
      //       var  = ( from u in ProjectControlCmd.ge)
             switch (InformationsClass .XUserType)
             {

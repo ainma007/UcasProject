@@ -25,6 +25,8 @@ namespace UcasProWindowsForm.Forms.MainForm
 
             this.Invoke((MethodInvoker)delegate
             {
+                this.DonorsColumnComboBox.MultiColumnComboBoxElement.DropDownWidth = 500;
+
                 this.DonorsColumnComboBox.AutoFilter = true;
                 this.DonorsColumnComboBox.ValueMember = "ID";
                 this.DonorsColumnComboBox.DisplayMember = "Name";
@@ -86,32 +88,47 @@ namespace UcasProWindowsForm.Forms.MainForm
 
 
             #endregion
-
-            Operation.BeginOperation(this);
-           
-
-           
-            TheDonorsProject tb = new TheDonorsProject()
+            try
             {
 
-                ProjectID = InformationsClass.ProjID,
-                DonorsID = int.Parse(DonorsColumnComboBox.SelectedValue.ToString()),
-                TotalCost = Convert.ToDouble(CostTextBox.Text)
 
-            };
+                Operation.BeginOperation(this);
 
-            TheDonorsProjectCmd.AddTheTheDonorsProject(tb);
-            Operation.EndOperation(this);
-            RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
-            DonorsColumnComboBox.ResetText();
-            CostTextBox.Clear();
-            DonorsColumnComboBox.Focus();
 
+
+                TheDonorsProject tb = new TheDonorsProject()
+                {
+
+                    ProjectID = InformationsClass.ProjID,
+                    DonorsID = int.Parse(DonorsColumnComboBox.SelectedValue.ToString()),
+                    TotalCost = Convert.ToDouble(CostTextBox.Text)
+
+                };
+
+                TheDonorsProjectCmd.AddTheTheDonorsProject(tb);
+                Operation.EndOperation(this);
+                RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                DonorsColumnComboBox.ResetText();
+                GC.SuppressFinalize(tb);
+                GC.Collect();
+                GC.WaitForFullGCComplete();
+                GC.WaitForPendingFinalizers();
+                CostTextBox.Clear();
+                DonorsColumnComboBox.Focus();
+            }
+            catch (Xprema.XpremaException ex)
+            {
+                Operation.EndOperation(this);
+                RadMessageBox.Show(ex.UserDescriptionArabic, "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+            }
            
         }
 
         private void FrmTheDonorsAndProjectAdd_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             Operation.BeginOperation(this);
             th = new Thread(fillDonorsCombo);
             th.Start();
@@ -137,6 +154,11 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void FrmTheDonorsAndProjectAdd_FormClosed(object sender, FormClosedEventArgs e)
         {
+
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
         }
     }

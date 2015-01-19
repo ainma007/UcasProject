@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
@@ -147,7 +148,6 @@
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.DonorsColumnComboBox.EditorControl.MasterTemplate.AllowSearchRow = true;
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "ID";
@@ -161,10 +161,16 @@
             gridViewTextBoxColumn2.HeaderText = "اختر الممول";
             gridViewTextBoxColumn2.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             gridViewTextBoxColumn2.Name = "Name";
-            gridViewTextBoxColumn2.Width = 220;
+            gridViewTextBoxColumn2.Width = 126;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "agentName";
+            gridViewTextBoxColumn3.HeaderText = "جهة الاتصال";
+            gridViewTextBoxColumn3.Name = "agentName";
+            gridViewTextBoxColumn3.Width = 95;
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2});
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3});
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.DonorsColumnComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
             sortDescriptor1.PropertyName = "column1";

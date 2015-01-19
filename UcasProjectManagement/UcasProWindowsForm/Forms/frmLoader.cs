@@ -25,7 +25,8 @@ namespace UcasProWindowsForm.Forms
         ReportDataSource rpt = new ReportDataSource();
         private void frmLoader_Load(object sender, EventArgs e)
         {
-            
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             Application.DoEvents();
             th = new Thread(Loader);
             th.Start();

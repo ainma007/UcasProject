@@ -19,6 +19,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         public Ucas.Data.Employee TragetEmployee { get; set; }
         private void FrmEmployeeEdit_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             this.Cursor = Cursors.WaitCursor;
             XIDEmployee = TragetEmployee.ID;
             employeeNameTextBox.Text = TragetEmployee.EmployeeName;
@@ -85,6 +87,19 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                 EmployeejobNumberTextBox.TextBoxElement.Fill.BackColor = Color.White;
                 errorProvider1.Clear();
             }
+
+            string mail = EmailTextBox.Text;
+
+            if (EmailTextBox.Text != "")
+            {
+                if (mail.IndexOf('@') == -1 || mail.IndexOf('.') == -1)
+                {
+                    errorProvider1.SetError(this.EmailTextBox, "من فضلك بريد صحيح ");
+                    return;
+
+                }
+
+            }
             #endregion
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
 
@@ -107,6 +122,11 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                 EmployeeCmd.EditEmployee(db);
                 Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                GC.SuppressFinalize(db);
+
+                GC.Collect();
+                GC.WaitForFullGCComplete();
+                GC.WaitForPendingFinalizers();
                 this.Dispose();
 
             }

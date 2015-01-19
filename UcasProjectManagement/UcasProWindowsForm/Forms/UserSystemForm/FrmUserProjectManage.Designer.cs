@@ -32,6 +32,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUserProjectManage));
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
@@ -53,9 +54,9 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 382);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 370);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(752, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(865, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -68,7 +69,7 @@
             this.toolStripSeparator2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(752, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(865, 39);
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -78,8 +79,9 @@
             this.AddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(104, 36);
-            this.AddBtn.Text = "اضافة مشروع";
+            this.AddBtn.Size = new System.Drawing.Size(152, 36);
+            this.AddBtn.Text = "اضافة مستخدم لمشروع";
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // toolStripSeparator1
             // 
@@ -94,6 +96,7 @@
             this.RefreshBtn.Name = "RefreshBtn";
             this.RefreshBtn.Size = new System.Drawing.Size(117, 36);
             this.RefreshBtn.Text = "تحديث السجلات";
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // toolStripSeparator2
             // 
@@ -113,6 +116,7 @@
             // ProjectControlGridView
             // 
             this.ProjectControlGridView.MasterTemplate.AllowAddNewRow = false;
+            this.ProjectControlGridView.MasterTemplate.AllowSearchRow = true;
             this.ProjectControlGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "ID";
@@ -120,46 +124,53 @@
             gridViewTextBoxColumn1.IsVisible = false;
             gridViewTextBoxColumn1.Name = "ID";
             gridViewTextBoxColumn1.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn1.Width = 47;
+            gridViewTextBoxColumn1.Width = 44;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "UserTb.Employee.EmployeeName";
-            gridViewTextBoxColumn2.HeaderText = "اسم الموظف";
-            gridViewTextBoxColumn2.Name = "EmployeeName";
-            gridViewTextBoxColumn2.Width = 268;
+            gridViewTextBoxColumn2.FieldName = "UserTb.Employee.EmployeejobNumber";
+            gridViewTextBoxColumn2.HeaderText = "الرقم الوظيفي";
+            gridViewTextBoxColumn2.Name = "EmployeejobNumber";
+            gridViewTextBoxColumn2.Width = 163;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "ProjectProfile.ProjectName";
-            gridViewTextBoxColumn3.HeaderText = "اسم المشروع";
-            gridViewTextBoxColumn3.Name = "ProjectName";
-            gridViewTextBoxColumn3.Width = 238;
+            gridViewTextBoxColumn3.FieldName = "UserTb.Employee.EmployeeName";
+            gridViewTextBoxColumn3.HeaderText = "اسم الموظف";
+            gridViewTextBoxColumn3.Name = "EmployeeName";
+            gridViewTextBoxColumn3.Width = 265;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "Status";
-            gridViewTextBoxColumn4.HeaderText = "الحالة";
-            gridViewTextBoxColumn4.Name = "Status";
-            gridViewTextBoxColumn4.Width = 112;
+            gridViewTextBoxColumn4.FieldName = "ProjectProfile.ProjectName";
+            gridViewTextBoxColumn4.HeaderText = "اسم المشروع";
+            gridViewTextBoxColumn4.Name = "ProjectName";
+            gridViewTextBoxColumn4.Width = 217;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "Status";
+            gridViewTextBoxColumn5.HeaderText = "الحالة";
+            gridViewTextBoxColumn5.Name = "Status";
+            gridViewTextBoxColumn5.Width = 78;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "تعديل";
             gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
             gridViewCommandColumn1.Name = "EditCol";
-            gridViewCommandColumn1.Width = 57;
+            gridViewCommandColumn1.Width = 58;
             gridViewCommandColumn2.EnableExpressionEditor = false;
             gridViewCommandColumn2.HeaderText = "حذف";
             gridViewCommandColumn2.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn2.Image")));
             gridViewCommandColumn2.Name = "DeleteCol";
-            gridViewCommandColumn2.Width = 61;
+            gridViewCommandColumn2.Width = 69;
             this.ProjectControlGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
             gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
+            this.ProjectControlGridView.MasterTemplate.EnableFiltering = true;
             sortDescriptor1.PropertyName = "ID";
             this.ProjectControlGridView.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
             sortDescriptor1});
             this.ProjectControlGridView.Name = "ProjectControlGridView";
             this.ProjectControlGridView.ReadOnly = true;
             this.ProjectControlGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ProjectControlGridView.Size = new System.Drawing.Size(752, 343);
+            this.ProjectControlGridView.Size = new System.Drawing.Size(865, 331);
             this.ProjectControlGridView.TabIndex = 8;
             this.ProjectControlGridView.Text = "radGridView1";
             this.ProjectControlGridView.ThemeName = "TelerikMetro";
@@ -175,20 +186,20 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 404);
+            this.ClientSize = new System.Drawing.Size(865, 392);
             this.Controls.Add(this.ProjectControlGridView);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(760, 439);
-            this.MinimumSize = new System.Drawing.Size(760, 439);
+            this.MaximumSize = new System.Drawing.Size(873, 427);
+            this.MinimumSize = new System.Drawing.Size(873, 427);
             this.Name = "FrmUserProjectManage";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.RootElement.MaxSize = new System.Drawing.Size(760, 439);
+            this.RootElement.MaxSize = new System.Drawing.Size(873, 427);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ادارة مستخدمين المشاريع";
             this.ThemeName = "TelerikMetro";

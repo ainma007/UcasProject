@@ -132,6 +132,8 @@ namespace UcasProWindowsForm.Forms.MainForm
         }
         private void FrmMainUserPro_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             th = new Thread(fillData);
             th.Start();
             GC.SuppressFinalize(th);

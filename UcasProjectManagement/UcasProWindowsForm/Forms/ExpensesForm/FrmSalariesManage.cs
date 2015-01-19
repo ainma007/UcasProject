@@ -6,6 +6,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Ucas.Data.CommandClass;
 using UcasProWindowsForm.Reports.ReportObj;
+using System.Drawing;
 
 namespace UcasProWindowsForm.Forms.ExpensesForm
 {
@@ -44,7 +45,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void FrmSalariesManage_Load(object sender, EventArgs e)
         {
-          
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
 
             th = new Thread(FillSalaryData);
             th.Start();
@@ -171,6 +173,10 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void FrmSalariesManage_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
         }
 

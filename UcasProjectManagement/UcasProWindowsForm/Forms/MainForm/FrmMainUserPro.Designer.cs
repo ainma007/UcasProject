@@ -935,12 +935,13 @@
             this.radGroupBox3.Controls.Add(this.radGridView1);
             this.radGroupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.radGroupBox3.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
-            this.radGroupBox3.HeaderText = "أنشطة الشهر الحالي";
+            this.radGroupBox3.HeaderAlignment = Telerik.WinControls.UI.HeaderAlignment.Center;
+            this.radGroupBox3.HeaderText = "سجل الانشطة الغير منتهية";
             this.radGroupBox3.Location = new System.Drawing.Point(0, 511);
             this.radGroupBox3.Name = "radGroupBox3";
             this.radGroupBox3.Size = new System.Drawing.Size(1206, 285);
             this.radGroupBox3.TabIndex = 11;
-            this.radGroupBox3.Text = "أنشطة الشهر الحالي";
+            this.radGroupBox3.Text = "سجل الانشطة الغير منتهية";
             this.radGroupBox3.ThemeName = "TelerikMetro";
             // 
             // FrmMainUserPro

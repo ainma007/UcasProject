@@ -28,8 +28,7 @@ namespace Ucas.Data.CommandClass
 
         public static bool EditDonor(TheDonor tb)
         {
-            try
-            {
+           
                 db = new UcasProEntities();
                 db.Configuration.LazyLoadingEnabled = false;
                 db.Configuration.ProxyCreationEnabled = false;
@@ -45,19 +44,13 @@ namespace Ucas.Data.CommandClass
                 db.SaveChanges();
                 return true;
 
-            }
-            catch (Exception ex)
-            {
-
-
-                return false;
-            }
+            
+           
         }
 
         public static bool DeleteDonor(int xid)
         {
-            try
-            {
+            
                 db = new UcasProEntities();
                 TheDonor tb = new TheDonor();
                 tb = db.TheDonors.Where(f => f.ID == xid).Single();
@@ -69,12 +62,8 @@ namespace Ucas.Data.CommandClass
                     return true;
                 }
                 return false;
-            }
-            catch (Exception)
-            {
-
-                return false;
-            }
+            
+           
         }
 
     }

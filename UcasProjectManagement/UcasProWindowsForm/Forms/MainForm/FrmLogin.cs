@@ -17,7 +17,7 @@ namespace UcasProWindowsForm.Forms.MainForm
             InitializeComponent();
             RadMessageBox.SetThemeName("TelerikMetro");
         }
-
+        UcasProEntities cmd = new UcasProEntities();
         private void EnterBtn_Click(object sender, EventArgs e)
         {
 
@@ -55,7 +55,10 @@ namespace UcasProWindowsForm.Forms.MainForm
             #endregion
 
             Operation.BeginOperation(this);
-            var q = UsersCmd.Login(UserNameTextBox.Text, PasswordTextBox.Text);
+            var q = UsersCmd.Login(UserNameTextBox.Text.ToString(), PasswordTextBox.Text.ToString());
+            cmd = new UcasProEntities();
+           
+         
             if (q != null)
             {
                 InformationsClass.xCurrentUserID = q.ID;
@@ -97,6 +100,7 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
         }
 

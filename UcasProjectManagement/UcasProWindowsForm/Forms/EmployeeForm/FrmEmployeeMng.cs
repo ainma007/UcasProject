@@ -53,6 +53,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         Thread th;
         private void FrmEmployeeMng_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
              th = new Thread(GetAllEmployee);
              th.Start();
             
@@ -76,34 +78,34 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
               
             }
 
-            //if (col == 9)
-            //{
-            //    if (RadMessageBox.Show(this, OperationX.DeleteMessage, "حذف السجلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
-            //    {
-            //        Operation.BeginOperation(this);
-            //        if (EmployeeCmd.DeleteEmployee(int.Parse(EmployeeGridView.CurrentRow.Cells[0].Value.ToString())))
-            //        {
-            //            Operation.EndOperation(this);
-            //            FrmEmployeeMng_Load(null, null);
-            //            Operation.ShowToustOk(OperationX.DeletedMessage, this);
+            if (col == 9)
+            {
+                if (RadMessageBox.Show(this, OperationX.DeleteMessage, "حذف السجلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                {
+                    Operation.BeginOperation(this);
+                    if (EmployeeCmd.DeleteEmployee(int.Parse(EmployeeGridView.CurrentRow.Cells[0].Value.ToString())))
+                    {
+                        Operation.EndOperation(this);
+                        FrmEmployeeMng_Load(null, null);
+                        Operation.ShowToustOk(OperationX.DeletedMessage, this);
 
 
 
 
 
-            //        }
+                    }
 
-            //        else
-            //        {
-            //            Operation.EndOperation(this);
-            //            RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
-
-
-            //        }
-            //    }
+                    else
+                    {
+                        Operation.EndOperation(this);
+                        RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
 
 
-            //}
+                    }
+                }
+
+
+            }
         }
 
     
@@ -162,6 +164,11 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
         private void FrmEmployeeMng_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GC.SuppressFinalize(th);
+
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
         }
 

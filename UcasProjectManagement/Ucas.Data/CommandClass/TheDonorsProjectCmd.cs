@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -46,10 +47,31 @@ namespace Ucas.Data.CommandClass
         }
         public static bool AddTheTheDonorsProject(TheDonorsProject tb)
         {
-            db = new UcasProEntities();
-            db.TheDonorsProjects.Add(tb);
-            db.SaveChanges();
-            return true;
+            try
+            {
+                db = new UcasProEntities();
+                db.TheDonorsProjects.Add(tb);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                Xprema.XpremaException e = new Xprema.XpremaException();
+                e.CodeNumber = 6;
+                e.OtherDescription = ex.InnerException.InnerException.Message;
+                File.WriteAllText("t.txt", ex.InnerException.InnerException.Message);
+                e.UserDescription = "Error in Save Changed";
+                if (ex.InnerException.InnerException.Message.Contains("Violation of PRIMARY KEY constraint 'PK_TheDonorsProjects_1'. Cannot insert duplicate key in object 'dbo.TheDonorsProjects'. The duplicate key value is (3, 4)"))
+                {
+                    e.UserDescriptionArabic = "الممول مضاف مسبقا للمشروع";
+
+                }
+                else
+                    e.UserDescriptionArabic = e.OtherDescription;//"خطاء في اضافة البيانات";
+
+                throw e;
+            }
         }
 
         public static bool EditTheDonorsProject(TheDonorsProject tb)
@@ -66,10 +88,23 @@ namespace Ucas.Data.CommandClass
                 return true;
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                return false;
+                Xprema.XpremaException e = new Xprema.XpremaException();
+                e.CodeNumber = 6;
+                e.OtherDescription = ex.InnerException.InnerException.Message;
+                File.WriteAllText("t.txt", ex.InnerException.InnerException.Message);
+                e.UserDescription = "Error in Save Changed";
+                if (ex.InnerException.InnerException.Message.Contains("Violation of PRIMARY KEY constraint 'PK_TheDonorsProjects_1'. Cannot insert duplicate key in object 'dbo.TheDonorsProjects'. The duplicate key value is (3, 4)"))
+                {
+                    e.UserDescriptionArabic = "الممول مضاف مسبقا للمشروع";
+
+                }
+                else
+                    e.UserDescriptionArabic = e.OtherDescription;//"خطاء في اضافة البيانات";
+
+                throw e;
             }
         }
 

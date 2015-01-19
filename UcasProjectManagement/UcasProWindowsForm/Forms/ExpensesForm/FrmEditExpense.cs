@@ -67,6 +67,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         }
         private void FrmEditExpense_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             th = new Thread(FillComboBox);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
@@ -150,7 +152,11 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                     ProjectExpensesCmd.EditProjectExpens(tb);
                     Operation.EndOperation(this);
                     RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
-
+                    GC.SuppressFinalize(th);
+                    GC.SuppressFinalize(tb);
+                    GC.Collect();
+                    GC.WaitForFullGCComplete();
+                    GC.WaitForPendingFinalizers();
                     this.Dispose();
                 }
                 catch (Xprema.XpremaException ex)
@@ -180,6 +186,10 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
         private void FrmEditExpense_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
         }
     }

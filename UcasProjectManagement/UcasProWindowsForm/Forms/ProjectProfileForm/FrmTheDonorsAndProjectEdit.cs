@@ -26,6 +26,8 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
             this.Invoke((MethodInvoker)delegate
             {
+                this.DonorsColumnComboBox.MultiColumnComboBoxElement.DropDownWidth = 500;
+
                 this.DonorsColumnComboBox.AutoFilter = true;
                 this.DonorsColumnComboBox.ValueMember = "ID";
                 this.DonorsColumnComboBox.DisplayMember = "Name";
@@ -57,6 +59,8 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
 
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             th = new Thread(fillDonorsCombo);
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
@@ -66,58 +70,72 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            #region "  CheckFillTextBox "
-            if (DonorsColumnComboBox.SelectedValue == null)
+            try
             {
-                DonorsColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
-                errorProvider1.SetError(this.DonorsColumnComboBox, "من فضلك ادخل اسم الممول");
-
-                DonorsColumnComboBox.Focus();
-
-                return;
-            }
-            else
-            {
-                DonorsColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
-            }
-
-            if (CostTextBox.Text == "")
-            {
-
-                CostTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
-                errorProvider1.SetError(this.CostTextBox, "من فضلك ادخل  الميزانية");
-
-                CostTextBox.Focus();
-
-                return;
-            }
-            else
-            {
-
-                CostTextBox.TextBoxElement.Fill.BackColor = Color.White;
-                errorProvider1.Clear();
-            }
-
-
-            #endregion
-            if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
-            {
-                Operation.BeginOperation(this);
-                
-
-                TheDonorsProject tb = new TheDonorsProject()
+                #region "  CheckFillTextBox "
+                if (DonorsColumnComboBox.SelectedValue == null)
                 {
-                    ID = XDonrPro,
-                    ProjectID = InformationsClass.ProjID,
-                    DonorsID = int.Parse(DonorsColumnComboBox.SelectedValue.ToString()),
-                    TotalCost = Convert.ToDouble(CostTextBox.Text)
+                    DonorsColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                    errorProvider1.SetError(this.DonorsColumnComboBox, "من فضلك ادخل اسم الممول");
 
-                };
+                    DonorsColumnComboBox.Focus();
 
-                TheDonorsProjectCmd.EditTheDonorsProject(tb);
+                    return;
+                }
+                else
+                {
+                    DonorsColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                }
+
+                if (CostTextBox.Text == "")
+                {
+
+                    CostTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                    errorProvider1.SetError(this.CostTextBox, "من فضلك ادخل  الميزانية");
+
+                    CostTextBox.Focus();
+
+                    return;
+                }
+                else
+                {
+
+                    CostTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                    errorProvider1.Clear();
+                }
+
+
+                #endregion
+                if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                {
+                    Operation.BeginOperation(this);
+
+
+                    TheDonorsProject tb = new TheDonorsProject()
+                    {
+                        ID = XDonrPro,
+                        ProjectID = InformationsClass.ProjID,
+                        DonorsID = int.Parse(DonorsColumnComboBox.SelectedValue.ToString()),
+                        TotalCost = Convert.ToDouble(CostTextBox.Text)
+
+                    };
+
+                    TheDonorsProjectCmd.EditTheDonorsProject(tb);
+                    Operation.EndOperation(this);
+                    RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    GC.SuppressFinalize(th);
+                    GC.SuppressFinalize(tb);
+                    GC.Collect();
+                    GC.WaitForFullGCComplete();
+                    GC.WaitForPendingFinalizers();
+                    this.Dispose();
+                }
+            }
+            catch (Xprema.XpremaException ex)
+            {
                 Operation.EndOperation(this);
-                RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
-                this.Dispose();
+                RadMessageBox.Show(ex.UserDescriptionArabic, "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+
             }
         }
 
@@ -144,6 +162,10 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void FrmTheDonorsAndProjectEdit_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
         }
     }

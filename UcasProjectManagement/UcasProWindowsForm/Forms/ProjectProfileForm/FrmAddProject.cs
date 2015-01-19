@@ -99,6 +99,10 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                 Operation.EndOperation(this);
 
                 Operation.ShowToustOk(OperationX.AddMessageDone, this);
+                GC.SuppressFinalize(pro);
+                GC.Collect();
+                GC.WaitForFullGCComplete();
+                GC.WaitForPendingFinalizers();
 
                 ClearText();
             }
@@ -127,6 +131,8 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void FrmAddProject_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             StartDateTimePicker.Value = DateTime.Now;
             EndDateTimePicker.Value = DateTime.Now;
         }

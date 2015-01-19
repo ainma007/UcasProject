@@ -33,6 +33,18 @@ namespace UcasProWindowsForm.Forms.supplierForm
                 NameTextBox.TextBoxElement.Fill.BackColor = Color.White;
                 errorProvider1.Clear();
             }
+            string mail = EmailTextBox.Text;
+
+            if (EmailTextBox.Text != "")
+            {
+                if (mail.IndexOf('@') == -1 || mail.IndexOf('.') == -1)
+                {
+                    errorProvider1.SetError(this.EmailTextBox, "من فضلك بريد صحيح ");
+                    return;
+
+                }
+
+            }
             #endregion
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
@@ -55,6 +67,10 @@ namespace UcasProWindowsForm.Forms.supplierForm
                 SuppliersCmd.EditSupplier(Sup);
                 Operation.EndOperation(this);
                 RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK,RadMessageIcon.Info);
+                GC.SuppressFinalize(Sup);
+                GC.Collect();
+                GC.WaitForFullGCComplete();
+                GC.WaitForPendingFinalizers();
                 this.Dispose();
             }
         }
@@ -71,6 +87,8 @@ namespace UcasProWindowsForm.Forms.supplierForm
 
         private void FrmEditsupplier_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             XSupID = TragetDSupplier.ID;
             NameTextBox.Text = TragetDSupplier.Name;
             SuppliersNaturalTextBox.Text = TragetDSupplier.SuppliersNatural;

@@ -73,6 +73,10 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 Operation.EndOperation(this);
                 Operation.ShowToustOk(OperationX.AddMessageDone, this);
                 ClearTxt();
+                GC.SuppressFinalize(tb);
+                GC.Collect();
+                GC.WaitForFullGCComplete();
+                GC.WaitForPendingFinalizers();
             }
             catch (Xprema.XpremaException ex)
             {
@@ -91,6 +95,8 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         }
         private void FrmAddActivities_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             Coinlabel.Text = InformationsClass.Coin;
             StartDateTimePicker.Value = DateTime.Now;
             EndDateTimePicker.Value = DateTime.Now;
@@ -114,6 +120,10 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
         private void FrmAddActivities_FormClosed(object sender, FormClosedEventArgs e)
         {
+           
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
         }
     }

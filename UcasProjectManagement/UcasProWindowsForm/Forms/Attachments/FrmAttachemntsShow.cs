@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -23,6 +25,8 @@ namespace UcasProWindowsForm.Forms.Attachments
         Thread th;
         private void FrmAttachemntsShow_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             th = new Thread(LodingData);
             th.Start();
          
@@ -124,7 +128,25 @@ namespace UcasProWindowsForm.Forms.Attachments
      // 
             try
             {
-                File.Copy(p.FilePathX, sv.SelectedPath + "\\" + p.AttachmentName,true);
+                File.Copy(p.FilePathX, sv.SelectedPath + "\\" + p.AttachmentName, true);
+                // Get the object used to communicate with the server.
+                //FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://mazoonadv.com/" + p.FilePathX);
+                //request.Method = WebRequestMethods.Ftp.DownloadFile;
+
+                //// This example assumes the FTP site uses anonymous logon.
+                //request.Credentials = new NetworkCredential("xpremax", "xprema");
+
+                //FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+
+                //Stream responseStream = response.GetResponseStream();
+                //StreamReader reader = new StreamReader(responseStream);
+                //File.WriteAllText(sv.SelectedPath + "\\" + p.AttachmentName, reader.ReadToEnd());
+                //Process.Start(sv.SelectedPath + "\\" + p.AttachmentName);
+
+                //Console.WriteLine("Download Complete, status {0}", response.StatusDescription);
+
+                //reader.Close();
+                //response.Close();
             }
             catch (System.UnauthorizedAccessException ex)
             {
@@ -162,6 +184,11 @@ namespace UcasProWindowsForm.Forms.Attachments
 
         private void FrmAttachemntsShow_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GC.SuppressFinalize(th);
+
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
            
         }

@@ -5,6 +5,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.Data;
 using Ucas.Data;
 using Ucas.Data.CommandClass;
+using System.Drawing;
 
 namespace UcasProWindowsForm.Forms.UserSystemForm
 {
@@ -23,6 +24,11 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
             this.Invoke((MethodInvoker)delegate
             {
+                this.UserListComboBox.MultiColumnComboBoxElement.DropDownWidth = 500;
+
+                this.ProjectCombo.MultiColumnComboBoxElement.DropDownWidth = 300;
+
+
                 //User
                 this.UserListComboBox.AutoFilter = true;
                 this.UserListComboBox.ValueMember = "ID";
@@ -35,16 +41,21 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                 this.ProjectCombo.DisplayMember = "ProjectName";
             });
 
-            var q = UsersCmd.GetAllUsers();
+            var q = UsersCmd.GetAllUsersToProjects();
             var q1=ProjectProfileCmd.GetAllProjects();
             this.Invoke((MethodInvoker)delegate
             {
                 //FillUser
                 UserListComboBox.DataSource = q;
-                FilterDescriptor filter = new FilterDescriptor();
-                filter.PropertyName = this.UserListComboBox.DisplayMember;
-                filter.Operator = FilterOperator.Contains;
-                this.UserListComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+                this.UserListComboBox.AutoFilter = true;
+                CompositeFilterDescriptor compositeFilter = new CompositeFilterDescriptor();
+                FilterDescriptor empname = new FilterDescriptor("Employee.EmployeeName", FilterOperator.Contains, "");
+                FilterDescriptor empNumber = new FilterDescriptor("Employee.EmployeejobNumber", FilterOperator.Contains, "");
+                compositeFilter.FilterDescriptors.Add(empname);
+                compositeFilter.FilterDescriptors.Add(empNumber);
+                compositeFilter.LogicalOperator = FilterLogicalOperator.Or;
+
+                this.UserListComboBox.EditorControl.FilterDescriptors.Add(compositeFilter);
               
                     ///
                 //// fill ProjectCombo
@@ -89,6 +100,10 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
                 UserListComboBox.ResetText();
                 ProjectCombo.ResetText();
                 UserListComboBox.Focus();
+                GC.SuppressFinalize(tb);
+                GC.Collect();
+                GC.WaitForFullGCComplete();
+                GC.WaitForPendingFinalizers();
             }
             catch (Xprema.XpremaException ex)
             {
@@ -102,6 +117,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
         private void FrmAddUserToProject_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             th = new Thread(FillComboBox);
             th.Start();
           
@@ -109,6 +125,10 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
         private void FrmAddUserToProject_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
         }
     }

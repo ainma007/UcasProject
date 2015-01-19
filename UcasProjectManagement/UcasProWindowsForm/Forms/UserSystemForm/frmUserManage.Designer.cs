@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn1 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn2 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserManage));
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
             this.UserGridView = new Telerik.WinControls.UI.RadGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -64,46 +65,52 @@
             this.UserGridView.MasterTemplate.AllowSearchRow = true;
             this.UserGridView.MasterTemplate.AutoGenerateColumns = false;
             this.UserGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "ID";
-            gridViewTextBoxColumn1.HeaderText = "ID";
-            gridViewTextBoxColumn1.IsVisible = false;
-            gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn1.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn1.Width = 51;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "Employee.EmployeeName";
-            gridViewTextBoxColumn2.HeaderText = "اسم الموظف";
-            gridViewTextBoxColumn2.Name = "EmployeeName";
-            gridViewTextBoxColumn2.Width = 221;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "UserName";
-            gridViewTextBoxColumn3.HeaderText = "اسم المستخدم";
-            gridViewTextBoxColumn3.Name = "UserName";
-            gridViewTextBoxColumn3.Width = 283;
-            gridViewComboBoxColumn1.EnableExpressionEditor = false;
-            gridViewComboBoxColumn1.FieldName = "TypeUser";
-            gridViewComboBoxColumn1.HeaderText = "نوع المستخدم";
-            gridViewComboBoxColumn1.Name = "TypeUser";
-            gridViewComboBoxColumn1.Width = 210;
-            gridViewCommandColumn1.EnableExpressionEditor = false;
-            gridViewCommandColumn1.HeaderText = "تعديل ";
-            gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
-            gridViewCommandColumn1.ImageLayout = System.Windows.Forms.ImageLayout.Center;
-            gridViewCommandColumn1.MaxWidth = 45;
-            gridViewCommandColumn1.MinWidth = 45;
-            gridViewCommandColumn1.Name = "Savebtn";
-            gridViewCommandColumn1.Width = 45;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "ID";
+            gridViewTextBoxColumn5.HeaderText = "ID";
+            gridViewTextBoxColumn5.IsVisible = false;
+            gridViewTextBoxColumn5.Name = "ID";
+            gridViewTextBoxColumn5.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
+            gridViewTextBoxColumn5.Width = 51;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "Employee.EmployeejobNumber";
+            gridViewTextBoxColumn6.HeaderText = "الرقم الوظيفي";
+            gridViewTextBoxColumn6.Name = "EmployeejobNumber";
+            gridViewTextBoxColumn6.Width = 161;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "Employee.EmployeeName";
+            gridViewTextBoxColumn7.HeaderText = "اسم الموظف";
+            gridViewTextBoxColumn7.Name = "EmployeeName";
+            gridViewTextBoxColumn7.Width = 173;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "UserName";
+            gridViewTextBoxColumn8.HeaderText = "اسم المستخدم";
+            gridViewTextBoxColumn8.Name = "UserName";
+            gridViewTextBoxColumn8.Width = 219;
+            gridViewComboBoxColumn2.EnableExpressionEditor = false;
+            gridViewComboBoxColumn2.FieldName = "TypeUser";
+            gridViewComboBoxColumn2.HeaderText = "نوع المستخدم";
+            gridViewComboBoxColumn2.Name = "TypeUser";
+            gridViewComboBoxColumn2.Width = 162;
+            gridViewCommandColumn2.EnableExpressionEditor = false;
+            gridViewCommandColumn2.HeaderText = "تعديل ";
+            gridViewCommandColumn2.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn2.Image")));
+            gridViewCommandColumn2.ImageLayout = System.Windows.Forms.ImageLayout.Center;
+            gridViewCommandColumn2.MaxWidth = 45;
+            gridViewCommandColumn2.MinWidth = 45;
+            gridViewCommandColumn2.Name = "Savebtn";
+            gridViewCommandColumn2.Width = 45;
             this.UserGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewComboBoxColumn1,
-            gridViewCommandColumn1});
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewComboBoxColumn2,
+            gridViewCommandColumn2});
             this.UserGridView.MasterTemplate.EnableFiltering = true;
-            sortDescriptor1.PropertyName = "ID";
+            sortDescriptor2.PropertyName = "ID";
             this.UserGridView.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor1});
+            sortDescriptor2});
             this.UserGridView.Name = "UserGridView";
             this.UserGridView.ReadOnly = true;
             this.UserGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

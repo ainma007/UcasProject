@@ -14,8 +14,7 @@ namespace Ucas.Data.CommandClass
              
        public static bool newSupplier(Supplier Sup)
        {
-           try
-           {
+           
                db = new UcasProEntities();
                db.Configuration.ProxyCreationEnabled = false;
                db.Configuration.LazyLoadingEnabled = false;
@@ -23,18 +22,13 @@ namespace Ucas.Data.CommandClass
                db.SaveChanges();
                return true;
 
-           }
-           catch (Exception ex)
-           {
-
-               return false;
-           }
+           
+          
        }
 
        public static bool EditSupplier(Supplier Sup)
        {
-           try
-           {
+          
                db = new UcasProEntities();
                db.Configuration.LazyLoadingEnabled = false;
                db.Configuration.ProxyCreationEnabled = false;
@@ -48,19 +42,13 @@ namespace Ucas.Data.CommandClass
                db.SaveChanges();
                return true;
 
-           }
-           catch (Exception ex)
-           {
-
-
-               return false;
-           }
+           
+          
        }
 
        public static bool DeleteSupplier(int ID)
        {
-           try
-           {
+           
                db = new UcasProEntities();
                db.Configuration.LazyLoadingEnabled = false;
                db.Configuration.ProxyCreationEnabled = false;
@@ -68,12 +56,8 @@ namespace Ucas.Data.CommandClass
                db.Suppliers.Remove(q);
                db.SaveChanges();
                return true;
-           }
-           catch (Exception ex)
-           {
-
-               return false;
-           }
+         
+          
        }
 
        public static List<Supplier> GetAll()

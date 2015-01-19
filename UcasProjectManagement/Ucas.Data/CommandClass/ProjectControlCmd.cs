@@ -75,7 +75,7 @@ namespace Ucas.Data.CommandClass
                }
            }
 
-        public static bool EditProControl(int xid)
+        public static bool DeleteProControl(int xid)
            {
                try
                {

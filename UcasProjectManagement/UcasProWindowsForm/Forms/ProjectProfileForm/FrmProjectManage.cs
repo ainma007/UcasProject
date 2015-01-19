@@ -3,6 +3,7 @@ using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Ucas.Data.CommandClass;
+using System.Drawing;
 
 namespace UcasProWindowsForm.Forms.ProjectProfileForm
 {
@@ -16,7 +17,8 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
         Thread th;
         private void FrmProjectManage_Load(object sender, EventArgs e)
         {
-            
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             th = new Thread(GetAllProject);
             th.Start();
 
@@ -118,6 +120,10 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void FrmProjectManage_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
             this.Dispose();
         }
 

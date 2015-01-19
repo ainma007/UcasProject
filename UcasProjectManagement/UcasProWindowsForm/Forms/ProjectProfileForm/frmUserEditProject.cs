@@ -21,6 +21,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
         public int ProId { get; set; }
         private void frmUserEditProject_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
         }
 
@@ -103,7 +104,10 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
                     ProjectProfileCmd.EditProjectProfile(pro);
                     Operation.EndOperation(this);
                     RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
-
+                    GC.SuppressFinalize(pro);
+                    GC.Collect();
+                    GC.WaitForFullGCComplete();
+                    GC.WaitForPendingFinalizers();
                     this.Dispose();
                 }
                 catch (Xprema.XpremaException ex)
@@ -135,6 +139,7 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
 
         private void frmUserEditProject_FormClosed(object sender, FormClosedEventArgs e)
         {
+
             this.Dispose();
         }
     }

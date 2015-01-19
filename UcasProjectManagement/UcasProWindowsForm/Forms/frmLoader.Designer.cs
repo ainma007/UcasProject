@@ -44,14 +44,14 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(408, 214);
+            this.pictureBox1.Size = new System.Drawing.Size(463, 238);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // radWaitingBar1
             // 
-            this.radWaitingBar1.Location = new System.Drawing.Point(150, 188);
+            this.radWaitingBar1.Location = new System.Drawing.Point(198, 206);
             this.radWaitingBar1.Name = "radWaitingBar1";
             this.radWaitingBar1.Size = new System.Drawing.Size(253, 20);
             this.radWaitingBar1.TabIndex = 6;
@@ -75,11 +75,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(408, 214);
+            this.ClientSize = new System.Drawing.Size(463, 238);
             this.Controls.Add(this.radWaitingBar1);
             this.Controls.Add(this.radLabel1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(463, 238);
+            this.MinimumSize = new System.Drawing.Size(463, 238);
             this.Name = "frmLoader";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLoader";

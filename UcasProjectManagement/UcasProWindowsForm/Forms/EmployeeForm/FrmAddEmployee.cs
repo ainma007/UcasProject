@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Ucas.Data.CommandClass;
 using Ucas.Data;
+using System.Text.RegularExpressions;
 
 namespace UcasProWindowsForm.Forms.EmployeeForm
 {
@@ -65,6 +66,20 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                 EmployeejobNumberTextBox.TextBoxElement.Fill.BackColor = Color.White;
                 errorProvider1.Clear();
             }
+            
+           string mail =EmailTextBox.Text;
+
+           if (EmailTextBox.Text !="")
+           {
+               if (mail.IndexOf('@') == -1 || mail.IndexOf('.') == -1)
+               {
+                   errorProvider1.SetError(this.EmailTextBox, "من فضلك بريد صحيح ");
+                   return;
+
+               }
+               
+           }
+          
             #endregion
 
             Operation.BeginOperation(this);
@@ -114,6 +129,11 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             };
 
             UsersCmd.NewUser(tb);
+            GC.SuppressFinalize(tb);
+
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
         }
         private void ClearTxt()
         {
@@ -129,7 +149,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
         private void FrmAddEmployee_Load(object sender, EventArgs e)
         {
-           
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             //=========================
         }
       
@@ -155,6 +176,7 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
 
         private void FrmAddEmployee_FormClosed(object sender, FormClosedEventArgs e)
         {
+
             this.Dispose();
         }
 

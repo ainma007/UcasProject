@@ -24,7 +24,10 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
             Operation.BeginOperation(this);
             ///GetActivityByProjectID
+            ///
             this.Invoke((MethodInvoker)delegate {
+            this.ActivitiesColumnComboBox.MultiColumnComboBoxElement.DropDownWidth = 500;
+
             this.ActivitiesColumnComboBox.AutoFilter = true;
             this.ActivitiesColumnComboBox.ValueMember = "ID";
             this.ActivitiesColumnComboBox.DisplayMember = "ActivityName";
@@ -66,6 +69,8 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         }
         private void FrmSubActivityEdit_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             th = new Thread(FillActivty);
             th.Start();
         }

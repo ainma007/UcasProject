@@ -11,26 +11,19 @@ namespace Ucas.Data.CommandClass
         static UcasProEntities db = new UcasProEntities();
         public static bool addEmployee(Employee emp)
         {
-            try
-            {
+            
                 db = new UcasProEntities();
                 
                 db.Employees.Add(emp);
                 db.SaveChanges();
                 return true;
 
-            }
-            catch (Exception ex)
-            {
-
-                return false;
-            }
+          
         }
 
         public static bool EditEmployee(Employee emp)
         {
-            try
-            {
+           
                 db = new UcasProEntities();
               
                 var q = db.Employees.Where(p => p.ID == emp.ID).SingleOrDefault();
@@ -44,13 +37,8 @@ namespace Ucas.Data.CommandClass
                 db.SaveChanges();
                 return true;
 
-            }
-            catch (Exception ex)
-            {
-
-
-                return false;
-            }
+           
+           
         }
 
         public static bool DeleteEmployee(int ID)
@@ -58,17 +46,19 @@ namespace Ucas.Data.CommandClass
             try
             {
                 db = new UcasProEntities();
-                
+
                 var q = db.Employees.Where(p => p.ID == ID).SingleOrDefault();
                 db.Employees.Remove(q);
                 db.SaveChanges();
                 return true;
+           
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
                 return false;
             }
+              
         }
 
         public static int GetLastId()

@@ -146,13 +146,21 @@ C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindows
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\DevComponents.DotNetBar2.dll
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\EntityFramework.dll
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\Telerik.WinControls.dll
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\Telerik.WinControls.GridView.dll
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\Telerik.WinControls.Themes.TelerikMetro.dll
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\Telerik.WinControls.UI.dll
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\TelerikCommon.dll
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\Ucas.Data.dll
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\Xprema.dll
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\Ucas.Data.pdb
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\EntityFramework.xml
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\Xprema.pdb
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\Telerik.WinControls.xml
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\Telerik.WinControls.GridView.xml
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\bin\Debug\Telerik.WinControls.UI.xml
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.csprojResolveAssemblyReference.cache
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.AboutFrm.resources
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ActivitiesForm.FrmActivitiesEdit.resources
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ActivitiesForm.FrmAddActivities.resources
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.ActivitiesForm.FrmAddSubActivities.resources
@@ -193,6 +201,7 @@ C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindows
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.supplierForm.FrmManagementTheDonors.resources
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.supplierForm.FrmManagementSupplier.resources
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.FrmAddUserToProject.resources
+C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.FrmEditUserNameAndPassword.resources
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.FrmEditUserToProject.resources
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.frmUserEdit.resources
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.frmUserManage.resources
@@ -204,5 +213,3 @@ C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindows
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\RdlCompile.compiled
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.exe
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.pdb
-C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.UserSystemForm.FrmEditUserNameAndPassword.resources
-C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\UcasProWindowsForm\obj\Debug\UcasProWindowsForm.Forms.AboutFrm.resources
