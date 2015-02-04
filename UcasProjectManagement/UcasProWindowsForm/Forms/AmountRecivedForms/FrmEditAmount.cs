@@ -61,7 +61,22 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
         {
             #region "  CheckFillTextBox "
 
+            if (DonorsComboBox.Text == "")
+            {
 
+                DonorsComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+
+                errorProvider1.SetError(this.DonorsComboBox, "من فضلك ادخل الممول");
+
+                DonorsComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                DonorsComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
 
             if (DonorsComboBox.SelectedValue == null)
             {

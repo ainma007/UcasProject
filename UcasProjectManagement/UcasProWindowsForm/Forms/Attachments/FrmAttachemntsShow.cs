@@ -128,19 +128,26 @@ namespace UcasProWindowsForm.Forms.Attachments
      // 
             try
             {
-                File.Copy(p.FilePathX, sv.SelectedPath + "\\" + p.AttachmentName, true);
-                // Get the object used to communicate with the server.
+                //عملية الشبكة 
+               File.Copy(p.FilePathX, sv.SelectedPath + "\\" + p.AttachmentName, true);
+
+
+
+                ////عملية السيرفر 
+                //// Get the object used to communicate with the server.
                 //FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://mazoonadv.com/" + p.FilePathX);
                 //request.Method = WebRequestMethods.Ftp.DownloadFile;
 
                 //// This example assumes the FTP site uses anonymous logon.
-                //request.Credentials = new NetworkCredential("xpremax", "xprema");
+                //request.Credentials = new NetworkCredential("xpremax", "123456");
 
                 //FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 
                 //Stream responseStream = response.GetResponseStream();
                 //StreamReader reader = new StreamReader(responseStream);
-                //File.WriteAllText(sv.SelectedPath + "\\" + p.AttachmentName, reader.ReadToEnd());
+                ////File.WriteAllText(sv.SelectedPath + "\\" + p.AttachmentName, reader.ReadToEnd());
+                //byte[] bytes = reader.CurrentEncoding.GetBytes(reader.ReadToEnd());
+                //File.WriteAllBytes(sv.SelectedPath + "\\" + p.AttachmentName, bytes);
                 //Process.Start(sv.SelectedPath + "\\" + p.AttachmentName);
 
                 //Console.WriteLine("Download Complete, status {0}", response.StatusDescription);
@@ -148,7 +155,7 @@ namespace UcasProWindowsForm.Forms.Attachments
                 //reader.Close();
                 //response.Close();
             }
-            catch (System.UnauthorizedAccessException ex)
+            catch (System.UnauthorizedAccessException)
             {
                 radWaitingBar1.Invoke((MethodInvoker)delegate
            {

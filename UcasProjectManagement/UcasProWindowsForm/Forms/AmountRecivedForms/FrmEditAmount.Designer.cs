@@ -77,7 +77,7 @@
             // Coinlabel
             // 
             this.Coinlabel.ForeColor = System.Drawing.Color.Green;
-            this.Coinlabel.Location = new System.Drawing.Point(49, 93);
+            this.Coinlabel.Location = new System.Drawing.Point(49, 80);
             this.Coinlabel.Name = "Coinlabel";
             this.Coinlabel.Size = new System.Drawing.Size(100, 19);
             this.Coinlabel.TabIndex = 2;
@@ -86,7 +86,7 @@
             // saveBtn
             // 
             this.saveBtn.Image = global::UcasProWindowsForm.Properties.Resources.SaveChang;
-            this.saveBtn.Location = new System.Drawing.Point(184, 129);
+            this.saveBtn.Location = new System.Drawing.Point(184, 126);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(127, 44);
             this.saveBtn.TabIndex = 12;
@@ -147,7 +147,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(241, 94);
+            this.label3.Location = new System.Drawing.Point(241, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 10;
@@ -157,7 +157,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(241, 62);
+            this.label2.Location = new System.Drawing.Point(238, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 9;
@@ -168,7 +168,7 @@
             this.DateOfProecssPicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DateOfProecssPicker.CustomFormat = "dd/MM/yyyy";
             this.DateOfProecssPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateOfProecssPicker.Location = new System.Drawing.Point(154, 53);
+            this.DateOfProecssPicker.Location = new System.Drawing.Point(154, 48);
             this.DateOfProecssPicker.Name = "DateOfProecssPicker";
             this.DateOfProecssPicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DateOfProecssPicker.Size = new System.Drawing.Size(81, 22);
@@ -181,7 +181,7 @@
             // CostTextBox
             // 
             this.CostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CostTextBox.Location = new System.Drawing.Point(154, 90);
+            this.CostTextBox.Location = new System.Drawing.Point(154, 77);
             this.CostTextBox.Name = "CostTextBox";
             this.CostTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.CostTextBox.Size = new System.Drawing.Size(81, 22);
@@ -194,7 +194,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(241, 21);
+            this.label1.Location = new System.Drawing.Point(241, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 6;

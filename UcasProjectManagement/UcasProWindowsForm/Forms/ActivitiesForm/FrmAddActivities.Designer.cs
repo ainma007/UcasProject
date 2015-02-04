@@ -88,7 +88,7 @@
             // Coinlabel
             // 
             this.Coinlabel.ForeColor = System.Drawing.Color.Green;
-            this.Coinlabel.Location = new System.Drawing.Point(71, 173);
+            this.Coinlabel.Location = new System.Drawing.Point(72, 173);
             this.Coinlabel.Name = "Coinlabel";
             this.Coinlabel.Size = new System.Drawing.Size(100, 19);
             this.Coinlabel.TabIndex = 10;
@@ -98,7 +98,7 @@
             // 
             this.ActivitiesDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ActivitiesDescriptionTextBox.AutoSize = false;
-            this.ActivitiesDescriptionTextBox.Location = new System.Drawing.Point(25, 50);
+            this.ActivitiesDescriptionTextBox.Location = new System.Drawing.Point(26, 50);
             this.ActivitiesDescriptionTextBox.Multiline = true;
             this.ActivitiesDescriptionTextBox.Name = "ActivitiesDescriptionTextBox";
             this.ActivitiesDescriptionTextBox.Size = new System.Drawing.Size(231, 54);
@@ -120,7 +120,7 @@
             // radLabel6
             // 
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel6.Location = new System.Drawing.Point(261, 170);
+            this.radLabel6.Location = new System.Drawing.Point(259, 170);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(86, 18);
             this.radLabel6.TabIndex = 9;
@@ -130,7 +130,7 @@
             // TotalCostTextBox
             // 
             this.TotalCostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TotalCostTextBox.Location = new System.Drawing.Point(175, 170);
+            this.TotalCostTextBox.Location = new System.Drawing.Point(176, 170);
             this.TotalCostTextBox.Name = "TotalCostTextBox";
             this.TotalCostTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TotalCostTextBox.Size = new System.Drawing.Size(81, 22);
@@ -144,7 +144,7 @@
             this.EndDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.EndDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.EndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.EndDateTimePicker.Location = new System.Drawing.Point(164, 140);
+            this.EndDateTimePicker.Location = new System.Drawing.Point(165, 140);
             this.EndDateTimePicker.Name = "EndDateTimePicker";
             this.EndDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.EndDateTimePicker.Size = new System.Drawing.Size(92, 22);
@@ -157,7 +157,7 @@
             // radLabel4
             // 
             this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel4.Location = new System.Drawing.Point(257, 140);
+            this.radLabel4.Location = new System.Drawing.Point(263, 140);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(65, 18);
             this.radLabel4.TabIndex = 6;
@@ -169,7 +169,7 @@
             this.StartDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.StartDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.StartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StartDateTimePicker.Location = new System.Drawing.Point(164, 110);
+            this.StartDateTimePicker.Location = new System.Drawing.Point(165, 110);
             this.StartDateTimePicker.Name = "StartDateTimePicker";
             this.StartDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartDateTimePicker.Size = new System.Drawing.Size(92, 22);
@@ -182,7 +182,7 @@
             // radLabel3
             // 
             this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel3.Location = new System.Drawing.Point(260, 110);
+            this.radLabel3.Location = new System.Drawing.Point(263, 114);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(55, 18);
             this.radLabel3.TabIndex = 5;
@@ -192,7 +192,7 @@
             // radLabel2
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel2.Location = new System.Drawing.Point(257, 52);
+            this.radLabel2.Location = new System.Drawing.Point(260, 54);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(72, 18);
             this.radLabel2.TabIndex = 3;
@@ -202,7 +202,7 @@
             // radLabel1
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel1.Location = new System.Drawing.Point(259, 23);
+            this.radLabel1.Location = new System.Drawing.Point(260, 23);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(66, 18);
             this.radLabel1.TabIndex = 1;
@@ -212,7 +212,7 @@
             // ActivitiesNameTextBox
             // 
             this.ActivitiesNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ActivitiesNameTextBox.Location = new System.Drawing.Point(25, 21);
+            this.ActivitiesNameTextBox.Location = new System.Drawing.Point(26, 21);
             this.ActivitiesNameTextBox.Name = "ActivitiesNameTextBox";
             this.ActivitiesNameTextBox.Size = new System.Drawing.Size(231, 22);
             this.ActivitiesNameTextBox.TabIndex = 0;

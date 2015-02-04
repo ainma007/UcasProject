@@ -22,7 +22,9 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         private void FillComboBox()
         {
             Operation.BeginOperation(this);
+            this.SubActivtiesComboBox.MultiColumnComboBoxElement.DropDownWidth = 500;
 
+            this.SupplierComboBox.MultiColumnComboBoxElement.DropDownWidth = 300;
             this.Invoke((MethodInvoker)delegate
             {
                 this.SubActivtiesComboBox.AutoFilter = true;
@@ -76,8 +78,23 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
-        { 
+        {
             #region "  CheckFillTextBox "
+
+            if (SubActivtiesComboBox.Text == "")
+            {
+
+                SubActivtiesComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.SubActivtiesComboBox, "من فضلك ادخل النشاط");
+                SubActivtiesComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                SubActivtiesComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
             if (SubActivtiesComboBox.SelectedValue == null)
             {
 
@@ -127,7 +144,39 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 errorProvider1.Clear();
             }
 
-              #endregion
+
+            ////
+
+
+            if (SupplierComboBox.Text == "")
+            {
+
+                SupplierComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.SupplierComboBox, "من فضلك ادخل المورد");
+                SupplierComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                SupplierComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+            if (SupplierComboBox.SelectedValue == null)
+            {
+
+                SupplierComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.SupplierComboBox, "من فضلك ادخل المورد");
+                SupplierComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                SupplierComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+            #endregion
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
                 try

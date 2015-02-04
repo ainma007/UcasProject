@@ -53,9 +53,9 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.FinanAddBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.FinanMangBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.FinanMangBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.UserstoolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -67,11 +67,11 @@
             this.UserMangBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
@@ -141,7 +141,7 @@
             this.ProjectMangBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ProjectMangBtn.Name = "ProjectMangBtn";
             this.ProjectMangBtn.Size = new System.Drawing.Size(168, 38);
-            this.ProjectMangBtn.Text = "ادارة المشارع";
+            this.ProjectMangBtn.Text = "إدارة المشاريع";
             this.ProjectMangBtn.Click += new System.EventHandler(this.ProjectMangBtn_Click);
             // 
             // toolStripSeparator1
@@ -197,9 +197,9 @@
             this.toolStripDropDownButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FinanAddBtn,
+            this.FinanMangBtn,
             this.toolStripSeparator2,
             this.toolStripMenuItem2,
-            this.FinanMangBtn,
             this.toolStripMenuItem3});
             this.toolStripDropDownButton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripDropDownButton2.Image = global::UcasProWindowsForm.Properties.Resources.Supplier;
@@ -215,24 +215,9 @@
             this.FinanAddBtn.Image = global::UcasProWindowsForm.Properties.Resources.Donorsadd;
             this.FinanAddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.FinanAddBtn.Name = "FinanAddBtn";
-            this.FinanAddBtn.Size = new System.Drawing.Size(153, 38);
+            this.FinanAddBtn.Size = new System.Drawing.Size(168, 38);
             this.FinanAddBtn.Text = "اضافة ممول";
             this.FinanAddBtn.Click += new System.EventHandler(this.FinanAddBtn_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(150, 6);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem2.Image = global::UcasProWindowsForm.Properties.Resources.AddSupp;
-            this.toolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(153, 38);
-            this.toolStripMenuItem2.Text = "اضافة مورد";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.SuppAddBtn_Click);
             // 
             // FinanMangBtn
             // 
@@ -240,9 +225,24 @@
             this.FinanMangBtn.Image = global::UcasProWindowsForm.Properties.Resources.Donors;
             this.FinanMangBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.FinanMangBtn.Name = "FinanMangBtn";
-            this.FinanMangBtn.Size = new System.Drawing.Size(153, 38);
+            this.FinanMangBtn.Size = new System.Drawing.Size(168, 38);
             this.FinanMangBtn.Text = "ادارة الممولين";
             this.FinanMangBtn.Click += new System.EventHandler(this.FinanMangBtn_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(165, 6);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem2.Image = global::UcasProWindowsForm.Properties.Resources.AddSupp;
+            this.toolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(168, 38);
+            this.toolStripMenuItem2.Text = "اضافة مورد";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.SuppAddBtn_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -250,7 +250,7 @@
             this.toolStripMenuItem3.Image = global::UcasProWindowsForm.Properties.Resources.EditSupp;
             this.toolStripMenuItem3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(153, 38);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(168, 38);
             this.toolStripMenuItem3.Text = "ادارة الموردين";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.SupmanageBtn_Click);
             // 
@@ -337,6 +337,11 @@
             this.toolStripButton1.Size = new System.Drawing.Size(77, 36);
             this.toolStripButton1.Text = "تحديث ";
             this.toolStripButton1.Click += new System.EventHandler(this.RefreshBtn_Click);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 39);
             // 
             // radGridView1
             // 
@@ -459,6 +464,7 @@
             this.radGridView1.TabIndex = 0;
             this.radGridView1.Text = "radGridView1";
             this.radGridView1.ThemeName = "TelerikMetro";
+            this.radGridView1.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.radGridView1_CellFormatting);
             this.radGridView1.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.radGridView1_CommandCellClick);
             // 
             // statusStrip1
@@ -491,11 +497,6 @@
             this.radGroupBox1.TabIndex = 8;
             this.radGroupBox1.Text = "قائمة المشاريع";
             this.radGroupBox1.ThemeName = "TelerikMetro";
-            // 
-            // toolStripSeparator9
-            // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 39);
             // 
             // FrmAdmin
             // 

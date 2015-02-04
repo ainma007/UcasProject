@@ -198,7 +198,7 @@
             // 
             this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AddBtn.Image = global::UcasProWindowsForm.Properties.Resources.addadd;
-            this.AddBtn.Location = new System.Drawing.Point(208, 191);
+            this.AddBtn.Location = new System.Drawing.Point(208, 201);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(127, 44);
             this.AddBtn.TabIndex = 5;

@@ -122,9 +122,9 @@ namespace UcasProWindowsForm.Forms.supplierForm
                     try
                     {
                         Operation.BeginOperation(this);
-                      
 
-                        if (TheDonorCmd.DeleteDonor(int.Parse(DonersGridView.CurrentRow.Cells[0].Value.ToString())))
+
+                        if (TheDonorCmd.DeleteDonor(((Ucas.Data.TheDonor)this.DonersGridView.CurrentRow.DataBoundItem).ID))
                         {
                             
                             FrmManagementFinanciers_Load(null, null);

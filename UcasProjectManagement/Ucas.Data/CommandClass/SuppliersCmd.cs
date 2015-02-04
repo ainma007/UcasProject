@@ -48,14 +48,21 @@ namespace Ucas.Data.CommandClass
 
        public static bool DeleteSupplier(int ID)
        {
-           
+           try
+           {
                db = new UcasProEntities();
-               db.Configuration.LazyLoadingEnabled = false;
-               db.Configuration.ProxyCreationEnabled = false;
+
                var q = db.Suppliers.Where(p => p.ID == ID).SingleOrDefault();
                db.Suppliers.Remove(q);
                db.SaveChanges();
                return true;
+           }
+           catch (Exception)
+           {
+
+               return false;
+           }
+              
          
           
        }

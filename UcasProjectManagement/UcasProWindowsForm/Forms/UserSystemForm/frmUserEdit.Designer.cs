@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            this.components = new System.ComponentModel.Container();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.employeeNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
@@ -43,6 +44,7 @@
             this.TypeDropDownList = new Telerik.WinControls.UI.RadDropDownList();
             this.label1 = new System.Windows.Forms.Label();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeNameTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -53,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TypeDropDownList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,7 +126,7 @@
             // 
             this.btnOky.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOky.Image = global::UcasProWindowsForm.Properties.Resources.SaveChang;
-            this.btnOky.Location = new System.Drawing.Point(231, 188);
+            this.btnOky.Location = new System.Drawing.Point(231, 184);
             this.btnOky.Name = "btnOky";
             this.btnOky.Size = new System.Drawing.Size(133, 37);
             this.btnOky.TabIndex = 9;
@@ -157,15 +160,15 @@
             // 
             this.TypeDropDownList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TypeDropDownList.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem1.Text = "مدير";
-            radListDataItem2.Text = "منسق";
-            radListDataItem3.Text = "محاسب";
-            radListDataItem4.Text = "غير فعال";
-            this.TypeDropDownList.Items.Add(radListDataItem1);
-            this.TypeDropDownList.Items.Add(radListDataItem2);
-            this.TypeDropDownList.Items.Add(radListDataItem3);
-            this.TypeDropDownList.Items.Add(radListDataItem4);
-            this.TypeDropDownList.Location = new System.Drawing.Point(143, 128);
+            radListDataItem5.Text = "مدير";
+            radListDataItem6.Text = "منسق";
+            radListDataItem7.Text = "محاسب";
+            radListDataItem8.Text = "غير فعال";
+            this.TypeDropDownList.Items.Add(radListDataItem5);
+            this.TypeDropDownList.Items.Add(radListDataItem6);
+            this.TypeDropDownList.Items.Add(radListDataItem7);
+            this.TypeDropDownList.Items.Add(radListDataItem8);
+            this.TypeDropDownList.Location = new System.Drawing.Point(143, 126);
             this.TypeDropDownList.Name = "TypeDropDownList";
             this.TypeDropDownList.Size = new System.Drawing.Size(136, 19);
             this.TypeDropDownList.TabIndex = 9;
@@ -175,11 +178,16 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(283, 131);
+            this.label1.Location = new System.Drawing.Point(283, 129);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "النوع:";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
             // 
             // frmUserEdit
             // 
@@ -214,6 +222,7 @@
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TypeDropDownList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -232,5 +241,6 @@
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private Telerik.WinControls.UI.RadDropDownList TypeDropDownList;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

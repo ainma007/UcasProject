@@ -50,19 +50,23 @@ namespace Ucas.Data.CommandClass
 
         public static bool DeleteDonor(int xid)
         {
-            
+            try
+            {
                 db = new UcasProEntities();
-                TheDonor tb = new TheDonor();
-                tb = db.TheDonors.Where(f => f.ID == xid).Single();
 
-                if (tb.ID != 0)
-                {
-                    db.TheDonors.Remove(tb);
-                    db.SaveChanges();
-                    return true;
-                }
+                var q = db.TheDonors.Where(p => p.ID == xid).SingleOrDefault();
+                db.TheDonors.Remove(q);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
                 return false;
-            
+            }
+           
+                          
+                          
            
         }
 

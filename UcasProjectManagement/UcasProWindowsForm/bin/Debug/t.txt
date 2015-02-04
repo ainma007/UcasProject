@@ -1,2 +1,2 @@
-Cannot insert duplicate key row in object 'dbo.UserTbs' with unique index 'IX_UserTbs'. The duplicate key value is (A2).
+Violation of PRIMARY KEY constraint 'PK_ProjectControls'. Cannot insert duplicate key in object 'dbo.ProjectControls'. The duplicate key value is (4, 3).
 The statement has been terminated.

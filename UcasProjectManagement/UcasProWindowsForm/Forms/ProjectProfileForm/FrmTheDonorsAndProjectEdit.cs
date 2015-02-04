@@ -73,6 +73,20 @@ namespace UcasProWindowsForm.Forms.ProjectProfileForm
             try
             {
                 #region "  CheckFillTextBox "
+                if (DonorsColumnComboBox.Text == "")
+                {
+                    DonorsColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                    errorProvider1.SetError(this.DonorsColumnComboBox, "من فضلك ادخل اسم الممول");
+
+                    DonorsColumnComboBox.Focus();
+
+                    return;
+                }
+                else
+                {
+                    DonorsColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                }
+
                 if (DonorsColumnComboBox.SelectedValue == null)
                 {
                     DonorsColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;

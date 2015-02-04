@@ -12,7 +12,7 @@ namespace UcasProWindowsForm.Forms.supplierForm
         public FrmDonorsEdit()
         {
             InitializeComponent();
-            RadMessageBox.SetThemeName("telerikMetroBlueTheme");
+            RadMessageBox.SetThemeName("TelerikMetro");
         }
         public int XDonorsId { get; set; }
         public Ucas.Data.TheDonor TragetDoner { get; set; }

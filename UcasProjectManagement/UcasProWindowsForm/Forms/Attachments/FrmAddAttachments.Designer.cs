@@ -61,11 +61,14 @@
             // 
             // SaveBtn
             // 
+            this.SaveBtn.Image = global::UcasProWindowsForm.Properties.Resources._1422318658_Upload;
+            this.SaveBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.SaveBtn.Location = new System.Drawing.Point(251, 68);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(110, 37);
             this.SaveBtn.TabIndex = 0;
             this.SaveBtn.Text = "رفع الملف";
+            this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SaveBtn.ThemeName = "TelerikMetro";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 

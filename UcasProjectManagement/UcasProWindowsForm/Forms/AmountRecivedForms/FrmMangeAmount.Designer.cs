@@ -149,7 +149,6 @@
             gridViewTextBoxColumn3,
             gridViewTextBoxColumn4});
             this.radGridView1.MasterTemplate.EnableFiltering = true;
-            this.radGridView1.MasterTemplate.EnablePaging = true;
             this.radGridView1.MasterTemplate.SearchRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.ReadOnly = true;

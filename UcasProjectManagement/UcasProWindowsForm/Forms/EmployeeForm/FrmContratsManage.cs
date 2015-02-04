@@ -121,7 +121,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                 if (RadMessageBox.Show(this, OperationX.DeleteMessage, "حذف", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
                     Operation.BeginOperation(this);
-                    if (ContractCmd.DeleteContract(int.Parse(ContractsGridView.CurrentRow.Cells[0].Value.ToString())))
+                    if (ContractCmd.DeleteContract(((Ucas.Data.Contract)this.ContractsGridView.CurrentRow.DataBoundItem).ID))
+
                     {
                         Operation.ShowToustOk(OperationX.DeletedMessage, this);
 

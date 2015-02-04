@@ -103,9 +103,9 @@
             // AdressTextBox
             // 
             this.AdressTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AdressTextBox.Location = new System.Drawing.Point(12, 174);
+            this.AdressTextBox.Location = new System.Drawing.Point(22, 174);
             this.AdressTextBox.Name = "AdressTextBox";
-            this.AdressTextBox.Size = new System.Drawing.Size(232, 22);
+            this.AdressTextBox.Size = new System.Drawing.Size(222, 22);
             this.AdressTextBox.TabIndex = 27;
             this.AdressTextBox.ThemeName = "TelerikMetro";
             // 
@@ -146,10 +146,10 @@
             // EmailTextBox
             // 
             this.EmailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmailTextBox.Location = new System.Drawing.Point(12, 147);
+            this.EmailTextBox.Location = new System.Drawing.Point(22, 147);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.EmailTextBox.Size = new System.Drawing.Size(232, 22);
+            this.EmailTextBox.Size = new System.Drawing.Size(222, 22);
             this.EmailTextBox.TabIndex = 26;
             this.EmailTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.EmailTextBox.ThemeName = "TelerikMetro";
@@ -204,9 +204,9 @@
             // SuppliersNaturalTextBox
             // 
             this.SuppliersNaturalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SuppliersNaturalTextBox.Location = new System.Drawing.Point(12, 63);
+            this.SuppliersNaturalTextBox.Location = new System.Drawing.Point(22, 63);
             this.SuppliersNaturalTextBox.Name = "SuppliersNaturalTextBox";
-            this.SuppliersNaturalTextBox.Size = new System.Drawing.Size(232, 22);
+            this.SuppliersNaturalTextBox.Size = new System.Drawing.Size(222, 22);
             this.SuppliersNaturalTextBox.TabIndex = 22;
             this.SuppliersNaturalTextBox.ThemeName = "TelerikMetro";
             // 
@@ -224,9 +224,9 @@
             // NameTextBox
             // 
             this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.NameTextBox.Location = new System.Drawing.Point(12, 36);
+            this.NameTextBox.Location = new System.Drawing.Point(22, 36);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(232, 22);
+            this.NameTextBox.Size = new System.Drawing.Size(222, 22);
             this.NameTextBox.TabIndex = 21;
             this.NameTextBox.ThemeName = "TelerikMetro";
             // 

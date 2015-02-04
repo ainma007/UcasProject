@@ -71,6 +71,7 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.radGroupBox1.Controls.Add(this.Coinlabel);
             this.radGroupBox1.Controls.Add(this.radLabel5);
             this.radGroupBox1.Controls.Add(this.SaveBtn);
@@ -89,6 +90,7 @@
             this.radGroupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radGroupBox1.FooterImageAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.radGroupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.radGroupBox1.HeaderText = "بيانات التعديل";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
@@ -100,7 +102,7 @@
             // Coinlabel
             // 
             this.Coinlabel.ForeColor = System.Drawing.Color.Green;
-            this.Coinlabel.Location = new System.Drawing.Point(69, 176);
+            this.Coinlabel.Location = new System.Drawing.Point(71, 173);
             this.Coinlabel.Name = "Coinlabel";
             this.Coinlabel.Size = new System.Drawing.Size(100, 19);
             this.Coinlabel.TabIndex = 21;
@@ -110,7 +112,7 @@
             // 
             this.radLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel5.Location = new System.Drawing.Point(256, 205);
+            this.radLabel5.Location = new System.Drawing.Point(262, 202);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(40, 18);
             this.radLabel5.TabIndex = 20;
@@ -124,7 +126,7 @@
             this.SaveBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SaveBtn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBtn.Image = global::UcasProWindowsForm.Properties.Resources.SaveChang;
-            this.SaveBtn.Location = new System.Drawing.Point(212, 236);
+            this.SaveBtn.Location = new System.Drawing.Point(220, 236);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(127, 44);
             this.SaveBtn.TabIndex = 7;
@@ -145,7 +147,7 @@
             radListDataItem2.Text = "غير فعال";
             this.StatusDropDownList.Items.Add(radListDataItem1);
             this.StatusDropDownList.Items.Add(radListDataItem2);
-            this.StatusDropDownList.Location = new System.Drawing.Point(118, 204);
+            this.StatusDropDownList.Location = new System.Drawing.Point(120, 201);
             this.StatusDropDownList.Name = "StatusDropDownList";
             this.StatusDropDownList.Size = new System.Drawing.Size(136, 21);
             this.StatusDropDownList.TabIndex = 6;
@@ -156,7 +158,7 @@
             this.ActivitiesDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ActivitiesDescriptionTextBox.AutoSize = false;
             this.ActivitiesDescriptionTextBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActivitiesDescriptionTextBox.Location = new System.Drawing.Point(19, 61);
+            this.ActivitiesDescriptionTextBox.Location = new System.Drawing.Point(21, 58);
             this.ActivitiesDescriptionTextBox.Multiline = true;
             this.ActivitiesDescriptionTextBox.Name = "ActivitiesDescriptionTextBox";
             this.ActivitiesDescriptionTextBox.Size = new System.Drawing.Size(235, 54);
@@ -167,7 +169,7 @@
             // 
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel6.Location = new System.Drawing.Point(255, 176);
+            this.radLabel6.Location = new System.Drawing.Point(256, 178);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(91, 18);
             this.radLabel6.TabIndex = 19;
@@ -178,7 +180,7 @@
             // 
             this.TotalCostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TotalCostTextBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalCostTextBox.Location = new System.Drawing.Point(173, 176);
+            this.TotalCostTextBox.Location = new System.Drawing.Point(175, 174);
             this.TotalCostTextBox.Name = "TotalCostTextBox";
             this.TotalCostTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TotalCostTextBox.Size = new System.Drawing.Size(81, 21);
@@ -193,7 +195,7 @@
             this.EndDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.EndDateTimePicker.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.EndDateTimePicker.Location = new System.Drawing.Point(154, 149);
+            this.EndDateTimePicker.Location = new System.Drawing.Point(156, 146);
             this.EndDateTimePicker.Name = "EndDateTimePicker";
             this.EndDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.EndDateTimePicker.Size = new System.Drawing.Size(100, 21);
@@ -207,7 +209,7 @@
             // 
             this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel4.Location = new System.Drawing.Point(251, 149);
+            this.radLabel4.Location = new System.Drawing.Point(258, 146);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(72, 18);
             this.radLabel4.TabIndex = 18;
@@ -220,7 +222,7 @@
             this.StartDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.StartDateTimePicker.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StartDateTimePicker.Location = new System.Drawing.Point(154, 121);
+            this.StartDateTimePicker.Location = new System.Drawing.Point(156, 118);
             this.StartDateTimePicker.Name = "StartDateTimePicker";
             this.StartDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartDateTimePicker.Size = new System.Drawing.Size(100, 21);
@@ -234,7 +236,7 @@
             // 
             this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel3.Location = new System.Drawing.Point(254, 122);
+            this.radLabel3.Location = new System.Drawing.Point(259, 118);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(61, 18);
             this.radLabel3.TabIndex = 17;
@@ -245,7 +247,7 @@
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(252, 77);
+            this.radLabel2.Location = new System.Drawing.Point(258, 72);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(76, 18);
             this.radLabel2.TabIndex = 14;
@@ -256,7 +258,7 @@
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(253, 36);
+            this.radLabel1.Location = new System.Drawing.Point(258, 32);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(77, 18);
             this.radLabel1.TabIndex = 12;
@@ -267,11 +269,17 @@
             // 
             this.ActivitiesNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ActivitiesNameTextBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActivitiesNameTextBox.Location = new System.Drawing.Point(19, 34);
+            this.ActivitiesNameTextBox.Location = new System.Drawing.Point(21, 30);
             this.ActivitiesNameTextBox.Name = "ActivitiesNameTextBox";
             this.ActivitiesNameTextBox.Size = new System.Drawing.Size(235, 21);
             this.ActivitiesNameTextBox.TabIndex = 1;
             this.ActivitiesNameTextBox.ThemeName = "TelerikMetro";
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.ActivitiesNameTextBox.GetChildAt(0).GetChildAt(2))).BoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.ActivitiesNameTextBox.GetChildAt(0).GetChildAt(2))).BottomShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(9)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.ActivitiesNameTextBox.GetChildAt(0).GetChildAt(2))).GradientStyle = Telerik.WinControls.GradientStyles.Solid;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.ActivitiesNameTextBox.GetChildAt(0).GetChildAt(2))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.Default;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.ActivitiesNameTextBox.GetChildAt(0).GetChildAt(2))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.ActivitiesNameTextBox.GetChildAt(0).GetChildAt(2))).ClipDrawing = true;
             // 
             // errorProvider1
             // 
@@ -282,6 +290,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(352, 285);
             this.Controls.Add(this.radGroupBox1);
             this.MaximizeBox = false;

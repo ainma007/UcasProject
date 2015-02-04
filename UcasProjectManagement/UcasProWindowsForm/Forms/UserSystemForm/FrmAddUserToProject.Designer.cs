@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.radMultiColumnComboBox2 = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.ProjectCombo = new Telerik.WinControls.UI.RadMultiColumnComboBox();
@@ -43,6 +43,7 @@
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.UserListComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.userTbBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox2.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox2.EditorControl.MasterTemplate)).BeginInit();
@@ -58,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.UserListComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserListComboBox.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userTbBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,22 +112,22 @@
             this.ProjectCombo.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.ProjectCombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.ProjectCombo.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "ID";
-            gridViewTextBoxColumn1.HeaderText = "ID";
-            gridViewTextBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            gridViewTextBoxColumn1.IsVisible = false;
-            gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn1.Width = 76;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "ProjectName";
-            gridViewTextBoxColumn2.HeaderText = "اسم المشروع";
-            gridViewTextBoxColumn2.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            gridViewTextBoxColumn2.Name = "ProjectName";
-            gridViewTextBoxColumn2.Width = 220;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "ID";
+            gridViewTextBoxColumn5.HeaderText = "ID";
+            gridViewTextBoxColumn5.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            gridViewTextBoxColumn5.IsVisible = false;
+            gridViewTextBoxColumn5.Name = "ID";
+            gridViewTextBoxColumn5.Width = 76;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "ProjectName";
+            gridViewTextBoxColumn6.HeaderText = "اسم المشروع";
+            gridViewTextBoxColumn6.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            gridViewTextBoxColumn6.Name = "ProjectName";
+            gridViewTextBoxColumn6.Width = 220;
             this.ProjectCombo.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2});
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6});
             this.ProjectCombo.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ProjectCombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
             this.ProjectCombo.EditorControl.Name = "NestedRadGridView";
@@ -209,30 +211,30 @@
             this.UserListComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.UserListComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
             this.UserListComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn1.DataType = typeof(int);
-            gridViewDecimalColumn1.EnableExpressionEditor = false;
-            gridViewDecimalColumn1.FieldName = "ID";
-            gridViewDecimalColumn1.HeaderText = "ID";
-            gridViewDecimalColumn1.IsAutoGenerated = true;
-            gridViewDecimalColumn1.IsVisible = false;
-            gridViewDecimalColumn1.Name = "ID";
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "Employee.EmployeeName";
-            gridViewTextBoxColumn3.HeaderText = "اسم الموظف";
-            gridViewTextBoxColumn3.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            gridViewTextBoxColumn3.IsAutoGenerated = true;
-            gridViewTextBoxColumn3.Name = "Employee.EmployeeName";
-            gridViewTextBoxColumn3.Width = 126;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "Employee.EmployeejobNumber";
-            gridViewTextBoxColumn4.HeaderText = "الرقم الوظيفي";
-            gridViewTextBoxColumn4.Name = "Employee.EmployeejobNumber";
-            gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn4.Width = 95;
+            gridViewDecimalColumn2.DataType = typeof(int);
+            gridViewDecimalColumn2.EnableExpressionEditor = false;
+            gridViewDecimalColumn2.FieldName = "ID";
+            gridViewDecimalColumn2.HeaderText = "ID";
+            gridViewDecimalColumn2.IsAutoGenerated = true;
+            gridViewDecimalColumn2.IsVisible = false;
+            gridViewDecimalColumn2.Name = "ID";
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "Employee.EmployeeName";
+            gridViewTextBoxColumn7.HeaderText = "اسم الموظف";
+            gridViewTextBoxColumn7.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            gridViewTextBoxColumn7.IsAutoGenerated = true;
+            gridViewTextBoxColumn7.Name = "Employee.EmployeeName";
+            gridViewTextBoxColumn7.Width = 126;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "Employee.EmployeejobNumber";
+            gridViewTextBoxColumn8.HeaderText = "الرقم الوظيفي";
+            gridViewTextBoxColumn8.Name = "Employee.EmployeejobNumber";
+            gridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn8.Width = 95;
             this.UserListComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn1,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4});
+            gridViewDecimalColumn2,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8});
             this.UserListComboBox.EditorControl.MasterTemplate.DataSource = this.userTbBindingSource;
             this.UserListComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.UserListComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
@@ -252,6 +254,11 @@
             // userTbBindingSource
             // 
             this.userTbBindingSource.DataSource = typeof(Ucas.Data.UserTb);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
             // 
             // FrmAddUserToProject
             // 
@@ -291,6 +298,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.UserListComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserListComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userTbBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -307,5 +315,6 @@
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         private System.Windows.Forms.BindingSource userTbBindingSource;
         private Telerik.WinControls.UI.RadMultiColumnComboBox UserListComboBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

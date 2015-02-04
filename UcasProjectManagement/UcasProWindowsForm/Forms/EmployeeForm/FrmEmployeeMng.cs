@@ -83,7 +83,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
                 if (RadMessageBox.Show(this, OperationX.DeleteMessage, "حذف السجلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
                     Operation.BeginOperation(this);
-                    if (EmployeeCmd.DeleteEmployee(int.Parse(EmployeeGridView.CurrentRow.Cells[0].Value.ToString())))
+                    if (EmployeeCmd.DeleteEmployee(((Ucas.Data.Employee)this.EmployeeGridView.CurrentRow.DataBoundItem).ID))
+
                     {
                         Operation.EndOperation(this);
                         FrmEmployeeMng_Load(null, null);

@@ -159,7 +159,7 @@
             radListDataItem2.Text = "انثى";
             this.GenderDropDownList.Items.Add(radListDataItem1);
             this.GenderDropDownList.Items.Add(radListDataItem2);
-            this.GenderDropDownList.Location = new System.Drawing.Point(214, 67);
+            this.GenderDropDownList.Location = new System.Drawing.Point(214, 66);
             this.GenderDropDownList.Name = "GenderDropDownList";
             // 
             // 
@@ -184,7 +184,7 @@
             // radLabel6
             // 
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel6.Location = new System.Drawing.Point(301, 94);
+            this.radLabel6.Location = new System.Drawing.Point(301, 93);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(75, 18);
             this.radLabel6.TabIndex = 29;
@@ -204,7 +204,7 @@
             // radLabel2
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel2.Location = new System.Drawing.Point(299, 68);
+            this.radLabel2.Location = new System.Drawing.Point(299, 67);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(39, 18);
             this.radLabel2.TabIndex = 24;

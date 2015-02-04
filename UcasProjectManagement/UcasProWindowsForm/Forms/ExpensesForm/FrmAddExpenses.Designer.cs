@@ -110,7 +110,7 @@
             // Coinlabel
             // 
             this.Coinlabel.ForeColor = System.Drawing.Color.Green;
-            this.Coinlabel.Location = new System.Drawing.Point(69, 159);
+            this.Coinlabel.Location = new System.Drawing.Point(89, 158);
             this.Coinlabel.Name = "Coinlabel";
             this.Coinlabel.Size = new System.Drawing.Size(100, 19);
             this.Coinlabel.TabIndex = 14;
@@ -119,7 +119,7 @@
             // radLabel4
             // 
             this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel4.Location = new System.Drawing.Point(262, 215);
+            this.radLabel4.Location = new System.Drawing.Point(282, 214);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(37, 18);
             this.radLabel4.TabIndex = 8;
@@ -170,7 +170,7 @@
             this.SupplierComboBox.EditorControl.ShowGroupPanel = false;
             this.SupplierComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.SupplierComboBox.EditorControl.TabIndex = 0;
-            this.SupplierComboBox.Location = new System.Drawing.Point(12, 213);
+            this.SupplierComboBox.Location = new System.Drawing.Point(32, 212);
             this.SupplierComboBox.Name = "SupplierComboBox";
             this.SupplierComboBox.Size = new System.Drawing.Size(240, 20);
             this.SupplierComboBox.TabIndex = 6;
@@ -180,7 +180,7 @@
             // BillTextBox
             // 
             this.BillTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BillTextBox.Location = new System.Drawing.Point(139, 126);
+            this.BillTextBox.Location = new System.Drawing.Point(159, 125);
             this.BillTextBox.Name = "BillTextBox";
             this.BillTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BillTextBox.Size = new System.Drawing.Size(113, 22);
@@ -191,7 +191,7 @@
             // radLabel7
             // 
             this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel7.Location = new System.Drawing.Point(257, 46);
+            this.radLabel7.Location = new System.Drawing.Point(277, 45);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(76, 18);
             this.radLabel7.TabIndex = 2;
@@ -249,7 +249,7 @@
             this.SubActivtiesComboBox.EditorControl.ShowGroupPanel = false;
             this.SubActivtiesComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.SubActivtiesComboBox.EditorControl.TabIndex = 0;
-            this.SubActivtiesComboBox.Location = new System.Drawing.Point(12, 40);
+            this.SubActivtiesComboBox.Location = new System.Drawing.Point(32, 39);
             this.SubActivtiesComboBox.Name = "SubActivtiesComboBox";
             this.SubActivtiesComboBox.Size = new System.Drawing.Size(240, 24);
             this.SubActivtiesComboBox.TabIndex = 0;
@@ -273,7 +273,7 @@
             // radLabel6
             // 
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel6.Location = new System.Drawing.Point(258, 158);
+            this.radLabel6.Location = new System.Drawing.Point(277, 157);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(86, 18);
             this.radLabel6.TabIndex = 9;
@@ -283,7 +283,7 @@
             // RequiarAmountTextBox
             // 
             this.RequiarAmountTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RequiarAmountTextBox.Location = new System.Drawing.Point(171, 157);
+            this.RequiarAmountTextBox.Location = new System.Drawing.Point(191, 156);
             this.RequiarAmountTextBox.Name = "RequiarAmountTextBox";
             this.RequiarAmountTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.RequiarAmountTextBox.Size = new System.Drawing.Size(81, 22);
@@ -295,7 +295,7 @@
             // radLabel5
             // 
             this.radLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel5.Location = new System.Drawing.Point(257, 186);
+            this.radLabel5.Location = new System.Drawing.Point(277, 185);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(82, 18);
             this.radLabel5.TabIndex = 7;
@@ -307,7 +307,7 @@
             this.DateOfProecssPicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DateOfProecssPicker.CustomFormat = "dd/MM/yyyy";
             this.DateOfProecssPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateOfProecssPicker.Location = new System.Drawing.Point(157, 97);
+            this.DateOfProecssPicker.Location = new System.Drawing.Point(177, 96);
             this.DateOfProecssPicker.Name = "DateOfProecssPicker";
             this.DateOfProecssPicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DateOfProecssPicker.Size = new System.Drawing.Size(95, 22);
@@ -320,7 +320,7 @@
             // radLabel3
             // 
             this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel3.Location = new System.Drawing.Point(257, 99);
+            this.radLabel3.Location = new System.Drawing.Point(277, 98);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(61, 18);
             this.radLabel3.TabIndex = 5;
@@ -330,7 +330,7 @@
             // CashingNumberTextBox
             // 
             this.CashingNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CashingNumberTextBox.Location = new System.Drawing.Point(139, 185);
+            this.CashingNumberTextBox.Location = new System.Drawing.Point(159, 184);
             this.CashingNumberTextBox.Name = "CashingNumberTextBox";
             this.CashingNumberTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.CashingNumberTextBox.Size = new System.Drawing.Size(113, 22);
@@ -341,7 +341,7 @@
             // radLabel2
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel2.Location = new System.Drawing.Point(257, 127);
+            this.radLabel2.Location = new System.Drawing.Point(277, 126);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(62, 18);
             this.radLabel2.TabIndex = 3;
@@ -351,7 +351,7 @@
             // radLabel1
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel1.Location = new System.Drawing.Point(258, 72);
+            this.radLabel1.Location = new System.Drawing.Point(278, 71);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(75, 18);
             this.radLabel1.TabIndex = 1;
@@ -361,7 +361,7 @@
             // ExpensesNameTextBox
             // 
             this.ExpensesNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExpensesNameTextBox.Location = new System.Drawing.Point(12, 70);
+            this.ExpensesNameTextBox.Location = new System.Drawing.Point(32, 69);
             this.ExpensesNameTextBox.Name = "ExpensesNameTextBox";
             this.ExpensesNameTextBox.Size = new System.Drawing.Size(240, 22);
             this.ExpensesNameTextBox.TabIndex = 1;

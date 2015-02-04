@@ -96,15 +96,12 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             if (col == 10)
             {
                 {
-                    if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                    if (RadMessageBox.Show(this, OperationX.DeleteMessage, "حذف", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                     {
-
-                        if (ProjectExpensesCmd.DeleteProjectExpens(int.Parse(ExpensesGridView.CurrentRow.Cells[1].Value.ToString())))
+                        
+                        if (ProjectExpensesCmd.DeleteProjectExpens(((Ucas.Data.ProjectExpens)this.ExpensesGridView.CurrentRow.DataBoundItem).ID))
                         {
-                            Operation.BeginOperation(this);
                             Operation.ShowToustOk(OperationX.DeletedMessage, this);
-                            FrmManageExpenses_Load(sender, e);
-                            Operation.EndOperation(this);
                             FrmManageExpenses_Load(null, null);
                         }
                         else

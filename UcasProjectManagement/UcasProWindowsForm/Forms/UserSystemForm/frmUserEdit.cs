@@ -71,7 +71,40 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
     
         private void btnOky_Click(object sender, EventArgs e)
         {
-            
+            #region "  CheckFillTextBox "
+            if (UserNameTextBox.Text == "")
+            {
+
+                UserNameTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.UserNameTextBox, "من فضلك ادخل اسم المستخدم");
+                UserNameTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                UserNameTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+
+
+            if (PasswordTextBox.Text == "")
+            {
+
+                PasswordTextBox.TextBoxElement.Fill.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.PasswordTextBox, "من فضلك ادخل كلمة المرور");
+                PasswordTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                PasswordTextBox.TextBoxElement.Fill.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+
+
+            #endregion
                 if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
                     try

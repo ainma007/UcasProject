@@ -109,8 +109,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
 
                 if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
-
-                    if (SalariesCmd.DeleteSalary(int.Parse(SalaryGridView.CurrentRow.Cells[1].Value.ToString())))
+                    
+                    if ( SalariesCmd .DeleteSalary(((Ucas.Data.Monthlysalary)this.SalaryGridView .CurrentRow.DataBoundItem).ID))
                     {
                         Operation.BeginOperation(this);
                         Operation.ShowToustOk(OperationX.DeletedMessage, this);

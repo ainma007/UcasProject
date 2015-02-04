@@ -120,6 +120,7 @@
             this.radButton1.Text = "خروج";
             this.radButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.radButton1.ThemeName = "TelerikMetro";
+            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
             // EnterBtn
             // 

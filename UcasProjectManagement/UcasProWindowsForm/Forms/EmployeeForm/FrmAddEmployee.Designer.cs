@@ -95,7 +95,7 @@
             // radLabel6
             // 
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel6.Location = new System.Drawing.Point(278, 87);
+            this.radLabel6.Location = new System.Drawing.Point(278, 86);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(75, 18);
             this.radLabel6.TabIndex = 9;
@@ -106,7 +106,7 @@
             // AddBtn
             // 
             this.AddBtn.Image = global::UcasProWindowsForm.Properties.Resources.addadd;
-            this.AddBtn.Location = new System.Drawing.Point(222, 236);
+            this.AddBtn.Location = new System.Drawing.Point(221, 244);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(127, 44);
             this.AddBtn.TabIndex = 7;
@@ -137,7 +137,7 @@
             // radLabel3
             // 
             this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel3.Location = new System.Drawing.Point(278, 114);
+            this.radLabel3.Location = new System.Drawing.Point(278, 113);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(58, 18);
             this.radLabel3.TabIndex = 12;
@@ -148,7 +148,7 @@
             // radLabel4
             // 
             this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel4.Location = new System.Drawing.Point(278, 141);
+            this.radLabel4.Location = new System.Drawing.Point(278, 140);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(57, 18);
             this.radLabel4.TabIndex = 14;
@@ -159,7 +159,7 @@
             // radLabel5
             // 
             this.radLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel5.Location = new System.Drawing.Point(278, 168);
+            this.radLabel5.Location = new System.Drawing.Point(278, 167);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(83, 18);
             this.radLabel5.TabIndex = 16;
@@ -170,7 +170,7 @@
             // radLabel7
             // 
             this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel7.Location = new System.Drawing.Point(278, 195);
+            this.radLabel7.Location = new System.Drawing.Point(278, 194);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(56, 18);
             this.radLabel7.TabIndex = 18;
@@ -196,6 +196,7 @@
             this.radGroupBox1.Controls.Add(this.radLabel2);
             this.radGroupBox1.Controls.Add(this.radLabel1);
             this.radGroupBox1.Controls.Add(this.employeeNameTextBox);
+            this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.radGroupBox1.HeaderText = "أدخل البيانات";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
@@ -208,7 +209,7 @@
             // EmployeeNationalNumberTextBox4
             // 
             this.EmployeeNationalNumberTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmployeeNationalNumberTextBox4.Location = new System.Drawing.Point(79, 193);
+            this.EmployeeNationalNumberTextBox4.Location = new System.Drawing.Point(79, 192);
             this.EmployeeNationalNumberTextBox4.Name = "EmployeeNationalNumberTextBox4";
             this.EmployeeNationalNumberTextBox4.Size = new System.Drawing.Size(193, 22);
             this.EmployeeNationalNumberTextBox4.TabIndex = 6;
@@ -218,7 +219,7 @@
             // EmailTextBox
             // 
             this.EmailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmailTextBox.Location = new System.Drawing.Point(79, 166);
+            this.EmailTextBox.Location = new System.Drawing.Point(79, 165);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(193, 22);
             this.EmailTextBox.TabIndex = 5;
@@ -227,7 +228,7 @@
             // MobilenumberTextBox
             // 
             this.MobilenumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MobilenumberTextBox.Location = new System.Drawing.Point(79, 139);
+            this.MobilenumberTextBox.Location = new System.Drawing.Point(79, 138);
             this.MobilenumberTextBox.Name = "MobilenumberTextBox";
             this.MobilenumberTextBox.Size = new System.Drawing.Size(193, 22);
             this.MobilenumberTextBox.TabIndex = 4;
@@ -237,7 +238,7 @@
             // PhoneNumberTextBox
             // 
             this.PhoneNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PhoneNumberTextBox.Location = new System.Drawing.Point(79, 112);
+            this.PhoneNumberTextBox.Location = new System.Drawing.Point(79, 111);
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(193, 22);
             this.PhoneNumberTextBox.TabIndex = 3;
@@ -247,7 +248,7 @@
             // EmployeejobNumberTextBox
             // 
             this.EmployeejobNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmployeejobNumberTextBox.Location = new System.Drawing.Point(126, 85);
+            this.EmployeejobNumberTextBox.Location = new System.Drawing.Point(126, 84);
             this.EmployeejobNumberTextBox.Name = "EmployeejobNumberTextBox";
             this.EmployeejobNumberTextBox.Size = new System.Drawing.Size(146, 22);
             this.EmployeejobNumberTextBox.TabIndex = 2;

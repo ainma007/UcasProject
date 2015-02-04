@@ -269,7 +269,7 @@
             this.EmployeeAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.EmployeeAddBtn.Name = "EmployeeAddBtn";
             this.EmployeeAddBtn.Size = new System.Drawing.Size(203, 36);
-            this.EmployeeAddBtn.Text = "المصاريف والمبالغ المستملة";
+            this.EmployeeAddBtn.Text = "المصاريف والمبالغ المستلمة";
             // 
             // AmountRrecvBtn
             // 
@@ -805,7 +805,7 @@
             this.radLabel14.Name = "radLabel14";
             this.radLabel14.Size = new System.Drawing.Size(138, 22);
             this.radLabel14.TabIndex = 0;
-            this.radLabel14.Text = "اجمالي المبالغ المستملة:";
+            this.radLabel14.Text = "اجمالي المبالغ المستلمة:";
             this.radLabel14.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
             // radGridView1
@@ -821,6 +821,7 @@
             // radGridView1
             // 
             this.radGridView1.MasterTemplate.AllowAddNewRow = false;
+            this.radGridView1.MasterTemplate.AllowSearchRow = true;
             this.radGridView1.MasterTemplate.AutoGenerateColumns = false;
             this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewDecimalColumn1.DataType = typeof(int);

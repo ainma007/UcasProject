@@ -20,9 +20,9 @@ namespace UcasProWindowsForm.Forms.MainForm
         public FrmAdmin()
         {
             InitializeComponent();
-          
+
             RadMessageBox.SetThemeName("TelerikMetro");
-           
+
         }
 
         Thread th;
@@ -73,31 +73,31 @@ namespace UcasProWindowsForm.Forms.MainForm
             });
             th.Abort();
 
-        } 
+        }
         private void FrmAdmin_Load(object sender, EventArgs e)
         {
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
-     //       var  = ( from u in ProjectControlCmd.ge)
-            switch (InformationsClass .XUserType)
+            //       var  = ( from u in ProjectControlCmd.ge)
+            switch (InformationsClass.XUserType)
             {
 
 
                 case "مدير":
-                       th = new Thread(GetAllProjectAdmin);
-                       th.Start();
-                       InformationsClass.Coordinator = 1;
-                       InformationsClass.Accountant = 1;
-                        GC.SuppressFinalize(th);
-                        GC.Collect();
-                        GC.WaitForFullGCComplete();
-                        GC.WaitForPendingFinalizers(); 
+                    th = new Thread(GetAllProjectAdmin);
+                    th.Start();
+                    InformationsClass.Coordinator = 1;
+                    InformationsClass.Accountant = 1;
+                    GC.SuppressFinalize(th);
+                    GC.Collect();
+                    GC.WaitForFullGCComplete();
+                    GC.WaitForPendingFinalizers();
                     break;
 
                 case "منسق":
 
                     th = new Thread(GetAllProjectUser);
-                       th.Start();
+                    th.Start();
                     InformationsClass.Coordinator = 1;
                     InformationsClass.Accountant = 0;
                     toolStripDropDownButton1.Visible = false;
@@ -123,25 +123,25 @@ namespace UcasProWindowsForm.Forms.MainForm
 
 
                 //    break;
-               
-            }  
-         
-        } 
+
+            }
+
+        }
 
 
 
         private void ProjectAddBtn_Click(object sender, EventArgs e)
         {
-            Operation.BeginOperation(this); 
+            Operation.BeginOperation(this);
             FrmAddProject AddPro = new FrmAddProject();
             AddPro.ShowDialog();
             Operation.EndOperation(this);
             FrmAdmin_Load(null, null);
         }
 
-       
 
-    
+
+
 
         private void EmployeeAddBtn_Click(object sender, EventArgs e)
         {
@@ -180,14 +180,14 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         }
 
-     
+
 
         private void FrmAdmin_Activated(object sender, EventArgs e)
         {
-         
+
         }
 
-      
+
 
         private void FinanMangBtn_Click(object sender, EventArgs e)
         {
@@ -209,27 +209,36 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         private void radGridView1_CommandCellClick(object sender, EventArgs e)
         {
-           
+            Operation.BeginOperation(this);
+
             FrmMainUserPro frm = new FrmMainUserPro();
             Ucas.Data.ProjectProfile db = (Ucas.Data.ProjectProfile)radGridView1.CurrentRow.DataBoundItem;
-            if (InformationsClass.XUserType=="مدير")
+            if (InformationsClass.XUserType == "مدير")
             {
-                Operation.BeginOperation(this);
                 frm.TragetProject = db;
                 this.Hide();
                 frm.ShowDialog();
+                
                 Operation.EndOperation(this);
+                FrmAdmin_Load(null, null);
                 return;
             }
             var c = db.ProjectControls.Where(p => p.ProjectID == db.ID).Take(1).SingleOrDefault();
-            if (c.Status=="غير فعال")
+            if (c.Status == "غير فعال")
             {
                 // message not have permession
                 Operation.EndOperation(this);
-                RadMessageBox.Show("غير مصرح لك بالدخول");
-               
+                RadMessageBox.Show("غير مصرح لك بالدخول", "", MessageBoxButtons.OK, RadMessageIcon.Error);
+
                 return;
 
+            }
+            if (db.Status == "غير فعال")
+            {
+                Operation.EndOperation(this);
+                RadMessageBox.Show("المشروع غير فعال", "", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+                return;
             }
             else
             {
@@ -237,18 +246,19 @@ namespace UcasProWindowsForm.Forms.MainForm
                 frm.TragetProject = db;
                 this.Hide();
                 frm.ShowDialog();
-               
+                
                 Operation.EndOperation(this);
+                FrmAdmin_Load(null, null);
             }
-           
 
 
-        
-           
+
+
+
             FrmAdmin_Load(null, null);
         }
 
-     
+
 
         private void SupmanageBtn_Click(object sender, EventArgs e)
         {
@@ -318,6 +328,34 @@ namespace UcasProWindowsForm.Forms.MainForm
 
         }
 
-       
+        private void radGridView1_CellFormatting(object sender, Telerik.WinControls.UI.CellFormattingEventArgs e)
+        {
+            if (e.CellElement.ColumnInfo.Name == "Status")
+            {
+                string title = e.CellElement.RowInfo.Cells[5].Value.ToString();
+                if (title == "غير فعال")
+                {
+
+                    e.CellElement.ForeColor = Color.Red;
+
+                }
+               
+
+            }
+            //progress
+            if (e.CellElement.ColumnInfo.Name == "progress")
+            {
+                string title = e.CellElement.RowInfo.Cells[6].Value.ToString();
+                if (title == "100")
+                {
+
+                    e.CellElement.ForeColor = Color.Green;
+
+                }
+
+
+            }
+
+        }
     }
 }

@@ -27,6 +27,9 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
             this.Invoke((MethodInvoker)delegate
             {
+                this.UserListComboBox.MultiColumnComboBoxElement.DropDownWidth = 500;
+
+                this.ProjectCombo.MultiColumnComboBoxElement.DropDownWidth = 300;
                 //User
                 this.UserListComboBox.AutoFilter = true;
                 this.UserListComboBox.ValueMember = "ID";
@@ -87,7 +90,70 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
-        {
+        {  
+            #region "  CheckFillTextBox "
+
+
+            if (UserListComboBox.Text == "")
+            {
+
+                UserListComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.UserListComboBox, "من فضلك اختر الموظف");
+                UserListComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                UserListComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+            if (UserListComboBox.SelectedValue == null)
+            {
+
+                UserListComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.UserListComboBox, "من فضلك اختر الموظف");
+                UserListComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                UserListComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+            ///
+
+            if (ProjectCombo.Text == "")
+            {
+
+                ProjectCombo.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.ProjectCombo, "من فضلك اختر المشروع");
+                UserListComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                ProjectCombo.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+            if (UserListComboBox.SelectedValue == null)
+            {
+
+                ProjectCombo.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.ProjectCombo, "من فضلك اختر المشروع");
+                ProjectCombo.Focus();
+
+                return;
+            }
+            else
+            {
+                ProjectCombo.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+            ///
+            #endregion
             if (RadMessageBox.Show(this, OperationX.SaveMessage, "حفظ التعديلات", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
                 Operation.BeginOperation(this);

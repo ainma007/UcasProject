@@ -73,8 +73,7 @@ namespace Ucas.Data.CommandClass
             try
             {
                 db = new UcasProEntities();
-                db.Configuration.LazyLoadingEnabled = false;
-                db.Configuration.ProxyCreationEnabled = false;
+               
                 var q = db.ProjectActivities.Where(p => p.ID == ID).SingleOrDefault();
                 db.ProjectActivities.Remove(q);
                 db.SaveChanges();

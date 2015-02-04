@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
@@ -20,8 +21,32 @@ namespace UcasProWindowsForm
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
+        //public static Process PriorProcess()
+        //// Returns a System.Diagnostics.Process pointing to
+        //// a pre-existing process with the same name as the
+        //// current one, if any; or null if the current process
+        //// is unique.
+        //{
+        //    Process curr = Process.GetCurrentProcess();
+        //    Process[] procs = Process.GetProcessesByName(curr.ProcessName);
+        //    foreach (Process p in procs)
+        //    {
+        //        if ((p.Id != curr.Id) &&
+        //            (p.MainModule.FileName == curr.MainModule.FileName))
+        //            return p;
+        //    }
+
+        //    return null;
+
+        //}
         static void Main()
         {
+            //if (PriorProcess() != null)
+            //{
+
+
+            //    return;
+            //}
             Application.ThreadException += Application_ThreadException;
             CultureInfo culture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
             culture.DateTimeFormat.ShortDatePattern = "dd/MM/yyyy";
@@ -40,6 +65,8 @@ namespace UcasProWindowsForm
         static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
             RadMessageBox.Show("خطأ في البرنامج"+e.ToString());
+           
+            return;
            // Application.Restart();
         }
     }

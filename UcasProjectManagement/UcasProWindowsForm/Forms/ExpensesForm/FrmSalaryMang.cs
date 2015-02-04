@@ -80,6 +80,20 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
+            if (EmployeeComboBox.Text == "")
+            {
+
+                EmployeeComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.EmployeeComboBox, "من فضلك ادخل الموظف");
+                EmployeeComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                EmployeeComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
             if (EmployeeComboBox.SelectedValue == null)
             {
 

@@ -103,9 +103,9 @@
             // AdressTextBox
             // 
             this.AdressTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AdressTextBox.Location = new System.Drawing.Point(12, 170);
+            this.AdressTextBox.Location = new System.Drawing.Point(24, 170);
             this.AdressTextBox.Name = "AdressTextBox";
-            this.AdressTextBox.Size = new System.Drawing.Size(259, 22);
+            this.AdressTextBox.Size = new System.Drawing.Size(247, 22);
             this.AdressTextBox.TabIndex = 29;
             this.AdressTextBox.ThemeName = "TelerikMetro";
             // 
@@ -123,9 +123,9 @@
             // AgentNameTextBox
             // 
             this.AgentNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AgentNameTextBox.Location = new System.Drawing.Point(12, 62);
+            this.AgentNameTextBox.Location = new System.Drawing.Point(24, 62);
             this.AgentNameTextBox.Name = "AgentNameTextBox";
-            this.AgentNameTextBox.Size = new System.Drawing.Size(259, 22);
+            this.AgentNameTextBox.Size = new System.Drawing.Size(247, 22);
             this.AgentNameTextBox.TabIndex = 25;
             this.AgentNameTextBox.ThemeName = "TelerikMetro";
             // 
@@ -166,10 +166,10 @@
             // EmailTextBox
             // 
             this.EmailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmailTextBox.Location = new System.Drawing.Point(12, 143);
+            this.EmailTextBox.Location = new System.Drawing.Point(24, 143);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.EmailTextBox.Size = new System.Drawing.Size(259, 22);
+            this.EmailTextBox.Size = new System.Drawing.Size(247, 22);
             this.EmailTextBox.TabIndex = 28;
             this.EmailTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.EmailTextBox.ThemeName = "TelerikMetro";
@@ -223,9 +223,9 @@
             // TheDonorsNameTextBox
             // 
             this.TheDonorsNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TheDonorsNameTextBox.Location = new System.Drawing.Point(12, 32);
+            this.TheDonorsNameTextBox.Location = new System.Drawing.Point(24, 32);
             this.TheDonorsNameTextBox.Name = "TheDonorsNameTextBox";
-            this.TheDonorsNameTextBox.Size = new System.Drawing.Size(259, 22);
+            this.TheDonorsNameTextBox.Size = new System.Drawing.Size(247, 22);
             this.TheDonorsNameTextBox.TabIndex = 23;
             this.TheDonorsNameTextBox.ThemeName = "TelerikMetro";
             // 

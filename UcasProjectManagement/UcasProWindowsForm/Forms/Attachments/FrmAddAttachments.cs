@@ -51,13 +51,7 @@ namespace UcasProWindowsForm.Forms.Attachments
          
         }
 
-        static async Task<int> Method(SqlConnection conn, SqlCommand cmd)
-        {
-            await conn.OpenAsync();
-            await cmd.ExecuteNonQueryAsync();
-            return 1;
-        }
-
+     
         private void SaveData()
         {
 
@@ -69,23 +63,41 @@ namespace UcasProWindowsForm.Forms.Attachments
 
             });
             //string filename = "_" + DateTime.Now.ToString("dd_MM_yyyy_hh_mm_ss_tt") + InformationsClass.ProjID + "_" + op.SafeFileName;
-          
-            //Upload(op.FileName,filename);
-            string str = @"\\HEROO\Ucas\" + InformationsClass.ProjID + "_" + op.SafeFileName;
-            File.Copy(op.FileName, str);
+
+            //Upload(op.FileName, filename);
+            try
+            {
+                string str = @"\\B303PC23\UCASAttach\" + InformationsClass.ProjID + "_" + op.SafeFileName;
+                File.Copy(op.FileName, str);
+
+                Attachment tb = new Attachment
+                {
+                    ProjectProfile_ID = InformationsClass.ProjID,
+                    AttachmentName = op.SafeFileName,
+                    CreateDate = DateTime.Now,
+                    FilePathX = str
+
+                };
+
+                AttachmentsClass.NewAttachment(tb);
+                tb = null;
+                th.Abort();
+
+                GC.SuppressFinalize(th);
+                GC.SuppressFinalize(tb);
+                GC.Collect();
+                GC.WaitForFullGCComplete();
+                GC.WaitForPendingFinalizers();
+            }
+            catch (Exception)
+            {
+
+                RadMessageBox.Show("تأكد من فتح الشبكة", "", MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+           
 
             
 
-            Attachment tb = new Attachment
-            {
-                ProjectProfile_ID = InformationsClass.ProjID,
-                AttachmentName = op.SafeFileName,
-                CreateDate = DateTime.Now,
-                FilePathX = str
-
-            };
-
-            AttachmentsClass.NewAttachment(tb);
             radWaitingBar1.Invoke((MethodInvoker)delegate
             {
                 radWaitingBar1.Visible = false;
@@ -95,14 +107,7 @@ namespace UcasProWindowsForm.Forms.Attachments
 
             });
           
-            tb = null;
-            th.Abort();
-
-            GC.SuppressFinalize(th);
-            GC.SuppressFinalize(tb);
-            GC.Collect();
-            GC.WaitForFullGCComplete();
-            GC.WaitForPendingFinalizers();
+          
             
         }
         private void Upload(string filename,string filn)
@@ -116,7 +121,7 @@ namespace UcasProWindowsForm.Forms.Attachments
 
             // Provide the WebPermission Credintials
             reqFTP.Credentials = new NetworkCredential("xpremax",
-                                                       "xprema");
+                                                       "123456");
 
             // By default KeepAlive is true, where the control connection is 
             // not closed after a command is executed.
@@ -182,7 +187,7 @@ namespace UcasProWindowsForm.Forms.Attachments
                     GC.WaitForPendingFinalizers();
                 }
             }
-            catch (System.NullReferenceException ex)
+            catch (System.NullReferenceException )
             {
                 
                 return;

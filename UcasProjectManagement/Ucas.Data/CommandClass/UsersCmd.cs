@@ -155,7 +155,7 @@ namespace Ucas.Data.CommandClass
                }
 
            }
-           catch (Exception ex)
+           catch (Exception )
            {
                
                throw ;

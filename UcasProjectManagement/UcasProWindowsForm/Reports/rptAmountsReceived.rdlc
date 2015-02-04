@@ -21,13 +21,13 @@
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>1.9469cm</Width>
+                                <Width>1.93514cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>4.52516cm</Width>
+                                <Width>4.5134cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>3.91662cm</Width>
+                                <Width>3.90486cm</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
@@ -59,18 +59,6 @@
                                           <Border>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <TopBorder>
-                                            <Color>Black</Color>
-                                          </TopBorder>
-                                          <BottomBorder>
-                                            <Color>Black</Color>
-                                          </BottomBorder>
-                                          <LeftBorder>
-                                            <Color>Black</Color>
-                                          </LeftBorder>
-                                          <RightBorder>
-                                            <Color>Black</Color>
-                                          </RightBorder>
                                           <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
@@ -105,18 +93,6 @@
                                           <Border>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <TopBorder>
-                                            <Color>Black</Color>
-                                          </TopBorder>
-                                          <BottomBorder>
-                                            <Color>Black</Color>
-                                          </BottomBorder>
-                                          <LeftBorder>
-                                            <Color>Black</Color>
-                                          </LeftBorder>
-                                          <RightBorder>
-                                            <Color>Black</Color>
-                                          </RightBorder>
                                           <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
@@ -151,18 +127,6 @@
                                           <Border>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <TopBorder>
-                                            <Color>Black</Color>
-                                          </TopBorder>
-                                          <BottomBorder>
-                                            <Color>Black</Color>
-                                          </BottomBorder>
-                                          <LeftBorder>
-                                            <Color>Black</Color>
-                                          </LeftBorder>
-                                          <RightBorder>
-                                            <Color>Black</Color>
-                                          </RightBorder>
                                           <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
@@ -201,7 +165,6 @@
                                         <rd:DefaultName>Textbox4</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
                                           <PaddingLeft>2pt</PaddingLeft>
@@ -236,7 +199,6 @@
                                         <rd:DefaultName>Date</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
                                           <PaddingLeft>2pt</PaddingLeft>
@@ -270,7 +232,6 @@
                                         <rd:DefaultName>Cost</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
                                           <PaddingLeft>2pt</PaddingLeft>
@@ -309,9 +270,9 @@
                                         <rd:DefaultName>Textbox5</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>WhiteSmoke</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -345,10 +306,9 @@
                                         <rd:DefaultName>Textbox10</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
-                                          <BackgroundColor>Gainsboro</BackgroundColor>
+                                          <BackgroundColor>WhiteSmoke</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -384,10 +344,10 @@
                           </TablixRowHierarchy>
                           <LayoutDirection>RTL</LayoutDirection>
                           <DataSetName>AmountsReceivedDataSet</DataSetName>
-                          <Top>1.30137cm</Top>
-                          <Left>7.8934cm</Left>
+                          <Top>0.99003cm</Top>
+                          <Left>7.92868cm</Left>
                           <Height>2.25936cm</Height>
-                          <Width>10.38868cm</Width>
+                          <Width>10.3534cm</Width>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -520,6 +480,7 @@
                         </Border>
                       </Style>
                     </Rectangle>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>

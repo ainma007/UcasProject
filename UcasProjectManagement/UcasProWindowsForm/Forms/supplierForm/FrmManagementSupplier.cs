@@ -85,8 +85,9 @@ namespace UcasProWindowsForm.Forms.supplierForm
         if (col == 8) { if (RadMessageBox.Show(this, OperationX.DeleteMessage, "Done", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                     {
                         Operation.BeginOperation(this);
-                        if (SuppliersCmd.DeleteSupplier(int.Parse(supplierGridView.CurrentRow.Cells[0].Value.ToString())))
+                        if (SuppliersCmd.DeleteSupplier(((Ucas.Data.Supplier)this.supplierGridView.CurrentRow.DataBoundItem).ID))
                         {
+                            
                             Operation.EndOperation(this);
                             FrmManagementSupplier_Load(null, null);
                             Operation.ShowToustOk(OperationX.DeletedMessage, this);

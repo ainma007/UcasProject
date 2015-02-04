@@ -72,10 +72,9 @@ namespace UcasProWindowsForm.Forms.AmountRecivedForms
                 if (RadMessageBox.Show(this, OperationX.DeleteMessage, "حذف السجل", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
                     Operation.BeginOperation(this);
-                   
 
-                    AmountsReceivedsCmd.DeleteAmountsReceived(int.Parse(radGridView1.CurrentRow.Cells[1].Value.ToString()));
-                    radGridView1.DataSource = AmountsReceivedsCmd.GetAllAmountsReceivedBypro(InformationsClass.ProjID);
+
+                    if (AmountsReceivedsCmd.DeleteAmountsReceived(((Ucas.Data.AmountsReceived)this.radGridView1.CurrentRow.DataBoundItem).ID))
                     Operation.ShowToustOk(OperationX.DeletedMessage, this);
                     Operation.EndOperation(this);
                     this.FrmMangeAmount_Load(null, null);

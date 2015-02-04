@@ -78,7 +78,21 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
+            if (ActivitiesColumnComboBox.Text == "")
+            {
 
+                ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.ActivitiesColumnComboBox, "من فضلك ادخل النشاط الرئيسي");
+                ActivitiesColumnComboBox.Focus();
+
+
+                return;
+            }
+            else
+            {
+                ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
             if (ActivitiesColumnComboBox.SelectedValue == null)
             {
 

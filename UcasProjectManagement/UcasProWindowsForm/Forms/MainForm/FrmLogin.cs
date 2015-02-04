@@ -132,5 +132,10 @@ namespace UcasProWindowsForm.Forms.MainForm
             AboutFrm frm = new AboutFrm();
             frm.ShowDialog();
         }
+
+        private void radButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

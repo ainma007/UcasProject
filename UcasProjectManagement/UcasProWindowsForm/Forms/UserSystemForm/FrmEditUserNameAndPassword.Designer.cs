@@ -82,29 +82,30 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(266, 117);
+            this.label3.Location = new System.Drawing.Point(266, 119);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 13);
+            this.label3.Size = new System.Drawing.Size(99, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "كلمة المرور الجديدة";
+            this.label3.Text = "كلمة المرور الجديدة:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
             this.label2.Location = new System.Drawing.Point(266, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.Size = new System.Drawing.Size(100, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "كلمة المرور القديمة";
+            this.label2.Text = "كلمة المرور القديمة:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(266, 86);
+            this.label1.Location = new System.Drawing.Point(265, 88);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 13);
+            this.label1.Size = new System.Drawing.Size(116, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "اسم المستخدم الجديد";
+            this.label1.Text = "اسم المستخدم الجديد:";
             // 
             // NewpasswordTextBox
             // 
@@ -126,7 +127,7 @@
             // 
             // NewuserNameTextBox
             // 
-            this.NewuserNameTextBox.Location = new System.Drawing.Point(39, 86);
+            this.NewuserNameTextBox.Location = new System.Drawing.Point(39, 84);
             this.NewuserNameTextBox.Name = "NewuserNameTextBox";
             this.NewuserNameTextBox.Size = new System.Drawing.Size(221, 22);
             this.NewuserNameTextBox.TabIndex = 2;

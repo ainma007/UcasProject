@@ -84,6 +84,71 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
+
+            #region "  CheckFillTextBox "
+
+
+            if (UserListComboBox.Text == "")
+            {
+
+                UserListComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.UserListComboBox, "من فضلك اختر الموظف");
+                UserListComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                UserListComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+            if (UserListComboBox.SelectedValue == null)
+            {
+
+                UserListComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.UserListComboBox, "من فضلك اختر الموظف");
+                UserListComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                UserListComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+            ///
+
+            if (ProjectCombo.Text == "")
+            {
+
+                ProjectCombo.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.ProjectCombo, "من فضلك اختر المشروع");
+                UserListComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                ProjectCombo.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+            if (UserListComboBox.SelectedValue == null)
+            {
+
+                ProjectCombo.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.ProjectCombo, "من فضلك اختر المشروع");
+                ProjectCombo.Focus();
+
+                return;
+            }
+            else
+            {
+                ProjectCombo.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+            ///
+            #endregion
+
             Operation.BeginOperation(this);
 
             try
@@ -110,6 +175,7 @@ namespace UcasProWindowsForm.Forms.UserSystemForm
 
                 Operation.EndOperation(this);
                 RadMessageBox.Show(ex.UserDescriptionArabic, "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+                this.Close();
             }
           
 

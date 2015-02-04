@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.UserListComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
@@ -46,6 +46,7 @@
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.ProjectCombo = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserListComboBox)).BeginInit();
@@ -60,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ProjectCombo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectCombo.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectCombo.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,26 +106,26 @@
             this.UserListComboBox.EditorControl.MasterTemplate.AllowSearchRow = true;
             this.UserListComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
             this.UserListComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.DataType = typeof(int);
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "ID";
-            gridViewTextBoxColumn1.HeaderText = "ID";
-            gridViewTextBoxColumn1.IsVisible = false;
-            gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "Employee.EmployeeName";
-            gridViewTextBoxColumn2.HeaderText = "اسم الموظف";
-            gridViewTextBoxColumn2.Name = "Employee.EmployeeName";
-            gridViewTextBoxColumn2.Width = 136;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "Employee.EmployeejobNumber";
-            gridViewTextBoxColumn3.HeaderText = "الرقم الوظيفي";
-            gridViewTextBoxColumn3.Name = "Employee.EmployeejobNumber";
-            gridViewTextBoxColumn3.Width = 85;
+            gridViewTextBoxColumn6.DataType = typeof(int);
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "ID";
+            gridViewTextBoxColumn6.HeaderText = "ID";
+            gridViewTextBoxColumn6.IsVisible = false;
+            gridViewTextBoxColumn6.Name = "ID";
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "Employee.EmployeeName";
+            gridViewTextBoxColumn7.HeaderText = "اسم الموظف";
+            gridViewTextBoxColumn7.Name = "Employee.EmployeeName";
+            gridViewTextBoxColumn7.Width = 136;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "Employee.EmployeejobNumber";
+            gridViewTextBoxColumn8.HeaderText = "الرقم الوظيفي";
+            gridViewTextBoxColumn8.Name = "Employee.EmployeejobNumber";
+            gridViewTextBoxColumn8.Width = 85;
             this.UserListComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3});
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8});
             this.UserListComboBox.EditorControl.MasterTemplate.DataSource = this.userTbBindingSource;
             this.UserListComboBox.EditorControl.MasterTemplate.EnableFiltering = true;
             this.UserListComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
@@ -169,10 +171,10 @@
             // StatusDropDownList
             // 
             this.StatusDropDownList.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem1.Text = "فعال";
-            radListDataItem2.Text = "غير فعال";
-            this.StatusDropDownList.Items.Add(radListDataItem1);
-            this.StatusDropDownList.Items.Add(radListDataItem2);
+            radListDataItem3.Text = "فعال";
+            radListDataItem4.Text = "غير فعال";
+            this.StatusDropDownList.Items.Add(radListDataItem3);
+            this.StatusDropDownList.Items.Add(radListDataItem4);
             this.StatusDropDownList.Location = new System.Drawing.Point(198, 98);
             this.StatusDropDownList.Name = "StatusDropDownList";
             this.StatusDropDownList.Size = new System.Drawing.Size(79, 19);
@@ -216,19 +218,19 @@
             this.ProjectCombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.ProjectCombo.EditorControl.MasterTemplate.AutoGenerateColumns = false;
             this.ProjectCombo.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "ID";
-            gridViewTextBoxColumn4.HeaderText = "ID";
-            gridViewTextBoxColumn4.IsVisible = false;
-            gridViewTextBoxColumn4.Name = "ID";
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "ProjectName";
-            gridViewTextBoxColumn5.HeaderText = "اسم المشروع";
-            gridViewTextBoxColumn5.Name = "ProjectName";
-            gridViewTextBoxColumn5.Width = 220;
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "ID";
+            gridViewTextBoxColumn9.HeaderText = "ID";
+            gridViewTextBoxColumn9.IsVisible = false;
+            gridViewTextBoxColumn9.Name = "ID";
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
+            gridViewTextBoxColumn10.FieldName = "ProjectName";
+            gridViewTextBoxColumn10.HeaderText = "اسم المشروع";
+            gridViewTextBoxColumn10.Name = "ProjectName";
+            gridViewTextBoxColumn10.Width = 220;
             this.ProjectCombo.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5});
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10});
             this.ProjectCombo.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ProjectCombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
             this.ProjectCombo.EditorControl.Name = "NestedRadGridView";
@@ -243,6 +245,11 @@
             this.ProjectCombo.TabIndex = 1;
             this.ProjectCombo.TabStop = false;
             this.ProjectCombo.ThemeName = "TelerikMetro";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
             // 
             // FrmEditUserToProject
             // 
@@ -281,6 +288,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ProjectCombo.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectCombo.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectCombo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -298,5 +306,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadMultiColumnComboBox UserListComboBox;
         private System.Windows.Forms.BindingSource userTbBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

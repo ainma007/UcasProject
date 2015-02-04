@@ -255,7 +255,7 @@
             // radLabel4
             // 
             this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel4.Location = new System.Drawing.Point(287, 123);
+            this.radLabel4.Location = new System.Drawing.Point(287, 119);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.radLabel4.Size = new System.Drawing.Size(68, 18);
@@ -339,7 +339,7 @@
             this.ReleaseDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ReleaseDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.ReleaseDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ReleaseDateTimePicker.Location = new System.Drawing.Point(185, 121);
+            this.ReleaseDateTimePicker.Location = new System.Drawing.Point(185, 117);
             this.ReleaseDateTimePicker.Name = "ReleaseDateTimePicker";
             this.ReleaseDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ReleaseDateTimePicker.Size = new System.Drawing.Size(100, 22);
@@ -365,7 +365,7 @@
             this.FormonthDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FormonthDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FormonthDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FormonthDateTimePicker.Location = new System.Drawing.Point(185, 89);
+            this.FormonthDateTimePicker.Location = new System.Drawing.Point(185, 86);
             this.FormonthDateTimePicker.Name = "FormonthDateTimePicker";
             this.FormonthDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.FormonthDateTimePicker.Size = new System.Drawing.Size(100, 22);
@@ -378,7 +378,7 @@
             // radLabel10
             // 
             this.radLabel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel10.Location = new System.Drawing.Point(287, 60);
+            this.radLabel10.Location = new System.Drawing.Point(287, 59);
             this.radLabel10.Name = "radLabel10";
             this.radLabel10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.radLabel10.Size = new System.Drawing.Size(36, 18);
@@ -389,7 +389,7 @@
             // SalaryTextBox
             // 
             this.SalaryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SalaryTextBox.Location = new System.Drawing.Point(204, 58);
+            this.SalaryTextBox.Location = new System.Drawing.Point(204, 57);
             this.SalaryTextBox.Name = "SalaryTextBox";
             this.SalaryTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.SalaryTextBox.Size = new System.Drawing.Size(81, 22);
@@ -401,7 +401,7 @@
             // radLabel9
             // 
             this.radLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel9.Location = new System.Drawing.Point(288, 91);
+            this.radLabel9.Location = new System.Drawing.Point(288, 88);
             this.radLabel9.Name = "radLabel9";
             this.radLabel9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.radLabel9.Size = new System.Drawing.Size(73, 18);
@@ -412,7 +412,7 @@
             // AddBtn1
             // 
             this.AddBtn1.Image = global::UcasProWindowsForm.Properties.Resources.addadd;
-            this.AddBtn1.Location = new System.Drawing.Point(227, 166);
+            this.AddBtn1.Location = new System.Drawing.Point(227, 164);
             this.AddBtn1.Name = "AddBtn1";
             this.AddBtn1.Size = new System.Drawing.Size(127, 44);
             this.AddBtn1.TabIndex = 5;

@@ -77,6 +77,21 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
         {
             
             #region "  CheckFillTextBox "
+
+            if (SubActivtiesComboBox.Text == "")
+            {
+
+                SubActivtiesComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.SubActivtiesComboBox, "من فضلك ادخل النشاط");
+                SubActivtiesComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                SubActivtiesComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
             if (SubActivtiesComboBox.SelectedValue == null)
             {
 
@@ -126,6 +141,38 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 errorProvider1.Clear();
             }
 
+
+            ////
+
+
+            if (SupplierComboBox.Text == "")
+            {
+
+                SupplierComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.SupplierComboBox, "من فضلك ادخل المورد");
+                SupplierComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                SupplierComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+            if (SupplierComboBox.SelectedValue == null)
+            {
+
+                SupplierComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                errorProvider1.SetError(this.SupplierComboBox, "من فضلك ادخل المورد");
+                SupplierComboBox.Focus();
+
+                return;
+            }
+            else
+            {
+                SupplierComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
               #endregion
 
             Operation.BeginOperation(this);
@@ -151,7 +198,7 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
                 ProjectExpensesCmd.NewProjectExpens(tb);
                 Operation.EndOperation(this);
 
-                RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                Operation.ShowToustOk(OperationX.AddMessageDone, this);
                 GC.SuppressFinalize(tb);
 
                 GC.Collect();
@@ -162,7 +209,8 @@ namespace UcasProWindowsForm.Forms.ExpensesForm
             catch (Xprema.XpremaException ex)
             {
                 Operation.EndOperation(this);
-                Operation.ShowToustOk(OperationX.AddMessageDone, this);
+                RadMessageBox.Show(ex.OtherDescription, "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+
             }
         }
         private void ClearTxt()
