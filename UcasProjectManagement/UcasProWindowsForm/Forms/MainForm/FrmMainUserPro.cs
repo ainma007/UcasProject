@@ -74,6 +74,8 @@ namespace UcasProWindowsForm.Forms.MainForm
                     InformationsClass.Coin = item.Coin;
                     this.Progress = item.progress.ToString();
                     this.StatustextBox.Text = item.Status;
+                    InformationsClass.Startdatepro = item.StartDate.ToString();
+                    InformationsClass.enddatepro = item.EndDate.ToString();
 
 
                 }

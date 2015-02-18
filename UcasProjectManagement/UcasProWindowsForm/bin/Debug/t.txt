@@ -1,2 +1,2 @@
-Violation of PRIMARY KEY constraint 'PK_ProjectControls'. Cannot insert duplicate key in object 'dbo.ProjectControls'. The duplicate key value is (4, 3).
-The statement has been terminated.
+تاريخ بداية العقد قبل تاريخ بداية المشروع 
+The transaction ended in the trigger. The batch has been aborted.

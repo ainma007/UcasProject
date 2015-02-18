@@ -170,6 +170,12 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             Coinlabel2.Text = InformationsClass.Coin;
             StartDateTimePicker.Value = DateTime.Now;
             EndDateTimePicker.Value = DateTime.Now;
+
+            if (TotaltextBox.Text == "")
+            {
+                TotaltextBox.Text = "0";
+
+            }
         }
 
         private void SalaryTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -202,5 +208,56 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             GC.WaitForPendingFinalizers();
             this.Dispose();
         }
+
+        public void DateCont()
+        {
+            DateTime StartCont = DateTime.Parse(StartDateTimePicker.Value.Date.ToString()).Date;
+
+            DateTime EndCont = DateTime.Parse(EndDateTimePicker.Value.Date.ToString()).Date;
+
+            TimeSpan xDays = EndCont - StartCont;
+
+          
+          //  MessageBox.Show("" + xDays.TotalDays);
+            ////
+            if (xDays.TotalDays == 0)
+            {
+                return;
+            }
+            if (TotaltextBox.Text == "0")
+            {
+                return;
+            }
+            if (TotaltextBox.Text == "")
+            {
+                return;
+            }
+            radTextBox1.Text = xDays.TotalDays.ToString();
+            double month = xDays.TotalDays / 30;
+          //  int Totaldays = int .Parse (xDays);
+            double Salary = double.Parse(TotaltextBox.Text.ToString()) / month;
+           
+
+            
+            SalaryTextBox.Text = Salary.ToString();
+            
+
+          
+        }
+
+        private void StartDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            DateCont();
+        }
+
+        private void EndDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            DateCont();
+        }
+
+        private void TotaltextBox_TextChanged(object sender, EventArgs e)
+        {
+            DateCont();
+        }   
     }
 }

@@ -234,7 +234,6 @@
             gridViewCommandColumn1,
             gridViewCommandColumn2});
             this.ContractsGridView.MasterTemplate.EnableFiltering = true;
-            this.ContractsGridView.MasterTemplate.EnablePaging = true;
             this.ContractsGridView.MasterTemplate.SearchRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             sortDescriptor1.PropertyName = "ID";
             this.ContractsGridView.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {

@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>تقرير بكافة الموظفين</Value>
+                <Value>تقرير بيانات الموظفين</Value>
                 <Style>
                   <FontFamily>Simplified Arabic</FontFamily>
                   <FontSize>16pt</FontSize>
@@ -826,7 +826,7 @@
         <Top>1.71662cm</Top>
         <Left>0.26458cm</Left>
         <Height>1.2cm</Height>
-        <Width>19.33821cm</Width>
+        <Width>19.33822cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>

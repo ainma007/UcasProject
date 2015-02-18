@@ -160,7 +160,6 @@
             gridViewCommandColumn2});
             this.EmployeeGridView.MasterTemplate.EnableFiltering = true;
             this.EmployeeGridView.MasterTemplate.EnableGrouping = false;
-            this.EmployeeGridView.MasterTemplate.EnablePaging = true;
             this.EmployeeGridView.MasterTemplate.EnableSorting = false;
             this.EmployeeGridView.MasterTemplate.SearchRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             sortDescriptor1.PropertyName = "ID";

@@ -129,31 +129,31 @@ namespace UcasProWindowsForm.Forms.Attachments
             try
             {
                 //عملية الشبكة 
-               File.Copy(p.FilePathX, sv.SelectedPath + "\\" + p.AttachmentName, true);
+            //   File.Copy(p.FilePathX, sv.SelectedPath + "\\" + p.AttachmentName, true);
 
 
 
                 ////عملية السيرفر 
-                //// Get the object used to communicate with the server.
-                //FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://mazoonadv.com/" + p.FilePathX);
-                //request.Method = WebRequestMethods.Ftp.DownloadFile;
+                // Get the object used to communicate with the server.
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://mazoonadv.com/" + p.FilePathX);
+                request.Method = WebRequestMethods.Ftp.DownloadFile;
 
-                //// This example assumes the FTP site uses anonymous logon.
-                //request.Credentials = new NetworkCredential("xpremax", "123456");
+                // This example assumes the FTP site uses anonymous logon.
+                request.Credentials = new NetworkCredential("xpremax", "123456");
 
-                //FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+                FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 
-                //Stream responseStream = response.GetResponseStream();
-                //StreamReader reader = new StreamReader(responseStream);
-                ////File.WriteAllText(sv.SelectedPath + "\\" + p.AttachmentName, reader.ReadToEnd());
-                //byte[] bytes = reader.CurrentEncoding.GetBytes(reader.ReadToEnd());
-                //File.WriteAllBytes(sv.SelectedPath + "\\" + p.AttachmentName, bytes);
-                //Process.Start(sv.SelectedPath + "\\" + p.AttachmentName);
+                Stream responseStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(responseStream);
+                //File.WriteAllText(sv.SelectedPath + "\\" + p.AttachmentName, reader.ReadToEnd());
+                byte[] bytes = reader.CurrentEncoding.GetBytes(reader.ReadToEnd());
+                File.WriteAllBytes(sv.SelectedPath + "\\" + p.AttachmentName, bytes);
+                Process.Start(sv.SelectedPath + "\\" + p.AttachmentName);
 
-                //Console.WriteLine("Download Complete, status {0}", response.StatusDescription);
+                Console.WriteLine("Download Complete, status {0}", response.StatusDescription);
 
-                //reader.Close();
-                //response.Close();
+                reader.Close();
+                response.Close();
             }
             catch (System.UnauthorizedAccessException)
             {

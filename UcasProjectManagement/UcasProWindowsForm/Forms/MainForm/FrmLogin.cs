@@ -75,13 +75,16 @@ namespace UcasProWindowsForm.Forms.MainForm
                 }
                 else
                 {
-                     FrmAdmin frm = new FrmAdmin();
+                    FrmAdmin frm = new FrmAdmin();
                     frm.Show();
+                    
+                   
                 }
                
 
                 Operation.EndOperation(this);
                 this.Hide();
+                FrmLogin_Load(null, null);
 
             }
             else
@@ -101,7 +104,9 @@ namespace UcasProWindowsForm.Forms.MainForm
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
-
+            UserNameTextBox.Clear();
+            PasswordTextBox.Clear();
+            UserNameTextBox.Focus();
         }
 
         private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)

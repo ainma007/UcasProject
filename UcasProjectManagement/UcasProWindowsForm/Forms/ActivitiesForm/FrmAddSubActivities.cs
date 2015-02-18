@@ -11,95 +11,96 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 {
     public partial class FrmAddSubActivities : Telerik.WinControls.UI.RadForm
     {
+        public ProjectActivity trActiv { get; set; }
         public FrmAddSubActivities()
         {
             InitializeComponent();
             RadMessageBox.SetThemeName("TelerikMetro");
         }
         Thread th;
-        public void FillActivty()
-        {
+        //public void FillActivty()
+        //{
 
-            Operation.BeginOperation(this);
-            ///GetActivityByProjectID
-            this.Invoke((MethodInvoker)delegate
-            {
-                this.ActivitiesColumnComboBox.MultiColumnComboBoxElement.DropDownWidth = 500;
+        //    Operation.BeginOperation(this);
+        //    ///GetActivityByProjectID
+        //    this.Invoke((MethodInvoker)delegate
+        //    {
+        //        this.ActivitiesColumnComboBox.MultiColumnComboBoxElement.DropDownWidth = 500;
 
-                this.ActivitiesColumnComboBox.AutoFilter = true;
-                this.ActivitiesColumnComboBox.ValueMember = "ID";
-                this.ActivitiesColumnComboBox.DisplayMember = "ActivityName";
-            });
-
-
-            var q = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
+        //        this.ActivitiesColumnComboBox.AutoFilter = true;
+        //        this.ActivitiesColumnComboBox.ValueMember = "ID";
+        //        this.ActivitiesColumnComboBox.DisplayMember = "ActivityName";
+        //    });
 
 
-
-            this.Invoke((MethodInvoker)delegate
-            {
-                ActivitiesColumnComboBox.DataSource = q;
-                FilterDescriptor filter = new FilterDescriptor();
-                filter.PropertyName = this.ActivitiesColumnComboBox.DisplayMember;
-                filter.Operator = FilterOperator.Contains;
-                this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+        //    var q = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
 
 
 
-            });
+        //    this.Invoke((MethodInvoker)delegate
+        //    {
+        //        ActivitiesColumnComboBox.DataSource = q;
+        //        FilterDescriptor filter = new FilterDescriptor();
+        //        filter.PropertyName = this.ActivitiesColumnComboBox.DisplayMember;
+        //        filter.Operator = FilterOperator.Contains;
+        //        this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
 
-            Operation.EndOperation(this);
-            th.Abort();
+
+
+        //    });
+
+        //    Operation.EndOperation(this);
+        //    th.Abort();
 
 
 
-        }
+        //}
         private void FrmAddSubActivities_Load(object sender, EventArgs e)
         {
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
-            th = new Thread(FillActivty);
+          //  th = new Thread(FillActivty);
 
-            th.Start();
+          //  th.Start();
             Coinlabel.Text = InformationsClass.Coin;
-            StartDateTimePicker.Value = DateTime.Now;
-            EndDateTimePicker.Value = DateTime.Now;
+            StartDateTimePicker.Value = trActiv.StartDate.Value;
+            EndDateTimePicker.Value = trActiv.EndDate.Value;
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
 
             #region "  CheckFillTextBox "
-            if (ActivitiesColumnComboBox.Text == "")
-            {
+            //if (ActivitiesColumnComboBox.Text == "")
+            //{
 
-                ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
-                errorProvider1.SetError(this.ActivitiesColumnComboBox, "من فضلك ادخل النشاط الرئيسي");
-                ActivitiesColumnComboBox.Focus();
-
-
-                return;
-            }
-            else
-            {
-                ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
-                errorProvider1.Clear();
-            }
-            if (ActivitiesColumnComboBox.SelectedValue == null)
-            {
-
-                ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
-                errorProvider1.SetError(this.ActivitiesColumnComboBox, "من فضلك ادخل النشاط الرئيسي");
-                ActivitiesColumnComboBox.Focus();
+            //    ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+            //    errorProvider1.SetError(this.ActivitiesColumnComboBox, "من فضلك ادخل النشاط الرئيسي");
+            //    ActivitiesColumnComboBox.Focus();
 
 
-                return;
-            }
-            else
-            {
-                ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
-                errorProvider1.Clear();
-            }
+            //    return;
+            //}
+            //else
+            //{
+            //    ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+            //    errorProvider1.Clear();
+            //}
+            //if (ActivitiesColumnComboBox.SelectedValue == null)
+            //{
+
+            //    ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+            //    errorProvider1.SetError(this.ActivitiesColumnComboBox, "من فضلك ادخل النشاط الرئيسي");
+            //    ActivitiesColumnComboBox.Focus();
+
+
+            //    return;
+            //}
+            //else
+            //{
+            //    ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+            //    errorProvider1.Clear();
+            //}
 
             if (SubActivitiesNameTextBox.Text == "")
             {
@@ -143,7 +144,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 ProjectSubActivity tb = new ProjectSubActivity()
                 {
 
-                    ProjectActivity_ID = int.Parse(ActivitiesColumnComboBox.SelectedValue.ToString()),
+                    ProjectActivity_ID = trActiv.ID,
                     SubActivityName = SubActivitiesNameTextBox.Text,
                     Description = SubActivitiesDescriptionTextBox.Text,
                     Startdate = DateTime.Parse(StartDateTimePicker.Value.ToString()),
@@ -201,7 +202,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         private void FrmAddSubActivities_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Dispose();
-            GC.SuppressFinalize(th);
+           
             GC.Collect();
             GC.WaitForFullGCComplete();
             GC.WaitForPendingFinalizers();

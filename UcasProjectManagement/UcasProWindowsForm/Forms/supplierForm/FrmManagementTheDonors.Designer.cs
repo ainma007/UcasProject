@@ -151,7 +151,6 @@
             gridViewCommandColumn1,
             gridViewCommandColumn2});
             this.DonersGridView.MasterTemplate.EnableFiltering = true;
-            this.DonersGridView.MasterTemplate.EnablePaging = true;
             this.DonersGridView.MasterTemplate.MultiSelect = true;
             sortDescriptor1.PropertyName = "ID";
             this.DonersGridView.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {

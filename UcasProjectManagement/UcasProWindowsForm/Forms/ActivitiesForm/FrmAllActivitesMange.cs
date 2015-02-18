@@ -122,11 +122,26 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 RadMessageBox.Show("غير مصرحة لك الصلاحية", "", MessageBoxButtons.OK, RadMessageIcon.Info);
                 return;
             }
-            var col2 = ActivitiesGridView.CurrentColumn.Index;
 
-            if (col2 == 9)
+            var col2 = ActivitiesGridView.MasterTemplate.CurrentColumn.Index;
+
+            if (col2 == 8)
             {
 
+
+                Operation.BeginOperation(this);
+
+
+                FrmAddSubActivities frm = new FrmAddSubActivities();
+                Ucas.Data.ProjectActivity DB = (Ucas.Data.ProjectActivity)ActivitiesGridView.CurrentRow.DataBoundItem;
+                frm.trActiv = DB;
+                frm.ShowDialog();
+                Operation.EndOperation(this);
+                this.FrmAllActivitesMange_Load(null, null);
+            }
+            if (col2 == 9)
+            {
+                
 
                 Operation.BeginOperation(this);
                
@@ -143,10 +158,10 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             if (col2 == 10) 
             {
                 
-                if (RadMessageBox.Show(this, OperationX.DeletedMessage, "حذف سجل", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                if (RadMessageBox.Show(this, OperationX.DeleteMessage, "حذف سجل", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
                     Operation.BeginOperation(this);
-                if(    ActivityCmd.DeleteActivity(int.Parse(ActivitiesGridView.CurrentRow.Cells[1].Value.ToString())))
+                if(    ActivityCmd.DeleteActivity(int.Parse(ActivitiesGridView.CurrentRow.Cells[0].Value.ToString())))
                 {
 
                     Operation.EndOperation(this);
@@ -171,7 +186,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
 
             var col = gridViewTemplate2.CurrentColumn.Index;
-            if (col == 8)
+            if (col == 11)
             {
                 Operation.BeginOperation(this);
                
@@ -187,14 +202,14 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             }
 
 
-            if (col == 9)
+            if (col == 12)
                 
             {
-                if (RadMessageBox.Show(this, OperationX.DeletedMessage, "حذف سجل", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                if (RadMessageBox.Show(this, OperationX.DeleteMessage, "حذف سجل", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
                     Operation.BeginOperation(this);
-                    ProjectSubActivity tb = projectSubActivityBindingSource.Current as ProjectSubActivity;
-                    if (SubActivityCmd.DeleteSubActivity(tb.ID))
+                  //  ProjectSubActivity tb = projectSubActivityBindingSource.Current as ProjectSubActivity;
+                    if (SubActivityCmd.DeleteSubActivity(int.Parse(ActivitiesGridView.CurrentRow.Cells[0].Value.ToString())))
                     {
                         Operation.EndOperation(this);
                         Operation.ShowToustOk("تمت عملية الحذف", this);
@@ -206,6 +221,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                         RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
 
                     }
+                    return;
                 }
                
                 

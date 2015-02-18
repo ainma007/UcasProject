@@ -62,13 +62,16 @@ namespace UcasProWindowsForm.Forms.Attachments
                 label1.Visible = true;
 
             });
-            //string filename = "_" + DateTime.Now.ToString("dd_MM_yyyy_hh_mm_ss_tt") + InformationsClass.ProjID + "_" + op.SafeFileName;
+            //string str = "_" + DateTime.Now.ToString("dd_MM_yyyy_hh_mm_ss_tt") + InformationsClass.ProjID + "_" + op.SafeFileName;
 
             //Upload(op.FileName, filename);
             try
             {
-                string str = @"\\B303PC23\UCASAttach\" + InformationsClass.ProjID + "_" + op.SafeFileName;
-                File.Copy(op.FileName, str);
+                string str = "_" + DateTime.Now.ToString("dd_MM_yyyy_hh_mm_ss_tt") + InformationsClass.ProjID + "_" + op.SafeFileName;
+
+                Upload(op.FileName, str);
+                //string str = @"\\HEROO\Ucas\" + "_" + DateTime.Now.ToString("dd_MM_yyyy_hh_mm_ss_tt") + InformationsClass.ProjID + "_" + op.SafeFileName;
+                //File.Copy(op.FileName, str);
 
                 Attachment tb = new Attachment
                 {
@@ -80,35 +83,32 @@ namespace UcasProWindowsForm.Forms.Attachments
                 };
 
                 AttachmentsClass.NewAttachment(tb);
-                tb = null;
-                th.Abort();
 
-                GC.SuppressFinalize(th);
-                GC.SuppressFinalize(tb);
-                GC.Collect();
-                GC.WaitForFullGCComplete();
-                GC.WaitForPendingFinalizers();
+                tb = null;
             }
             catch (Exception)
             {
 
-                RadMessageBox.Show("تأكد من فتح الشبكة", "", MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show("تأكد من الاتصال بشبكة جهاز السيرفر", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+
             }
            
-
-            
-
+                          
+                   
             radWaitingBar1.Invoke((MethodInvoker)delegate
             {
                 radWaitingBar1.Visible = false;
                 label1.Visible = false;
-                Operation.ShowToustOk("تمت عملية الرفع",this);
+                Operation.ShowToustOk("تمت عملية الرفع", this);
                 radTextBox1.Clear();
 
             });
-          
-          
-            
+            th.Abort();
+
+            GC.SuppressFinalize(th);
+           
+            GC.Collect();
+            GC.WaitForFullGCComplete();
         }
         private void Upload(string filename,string filn)
         {

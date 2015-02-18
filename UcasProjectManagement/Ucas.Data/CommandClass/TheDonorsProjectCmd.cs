@@ -62,7 +62,7 @@ namespace Ucas.Data.CommandClass
                 e.OtherDescription = ex.InnerException.InnerException.Message;
                 File.WriteAllText("t.txt", ex.InnerException.InnerException.Message);
                 e.UserDescription = "Error in Save Changed";
-                if (ex.InnerException.InnerException.Message.Contains("Violation of PRIMARY KEY constraint 'PK_TheDonorsProjects_1'. Cannot insert duplicate key in object 'dbo.TheDonorsProjects'. The duplicate key value is (3, 4)"))
+                if (ex.InnerException.InnerException.Message.Contains("Violation of PRIMARY KEY constraint 'PK_TheDonorsProjects'. Cannot insert duplicate key in object 'dbo.TheDonorsProjects'"))
                 {
                     e.UserDescriptionArabic = "الممول مضاف مسبقا للمشروع";
 
@@ -96,7 +96,7 @@ namespace Ucas.Data.CommandClass
                 e.OtherDescription = ex.InnerException.InnerException.Message;
                 File.WriteAllText("t.txt", ex.InnerException.InnerException.Message);
                 e.UserDescription = "Error in Save Changed";
-                if (ex.InnerException.InnerException.Message.Contains("Violation of PRIMARY KEY constraint 'PK_TheDonorsProjects_1'. Cannot insert duplicate key in object 'dbo.TheDonorsProjects'. The duplicate key value is (3, 4)"))
+                if (ex.InnerException.InnerException.Message.Contains("Violation of PRIMARY KEY constraint 'PK_TheDonorsProjects'. Cannot insert duplicate key in object 'dbo.TheDonorsProjects'"))
                 {
                     e.UserDescriptionArabic = "الممول مضاف مسبقا للمشروع";
 

@@ -11,7 +11,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>3.9303cm</Height>
+              <Height>3.2953cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -460,18 +460,6 @@
                             <Direction>RTL</Direction>
                           </Style>
                         </Textbox>
-                        <Line Name="Line1">
-                          <Top>3.73712cm</Top>
-                          <Left>0cm</Left>
-                          <Height>0cm</Height>
-                          <Width>18.91708cm</Width>
-                          <ZIndex>3</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>Dotted</Style>
-                            </Border>
-                          </Style>
-                        </Line>
                       </ReportItems>
                       <KeepTogether>true</KeepTogether>
                       <Style>
@@ -480,7 +468,6 @@
                         </Border>
                       </Style>
                     </Rectangle>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -504,9 +491,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>AmountsReceivedDataSet</DataSetName>
-        <Top>2.76931cm</Top>
+        <Top>2.82223cm</Top>
         <Left>0.36724cm</Left>
-        <Height>3.9303cm</Height>
+        <Height>3.2953cm</Height>
         <Width>18.91708cm</Width>
         <Style>
           <Border>
@@ -533,8 +520,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>6.87599cm</Top>
-        <Left>16.97835cm</Left>
+        <Top>6.29392cm</Top>
+        <Left>16.47564cm</Left>
         <Height>0.58316cm</Height>
         <Width>2.30597cm</Width>
         <ZIndex>1</ZIndex>
@@ -700,9 +687,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>6.87599cm</Top>
-        <Left>13.22759cm</Left>
-        <Height>0.6cm</Height>
+        <Top>6.29392cm</Top>
+        <Left>12.72488cm</Left>
+        <Height>0.58316cm</Height>
         <Width>3.75076cm</Width>
         <ZIndex>5</ZIndex>
         <Style>

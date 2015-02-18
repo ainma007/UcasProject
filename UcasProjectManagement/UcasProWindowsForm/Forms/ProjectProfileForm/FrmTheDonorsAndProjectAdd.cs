@@ -121,7 +121,7 @@ namespace UcasProWindowsForm.Forms.MainForm
 
                 TheDonorsProjectCmd.AddTheTheDonorsProject(tb);
                 Operation.EndOperation(this);
-                RadMessageBox.Show(OperationX.AddMessageDone, "نجاح العملية", MessageBoxButtons.OK, RadMessageIcon.Info);
+                Operation.ShowToustOk(OperationX.AddMessageDone, this);
                 DonorsColumnComboBox.ResetText();
                 GC.SuppressFinalize(tb);
                 GC.Collect();

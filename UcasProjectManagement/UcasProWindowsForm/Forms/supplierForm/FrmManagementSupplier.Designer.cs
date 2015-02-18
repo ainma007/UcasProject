@@ -152,7 +152,6 @@
             gridViewCommandColumn1,
             gridViewCommandColumn2});
             this.supplierGridView.MasterTemplate.EnableFiltering = true;
-            this.supplierGridView.MasterTemplate.EnablePaging = true;
             this.supplierGridView.MasterTemplate.SearchRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.supplierGridView.Name = "supplierGridView";
             this.supplierGridView.ReadOnly = true;

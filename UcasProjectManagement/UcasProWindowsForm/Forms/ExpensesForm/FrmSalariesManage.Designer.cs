@@ -165,12 +165,12 @@
             gridViewTextBoxColumn1.HeaderText = "الرقم الوظيفي";
             gridViewTextBoxColumn1.Name = "EmployeejobNumber";
             gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn1.Width = 145;
+            gridViewTextBoxColumn1.Width = 144;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "Contract.Employee.EmployeeName";
             gridViewTextBoxColumn2.HeaderText = "اسم الموظف";
             gridViewTextBoxColumn2.Name = "EmployeeName";
-            gridViewTextBoxColumn2.Width = 278;
+            gridViewTextBoxColumn2.Width = 279;
             gridViewDecimalColumn2.EnableExpressionEditor = false;
             gridViewDecimalColumn2.FieldName = "Amount";
             gridViewDecimalColumn2.HeaderText = "الراتب";
@@ -236,7 +236,6 @@
             gridViewCommandColumn1,
             gridViewCommandColumn2});
             this.SalaryGridView.MasterTemplate.EnableFiltering = true;
-            this.SalaryGridView.MasterTemplate.EnablePaging = true;
             this.SalaryGridView.MasterTemplate.SearchRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             sortDescriptor1.PropertyName = "ID";
             this.SalaryGridView.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {

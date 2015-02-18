@@ -41,7 +41,6 @@
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             this.CoineDropDownList = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
-            this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.TotalCostTextBox = new Telerik.WinControls.UI.RadTextBox();
@@ -51,6 +50,7 @@
             this.StartDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.ProjectNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
@@ -59,7 +59,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CoineDropDownList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalCostTextBox)).BeginInit();
@@ -69,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.StartDateTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectNameTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,7 +95,7 @@
             this.radGroupBox1.HeaderText = "بيانات التعديل";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(351, 337);
+            this.radGroupBox1.Size = new System.Drawing.Size(351, 342);
             this.radGroupBox1.TabIndex = 2;
             this.radGroupBox1.Text = "بيانات التعديل";
             this.radGroupBox1.ThemeName = "TelerikMetro";
@@ -178,19 +178,6 @@
             this.radLabel6.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel6.ThemeName = "TelerikMetro";
             // 
-            // SaveBtn
-            // 
-            this.SaveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SaveBtn.Image = global::UcasProWindowsForm.Properties.Resources.SaveChang;
-            this.SaveBtn.Location = new System.Drawing.Point(212, 274);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(127, 44);
-            this.SaveBtn.TabIndex = 8;
-            this.SaveBtn.Text = "حفظ التعديلات";
-            this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SaveBtn.ThemeName = "TelerikMetro";
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
-            // 
             // radLabel1
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -247,7 +234,7 @@
             this.EndDateTimePicker.Size = new System.Drawing.Size(93, 22);
             this.EndDateTimePicker.TabIndex = 4;
             this.EndDateTimePicker.TabStop = false;
-            this.EndDateTimePicker.Text = "15/09/2014";
+            this.EndDateTimePicker.Text = "06/02/2015";
             this.EndDateTimePicker.ThemeName = "TelerikMetro";
             this.EndDateTimePicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
             // 
@@ -273,7 +260,7 @@
             this.StartDateTimePicker.Size = new System.Drawing.Size(93, 22);
             this.StartDateTimePicker.TabIndex = 2;
             this.StartDateTimePicker.TabStop = false;
-            this.StartDateTimePicker.Text = "15/09/2014";
+            this.StartDateTimePicker.Text = "06/02/2015";
             this.StartDateTimePicker.ThemeName = "TelerikMetro";
             this.StartDateTimePicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
             // 
@@ -290,11 +277,24 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // SaveBtn
+            // 
+            this.SaveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveBtn.Image = global::UcasProWindowsForm.Properties.Resources.SaveChang;
+            this.SaveBtn.Location = new System.Drawing.Point(212, 274);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(127, 44);
+            this.SaveBtn.TabIndex = 8;
+            this.SaveBtn.Text = "حفظ التعديلات";
+            this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SaveBtn.ThemeName = "TelerikMetro";
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
             // frmUserEditProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 337);
+            this.ClientSize = new System.Drawing.Size(351, 342);
             this.Controls.Add(this.radGroupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(359, 372);
@@ -321,7 +321,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CoineDropDownList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalCostTextBox)).EndInit();
@@ -331,6 +330,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.StartDateTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectNameTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

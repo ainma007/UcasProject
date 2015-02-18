@@ -98,8 +98,8 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
             Coinlabel.Text = InformationsClass.Coin;
-            StartDateTimePicker.Value = DateTime.Now;
-            EndDateTimePicker.Value = DateTime.Now;
+            StartDateTimePicker.Text = InformationsClass.Startdatepro.ToString();
+            EndDateTimePicker.Text = InformationsClass.enddatepro.ToString();
         }
 
         private void TotalCostTextBox_KeyPress(object sender, KeyPressEventArgs e)

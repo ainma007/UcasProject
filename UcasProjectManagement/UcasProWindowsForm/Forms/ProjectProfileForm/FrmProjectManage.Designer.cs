@@ -42,7 +42,6 @@
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.AddBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -63,11 +62,6 @@
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripSeparator3
             // 
@@ -107,7 +101,6 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator4,
             this.toolStripSeparator3,
             this.AddBtn,
             this.toolStripSeparator1,
@@ -230,7 +223,7 @@
             gridViewComboBoxColumn2,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
-            this.ProjectProfileGridView.MasterTemplate.EnablePaging = true;
+            this.ProjectProfileGridView.MasterTemplate.EnableFiltering = true;
             this.ProjectProfileGridView.MasterTemplate.MultiSelect = true;
             this.ProjectProfileGridView.MasterTemplate.SearchRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             sortDescriptor1.PropertyName = "ID";
@@ -313,7 +306,6 @@
         #endregion
 
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton AddBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

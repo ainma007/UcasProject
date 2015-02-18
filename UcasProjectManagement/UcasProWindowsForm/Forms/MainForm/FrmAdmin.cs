@@ -357,5 +357,16 @@ namespace UcasProWindowsForm.Forms.MainForm
             }
 
         }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            FrmLogin myForm = (FrmLogin)Application.OpenForms["FrmLogin"];
+            myForm.Show();
+            this.Dispose();
+            GC.SuppressFinalize(th);
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            GC.WaitForPendingFinalizers();
+        }
     }
 }
