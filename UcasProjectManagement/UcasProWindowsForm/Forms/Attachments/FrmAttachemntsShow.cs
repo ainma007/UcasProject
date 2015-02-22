@@ -135,25 +135,42 @@ namespace UcasProWindowsForm.Forms.Attachments
 
                 ////عملية السيرفر 
                 // Get the object used to communicate with the server.
-                FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://mazoonadv.com/" + p.FilePathX);
-                request.Method = WebRequestMethods.Ftp.DownloadFile;
+                //FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://mazoonadv.com/" + p.FilePathX);
+                //request.UseBinary = true;
+                //request.UsePassive = true;
+                //request.KeepAlive = true;
+                //request.Method = WebRequestMethods.Ftp.DownloadFile;
 
                 // This example assumes the FTP site uses anonymous logon.
-                request.Credentials = new NetworkCredential("xpremax", "123456");
+                //request.Credentials = new NetworkCredential("xpremax", "123456");
 
-                FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+                //FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 
-                Stream responseStream = response.GetResponseStream();
-                StreamReader reader = new StreamReader(responseStream);
+                //Stream responseStream = response.GetResponseStream();
+                //StreamReader reader = new StreamReader(responseStream);
                 //File.WriteAllText(sv.SelectedPath + "\\" + p.AttachmentName, reader.ReadToEnd());
-                byte[] bytes = reader.CurrentEncoding.GetBytes(reader.ReadToEnd());
-                File.WriteAllBytes(sv.SelectedPath + "\\" + p.AttachmentName, bytes);
-                Process.Start(sv.SelectedPath + "\\" + p.AttachmentName);
+                //byte[] bytes = reader.CurrentEncoding.GetBytes(reader.ReadToEnd());
+                //File.WriteAllBytes(sv.SelectedPath + "\\" + p.AttachmentName, bytes);
+                
 
-                Console.WriteLine("Download Complete, status {0}", response.StatusDescription);
+                //Console.WriteLine("Download Complete, status {0}", response.StatusDescription);
 
-                reader.Close();
-                response.Close();
+                //reader.Close();
+                //response.Close();
+                var ftpfullpath = "ftp://mazoonadv.com/" + p.FilePathX;
+
+                using (WebClient request = new WebClient())
+                {
+                    request.Credentials = new NetworkCredential("xpremax", "123456");
+                    byte[] fileData = request.DownloadData(ftpfullpath);
+
+                    using (FileStream file = File.Create(sv.SelectedPath + "\\" + p.AttachmentName))
+                    {
+                        file.Write(fileData, 0, fileData.Length);
+                        file.Close();
+                    }
+                    Process.Start(sv.SelectedPath + "\\" + p.AttachmentName);
+                }
             }
             catch (System.UnauthorizedAccessException)
             {

@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.Coinlabel = new System.Windows.Forms.Label();
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
@@ -42,7 +39,6 @@
             this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
-            this.ActivitiesColumnComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.SubActivitiesDescriptionTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
@@ -56,6 +52,7 @@
             this.SubActivitiesNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ActvitesTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
@@ -64,9 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ActivitiesColumnComboBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ActivitiesColumnComboBox.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ActivitiesColumnComboBox.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesDescriptionTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
@@ -85,6 +79,7 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.ActvitesTextBox);
             this.radGroupBox1.Controls.Add(this.Coinlabel);
             this.radGroupBox1.Controls.Add(this.radLabel9);
             this.radGroupBox1.Controls.Add(this.StatusDropDownList);
@@ -92,7 +87,6 @@
             this.radGroupBox1.Controls.Add(this.radLabel8);
             this.radGroupBox1.Controls.Add(this.radLabel7);
             this.radGroupBox1.Controls.Add(this.radLabel5);
-            this.radGroupBox1.Controls.Add(this.ActivitiesColumnComboBox);
             this.radGroupBox1.Controls.Add(this.SubActivitiesDescriptionTextBox);
             this.radGroupBox1.Controls.Add(this.SaveBtn);
             this.radGroupBox1.Controls.Add(this.radLabel6);
@@ -187,69 +181,14 @@
             // radLabel5
             // 
             this.radLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel5.Location = new System.Drawing.Point(251, 30);
+            this.radLabel5.ForeColor = System.Drawing.Color.Red;
+            this.radLabel5.Location = new System.Drawing.Point(244, 30);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(85, 16);
             this.radLabel5.TabIndex = 15;
             this.radLabel5.Text = "النشاط الرئيسي:";
             this.radLabel5.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.radLabel5.ThemeName = "TelerikMetro";
-            // 
-            // ActivitiesColumnComboBox
-            // 
-            this.ActivitiesColumnComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            // 
-            // ActivitiesColumnComboBox.NestedRadGridView
-            // 
-            this.ActivitiesColumnComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.ActivitiesColumnComboBox.EditorControl.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ActivitiesColumnComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.ActivitiesColumnComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ActivitiesColumnComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ActivitiesColumnComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
-            // 
-            // 
-            // 
-            this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
-            this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn1.EnableExpressionEditor = false;
-            gridViewDecimalColumn1.FieldName = "ID";
-            gridViewDecimalColumn1.HeaderText = "ID";
-            gridViewDecimalColumn1.IsAutoGenerated = true;
-            gridViewDecimalColumn1.IsVisible = false;
-            gridViewDecimalColumn1.Name = "ID";
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "ActivityName";
-            gridViewTextBoxColumn1.HeaderText = "الانشطة الرئيسية";
-            gridViewTextBoxColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            gridViewTextBoxColumn1.IsAutoGenerated = true;
-            gridViewTextBoxColumn1.Name = "ActivityName";
-            gridViewTextBoxColumn1.Width = 171;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "TotalCost";
-            gridViewTextBoxColumn2.HeaderText = "المبلغ المخصص";
-            gridViewTextBoxColumn2.Name = "TotalCost";
-            this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn1,
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2});
-            this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.ActivitiesColumnComboBox.EditorControl.Name = "NestedRadGridView";
-            this.ActivitiesColumnComboBox.EditorControl.ReadOnly = true;
-            this.ActivitiesColumnComboBox.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ActivitiesColumnComboBox.EditorControl.ShowGroupPanel = false;
-            this.ActivitiesColumnComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.ActivitiesColumnComboBox.EditorControl.TabIndex = 0;
-            this.ActivitiesColumnComboBox.Location = new System.Drawing.Point(23, 29);
-            this.ActivitiesColumnComboBox.Name = "ActivitiesColumnComboBox";
-            this.ActivitiesColumnComboBox.Size = new System.Drawing.Size(219, 20);
-            this.ActivitiesColumnComboBox.TabIndex = 0;
-            this.ActivitiesColumnComboBox.TabStop = false;
-            this.ActivitiesColumnComboBox.ThemeName = "TelerikMetro";
             // 
             // SubActivitiesDescriptionTextBox
             // 
@@ -364,7 +303,7 @@
             // radLabel1
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel1.Location = new System.Drawing.Point(244, 57);
+            this.radLabel1.Location = new System.Drawing.Point(245, 57);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(103, 16);
             this.radLabel1.TabIndex = 14;
@@ -385,6 +324,16 @@
             // 
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.RightToLeft = true;
+            // 
+            // ActvitesTextBox
+            // 
+            this.ActvitesTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ActvitesTextBox.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActvitesTextBox.ForeColor = System.Drawing.Color.Red;
+            this.ActvitesTextBox.Location = new System.Drawing.Point(23, 28);
+            this.ActvitesTextBox.Name = "ActvitesTextBox";
+            this.ActvitesTextBox.Size = new System.Drawing.Size(220, 21);
+            this.ActvitesTextBox.TabIndex = 31;
             // 
             // FrmSubActivityEdit
             // 
@@ -417,9 +366,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ActivitiesColumnComboBox.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ActivitiesColumnComboBox.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ActivitiesColumnComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesDescriptionTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
@@ -449,7 +395,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadLabel radLabel8;
         private Telerik.WinControls.UI.RadLabel radLabel7;
-        public Telerik.WinControls.UI.RadMultiColumnComboBox ActivitiesColumnComboBox;
         public Telerik.WinControls.UI.RadTextBox SubActivitiesDescriptionTextBox;
         public Telerik.WinControls.UI.RadTextBox TotalCostTextBox;
         public Telerik.WinControls.UI.RadDateTimePicker EndDateTimePicker;
@@ -461,5 +406,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel9;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label Coinlabel;
+        private System.Windows.Forms.TextBox ActvitesTextBox;
     }
 }

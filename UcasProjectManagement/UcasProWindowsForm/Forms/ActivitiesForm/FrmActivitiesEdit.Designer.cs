@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmActivitiesEdit));
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmActivitiesEdit));
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.Coinlabel = new System.Windows.Forms.Label();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
+            this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.StatusDropDownList = new Telerik.WinControls.UI.RadDropDownList();
             this.ActivitiesDescriptionTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
@@ -48,10 +49,10 @@
             this.ActivitiesNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StatusDropDownList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActivitiesDescriptionTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
@@ -64,7 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActivitiesNameTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +94,7 @@
             this.radGroupBox1.HeaderText = "بيانات التعديل";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(352, 290);
+            this.radGroupBox1.Size = new System.Drawing.Size(352, 285);
             this.radGroupBox1.TabIndex = 0;
             this.radGroupBox1.Text = "بيانات التعديل";
             this.radGroupBox1.ThemeName = "TelerikMetro";
@@ -118,6 +118,22 @@
             this.radLabel5.TabIndex = 20;
             this.radLabel5.Text = "الحالة:";
             this.radLabel5.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // SaveBtn
+            // 
+            this.SaveBtn.BackColor = System.Drawing.Color.Linen;
+            this.SaveBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SaveBtn.BackgroundImage")));
+            this.SaveBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.SaveBtn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveBtn.Image = global::UcasProWindowsForm.Properties.Resources.SaveChang;
+            this.SaveBtn.Location = new System.Drawing.Point(220, 236);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(127, 44);
+            this.SaveBtn.TabIndex = 7;
+            this.SaveBtn.Text = "حفظ التعديلات";
+            this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SaveBtn.ThemeName = "TelerikMetro";
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // StatusDropDownList
             // 
@@ -185,7 +201,7 @@
             this.EndDateTimePicker.Size = new System.Drawing.Size(100, 21);
             this.EndDateTimePicker.TabIndex = 4;
             this.EndDateTimePicker.TabStop = false;
-            this.EndDateTimePicker.Text = "06/02/2015";
+            this.EndDateTimePicker.Text = "15/09/2014";
             this.EndDateTimePicker.ThemeName = "TelerikMetro";
             this.EndDateTimePicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
             // 
@@ -212,7 +228,7 @@
             this.StartDateTimePicker.Size = new System.Drawing.Size(100, 21);
             this.StartDateTimePicker.TabIndex = 3;
             this.StartDateTimePicker.TabStop = false;
-            this.StartDateTimePicker.Text = "06/02/2015";
+            this.StartDateTimePicker.Text = "15/09/2014";
             this.StartDateTimePicker.ThemeName = "TelerikMetro";
             this.StartDateTimePicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
             // 
@@ -270,28 +286,12 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.RightToLeft = true;
             // 
-            // SaveBtn
-            // 
-            this.SaveBtn.BackColor = System.Drawing.Color.Linen;
-            this.SaveBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SaveBtn.BackgroundImage")));
-            this.SaveBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SaveBtn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveBtn.Image = global::UcasProWindowsForm.Properties.Resources.SaveChang;
-            this.SaveBtn.Location = new System.Drawing.Point(220, 236);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(127, 44);
-            this.SaveBtn.TabIndex = 7;
-            this.SaveBtn.Text = "حفظ التعديلات";
-            this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SaveBtn.ThemeName = "TelerikMetro";
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
-            // 
             // FrmActivitiesEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(352, 290);
+            this.ClientSize = new System.Drawing.Size(352, 285);
             this.Controls.Add(this.radGroupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(360, 320);
@@ -313,6 +313,7 @@
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StatusDropDownList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActivitiesDescriptionTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
@@ -325,7 +326,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActivitiesNameTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

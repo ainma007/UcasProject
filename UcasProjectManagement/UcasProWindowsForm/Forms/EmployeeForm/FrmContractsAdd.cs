@@ -168,8 +168,8 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             th.Start();
             Coinlabel.Text = InformationsClass.Coin;
             Coinlabel2.Text = InformationsClass.Coin;
-            StartDateTimePicker.Value = DateTime.Now;
-            EndDateTimePicker.Value = DateTime.Now;
+            StartDateTimePicker.Text = InformationsClass.Startdatepro;
+            EndDateTimePicker.Text = InformationsClass.enddatepro;
 
             if (TotaltextBox.Text == "")
             {
@@ -209,21 +209,19 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             this.Dispose();
         }
 
+
+
         public void DateCont()
         {
-            DateTime StartCont = DateTime.Parse(StartDateTimePicker.Value.Date.ToString()).Date;
+            DateTime start = StartDateTimePicker.Value;
+            DateTime end = EndDateTimePicker.Value;
+            int compMonth = (end.Month + end.Year * 12) - (start.Month + start.Year * 12);
+            double daysInEndMonth = (end - end.AddMonths(1)).Days;
+            double months = compMonth + (start.Day - end.Day) / daysInEndMonth;
 
-            DateTime EndCont = DateTime.Parse(EndDateTimePicker.Value.Date.ToString()).Date;
+            //    var dateSpan = DateTimeSpan.CompareDates(StartDateTimePicker.Value,  EndDateTimePicker.Value);
 
-            TimeSpan xDays = EndCont - StartCont;
 
-          
-          //  MessageBox.Show("" + xDays.TotalDays);
-            ////
-            if (xDays.TotalDays == 0)
-            {
-                return;
-            }
             if (TotaltextBox.Text == "0")
             {
                 return;
@@ -232,17 +230,23 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             {
                 return;
             }
-            radTextBox1.Text = xDays.TotalDays.ToString();
-            double month = xDays.TotalDays / 30;
-          //  int Totaldays = int .Parse (xDays);
-            double Salary = double.Parse(TotaltextBox.Text.ToString()) / month;
-           
 
-            
-            SalaryTextBox.Text = Salary.ToString();
-            
 
-          
+            double Salary = double.Parse(TotaltextBox.Text.ToString()) / months;
+
+            if (start == end)
+            {
+
+                SalaryTextBox.Text = " 0";
+            }
+            else
+            {
+                SalaryTextBox.Text = Salary.ToString();
+            }
+
+
+
+
         }
 
         private void StartDateTimePicker_ValueChanged(object sender, EventArgs e)
@@ -258,6 +262,9 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         private void TotaltextBox_TextChanged(object sender, EventArgs e)
         {
             DateCont();
-        }   
+        }
+      
     }
+
+   
 }

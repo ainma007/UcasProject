@@ -45,6 +45,8 @@
             this.SubActivitiesNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
+            this.ActvitesTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesDescriptionTextBox)).BeginInit();
@@ -59,12 +61,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesNameTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.ActvitesTextBox);
+            this.radGroupBox1.Controls.Add(this.radLabel5);
             this.radGroupBox1.Controls.Add(this.Coinlabel);
             this.radGroupBox1.Controls.Add(this.SubActivitiesDescriptionTextBox);
             this.radGroupBox1.Controls.Add(this.AddBtn);
@@ -98,10 +103,10 @@
             // SubActivitiesDescriptionTextBox
             // 
             this.SubActivitiesDescriptionTextBox.AutoSize = false;
-            this.SubActivitiesDescriptionTextBox.Location = new System.Drawing.Point(16, 80);
+            this.SubActivitiesDescriptionTextBox.Location = new System.Drawing.Point(19, 80);
             this.SubActivitiesDescriptionTextBox.Multiline = true;
             this.SubActivitiesDescriptionTextBox.Name = "SubActivitiesDescriptionTextBox";
-            this.SubActivitiesDescriptionTextBox.Size = new System.Drawing.Size(231, 54);
+            this.SubActivitiesDescriptionTextBox.Size = new System.Drawing.Size(228, 54);
             this.SubActivitiesDescriptionTextBox.TabIndex = 2;
             this.SubActivitiesDescriptionTextBox.ThemeName = "TelerikMetro";
             // 
@@ -223,6 +228,29 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.RightToLeft = true;
             // 
+            // radLabel5
+            // 
+            this.radLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radLabel5.ForeColor = System.Drawing.Color.Red;
+            this.radLabel5.Location = new System.Drawing.Point(251, 21);
+            this.radLabel5.Name = "radLabel5";
+            this.radLabel5.Size = new System.Drawing.Size(78, 18);
+            this.radLabel5.TabIndex = 13;
+            this.radLabel5.Text = "النشاط الرئيسي:";
+            this.radLabel5.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // ActvitesTextBox
+            // 
+            this.ActvitesTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ActvitesTextBox.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActvitesTextBox.ForeColor = System.Drawing.Color.Red;
+            this.ActvitesTextBox.Location = new System.Drawing.Point(19, 19);
+            this.ActvitesTextBox.Name = "ActvitesTextBox";
+            this.ActvitesTextBox.ReadOnly = true;
+            this.ActvitesTextBox.Size = new System.Drawing.Size(228, 21);
+            this.ActvitesTextBox.TabIndex = 0;
+            this.ActvitesTextBox.TabStop = false;
+            // 
             // FrmAddSubActivities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,6 +288,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubActivitiesNameTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -282,6 +311,8 @@
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label Coinlabel;
+        private Telerik.WinControls.UI.RadLabel radLabel5;
+        private System.Windows.Forms.TextBox ActvitesTextBox;
 
     }
 }

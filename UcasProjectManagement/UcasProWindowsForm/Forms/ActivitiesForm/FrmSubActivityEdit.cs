@@ -19,36 +19,53 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         Thread th;
         public int SubXid { get; set; }
         public ProjectSubActivity TragetSUBActivity { get; set; }
-        public void FillActivty()
-        {
+        //public void FillActivty()
+        //{
 
-            Operation.BeginOperation(this);
-            ///GetActivityByProjectID
-            ///
-            this.Invoke((MethodInvoker)delegate {
-            this.ActivitiesColumnComboBox.MultiColumnComboBoxElement.DropDownWidth = 500;
+        //    Operation.BeginOperation(this);
+        //    ///GetActivityByProjectID
+        //    ///
+        //    this.Invoke((MethodInvoker)delegate {
+        //    this.ActivitiesColumnComboBox.MultiColumnComboBoxElement.DropDownWidth = 500;
 
-            this.ActivitiesColumnComboBox.AutoFilter = true;
-            this.ActivitiesColumnComboBox.ValueMember = "ID";
-            this.ActivitiesColumnComboBox.DisplayMember = "ActivityName";
-            });
+        //    this.ActivitiesColumnComboBox.AutoFilter = true;
+        //    this.ActivitiesColumnComboBox.ValueMember = "ID";
+        //    this.ActivitiesColumnComboBox.DisplayMember = "ActivityName";
+        //    });
            
            
-             var q  = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
+        //     var q  = ActivityCmd.GetAllActivitiesByProjectID(InformationsClass.ProjID);
             
 
         
-             this.Invoke((MethodInvoker)delegate {
-            ActivitiesColumnComboBox.DataSource = q;
-            FilterDescriptor filter = new FilterDescriptor();
-            filter.PropertyName = this.ActivitiesColumnComboBox.DisplayMember;
-            filter.Operator = FilterOperator.Contains;
-            this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+        //     this.Invoke((MethodInvoker)delegate {
+        //    ActivitiesColumnComboBox.DataSource = q;
+        //    FilterDescriptor filter = new FilterDescriptor();
+        //    filter.PropertyName = this.ActivitiesColumnComboBox.DisplayMember;
+        //    filter.Operator = FilterOperator.Contains;
+        //    this.ActivitiesColumnComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+
+
+
+          
+        //  });
+
+        //  Operation.EndOperation(this);
+
+        //  th.Abort();
 
            
+        //}
+        private void FrmSubActivityEdit_Load(object sender, EventArgs e)
+        {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
+            //th = new Thread(FillActivty);
+            //th.Start();
+
             Coinlabel.Text = InformationsClass.Coin;
             SubXid = TragetSUBActivity.ID;
-            ActivitiesColumnComboBox.Text = TragetSUBActivity.ProjectActivity.ActivityName;
+            ActvitesTextBox.Text = TragetSUBActivity.ProjectActivity.ActivityName;
             SubActivitiesNameTextBox.Text = TragetSUBActivity.SubActivityName;
             SubActivitiesDescriptionTextBox.Text = TragetSUBActivity.Description;
             StartDateTimePicker.Text = TragetSUBActivity.Startdate.ToString();
@@ -58,56 +75,12 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
             ProgressEditor.Value = int.Parse(TragetSUBActivity.Progress.ToString());
             ProgressEditor.Maximum = 100;
             ProgressEditor.Minimum = 0;
-          
-          });
-
-          Operation.EndOperation(this);
-
-          th.Abort();
-
-           
-        }
-        private void FrmSubActivityEdit_Load(object sender, EventArgs e)
-        {
-            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
-
-            th = new Thread(FillActivty);
-            th.Start();
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
-            if (ActivitiesColumnComboBox.Text == "")
-            {
-
-                ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
-                errorProvider1.SetError(this.ActivitiesColumnComboBox, "من فضلك ادخل النشاط الرئيسي");
-                ActivitiesColumnComboBox.Focus();
-
-
-                return;
-            }
-            else
-            {
-                ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
-                errorProvider1.Clear();
-            }
-            if (ActivitiesColumnComboBox.SelectedValue == null)
-            {
-
-                ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
-                errorProvider1.SetError(this.ActivitiesColumnComboBox, "من فضلك ادخل النشاط الرئيسي");
-                ActivitiesColumnComboBox.Focus();
-
-
-                return;
-            }
-            else
-            {
-                ActivitiesColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
-                errorProvider1.Clear();
-            }
+           
 
             if (SubActivitiesNameTextBox.Text == "")
             {
@@ -153,7 +126,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
 
                  {
                      ID = SubXid,
-                     ProjectActivity_ID = int.Parse(ActivitiesColumnComboBox.SelectedValue.ToString()),
+                    
                      SubActivityName = SubActivitiesNameTextBox.Text,
                      Description = SubActivitiesDescriptionTextBox.Text,
                      Startdate = StartDateTimePicker.Value.Date,
@@ -172,7 +145,6 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                  RadMessageBox.Show(OperationX.SaveMessagedone, "نجاح العملية", MessageBoxButtons.OK,RadMessageIcon.Info);
 
                  Operation.EndOperation(this);
-                 GC.SuppressFinalize(th);
                  GC.SuppressFinalize(tb);
                  GC.Collect();
                  GC.WaitForFullGCComplete();
@@ -208,10 +180,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
         private void FrmSubActivityEdit_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Dispose();
-            GC.SuppressFinalize(th);
-            GC.Collect();
-            GC.WaitForFullGCComplete();
-            GC.WaitForPendingFinalizers();
+                      
         }
            
     }

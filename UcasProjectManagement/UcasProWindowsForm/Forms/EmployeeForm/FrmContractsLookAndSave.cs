@@ -203,5 +203,59 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             GC.WaitForPendingFinalizers();
             this.Dispose();
         }
+        public void DateCont()
+        {
+            DateTime start = StartDateTimePicker.Value;
+            DateTime end = EndDateTimePicker.Value;
+            int compMonth = (end.Month + end.Year * 12) - (start.Month + start.Year * 12);
+            double daysInEndMonth = (end - end.AddMonths(1)).Days;
+            double months = compMonth + (start.Day - end.Day) / daysInEndMonth;
+
+            //    var dateSpan = DateTimeSpan.CompareDates(StartDateTimePicker.Value,  EndDateTimePicker.Value);
+
+
+            if (TotaltextBox.Text == "0")
+            {
+                return;
+            }
+            if (TotaltextBox.Text == "")
+            {
+                return;
+            }
+
+
+            double Salary = double.Parse(TotaltextBox.Text.ToString()) / months;
+
+            if (start == end)
+            {
+
+                SalaryTextBox.Text = " 0";
+            }
+            else
+            {
+                SalaryTextBox.Text = Salary.ToString();
+            }
+
+
+
+
+        }
+       
+
+        private void StartDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            DateCont();
+        }
+
+        private void EndDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            DateCont();
+        }
+
+        private void TotaltextBox_TextChanged(object sender, EventArgs e)
+        {
+            DateCont();
+        } 
     }
+   
 }

@@ -39,7 +39,6 @@ namespace Ucas.Data.CommandClass
                 db.Configuration.LazyLoadingEnabled = false;
                 db.Configuration.ProxyCreationEnabled = false;
                 var q = db.ProjectSubActivities.Where(p => p.ID == SActv.ID).SingleOrDefault();
-                q.ProjectActivity_ID = SActv.ProjectActivity_ID;
                 q.SubActivityName = SActv.SubActivityName;
                 q.Description = SActv.Description;
                 q.Startdate = SActv.Startdate;

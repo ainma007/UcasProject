@@ -62,6 +62,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
           //  th = new Thread(FillActivty);
 
           //  th.Start();
+            ActvitesTextBox.Text = trActiv.ActivityName;
             Coinlabel.Text = InformationsClass.Coin;
             StartDateTimePicker.Value = trActiv.StartDate.Value;
             EndDateTimePicker.Value = trActiv.EndDate.Value;

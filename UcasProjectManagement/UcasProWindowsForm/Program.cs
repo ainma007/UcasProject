@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
@@ -27,6 +29,25 @@ namespace UcasProWindowsForm
         // current one, if any; or null if the current process
         // is unique.
         {
+            AppDomain.CurrentDomain.AssemblyResolve +=
+      (sender, args) =>
+      {
+          var an = new AssemblyName(args.Name);
+         
+              Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(args.Name);
+              if (stream != null)
+              {
+                  using (stream)
+                  {
+                      byte[] data = new byte[stream.Length];
+                      stream.Read(data, 0, data.Length);
+                      return Assembly.Load(data);
+                  }
+              }
+          
+          return null;
+      };
+            
             Process curr = Process.GetCurrentProcess();
             Process[] procs = Process.GetProcessesByName(curr.ProcessName);
             foreach (Process p in procs)

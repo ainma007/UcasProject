@@ -115,10 +115,12 @@ namespace UcasProWindowsForm.Forms.Attachments
             FileInfo fileInf = new FileInfo(filename);
             string uri = "ftp://mazoonadv.com/"+filn;
             FtpWebRequest reqFTP;
-
+            
             // Create FtpWebRequest object from the Uri provided
             reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(uri));
-
+            reqFTP.UseBinary = true;
+            reqFTP.UsePassive = true;
+            reqFTP.KeepAlive = true;
             // Provide the WebPermission Credintials
             reqFTP.Credentials = new NetworkCredential("xpremax",
                                                        "123456");
