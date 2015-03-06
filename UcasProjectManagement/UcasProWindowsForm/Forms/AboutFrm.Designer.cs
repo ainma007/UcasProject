@@ -32,6 +32,7 @@
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
@@ -104,6 +105,7 @@
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         private Telerik.WinControls.UI.RadButton radButton1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
 
 
     }

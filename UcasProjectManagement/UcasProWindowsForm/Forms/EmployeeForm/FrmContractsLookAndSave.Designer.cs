@@ -102,7 +102,7 @@
             // Coinlabel2
             // 
             this.Coinlabel2.ForeColor = System.Drawing.Color.Green;
-            this.Coinlabel2.Location = new System.Drawing.Point(112, 140);
+            this.Coinlabel2.Location = new System.Drawing.Point(111, 112);
             this.Coinlabel2.Name = "Coinlabel2";
             this.Coinlabel2.Size = new System.Drawing.Size(100, 19);
             this.Coinlabel2.TabIndex = 19;
@@ -111,7 +111,7 @@
             // Coinlabel
             // 
             this.Coinlabel.ForeColor = System.Drawing.Color.Green;
-            this.Coinlabel.Location = new System.Drawing.Point(113, 111);
+            this.Coinlabel.Location = new System.Drawing.Point(113, 143);
             this.Coinlabel.Name = "Coinlabel";
             this.Coinlabel.Size = new System.Drawing.Size(100, 19);
             this.Coinlabel.TabIndex = 18;
@@ -120,7 +120,7 @@
             // radLabel2
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel2.Location = new System.Drawing.Point(305, 110);
+            this.radLabel2.Location = new System.Drawing.Point(305, 142);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(58, 18);
             this.radLabel2.TabIndex = 17;
@@ -130,7 +130,7 @@
             // radLabel1
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel1.Location = new System.Drawing.Point(303, 169);
+            this.radLabel1.Location = new System.Drawing.Point(303, 171);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(34, 18);
             this.radLabel1.TabIndex = 16;
@@ -140,11 +140,13 @@
             // TotaltextBox
             // 
             this.TotaltextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TotaltextBox.Location = new System.Drawing.Point(217, 109);
+            this.TotaltextBox.Location = new System.Drawing.Point(217, 141);
             this.TotaltextBox.Name = "TotaltextBox";
+            this.TotaltextBox.ReadOnly = true;
             this.TotaltextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TotaltextBox.Size = new System.Drawing.Size(81, 22);
             this.TotaltextBox.TabIndex = 16;
+            this.TotaltextBox.TabStop = false;
             this.TotaltextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TotaltextBox.ThemeName = "TelerikMetro";
             this.TotaltextBox.TextChanged += new System.EventHandler(this.TotaltextBox_TextChanged);
@@ -158,7 +160,7 @@
             radListDataItem2.Text = "غير فعال";
             this.StatusDropDownList.Items.Add(radListDataItem1);
             this.StatusDropDownList.Items.Add(radListDataItem2);
-            this.StatusDropDownList.Location = new System.Drawing.Point(204, 168);
+            this.StatusDropDownList.Location = new System.Drawing.Point(204, 170);
             this.StatusDropDownList.Name = "StatusDropDownList";
             this.StatusDropDownList.Size = new System.Drawing.Size(94, 19);
             this.StatusDropDownList.TabIndex = 4;
@@ -180,7 +182,7 @@
             // radLabel6
             // 
             this.radLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel6.Location = new System.Drawing.Point(302, 139);
+            this.radLabel6.Location = new System.Drawing.Point(301, 111);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(73, 18);
             this.radLabel6.TabIndex = 15;
@@ -190,13 +192,14 @@
             // SalaryTextBox
             // 
             this.SalaryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SalaryTextBox.Location = new System.Drawing.Point(217, 139);
+            this.SalaryTextBox.Location = new System.Drawing.Point(216, 111);
             this.SalaryTextBox.Name = "SalaryTextBox";
             this.SalaryTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.SalaryTextBox.Size = new System.Drawing.Size(81, 22);
             this.SalaryTextBox.TabIndex = 3;
             this.SalaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.SalaryTextBox.ThemeName = "TelerikMetro";
+            this.SalaryTextBox.TextChanged += new System.EventHandler(this.SalaryTextBox_TextChanged);
             this.SalaryTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SalaryTextBox_KeyPress);
             // 
             // EndDateTimePicker
@@ -274,7 +277,7 @@
             this.EmployeeComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.EmployeeComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // EmployeeComboBox.NestedRadGridView
             // 
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.EmployeeComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;

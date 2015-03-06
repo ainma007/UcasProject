@@ -48,3 +48,14 @@ C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\bin\
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.dll
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.pdb
 C:\Users\Heroo\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.csprojResolveAssemblyReference.cache
+C:\Users\BlackSword\Documents\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\Ucas.Data.dll.config
+C:\Users\BlackSword\Documents\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\Ucas.Data.dll
+C:\Users\BlackSword\Documents\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\Ucas.Data.pdb
+C:\Users\BlackSword\Documents\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\EntityFramework.dll
+C:\Users\BlackSword\Documents\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\BlackSword\Documents\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\BlackSword\Documents\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\Xprema.dll
+C:\Users\BlackSword\Documents\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\EntityFramework.xml
+C:\Users\BlackSword\Documents\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\BlackSword\Documents\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.dll
+C:\Users\BlackSword\Documents\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.pdb

@@ -442,7 +442,7 @@
             this.radGroupBox1.HeaderText = "موجز للمشروع";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 39);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(1206, 229);
+            this.radGroupBox1.Size = new System.Drawing.Size(1206, 223);
             this.radGroupBox1.TabIndex = 7;
             this.radGroupBox1.Text = "موجز للمشروع";
             this.radGroupBox1.ThemeName = "TelerikMetro";
@@ -490,7 +490,7 @@
             series1.SmartLabelStyle.CalloutLineAnchorCapStyle = System.Windows.Forms.DataVisualization.Charting.LineAnchorCapStyle.Diamond;
             series1.SmartLabelStyle.CalloutStyle = System.Windows.Forms.DataVisualization.Charting.LabelCalloutStyle.Box;
             this.chart2.Series.Add(series1);
-            this.chart2.Size = new System.Drawing.Size(482, 213);
+            this.chart2.Size = new System.Drawing.Size(482, 199);
             this.chart2.TabIndex = 14;
             this.chart2.Text = "chart2";
             title1.BackColor = System.Drawing.Color.Snow;
@@ -661,9 +661,9 @@
             this.radGroupBox2.Controls.Add(this.radLabel14);
             this.radGroupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.radGroupBox2.HeaderText = "موجز حسابات المشروع";
-            this.radGroupBox2.Location = new System.Drawing.Point(0, 268);
+            this.radGroupBox2.Location = new System.Drawing.Point(0, 262);
             this.radGroupBox2.Name = "radGroupBox2";
-            this.radGroupBox2.Size = new System.Drawing.Size(1206, 243);
+            this.radGroupBox2.Size = new System.Drawing.Size(1206, 220);
             this.radGroupBox2.TabIndex = 8;
             this.radGroupBox2.Text = "موجز حسابات المشروع";
             this.radGroupBox2.ThemeName = "TelerikMetro";
@@ -709,7 +709,7 @@
             this.chart1.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(12, 11);
+            this.chart1.Location = new System.Drawing.Point(12, 2);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series2.ChartArea = "ChartArea1";
@@ -904,7 +904,7 @@
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.ReadOnly = true;
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radGridView1.Size = new System.Drawing.Size(1202, 265);
+            this.radGridView1.Size = new System.Drawing.Size(1202, 169);
             this.radGridView1.TabIndex = 0;
             this.radGridView1.Text = "radGridView1";
             this.radGridView1.ThemeName = "TelerikMetro";
@@ -918,7 +918,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 803);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 671);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1206, 22);
             this.statusStrip1.TabIndex = 10;
@@ -934,13 +934,13 @@
             // 
             this.radGroupBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox3.Controls.Add(this.radGridView1);
-            this.radGroupBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGroupBox3.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.radGroupBox3.HeaderAlignment = Telerik.WinControls.UI.HeaderAlignment.Center;
             this.radGroupBox3.HeaderText = "سجل الانشطة الغير منتهية";
-            this.radGroupBox3.Location = new System.Drawing.Point(0, 511);
+            this.radGroupBox3.Location = new System.Drawing.Point(0, 482);
             this.radGroupBox3.Name = "radGroupBox3";
-            this.radGroupBox3.Size = new System.Drawing.Size(1206, 285);
+            this.radGroupBox3.Size = new System.Drawing.Size(1206, 189);
             this.radGroupBox3.TabIndex = 11;
             this.radGroupBox3.Text = "سجل الانشطة الغير منتهية";
             this.radGroupBox3.ThemeName = "TelerikMetro";
@@ -949,7 +949,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1206, 825);
+            this.ClientSize = new System.Drawing.Size(1206, 693);
             this.Controls.Add(this.radGroupBox3);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.radGroupBox2);

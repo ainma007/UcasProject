@@ -214,26 +214,26 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
             //    var dateSpan = DateTimeSpan.CompareDates(StartDateTimePicker.Value,  EndDateTimePicker.Value);
 
 
-            if (TotaltextBox.Text == "0")
+            if (SalaryTextBox.Text == "0")
             {
                 return;
             }
-            if (TotaltextBox.Text == "")
+            if (SalaryTextBox.Text == "")
             {
                 return;
             }
 
 
-            double Salary = double.Parse(TotaltextBox.Text.ToString()) / months;
+            double Salary = Math.Round((double.Parse(SalaryTextBox.Text.ToString()) * months), 2);
 
             if (start == end)
             {
 
-                SalaryTextBox.Text = " 0";
+                TotaltextBox.Text = " 0";
             }
             else
             {
-                SalaryTextBox.Text = Salary.ToString();
+                TotaltextBox.Text = Salary.ToString();
             }
 
 
@@ -253,6 +253,11 @@ namespace UcasProWindowsForm.Forms.EmployeeForm
         }
 
         private void TotaltextBox_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void SalaryTextBox_TextChanged(object sender, EventArgs e)
         {
             DateCont();
         } 
