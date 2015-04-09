@@ -116,6 +116,8 @@ namespace UcasProWindowsForm.Forms.MainForm
                 chart2.Series[0].Points[0].Color = Color.SkyBlue;
                 chart2.Series[0].Points[1].Color = Color.Crimson;
                 //// SubActivty 
+
+             
                 #endregion
 
                 radGridView1.DataSource = q;

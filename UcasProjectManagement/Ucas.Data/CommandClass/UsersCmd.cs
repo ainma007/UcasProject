@@ -139,27 +139,44 @@ namespace Ucas.Data.CommandClass
 
        public static UserTb Login(string usr, string pwd)
        {
+
            try
            {
-              
-               db = new UcasProEntities();
-               var q = db.UserTbs.Where(p => p.UserName.ToString() == usr.ToString() && p.Password.ToString() == pwd.ToString()).ToList();
-               if (q.Count == 0 || q.Count == -1)
+               UserTb q = db.UserTbs.Where(p => p.UserName == usr && p.Password == pwd).Single();
+               if (q.UserName.StartsWith(usr) && q.Password.StartsWith(pwd))
                {
-                   return null;
-               }
-              
-               else
-               {
-                   return q[0];
+                  
+                   return q;
                }
 
+               return null;
            }
-           catch (Exception )
+           catch (Exception)
            {
-               
-               throw ;
+
+               return null;
            }
+           //try
+           //{
+              
+           //    db = new UcasProEntities();
+           //    var q = db.UserTbs.Where(p => p.UserName.ToUpper() == usr.ToUpper() && p.Password.ToString() == pwd.ToString()).ToList();
+           //    if (q.Count == 0 || q.Count == -1)
+           //    {
+           //        return null;
+           //    }
+              
+           //    else
+           //    {
+           //        return q[0];
+           //    }
+
+           //}
+           //catch (Exception )
+           //{
+               
+           //    throw ;
+           //}
        }
 
        public static List<SystemPermession> GetAllSystemPermession()

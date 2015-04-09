@@ -75,8 +75,6 @@
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.AdActivitesBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.AddBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.RfreshBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.PrintBtn = new System.Windows.Forms.ToolStripButton();
@@ -466,21 +464,6 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
             // 
-            // AddBtn
-            // 
-            this.AddBtn.Image = global::UcasProWindowsForm.Properties.Resources.Add1;
-            this.AddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(128, 36);
-            this.AddBtn.Text = "اضافة نشاط فرعي";
-            this.AddBtn.Click += new System.EventHandler(this.AddSupActivitesBtn_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
-            // 
             // RfreshBtn
             // 
             this.RfreshBtn.Image = global::UcasProWindowsForm.Properties.Resources.Refrech;
@@ -516,8 +499,6 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AdActivitesBtn,
             this.toolStripSeparator4,
-            this.AddBtn,
-            this.toolStripSeparator1,
             this.RfreshBtn,
             this.toolStripSeparator2,
             this.PrintBtn,
@@ -612,8 +593,6 @@
         private System.Windows.Forms.BindingSource projectSubActivityBindingSource;
         private System.Windows.Forms.ToolStripButton AdActivitesBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton AddBtn;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton RfreshBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton PrintBtn;

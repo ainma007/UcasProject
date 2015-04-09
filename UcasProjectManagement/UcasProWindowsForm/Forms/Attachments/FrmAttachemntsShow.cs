@@ -71,9 +71,18 @@ namespace UcasProWindowsForm.Forms.Attachments
 
             if (col2 == 3)
             {
-                th = new Thread(DownData);
-                th.Start();
-                FrmAttachemntsShow_Load(null, null);
+                try
+                {
+                    th = new Thread(DownData);
+                    th.Start();
+                    FrmAttachemntsShow_Load(null, null);
+                }
+                catch (Exception)
+                {
+
+                    return;
+                }
+               
 
             }
 
@@ -158,11 +167,17 @@ namespace UcasProWindowsForm.Forms.Attachments
                 //reader.Close();
                 //response.Close();
                 var ftpfullpath = "ftp://mazoonadv.com/" + p.FilePathX;
-
+                if (ftpfullpath == null)
+                {
+                    RadMessageBox.Show("الملف غير موجود");
+                    return;
+                }
                 using (WebClient request = new WebClient())
                 {
                     request.Credentials = new NetworkCredential("xpremax", "123456");
+                   
                     byte[] fileData = request.DownloadData(ftpfullpath);
+                   
 
                     using (FileStream file = File.Create(sv.SelectedPath + "\\" + p.AttachmentName))
                     {

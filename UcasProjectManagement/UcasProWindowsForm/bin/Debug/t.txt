@@ -1,2 +1,2 @@
-تاريخ بداية العقد قبل تاريخ بداية المشروع 
+تاريخ نهاية العقد بعد تاريخ نهايةالمشروع 
 The transaction ended in the trigger. The batch has been aborted.
