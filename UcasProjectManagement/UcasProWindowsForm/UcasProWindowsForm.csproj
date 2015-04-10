@@ -645,6 +645,7 @@
     <None Include="Resources\AddEmp.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Untitled-4.png" />
     <None Include="Resources\RefreshWhite1.png" />
     <None Include="Resources\RefreshWhite.png" />
     <None Include="Resources\Yalow.jpg" />

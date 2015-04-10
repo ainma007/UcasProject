@@ -762,7 +762,7 @@
             // 
             this.radLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel8.ForeColor = System.Drawing.Color.Blue;
+            this.radLabel8.ForeColor = System.Drawing.Color.LimeGreen;
             this.radLabel8.Location = new System.Drawing.Point(1056, 123);
             this.radLabel8.Name = "radLabel8";
             this.radLabel8.Size = new System.Drawing.Size(112, 22);

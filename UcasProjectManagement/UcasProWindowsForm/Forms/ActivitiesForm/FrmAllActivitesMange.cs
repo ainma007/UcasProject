@@ -138,6 +138,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 frm.ShowDialog();
                 Operation.EndOperation(this);
                 this.FrmAllActivitesMange_Load(null, null);
+                return;
             }
             if (col2 == 9)
             {
@@ -152,6 +153,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 frm.ShowDialog();
                 Operation.EndOperation(this);
                 this.FrmAllActivitesMange_Load(null, null);
+                return;
             }
 
                         
@@ -177,6 +179,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                     Operation.EndOperation(this);
 
                     RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
+                    return;
                 }
                     
                 }
@@ -208,20 +211,20 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 if (RadMessageBox.Show(this, OperationX.DeleteMessage, "حذف سجل", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
                     Operation.BeginOperation(this);
-                  //  ProjectSubActivity tb = projectSubActivityBindingSource.Current as ProjectSubActivity;
                     if (SubActivityCmd.DeleteSubActivity(int.Parse(ActivitiesGridView.CurrentRow.Cells[0].Value.ToString())))
                     {
                         Operation.EndOperation(this);
                         Operation.ShowToustOk("تمت عملية الحذف", this);
                         this.FrmAllActivitesMange_Load(null, null);
+                        return;
                     }
                     else
                     {
                         Operation.EndOperation(this);
                         RadMessageBox.Show("لا يمكن حذف السجل", "خطأ", MessageBoxButtons.OK, RadMessageIcon.Error);
-
+                        return;
                     }
-                    return;
+                    
                 }
                
                 
@@ -276,8 +279,9 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                 e.CellElement.Font = newFont;
 
             }
-             if (e.CellElement.ColumnInfo.Name == "ActivityStatus"){
-                string title = e.CellElement.RowInfo.Cells[6].Value.ToString();
+            if (e.CellElement.ColumnInfo.Name == "ActivityStatus")
+            {
+                string title = e.CellElement.RowInfo.Cells[5].Value.ToString();
                 if (title == "غير فعال")
                 {
 
@@ -289,7 +293,7 @@ namespace UcasProWindowsForm.Forms.ActivitiesForm
                     e.CellElement.ForeColor = Color.DarkSlateBlue;
                     e.CellElement.Font = newFont;
                 }
-        }
+            }
 
             if (e.CellElement.ColumnInfo.Name == "ActivityTotalCost")
             {

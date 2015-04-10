@@ -339,6 +339,8 @@ namespace UcasProWindowsForm.Forms.MainForm
                     e.CellElement.ForeColor = Color.Red;
 
                 }
+
+
                
 
             }
