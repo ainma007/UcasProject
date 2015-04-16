@@ -34,6 +34,7 @@
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.GroupBox = new Telerik.WinControls.UI.RadGroupBox();
             this.Coinlabel = new System.Windows.Forms.Label();
+            this.saveBtn = new Telerik.WinControls.UI.RadButton();
             this.DonorsComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,16 +42,15 @@
             this.CostTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.saveBtn = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.GroupBox)).BeginInit();
             this.GroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.saveBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsComboBox.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateOfProecssPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saveBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +69,7 @@
             this.GroupBox.HeaderText = "بيانات الدفعة";
             this.GroupBox.Location = new System.Drawing.Point(0, 0);
             this.GroupBox.Name = "GroupBox";
-            this.GroupBox.Size = new System.Drawing.Size(324, 187);
+            this.GroupBox.Size = new System.Drawing.Size(324, 182);
             this.GroupBox.TabIndex = 0;
             this.GroupBox.Text = "بيانات الدفعة";
             this.GroupBox.ThemeName = "TelerikMetro";
@@ -82,6 +82,18 @@
             this.Coinlabel.Size = new System.Drawing.Size(100, 19);
             this.Coinlabel.TabIndex = 2;
             this.Coinlabel.Text = "-";
+            // 
+            // saveBtn
+            // 
+            this.saveBtn.Image = global::UcasProWindowsForm.Properties.Resources.SaveChang;
+            this.saveBtn.Location = new System.Drawing.Point(184, 126);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(127, 44);
+            this.saveBtn.TabIndex = 4;
+            this.saveBtn.Text = "حفظ التعديلات";
+            this.saveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.saveBtn.ThemeName = "TelerikMetro";
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // DonorsComboBox
             // 
@@ -127,7 +139,7 @@
             this.DonorsComboBox.Location = new System.Drawing.Point(12, 21);
             this.DonorsComboBox.Name = "DonorsComboBox";
             this.DonorsComboBox.Size = new System.Drawing.Size(223, 20);
-            this.DonorsComboBox.TabIndex = 11;
+            this.DonorsComboBox.TabIndex = 1;
             this.DonorsComboBox.TabStop = false;
             this.DonorsComboBox.ThemeName = "TelerikMetro";
             // 
@@ -160,9 +172,9 @@
             this.DateOfProecssPicker.Name = "DateOfProecssPicker";
             this.DateOfProecssPicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DateOfProecssPicker.Size = new System.Drawing.Size(81, 22);
-            this.DateOfProecssPicker.TabIndex = 8;
+            this.DateOfProecssPicker.TabIndex = 2;
             this.DateOfProecssPicker.TabStop = false;
-            this.DateOfProecssPicker.Text = "06/02/2015";
+            this.DateOfProecssPicker.Text = "15/09/2014";
             this.DateOfProecssPicker.ThemeName = "TelerikMetro";
             this.DateOfProecssPicker.Value = new System.DateTime(2014, 9, 15, 17, 54, 37, 444);
             // 
@@ -173,7 +185,7 @@
             this.CostTextBox.Name = "CostTextBox";
             this.CostTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.CostTextBox.Size = new System.Drawing.Size(81, 22);
-            this.CostTextBox.TabIndex = 7;
+            this.CostTextBox.TabIndex = 3;
             this.CostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.CostTextBox.ThemeName = "TelerikMetro";
             this.CostTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CostTextBox_KeyPress);
@@ -192,23 +204,11 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // saveBtn
-            // 
-            this.saveBtn.Image = global::UcasProWindowsForm.Properties.Resources.SaveChang;
-            this.saveBtn.Location = new System.Drawing.Point(184, 126);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(127, 44);
-            this.saveBtn.TabIndex = 12;
-            this.saveBtn.Text = "حفظ التعديلات";
-            this.saveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.saveBtn.ThemeName = "TelerikMetro";
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
-            // 
             // FrmEditAmount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 187);
+            this.ClientSize = new System.Drawing.Size(324, 182);
             this.Controls.Add(this.GroupBox);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(332, 217);
@@ -229,13 +229,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.GroupBox)).EndInit();
             this.GroupBox.ResumeLayout(false);
             this.GroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.saveBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonorsComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateOfProecssPicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saveBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

@@ -32,6 +32,7 @@
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.ActvitesTextBox = new System.Windows.Forms.TextBox();
             this.Coinlabel = new System.Windows.Forms.Label();
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.StatusDropDownList = new Telerik.WinControls.UI.RadDropDownList();
@@ -52,7 +53,6 @@
             this.SubActivitiesNameTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ActvitesTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
@@ -107,6 +107,17 @@
             this.radGroupBox1.Text = "قائمة التعديل";
             this.radGroupBox1.ThemeName = "TelerikMetro";
             // 
+            // ActvitesTextBox
+            // 
+            this.ActvitesTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ActvitesTextBox.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActvitesTextBox.ForeColor = System.Drawing.Color.Red;
+            this.ActvitesTextBox.Location = new System.Drawing.Point(23, 28);
+            this.ActvitesTextBox.Name = "ActvitesTextBox";
+            this.ActvitesTextBox.Size = new System.Drawing.Size(220, 21);
+            this.ActvitesTextBox.TabIndex = 31;
+            this.ActvitesTextBox.TabStop = false;
+            // 
             // Coinlabel
             // 
             this.Coinlabel.ForeColor = System.Drawing.Color.Green;
@@ -120,7 +131,7 @@
             // 
             this.radLabel9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.radLabel9.Location = new System.Drawing.Point(162, 275);
+            this.radLabel9.Location = new System.Drawing.Point(163, 243);
             this.radLabel9.Name = "radLabel9";
             this.radLabel9.Size = new System.Drawing.Size(17, 19);
             this.radLabel9.TabIndex = 29;
@@ -138,20 +149,20 @@
             radListDataItem2.Text = "غير فعال";
             this.StatusDropDownList.Items.Add(radListDataItem1);
             this.StatusDropDownList.Items.Add(radListDataItem2);
-            this.StatusDropDownList.Location = new System.Drawing.Point(85, 243);
+            this.StatusDropDownList.Location = new System.Drawing.Point(127, 270);
             this.StatusDropDownList.Name = "StatusDropDownList";
-            this.StatusDropDownList.Size = new System.Drawing.Size(157, 19);
-            this.StatusDropDownList.TabIndex = 28;
+            this.StatusDropDownList.Size = new System.Drawing.Size(116, 19);
+            this.StatusDropDownList.TabIndex = 7;
             this.StatusDropDownList.ThemeName = "TelerikMetro";
             // 
             // ProgressEditor
             // 
             this.ProgressEditor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProgressEditor.Location = new System.Drawing.Point(179, 274);
+            this.ProgressEditor.Location = new System.Drawing.Point(180, 242);
             this.ProgressEditor.Name = "ProgressEditor";
             this.ProgressEditor.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ProgressEditor.Size = new System.Drawing.Size(62, 22);
-            this.ProgressEditor.TabIndex = 27;
+            this.ProgressEditor.TabIndex = 6;
             this.ProgressEditor.TabStop = false;
             this.ProgressEditor.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProgressEditor.ThemeName = "TelerikMetro";
@@ -159,7 +170,7 @@
             // radLabel8
             // 
             this.radLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel8.Location = new System.Drawing.Point(248, 276);
+            this.radLabel8.Location = new System.Drawing.Point(249, 244);
             this.radLabel8.Name = "radLabel8";
             this.radLabel8.Size = new System.Drawing.Size(65, 16);
             this.radLabel8.TabIndex = 26;
@@ -170,7 +181,7 @@
             // radLabel7
             // 
             this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel7.Location = new System.Drawing.Point(248, 243);
+            this.radLabel7.Location = new System.Drawing.Point(249, 270);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(36, 16);
             this.radLabel7.TabIndex = 24;
@@ -205,10 +216,10 @@
             // 
             this.SaveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveBtn.Image = global::UcasProWindowsForm.Properties.Resources.SaveChang;
-            this.SaveBtn.Location = new System.Drawing.Point(220, 318);
+            this.SaveBtn.Location = new System.Drawing.Point(220, 314);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(127, 44);
-            this.SaveBtn.TabIndex = 21;
+            this.SaveBtn.TabIndex = 8;
             this.SaveBtn.Text = "حفظ التعديلات";
             this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SaveBtn.ThemeName = "TelerikMetro";
@@ -324,16 +335,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.RightToLeft = true;
-            // 
-            // ActvitesTextBox
-            // 
-            this.ActvitesTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ActvitesTextBox.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActvitesTextBox.ForeColor = System.Drawing.Color.Red;
-            this.ActvitesTextBox.Location = new System.Drawing.Point(23, 28);
-            this.ActvitesTextBox.Name = "ActvitesTextBox";
-            this.ActvitesTextBox.Size = new System.Drawing.Size(220, 21);
-            this.ActvitesTextBox.TabIndex = 31;
             // 
             // FrmSubActivityEdit
             // 

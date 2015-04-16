@@ -99,7 +99,7 @@
             this.SaveBtn.Location = new System.Drawing.Point(219, 174);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(127, 44);
-            this.SaveBtn.TabIndex = 1;
+            this.SaveBtn.TabIndex = 4;
             this.SaveBtn.Text = "حفظ التعديلات";
             this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SaveBtn.ThemeName = "TelerikMetro";

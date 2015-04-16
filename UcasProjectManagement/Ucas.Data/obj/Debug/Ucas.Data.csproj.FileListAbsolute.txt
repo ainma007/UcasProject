@@ -68,6 +68,5 @@ C:\Users\BlackSword\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data
 C:\Users\BlackSword\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\Xprema.dll
 C:\Users\BlackSword\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\EntityFramework.xml
 C:\Users\BlackSword\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\BlackSword\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.csprojResolveAssemblyReference.cache
 C:\Users\BlackSword\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.dll
 C:\Users\BlackSword\Documents\GitHub\UcasProject\UcasProjectManagement\Ucas.Data\obj\Debug\Ucas.Data.pdb
